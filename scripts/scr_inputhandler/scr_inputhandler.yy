@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_inputhandler",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_inputhandler",
+  "parent":{
+    "name":"MauriceGame_GM2",
+    "path":"MauriceGame_GM2.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

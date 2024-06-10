@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sfx_collectgiantpizza",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":0,
+  "bitRate":128,
+  "compression":2,
+  "conversionMode":0,
+  "duration":2.142667,
+  "name":"sfx_collectgiantpizza",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_collectgiantpizza.ogg",
+  "type":0,
+  "volume":1.0,
+}

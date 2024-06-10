@@ -15,6 +15,6 @@ function scr_maurice_jump()
 	}
 	
 	if (vsp < -12)
-		vsp += 2;
+		vsp += 7;
 	scr_taunt();
 }

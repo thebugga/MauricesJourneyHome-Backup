@@ -1,6 +1,8 @@
 //whuh?_call
 function scr_maurice_mach3(){
 		image_speed = 0.35
+	if move != 0 
+		xscale = move
 	hsp = (xscale * movespeed)
 	if (movespeed < 12){
 				movespeed += 0.1
@@ -22,4 +24,5 @@ function scr_maurice_mach3(){
 	if !key_run
 		state = states.normal;
 	scr_taunt();
+	
 }

@@ -32,5 +32,10 @@ function scr_maurice_normal()
 		set_spr(spr_mach2)
 		state = states.mach2;
 	}
+	if !grounded && !key_jump
+	{
+		state = states.jump;
+		sprite_index = spr_maurice_fall;
+	}
 	scr_taunt();
 }

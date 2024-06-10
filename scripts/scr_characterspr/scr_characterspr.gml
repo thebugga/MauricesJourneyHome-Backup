@@ -8,7 +8,7 @@ function scr_characterspr()
 		spr_jump = spr_maurice_jump;
 		spr_move = spr_maurice_move;
 		spr_nickel1 = spr_maurice_nickel1;
-		spr_nickel2 = spr_maurice_nickel2;
+		spr_nickel2 = spr_maurice_kill;
 		spr_mach2 = spr_maurice_mach2;
 	}
 	if (character == "D")

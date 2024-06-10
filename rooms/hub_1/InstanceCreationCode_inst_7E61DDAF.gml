@@ -1,1 +1,1 @@
-target_room = Realtitlescreen_1
+target_room = wizard_1

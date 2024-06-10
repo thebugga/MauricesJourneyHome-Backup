@@ -6,4 +6,5 @@ function scr_enemy_move(){
 	   image_xscale *= -1
 	}
 	hsp = (image_xscale * movespeed)
+	
 }

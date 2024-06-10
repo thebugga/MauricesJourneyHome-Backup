@@ -23,6 +23,7 @@ censormode = false;
 state = states.normal;
 character = "M";
 target_door = "A"
+baddieID = 0;
 target_room = noone
 image_speed = 0.4;
 scr_characterspr()

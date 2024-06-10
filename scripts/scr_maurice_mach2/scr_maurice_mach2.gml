@@ -1,6 +1,8 @@
 //whuh?_call
 function scr_maurice_mach2(){
 	image_speed = 0.35
+	if move != 0 
+		xscale = move
 	hsp = (xscale * movespeed)
 	if (movespeed < 12)
 		movespeed += 0.1

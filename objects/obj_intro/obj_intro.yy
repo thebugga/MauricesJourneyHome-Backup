@@ -11,8 +11,8 @@
   "name":"obj_intro",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cutscenes",
-    "path":"folders/Objects/Cutscenes.yy",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentObjectId":null,
   "persistent":false,

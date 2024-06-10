@@ -9,7 +9,9 @@ enum states
 	nickel,
 	runwall,
 	move,
-	hurt
+	hurt,
+	door,
+	titlescreen,
 }
 movespeed = 6;
 grav = 0.5;
@@ -32,3 +34,12 @@ saved_hsp = hsp;
 saved_vsp = vsp;
 saved_movespeed = movespeed;
 taunted = false;
+hallway = false;
+savedhallway = false;
+hallwaydirection = 0;
+savedhallwaydirection = 0;
+vhallwaydirection = 0;
+savedvhallwaydirection = 0;
+verticalhallway = false;
+savedverticalhallway = false;
+box = false;

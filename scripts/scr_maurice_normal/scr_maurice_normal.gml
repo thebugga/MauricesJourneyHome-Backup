@@ -19,7 +19,7 @@ function scr_maurice_normal()
 		image_index = 0
 		audio_play_sound(sfx_jump, 1, false)
 		set_spr(spr_jump)
-		vsp = -11
+		vsp -= 11
 		state = states.jump;
 	}
 	if key_attack2 && grounded {

@@ -10,14 +10,14 @@ if (_status == 0)
 else if (_status == -1)
 {
 	video_close();
-	room_goto(Realtitlescreen);
+	room_goto(hub_1);
 }
 if (key_jump2 && !show)
 	show = true;
 else if (key_jump2 && show)
 {
 	video_close();
-	room_goto(Realtitlescreen);
+	room_goto(hub_1);
 }
 if (show)
 {

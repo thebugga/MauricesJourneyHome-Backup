@@ -1,11 +1,5 @@
-targetDoor = "A"
-if place_meeting(x, y, obj_player)
-    image_speed = 0.35
-else
-{
-    image_speed = 0
-    image_index = 0
-}
+
+
 if (level == "medieval")
 {
     if (distance_to_object(obj_player) < 50)
@@ -83,3 +77,18 @@ if (level == "snickchallenge")
     var back_id = layer_background_get_id(lay_id)
     layer_background_alpha(back_id, bgalpha)
 }
+
+if place_meeting(x, y, obj_doorA)
+	targetDoor = "A";
+if place_meeting(x, y, obj_doorB)
+	targetDoor = "B";
+if place_meeting(x, y, obj_doorC)
+	targetDoor = "C";
+if place_meeting(x, y, obj_doorD)
+	targetDoor = "D";
+if place_meeting(x, y, obj_doorE)
+	targetDoor = "E";
+if place_meeting(x, y, obj_doorF)
+	targetDoor = "F";
+if place_meeting(x, y, obj_doorG)
+	targetDoor = "G";

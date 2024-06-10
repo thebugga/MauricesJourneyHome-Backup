@@ -1,4 +1,4 @@
-if global.panic
+if global.panic == true
 {
 	if music != sng_escape
 	{
@@ -9,4 +9,7 @@ if global.panic
 			audio_stop_sound(pillarmusicID);
 		pillarmusicID = -4;
 	}
+}
+else{
+		audio_stop_sound(sng_escape);
 }

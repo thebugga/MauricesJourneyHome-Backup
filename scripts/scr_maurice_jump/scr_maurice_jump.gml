@@ -14,7 +14,7 @@ function scr_maurice_jump()
 		state = states.normal;
 	}
 	
-	if (!key_jump && vsp < 0)
-		vsp = 2;
+	if (vsp < -12)
+		vsp += 2;
 	scr_taunt();
 }

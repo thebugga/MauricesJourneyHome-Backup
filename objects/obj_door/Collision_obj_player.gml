@@ -1,10 +1,16 @@
-with (obj_player)
+with (other.id)
 {
-    if ((state == states.normal) && key_up)
+    if (key_up && y == (other.y + 50) && (!instance_exists(obj_fadeout)))
     {
-        target_room = other.target_room
+        lastroom_x = other.x
+        lastroom_y = other.y
+        lastroom = room
+        obj_player.sprite_index = spr_maurice_lookdoor
+        obj_player.target_door = other.targetDoor
+        obj_player.target_room = other.targetRoom
+        obj_player.image_index = 0
+        obj_player.state = states.door
         other.visited = 1
-        image_index = 0
         instance_create(x, y, obj_fadeout)
     }
 }

@@ -33,9 +33,9 @@ for (var i = 0; i < array_length(asset_layers); i++)
 			var _y = layer_sprite_get_y(_asset);
 			var spr = layer_sprite_get_sprite(_asset);
 			if (p[0] != 0)
-				layer_sprite_x(_asset, (_x - (_x * p[0])) + ((SCREEN_WIDTH / 4) * p[0]));
+				layer_sprite_x(_asset, (_x - (_x * p[0])) + ((960 / 4) * p[0]));
 			if (p[1] != 0 && spr != spr_industrialpipe && spr != bg_farmdirtwall)
-				layer_sprite_y(_asset, (_y - (_y * p[1])) + ((SCREEN_HEIGHT / 4) * p[1]));
+				layer_sprite_y(_asset, (_y - (_y * p[1])) + ((540 / 4) * p[1]));
 		}
 	}
 }

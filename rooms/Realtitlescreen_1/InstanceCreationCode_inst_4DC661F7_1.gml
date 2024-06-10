@@ -1,0 +1,1 @@
+global.target_room2 = hub_1

@@ -30,6 +30,12 @@ switch state
 	case states.hurt:
 		scr_maurice_hurt();
 		break;
+	case states.door:
+		scr_maurice_door();
+		break;
+	case states.titlescreen:
+		scr_maurice_titlescreen();
+		break;
 }
 if ((y > (room_height + 300) || y < -800))
 {

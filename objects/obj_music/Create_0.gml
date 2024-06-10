@@ -14,5 +14,6 @@ secretend = false;
 pillar_on_camera = false;
 prevpillar_on_camera = false;
 room_arr = [
-	[Realtitlescreen, sng_uhyeah, sng_uhyeah, false],
+	[hub_1, sng_hub, sng_hub, false],
+	[Realtitlescreen_1, sng_uhyeah, sng_uhyeah, false],
 ];

@@ -18,6 +18,8 @@ movespeed = 6;
 grav = 0.5;
 xscale = 1;
 idle = 0
+hallway = 0
+hallwaydirection = 0
 move = 0;
 yscale = 1;
 debug = false;
@@ -46,3 +48,4 @@ savedvhallwaydirection = 0;
 verticalhallway = false;
 savedverticalhallway = false;
 box = false;
+

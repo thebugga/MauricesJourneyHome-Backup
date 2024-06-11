@@ -12,10 +12,12 @@ enum states
 	hurt,
 	door,
 	titlescreen,
+	debugstate,
 }
 movespeed = 6;
 grav = 0.5;
 xscale = 1;
+idle = 0
 move = 0;
 yscale = 1;
 debug = false;

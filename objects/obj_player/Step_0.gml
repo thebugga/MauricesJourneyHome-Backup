@@ -55,6 +55,9 @@ switch state
 	case states.titlescreen:
 		scr_maurice_titlescreen();
 		break;
+	case states.debugstate:
+		scr_maurice_debugstate();
+		break;
 }
 if ((y > (room_height + 300) || y < -800))
 {
@@ -73,3 +76,4 @@ if ((y > (room_height + 300) || y < -800))
 if coyote_time > 0
 	coyote_time--;
 scr_characterspr()
+scr_playersounds()

@@ -1,0 +1,15 @@
+function scr_playersounds()
+{
+	if ((sprite_index == spr_maurice_mach2 || state == states.mach2) && (!audio_is_playing(sfx_mach2)))
+	    scr_soundeffect(sfx_mach2)
+	else if (sprite_index != spr_maurice_mach2 && state != 16)
+	    audio_stop_sound(sfx_mach2)
+	if ((state == states.mach3 || sprite_index == spr_maurice_mach3 ) && (!audio_is_playing(sfx_mach3)))
+	    scr_soundeffect(sfx_mach3)
+	else if ((state != states.mach3 && sprite_index != spr_maurice_mach3))
+	    audio_stop_sound(sfx_mach3)
+	if ((state == states.runwall || sprite_index == spr_maurice_runwall) && (!audio_is_playing(sfx_runwall)))
+	    scr_soundeffect(sfx_runwall)
+	else if ((state != states.runwall && sprite_index != spr_maurice_runwall))
+	    audio_stop_sound(sfx_runwall)
+}

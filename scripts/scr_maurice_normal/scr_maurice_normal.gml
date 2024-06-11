@@ -14,6 +14,9 @@ function scr_maurice_normal()
 		if !(taunted)
 		set_spr(spr_idle)
 	}
+	
+   instance_destroy(obj_afterimage)
+	
 	if key_jump2 && grounded
 	{
 		image_index = 0

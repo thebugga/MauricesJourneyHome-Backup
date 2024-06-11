@@ -7,8 +7,3 @@ if (image_alpha >= 1)
 }
 else
 	image_alpha += 0.01;
-if (place_meeting(x, y, playerid) && image_alpha >= 1)
-{
-	room_restart()
-	game_restart()
-}

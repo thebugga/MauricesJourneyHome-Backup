@@ -11,7 +11,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 		switch identifier
 		{
 			case afterimage.mach3effect:
-				if (obj_player.state == states.mach2|| obj_player.state == states.mach3)
+				if (obj_player.state == states.mach|| obj_player.state == states.mach3)
 				{
 					var p = 4;
 					var m = obj_player.movespeed - p;

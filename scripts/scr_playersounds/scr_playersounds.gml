@@ -1,6 +1,6 @@
 function scr_playersounds()
 {
-	if ((sprite_index == spr_maurice_mach2 || state == states.mach2) && (!audio_is_playing(sfx_mach2)))
+	if ((sprite_index == spr_maurice_mach2 || state == states.mach) && (!audio_is_playing(sfx_mach2)))
 	    scr_soundeffect(sfx_mach2)
 	else if (sprite_index != spr_maurice_mach2 && state != 16)
 	    audio_stop_sound(sfx_mach2)

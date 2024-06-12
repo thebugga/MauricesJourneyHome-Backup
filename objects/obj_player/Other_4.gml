@@ -9,7 +9,7 @@
 		y = obj_doorA.y - 14;
 		if (room != rank_room){
 		visible = true
-		state = states.normal
+		
 		}
 	}
 	if (target_door == "B" && instance_exists(obj_doorB))
@@ -23,7 +23,7 @@
 		y = obj_doorB.y - 14;
 		if (room != rank_room){
 		visible = true
-		state = states.normal
+		
 		}
 	}
 	if (target_door == "C" && instance_exists(obj_doorC))
@@ -37,7 +37,7 @@
 		y = obj_doorC.y - 14;
 		if (room != rank_room){
 		visible = true
-		state = states.normal
+		
 		}
 	}
 	if (target_door == "D" && instance_exists(obj_doorD))
@@ -51,7 +51,7 @@
 		y = obj_doorD.y - 14;
 		if (room != rank_room){
 		visible = true
-		state = states.normal
+		
 		}
 	}
 	if (target_door == "E" && instance_exists(obj_doorE))
@@ -65,7 +65,7 @@
 		y = obj_doorE.y - 14
 		if (room != rank_room){
 		visible = true
-		state = states.normal
+		
 		}
 	}
 	if (target_door == "F" && instance_exists(obj_doorF))
@@ -79,7 +79,7 @@
 		y = obj_doorF.y - 14;
 		if (room != rank_room){
 		visible = true
-		state = states.normal
+		
 		}
 	}
 	if (target_door == "G" && instance_exists(obj_doorG))
@@ -93,6 +93,6 @@
 		y = obj_doorG.y - 14;
 		if (room != rank_room){
 		visible = true
-		state = states.normal
+		
 		}
 	}

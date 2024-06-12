@@ -6,7 +6,7 @@ function scr_maurice_climbwall()
 	if (wallspeed < 24 && move == xscale)
 	    wallspeed += 0.05
 	crouchslideAnim = 1
-	sprite_index = spr_maurice_runwall
+	sprite_index = spr_climbwall
 	if (scr_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x - sign(hsp)), y, obj_slope))))
 	{
 	    image_index = 0
@@ -16,11 +16,11 @@ function scr_maurice_climbwall()
 	{
 	    vsp = 0
 	    if (movespeed >= 8)
-	        state = states.mach2
+	        state = states.mach
 	    if (movespeed >= 12)
 	    {
 	        state = states.mach3
-	        sprite_index = spr_mach2
+	        sprite_index = spr_mach
 	    }
 	}
 }

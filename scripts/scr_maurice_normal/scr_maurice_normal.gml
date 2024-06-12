@@ -1,44 +1,65 @@
-//whuh?_call
-function scr_maurice_normal()
-{
-	image_speed = 0.4 
-	audio_stop_sound(sfx_sack)
-	hsp = xscale * movespeed
-	if move != 0 {
-		xscale = move
-		movespeed = 6
-		if !(taunted)
-		set_spr(spr_move)
-	} else {
-		movespeed = 0
-		if !(taunted)
-		set_spr(spr_idle)
-	}
-	
-   instance_destroy(obj_afterimage)
-	
-	if key_jump2 && grounded
-	{
-		image_index = 0
-		audio_play_sound(sfx_jump, 1, false)
-		set_spr(spr_jump)
-		vsp -= 11
-		state = states.jump;
-	}
+function scr_maurice_normal(){
+        image_speed = 0.35
+        move = key_right - key_left
+		hsp = xscale * movespeed
+		if move != 0 
+		{
+			xscale = move
+			movespeed = 4
+			sprite_index = spr_move
+		} 
+		else if move == 0
+		{
+			movespeed = 0
+			sprite_index = spr_idle
+		}
+		if grounded && sprite_index == spr_fall
+		{
+			if move == 0
+				sprite_index = spr_land
+			if move != 0
+				sprite_index = spr_land2
+		}
+		if key_jump2 && grounded 
+		{
+			image_index = 0
+			sprite_index = spr_jump
+			vsp = -9
+			state = states.jump
+		}
+		if !grounded 
+		{
+			sprite_index = spr_fall
+			state = states.jump
+		}
+        if (floor(image_index) == (image_number - 1) && (sprite_index == spr_fall || sprite_index == spr_jump) && grounded)
+		{
+			if move == 0
+				sprite_index = spr_land
+			else
+				sprite_index = spr_land2
+			image_index = 0
+		}
+        if (floor(image_index) == (image_number - 1) && (sprite_index == spr_land || sprite_index == spr_land2) && grounded)
+			if move == 0
+				sprite_index = spr_idle
+			else
+				sprite_index = spr_move
+		if key_run2
+		{
+		    move = 1
+			image_index = 0
+			sprite_index = spr_mach
+			machshit = 0
+			state = states.mach
+			if movespeed != 5
+				movespeed = 5
+		}
 	if key_attack2 && grounded {
 		set_spr(choose(spr_nickel1, spr_nickel2))
 		hsp = 0
 		audio_play_sound(sfx_sack, 1, true)
 		state = states.nickel;
-	}
-	if key_run && grounded && !taunted {
-		set_spr(spr_mach2)
-		state = states.mach2;
-	}
-	if !grounded && !key_jump
-	{
-		state = states.jump;
-		sprite_index = spr_maurice_fall;
 	}
 	scr_taunt();
 }

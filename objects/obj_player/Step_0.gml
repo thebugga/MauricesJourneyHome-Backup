@@ -1,31 +1,7 @@
 //whuh?_call
 scr_collision()
 scr_getinput();
-move = key_right - key_left
-prevhsp = hsp;
-prevmove = move;
-prevmovespeed = movespeed;
-prevxscale = xscale;
-
-if key_attack2
-	input_buffer_shoot = 10;
-if key_attack2
-	input_buffer_slap = 12;
-if key_jump
-	input_buffer_jump = 15;
-if key_down2
-	input_buffer_down = 15;
-if key_run2
-	input_buffer_mach = 15;
-if key_taunt2
-	input_taunt_p2 = 5;
 	
-
-if grounded && vsp > 0
-	coyote_time = 8;
-if vsp < 0
-	coyote_time = 0;
-can_jump = (grounded && vsp > 0) || (coyote_time && vsp > 0);
 switch state
 {
 	case states.normal:
@@ -34,8 +10,8 @@ switch state
 	case states.jump:
 		scr_maurice_jump();
 		break;
-	case states.mach2:
-		scr_maurice_mach2();
+	case states.mach:
+		scr_maurice_mach();
 		break
 	case states.mach3:
 		scr_maurice_mach3();
@@ -58,6 +34,12 @@ switch state
 	case states.debugstate:
 		scr_maurice_debugstate();
 		break;
+	case states.slide:
+	    scr_maurice_machslide();
+	break;
+	case states.roll:
+	    scr_maurice_roll();
+		break;
 }
 if ((y > (room_height + 300) || y < -800))
 {
@@ -72,8 +54,12 @@ if ((y > (room_height + 300) || y < -800))
 			vsp = 10;
 		}
 }
-
-if coyote_time > 0
-	coyote_time--;
+if move != 0
+	image_xscale = move
+if move == 0
+	movespeed = 0
+if state != states.roll
+	mask_index = spr_player_mask
+image_xscale = xscale
 scr_characterspr()
 scr_playersounds()

@@ -1,6 +1,7 @@
 //whuh?_call
 function scr_maurice_nickel()
 {
+	move = key_right - key_left
 	image_speed = 0.35
 	if (!instance_exists(obj_nickelhitbox))
 		instance_create(x,y,obj_nickelhitbox)

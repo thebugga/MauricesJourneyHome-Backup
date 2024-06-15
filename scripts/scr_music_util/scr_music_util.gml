@@ -1,51 +1,22 @@
-function add_music(_room, _event, _eventsecret, _continuous, _on_room_start = noone)
+function stop_panic_music()
 {
-	var b = 
-	{
-		continuous: _continuous,
-		on_room_start: -4,
-		value: 0,
-		immediate: false,
-		event: -4,
-		event_secret: -4
-	};
-	with (b)
-	{
-		if (_on_room_start != -4)
-			on_room_start = method(self, _on_room_start);
-		if (_event != -4)
-		{
-			event_name = _event;
-			event = fmod_event_create_instance(_event);
-		}
-		if (_eventsecret != -4)
-		{
-			event_secret_name = _eventsecret;
-			event_secret = fmod_event_create_instance(_eventsecret);
-		}
+	with (obj_music){
+		panic_instance = fmod_studio_system_get_event("event:/music/escape");
+        panic_instance_ref = fmod_studio_event_description_create_instance(panic_instance);
+		fmod_studio_event_instance_stop(panic_instance_ref, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
+		fmod_studio_event_instance_set_paused(panic_instance_ref, true)
+
 	}
-	ds_map_set(music_map, _room, b);
-	return b;
 }
 function stop_music()
 {
-	with (obj_music)
-	{
-		if (music != -4)
-		{
-			if (obj_pause.pause)
-			{
-				fmod_event_instance_stop(music.event, true);
-				fmod_event_instance_stop(music.event_secret, true);
-			}
-			else
-			{
-				fmod_event_instance_stop(music.event, false);
-				fmod_event_instance_stop(music.event_secret, false);
-			}
-		}
-		fmod_event_instance_stop(pillarmusicID, true);
-		fmod_event_instance_stop(panicmusicID, true);
+	with (obj_music){
+	    var mu = ds_map_find_value(music_map, room);
+		fmod_studio_event_instance_stop(mu.event, FMOD_STUDIO_STOP_MODE.ALLOWFADEOUT);
+		fmod_studio_event_instance_stop(mu.event_secret, FMOD_STUDIO_STOP_MODE.ALLOWFADEOUT);
+		panic_instance = fmod_studio_system_get_event("event:/music/escape");
+        panic_instance_ref = fmod_studio_event_description_create_instance(panic_instance);
+		fmod_studio_event_instance_stop(panic_instance_ref, FMOD_STUDIO_STOP_MODE.ALLOWFADEOUT);
 	}
 }
 function music_get_pos_wrap(_pos, _length)

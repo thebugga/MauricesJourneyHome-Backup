@@ -1,23 +1,15 @@
-function scr_maurice_jump()
+function scr_maurice_roll()
 {
-	move = key_right - key_left
 	image_speed = 0.35
-		hsp = xscale * movespeed
-		if move != 0 && !key_attack
-		{
-			xscale = move
-			movespeed = 4
-		}
-		if move = 0
-		{
-			movespeed = 0
-		}
-        if (floor(image_index) == (image_number - 1) && sprite_index == spr_jump)
-			sprite_index = spr_fall
-		if grounded 
-		{
-			image_index = 0
-		    sprite_index = spr_idle
-			state = states.normal
-		}
+	if grounded || groundedSlope
+		sprite_index = spr_roll
+	else
+		sprite_index = spr_dive
+	hsp = movespeed * xscale
+	if place_meeting_collision(x + (1 * xscale), y, obj_slope)
+	{
+		state = states.normal
+		sprite_index = spr_idle
+	}
+	scr_taunt();
 }

@@ -1,15 +1,24 @@
-if global.panic == true
+panic_instance = fmod_studio_system_get_event("event:/music/escape");
+panic_instance_ref = fmod_studio_event_description_create_instance(panic_instance);
+if global.panic
 {
-	if music != sng_escape
+	if !panicstart
 	{
-		music = sng_escape;
-		audio_stop_sound(musicID);
-		musicID = scr_music(music);
-		if pillarmusicID != -4
-			audio_stop_sound(pillarmusicID);
-		pillarmusicID = -4;
+		trace("Starting panic music: step");
+		panicstart = true;
+		fmod_studio_event_instance_start(panic_instance_ref);
+		
+		if music != noone
+		{
+			fmod_studio_event_instance_stop(music.event, true);
+			fmod_studio_event_instance_stop(music.event_secret, true);
+		}
 	}
 }
-else{
-		audio_stop_sound(sng_escape);
+else if global.panic == false
+{
+	panicstart = false;
+	panic_instance = fmod_studio_system_get_event("event:/music/escape");
+    panic_instance_ref = fmod_studio_event_description_create_instance(panic_instance);
+	fmod_studio_event_instance_set_paused(panic_instance_ref, FMOD_STUDIO_STOP_MODE.ALLOWFADEOUT);
 }

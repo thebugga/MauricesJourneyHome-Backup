@@ -21,6 +21,13 @@ function draw_reset() {
 	draw_set_alpha(1)
 	draw_set_color(c_white)
 }
+function concat()
+{
+	var _string = "";
+	for (var i = 0; i < argument_count; i++)
+		_string += string(argument[i]);
+	return _string;
+}
 function instance_create(x, y, obj) 
 {
 	return instance_create_depth(x, y, -1, obj)

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b2c4b008-7eda-4b71-831b-c5cba2e9203c}">
+		<property name="assetPath">
+			<value>sfx/shotgunload.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2764374999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0f8c9c10-53db-48a6-991c-a4a74257fc99}</destination>
+		</relationship>
+	</object>
+</objects>

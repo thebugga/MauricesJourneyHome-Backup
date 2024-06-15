@@ -45,7 +45,7 @@
   "origin":0,
   "parent":{
     "name":"Objects",
-    "path":"folders/Objects.yy",
+    "path":"folders/Fmod Demo/Objects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

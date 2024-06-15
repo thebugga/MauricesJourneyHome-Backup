@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{7f2ed638-0f03-4196-bcb4-9c4e4f9b1d58}">
 		<property name="assetPath">
-			<value>sng_escape.mp3</value>
+			<value>music/sng_escape.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

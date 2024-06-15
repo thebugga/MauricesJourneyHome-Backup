@@ -5,10 +5,7 @@
 			<value>This should probably be cleaned up. Vanilla timeline length for this is only 2:39.</value>
 		</property>
 		<property name="name">
-			<value>panic</value>
-		</property>
-		<property name="isDefault">
-			<value>true</value>
+			<value>wizardry</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -76,7 +73,7 @@
 		<relationship name="modules">
 			<destination>{6d6c0175-16f8-4b33-ab30-bc81d2efd0df}</destination>
 			<destination>{6947c475-04dd-456e-b644-cd75dd5adcf3}</destination>
-			<destination>{70807d2c-95bc-4973-ac7e-0209555e4a91}</destination>
+			<destination>{75bdf5bc-56f7-4109-a445-c1cfc9ccf9e4}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{3efb4685-a709-41eb-888d-f5d880c30b34}</destination>
@@ -84,7 +81,7 @@
 	</object>
 	<object class="Timeline" id="{1b59ab7b-5825-4512-a8bc-6cd1f3d34a2b}">
 		<relationship name="modules">
-			<destination>{70807d2c-95bc-4973-ac7e-0209555e4a91}</destination>
+			<destination>{75bdf5bc-56f7-4109-a445-c1cfc9ccf9e4}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{41da860a-64c6-468c-b46a-d3514faa2393}</destination>
@@ -136,12 +133,15 @@
 			<value>2.1052631578947367</value>
 		</property>
 	</object>
-	<object class="SingleSound" id="{70807d2c-95bc-4973-ac7e-0209555e4a91}">
+	<object class="SingleSound" id="{75bdf5bc-56f7-4109-a445-c1cfc9ccf9e4}">
 		<property name="length">
-			<value>250.56653061224489</value>
+			<value>84.601916666666668</value>
+		</property>
+		<property name="volume">
+			<value>10</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{7f2ed638-0f03-4196-bcb4-9c4e4f9b1d58}</destination>
+			<destination>{a1855e28-3058-4e3d-9c32-d8e990403564}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{3efb4685-a709-41eb-888d-f5d880c30b34}">
@@ -163,7 +163,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>250.56653061224489</value>
+			<value>84.601916666666668</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{1b59ab7b-5825-4512-a8bc-6cd1f3d34a2b}</destination>

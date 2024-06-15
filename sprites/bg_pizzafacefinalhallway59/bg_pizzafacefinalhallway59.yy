@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"bg_pizzafacefinalhallway59",
   "bboxMode":0,
-  "bbox_bottom":599,
+  "bbox_bottom":538,
   "bbox_left":0,
-  "bbox_right":999,
+  "bbox_right":599,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"15cc518e-0ac3-4827-b0f6-46a1107070dd","name":"15cc518e-0ac3-4827-b0f6-46a1107070dd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"ef736de7-fdb8-4612-b8f4-ac6807be5e73","name":"ef736de7-fdb8-4612-b8f4-ac6807be5e73","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":600,
+  "height":539,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"4bde461d-725e-411c-a477-530e794167e6","blendMode":0,"displayName":"default","isLocked":false,"name":"4bde461d-725e-411c-a477-530e794167e6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"641a5b35-87b9-4e55-ac2c-2305c2746f09","blendMode":0,"displayName":"default","isLocked":false,"name":"641a5b35-87b9-4e55-ac2c-2305c2746f09","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"bg_pizzafacefinalhallway59",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"15cc518e-0ac3-4827-b0f6-46a1107070dd","path":"sprites/bg_pizzafacefinalhallway59/bg_pizzafacefinalhallway59.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"18b0d892-d311-48d3-a14e-d27ca300a9c9","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ef736de7-fdb8-4612-b8f4-ac6807be5e73","path":"sprites/bg_pizzafacefinalhallway59/bg_pizzafacefinalhallway59.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f311fefe-b91f-4864-a3cc-9830759aed66","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1000,
+  "width":600,
 }

@@ -1,2 +1,2 @@
 instance_destroy()
-scr_sound(sfx_collect)
+scr_soundeffect(sfx_collect)

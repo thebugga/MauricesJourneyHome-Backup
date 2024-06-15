@@ -54,12 +54,6 @@ if ((y > (room_height + 300) || y < -800))
 			vsp = 10;
 		}
 }
-if move != 0
-	image_xscale = move
-if move == 0
-	movespeed = 0
-if state != states.roll
-	mask_index = spr_player_mask
 image_xscale = xscale
 scr_characterspr()
 scr_playersounds()

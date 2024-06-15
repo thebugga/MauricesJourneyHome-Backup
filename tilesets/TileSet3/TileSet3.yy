@@ -13,7 +13,7 @@
   "out_tilevborder":2,
   "parent":{
     "name":"Objects",
-    "path":"folders/Objects.yy",
+    "path":"folders/Fmod Demo/Objects.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

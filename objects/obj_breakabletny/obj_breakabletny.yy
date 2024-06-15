@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Objects.yy",
+    "path":"folders/Fmod Demo/Objects.yy",
   },
   "parentObjectId":{
     "name":"par_collision",

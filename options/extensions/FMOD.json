@@ -4,7 +4,7 @@
     "c7909757-05f8-4365-b44d-00795f9489f9": null,
     "69e2040b-c54f-4d66-87d8-04c2caa2f267": {
       "Default": {
-        "value": "C:\\\\Program Files\\\\FMOD SoundSystem\\\\FMOD Studio 2.02.22"
+        "value": "C:\\\\Program Files\\\\FMOD SoundSystem\\\\FMOD Studio 2.02.13"
       }
     },
     "aff0f052-c04f-4ea7-9c53-c10ef775761d": null,
@@ -21,7 +21,11 @@
     "5ab86468-990a-4add-a836-8da80a081c12": null,
     "c91aefca-e289-4cfe-bf9c-9c431dc97779": null,
     "4431c4d8-772d-4c85-a494-1f6491aa37ff": null,
-    "0b9245eb-e6d6-4763-87c8-5fc0e4f67b65": null,
+    "0b9245eb-e6d6-4763-87c8-5fc0e4f67b65": {
+      "Default": {
+        "value": "True"
+      }
+    },
     "fa3cd3b9-9573-46f8-b93e-6b3978afbe3f": null,
     "3038610d-8497-4444-8d59-ef7b8739e6cd": null,
     "93876551-db41-470b-b263-0c58da96bf0c": null,

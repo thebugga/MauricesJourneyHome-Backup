@@ -10,19 +10,19 @@ if (_status == 0)
 else if (_status == -1)
 {
 	video_close();
-	room_goto(hub_1);
+	room_goto(hub_outside);
 }
 if (key_jump2 && !show)
 	show = true;
 else if (key_jump2 && show)
 {
 	video_close();
-	room_goto(hub_1);
+	room_goto(hub_outside);
 }
 if (show)
 {
 	draw_set_font(global.bigfont)
 	draw_set_color(c_white);
-	draw_text(10, 520, "PRESS Z TO SKIP.");
+	draw_text(10, 520, "              PRESS Z TO SKIP");
 	draw_reset();
 }

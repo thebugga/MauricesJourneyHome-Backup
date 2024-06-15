@@ -149,10 +149,12 @@ function scr_maurice_mach3()
 		image_index = 0 
 		sprite_index = spr_idle
 		state = states.normal
+		y = y-8
 	}
 	if place_meeting_collision(x + (1 * xscale), y, par_collision) && !groundedSlope && grounded
 	{
 		state = states.mach
+		y = y-8
 		sprite_index = spr_idle
 	}
 

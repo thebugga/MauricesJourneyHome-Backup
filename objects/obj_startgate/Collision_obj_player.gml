@@ -2,6 +2,7 @@ if (floor(obj_player.image_index) == (obj_player.image_number - 1) && obj_player
 {
     with (obj_player)
     {
+
         obj_music.fadeoff = 0
         target_door = other.target_door
         target_room = other.target_room
@@ -13,6 +14,7 @@ with (obj_player)
 {
     if (key_up2 && grounded && (state == states.normal))
     {
+		stop_music();
         sprite_index = spr_maurice_gate
         audio_stop_all()
         global.backtohubstartx = x

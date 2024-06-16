@@ -13,25 +13,6 @@ function scr_maurice_normal(){
 			hsp = 0
 			vsp = 0
 			movespeed = 0
-			sprite_index = spr_idle
-            if ((idle < 400))
-                idle++
-				
-            if ((idle >= 150) && (floor(image_index) == (image_number - 1)))
-            {
-                idle = 0
-                image_index = 0
-            }
-            if ((idle >= 150))
-            {
-                randomise()
-				if (irandom(100) <= 50)
-				{
-				    snd_voiceok_ref = fmod_studio_system_get_event("event:/sfx/maurice/ok");
-                    snd_voiceok = fmod_studio_event_description_create_instance(snd_voiceok_ref);
-					scr_fmod_soundeffect(snd_voiceok, obj_player.x, obj_player.y);
-				}
-            }
 		}
 
 		if grounded && sprite_index == spr_fall

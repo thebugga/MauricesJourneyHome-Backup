@@ -221,6 +221,7 @@
     {"id":{"name":"shd_rank","path":"shaders/shd_rank/shd_rank.yy",},},
     {"id":{"name":"sfx_collect","path":"sounds/sfx_collect/sfx_collect.yy",},},
     {"id":{"name":"sfx_collectgiantpizza","path":"sounds/sfx_collectgiantpizza/sfx_collectgiantpizza.yy",},},
+    {"id":{"name":"sfx_ELEVATOR","path":"sounds/sfx_ELEVATOR/sfx_ELEVATOR.yy",},},
     {"id":{"name":"sfx_ihateu","path":"sounds/sfx_ihateu/sfx_ihateu.yy",},},
     {"id":{"name":"sfx_ihateu2","path":"sounds/sfx_ihateu2/sfx_ihateu2.yy",},},
     {"id":{"name":"sfx_jump","path":"sounds/sfx_jump/sfx_jump.yy",},},

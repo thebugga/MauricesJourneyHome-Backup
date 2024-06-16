@@ -160,6 +160,7 @@
     {"name":"shd_rank","order":1,"path":"shaders/shd_rank/shd_rank.yy",},
     {"name":"sfx_collect","order":2,"path":"sounds/sfx_collect/sfx_collect.yy",},
     {"name":"sfx_collectgiantpizza","order":5,"path":"sounds/sfx_collectgiantpizza/sfx_collectgiantpizza.yy",},
+    {"name":"sfx_ELEVATOR","order":19,"path":"sounds/sfx_ELEVATOR/sfx_ELEVATOR.yy",},
     {"name":"sfx_ihateu","order":13,"path":"sounds/sfx_ihateu/sfx_ihateu.yy",},
     {"name":"sfx_ihateu2","order":14,"path":"sounds/sfx_ihateu2/sfx_ihateu2.yy",},
     {"name":"sfx_killenemy","order":10,"path":"sounds/sfx_killenemy/sfx_killenemy.yy",},

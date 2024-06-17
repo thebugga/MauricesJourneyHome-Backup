@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_slimeidle",
-    "path":"sprites/spr_slimeidle/spr_slimeidle.yy",
+    "name":"spr_pepperoni",
+    "path":"sprites/spr_pepperoni/spr_pepperoni.yy",
   },
   "spriteMaskId":null,
   "visible":true,

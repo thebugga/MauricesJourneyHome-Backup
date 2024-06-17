@@ -18,6 +18,7 @@ enum states
 }
 xscale = 1;
 idle = 0
+steppybuffer = 0;
 hallway = 0
 hallwaydirection = 0
 move = 0;
@@ -30,7 +31,7 @@ target_room = noone
 image_speed = 0.4;
 character = "M"
 depth = -100;
-taunt_delay = 0;
+global.taunt_delay = 0;
 saved_sprite = sprite_index;
 saved_imagespeed = image_speed;
 saved_hsp = hsp;

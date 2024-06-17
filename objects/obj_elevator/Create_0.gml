@@ -1,7 +1,7 @@
 image_speed = 0.5
 alarm[0] = 800
 audio_stop_all()
-scr_soundeffect(sfx_ELEVATOR)
+scr_soundeffect(sfx_mach3_1)
 brown = false;
 brownfade = 0;
 alarm[2] = 700;

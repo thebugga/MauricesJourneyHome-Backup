@@ -4,7 +4,7 @@ function scr_taunt()
 		exit;
 	if (key_taunt2 && !taunted)
 	{
-		taunt_delay = 20;
+		global.taunt_delay = 20;
 		saved_sprite = sprite_index;
 		saved_imagespeed = image_speed;
 		saved_hsp = hsp;
@@ -18,16 +18,16 @@ function scr_taunt()
 		image_index = irandom(image_number - 1);
         instance_create(x, y, obj_taunteffect)
 	}
-	if (taunt_delay > 0)
+	if (global.taunt_delay > 0)
 	{
 		taunted = true;
-		taunt_delay--
+		global.taunt_delay--
 		image_speed = 0;
 		movespeed = 0;
 		hsp = 0;
 		vsp = 0;
 	}
-	else if (taunt_delay <= 0 && taunted)
+	else if (global.taunt_delay <= 0 && taunted)
 	{
 		taunted = false;
 		set_spr(saved_sprite);

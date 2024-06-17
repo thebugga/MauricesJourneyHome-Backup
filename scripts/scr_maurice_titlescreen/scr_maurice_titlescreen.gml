@@ -9,7 +9,6 @@ debug = false;
 censormode = false;
 scr_characterspr()
 depth = -100;
-taunt_delay = 0;
 saved_sprite = sprite_index;
 saved_imagespeed = image_speed;
 saved_hsp = hsp;

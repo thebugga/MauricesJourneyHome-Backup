@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sfx_ELEVATOR",
+  "%Name":"sfx_mach3_1",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":2,
   "conversionMode":0,
   "duration":60.894333,
-  "name":"sfx_ELEVATOR",
+  "name":"sfx_mach3_1",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_ELEVATOR.wav",
+  "soundFile":"sfx_mach3_1.wav",
   "type":0,
   "volume":1.0,
 }

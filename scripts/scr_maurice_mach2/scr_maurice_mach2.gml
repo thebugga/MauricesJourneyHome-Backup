@@ -26,8 +26,10 @@ function scr_maurice_mach()
 	{
 		state = states.mach3
 		sprite_index = spr_mach3
-	    audio_play_sound(sfx_mach3,10,true)
-	    audio_stop_sound(sfx_mach2)
+	event_path = fmod_studio_system_get_event("event:/sfx/maurice/mach");
+	event = fmod_studio_event_description_create_instance(event_path);
+	fmod_studio_event_instance_start(event);
+		fmod_studio_event_instance_set_parameter_by_id(event,state,3)
 	}
     if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach1)
 		sprite_index = spr_mach
@@ -134,7 +136,9 @@ function scr_maurice_mach3()
 		image_speed = 0.25
 		sprite_index = spr_mach3turn
 		state = states.slide
-		scr_soundeffect(sfx_machslide)
+	event_path = fmod_studio_system_get_event("event:/sfx/maurice/machslide");
+	event = fmod_studio_event_description_create_instance(event_path);
+	fmod_studio_event_instance_start(event);
 	}
 	if xscale == -1 && key_right2 && grounded
 	{
@@ -142,7 +146,9 @@ function scr_maurice_mach3()
 		image_speed = 0.25
 		sprite_index = spr_mach3turn
 		state = state = states.slide
-		scr_soundeffect(sfx_machslide)
+	event_path = fmod_studio_system_get_event("event:/sfx/maurice/machslide");
+	event = fmod_studio_event_description_create_instance(event_path);
+	fmod_studio_event_instance_start(event);
 	}
 	if !key_run && (sprite_index != spr_machjump || sprite_index != spr_machjumpfall) && grounded
 	{

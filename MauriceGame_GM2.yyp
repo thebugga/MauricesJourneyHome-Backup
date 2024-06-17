@@ -175,6 +175,7 @@
     {"id":{"name":"hub_elevator","path":"rooms/hub_elevator/hub_elevator.yy",},},
     {"id":{"name":"hub_entrance","path":"rooms/hub_entrance/hub_entrance.yy",},},
     {"id":{"name":"hub_outside","path":"rooms/hub_outside/hub_outside.yy",},},
+    {"id":{"name":"hub_pizzatwoercomplex","path":"rooms/hub_pizzatwoercomplex/hub_pizzatwoercomplex.yy",},},
     {"id":{"name":"hub_tutorial1","path":"rooms/hub_tutorial1/hub_tutorial1.yy",},},
     {"id":{"name":"rank_room","path":"rooms/rank_room/rank_room.yy",},},
     {"id":{"name":"Realtitlescreen","path":"rooms/Realtitlescreen/Realtitlescreen.yy",},},
@@ -382,6 +383,7 @@
     {"roomId":{"name":"hub_entrance","path":"rooms/hub_entrance/hub_entrance.yy",},},
     {"roomId":{"name":"hub_elevator","path":"rooms/hub_elevator/hub_elevator.yy",},},
     {"roomId":{"name":"hub_tutorial1","path":"rooms/hub_tutorial1/hub_tutorial1.yy",},},
+    {"roomId":{"name":"hub_pizzatwoercomplex","path":"rooms/hub_pizzatwoercomplex/hub_pizzatwoercomplex.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

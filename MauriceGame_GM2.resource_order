@@ -121,6 +121,7 @@
     {"name":"hub_elevator","order":12,"path":"rooms/hub_elevator/hub_elevator.yy",},
     {"name":"hub_entrance","order":11,"path":"rooms/hub_entrance/hub_entrance.yy",},
     {"name":"hub_outside","order":4,"path":"rooms/hub_outside/hub_outside.yy",},
+    {"name":"hub_pizzatwoercomplex","order":14,"path":"rooms/hub_pizzatwoercomplex/hub_pizzatwoercomplex.yy",},
     {"name":"hub_tutorial1","order":13,"path":"rooms/hub_tutorial1/hub_tutorial1.yy",},
     {"name":"rank_room","order":3,"path":"rooms/rank_room/rank_room.yy",},
     {"name":"rm_intro","order":1,"path":"rooms/rm_intro/rm_intro.yy",},

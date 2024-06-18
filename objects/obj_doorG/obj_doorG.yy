@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Doors",
-    "path":"folders/Fmod Demo/Objects/Warps/Doors.yy",
+    "path":"folders/Objects/Warps/Doors.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -15,6 +15,7 @@ enum states
 	debugstate,
 	slide,
 	roll,
+	actor
 }
 xscale = 1;
 idle = 0
@@ -53,9 +54,29 @@ yscale = 1
 state = states.normal;
 image_speed = 0.35
 machshit = 0
+can_jump = false;
 buffer_counter = 0
 buffer_max = 8
+input_buffer_jump = 8
+input_buffer_secondjump = 8
+input_buffer_highjump = 8
+input_buffer_walljump = 0
+input_buffer_slap = 8
+input_attack_buffer = 0
+input_finisher_buffer = 0
+input_up_buffer = 0
+input_down_buffer = 0
 terminalVelocity = 20
+pepperman_accel = 0.25
+pepperman_deccel = 0.5
+pepperman_accel_air = 0.15
+pepperman_deccel_air = 0.25
+pepperman_maxhsp_normal = 6
+pepperman_jumpspeed = 11
+pepperman_grabID = -4
+shoulderbash_mspeed_start = 12
+shoulderbash_mspeed_loop = 10
+shoulderbash_jumpspeed = 11
 saved_movespeed = movespeed;
 scr_characterspr()
 

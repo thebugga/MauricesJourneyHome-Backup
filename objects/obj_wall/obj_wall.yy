@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Collision",
-    "path":"folders/Fmod Demo/Objects/Level Structure/Collision.yy",
+    "path":"folders/Objects/Level Structure/Collision.yy",
   },
   "parentObjectId":{
     "name":"obj_bumpable",

@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Parents",
-    "path":"folders/Fmod Demo/Objects/Unown Collisions/Parents.yy",
+    "path":"folders/Objects/Unown Collisions/Parents.yy",
   },
   "parentObjectId":null,
   "persistent":false,

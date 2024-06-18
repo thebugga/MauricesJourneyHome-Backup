@@ -12,6 +12,7 @@ function scr_maurice_normal(){
 				steppybuffer--;
 			else
 			{
+				create_particle(x, y + 43, particles.cloudeffect, 0);
 				steppybuffer = 8;
 	event_path = fmod_studio_system_get_event("event:/sfx/maurice/step");
 	event = fmod_studio_event_description_create_instance(event_path);
@@ -40,7 +41,7 @@ function scr_maurice_normal(){
 
 		if hsp != 0
 			sprite_index = spr_move;
-		else
+		else if sprite_index != spr_maurice_taunt
 			sprite_index = spr_idle;
 		if key_jump2 && grounded 
 		{

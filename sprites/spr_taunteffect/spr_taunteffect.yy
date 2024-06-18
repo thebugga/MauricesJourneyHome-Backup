@@ -34,7 +34,7 @@
   "origin":4,
   "parent":{
     "name":"effects and particles",
-    "path":"folders/Fmod Demo/Objects/effects and particles.yy",
+    "path":"folders/Objects/effects and particles.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

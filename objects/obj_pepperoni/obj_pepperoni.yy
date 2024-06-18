@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Fmod Demo/Objects.yy",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_baddie",

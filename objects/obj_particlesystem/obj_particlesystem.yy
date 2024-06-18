@@ -14,7 +14,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Controllers",
-    "path":"folders/Fmod Demo/Objects/General/Controllers.yy",
+    "path":"folders/Objects/General/Controllers.yy",
   },
   "parentObjectId":null,
   "persistent":true,

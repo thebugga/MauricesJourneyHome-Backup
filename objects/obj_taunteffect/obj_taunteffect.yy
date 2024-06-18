@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"effects and particles",
-    "path":"folders/Fmod Demo/Objects/effects and particles.yy",
+    "path":"folders/Objects/effects and particles.yy",
   },
   "parentObjectId":null,
   "persistent":false,

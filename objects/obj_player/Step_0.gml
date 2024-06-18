@@ -40,6 +40,9 @@ switch state
 	case states.roll:
 	    scr_maurice_roll();
 		break;
+	case states.actor:
+	    scr_maurice_actor()
+		break
 }
 if ((y > (room_height + 300) || y < -800))
 {

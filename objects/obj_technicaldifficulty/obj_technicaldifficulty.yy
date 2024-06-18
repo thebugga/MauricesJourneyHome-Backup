@@ -15,7 +15,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Cutscenes",
-    "path":"folders/Fmod Demo/Objects/Cutscenes.yy",
+    "path":"folders/Objects/Cutscenes.yy",
   },
   "parentObjectId":null,
   "persistent":false,

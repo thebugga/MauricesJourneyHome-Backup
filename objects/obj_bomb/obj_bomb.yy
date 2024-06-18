@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Gimmicks",
-    "path":"folders/Fmod Demo/Objects/Level Structure/Gimmicks.yy",
+    "path":"folders/Objects/Level Structure/Gimmicks.yy",
   },
   "parentObjectId":null,
   "persistent":false,

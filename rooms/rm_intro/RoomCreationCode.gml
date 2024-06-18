@@ -6,3 +6,5 @@ global.seconds = 10
 global.minutes = 0
 window_set_fullscreen(true)
 window_enable_borderless_fullscreen(true)
+obj_player.state = states.titlescreen
+obj_player.visible = false

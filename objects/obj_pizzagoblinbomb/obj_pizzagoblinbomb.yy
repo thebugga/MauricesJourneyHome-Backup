@@ -34,12 +34,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bomb",
-    "path":"sprites/spr_bomb/spr_bomb.yy",
+    "name":"bg_srollingmenu",
+    "path":"sprites/bg_srollingmenu/bg_srollingmenu.yy",
   },
   "spriteMaskId":{
-    "name":"spr_bomb",
-    "path":"sprites/spr_bomb/spr_bomb.yy",
+    "name":"bg_srollingmenu",
+    "path":"sprites/bg_srollingmenu/bg_srollingmenu.yy",
   },
   "visible":true,
 }

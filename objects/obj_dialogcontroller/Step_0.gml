@@ -11,6 +11,17 @@ else
     }
     else if obj_player.key_jump2
     {
+if (currentpos < string_length(currenttext))
+{
+    while (currentpos <= string_length(currenttext))
+    {
+        currentpos++
+        displaytext = string_insert(string_char_at(currenttext, currentpos), displaytext, (string_length(displaytext) + 1))
+        displaytext = scr_separate_text(displaytext)
+    }
+}
+else
+{
         if (currentdialog < (array_length(dialog) - 1))
         {
             currentdialog += 1
@@ -22,33 +33,22 @@ else
             dialogheight = scr_calculate_height(currenttext)
             dialogcharacter = dialog[currentdialog][1]
             dialogexpression = dialog[currentdialog][2]
-			
             var func = dialog[currentdialog][3]
 
             if (func != -4)
             {
-                if (npcID != noone && instance_exists(npcID))
-                {
-                    with (npcID)
-                        method(id, func)()
-                }
-                else
-                    method(id, func)()
+				collect_shake = 1
             }
+			else{
+				collect_shake = 0
+			}
         }
         else
             instance_destroy()
     }
+  }
 }
-if (currentpos < string_length(currenttext) && obj_player.key_jump2)
-{
-    while (currentpos <= string_length(currenttext))
-    {
-        currentpos++
-        displaytext = string_insert(string_char_at(currenttext, currentpos), displaytext, (string_length(displaytext) + 1))
-        displaytext = scr_separate_text(displaytext)
-    }
-}
+
 	if currentpos < string_length(currenttext)
 	{
 	if (talk_sprites[dialogcharacter][dialogexpression][1] != -4 && dialogsprite != talk_sprites[dialogcharacter][dialogexpression][3])
@@ -79,4 +79,11 @@ if floor(dialogindex) >= (sprite_get_number(dialogsprite) - 1)
 if (dialogsprite == talk_sprites[dialogcharacter][dialogexpression][2] || dialogsprite == talk_sprites[dialogcharacter][dialogexpression][3])
 dialogsprite = talk_sprites[dialogcharacter][dialogexpression][0]
 dialogindex = 0
+}
+for (var i = 0; i < 4; i++)
+{
+if dialogsidel[i] == dialogcharacter
+dialogcharx = (rpadding + (75 * i))
+else if dialogsider[i] == dialogcharacter
+dialogcharx = ((960 - rpadding) - (75 * i))
 }

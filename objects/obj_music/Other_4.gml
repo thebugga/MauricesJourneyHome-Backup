@@ -32,6 +32,7 @@ function add_music(_room, _event, _eventsecret, _continuous, _on_room_start = no
 
 
 
+add_music(titscreen, "event:/music/title", noone, false);
 add_music(hub_entrance, "event:/music/hub", noone, false);
 add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
 add_music(wizard_1, "event:/music/wizardry", noone, false);

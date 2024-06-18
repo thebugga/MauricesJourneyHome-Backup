@@ -1,8 +1,10 @@
-function do_dialog(argument0) //do_dialog
+function do_dialog(argument0, argument1, argument2) //do_dialog
 {
     with (instance_create(x, y, obj_dialogcontroller))
     {
         npcID = other.id
+        dialogsidel = argument1
+        dialogsider = argument2
         dialog = argument0
         dialogcharacter = dialog[0][1]
         dialogexpression = dialog[0][2]
@@ -22,9 +24,8 @@ function do_dialog(argument0) //do_dialog
 
 function npc_do_dialog() //npc_do_dialog
 {
-    do_dialog(dialog)
+    do_dialog(dialog,dialogsidel,dialogsider)
 }
-
 
 function do_dialog_cutscene(argument0, argument1=0, argument2=0) //do_dialog_cutscene
 {

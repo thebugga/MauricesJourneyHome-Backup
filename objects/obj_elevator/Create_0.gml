@@ -4,4 +4,6 @@ audio_stop_all()
 scr_soundeffect(sfx_mach3_1)
 brown = false;
 brownfade = 0;
-alarm[2] = 700;
+alarm[2] = 70 0;
+spr_elevator = spr_haha
+spr_maurice = spr_haha_1

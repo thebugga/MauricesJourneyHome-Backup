@@ -63,3 +63,28 @@ function trace()
 		_string += string(argument[i]);
 	show_debug_message(_string);
 }
+function bbox_in_camera(camera, threshold = 0)
+{
+	var cam_x = camera_get_view_x(camera);
+	var cam_y = camera_get_view_y(camera);
+	var cam_w = camera_get_view_width(camera);
+	var cam_h = camera_get_view_height(camera);
+	return bbox_left < (cam_x + cam_w + threshold) && bbox_right > (cam_x - threshold) && bbox_top < (cam_y + cam_h + threshold) && bbox_bottom > (cam_y - threshold);
+}
+function Approach(a, b, amount)
+{
+	// source: https://www.youtube.com/watch?v=2FroAhEsuE8
+	if a < b
+	{
+		a += amount;
+		if a > b
+			return b;
+	}
+	else
+	{
+		a -= amount;
+		if a < b
+			return b;
+	}
+	return a;
+}

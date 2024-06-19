@@ -36,7 +36,7 @@ global.afterimage_list = ds_list_create();
 		visible: true,
 		identifier: afterimage.mach3effect,
 		playerid: obj_player,
-		alpha: 1
+		alpha: 1,
 	};
 	if _afterimage
 		q.identifier = afterimage.simple;

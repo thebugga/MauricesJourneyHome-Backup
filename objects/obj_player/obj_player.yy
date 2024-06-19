@@ -43,5 +43,5 @@
     "name":"spr_maurice_mask",
     "path":"sprites/spr_maurice_mask/spr_maurice_mask.yy",
   },
-  "visible":true,
+  "visible":false,
 }

@@ -1,19 +1,99 @@
 function scr_maurice_mach()
 {
-    movespeed += 0.5
-    hsp = xscale * movespeed
-    move = key_right + key_left
-        sprite_index = spr_maurice_mach
-    if (sprite_index == spr_maurice_mach && (!key_run))
+	if sprite_index == spr_mach1 || sprite_index == spr_machjump || sprite_index == spr_machjumpfall || sprite_index == spr_walljump || sprite_index == spr_walljumpfall{
+		image_speed = 0.35
+	}else
+		image_speed = 0.45  
+	hsp = xscale * movespeed
+	if (place_meeting(x + (1 * xscale), y, obj_solid) && (!grounded || groundedSlope))
+	{
+		wallspeed = movespeed
+		state = states.runwall
+	}
+	if key_down
+	{
+		state = states.roll
+	}
+    if (movespeed < 12) && (sprite_index != spr_machjump && sprite_index != spr_machjumpfall) && sprite_index != spr_machturn
     {
-        state = states.normal
-        image_index = 0
-    }
-    if place_meeting((x + xscale), y, obj_solid)
-        state = states.normal
-    if (movespeed >= 12)
-        movespeed = 12
-    image_speed = 0.35
+		movespeed += 0.1
+	}
+	if movespeed == 12 && machshit != 6 && (sprite_index != spr_machjump && sprite_index != spr_machjumpfall) && sprite_index != spr_machturn && grounded
+	{
+		machshit += 0.25
+	}
+	if machshit == 6
+	{
+		state = states.mach3
+		sprite_index = spr_mach3
+	event_path = fmod_studio_system_get_event("event:/sfx/maurice/mach");
+	event = fmod_studio_event_description_create_instance(event_path);
+	fmod_studio_event_instance_start(event);
+		fmod_studio_event_instance_set_parameter_by_id(event,state,3)
+	}
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach1)
+		sprite_index = spr_mach
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_machjump)
+		sprite_index = spr_machjumpfall
+	if !key_run && (sprite_index != spr_machjump || sprite_index != spr_machjumpfall) && grounded
+	{
+		image_index = 0 
+		sprite_index = spr_idle
+		state = states.normal
+	}
+	if (sprite_index == spr_machjump || sprite_index == spr_machjumpfall || sprite_index == spr_walljump || sprite_index == spr_walljumpfall) && grounded
+	{
+		image_index = 2
+		sprite_index = spr_mach
+	}
+	if key_jump2 && grounded && sprite_index != spr_machturn
+	{
+		image_index = 0
+		sprite_index = spr_machjump
+		vsp = -9
+	}
+	if xscale == 1 && key_left2 && grounded
+	{
+		image_index = 0
+		image_speed = 0.25
+		sprite_index = spr_machturn
+		state = states.slide
+	}
+	if xscale == -1 && key_right2 && grounded
+	{
+		image_index = 0
+		image_speed = 0.25
+		sprite_index = spr_machturn
+		state = states.slide
+	}
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_machturn)
+	{
+		sprite_index = spr_mach
+		if xscale == 1
+			xscale = -1
+		else
+			xscale = 1
+		movespeed = 8
+	}
+	if !grounded && sprite_index != spr_machjump
+	{
+		sprite_index = spr_machjumpfall
+	}
+	if ((floor(image_index) == (image_number - 1) && sprite_index == spr_walljump))
+	{
+		sprite_index = spr_walljumpfall
+	}
+	if place_meeting_collision(x + (1 * xscale), y, obj_slope)
+	{
+		state = states.normal
+		sprite_index = spr_idle
+	}
+	if key_attack2 && grounded {
+		set_spr(choose(spr_nickel1, spr_nickel2))
+		hsp = 0
+		audio_play_sound(sfx_sack, 1, true)
+		state = states.nickel;
+	}
 }
 function scr_maurice_mach3()
 {
@@ -88,14 +168,41 @@ function scr_maurice_mach3()
 }
 function scr_maurice_machslide()
 {
-    hsp = xscale * movespeed
-    if (sprite_index == spr_mach3turn && floor(image_index) == (image_number - 1) && (key_run))
-    {
-        movespeed = 12
-        state = states.mach
-        sprite_index = spr_mach
-        image_index = 0
-        xscale *= -1
+	hsp = xscale * movespeed
+	if sprite_index == spr_machturn || sprite_index == spr_mach3turn
+	{
+		if movespeed > 0 && movespeed > 0
+		movespeed -= 0.45
 	}
+	if sprite_index == spr_machslide
+	{
+		if movespeed > 0 && movespeed > 0
+		movespeed -= 0.35
+	}
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_machturn) && grounded
+	{
+		sprite_index = spr_mach
+		state = states.mach
+		xscale *= -1
+		movespeed = 8
+		machshit = 0
+	}
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach3turn) && grounded
+	{
+		sprite_index = spr_mach3
+		state = states.mach3
+		if xscale == 1
+			xscale = -1
+		else
+			xscale = 1
+		movespeed = 12
+	}
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_machslide)
+	{
+		movespeed = 0
+		sprite_index = spr_idle
+		state = states.normal
+	}
+	scr_taunt();
 
 }

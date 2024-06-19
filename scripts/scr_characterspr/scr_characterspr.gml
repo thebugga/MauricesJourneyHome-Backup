@@ -23,6 +23,7 @@ function scr_characterspr()
 		spr_mach3jump = spr_maurice_mach3jump
 		spr_mach3hit = spr_maurice_mach3hit
 		spr_mach3turn = spr_maurice_mach3turn
+		spr_machslidestart = spr_maurice_machslidestart
 		spr_machslide = spr_maurice_machslide
 		spr_machjump = spr_maurice_machjump
 		spr_climbwall = spr_maurice_runwall
@@ -31,6 +32,7 @@ function scr_characterspr()
 		spr_dive = spr_maurice_dive
 		spr_nickel1 = spr_maurice_nickel1;
 		spr_nickel2 = spr_maurice_kill;
+		spr_palette = spr_mauricepalette
 	}
 	if (character == "D")
 	{

@@ -2,6 +2,24 @@
 scr_collision()
 scr_getinput();
 	
+// input buffers and coyote time
+if key_attack2
+	input_buffer_shoot = 10;
+if key_attack2
+	input_buffer_slap = 12;
+if key_jump
+	input_buffer_jump = 15;
+if key_down2
+	input_buffer_down = 15;
+if key_run2
+	input_buffer_mach = 15;
+
+if grounded && vsp > 0
+	coyote_time = 8;
+if vsp < 0
+	coyote_time = 0;
+can_jump = (grounded && vsp > 0) || (coyote_time && vsp > 0);
+
 switch state
 {
 	case states.normal:
@@ -57,6 +75,27 @@ if ((y > (room_height + 300) || y < -800))
 			vsp = 10;
 		}
 }
+if (state == states.mach3 || state == states.mach)
+{
+		macheffect = true;
+		toomuchalarm1 = 6;
+}
+if toomuchalarm1 > 0
+{
+	toomuchalarm1 -= 1;
+	if (state == states.mach3 || state == states.mach )
+	{
+		with (create_mach3effect(x, y, sprite_index, image_index - 1))
+		{
+			playerid = other.object_index;
+			image_xscale = other.xscale;
+		}
+		toomuchalarm1 = 6;
+	}
+}
+
+if coyote_time > 0
+	coyote_time--;
 image_xscale = xscale
 scr_characterspr()
 scr_playersounds()

@@ -2,7 +2,7 @@ var _w = 960
 var _h = 540
 var ds_h = 0
 display_set_gui_size(_w, _h)
-font = font_add_sprite_ext(spr_font,"abcdefghijklmnopqrstuvwxyz!.1234567890:", 1, 0)
+font = font_add_sprite_ext(spr_truefont,"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz!.1234567890:()?[]&", 1, 0)
 draw_set_font(font)
 var x1 = rpadding
 var y1 = (_h - (((dialogheight + rpadding) + (padding * 2)) + ds_h))

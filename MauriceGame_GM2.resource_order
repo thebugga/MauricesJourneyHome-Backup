@@ -159,7 +159,6 @@
     {"name":"obj_transfotip","order":3,"path":"objects/obj_transfotip/obj_transfotip.yy",},
     {"name":"obj_tv","order":9,"path":"objects/obj_tv/obj_tv.yy",},
     {"name":"obj_vsscreen","order":65,"path":"objects/obj_vsscreen/obj_vsscreen.yy",},
-    {"name":"objNekoPresenceDemo","order":54,"path":"objects/objNekoPresenceDemo/objNekoPresenceDemo.yy",},
     {"name":"characterselect","order":13,"path":"rooms/characterselect/characterselect.yy",},
     {"name":"hub_entrance","order":10,"path":"rooms/hub_entrance/hub_entrance.yy",},
     {"name":"hub_outside","order":3,"path":"rooms/hub_outside/hub_outside.yy",},

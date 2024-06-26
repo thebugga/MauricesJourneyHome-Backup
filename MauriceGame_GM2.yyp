@@ -127,7 +127,6 @@
   "name":"MauriceGame_GM2",
   "resources":[
     {"id":{"name":"FMOD","path":"extensions/FMOD/FMOD.yy",},},
-    {"id":{"name":"NekoPresence","path":"extensions/NekoPresence/NekoPresence.yy",},},
     {"id":{"name":"font_console","path":"fonts/font_console/font_console.yy",},},
     {"id":{"name":"font1","path":"fonts/font1/font1.yy",},},
     {"id":{"name":"font2","path":"fonts/font2/font2.yy",},},
@@ -227,7 +226,6 @@
     {"id":{"name":"obj_tv","path":"objects/obj_tv/obj_tv.yy",},},
     {"id":{"name":"obj_vsscreen","path":"objects/obj_vsscreen/obj_vsscreen.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
-    {"id":{"name":"objNekoPresenceDemo","path":"objects/objNekoPresenceDemo/objNekoPresenceDemo.yy",},},
     {"id":{"name":"par_collision","path":"objects/par_collision/par_collision.yy",},},
     {"id":{"name":"characterselect","path":"rooms/characterselect/characterselect.yy",},},
     {"id":{"name":"hub_entrance","path":"rooms/hub_entrance/hub_entrance.yy",},},

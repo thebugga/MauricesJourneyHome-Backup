@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":2.774694,
   "name":"sfx_pizzamancer1",
   "parent":{
     "name":"Sounds",

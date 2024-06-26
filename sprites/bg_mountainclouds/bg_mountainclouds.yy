@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"bg_mountainclouds",
   "bboxMode":0,
-  "bbox_bottom":446,
+  "bbox_bottom":396,
   "bbox_left":0,
   "bbox_right":959,
   "bbox_top":0,

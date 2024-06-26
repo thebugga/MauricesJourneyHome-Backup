@@ -5,7 +5,7 @@ saveselect++
 if obj_player.key_jump2 && cooldown == 0
 {
 global.savefile = saveselect
-room = hub_outside
+room = characterselect
 }
 if cooldown > 0 
 cooldown--

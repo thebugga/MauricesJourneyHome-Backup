@@ -1,9 +1,16 @@
-image_speed = 0.5
-alarm[0] = 800
-audio_stop_all()
-scr_soundeffect(sfx_mach3_1)
-brown = false;
-brownfade = 0;
-alarm[2] = 70 0;
-spr_elevator = spr_haha
-spr_maurice = spr_haha_1
+image_speed = 0.35
+trapdoor = false
+visited = 0
+depth = 2
+targetDoor = "A"
+collect_shake = 1;
+showinside = false
+fadein = false
+trapopen = false
+charsprite = spr_haha_1
+charindex = 0
+elavatorsprite = spr_haha
+chary = 0
+charvely = 0
+trapdoor = true
+fadealpha = 0   

@@ -9,7 +9,7 @@ else
         displaytext = scr_separate_text(displaytext)
         textbuffer = textspeed
     }
-    else if obj_player.key_jump2
+    else if obj_player1.key_jump2
     {
 if (currentpos < string_length(currenttext))
 {
@@ -29,7 +29,7 @@ else
             textbuffer = textspeed
             displaytext = ""
             currenttext = scr_calculate_text(dialog[currentdialog][0])
-            obj_player.key_jump = 0
+            obj_player1.key_jump = 0
             dialogheight = scr_calculate_height(currenttext)
             dialogcharacter = dialog[currentdialog][1]
             dialogexpression = dialog[currentdialog][2]

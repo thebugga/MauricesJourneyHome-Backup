@@ -1,6 +1,6 @@
-if (instance_exists(obj_player))
+if (instance_exists(obj_player1))
 {
-    var target = obj_player;
+    var target = obj_player1;
 	var view = view_camera[0];
 	var cam_width = 960;
 	var cam_height = 540;

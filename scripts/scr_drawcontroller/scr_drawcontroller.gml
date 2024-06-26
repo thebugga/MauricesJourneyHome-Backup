@@ -1,13 +1,24 @@
 function draw_player()
 {
 	var b = get_dark(image_blend, other.use_dark);
-	var pattern = global.palettetexture;
 	var ps = paletteselect;
 	var spr = spr_palette;
-	if object_index == obj_player
-		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, xscale * scale_xs, yscale * scale_ys, pattern);
-	pal_swap_set(spr, ps, false);
+	shader_set(global.Pal_Shader);
+	pal_swap_set(spr_mauricepalette, 0);
 	draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+}
+function draw_enemy(healthbar, palette, color = c_white)
+{
+		var b = get_dark(image_blend, obj_drawcontroller.use_dark);
+		var _stun = 0;
+	    var _ys = 1;
+		draw_sprite_ext(sprite_index, image_index, x, y + _stun, 1 * image_xscale, 1 * _ys, 0, b, image_alpha);
+		if healthbar
+		{
+			if hp > maxhp
+				maxhp = hp;
+			draw_healthbar(x - 16, y - 50, x + 16, y - 45, (hp / maxhp) * 100, 0, 255, 255, 0, true, true);
+		}
 }
 function get_dark(blend, use_dark, use_position = false, posX = 0, posY = 0)
 {

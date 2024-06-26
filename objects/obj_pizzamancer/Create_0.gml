@@ -1,8 +1,12 @@
-maxspeed = 5;
+maxspeed = 8;
 image_speed = 0.35;
-depth = -5
-x = obj_player.x;
-y = obj_player.y;
+depth = -5;
+savedcx = camera_get_view_x(view_camera[0]);
+savedcy = camera_get_view_y(view_camera[0]);
+savedx = x;
+savedy = y;
+x = obj_player1.x;
+y = obj_player1.y;
+alarm[1] = 10;
 image_alpha = 0;
-audio_play_sound(sfx_pizzamancer1,1,false)
-mask_index = spr_player_mask;
+treasure = false;

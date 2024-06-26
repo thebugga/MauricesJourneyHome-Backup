@@ -82,7 +82,18 @@ function scr_maurice_normal(){
 				movespeed = 5
 		}
 	scr_taunt();
-
+	if (key_shoot2 && character == "M" && (!grounded))
+    {
+        state = states.punch
+        sprite_index = choose(spr_player_kungfuair1, spr_player_kungfuair1transition, spr_player_kungfuair3)
+        image_index = 0
+    }
+    if (key_shoot2 && character == "M" && grounded)
+    {
+        state = states.punch
+        sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3)
+        image_index = 0
+    }
 	if key_attack2 && grounded {
 		set_spr(choose(spr_nickel1, spr_nickel2))
 		hsp = 0

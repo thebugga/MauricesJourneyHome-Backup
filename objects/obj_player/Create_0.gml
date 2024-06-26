@@ -1,5 +1,5 @@
 scr_collision_init()
-scr_initinput();
+input_init();
 enum states
 {
 	normal,
@@ -15,13 +15,21 @@ enum states
 	debugstate,
 	slide,
 	roll,
-	actor
+	actor,
+	punch
 }
 xscale = 1;
 idle = 0
+mach4mode = false;
+launch = false;
 steppybuffer = 0;
 flash = false;
+dashcloudid = obj_blank;
 global.palettetexture = -4;
+usepalette = true
+global.comboscore = 0
+global.savedcomboscore = 0
+global.stylethreshold = false
 global.kungfu = false
 hallway = 0
 hallwaydirection = 0
@@ -29,8 +37,9 @@ macheffect = false;
 scale_xs = 1;
 scale_ys = 1;
 angle = 0;
-paletteselect = 1;
+paletteselect = 4;
 toomuchalarm1 = 0;
+spr_palette = spr_mauricepalette
 move = 0;
 coyote_time = 0;
 yscale = 1;

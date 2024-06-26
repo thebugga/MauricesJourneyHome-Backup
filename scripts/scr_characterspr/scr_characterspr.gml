@@ -18,7 +18,7 @@ function scr_characterspr()
 		spr_walljumpfall = spr_maurice_idle
 		spr_mach = spr_maurice_mach2
 		spr_mach1 = spr_maurice_mach2
-		spr_machturn = spr_maurice_machturn
+		spr_machturn = spr_maurice_eyesfuckedup
 		spr_mach3 = spr_maurice_mach3
 		spr_mach3jump = spr_maurice_mach3jump
 		spr_mach3hit = spr_maurice_mach3hit
@@ -32,7 +32,6 @@ function scr_characterspr()
 		spr_dive = spr_maurice_dive
 		spr_nickel1 = spr_maurice_nickel1;
 		spr_nickel2 = spr_maurice_kill;
-		spr_palette = spr_mauricepalette
 	}
 	if (character == "D")
 	{
@@ -63,5 +62,95 @@ function scr_characterspr()
 		spr_dive = spr_dragonmount_idle
 		spr_nickel1 = spr_dragonmount_idle;
 		spr_nickel2 = spr_dragonmount_idle;
+	}
+	if (character == "C")
+	{
+		spr_idle = spr_chiefparmesan;
+		spr_move = spr_chiefparmesan;
+		spr_jump = spr_chiefparmesan;
+		spr_fall = spr_chiefparmesan
+		spr_land = spr_chiefparmesan
+		spr_land2 = spr_chiefparmesan
+		spr_lookdoor = spr_chiefparmesan
+		spr_walkfront = spr_chiefparmesan
+		spr_downpizzabox = spr_chiefparmesan
+		spr_uppizzabox = spr_chiefparmesan
+		spr_walljump = spr_chiefparmesan
+		spr_walljumpfall = spr_chiefparmesan
+		spr_mach = spr_chiefparmesan
+		spr_mach1 = spr_chiefparmesan
+		spr_machturn = spr_chiefparmesan
+		spr_mach3 = spr_chiefparmesan
+		spr_mach3jump = spr_chiefparmesan
+		spr_mach3hit = spr_chiefparmesan
+		spr_mach3turn = spr_chiefparmesan
+		spr_machslide = spr_chiefparmesan
+		spr_machjump = spr_chiefparmesan
+		spr_climbwall = spr_chiefparmesan
+		spr_machjumpfall = spr_chiefparmesan
+		spr_roll = spr_chiefparmesan
+		spr_dive = spr_chiefparmesan
+		spr_nickel1 = spr_chiefparmesan;
+		spr_nickel2 = spr_chiefparmesan;
+	}
+	if (character == "P")
+	{
+		spr_idle = spr_pizzaboy_idle;
+		spr_move = spr_pizzaboy_idle;
+		spr_jump = spr_pizzaboy_idle;
+		spr_fall = spr_pizzaboy_idle
+		spr_land = spr_pizzaboy_idle
+		spr_land2 = spr_pizzaboy_idle
+		spr_lookdoor = spr_pizzaboy_idle
+		spr_walkfront = spr_pizzaboy_idle
+		spr_downpizzabox = spr_pizzaboy_idle
+		spr_uppizzabox = spr_pizzaboy_idle
+		spr_walljump = spr_pizzaboy_idle
+		spr_walljumpfall = spr_pizzaboy_idle
+		spr_mach = spr_pizzaboy_idle
+		spr_mach1 = spr_pizzaboy_idle
+		spr_machturn = spr_pizzaboy_idle
+		spr_mach3 = spr_pizzaboy_idle
+		spr_mach3jump = spr_pizzaboy_idle
+		spr_mach3hit = spr_pizzaboy_idle
+		spr_mach3turn = spr_pizzaboy_idle
+		spr_machslide = spr_pizzaboy_idle
+		spr_machjump = spr_pizzaboy_idle
+		spr_climbwall = spr_pizzaboy_idle
+		spr_machjumpfall = spr_pizzaboy_idle
+		spr_roll = spr_pizzaboy_idle
+		spr_dive = spr_pizzaboy_idle
+		spr_nickel1 = spr_pizzaboy_idle;
+		spr_nickel2 = spr_pizzaboy_idle;
+	}
+	if (character == "PM")
+	{
+		spr_idle = spr_pepperman_idle;
+		spr_move = spr_pepperman_idle;
+		spr_jump = spr_pepperman_idle;
+		spr_fall = spr_pepperman_idle
+		spr_land = spr_pepperman_idle
+		spr_land2 = spr_pepperman_idle
+		spr_lookdoor = spr_pepperman_idle
+		spr_walkfront = spr_pepperman_idle
+		spr_downpizzabox = spr_pepperman_idle
+		spr_uppizzabox = spr_pepperman_idle
+		spr_walljump = spr_pepperman_idle
+		spr_walljumpfall = spr_pepperman_idle
+		spr_mach = spr_pepperman_idle
+		spr_mach1 = spr_pepperman_idle
+		spr_machturn = spr_pepperman_idle
+		spr_mach3 = spr_pepperman_idle
+		spr_mach3jump = spr_pepperman_idle
+		spr_mach3hit = spr_pepperman_idle
+		spr_mach3turn = spr_pepperman_idle
+		spr_machslide = spr_pepperman_idle
+		spr_machjump = spr_pepperman_idle
+		spr_climbwall = spr_pepperman_idle
+		spr_machjumpfall = spr_pepperman_idle
+		spr_roll = spr_pepperman_idle
+		spr_dive = spr_pepperman_idle
+		spr_nickel1 = spr_pepperman_idle;
+		spr_nickel2 = spr_pepperman_idle;
 	}
 }

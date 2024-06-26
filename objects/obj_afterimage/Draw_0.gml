@@ -74,7 +74,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a);
 			if shd
 			{
-				pattern_reset();
+				
 				shader_reset();
 			}
 		}

@@ -23,3 +23,4 @@ else if global.panic == false
     panic_instance_ref = fmod_studio_event_description_create_instance(panic_instance);
 	fmod_studio_event_instance_set_paused(panic_instance_ref, FMOD_STUDIO_STOP_MODE.ALLOWFADEOUT);
 }
+

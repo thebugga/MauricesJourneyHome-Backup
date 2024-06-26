@@ -1,0 +1,3 @@
+pal_swap_init_system(shd_pal_swapper)
+global.roommessage = "PICK A PIZZA GUY"
+obj_player.state = states.titlescreen

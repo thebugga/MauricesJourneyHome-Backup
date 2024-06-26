@@ -1,5 +1,6 @@
 function scr_taunt()
 {
+
 	if (state == states.nickel)
 		exit;
 	if (key_taunt2 && !taunted)

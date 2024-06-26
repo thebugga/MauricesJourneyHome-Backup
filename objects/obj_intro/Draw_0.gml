@@ -12,9 +12,9 @@ else if (_status == -1)
 	video_close();
 	room_goto(titscreen);
 }
-if (key_jump2 && !show)
+if (obj_player1.key_jump2 && !show)
 	show = true;
-else if (key_jump2 && show)
+else if (obj_player1.key_jump2 && show)
 {
 	video_close();
 	room_goto(titscreen);

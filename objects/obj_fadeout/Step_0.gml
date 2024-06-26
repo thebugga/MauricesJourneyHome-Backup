@@ -1,13 +1,21 @@
 if (fadealpha > 1)
 {
     fadein = 1
-    if instance_exists(obj_player)
+    if instance_exists(obj_player1)
     {
-        with (obj_player)
+        with (obj_player1)
         {
         }
-        if (room != obj_player.target_room)
-            room_goto(obj_player.target_room)
+        if (room != obj_player1.target_room)
+            room_goto(obj_player1.target_room)
+    }
+    if instance_exists(obj_player2)
+    {
+        with (obj_player2)
+        {
+        }
+        if (room != obj_player2.target_room)
+            room_goto(obj_player1.target_room)
     }
 }
 if (fadein == 0)

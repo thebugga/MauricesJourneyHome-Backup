@@ -1,7 +1,6 @@
 //whuh?_call
 scr_collision()
-scr_getinput();
-	
+input_get();
 // input buffers and coyote time
 if key_attack2
 	input_buffer_shoot = 10;
@@ -29,7 +28,7 @@ switch state
 		scr_maurice_jump();
 		break;
 	case states.mach:
-		scr_maurice_mach();
+		scr_maurice_mach3();
 		break
 	case states.mach3:
 		scr_maurice_mach3();
@@ -61,19 +60,9 @@ switch state
 	case states.actor:
 	    scr_maurice_actor()
 		break
-}
-if ((y > (room_height + 300) || y < -800))
-{
-		visible = true;
-		state = states.normal;
-		visible = false;
-		hsp = 0;
-		vsp = 0;
-		with (instance_create(x, y + 540, obj_technicaldifficulty))
-		{
-			sprite = choose(spr_technicaldifficulty1, spr_technicaldifficulty2);
-			vsp = 10;
-		}
+	case states.punch:
+	    scr_maurice_punch()
+		break
 }
 if (state == states.mach3 || state == states.mach)
 {

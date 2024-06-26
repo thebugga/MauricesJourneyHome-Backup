@@ -29,6 +29,7 @@ if finisher_alpha > 0
 	draw_set_alpha(1);
 }
 var _kungfu = global.kungfu;
+shader_set(global.Pal_Shader);
 with obj_baddie
 {
 		draw_enemy(_kungfu, true);
@@ -42,7 +43,7 @@ for (i = 0; i < array_length(flash_arr); i++)
 	}
 }
 shader_set(global.Pal_Shader);
-pal_swap_set(spr_mauricepalette, 0, false);
+pal_swap_set(spr_mauricepalette, 0);
 with obj_pizzagoblinbomb
 {
 	if grabbable && grounded && vsp > 0
@@ -53,8 +54,20 @@ with obj_player
 {
 	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
 		draw_player();
+        shader_set(global.Pal_Shader);
 }
 with obj_player
+{
+	if (visible && flash && bbox_in_camera(view_camera[0], 32))
+		draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, image_angle, image_blend, image_alpha);
+}
+with obj_player2
+{
+	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
+		draw_player();
+        shader_set(global.Pal_Shader);
+}
+with obj_player2
 {
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, image_angle, image_blend, image_alpha);

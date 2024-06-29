@@ -11,7 +11,7 @@ function scr_player_mach2()
 		windingAnim++;
 	if (place_meeting(x, y + 1, obj_railparent))
 	{
-		var _railinst = instance_place(x, y + 1, obj_railparent);
+		var _railinst = instance_place(x, y + 1, obj_railparent);vsp -= 1.5
 		railmovespeed = _railinst.movespeed;
 		raildir = _railinst.dir;
 	}
@@ -128,6 +128,7 @@ function scr_player_mach2()
 			if movespeed < 1
 				wallspeed = 1;
 			else
+			vsp -= 0.5
 				movespeed = wallspeed;
 			state = states.climbwall;
 		}
@@ -141,6 +142,7 @@ function scr_player_mach2()
 		{
 			wallspeed = 10;
 			grabclimbbuffer = 0;
+			vsp -= 0.5
 			state = states.climbwall;
 		}
 	}

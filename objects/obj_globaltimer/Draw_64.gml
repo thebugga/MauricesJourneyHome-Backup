@@ -34,7 +34,7 @@ else
 	hours = string(hours)
 draw_set_halign(fa_left)
 draw_set_valign(fa_bottom)
-draw_set_font(global.smallfont)
+draw_set_font(font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890", 1, 0))
 draw_set_alpha(1)
 draw_set_color(c_white)
 var finalstr = concat(hours, ":", m_str, ":", s_str, ".", mm)

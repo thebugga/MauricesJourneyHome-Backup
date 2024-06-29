@@ -1780,6 +1780,7 @@
     {"id":{"name":"bg_tutorial","path":"sprites/bg_tutorial/bg_tutorial.yy",},},
     {"id":{"name":"bg_ufo","path":"sprites/bg_ufo/bg_ufo.yy",},},
     {"id":{"name":"bg_ufo2","path":"sprites/bg_ufo2/bg_ufo2.yy",},},
+    {"id":{"name":"bg_unexp","path":"sprites/bg_unexp/bg_unexp.yy",},},
     {"id":{"name":"fg_entrance1","path":"sprites/fg_entrance1/fg_entrance1.yy",},},
     {"id":{"name":"msk_pizzaball_crouch","path":"sprites/msk_pizzaball_crouch/msk_pizzaball_crouch.yy",},},
     {"id":{"name":"obj_skateboardebris1","path":"sprites/obj_skateboardebris1/obj_skateboardebris1.yy",},},

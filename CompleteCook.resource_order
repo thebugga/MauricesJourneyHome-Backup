@@ -30,6 +30,7 @@
     {"name":"bg_space1","order":1,"path":"sprites/bg_space1/bg_space1.yy",},
     {"name":"bg_tile_1","order":8,"path":"sprites/bg_tile_1/bg_tile_1.yy",},
     {"name":"bg_tower","order":1,"path":"sprites/bg_tower/bg_tower.yy",},
+    {"name":"bg_unexp","order":1,"path":"sprites/bg_unexp/bg_unexp.yy",},
     {"name":"spr_checkerboard","order":2,"path":"sprites/spr_checkerboard/spr_checkerboard.yy",},
     {"name":"spr_dialogue_mauricenormal","order":1,"path":"sprites/spr_dialogue_mauricenormal/spr_dialogue_mauricenormal.yy",},
     {"name":"spr_dialogue_mauricenormalblink","order":2,"path":"sprites/spr_dialogue_mauricenormalblink/spr_dialogue_mauricenormalblink.yy",},

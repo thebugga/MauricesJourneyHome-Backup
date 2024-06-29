@@ -211,6 +211,7 @@ if (!(scr_solid(x, (y + 1))))
 					_climb = ledge_bump(40, abs(hsp) + 1);
 				if _climb{
         machhitAnim = false
+			vsp -= 0.5
         state = states.climbwall
 				}
     }
@@ -222,6 +223,7 @@ if (!(scr_solid(x, (y + 1))))
 				if _climb
 				{
         machhitAnim = false
+			vsp -= 0.5
         state = states.climbwall
 				}
     }

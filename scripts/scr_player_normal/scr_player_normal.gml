@@ -41,8 +41,6 @@ function state_player_normal()
 	if breakdance_pressed >= breakdance_max && !shotgunAnim
 	{
 		breakdance_speed = Approach(breakdance_speed, 0.6, 0.005);
-		if breakdance_pressed - 1 < breakdance_max
-			notification_push(notifs.breakdance, []);
 	}
 	else
 		breakdance_speed = 0.25;

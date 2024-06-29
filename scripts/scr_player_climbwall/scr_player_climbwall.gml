@@ -5,12 +5,14 @@ function scr_player_climbwall()
 		case "P":
 if (windingAnim < 200)
     windingAnim++
-vsp = (-movespeed)
+if (sprite_index != spr_player_clingwall)
+vsp -= 1.5
 mach2 = 35
-if (movespeed > 0)
-    movespeed -= 0.5
 crouchslideAnim = true
-sprite_index = spr_player_climbwall
+if (vsp < -5)
+sprite_index = spr_machclimbwall
+else
+sprite_index = spr_player_clingwall
 if (!key_attack)
 {
     state = states.jump
@@ -23,7 +25,12 @@ if (!(scr_solid((x + xscale), y)))
     mach2 = 35
     state = states.mach2
 }
-if ((scr_solid(x, (y + 1)) && movespeed <= 0) || movespeed <= 0)
+if (vsp == 15)
+{
+    vsp += 2
+}
+
+if ((scr_solid(x, (y + 15))))
 {
     state = states.jump
     sprite_index = spr_player_fall

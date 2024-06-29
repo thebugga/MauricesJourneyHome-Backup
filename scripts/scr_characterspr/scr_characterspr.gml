@@ -183,6 +183,7 @@ function scr_characterspr()
 		spr_rideweenie = spr_player_weeniemount
   		spr_breakdancesuper = spr_player_breakdancesuper
 	    spr_breakdance = spr_player_breakdance
+		spr_breakdanceuppercut = spr_player_breakdanceuppercut
 		spr_dashpadmach = spr_player_dashpad
 		spr_firemouthintro = spr_player_firemouthintro
 		spr_firemouthend = spr_player_firemouthend

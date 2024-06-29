@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"backgrounds",
-    "path":"folders/Sprites/level structure/backgrounds.yy",
+    "path":"folders/Sprites/Level structure/backgrounds.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -81,8 +81,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"backgroundgroup",
+    "path":"texturegroups/backgroundgroup",
   },
   "type":0,
   "VTile":false,

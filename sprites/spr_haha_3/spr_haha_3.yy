@@ -277,8 +277,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"backgroundgroup",
+    "path":"texturegroups/backgroundgroup",
   },
   "type":0,
   "VTile":false,

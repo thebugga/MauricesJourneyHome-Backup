@@ -10,14 +10,13 @@ if (place_meeting(x, y, obj_doorE))
 	target_door = "E";
 if (place_meeting(x, y, obj_doorF))
 	target_door = "F";
-if (place_meeting(x, y, obj_doorG))
-	target_door = "G";
 
 if fadein
 {
     fadealpha = Approach(fadealpha, 1, 0.1)
     if (fadealpha >= 1 && showinside == false)
     {
+        
         showinside = true
         fadein = false
         alarm[0] = (trapdoor ? 400 : 600)  

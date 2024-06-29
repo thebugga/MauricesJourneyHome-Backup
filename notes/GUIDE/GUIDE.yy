@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"GUIDE",
+  "name":"GUIDE",
+  "parent":{
+    "name":"Level",
+    "path":"folders/Objects/Level.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

@@ -49,8 +49,8 @@
   },
   "origin":6,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"DIalogue",
+    "path":"folders/Sprites/DIalogue.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -120,8 +120,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"backgroundgroup",
+    "path":"texturegroups/backgroundgroup",
   },
   "type":0,
   "VTile":false,

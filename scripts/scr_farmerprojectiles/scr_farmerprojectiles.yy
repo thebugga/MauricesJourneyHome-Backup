@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_farmerprojectiles",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_farmerprojectiles",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

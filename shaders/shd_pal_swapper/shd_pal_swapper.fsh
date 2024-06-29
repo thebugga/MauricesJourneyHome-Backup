@@ -1,3 +1,38 @@
+//#version 120
+//#define LOWPREC 
+#define lowp
+#define mediump
+#define highp
+#define precision
+// Uniforms look like they're shared between vertex and fragment shaders in GLSL, so we have to be careful to avoid name clashes
+
+//uniform sampler2D gm_BaseTexture;
+
+/*uniform bool gm_PS_FogEnabled;
+uniform vec4 gm_FogColour;
+uniform bool gm_AlphaTestEnabled;
+uniform float gm_AlphaRefValue;
+
+void DoAlphaTest(vec4 SrcColour)
+{
+	if (gm_AlphaTestEnabled)
+	{
+		if (SrcColour.a <= gm_AlphaRefValue)
+		{
+			discard;
+		}
+	}
+}
+
+void DoFog(inout vec4 SrcColour, float fogval)
+{
+	if (gm_PS_FogEnabled)
+	{
+		SrcColour = mix(SrcColour, gm_FogColour, clamp(fogval, 0.0, 1.0)); 
+	}
+}*/
+
+#define _YY_GLSL_ 1
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
@@ -9,7 +44,6 @@ uniform float palette_index;
 // pattern stuff
 uniform sampler2D pattern_texture;
 uniform int pattern_enabled;
-uniform int pattern_solid_color;
 uniform float color_array[2];
 uniform vec4 pattern_tex_data; // (x, y) = trimmed l/t offset | (z, w) = texture size
 uniform vec4 pattern_UVs;
@@ -31,9 +65,9 @@ void main()
 			if (pattern_enabled == 1) {
 				for(int j = 0; j < 2; j += 1) {
 					if (color_array[j] == floor((i - palette_UVs.y) * (1.0 / texel_size.y))) {
-						// convert to (0,0) && convert to integer size in texture page
+						// convert to (0,0) and convert to integer size in texture page
 						vec2 pos = (v_vTexcoord - sprite_UVs.xy) * sprite_tex_data.zw;
-						// get the edges of the palette sprite && convert to integer size in texture page
+						// get the edges of the palette sprite and convert to integer size in texture page
 						vec2 edge = (pattern_UVs.zw - pattern_UVs.xy) * pattern_tex_data.zw;
 		
 						// wrap around the edges
@@ -56,11 +90,8 @@ void main()
 							texcoord.y = pattern_UVs.y + pos.y;
 						else
 							texcoord.y = pattern_UVs.w - pos.y;
-							
-						if (pattern_solid_color == 1)
-							texcoord = vec2(pattern_UVs.x, pattern_UVs.y);
 						
-						// mix the pattern && the palette colors
+						// mix the pattern and the palette colors
 						vec4 pat = texture2D(pattern_texture, texcoord);
 						vec3 m = mix(pat.rgb, source.rgb, source.a);
 						
@@ -68,7 +99,6 @@ void main()
 						break;
 					}
 				}
-				
 			}
 			break;
 		}

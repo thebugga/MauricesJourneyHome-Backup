@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"boss_states_stunhit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"boss_states_stunhit",
+  "parent":{
+    "name":"Boss",
+    "path":"folders/Scripts/Boss.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,5 +1,12 @@
-gate_surface = -4;
-bg_surface = -4;
-depth = 100
+targetDoor = "A"
+depth = 50
 level = "none"
-target_door = "A"
+world = 1
+drawing = 0
+targetDoor = "A"
+msg = ""
+highscore = 0
+secret_count = 0
+toppin = array_create(5, 0)
+titlecardix = 0
+titleix = 0

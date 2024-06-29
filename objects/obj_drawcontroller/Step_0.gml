@@ -1,1 +1,1 @@
-flash = lerp(flash, 0, 0.05);
+flash = Approach(flash, 0, 0.05)

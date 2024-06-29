@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
   "%Name":"scr_room_goto",
-  "isCompatibility":true,
+  "isCompatibility":false,
   "isDnD":false,
   "name":"scr_room_goto",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

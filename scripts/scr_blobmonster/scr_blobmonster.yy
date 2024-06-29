@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_blobmonster",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_blobmonster",
+  "parent":{
+    "name":"Monsters",
+    "path":"folders/Scripts/Enemies/Monsters.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

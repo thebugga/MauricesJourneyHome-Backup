@@ -1,49 +1,15 @@
-	with obj_player
-	{
-		state = states.actor;
-		image_blend = make_colour_hsv(0, 0, 255);
-		hsp = 0;
-		movespeed = 0;
-		flash = false;
-	}
-	flamey -= 4;
-	if introshake > 0
-		introshake -= introshake_acc;
-	var a = 0.1;
-	if arenabuffer > 0
-		arenabuffer--;
-	else
-	{
-		switch arenastate
-		{
-			case 0:
-				if (playerx <= 10 && playerx2 <= 5)
-				arenastate++;
-				break;
-			case 1:
-				var btx = 960;
-				bossx = lerp(bossx, btx, a);
-				break;
-			case 2:
-				whitefade += 0.02;
-				if whitefade >= 2
-				{
-					whitefade = 0;
-					arenastate++;
-					arenabuffer = 300;
-					introshake = 20;
-					introshake_acc = 0.5;
-				}
-				break;
-			case 3:
-				state = states.normal;
-				with obj_player
-				{
-					state = states.actor;
-					hsp = 0;
-					movespeed = 0;
-					flash = false;
-				}
-				break;
-		}
-	}
+if (flash == 1 && alarm[2] <= 0)
+	alarm[2] = (0.15 * room_speed)
+if (pepx != 0)
+	pepx += 5
+else if (flashed == 0)
+{
+	flash = 1
+	flashed = 1
+}
+if (noisex != 545)
+	noisex -= 5
+flamey -= 4
+if (vsy != 0)
+	vsy += 5
+shake = random_range(-1, 1)

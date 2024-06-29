@@ -1,37 +1,34 @@
-countdown -= 0.5;
-if place_meeting((x + hsp), y, obj_collisionparent)
+countdown -= 0.5
+if (place_meeting((x + 1), y, obj_ratblock) or place_meeting((x - 1), y, obj_ratblock) or place_meeting(x, (y - 1), obj_ratblock) or place_meeting(x, (y + 1), obj_ratblock))
+	instance_destroy()
+if (scr_solid((x + 1), y) or scr_solid((x - 1), y))
+	drop = 1
+if place_meeting(x, (y + 1), obj_solid)
+	hsp = 0
+if place_meeting(x, (y + 1), obj_railparent)
 {
-    hsp = (-hsp);
-    vsp = -3;
-    drop = 1;
+	var _railinst = instance_place(x, (y + 1), obj_railparent)
+	hsp = (_railinst.movespeed * _railinst.dir)
 }
-if (place_meeting(x, (y + 1), obj_collisionparent) && drop == 1)
-    hsp = 0;
-if (drop == 1)
-{
-    if (vsp < 12)
-        vsp += grav;
-}
+if (vsp < 12)
+	vsp += grav
 if (countdown < 50)
-    sprite_index = spr_bomblit;
+	sprite_index = spr_bomblit
 if (countdown == 0)
+	instance_destroy()
+if scr_solid((x + floor(hsp)), y)
 {
-    instance_destroy();
-    instance_create(x, y, obj_bombexplosion);
+	x = floor(x)
+	while (!(scr_solid((x + sign(hsp)), y)))
+		x += sign(hsp)
+	hsp = 0
 }
-if place_meeting((x + floor(hsp)), y, obj_null)
+x += hsp
+if scr_solid(x, (y + floor(vsp)))
 {
-    x = floor(x);
-    while (!(place_meeting((x + sign(hsp)), y, obj_null)))
-        x += sign(hsp);
-    hsp = 0;
+	y = floor(y)
+	while (!(scr_solid(x, (y + sign(vsp)))))
+		y += sign(vsp)
+	vsp = 0
 }
-x += hsp;
-if place_meeting(x, (y + floor(vsp)), obj_null)
-{
-    y = floor(y);
-    while (!(place_meeting(x, (y + sign(vsp)), obj_null)))
-        y += sign(vsp);
-    vsp = 0;
-}
-y += floor(vsp);
+y += floor(vsp)

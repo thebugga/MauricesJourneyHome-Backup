@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"is_bossroom",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"is_bossroom",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

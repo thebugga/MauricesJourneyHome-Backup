@@ -11,4 +11,14 @@ savedsecretpause = false;
 savedpanicpos = 0;
 savedmusicpos = 0;
 exitmusic = false;
+pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
+panicmusicP = fmod_event_create_instance("event:/music/pizzatime");
+panicmusicN = fmod_event_create_instance("event:/music/pizzatimenoise");
+panicmusicID = panicmusicP;
+kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
 panicstart = false;
+
+add_music(hub_outside, "event:/music/title", noone, false);
+add_music(hub_entrance, "event:/music/hub", noone, false);
+add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
+

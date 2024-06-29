@@ -4,16 +4,18 @@
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_baddiegibs",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Particles",
+    "path":"folders/Objects/Visuals/Particles.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_parentparticle",
+    "path":"objects/obj_parentparticle/obj_parentparticle.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,9 +37,6 @@
     "name":"spr_baddiegibs",
     "path":"sprites/spr_baddiegibs/spr_baddiegibs.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_bigfuckingthing",
-    "path":"sprites/spr_bigfuckingthing/spr_bigfuckingthing.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

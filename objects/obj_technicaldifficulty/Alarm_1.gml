@@ -1,1 +1,1 @@
-use_static = false;
+use_static = 0

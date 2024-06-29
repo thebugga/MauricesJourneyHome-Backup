@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sfx_pizzaface",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.774694,
+  "name":"sfx_pizzaface",
+  "parent":{
+    "name":"SFX",
+    "path":"folders/Sounds/SFX.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_pizzaface",
+  "type":0,
+  "volume":0.31,
+}

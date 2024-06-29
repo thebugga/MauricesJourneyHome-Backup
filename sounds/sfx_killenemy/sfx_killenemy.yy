@@ -12,14 +12,14 @@
   "duration":1.396,
   "name":"sfx_killenemy",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"SFX",
+    "path":"folders/Sounds/SFX.yy",
   },
-  "preload":false,
+  "preload":true,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_killenemy.ogg",
-  "type":0,
+  "type":1,
   "volume":1.0,
 }

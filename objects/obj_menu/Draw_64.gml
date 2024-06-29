@@ -1,8 +1,0 @@
-font = font_add_sprite_ext(spr_font,"abcdefghijklmnopqrstuvwxyz!.1234567890:", 1, 0)
-draw_set_font(font)
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
-draw_sprite(spr_tv,10,288,444)
-draw_sprite(spr_tv,10,288,292)
-draw_sprite(spr_hand,10,128,292)
-draw_sprite(spr_bin,10,33,500)

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_sound_multiple",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_sound_multiple",
+  "parent":{
+    "name":"Sound",
+    "path":"folders/Scripts/Sound.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

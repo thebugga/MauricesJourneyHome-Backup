@@ -1,1 +1,0 @@
-baddieID = other.id;

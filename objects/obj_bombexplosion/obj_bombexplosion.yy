@@ -12,8 +12,8 @@
   "name":"obj_bombexplosion",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Hitboxes",
+    "path":"folders/Objects/Baddie/Hitboxes.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_bombexplosion",
+    "path":"sprites/spr_bombexplosion/spr_bombexplosion.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

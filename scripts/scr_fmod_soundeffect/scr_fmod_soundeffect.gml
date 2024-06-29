@@ -1,13 +1,22 @@
-function scr_fmod_soundeffect(sound_instance, _x, _y)
+function scr_soundeffect()
 {
-	stupid_attributes = {
-	position: {x: _x, y: _y, z: 0},
-	velocity: {x: _x, y: _y, z: 0},
-	forward: {x:_x,y:_y,z:1.0},
-	up: {x:_x,y:1.0,z:0},
+	var snd = argument[irandom((argument_count - 1))]
+	var snd_id = audio_play_sound(snd, 1, false)
+	audio_sound_gain(snd_id, (audio_sound_get_gain(snd_id) * global.option_sfx_volume), 0)
+	exit;
 }
-	event_path = fmod_studio_system_get_event(sound_instance);
-	event = fmod_studio_event_description_create_instance(event_path);
-	fmod_studio_event_instance_set_3d_attributes(sound_instance, stupid_attributes);
-	fmod_studio_event_instance_start(event);
+
+function sfx_gain(argument0)
+{
+	audio_sound_gain(argument0, (audio_sound_get_gain(argument0) * global.option_sfx_volume), 0)
+	exit;
+}
+
+function scr_soundeffectpitched(sound, minpitch = 0.95, maxpitch = 1.05) //scr_soundeffect
+{
+	var snd = sound
+	var snd_id = audio_play_sound(snd, 1, false)
+	audio_sound_pitch(snd_id, random_range(minpitch, maxpitch))
+	audio_sound_gain(snd_id, (audio_sound_get_gain(snd_id) * global.option_sfx_volume), 0)
+	return;
 }

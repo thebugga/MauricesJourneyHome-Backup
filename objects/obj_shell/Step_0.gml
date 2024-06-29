@@ -28,7 +28,7 @@ if (!isOpen) {
 		metaMovedRight = false;
 	}
 	
-	if (keyboard_check_pressed(vk_escape)) {
+	if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_f5)) {
 		if (isAutocompleteOpen) {
 			self._close_autocomplete();
 		} else {

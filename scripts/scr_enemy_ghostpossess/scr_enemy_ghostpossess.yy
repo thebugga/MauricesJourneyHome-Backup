@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_enemy_ghostpossess",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_enemy_ghostpossess",
+  "parent":{
+    "name":"States",
+    "path":"folders/Scripts/Enemies/States.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

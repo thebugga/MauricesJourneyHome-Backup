@@ -2,12 +2,12 @@
   "$GMObject":"",
   "%Name":"obj_doorA_1",
   "eventList":[],
-  "managed":false,
+  "managed":true,
   "name":"obj_doorA_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"MauriceGame_GM2",
-    "path":"MauriceGame_GM2.yyp",
+    "name":"Doors",
+    "path":"folders/Objects/Warps/Doors.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_doorA_1",
-    "path":"sprites/spr_doorA_1/spr_doorA_1.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

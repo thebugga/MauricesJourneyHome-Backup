@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_editor_room",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_editor_room",
+  "parent":{
+    "name":"Editor",
+    "path":"folders/Scripts/Editor.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

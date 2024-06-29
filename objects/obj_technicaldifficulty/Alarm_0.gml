@@ -1,13 +1,20 @@
-with (obj_player)
+use_static = true
+static_index = sprite_get_number(spr_tvstatic) - 1
+static_dir = -1
+scr_soundeffect(sfx_tvswitchback)
+with (playerid)
 {
-	state = states.normal;
-	visible = true;
-	x = xstart;
-	y = ystart;
-	landAnim = false;
+	if (!isgustavo)
+		state = states.normal
+	else
+		state = states.ratmount
+	visible = true
+	x = roomstartx
+	y = roomstarty
+	landAnim = false
 }
-with (obj_player)
+with (obj_ghostfollow)
 {
-	x = xstart;
-	y = ystart;
+	x = xstart
+	y = ystart
 }

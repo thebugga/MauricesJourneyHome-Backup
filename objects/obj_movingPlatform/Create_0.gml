@@ -1,38 +1,17 @@
-/// @description Setup platforms variables.
-depth = 5;
-image_speed = 0.35;
-
-hsp = 0;
-vsp = 0;
-
-stopped = false;
-stopid = noone;
-
-//Smooth in and Out
-stopSpeed = 0;
-stopSpeedMax = min(4, moveSpeed);
-stopSpeedAcc = 0.5;
-stopSpeedDecc = 0.5;
-platformDirection = targetDirection;
-
-trueX = x;
-trueY = y;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+hsp = 0
+vsp = 0
+vmovespeed = -4
+hmovespeed = 0
+hdir = 1
+vdir = -1
+vscale = -1
+hscale = 1
+v_velocity = 2
+h_velocity = 0
+depth = 0
+changing_vdir = 0
+changing_hdir = 0
+active = 1
+escape = false
+image_speed = 0.35
+mask_index = spr_chigaco

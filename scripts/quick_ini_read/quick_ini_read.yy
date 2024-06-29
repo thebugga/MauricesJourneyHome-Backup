@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"quick_ini_read",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"quick_ini_read",
+  "parent":{
+    "name":"Saving",
+    "path":"folders/Scripts/Utilities/Saving.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

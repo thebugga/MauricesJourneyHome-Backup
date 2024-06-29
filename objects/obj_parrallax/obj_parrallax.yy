@@ -12,8 +12,8 @@
   "name":"obj_parrallax",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controllers",
-    "path":"folders/Controllers.yy",
+    "name":"Game settings",
+    "path":"folders/Objects/Game settings.yy",
   },
   "parentObjectId":null,
   "persistent":true,

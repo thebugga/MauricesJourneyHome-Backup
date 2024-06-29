@@ -9,8 +9,8 @@
   "name":"obj_dialognpc",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Cutscenes",
+    "path":"folders/Objects/Cutscenes.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gustavo_idle",
+    "path":"sprites/spr_gustavo_idle/spr_gustavo_idle.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

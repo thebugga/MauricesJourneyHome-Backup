@@ -1,8 +1,7 @@
-if instance_exists(obj_player)
+if instance_exists(obj_player1)
 {
-	
-    if (obj_player.character == "M")
-        fmod_studio_system_set_parameter_by_name("isnoise", 0)
-    if (obj_player.character == "D")
-        fmod_studio_system_set_parameter_by_name("isnoise", 1)
+    if (obj_player1.ispeppino)
+        fmod_set_parameter("isnoise", 0, true)
+    else
+        fmod_set_parameter("isnoise", 1, true)
 }

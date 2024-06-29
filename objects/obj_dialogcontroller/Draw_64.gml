@@ -1,11 +1,7 @@
-var _w = 960
-var _h = 540
 var ds_h = 0
-display_set_gui_size(_w, _h)
-font = font_add_sprite_ext(spr_truefont,"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz!.1234567890:()?[]&", 1, 0)
-draw_set_font(font)
+font =	 font_add_sprite_ext(spr_truefont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz:.!0123456789?'\"ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜáäãàâéèêëíîïóöõôúùûüÇç_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль", true, 2);
 var x1 = rpadding
-var y1 = (_h - (((dialogheight + rpadding) + (padding * 2)) + ds_h))
+var y1 = (540 - (((dialogheight + rpadding) + (padding * 2)) + ds_h))
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 var collect_x = irandom_range(-collect_shake, collect_shake);
@@ -19,21 +15,21 @@ if (dial != -4 && dial != dialogcharacter)
 draw_sprite_ext(talk_sprites[dial][0][0],0, (rpadding + (75 * i)), y1,1,1,0,c_gray,1)
 var diar = dialogsider[i]
 if (diar != -4 && diar != dialogcharacter)
-draw_sprite_ext(talk_sprites[diar][0][0],0, ((_w - rpadding) - (75 * i)), y1,-1,1,0,c_gray,1)
+draw_sprite_ext(talk_sprites[diar][0][0],0, ((960 - rpadding) - (75 * i)), y1,-1,1,0,c_gray,1)
 }
 var sidescale = 1
 if dialogcharx > 480
 sidescale = -1
 if (dialogsprite != -4)
     draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + collect_x), (y1 + collect_y),sidescale,1,0,c_white,1)
-var bw = ((_w - rpadding) - x1)
-var bh = ((_h - rpadding) - y1 + 16)
-draw_sprite(spr_tutorialbubble_rope, 0, (rpadding * 2), _h - 6)
-draw_sprite(spr_tutorialbubble_rope, 0, (_w - (rpadding * 2)), _h - 6)
+var bw = ((960 - rpadding) - x1)
+var bh = ((540 - rpadding) - y1 + 16)
+draw_sprite(spr_tutorialbubble_rope, 0, (rpadding * 2), 540 - 6)
+draw_sprite(spr_tutorialbubble_rope, 0, (960 - (rpadding * 2)), 540 - 6)
 if (!surface_exists(surf))
-    surf = surface_create(_w, _h)
+    surf = surface_create(960, 540)
 if (!surface_exists(clip))
-    clip = surface_create(_w, _h)
+    clip = surface_create(960, 540)
 gpu_set_blendmode(bm_normal) 
 surface_set_target(clip)
 draw_set_alpha(1)
@@ -51,4 +47,5 @@ surface_reset_target()
 draw_set_alpha(1)
 draw_surface(surf, 0, 0)
 draw_sprite_ext(spr_tutorialbubble, 1, x1, y1- 8, (bw / sprite_get_width(spr_tutorialbubble)), (bh / sprite_get_height(spr_tutorialbubble)), 0, c_white, 1)
-draw_text_color((x1 + padding + 10), ((y1 + padding + 10) + ds_h), displaytext, c_white, c_white, c_white, c_white, 1) 
+draw_text_color((x1 + padding + 10), ((y1 + padding + 10) + ds_h), displaytext, c_white, c_white, c_white, c_white, 1)
+display_set_gui_size(960, 540) 

@@ -1,69 +1,112 @@
-function draw_player()
+function get_dark(argument0, argument1)
 {
-	var b = get_dark(image_blend, other.use_dark);
-	var ps = paletteselect;
-	var spr = spr_palette;
-	shader_set(global.Pal_Shader);
-	pal_swap_set(spr_mauricepalette, 0);
-	draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
-}
-function draw_enemy(healthbar, palette, color = c_white)
-{
-		var b = get_dark(image_blend, obj_drawcontroller.use_dark);
-		var _stun = 0;
-	    var _ys = 1;
-		draw_sprite_ext(sprite_index, image_index, x, y + _stun, 1 * image_xscale, 1 * _ys, 0, b, image_alpha);
-		if healthbar
-		{
-			if hp > maxhp
-				maxhp = hp;
-			draw_healthbar(x - 16, y - 50, x + 16, y - 45, (hp / maxhp) * 100, 0, 255, 255, 0, true, true);
-		}
-}
-function get_dark(blend, use_dark, use_position = false, posX = 0, posY = 0)
-{
-	if use_dark
+	if argument1
 	{
-		if room == boss_vigilante
-			blend = make_color_rgb(247, 109, 22);
-		var d = room_width * room_height;
-		var b = d;
-		var bb = b;
-		with obj_lightsource
+		var d = (room_width * room_height)
+		var b = d
+		var bb = b
+		with (obj_lightsource)
 		{
-			if (object_index != obj_lightsource_attach || instance_exists(objectID))
+			var dis = distance_to_object(other)
+			if (distance_to_object(other) < d)
 			{
-				if !use_position
-					var dis = distance_to_object(other);
-				else
-					dis = distance_between_points(x, y, posX, posY);
-				if dis < d
+				bb = (dis / distance)
+				if (bb < b)
 				{
-					bb = dis / distance;
-					if bb < b
-					{
-						b = bb;
-						d = dis;
-					}
+					b = bb
+					d = dis
 				}
 			}
 		}
-		var t = (b + 0.4) * 255;
-		var a = (1 - obj_drawcontroller.dark_alpha) * 255;
-		a -= 102;
-		t = clamp(t, 0, 255);
-		a = clamp(a, 0, 255);
-		var r = (color_get_red(blend) - t) + a;
-		var g = (color_get_green(blend) - t) + a;
-		b = (color_get_blue(blend) - t) + a;
-		if r < 0
-			r = 0;
-		if g < 0
-			g = 0;
-		if b < 0
-			b = 0;
-		return make_color_rgb(r, g, b);
+		var t = ((b + 0.4) * 255)
+		t = clamp(t, 0, 255)
+		return make_color_rgb((color_get_red(argument0) - t), (color_get_green(argument0) - t), (color_get_blue(argument0) - t));
 	}
 	else
 		return image_blend;
+}
+function enemy_is_superslam(baddieid)
+{
+	with baddieid
+	{
+		if state == states.grabbed
+		{
+			var g = grabbedby == 1 ? obj_player1.id : obj_player2.id;
+			if g.state == states.superslam || (g.state == states.chainsaw && g.tauntstoredstate == states.superslam)
+				return true;
+		}
+	}
+	return false;
+}
+function draw_enemy(_kungfu, usepalette)
+{
+	var _stun = 0
+	if (state == states.stun && thrown == false)
+		_stun = 25
+	if (visible && object_index != obj_pizzaball && bbox_in_camera(view_camera[0], 32))
+	{
+		var c = image_blend
+		if elite
+			c = 65535
+		if elitegrab
+			c = 32768
+		b = get_dark(c, obj_drawcontroller.use_dark)
+		if (object_index == obj_peppinoclone)
+		{
+			shader_set(global.Pal_Shader)
+			pal_swap_set(spr_peppalette, 1, 0)
+		}
+		else
+		{
+			shader_set(global.Pal_Shader)
+			pal_swap_set(spr_palette, paletteselect, 0)
+		}
+		var _ys = 1
+		if state == states.grabbed
+		{
+			if (enemy_is_superslam(id))
+			{
+				_stun += 18
+				_ys = -1
+			}
+		}
+		draw_sprite_ext(sprite_index, image_index, x, (y + _stun), (xscale * image_xscale), yscale * _ys, angle, b, image_alpha)
+		if _kungfu
+		{
+			if (hp > maxhp)
+				maxhp = hp
+			draw_healthbar((x - 16), (y - 50), (x + 16), (y - 45), ((hp / maxhp) * 100), c_black, c_red, c_red, 0, 1, 1)
+		}
+		if (object_index == obj_peppinoclone or usepalette)
+			shader_reset()
+		if (object_index == obj_hamkuff)
+		{
+			if (state == states.blockstance && instance_exists(playerid))
+			{
+				var x1 = (x + 3)
+				var y1 = (y + 30)
+				if (sprite_index == spr_hamkuff_chain2)
+				{
+					x1 = (x + 7)
+					y1 = (y + 33)
+				}
+				var dis = point_distance(x1, y1, playerid.x, playerid.y)
+				var w = 24
+				var len = (dis div w)
+				var dir = point_direction(x1, y1, playerid.x, (playerid.y + 16))
+				var xx = lengthdir_x(w, dir)
+				var yy = lengthdir_y(w, dir)
+				for (i = 0; i < len; i++)
+					draw_sprite_ext(spr_hamkuff_sausage, -1, (x1 + (xx * i)), (y1 + (yy * i)), 1, 1, dir, b, 1)
+			}
+		}
+	}
+}
+function draw_superslam_enemy()
+{
+	if (state == states.superslam && floor(image_index) >= 5 && floor(image_index) <= 7 && instance_exists(baddiegrabbedID))
+	{
+		with baddiegrabbedID
+			draw_enemy(global.kungfu, true);
+	}
 }

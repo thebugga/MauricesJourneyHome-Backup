@@ -14,8 +14,8 @@
   "name":"obj_technicaldifficulty",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cutscenes",
-    "path":"folders/Objects/Cutscenes.yy",
+    "name":"Visuals",
+    "path":"folders/Objects/Visuals.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_ladder",
-    "path":"sprites/spr_player_ladder/spr_player_ladder.yy",
+    "name":"spr_technicaldifficulty3",
+    "path":"sprites/spr_technicaldifficulty3/spr_technicaldifficulty3.yy",
   },
   "spriteMaskId":null,
   "visible":true,

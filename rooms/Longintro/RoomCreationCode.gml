@@ -1,3 +1,0 @@
-pal_swap_init_system(shd_pal_swapper);
-window_set_fullscreen(true)
-window_enable_borderless_fullscreen(true)

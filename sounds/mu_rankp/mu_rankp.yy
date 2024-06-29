@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"mu_rankp",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":1,
+  "conversionMode":0,
+  "duration":14.654354,
+  "name":"mu_rankp",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mu_rankp.wav",
+  "type":1,
+  "volume":1.0,
+}

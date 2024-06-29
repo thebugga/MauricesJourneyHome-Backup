@@ -12,22 +12,22 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"be56865b-5e00-43d1-bf3f-e732beaad86b","name":"be56865b-5e00-43d1-bf3f-e732beaad86b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"009dd5c8-35cb-4917-9370-511519a25952","name":"009dd5c8-35cb-4917-9370-511519a25952","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"7aee3167-19a8-464e-a723-da32e6f2631f","name":"7aee3167-19a8-464e-a723-da32e6f2631f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"ac5dcff1-57e1-45e0-aaef-393408c24796","name":"ac5dcff1-57e1-45e0-aaef-393408c24796","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":177,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"ebb5dd16-0a12-4282-9fde-bfcb42b47a99","blendMode":0,"displayName":"default","isLocked":false,"name":"ebb5dd16-0a12-4282-9fde-bfcb42b47a99","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"66691ed8-09e9-420b-8f03-74542cf92882","blendMode":0,"displayName":"default","isLocked":false,"name":"66691ed8-09e9-420b-8f03-74542cf92882","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_speedbarmax",
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"HUD",
+    "path":"folders/Sprites/HUD.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -70,11 +70,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"be56865b-5e00-43d1-bf3f-e732beaad86b","path":"sprites/spr_speedbarmax/spr_speedbarmax.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"fe7d8405-a080-48ec-8739-b701c3370ae2","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7aee3167-19a8-464e-a723-da32e6f2631f","path":"sprites/spr_speedbarmax/spr_speedbarmax.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"ec2f1945-a5a4-4263-b632-e77112660a00","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"009dd5c8-35cb-4917-9370-511519a25952","path":"sprites/spr_speedbarmax/spr_speedbarmax.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ea3b4ddf-1220-4ed1-944f-7decc305b576","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ac5dcff1-57e1-45e0-aaef-393408c24796","path":"sprites/spr_speedbarmax/spr_speedbarmax.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"6cb87f32-6774-4afb-b370-40e570def274","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -83,7 +83,7 @@
     "yorigin":88,
   },
   "swatchColours":null,
-  "swfPrecision":0.5,
+  "swfPrecision":2.525,
   "textureGroupId":{
     "name":"Default",
     "path":"texturegroups/Default",

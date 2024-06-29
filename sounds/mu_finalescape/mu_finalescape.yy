@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"mu_finalescape",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":1,
+  "conversionMode":0,
+  "duration":51.48,
+  "name":"mu_finalescape",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mu_finalescape.ogg",
+  "type":1,
+  "volume":1.0,
+}

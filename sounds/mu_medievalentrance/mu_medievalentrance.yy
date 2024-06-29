@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"mu_medievalentrance",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":1,
+  "conversionMode":0,
+  "duration":130.02487,
+  "name":"mu_medievalentrance",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mu_medievalentrance",
+  "type":0,
+  "volume":1.0,
+}

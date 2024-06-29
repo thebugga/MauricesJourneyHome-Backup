@@ -51,6 +51,8 @@ savedHistoryFilePath = working_directory + "rt-shell-saved-history.data";
 loadedSavedHistory = false;
 loadedHistoryScrolled = false;
 
+depth = -9999
+
 // Mouse-argument data types
 enum mouseArgumentType {
 	worldX,
@@ -367,9 +369,7 @@ function _execute_script(args, deferred = false) {
 	if (!is_undefined(script)) {
 		var response;
 		try {
-			var s = asset_get_index(script_get_name(script));
-			if script_exists(s)
-				response = script_execute(s, args);
+			response = script_execute(asset_get_index(script_get_name(script)), args);
 		} catch (_exception) {
 			response = "-- ERROR: see debug output for details --";
 			show_debug_message("---- ERROR executing rt-shell command [" + args[0] + "] ----");
@@ -446,30 +446,30 @@ function _input_string_split(_input) {
 	var inQuotes = false;
 	
 	for (var i = 1; i < (string_length(_input) + 1); i++) {
-		var currStr = string_char_at(_input, i);
+	    var currStr = string_char_at(_input, i);
 		// Ignore spaces as a delimiter if we are currently inside of quotes
 		if (!inQuotes) {
 			if (currStr == "\"") {
 				inQuotes = true;
 				continue;
 			}
-			if (currStr == " ") {
+		    if (currStr == " ") {
 				if (str2 != "") { // Make sure we don't include the space
-					splits[slot] = str2; //add this split to the array of all splits
-					slot++;
+			        splits[slot] = str2; //add this split to the array of all splits
+			        slot++;
 				}
-				str2 = "";
-			} else {
-				str2 = str2 + currStr;
-				splits[slot] = str2;
-			}
+		        str2 = "";
+		    } else {
+		        str2 = str2 + currStr;
+		        splits[slot] = str2;
+		    }
 		} else {
 			if (currStr == "\"") {
 				inQuotes = false;
 				splits[slot] = str2;
 				continue;
 			}
-			str2 = str2 + currStr;
+		    str2 = str2 + currStr;
 		}
 	}
 	// If we ended on our delimiter character, include an empty string as the final split

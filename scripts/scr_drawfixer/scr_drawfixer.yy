@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_drawfixer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_drawfixer",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

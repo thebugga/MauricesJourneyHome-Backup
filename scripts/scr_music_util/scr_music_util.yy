@@ -6,7 +6,7 @@
   "name":"scr_music_util",
   "parent":{
     "name":"Utilities",
-    "path":"folders/Scripts/General/Utilities.yy",
+    "path":"folders/Scripts/Utilities.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

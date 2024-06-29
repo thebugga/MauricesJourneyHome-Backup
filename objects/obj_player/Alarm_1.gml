@@ -1,8 +1,1 @@
-with (instance_create(x, y, obj_afterimage))
-{
-	type = afterimages.mach3
-    sprite_index = other.sprite_index
-    image_xscale = other.image_xscale
-	image_index = other.image_index;
-}
-alarm[1] = 10;
+inv_frames = 0

@@ -1,54 +1,24 @@
-#region init system
-var _channels = 256
-var _coreflags = FMOD_INIT.NORMAL;
-var _studioflags = FMOD_STUDIO_INIT.LIVEUPDATE;
+/// @description load banks / define sounds.
+var maxChannels = 256;
+trace("Initializing FMOD: ", fmod_init(maxChannels));
+fmod_set_num_listeners(1);
 
-#macro USE_DEBUG_CALLBACKS false
-
-if (USE_DEBUG_CALLBACKS) {
-    fmod_debug_initialize(FMOD_DEBUG_FLAGS.LEVEL_ERROR, FMOD_DEBUG_MODE.CALLBACK);
+var plat = "Desktop";
+var banks = [concat("sound/", plat, "/Master.bank"), concat("sound/", plat, "/music.bank"), concat("sound/", plat, "/sfx.bank"), concat("sound/", plat, "/Master.strings.bank")];
+trace("Loading banks! Platform -> ", plat);
+for (var i = 0; i < array_length(banks); i++)
+{
+	var b = working_directory + banks[i];
+	trace("Loading bank at: ", b);
+	if fmod_bank_load(b, false)
+	{
+		trace("Loading bank sample data at: ", b);
+		if !fmod_bank_load_sample_data(b)
+			trace("Could not load bank sample data: ", b);
+	}
+	else
+		trace("Could not load bank: ", b);
 }
-
-fmod_studio_system_create();    
-show_debug_message("fmod_studio_system_create: " + string(fmod_last_result()));
-
-fmod_studio_system_init(_channels, _studioflags, _coreflags);
-show_debug_message("fmod_studio_system_init: " + string(fmod_last_result()));
-
-system = fmod_studio_system_get_core_system();
-#endregion
-#region load banks
-var banks = [
-  "Master.strings.bank",
-  "Master.bank",
-  "music.bank",
-  "sfx.bank"
-];
-for (var i = 0; i < array_length(banks); i++) {
-    var b = (working_directory + banks[i]);
-    var bank = fmod_studio_system_load_bank_file(b, FMOD_STUDIO_LOAD_BANK.NORMAL);
-    show_debug_message(concat("Loaded ", banks[i], ": ", string(fmod_last_result())));
-    fmod_studio_bank_load_sample_data(bank);
-    show_debug_message(concat("Sample data for ", banks[i], ": ", string(fmod_last_result())));
-}
-#endregion
-#region 3D Settings
-global.FMOD_default3DAttributes = {
-    position: {x: 0, y: 0, z: 0}, //listener pos
-    velocity: {x: 0, y: 0, z: 0}, //dont use
-    forward: {x: 0, y: 0, z: 1}, //where forward is (into the screen)
-    up: {x: 0, y: 1, z: 0}, //where up is (y axis)
-}
-
-attributes3D = global.FMOD_default3DAttributes;
-
-attributes3D.position = {
-    x: (960 / 2), //update in step to match camera position
-    y: (540 / 2), //this one too
-    z: 0 //if you really want to, go for it
-}
-
-fmod_studio_system_set_num_listeners(1);
-fmod_studio_system_set_listener_attributes(0, attributes3D);
-fmod_studio_system_set_listener_weight(0, 1.0);
-#endregion
+global.sound_map = ds_map_create();
+global.steam_api = false;
+global.screenshotcount = 0;

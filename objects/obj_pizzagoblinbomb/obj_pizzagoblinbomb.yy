@@ -3,8 +3,10 @@
   "%Name":"obj_pizzagoblinbomb",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_bombexplosion","path":"objects/obj_bombexplosion/obj_bombexplosion.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_boilingsauce","path":"objects/obj_boilingsauce/obj_boilingsauce.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
@@ -12,8 +14,8 @@
   "name":"obj_pizzagoblinbomb",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Hitboxes",
+    "path":"folders/Objects/Baddie/Hitboxes.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -34,12 +36,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"bg_srollingmenu",
-    "path":"sprites/bg_srollingmenu/bg_srollingmenu.yy",
+    "name":"spr_bomb",
+    "path":"sprites/spr_bomb/spr_bomb.yy",
   },
   "spriteMaskId":{
-    "name":"bg_srollingmenu",
-    "path":"sprites/bg_srollingmenu/bg_srollingmenu.yy",
+    "name":"spr_bomb",
+    "path":"sprites/spr_bomb/spr_bomb.yy",
   },
   "visible":true,
 }

@@ -1,129 +1,64 @@
-
-if (room == titscreen2)
-    return;
-var tv_x = 832
-var tv_y = 90
-var _cx = 832
+if (room == editor_room)
+	exit;
+draw_set_font(global.bigfont)
+draw_set_halign(fa_center)
+draw_set_color(c_white)
+if is_bossroom()
+	exit;
+if global.use_temperature
+{
+	var _width = sprite_get_width(spr_temperature_meterfill)
+	var _height = sprite_get_height(spr_temperature_meterfill)
+	global.temperature = clamp(global.temperature, 0, (global.temp_thresholdnumber * 100))
+	var _tmp = (global.temperature / (global.temp_thresholdnumber * 100))
+	var _top = 0
+	var _height2 = (_height * _tmp)
+	draw_sprite_part_ext(spr_temperature_meterfill, 0, 0, _top, _width, _height2, 864, (192 + _height), 1, -1, c_white, 1)
+	draw_sprite(spr_temperature_meter, 0, 864, 192)
+}
+var collect_x = irandom_range((-collect_shake), collect_shake)
+var collect_y = irandom_range((-collect_shake), collect_shake)
+var tv_x = 845
+var tv_y = 80
+var _cx = (tv_x + combo_posX)
 var _cy = (((tv_y + 117) + hud_posY) + combo_posY)
 var _perc = (global.combotime / 60)
 var _minX = (_cx - 56)
 var _maxX = (_cx + 59)
 combofill_x = lerp(combofill_x, (_minX + ((_maxX - _minX) * _perc)), 0.5)
 combofill_y = _cy
+shader_set(global.Pal_Shader)
+pal_swap_set(spr_tv_combofillpalette, (!global.combodropped) ? 2 : 1, false)
 draw_sprite(spr_tv_combobubblefill, combofill_index, combofill_x, combofill_y)
+reset_shader_fix()
 draw_sprite(spr_tv_combobubble, -1, _cx, _cy)
-var hud_xx = 129 + (irandom_range((-collect_shake), collect_shake))
-var hud_yy = 90 + (irandom_range((-collect_shake), collect_shake)) + hud_posY
-	var rx = hud_xx;
-	var ry = hud_yy - 122;
-	var rank_ix = 0;
-    var cmb = 0
-    if (global.combo >= 50)
-        cmb = 2
-    else if (global.combo >= 25)
-        cmb = 1
-	    pizzascore_index += (0 + 0.25 * cmb)
-    if (pizzascore_index > (pizzascore_number - 1))
-        pizzascore_index = 0 + frac(pizzascore_index)
-    if (global.stylethreshold <= 0)
-    {
-        if (floor(pizzascore_index) != 0)
-            pizzascore_index += 0.35
-        else
-            pizzascore_index = 0
-    }
-draw_sprite_ext(spr_pizzascore, pizzascore_index, 832, hud_yy, 1, 1, 0, c_white, alpha)
-draw_sprite_ext(spr_ranks_hud, 1, 90, 260, 1, 1, 0, c_white, alpha)
-rank_scale = Approach(rank_scale, 1, 0.2);
-	var spr_w = sprite_get_width(spr_pizzascore);
-	var spr_h = sprite_get_height(spr_pizzascore);
-	var spr_xo = sprite_get_xoffset(spr_pizzascore);
-	var spr_yo = sprite_get_yoffset(spr_pizzascore);
-    switch floor(pizzascore_index)
-    {
-        case 1:
-        case 2:
-        case 3:
-            text_y = 1
-            break
-        case 5:
-        case 10:
-            text_y = -1
-            break
-        case 6:
-        case 9:
-            text_y = -2
-            break
-        case 7:
-            text_y = -3
-            break
-        case 8:
-            text_y = -5
-            break
-    }
-    var cs = 0
-    with (obj_comboend)
-        cs += comboscore
-    with (obj_particlesystem)
-    {
-        for (var i = 0; i < ds_list_size(global.collect_list); i++)
-            cs += ds_list_find_value(global.collect_list, i).value
-    }
-    var _score = global.collect
-    var sc = _score - global.comboscore - cs
-    if (sc < 0)
-        sc = 0
-    draw_set_font(global.collectfont)
-    var text_y = 0
-    var str = string(sc)
-    var num = string_length(str)
-    var w = string_width(str)
-    var xx = 854 - w / 2
-    for (i = 0; i < num; i++)
-    {
-        var yy = (((i + 1) % 2) == 0 ? -5 : 0)
-        var c = color_array[i]
-        pal_swap_set(spr_font_palette, c)
-        draw_text(floor(xx), floor(hud_yy - 56 + text_y + yy), string_char_at(str, (i + 1)))
-        xx += (w / num)
-    }
-if (global.panic)
+draw_set_font(global.combofont2)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+var _tx = (_cx - 64)
+var _ty = (_cy - 12)
+var _str = string(global.combo)
+var num = string_length(_str)
+for (var i = num; i > 0; i--)
 {
-shader_set(shd_panicbg)
-shader_reset()
-	font = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:", 1, 0)
-    draw_set_font(font)
-    draw_set_halign(fa_center)
-    draw_set_color(c_white)
-	draw_text(0,540,"https://discord.gg/buw4cYDEYT")
-    draw_text((random_range(1, -1) + 480), (random_range(1, -1) + 480), string_hash_to_newline(((string(global.minutes) + ":") + string(global.seconds))))
-    if (global.panic == 1)
-    {
-        if (global.seconds < 10)
-        {
-            if (global.minutes < 1)
-                draw_set_color(c_red)
-            else
-                draw_set_color(c_white)
-        }
-        else if (global.seconds >= 10)
-        {
-            if (global.minutes < 1)
-                draw_set_color(c_red)
-            else
-                draw_set_color(c_white)
-        }
-    }
+	var char = string_char_at(_str, i)
+	draw_text(_tx, _ty, char)
+	_tx -= 22
+	_ty -= 8
 }
-
-
-
-
-global.smallnumber_fnt = font_add_sprite_ext(spr_smallnumber, "1234567890-+", true, 0)
+shader_set(global.Pal_Shader)
+	draw_sprite_ext(spr_tv_bg, 0, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
+	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
+	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.patterntexture)
+	draw_sprite_ext(sprite_index, image_index, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
+	pattern_reset()
+	if (state = states.tv_whitenoise)
+		draw_sprite_ext(spr_tv_whitenoise, floor(noiseindex), (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
+reset_shader_fix()
 if (bubblespr != -4)
-    draw_sprite_ext(bubblespr, bubbleindex, (448), 123, 1, 1, 1, c_white, alpha)
+	draw_sprite_ext(bubblespr, bubbleindex, 512, 53, 1, 1, 1, c_white, alpha)
 if (!surface_exists(promptsurface))
-    promptsurface = surface_create(248, 490)
+	promptsurface = surface_create(290, 102)
 surface_set_target(promptsurface)
 draw_clear_alpha(c_black, 0)
 draw_set_font(font1)
@@ -131,64 +66,55 @@ draw_set_halign(fa_left)
 draw_set_valign(fa_middle)
 if (bubblespr == spr_tv_bubble)
 {
-    promptx -= promptspd
-    if (bubblespr != spr_tv_bubbleclose && promptx < (350 - string_width(prompt)))
-    {
-        bubblespr = spr_tv_bubbleclose
-        prompt = ""
-        bubbleindex = 0
-    }
-    draw_text_color((promptx - 350), 110, prompt, c_black, c_black, c_black, c_black, 1)
+	promptx -= promptspd
+	if (bubblespr != 433 && promptx < (350 - string_width(prompt)))
+	{
+		bubblespr = spr_tv_bubbleclose
+		bubbleindex = 0
+	}
+	draw_text_color((promptx - 350), 50, prompt, c_black, c_black, c_black, c_black, 1)
 }
 draw_set_halign(fa_left)
 surface_reset_target()
-draw_surface(promptsurface, (960 - 610), 0)
+draw_surface(promptsurface, 350, 0)
 draw_set_font(global.smallnumber_fnt)
 draw_set_halign(fa_center)
-
-
-
-
-
-
-draw_sprite_ext(spr_hudthing, -1, 129, 90, 1, 1, 1, c_white, alpha)
-    if (obj_player.y < 200 && obj_player.x < 200)
-        alpha = 0.5
-    else
-        alpha = 1
-    font = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:", 1, 0)
-    draw_set_font(font)
-    draw_set_halign(fa_center)
-    draw_set_color(c_white)
-    if (global.panic == 1)
-    {
-        if (global.seconds < 10)
-        {
-            if (global.minutes < 1)
-                draw_set_color(c_red)
-            else
-                draw_set_color(c_white)
-            draw_text(((random_range(1, -1)) + 480), ((random_range(1, -1)) + 65), string_hash_to_newline(string(global.minutes) + ":0" + string(global.seconds)))
-        }
-        else if (global.seconds >= 10)
-        {
-            if (global.minutes == 0 && global.seconds <= 30)
-                draw_set_color(c_red)
-            else
-                draw_set_color(c_white)
-            draw_text(((random_range(1, -1)) + 480), ((random_range(1, -1)) + 65), string_hash_to_newline(string(global.minutes) + ":" + string(global.seconds)))
-        }
-    }
-global.combofont = font_add_sprite_ext(spr_combofont, "0123456789/:", 1, 0)
-draw_set_font(global.combofont)
-draw_set_halign(fa_right)
-draw_set_valign(fa_top)
-var _tx = (_cx - 64)
-var _ty = (_cy - 12)
-var _str = string(visualcombo)
-var num = string_length(_str)
-		
-	font = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:", 1, 0)
-    draw_set_font(font)
-    draw_set_halign(fa_center)
-    draw_set_color(c_white)
+if instance_exists(obj_pizzaball)
+	draw_text(832, 300, ((string(global.golfhit) + " ") + "GOLF HIT"))
+if global.panic
+{
+	var _fill = global.fill
+	var _currentbarpos = (chunkmax - _fill)
+	_perc = (_currentbarpos / chunkmax)
+	var _max_x = 299
+	var _barpos = (_max_x * _perc)
+	if (!surface_exists(bar_surface))
+		bar_surface = surface_create(298, 30)
+	var _barfillpos = (floor(_barpos) + 13)
+	if (_barfillpos > 0)
+	{
+		surface_resize(bar_surface, _barfillpos, 30)
+		surface_set_target(bar_surface)
+		draw_clear_alpha(c_black, 0)
+		var clip_x = (timer_x + 3)
+		var clip_y = (timer_y + 5)
+		for (i = 0; i < 3; i++)
+			draw_sprite(spr_timer_barfill, 0, (barfill_x + (i * 173)), 0)
+		surface_reset_target()
+		draw_surface(bar_surface, clip_x, clip_y)
+	}
+	draw_sprite(spr_timer_bar, -1, timer_x, timer_y)
+	draw_sprite(johnface_sprite, johnface_index, ((timer_x + 13) + _barpos), (timer_y + 20))
+	draw_sprite(pizzaface_sprite, pizzaface_index, (timer_x + 320), (timer_y + 10))
+	var minutes = 0;
+	for (var seconds = ceil(global.fill / 12); seconds > 59; seconds -= 60)
+		minutes++;
+	if (seconds < 10)
+		seconds = concat("0", seconds);
+	else
+		seconds = string(seconds);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_set_font(global.bigfont);
+	draw_text(timer_x + 153, timer_y + 18, concat(minutes, ":", seconds));
+}

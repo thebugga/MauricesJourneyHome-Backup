@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"object_get_depth",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"GMS1 Compatibility Scripts",
+    "path":"folders/Scripts/GMS1 Compatibility Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,17 +1,7 @@
-if (global.panic == 1)
+if (room == custom_lvl_room)
 {
-    global.seconds -= 1
-    if (global.seconds < 0)
-    {
-        global.seconds = 59
-        global.minutes -= 1
-    }
-}
-if (global.seconds < 10)
-	global.seconds = string_concat("0", global.seconds);
-alarm[1] = 60
-
-if (global.seconds == 0 && global.minutes == 0)
-{
-	alarm[2] = 1
+	global.srank = obj_score_set.x
+	global.arank = (global.srank - (global.srank / 4))
+	global.brank = (global.srank - ((global.srank / 4) * 2))
+	global.crank = (global.srank - ((global.srank / 4) * 3))
 }

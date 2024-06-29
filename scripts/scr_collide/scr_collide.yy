@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
   "%Name":"scr_collide",
-  "isCompatibility":true,
+  "isCompatibility":false,
   "isDnD":false,
   "name":"scr_collide",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Collision",
+    "path":"folders/Scripts/Collision.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

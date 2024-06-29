@@ -3,15 +3,18 @@
   "%Name":"obj_giantcollect",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_pizzaballOLD","path":"objects/obj_pizzaballOLD/obj_pizzaballOLD.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_giantcollect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Collectibles",
+    "path":"folders/Objects/Room structure/Generic/Collectibles.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,12 +35,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bigfuckingthing",
-    "path":"sprites/spr_bigfuckingthing/spr_bigfuckingthing.yy",
+    "name":"spr_giantpizza",
+    "path":"sprites/spr_giantpizza/spr_giantpizza.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_bigfuckingthing",
-    "path":"sprites/spr_bigfuckingthing/spr_bigfuckingthing.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

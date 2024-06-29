@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
   "%Name":"pal_swap_init_system",
-  "isCompatibility":true,
+  "isCompatibility":false,
   "isDnD":false,
   "name":"pal_swap_init_system",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Retro Palette Swapper",
+    "path":"folders/Scripts/Retro Palette Swapper.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

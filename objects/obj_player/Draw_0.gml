@@ -1,8 +1,2 @@
-if censormode
-	draw_sprite_ext(spr_maurice_mask, image_index, x, y, xscale, yscale, 0, c_white, 1)
-else
-	draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, 0, c_white, 1)
-if debug {
-	draw_text(x - 20, y-40, state)
-}
-	
+/*draw_set_font(global.font_small)
+draw_text(x, y - 100, sprite_get_name(sprite_index))

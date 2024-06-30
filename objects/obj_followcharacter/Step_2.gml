@@ -1,5 +1,3 @@
-if lock
-	exit;
 if (followid != noone && (!instance_exists(obj_player1)))
 	exit;
 playerid = obj_player1.id
@@ -29,8 +27,6 @@ if (ds_queue_size(followqueue) > (LAG_STEPS * 2))
 {
 	var _x = ds_queue_dequeue(followqueue)
 	var _y = ds_queue_dequeue(followqueue)
-	if (!use_collision)
-	{
 		if (interp < 1)
 		{
 			x = lerp(x, _x, interp);
@@ -42,7 +38,6 @@ if (ds_queue_size(followqueue) > (LAG_STEPS * 2))
 			x = _x;
 			y = _y;
 		}
-	}
 	mask_index = ds_queue_dequeue(followqueue)
 	image_xscale = ds_queue_dequeue(followqueue)
 	lastplayerposx = _x

@@ -1,6 +1,6 @@
 function scr_characterspr()
 {
-	if (character == "P" && ispeppino)
+	if (character == "M" && ispeppino)
 	{
 		spr_idle = spr_player_idle
 		spr_move = spr_player_move
@@ -238,7 +238,7 @@ function scr_characterspr()
 		spr_palette = spr_peppalette
 		paletteselect = 1
 	}
-	if (character == "N" or (character == "P" && (!ispeppino)))
+	if (character == "N" or (character == "M" && (!ispeppino)))
 	{
 		spr_idle = spr_playerN_idle
 		spr_move = spr_playerN_move
@@ -706,7 +706,7 @@ function scr_characterspr()
 		spr_palette = spr_vigipalette
 		paletteselect = 1
 	}
-	if (character == "M")
+	if (character == "PM")
 	{
 		spr_idle = spr_pepperman_idle
 		spr_move = spr_pepperman_move

@@ -34,7 +34,7 @@ if (fadealpha > 1)
 				}
 				with (obj_player2)
 				{
-					if instance_exists(obj_coopplayerfollow)
+					if instance_exists(obj_swapmodefollow)
 						state = states.gotoplayer
 				}
 			}
@@ -90,7 +90,7 @@ if instance_exists(obj_player)
 	}
 	with (obj_player2)
 	{
-		if instance_exists(obj_coopplayerfollow)
+		if instance_exists(obj_swapmodefollow)
 			state = states.gotoplayer
 	}
 }

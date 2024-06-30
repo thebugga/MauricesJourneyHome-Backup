@@ -288,3 +288,33 @@ function meta_player_room()
 		argumentDescriptions: []
 	};
 }
+
+function sh_alltoppins(args)
+{
+	if !instance_exists(obj_pizzakincheese)
+		instance_create(obj_player1.x, obj_player1.y, obj_pizzakincheese);
+	if !instance_exists(obj_pizzakintomato)
+		instance_create(obj_player1.x, obj_player1.y, obj_pizzakintomato);
+	if !instance_exists(obj_pizzakinsausage)
+		instance_create(obj_player1.x, obj_player1.y, obj_pizzakinsausage);
+	if !instance_exists(obj_pizzakinpineapple)
+		instance_create(obj_player1.x, obj_player1.y, obj_pizzakinpineapple);
+	if !instance_exists(obj_pizzakinshroom)
+		instance_create(obj_player1.x, obj_player1.y, obj_pizzakinshroom);
+	global.cheesefollow = true;
+	global.tomatofollow = true;
+	global.sausagefollow = true;
+	global.pineapplefollow = true;
+	global.shroomfollow = true;
+}
+
+function meta_alltoppins()
+{
+	return 
+	{
+		description: "Gives you all the toppins",
+		arguments: [],
+		suggestions: [],
+		argumentDescriptions: []
+	};
+}

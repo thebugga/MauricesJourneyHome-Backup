@@ -666,6 +666,30 @@ if (state != states.mach2 && state != states.mach3 && state != states.trickjump 
 	ramp = 0
 	ramp_points = 0
 }
+if ((!scr_slope()))
+    angle = lerp(obj_player.angle, 0, 0.3)
+else if (!(place_meeting(x, (y + 1), obj_solid)))
+{
+    with (instance_place(x, (y + 1), obj_slope))
+    {
+        if (abs(image_yscale) < abs(image_xscale))
+        {
+            if (sign(image_xscale) == 1)
+                other.angle = lerp(obj_player.angle, 15, 0.3)
+
+            else
+                other.angle = lerp(obj_player.angle, -15, 0.3)
+
+        }
+        else if (sign(image_xscale) == 1)
+            other.angle = lerp(obj_player.angle, 30, 0.3)
+
+        else
+            other.angle = lerp(obj_player.angle, -30, 0.3)
+
+    }
+}
+
 if (state != states.door && state != states.chainsaw && state != states.hit && place_meeting(x, y, obj_boxofpizza))
 	state = states.crouch
 if (shoot_buffer > 0)
@@ -1107,4 +1131,4 @@ if input_down_buffer > 0
 if input_buffer_walljump > 0
 	input_buffer_walljump--;
 if input_buffer_slap > 0
-	input_buffer_slap--;
+	input_buffer_slap--;;

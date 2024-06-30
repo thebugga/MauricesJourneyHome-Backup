@@ -7,7 +7,7 @@ function scr_player_mach3()
 	}
 	switch character
 	{
-		case "P":										 
+		case "M":										 
 			var slopeaccel = 0.1;
 			var slopedeccel = 0.2;
 			var mach4movespeed = 20;
@@ -120,12 +120,12 @@ function scr_player_mach3()
 					image_index = 0;
 					sprite_index = spr_mach3jump;
 				}
-				if character == "P"
+				if character == "M"
 					vsp = jumpspeed;
 				else
 					vsp = -13;
 			}
-			if input_buffer_jump > 0 && !can_jump && key_up && !ispeppino && character == "P" && noisedoublejump
+			if input_buffer_jump > 0 && !can_jump && key_up && !ispeppino && character == "M" && noisedoublejump
 				scr_player_do_noisecrusher();
 			if fightball == 0
 			{
@@ -166,7 +166,7 @@ function scr_player_mach3()
 			else if (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach)
 				image_speed = 0.4;
 			
-			if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && (character == "P" || character == "N")) || ((character == "S" && (move == 0 || move != xscale) && grounded) && fightball == 0))
+			if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && (character == "M" || character == "N")) || ((character == "S" && (move == 0 || move != xscale) && grounded) && fightball == 0))
 			{
 				sprite_index = spr_machslidestart;
 				if ispeppino
@@ -177,7 +177,7 @@ function scr_player_mach3()
 				image_index = 0;
 				launched = false;
 			}
-			if (move == -xscale && grounded && vsp > 0 && !launched && (character == "P" || character == "N") && fightball == 0 && sprite_index != spr_dashpadmach)
+			if (move == -xscale && grounded && vsp > 0 && !launched && (character == "M" || character == "N") && fightball == 0 && sprite_index != spr_dashpadmach)
 			{
 				if ispeppino
 					fmod_event_one_shot_3d("event:/sfx/maurice/machslideboost", x, y);

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_switchgustavo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_switchgustavo",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

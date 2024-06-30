@@ -365,7 +365,7 @@ function state_player_normal()
     }
 	switch character
 	{
-		case "P":
+		case "M":
 			if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu)
 			{
 				sprite_index = spr_mach1;
@@ -527,7 +527,7 @@ function pepperman_grab_reset()
 }
 function scr_player_normal()
 {
-	if character != "M"
+	if character != "PM"
 		state_player_normal();
 	else
 		state_pepperman_normal();

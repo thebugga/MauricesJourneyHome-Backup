@@ -34,8 +34,24 @@ else
 	hours = string(hours)
 draw_set_halign(fa_left)
 draw_set_valign(fa_bottom)
-draw_set_font(font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890", 1, 0))
+draw_set_font(font_add_sprite_ext(spr_truefont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz:.!0123456789?'\"ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜáäãàâéèêëíîïóöõôúùûüÇç_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль/", true, 2))
 draw_set_alpha(1)
 draw_set_color(c_white)
+var _roomname = room_get_name(room);
+#macro ENTITY obj_player.state
+var _name = variable_struct_get_names(obj_player.state);
 var finalstr = concat(hours, ":", m_str, ":", s_str, ".", mm)
+draw_text(32, 32, "fps = " + string(fps_real));
+draw_text(32, 52, "character = " + string(obj_player.character));
+draw_text(32, 72, "hsp = " + string(obj_player.hsp));
+draw_text(32, 92, "vsp = " + string(obj_player.vsp));
+draw_text(32, 112, "movespeed = " + string(obj_player.movespeed));
+draw_text(32, 132, "grounded = " + string(obj_player.grounded));
+draw_text(32, 152, "sprite_index = " + string(obj_player.sprite_index));
+draw_text(32, 172, "image_index = " + string(obj_player.image_index));
+draw_text(32, 192, "x = " + string(obj_player.x));
+draw_text(32, 212, "y = " + string(obj_player.y));
+draw_text(32, 232, "current room = " + room_get_name(room));
+draw_text(32, 252, "doise = " + string(obj_player.ispeppino));
 draw_text(960 - ((string_length(finalstr) - 1) * string_width("A")), 540 - 8, finalstr)
+//draw_text(32, 64 - 8, "https://discord.gg/2avBw3ztEu")

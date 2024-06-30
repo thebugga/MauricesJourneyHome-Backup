@@ -52,7 +52,7 @@ else
 			else if (device_to_reconnect == 1 && global.coop)
 			{
 				global.coop = false;
-				instance_destroy(obj_coopplayerfollow);
+				instance_destroy(obj_swapmodefollow);
 				device_selected[device_to_reconnect] = false;
 				player_input_device[device_to_reconnect] = -2;
 				deactivated = false;

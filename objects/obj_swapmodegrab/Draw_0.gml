@@ -1,0 +1,7 @@
+if (isgustavo && ispeppino)
+    draw_sprite(spr_lonebrick_wait, -1, xstart, ystart)
+shader_set(global.Pal_Shader)
+pal_swap_set(spr_palette, 1, false)
+draw_self()
+pattern_reset()
+shader_reset()

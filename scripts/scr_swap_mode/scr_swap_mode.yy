@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_swap_mode",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_swap_mode",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

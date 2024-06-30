@@ -1,3 +1,4 @@
+
 if (is_bossroom() or room == editor_room)
 exit;
 if global.kungfu

@@ -25,14 +25,6 @@ if (state != states.backbreaker)
 			sprite_index = spr_toppinpineapple
 		}
 	}
-	if (obj_player1.state == states.backbreaker)
-	{
-		instance_create(x, y, obj_tinytaunt)
-		sprite_index = spr_taunt
-		image_index = irandom(sprite_get_number(spr_taunt) - 1)
-		state = states.backbreaker
-		lock = true
-	}
 }
 else
 {

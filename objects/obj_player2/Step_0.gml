@@ -4,6 +4,7 @@ if (room == rm_editor)
 	exit;
 }
 scr_getinput2()
+ispeppino = 0
 event_inherited()
 if (!global.coop)
 {

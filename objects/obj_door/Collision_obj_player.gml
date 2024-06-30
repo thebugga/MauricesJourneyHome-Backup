@@ -59,7 +59,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 			}
 			with obj_player2
 			{
-				if (instance_exists(obj_coopplayerfollow))
+				if (instance_exists(obj_swapmodefollow))
 					state = states.gotoplayer;
 			}
 			other.visited = true;

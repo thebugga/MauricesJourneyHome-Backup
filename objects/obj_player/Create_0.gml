@@ -273,7 +273,7 @@ angry = false;
 baddiegrabbedID = 0;
 
 spr_palette = spr_peppalette;
-character = "P";
+character = "M";
 scr_characterspr();
 paletteselect = 1;
 player_paletteselect[0] = 1;
@@ -623,7 +623,7 @@ if (!variable_global_exists("saveroom"))
 	global.moneyfont = font_add_sprite_ext(spr_stickmoney_font, "0123456789$-", 1, 0)
 	global.smallfont = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡.:?¿1234567890ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜÇ", true, 0);
 	global.moneyfont = font_add_sprite_ext(spr_stickmoney_font, "0123456789$-", true, 0);
-	global.creditsfont = font_add_sprite_ext(spr_truefont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz:.!0123456789?'\"ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜáäãàâéèêëíîïóöõôúùûüÇç_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль", true, 2);
+	global.creditsfont = font_add_sprite_ext(spr_truefont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz:.!0123456789?'\"ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜáäãàâéèêëíîïóöõôúùûüÇç_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль/", true, 2);
 	global.font_map = ds_map_create();
 	ds_map_set(global.font_map, "bigfont_en", global.bigfont);
 	ds_map_set(global.font_map, "smallfont_en", global.smallfont);
@@ -774,6 +774,7 @@ pistolchargeshooting = false;
 pistolchargeshot = 8;
 pistolchargeeffect = 0;
 gravesurfingjumpbuffer = 0;
+superjumptimer = 0;
 spinsndbuffer = 5;
 boxxedspinbuffer = 0;
 noisebossscream = false;

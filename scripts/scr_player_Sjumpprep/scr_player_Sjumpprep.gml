@@ -2,7 +2,7 @@ function scr_player_Sjumpprep()
 {
 	switch character
 	{
-		case "P":
+		case "M":
 			if (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft)
 				move = key_left + key_right;
 			else
@@ -48,6 +48,7 @@ function scr_player_Sjumpprep()
 				sprite_index = spr_superjump;
 				state = states.Sjump;
 				vsp = -17;
+				superjumptimer = 60
 				image_index = 0;
 				if !ispeppino
 					scr_fmod_soundeffect(snd_noiseSjumprelease, x, y);

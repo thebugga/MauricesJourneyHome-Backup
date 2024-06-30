@@ -2,7 +2,7 @@ function scr_player_climbwall()
 {
 	switch character
 	{
-		case "P":
+		case "M":
 if (windingAnim < 200)
     windingAnim++
 if (sprite_index != spr_player_clingwall)

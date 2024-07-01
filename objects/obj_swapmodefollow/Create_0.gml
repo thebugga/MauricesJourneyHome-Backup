@@ -38,6 +38,10 @@ get_character_spr = function()
 	    spr_breakdance = spr_player_breakdance
 		spr_air = spr_player_jump;
 		spr_fall = spr_player_fall
+		spr_deathend = spr_player_deathend
+		spr_dead = spr_player_deathend
+		spr_walkfront = spr_player_walkfront
+		spr_Timesup = spr_player_timesup
 		spr_animatronic = spr_pepanimatronic;
 		spr_fightball = spr_player_fightball;
 		
@@ -49,9 +53,13 @@ get_character_spr = function()
 		spr_move = spr_playerN_move;
 		spr_taunt = spr_playerN_taunt;
 		spr_suplexdash = spr_playerN_suplexgrab
+		spr_walkfront = spr_playerN_walkfront
 	    spr_breakdance = spr_playerN_breakdance
 		spr_air = spr_playerN_doublejump;
 		spr_fall = spr_playerN_fall
+		spr_deathend = spr_playerN_deathend
+		spr_dead = spr_playerN_deathend
+		spr_Timesup = spr_playerN_timesup
 		spr_animatronic = spr_pepanimatronic;
 		spr_fightball = spr_playerN_fightball;
 	}

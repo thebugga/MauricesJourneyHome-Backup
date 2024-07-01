@@ -211,6 +211,10 @@ function toggle_hitboxes_function()
 		var fill = args[1];
 		global.panic = true
 		global.fill = fill
+    global.wave = 0
+    global.maxwave = (((global.minutes * 60) + global.seconds) * 60)
+    if global.panicbg
+        scr_panicbg_init()
 		with (obj_tv)
 			chunkmax = global.fill
 	}

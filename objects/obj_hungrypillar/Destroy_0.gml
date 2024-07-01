@@ -57,98 +57,6 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 	
 	switch room
 	{
-		case entrance_10:
-			global.minutes = 2
-			global.seconds = 30
-			break
-		case medieval_10:
-			global.minutes = 2
-			global.seconds = 15
-			break
-		case ruin_11:
-			global.minutes = 2
-			global.seconds = 59
-			break
-		case dungeon_10:
-			global.minutes = 4
-			global.seconds = 30
-			break
-		case chateau_6:
-			global.minutes = 3
-			global.seconds = 15
-			break
-		case strongcold_1:
-			global.minutes = 4
-			global.seconds = 0
-			break
-		case dragonlair_1:
-			global.minutes = 0
-			global.seconds = 59
-			break
-		case desert_16:
-			global.minutes = 2
-			global.seconds = 30
-			break
-		case graveyard_6:
-			global.minutes = 3
-			global.seconds = 59
-			break
-		case farm_11:
-			global.minutes = 3
-			global.seconds = 59
-			break
-		case pinball_17:
-			global.minutes = 3
-			global.seconds = 12
-			break
-		case beach_13:
-			global.minutes = 3
-			global.seconds = 30
-			break
-		case forest_5:
-			global.minutes = 3
-			global.seconds = 30
-			break
-		case minigolf_8:
-			global.minutes = 7
-			global.seconds = 30
-			break
-		case space_9:
-			global.minutes = 5
-			global.seconds = 30
-			break
-		case sewer_8:
-			global.minutes = 5
-			global.seconds = 30
-			break
-		case city_11:
-			global.minutes = 5
-			global.seconds = 30
-			break
-		case mansion_7:
-			global.minutes = 5
-			global.seconds = 30
-			break
-		case factory_10:
-			global.minutes = 6
-			global.seconds = 30
-			break
-		case freezer_3:
-			global.minutes = 5
-			global.seconds = 30
-			break
-		case war_1:
-			global.minutes = 6
-			global.seconds = 30
-			break
-		case exit_1:
-			global.minutes = 9
-			global.seconds = 59
-			break
-		case kidsparty_lastroom:
-			global.minutes = 3
-			global.seconds = 30
-			break
 		case custom_lvl_room:
 			global.minutes = 2
 			global.seconds = 15
@@ -158,5 +66,10 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 			global.seconds = 30
 			break
 	}
+    global.wave = 0
+    global.maxwave = (((global.minutes * 60) + global.seconds) * 60)
+    global.wave = (global.maxwave - (global.fill))
+    if global.panic
+        scr_panicbg_init()
 	ds_list_add(global.saveroom, id)
 }

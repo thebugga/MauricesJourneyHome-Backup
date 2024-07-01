@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_pizzaface",
+  "soundFile":"sfx_pizzaface.wav",
   "type":0,
-  "volume":0.31,
+  "volume":1.0,
 }

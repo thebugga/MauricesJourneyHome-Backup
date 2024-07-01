@@ -414,7 +414,7 @@ else
 pizzaface_index += 0.35
 hand_index += 0.35
 johnface_index += 0.35
-if (global.panic && global.fill > 0)
+if (global.panic == true && global.fill > 0)
 {
 	showtime_buffer = 100
 	if (!instance_exists(obj_ghostcollectibles))

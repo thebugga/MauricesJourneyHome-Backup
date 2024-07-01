@@ -8,7 +8,8 @@ rank_index = 0
 world_array[0] = "WORLD 1"
 
 level_array[0][0] = ["PIZZASCAPE", medieval_1, "medieval"]
-level_array[0][1] = ["TEST", boss_pizzaface, "medieval"]
+level_array[0][1] = ["TEST", rm_test, "medieval"]
+
 
 toppin_info[0] = [0, spr_toppinshroom] // image_index, sprite
 toppin_info[1] = [0, spr_toppincheese]

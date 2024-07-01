@@ -2,7 +2,6 @@ if room == rank_room
 	visible = false;
 else
 	visible = true;
-
 if ispeppino == obj_player1.ispeppino
 {
 	ispeppino = !obj_player1.ispeppino;
@@ -24,3 +23,5 @@ if obj_player1.key_taunt2 && taunttimer <= 0 && usable
 }
 if !isgustavo && obj_player1.key_taunt
 	breakdance_pressed++;
+
+scr_characterspr()

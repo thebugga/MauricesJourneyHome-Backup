@@ -1,4 +1,4 @@
-if (room == Realtitlescreen or room == rm_eggplantdisclaimer or room == rank_room or room == rm_levelselect or room == timesuproom or room == characterselect or room == hub_loadingscreen)
+if (room == rm_eggplantdisclaimer or room == rm_logo or room == REALLYREALTitlescreen or room == rank_room or room == rm_levelselect or room == timesuproom or room == characterselect or room == hub_loadingscreen)
 {
 	visible = false
 	sprite_index = spr_tv_off

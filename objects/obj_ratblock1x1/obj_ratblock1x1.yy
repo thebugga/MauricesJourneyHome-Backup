@@ -2,14 +2,14 @@
   "$GMObject":"",
   "%Name":"obj_ratblock1x1",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_ratblock1x1",
   "overriddenProperties":[],
   "parent":{
     "name":"Blocks",
-    "path":"folders/Objects/Room structure/Generic/Blocks.yy",
+    "path":"folders/Objects/Game settings/Room structure/Generic/Blocks.yy",
   },
   "parentObjectId":{
     "name":"obj_ratblock",

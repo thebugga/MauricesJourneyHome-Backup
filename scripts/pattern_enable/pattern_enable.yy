@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"pattern_enable",
   "isCompatibility":false,
   "isDnD":false,

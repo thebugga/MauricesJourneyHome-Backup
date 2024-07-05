@@ -47,8 +47,8 @@ function scr_player_Sjumpprep()
 				instance_create(x, y, obj_explosioneffect);
 				sprite_index = spr_superjump;
 				state = states.Sjump;
-				vsp = -17;
-				superjumptimer = 60
+				sjumpvsp = -12;
+				superjumptimer = 45
 				image_index = 0;
 				if !ispeppino
 					scr_fmod_soundeffect(snd_noiseSjumprelease, x, y);

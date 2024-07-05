@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Unused",
-    "path":"folders/Objects/Room structure/Unused.yy",
+    "path":"folders/Objects/Game settings/Room structure/Unused.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

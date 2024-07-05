@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Instakill",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"tdp_input_classes",
   "isCompatibility":false,
   "isDnD":false,

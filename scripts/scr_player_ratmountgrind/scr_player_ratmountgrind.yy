@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_player_ratmountgrind",
   "isCompatibility":false,
   "isDnD":false,

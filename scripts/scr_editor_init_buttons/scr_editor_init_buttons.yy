@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_editor_init_buttons",
   "isCompatibility":false,
   "isDnD":false,

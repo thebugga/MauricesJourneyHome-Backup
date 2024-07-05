@@ -2,14 +2,14 @@
   "$GMObject":"",
   "%Name":"obj_noisejetpack",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_noisejetpack",
   "overriddenProperties":[],
   "parent":{
     "name":"World 4",
-    "path":"folders/Objects/Room structure/World 4.yy",
+    "path":"folders/Objects/Game settings/Room structure/World 4.yy",
   },
   "parentObjectId":null,
   "persistent":false,

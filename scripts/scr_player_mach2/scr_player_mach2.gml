@@ -158,7 +158,7 @@ function scr_player_mach2()
 		sprite_index = spr_mach;
 	if (floor(image_index) == image_number - 1 && sprite_index == spr_suplexdash)
 		sprite_index = spr_mach;
-	if !grounded && sprite_index != spr_playerN_skateboarddoublejump && sprite_index != spr_playerN_sidewayspin && sprite_index != spr_playerN_grindcancel && sprite_index != spr_playerN_sidewayspinend && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_longjump && sprite_index != spr_longjumpend
+	if !grounded && sprite_index != spr_playerN_skateboarddoublejump && sprite_index != spr_playerN_sidewayspin && sprite_index != spr_playerN_grindcancel && sprite_index != spr_playerN_sidewayspinend && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_longjump && sprite_index != spr_longjumpend && sprite_index != spr_player_jumpdive1 && sprite_index != spr_player_jumpdive2
 	{
 		sprite_index = spr_secondjump1;
 		if skateboarding
@@ -172,6 +172,8 @@ function scr_player_mach2()
 		sprite_index = spr_clownfall;
 	if (sprite_index == spr_playerN_sidewayspin && floor(image_index) == image_number - 1)
 		sprite_index = spr_playerN_sidewayspinend;
+	if (sprite_index == spr_player_jumpdive1 && floor(image_index) == image_number - 1)
+		sprite_index = spr_player_jumpdive2;
 	if (grounded && (sprite_index == spr_playerN_sidewayspin || sprite_index == spr_playerN_grindcancel || sprite_index == spr_playerN_sidewayspinend))
 		sprite_index = spr_mach;
 	if (scr_mach_check_dive() && !skateboarding && sprite_index != spr_playerN_grindcancel && !place_meeting(x, y, obj_dashpad))
@@ -282,18 +284,14 @@ function scr_player_mach2()
 			}
 		}
 	}
-	if input_buffer_slap > 0 && !key_up && !skateboarding && shotgunAnim == 0 && !global.pistol
+	if input_buffer_slap > 0 && !key_up && !skateboarding && shotgunAnim == 0 && !global.pistol && sprite_index != spr_player_jumpdive1 && sprite_index != spr_player_jumpdive2
 	{
-		input_buffer_slap = 0;
-		sprite_index = spr_suplexdash;
-		suplexmove = true;
-		fmod_event_instance_play(suplexdashsnd);
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust, 0);
-		state = states.handstandjump;
-		if movespeed < 5
-			movespeed = 5;
-		image_index = 0;
+        input_buffer_slap = 0
+        suplexmove = true
+        fmod_event_instance_play(suplexdashsnd)
+        state = states.slap
+        image_index = 0
+		slaphand = choose(-1, 1)
 	}
 	else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && !skateboarding && (!global.pistol || !ispeppino))
 	{

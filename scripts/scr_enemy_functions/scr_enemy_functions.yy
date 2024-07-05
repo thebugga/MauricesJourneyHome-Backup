@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_enemy_functions",
   "isCompatibility":false,
   "isDnD":false,

@@ -6,7 +6,7 @@ prevxscale = xscale
 var prevmask = mask_index
 
 // input buffers and coyote time
-if key_slap2
+if key_shoot2
 	input_buffer_shoot = 10;
 if key_slap2
 	input_buffer_slap = 12;
@@ -716,7 +716,7 @@ else
 		invhurt_buffer = invhurt_max
 	hurt_buffer = -1
 }
-if (room == Realtitlescreen && instance_exists(obj_mainmenuselect))
+if (room == Oldtitlescreen && instance_exists(obj_mainmenuselect))
 	state = states.titlescreen
 if (wallclingcooldown < 10)
 	wallclingcooldown++
@@ -1014,7 +1014,7 @@ if (toomuchalarm1 > 0)
 }
 if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && state != states.gameover&& room != hub_tutorial1)
 {
-	if (room != Realtitlescreen && room != rank_room)
+	if (room != Oldtitlescreen && room != rank_room)
 	{
 		with (obj_camera)
 		{
@@ -1053,7 +1053,7 @@ if (character == "S")
 	if (state == states.crouchjump or state == states.crouch)
 		state = states.normal
 }
-if (character != "M")
+if (character != "PM")
 {
 	if (!(scr_solid_player(x, y)))
 	{

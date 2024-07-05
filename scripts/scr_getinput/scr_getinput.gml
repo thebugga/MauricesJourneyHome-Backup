@@ -111,8 +111,8 @@ function scr_getinput()
 	key_taunt2 = tdp_input_get("player_taunt").pressed || tdp_input_get("player_tauntC").pressed;
 	key_attack = tdp_input_get("player_attack").held || tdp_input_get("player_attackC").held;
 	key_attack2 = tdp_input_get("player_attack").pressed || tdp_input_get("player_attackC").pressed;
-	key_shoot = false;
-	key_shoot2 = false;
+	key_shoot = tdp_input_get("player_shoot").held || tdp_input_get("player_shootC").held;
+	key_shoot2 = tdp_input_get("player_shoot").pressed || tdp_input_get("player_shootC").pressed;
 	key_start = tdp_input_get("menu_start").pressed || tdp_input_get("menu_startC").pressed;
 	key_chainsaw = false;
 	key_chainsaw2 = false;

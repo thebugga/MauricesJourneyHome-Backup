@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cutscene_superpinball",
   "isCompatibility":false,
   "isDnD":false,

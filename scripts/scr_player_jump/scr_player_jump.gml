@@ -193,7 +193,7 @@ function state_player_jump()
 					sprite_index = spr_airdash2;
 					break;
 				case spr_player_pistolshot:
-					sprite_index = spr_player_pistoljump2;
+					sprite_index = shoot ? spr_player_pistoljump2 : spr_fall;
 					break;
 				case spr_shotgunjump:
 					sprite_index = spr_shotgunfall;
@@ -295,7 +295,16 @@ function state_player_jump()
 			shake_mag_acc = 30 / room_speed;
 		}
 	}
-	if input_buffer_slap > 0 && key_up && shotgunAnim == 0 && (!global.pistol || character == "N")
+	if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol))
+    {
+        input_buffer_slap = 0
+        suplexmove = true
+        fmod_event_instance_play(suplexdashsnd)
+        state = states.slap
+        image_index = 0
+		slaphand = choose(-1, 1)
+    }
+    else if input_buffer_slap > 0 && key_up && shotgunAnim == 0 && (!global.pistol || character == "N")
 	{
 		input_buffer_slap = 0;
 		state = states.punch;
@@ -321,10 +330,16 @@ function state_player_jump()
 	}
 	if input_buffer_shoot > 0
 	{
-		if shotgunAnim
-			scr_shotgunshoot();
-		else if global.pistol
-			scr_pistolshoot(states.jump);
+		input_buffer_shoot = 0
+		sprite_index = spr_pistolshot;
+		image_index = 0;
+		state = states.pistolaim
+		with (instance_create(x + (xscale * 20), y, obj_shotgunbullet))
+		{
+			pistol = true;
+			sprite_index = spr_peppinobullet;
+			image_xscale = other.xscale;
+		}
 	}
 	if key_slap2 && shoot
 	{
@@ -579,7 +594,7 @@ function state_pepperman_jump()
 function scr_player_jump()
 {
 	
-	if character != "M"
+	if character != "PM"
 		state_player_jump();
 	else
 		state_pepperman_jump();

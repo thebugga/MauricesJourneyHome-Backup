@@ -14,6 +14,6 @@ if (!ds_list_empty(tex_list))
 else
 {
 	ds_list_destroy(tex_list)
-	room_goto(Realtitlescreen)
+	room_goto(Oldtitlescreen)
 }
 alarm[0] = 1

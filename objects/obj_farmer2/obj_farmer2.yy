@@ -2,14 +2,14 @@
   "$GMObject":"",
   "%Name":"obj_farmer2",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_farmer2",
   "overriddenProperties":[],
   "parent":{
     "name":"Follower pick ups",
-    "path":"folders/Objects/Room structure/Follower pick ups.yy",
+    "path":"folders/Objects/Game settings/Room structure/Follower pick ups.yy",
   },
   "parentObjectId":{
     "name":"obj_farmerparent",

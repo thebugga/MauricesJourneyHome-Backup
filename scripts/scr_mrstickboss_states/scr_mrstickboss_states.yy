@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_mrstickboss_states",
   "isCompatibility":false,
   "isDnD":false,

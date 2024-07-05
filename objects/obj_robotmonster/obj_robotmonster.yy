@@ -2,15 +2,15 @@
   "$GMObject":"",
   "%Name":"obj_robotmonster",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_robotmonster",
   "overriddenProperties":[],
   "parent":{
     "name":"World 5",
-    "path":"folders/Objects/Room structure/World 5.yy",
+    "path":"folders/Objects/Game settings/Room structure/World 5.yy",
   },
   "parentObjectId":{
     "name":"obj_monster",

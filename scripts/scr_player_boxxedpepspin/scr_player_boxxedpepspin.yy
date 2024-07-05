@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_player_boxxedpepspin",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 playerid = obj_player2.id
-if (room != Realtitlescreen && room != rm_levelselect && room != characterselect)
+if (room != Oldtitlescreen && room != rm_levelselect && room != characterselect)
 {
 	with (playerid)
 	{

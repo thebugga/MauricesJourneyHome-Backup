@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Follower pick ups",
-    "path":"folders/Objects/Room structure/Follower pick ups.yy",
+    "path":"folders/Objects/Game settings/Room structure/Follower pick ups.yy",
   },
   "parentObjectId":{
     "name":"obj_farmerparent",

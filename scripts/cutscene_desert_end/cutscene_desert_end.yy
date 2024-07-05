@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cutscene_desert_end",
   "isCompatibility":false,
   "isDnD":false,

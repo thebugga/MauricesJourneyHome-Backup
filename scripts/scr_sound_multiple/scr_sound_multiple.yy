@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_sound_multiple",
   "isCompatibility":false,
   "isDnD":false,

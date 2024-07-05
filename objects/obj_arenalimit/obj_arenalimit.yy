@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Arenas",
-    "path":"folders/Objects/Room structure/Arenas.yy",
+    "path":"folders/Objects/Game settings/Room structure/Arenas.yy",
   },
   "parentObjectId":null,
   "persistent":false,

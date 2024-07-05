@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"World 5",
-    "path":"folders/Objects/Room structure/World 5.yy",
+    "path":"folders/Objects/Game settings/Room structure/World 5.yy",
   },
   "parentObjectId":null,
   "persistent":false,

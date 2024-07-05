@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_debug_commands",
   "isCompatibility":false,
   "isDnD":false,

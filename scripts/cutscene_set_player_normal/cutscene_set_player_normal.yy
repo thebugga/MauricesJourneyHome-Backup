@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cutscene_set_player_normal",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_player_noisejetpack",
   "isCompatibility":false,
   "isDnD":false,

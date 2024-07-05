@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"pattern_set_sprite",
   "isCompatibility":false,
   "isDnD":false,

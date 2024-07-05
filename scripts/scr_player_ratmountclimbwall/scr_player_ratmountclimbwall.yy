@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_player_ratmountclimbwall",
   "isCompatibility":false,
   "isDnD":false,

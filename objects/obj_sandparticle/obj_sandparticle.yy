@@ -2,15 +2,15 @@
   "$GMObject":"",
   "%Name":"obj_sandparticle",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_sandparticle",
   "overriddenProperties":[],
   "parent":{
     "name":"World 2",
-    "path":"folders/Objects/Room structure/World 2.yy",
+    "path":"folders/Objects/Game settings/Room structure/World 2.yy",
   },
   "parentObjectId":null,
   "persistent":true,

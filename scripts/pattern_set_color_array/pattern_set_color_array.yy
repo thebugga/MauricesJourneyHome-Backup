@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"pattern_set_color_array",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_player_barrelclimbwall",
   "isCompatibility":false,
   "isDnD":false,

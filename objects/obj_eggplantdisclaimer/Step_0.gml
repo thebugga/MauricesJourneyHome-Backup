@@ -15,7 +15,7 @@ else if changeroom
 	{
 		with (obj_player)
 		{
-			targetRoom = Titlescreen
+			targetRoom = rm_logo
 			targetDoor = "A"
 		}
 		instance_create(0, 0, obj_fadeout)

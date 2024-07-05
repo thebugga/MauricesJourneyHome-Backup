@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cutscene_player_pos_lerp",
   "isCompatibility":false,
   "isDnD":false,

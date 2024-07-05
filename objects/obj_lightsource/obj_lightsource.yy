@@ -2,14 +2,14 @@
   "$GMObject":"",
   "%Name":"obj_lightsource",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_lightsource",
   "overriddenProperties":[],
   "parent":{
     "name":"World 1",
-    "path":"folders/Objects/Room structure/World 1.yy",
+    "path":"folders/Objects/Game settings/Room structure/World 1.yy",
   },
   "parentObjectId":null,
   "persistent":false,

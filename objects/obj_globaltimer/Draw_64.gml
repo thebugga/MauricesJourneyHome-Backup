@@ -1,4 +1,4 @@
-if (room == Realtitlescreen or room == hub_loadingscreen or room == rank_room)
+if (room == Oldtitlescreen or room == hub_loadingscreen or room == rank_room)
 	exit;
 if (instance_exists(obj_pause) && obj_pause.pause)
 	exit;
@@ -41,17 +41,17 @@ var _roomname = room_get_name(room);
 #macro ENTITY obj_player.state
 var _name = variable_struct_get_names(obj_player.state);
 var finalstr = concat(hours, ":", m_str, ":", s_str, ".", mm)
-draw_text(32, 32, "fps = " + string(fps_real));
-draw_text(32, 52, "character = " + string(obj_player.character));
-draw_text(32, 72, "hsp = " + string(obj_player.hsp));
-draw_text(32, 92, "vsp = " + string(obj_player.vsp));
-draw_text(32, 112, "movespeed = " + string(obj_player.movespeed));
-draw_text(32, 132, "grounded = " + string(obj_player.grounded));
-draw_text(32, 152, "sprite_index = " + string(obj_player.sprite_index));
-draw_text(32, 172, "image_index = " + string(obj_player.image_index));
-draw_text(32, 192, "x = " + string(obj_player.x));
-draw_text(32, 212, "y = " + string(obj_player.y));
-draw_text(32, 232, "current room = " + room_get_name(room));
-draw_text(32, 252, "doise = " + string(obj_player.ispeppino));
-draw_text(960 - ((string_length(finalstr) - 1) * string_width("A")), 540 - 8, finalstr)
+//draw_text(32, 32, "fps = " + string(fps_real));
+//draw_text(32, 52, "character = " + string(obj_player.character));
+//draw_text(32, 72, "hsp = " + string(obj_player.hsp));
+//draw_text(32, 92, "vsp = " + string(obj_player.vsp));
+//draw_text(32, 112, "movespeed = " + string(obj_player.movespeed));
+//draw_text(32, 132, "grounded = " + string(obj_player.grounded));
+//draw_text(32, 152, "sprite_index = " + string(obj_player.sprite_index));
+//draw_text(32, 172, "image_index = " + string(obj_player.image_index));
+//draw_text(32, 192, "x = " + string(obj_player.x));
+//draw_text(32, 212, "y = " + string(obj_player.y));
+//draw_text(32, 232, "current room = " + room_get_name(room));
+//draw_text(32, 252, "doise = " + string(obj_player.ispeppino));
+//draw_text(960 - ((string_length(finalstr) - 1) * string_width("A")), 540 - 8, finalstr)
 //draw_text(32, 64 - 8, "https://discord.gg/2avBw3ztEu")

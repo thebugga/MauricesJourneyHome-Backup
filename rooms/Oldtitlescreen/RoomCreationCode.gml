@@ -369,9 +369,9 @@ global.mrstickcutscene3 = -4
 global.chateauswap = -4
 global.warcutscene = -4
 global.option_sfx_volume = 4
-with (obj_player1)
+with (obj_player)
 	state = states.normal
 global.loadeditor = 0
-room_goto(hub_outside)
+room_goto(rm_eggplantdisclaimer)
 instance_destroy(obj_cutscene_handler)
 gamesave_async_load()

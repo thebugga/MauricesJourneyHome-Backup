@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"noise_aftimg_set_pal",
   "isCompatibility":false,
   "isDnD":false,

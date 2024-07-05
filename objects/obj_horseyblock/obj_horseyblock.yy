@@ -2,15 +2,15 @@
   "$GMObject":"",
   "%Name":"obj_horseyblock",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_horseyblock",
   "overriddenProperties":[],
   "parent":{
     "name":"World 2",
-    "path":"folders/Objects/Room structure/World 2.yy",
+    "path":"folders/Objects/Game settings/Room structure/World 2.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

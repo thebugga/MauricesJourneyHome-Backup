@@ -32,11 +32,11 @@ function scr_player_Sjump()
 			piledrivereffect = 15;
 		}
 	}
-if superjumptimer > 0
-{
-vsp = -10
-superjumptimer -= 1.5
-}
+	if superjumptimer > 0
+	{
+	vsp = sjumpvsp
+	superjumptimer--
+	}
 	sjumpvsp -= 0.1;
 	if character == "V" && image_index > 3
 		vsp = -11;
@@ -46,6 +46,12 @@ superjumptimer -= 1.5
 			a++;
 		hsp = xscale * a;
 		vsp = 0;
+	}
+	if (superjumptimer == 0)
+	{
+		sprite_index = spr_machfreefall;
+		if grounded
+			state = states.normal
 	}
 	if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 	{
@@ -74,13 +80,16 @@ superjumptimer -= 1.5
 		state = states.Sjumpland;
 		machhitAnim = false;
 	}
-	else if ((key_attack2 || input_buffer_slap > 0) && character == "M" && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
+	else if ((key_attack2 || input_buffer_slap > 0) && character == "M" && sprite_index != spr_superspringplayer)
 	{
 		if ispeppino
 		{
 		    sprite_index = spr_player_jumpdive1
-		    state = states.crouchslide
-		    movespeed = 13
+		    state = states.mach2
+			if move != 0
+				xscale = move;
+		    movespeed = 10
+			vsp = -15
 			fmod_event_one_shot_3d("event:/sfx/maurice/superjumpcancel", x, y);
 		}
 		else
@@ -108,8 +117,6 @@ superjumptimer -= 1.5
 	if sprite_index == spr_player_Sjumpcancelstart
 	{
 		vsp = 0;
-		if move != 0
-			xscale = move;
 		if floor(image_index) == image_number - 1
 		{
 			jumpstop = true;
@@ -135,11 +142,6 @@ superjumptimer -= 1.5
 	}
 	if !ispeppino && character == "M" && sprite_index == spr_superjump
 		hsp = move * 3;
-	if (floor(image_index) == image_number - 1 && superjumptimer == 0)
-	{
-		state = states.jump;
-		sprite_index = spr_fall;
-	}
 
 	image_speed = 0.5;
 	scr_collide_player();

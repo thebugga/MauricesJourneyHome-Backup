@@ -322,21 +322,25 @@ function state_player_normal()
 	}
 	if input_buffer_shoot > 0
 	{
-		if shotgunAnim
-			scr_shotgunshoot();
-		else if global.pistol
-			scr_pistolshoot(states.normal);
+		input_buffer_shoot = 0
+		sprite_index = spr_pistolshot;
+		image_index = 0;
+		state = states.pistolaim
+		with (instance_create(x + (xscale * 20), y, obj_shotgunbullet))
+		{
+			pistol = true;
+			sprite_index = spr_peppinobullet;
+			image_xscale = other.xscale;
+		}
 	}
     if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol))
     {
         input_buffer_slap = 0
-        sprite_index = spr_suplexdash
         suplexmove = true
-        particle_set_scale((5 << 0), xscale, 1)
-        create_particle(x, y, (5 << 0), 0)
         fmod_event_instance_play(suplexdashsnd)
-        state = states.handstandjump
+        state = states.slap
         image_index = 0
+		slaphand = choose(-1, 1)
     }
     else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && ((!global.pistol) || (!ispeppino)))
     {

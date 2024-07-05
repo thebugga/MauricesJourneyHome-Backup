@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_pizzaball_golf",
   "isCompatibility":false,
   "isDnD":false,

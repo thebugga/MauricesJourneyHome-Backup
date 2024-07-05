@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"World 1",
-    "path":"folders/Objects/Room structure/World 1.yy",
+    "path":"folders/Objects/Game settings/Room structure/World 1.yy",
   },
   "parentObjectId":{
     "name":"obj_deadjohnparent",

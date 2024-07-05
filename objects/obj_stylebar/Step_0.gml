@@ -86,7 +86,7 @@ if global.heatmeter
 	visible = obj_tv.visible
 	if (obj_player.y < 200)
 		alpha = 0.3
-	else if (!((room == rank_room or room == timesuproom or room == boss_room1 or room == Realtitlescreen or room == characterselect)))
+	else if (!((room == rank_room or room == timesuproom or room == boss_room1 or room == Oldtitlescreen or room == characterselect)))
 		alpha = 1
 	index += 0.35
 	global.stylemultiplier = ((global.style + (global.stylethreshold * 55)) / 220)

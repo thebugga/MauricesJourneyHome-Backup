@@ -2,15 +2,15 @@
   "$GMObject":"",
   "%Name":"obj_cutscene_handler",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_cutscene_handler",
   "overriddenProperties":[],
   "parent":{
     "name":"Room structure",
-    "path":"folders/Objects/Room structure.yy",
+    "path":"folders/Objects/Game settings/Room structure.yy",
   },
   "parentObjectId":null,
   "persistent":true,

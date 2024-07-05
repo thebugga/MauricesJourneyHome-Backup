@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cutscene_camera_shake",
   "isCompatibility":false,
   "isDnD":false,

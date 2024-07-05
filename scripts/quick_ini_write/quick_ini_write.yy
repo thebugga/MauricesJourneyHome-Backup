@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"quick_ini_write",
   "isCompatibility":false,
   "isDnD":false,

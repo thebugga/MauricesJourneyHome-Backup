@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cutscene_player_float",
   "isCompatibility":false,
   "isDnD":false,

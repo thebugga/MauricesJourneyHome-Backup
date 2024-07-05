@@ -64,7 +64,6 @@ function scr_player_slap()
 					sprite_index = spr_player_slap2air
 			}
 			image_index = 0
-			slaphand *= -1
 		}
 		if (grounded && move == 0)
 		{
@@ -90,13 +89,8 @@ function scr_player_slap()
 	}
 	if (floor(image_index) == 1 && (!instance_exists(obj_slaphitbox2)))
 	{
-		if (sprite_index == spr_player_slapup)
-		{
-			with (instance_create(x, y, obj_slaphitbox2))
-				sprite_index = spr_player_hitboxslapup
-		}
-		else
-			instance_create(x, y, obj_slaphitbox2)
+		with instance_create(x, y, obj_slaphitbox2)
+			playerid = other.id
 	}
 	if (floor(image_index) == (image_number - 1) && slapbuffer == 8)
 	{

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_editor_state_objects",
   "isCompatibility":false,
   "isDnD":false,

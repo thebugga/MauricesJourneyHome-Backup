@@ -1,5 +1,5 @@
 {
-  "$GMRoom":"",
+  "$GMRoom":"v1",
   "%Name":"hub_loadingscreen",
   "creationCodeFile":"rooms/hub_loadingscreen/RoomCreationCode.gml",
   "inheritCode":false,

@@ -74,16 +74,12 @@ else if (_score >= global.brank)
 	rank_ix = 2
 else if (_score >= global.crank)
 	rank_ix = 1
-if (previousrank != rank_ix)
+if (previousrank != rank_ix && rank_state == 0)
 {
+	rank_state = sign(rank_ix - previousrank)
+	rank_newx = 50 + (rank_state * 100)
 	previousrank = rank_ix
-	rank_scale = 3
 }
-rank_scale = Approach(rank_scale, 1, 0.2)
-var spr_w = sprite_get_width(spr_ranks_hudfill)
-var spr_h = sprite_get_height(spr_ranks_hudfill)
-var spr_xo = sprite_get_xoffset(spr_ranks_hudfill)
-var spr_yo = sprite_get_yoffset(spr_ranks_hudfill)
 var perc = 0
 switch rank_ix
 {
@@ -103,11 +99,61 @@ switch rank_ix
 	default:
 		perc = (_score / global.crank)
 }
-
-var t = (spr_h * perc)
-var top = (spr_h - t)
-draw_sprite_ext(spr_ranks_hud, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1)
-draw_sprite_part(spr_ranks_hudfill, rank_ix, 0, top, spr_w, (spr_h - top), (rx - spr_xo), ((ry - spr_yo) + top))
+if abs(rank_state) == 1
+{
+	rank_x = Approach(rank_x, 50 - (25 * sign(rank_state)), 2.5)
+	rank_newx = Approach(rank_newx, 50 + (25 * sign(rank_state)), 7.5)
+	rank_xscale = Approach(rank_xscale, 0.5, 0.05)
+	rank_yscale = Approach(rank_yscale, 1.5, 0.05)
+	if rank_x == 50 - (25 * sign(rank_state))
+		 rank_state += sign(rank_state)
+}
+if abs(rank_state) == 2
+{
+	rank_x = Approach(rank_x, 50, 2.5)
+	rank_newx = Approach(rank_newx, 50 + (100 * sign(rank_state)), 7.5)
+	rank_xscale = Approach(rank_xscale, 1, 0.05)
+	rank_yscale = Approach(rank_yscale, 1, 0.05)
+	if rank_x == 50
+		 rank_state += sign(rank_state)
+}
+if abs(rank_state) == 3
+{
+	rank_x = Approach(rank_x, 50 - (100 * sign(rank_state)), 5)
+	rank_newx = Approach(rank_newx, 50, 5)
+	if rank_newx == 50
+		 {
+			rank_state = 0
+			rank_visual = previousrank
+			rank_x = 50
+			rank_newx = -50
+			rank_xscale = 1
+			rank_yscale = 1
+		 }
+}
+if (!surface_exists(rank_surf))
+    rank_surf = surface_create(100, 100)
+if (!surface_exists(rank_clip))
+    rank_clip = surface_create(100, 100)
+gpu_set_blendmode(bm_normal) 
+surface_set_target(rank_clip)
+	draw_set_alpha(1)
+	draw_clear(c_white)
+	gpu_set_blendmode(bm_subtract)
+	draw_sprite(spr_ranks_clip, 0, 50, 50)
+surface_reset_target()
+gpu_set_blendmode(bm_normal) 
+surface_set_target(rank_surf)
+	draw_clear(ds_map_find_value(rankbg_color, rank_ix))
+	draw_rectangle_color(0, 100 - (perc * 100), 100, 100, ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), false)
+	draw_sprite(spr_ranks_hud, previousrank, rank_newx, 50)
+	draw_sprite_ext(spr_ranks_hud, rank_visual, rank_x, 50, rank_xscale, rank_yscale, 0, c_white, 1)
+	gpu_set_blendmode(bm_subtract)
+	draw_surface(rank_clip, 0, 0)
+	gpu_set_blendmode(bm_normal) 
+surface_reset_target()
+draw_set_alpha(1)
+draw_surface(rank_surf, rx, ry)
 draw_set_valign(fa_top)
 draw_set_halign(fa_left)
 draw_set_font(global.collectfont)

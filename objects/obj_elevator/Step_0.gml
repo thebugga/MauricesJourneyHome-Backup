@@ -31,8 +31,7 @@ if charvely != 0
 chary += charvely
 charvely++
 }
-trapopen += 0.35
-if floor(trapopen) >= (sprite_get_number(charsprite) - 1)
+if floor(charindex) < (sprite_get_number(charsprite) - 1)
 {
-trapopen = 0
+charindex += 0.35
 }

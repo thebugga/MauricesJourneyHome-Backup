@@ -9,3 +9,5 @@ if (room == rm_editor)
 			y += 1
 	}
 }
+totem_face[0] = -4
+totem_index[0] = -4

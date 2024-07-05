@@ -22,14 +22,12 @@ if (room == Oldtitlescreen)
 		ds_map_destroy(special_prompts)
 	special_prompts = -4
 }
-/*
-if (room == dese)
+if (room == rm_test)
 {
-	global.srank = 11500
+	global.srank = 1000
 	global.arank = (global.srank - (global.srank / 4))
 	global.brank = (global.srank - ((global.srank / 4) * 2))
 	global.crank = (global.srank - ((global.srank / 4) * 3))
 }
-*/
 if (room == custom_lvl_room)
 	alarm[1] = 4

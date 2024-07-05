@@ -27,7 +27,7 @@ else
 trapopen = true
 charsprite = spr_haha_3
 elavatorsprite = spr_haha_2
-collect_shake = 0
+shake = 0
 alarm[0] = 100
 }
 }

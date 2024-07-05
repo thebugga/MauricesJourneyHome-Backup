@@ -1,3 +1,4 @@
+
 if room == rm_editor
 	exit;
 
@@ -49,8 +50,15 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 	}
 	
 	instance_destroy()
-	with instance_create(x, y, obj_sausageman_dead)
-		sprite_index = spr_hungrypillar_dead
+	for (var i = 0; i < image_yscale; i++)
+	{
+		var spr = asset_get_index(concat("spr_hungrypillar_dead", totem_face[0]))
+		if (spr > -1)
+		{
+			with instance_create(x, ((bbox_top + 64) + (128 * i)), obj_sausageman_dead)
+				sprite_index = spr
+		}
+	}
 	scr_soundeffect(sfx_killenemy)
 	instance_create(x, y + 600, obj_itspizzatime)
 	global.panic = true

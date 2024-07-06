@@ -1,4 +1,4 @@
-if (state == states.titlescreen)
+if state != states.normal
 {
 	var w = 0
 	var h = 0
@@ -6,7 +6,7 @@ if (state == states.titlescreen)
 	var yy = 0
 	for (var i = 0; i < array_length(hub_array); i++)
 	{
-		var txt = hub_array[i][1]
+		var txt = hub_array[i][2]
 		if (string_width(txt) > w)
 			w = string_width(txt)
 		h += string_height(txt)
@@ -21,8 +21,20 @@ if (state == states.titlescreen)
 	for (i = 0; i < array_length(hub_array); i++)
 	{
 		var c = (selected == i ? c_white : c_gray)
-		txt = hub_array[i][1]
+		txt = hub_array[i][2]
 		draw_text_color(480, yy, txt, c, c, c, c, 1)
 		yy -= string_height(txt)
 	}
+	if showinside
+	{
+		draw_set_color(c_black)
+		draw_rectangle(0, 0, 10000, 10000, false)
+		draw_set_color(c_white)
+		draw_sprite(elavatorsprite, 0, irandom_range(-shake, shake), irandom_range(-shake, shake))
+		draw_sprite(charsprite, charindex, irandom_range(-shake, shake) , chary + irandom_range(-shake, shake))
+	}
+	draw_set_alpha(fadealpha)
+	draw_set_color(c_black)
+	draw_rectangle(0, 0, 10000, 10000, false)
+	draw_set_alpha(1)
 }

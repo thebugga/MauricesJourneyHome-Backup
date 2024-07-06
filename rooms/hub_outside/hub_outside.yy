@@ -51,8 +51,8 @@
   ],
   "name":"hub_outside",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Tower Hub",
+    "path":"folders/Rooms/Tower Hub.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

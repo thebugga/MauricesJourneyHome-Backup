@@ -54,8 +54,6 @@ if (object_index != obj_player2 or global.coop == true)
 		else
 			x = (obj_doorA.x + 16)
 		y = (obj_doorA.y - 14)
-		state = states.normal;
-   obj_camera.camzoom = 1
 	}
 	if (targetDoor == "B" && instance_exists(obj_doorB))
 	{
@@ -66,8 +64,6 @@ if (object_index != obj_player2 or global.coop == true)
 		else
 			x = (obj_doorB.x + 16)
 		y = (obj_doorB.y - 14)
-		state = states.normal;
-   obj_camera.camzoom = 1
 	}
 	if (targetDoor == "C" && instance_exists(obj_doorC))
 	{
@@ -78,8 +74,6 @@ if (object_index != obj_player2 or global.coop == true)
 		else
 			x = (obj_doorC.x + 16)
 		y = (obj_doorC.y - 14)
-		state = states.normal;
-   obj_camera.camzoom = 1
 	}
 	if (targetDoor == "D" && instance_exists(obj_doorD))
 	{
@@ -90,8 +84,6 @@ if (object_index != obj_player2 or global.coop == true)
 		else
 			x = (obj_doorD.x + 16)
 		y = (obj_doorD.y - 14)
-		state = states.normal;
-   obj_camera.camzoom = 1
 	}
 	if (targetDoor == "E" && instance_exists(obj_doorE))
 	{
@@ -102,8 +94,6 @@ if (object_index != obj_player2 or global.coop == true)
 		else
 			x = (obj_doorE.x + 16)
 		y = (obj_doorE.y - 14)
-		state = states.normal;
-   obj_camera.camzoom = 1
 	}
 	if (targetDoor == "F" && instance_exists(obj_doorF))
 	{
@@ -115,8 +105,7 @@ if (object_index != obj_player2 or global.coop == true)
 			x = (obj_doorF.x + 16)
 		y = (obj_doorF.y - 14)
 	}
-	state = states.normal;
-   obj_camera.camzoom = 1
+	obj_camera.camzoom = 1
 }
 if verticalhallway
 {

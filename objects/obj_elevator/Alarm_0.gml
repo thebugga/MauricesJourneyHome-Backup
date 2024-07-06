@@ -25,8 +25,8 @@ with (obj_player)
 else
 {
 trapopen = true
-charsprite = spr_haha_3
-elavatorsprite = spr_haha_2
+charsprite = spr_elevator_maurice1shock
+elavatorsprite = spr_elevator_bgopen
 shake = 0
 alarm[0] = 100
 }

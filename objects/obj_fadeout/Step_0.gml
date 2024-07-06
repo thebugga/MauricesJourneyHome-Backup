@@ -49,7 +49,7 @@ if instance_exists(obj_player)
 {
 	with (obj_player1)
 	{
-		if (other.fadein == 1 && (obj_player1.state == states.door or obj_player1.state == states.victory) && (sprite_index == spr_victory or place_meeting(x, y, obj_door) or place_meeting(x, y, obj_startgate)))
+		if (other.fadein == 1 && (obj_player1.state == states.door or obj_player1.state == states.victory) && (sprite_index == spr_victory or place_meeting(x, y, obj_door) or place_meeting(x, y, obj_startgate) or place_meeting(x, y, obj_exitgate)))
 		{
 			state = states.comingoutdoor
 			image_index = 0

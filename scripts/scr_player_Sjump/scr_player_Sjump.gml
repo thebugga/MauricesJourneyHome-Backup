@@ -11,32 +11,40 @@ function scr_player_Sjump()
 	crouchslideAnim = true;
 	crouchAnim = false;
 	machhitAnim = false;
-	if sprite_index == spr_superjump && superjumptimer > 0
+	if sprite_index != spr_superspringplayer
 	{
-		if steppybuffer > 0
-			steppybuffer--;
-		else
+		if superjumptimer > 0
 		{
-			create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
-			steppybuffer = 8;
-		}
-		if piledrivereffect > 0
-			piledrivereffect--;
-		else
-		{
-			with (instance_create(x, y, obj_parryeffect))
+			vsp = sjumpvsp
+			superjumptimer--
+			if steppybuffer > 0
+				steppybuffer--;
+			else
 			{
-				sprite_index = spr_piledrivereffect;
-				image_yscale = -1;
+				create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
+				steppybuffer = 8;
 			}
-			piledrivereffect = 15;
+			if piledrivereffect > 0
+				piledrivereffect--;
+			else
+			{
+				with (instance_create(x, y, obj_parryeffect))
+				{
+					sprite_index = spr_piledrivereffect;
+					image_yscale = -1;
+				}
+				piledrivereffect = 15;
+			}
+		}
+		else
+		{
+			sprite_index = spr_machfreefall;
+			if grounded
+				state = states.normal
 		}
 	}
-	if superjumptimer > 0
-	{
-	vsp = sjumpvsp
-	superjumptimer--
-	}
+	else
+		vsp = -10
 	sjumpvsp -= 0.1;
 	if character == "V" && image_index > 3
 		vsp = -11;
@@ -46,12 +54,6 @@ function scr_player_Sjump()
 			a++;
 		hsp = xscale * a;
 		vsp = 0;
-	}
-	if (superjumptimer == 0)
-	{
-		sprite_index = spr_machfreefall;
-		if grounded
-			state = states.normal
 	}
 	if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 	{

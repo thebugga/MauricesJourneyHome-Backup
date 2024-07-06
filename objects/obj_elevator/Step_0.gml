@@ -11,27 +11,4 @@ if (place_meeting(x, y, obj_doorE))
 if (place_meeting(x, y, obj_doorF))
 	target_door = "F";
 
-if fadein
-{
-    fadealpha = Approach(fadealpha, 1, 0.1)
-    if (fadealpha >= 1 && showinside == false)
-    {
-        
-        showinside = true
-        fadein = false
-        alarm[0] = (trapdoor ? 400 : 600)  
-    }
-}
-else
-{
-    fadealpha = Approach(fadealpha, 0, 0.1)
-}
-if charvely != 0
-{
-chary += charvely
-charvely++
-}
-if floor(charindex) < (sprite_get_number(charsprite) - 1)
-{
-charindex += 0.35
-}
+

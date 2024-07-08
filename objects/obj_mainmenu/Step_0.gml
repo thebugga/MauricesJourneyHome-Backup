@@ -25,10 +25,11 @@ switch state
 			saveselect = clamp(saveselect, 1, 3)
 			if key_jump
 			{
+				scr_soundeffect(sfx_collectgiantpizza)
 				state = states.transition
 				alarm[0] = 200
 			}
-			if key_taunt2
+			if key_start
 			{
 				scr_soundeffect(sfx_enemyprojectile)
 				instance_create(x, y, obj_option)

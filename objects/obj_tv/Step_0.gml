@@ -1,4 +1,4 @@
-if (room == rm_eggplantdisclaimer or room == rm_logo or room == REALLYREALTitlescreen or room == rank_room or room == rm_levelselect or room == timesuproom or room == characterselect or room == hub_loadingscreen)
+if (room == rm_eggplantdisclaimer or room == rm_logo or room == REALLYREALTitlescreen or room == rank_room or room == rm_levelselect or room == timesuproom or room == characterselect or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 3) == "hub" && !global.panic))
 {
 	visible = false
 	sprite_index = spr_tv_off
@@ -508,9 +508,3 @@ else
 combofill_index += 0.35
 if (combofill_index > (sprite_get_number(spr_tv_combobubblefill) - 1))
 	combofill_index = frac(combofill_index)
-	
-
-if ((string_copy(room_get_name(room), 1, 3) == "hub" && (!global.panic)))
-    visible = false
-else
-    visible = true

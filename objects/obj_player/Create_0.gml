@@ -621,7 +621,6 @@ if (!variable_global_exists("saveroom"))
 	global.wartimerfont1 = font_add_sprite_ext(spr_wartimer_font1, "1234567890", 1, 0)
 	global.wartimerfont2 = font_add_sprite_ext(spr_wartimer_font2, "1234567890", 1, 0)
 	global.moneyfont = font_add_sprite_ext(spr_stickmoney_font, "0123456789$-", 1, 0)
-	global.smallfont = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡.:?¿1234567890ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜÇ", true, 0);
 	global.moneyfont = font_add_sprite_ext(spr_stickmoney_font, "0123456789$-", true, 0);
 	global.creditsfont = font_add_sprite_ext(spr_truefont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz:.!0123456789?'\"ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜáäãàâéèêëíîïóöõôúùûüÇç_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль/", true, 2);
 	global.font_map = ds_map_create();
@@ -649,6 +648,15 @@ if (!variable_global_exists("saveroom"))
 	global.noisejetpack = false;
 	global.hasfarmer = array_create(3, false);
 	global.savedattackstyle = -4;
+	
+	
+	ini_open("saveData.ini")
+	global.option_master_volume = ini_read_real("Option", "master_volume", 100)
+	global.option_music_volume = ini_read_real("Option", "music_volume", 100)
+	global.option_sfx_volume = ini_read_real("Option", "sfx_volume", 100)
+	global.option_fullscreen = ini_read_real("Option", "fullscreen", 0)
+	global.option_resolution = ini_read_real("Option", "resolution", 1)
+	ini_close()
 	
 	global.throw_frame = 0;
 	global.throw_frame[obj_pizzagoblin] = 11

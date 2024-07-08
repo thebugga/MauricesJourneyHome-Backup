@@ -5,6 +5,7 @@ switch state
 		break
 	case states.transitioncutscene:
 		state = states.normal
+		flicker = 1
 		break
 	case states.transition:
 		global.currentsavefile = saveselect

@@ -19,12 +19,20 @@ switch state
 		}
 		break
 	case states.normal:
-		saveselect += (key_left2 + key_right2)
-		saveselect = clamp(saveselect, 1, 3)
-		if key_jump
+		if !instance_exists(obj_option)
 		{
-			state = states.transition
-			alarm[0] = 200
+			saveselect += (key_left2 + key_right2)
+			saveselect = clamp(saveselect, 1, 3)
+			if key_jump
+			{
+				state = states.transition
+				alarm[0] = 200
+			}
+			if key_taunt2
+			{
+				scr_soundeffect(sfx_enemyprojectile)
+				instance_create(x, y, obj_option)
+			}
 		}
 		break
 }

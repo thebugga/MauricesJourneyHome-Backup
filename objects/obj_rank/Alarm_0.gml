@@ -1,13 +1,13 @@
 global.levelcomplete = 1
+global.levelcompletename = global.leveltosave
 scr_playerreset()
 with (obj_player)
 {
-	targetDoor = "A"
-	targetRoom = rm_levelselect
-	room = rm_levelselect
-	x = -100
-	y = -100
-	state = states.titlescreen
+	targetRoom = backtohubroom
+	room = backtohubroom
+	x = backtohubstartx
+	y = backtohubstarty
+	state = states.comingoutdoor
 	image_blend = c_white
 }
 global.level_minutes = 0

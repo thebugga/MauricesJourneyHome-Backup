@@ -1,5 +1,5 @@
 var ds_h = 0
-font =	 font_add_sprite_ext(spr_truefont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz:.!0123456789?'\"ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜáäãàâéèêëíîïóöõôúùûüÇç_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль", true, 2);
+draw_set_font(global.creditsfont)
 var x1 = rpadding
 var y1 = (540 - (((dialogheight + rpadding) + (padding * 2)) + ds_h))
 draw_set_halign(fa_left)
@@ -47,5 +47,5 @@ surface_reset_target()
 draw_set_alpha(1)
 draw_surface(surf, 0, 0)
 draw_sprite_ext(spr_tutorialbubble, 1, x1, y1- 8, (bw / sprite_get_width(spr_tutorialbubble)), (bh / sprite_get_height(spr_tutorialbubble)), 0, c_white, 1)
-draw_text_color((x1 + padding + 10), ((y1 + padding + 10) + ds_h), displaytext, c_white, c_white, c_white, c_white, 1)
+draw_text_color((x1 + padding), ((y1 + padding) + ds_h), displaytext, c_white, c_white, c_white, c_white, 1)
 display_set_gui_size(960, 540) 

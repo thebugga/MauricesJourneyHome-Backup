@@ -530,7 +530,6 @@
     {"id":{"name":"obj_doortransition","path":"objects/obj_doortransition/obj_doortransition.yy",},},
     {"id":{"name":"obj_doortransition2","path":"objects/obj_doortransition2/obj_doortransition2.yy",},},
     {"id":{"name":"obj_doortransitionend","path":"objects/obj_doortransitionend/obj_doortransitionend.yy",},},
-    {"id":{"name":"obj_dougienpc","path":"objects/obj_dougienpc/obj_dougienpc.yy",},},
     {"id":{"name":"obj_drawcontroller","path":"objects/obj_drawcontroller/obj_drawcontroller.yy",},},
     {"id":{"name":"obj_drawfixer","path":"objects/obj_drawfixer/obj_drawfixer.yy",},},
     {"id":{"name":"obj_dresser","path":"objects/obj_dresser/obj_dresser.yy",},},

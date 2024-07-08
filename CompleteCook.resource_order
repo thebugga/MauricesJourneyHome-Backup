@@ -27,7 +27,6 @@
     {"name":"obj_cooppointer","order":16,"path":"objects/obj_cooppointer/obj_cooppointer.yy",},
     {"name":"obj_debugcontroller","order":10,"path":"objects/obj_debugcontroller/obj_debugcontroller.yy",},
     {"name":"obj_dialogcontroller","order":1,"path":"objects/obj_dialogcontroller/obj_dialogcontroller.yy",},
-    {"name":"obj_dougienpc","order":2,"path":"objects/obj_dougienpc/obj_dougienpc.yy",},
     {"name":"obj_drawcontroller","order":5,"path":"objects/obj_drawcontroller/obj_drawcontroller.yy",},
     {"name":"obj_elevator","order":2,"path":"objects/obj_elevator/obj_elevator.yy",},
     {"name":"obj_exitgatestart","order":1,"path":"objects/obj_exitgatestart/obj_exitgatestart.yy",},

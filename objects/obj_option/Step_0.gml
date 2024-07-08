@@ -1,8 +1,4 @@
 scr_getinput()
-for (var i = 0; i < array_length(optionarr); i++) {
-	if (key_escape)
-		instance_destroy(optionarr[i][1])
-}
 if canchoose
 {
 	bgalpha = Approach(bgalpha, 0, 0.05)
@@ -17,10 +13,18 @@ if canchoose
 		canchoose = false
 		instance_create(x, y, (optionarr[selected][1]))
 	}
+	if key_escape || key_slap2
+		instance_destroy()
 }
 else
+{
 	bgalpha = Approach(bgalpha, 1, 0.1)
-if key_escape
-	instance_destroy()
+	if key_slap2
+	{
+		for (var i = 0; i < array_length(optionarr); i++) 
+			instance_destroy(optionarr[i][1])
+		obj_option.alarm[0] = 2
+	}
+}
 x--
 y--

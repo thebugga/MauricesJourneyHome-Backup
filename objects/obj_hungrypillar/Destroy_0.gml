@@ -52,7 +52,7 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 	instance_destroy()
 	for (var i = 0; i < image_yscale; i++)
 	{
-		var spr = asset_get_index(concat("spr_hungrypillar_dead", totem_face[0]))
+		var spr = asset_get_index(concat("spr_hungrypillar_dead", totem_face[i]))
 		if (spr > -1)
 		{
 			with instance_create(x, ((bbox_top + 64) + (128 * i)), obj_sausageman_dead)

@@ -4,7 +4,7 @@ optionarr = [
 	["WINDOW", obj_windowconfig, 2],
 	["GAME", obj_gameconfig, 3],
 	["INPUT", obj_keyconfig, 4],
-	["CREDITS !JUST THE MANUAL ATM!", obj_manual, 0]
+	["CREDITS !WIP!", obj_manual, 3]
 ]
 bgindex = 0
 bgalpha = 0

@@ -1,8 +1,13 @@
 scr_getinput()
-i += (key_left2 + key_right2)
-i = clamp(i, 0, 12)
-if previ != i
+if !showlinks
 {
-	scr_soundeffect(sfx_step)
-	previ = i
+	frame += (key_left2 + key_right2)
+	frame = clamp(frame, 0, sprite_get_number(spr_manual) - 1)
+	if prevframe != frame
+	{
+		scr_soundeffect(sfx_step)
+		prevframe = frame
+	}
 }
+if key_taunt2
+	showlinks = !showlinks

@@ -25,7 +25,6 @@ if (key_jump or keyboard_check_pressed(vk_return))
 	switch audio_select
 	{
 		case -1:
-			set_audio_config()
 			obj_option.alarm[0] = 2
 			instance_destroy()
 			break

@@ -6,7 +6,7 @@ if instance_number(object_index) > 1
 	instance_destroy();
 	exit;
 }
-global.patterntexture = sprite1022
+global.patterntexture = spr_checkerboard
 global.current_level = noone;
 resetdoisecount = 0;
 global.resetdoise = false;
@@ -278,8 +278,10 @@ scr_characterspr();
 paletteselect = 1;
 player_paletteselect[0] = 1;
 player_patterntexture[0] = -4;
-player_paletteselect[1] = 6;
+player_paletteselect[1] = 7;
 player_patterntexture[1] = -4;
+player_paletteselect[2] = 1;
+player_patterntexture[2] = -4;
 player_paletteindex = 0;
 player_index = 0;
 swap_taunt = false;

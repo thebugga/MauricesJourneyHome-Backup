@@ -41,26 +41,20 @@ with (obj_heatafterimage)
 	{
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
 		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, 1, c_white, alpha)
+		pattern_reset()
 	}
 }
-with (obj_player2)
+with (obj_player)
 {
 	if (visible && bbox_in_camera(view_camera[0], 32))
 	{
-		pal_swap_set(spr_palette, paletteselect, 0)
-		b = get_dark(image_blend, other.use_dark)
-		draw_sprite_ext(sprite_index, image_index, x, y, (xscale * scale_xs), (yscale * scale_ys), image_angle, b, image_alpha)
-	}
-}
-with (obj_player1)
-{
-	if (visible && bbox_in_camera(view_camera[0], 32))
-	{
+		shader_set(global.Pal_Shader)
 		pal_swap_set(spr_palette, paletteselect, 0)
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.patterntexture)
 		b = get_dark(image_blend, other.use_dark)
 		draw_sprite_ext(sprite_index, image_index, x, y, (xscale * scale_xs), (yscale * scale_ys), angle, b, image_alpha)
 		pattern_reset()
+		reset_shader_fix()
 	}
 	draw_superslam_enemy()
 }
@@ -72,11 +66,6 @@ with (obj_baddie)
 		_stun = 25
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
 		draw_sprite_ext(sprite_index, image_index, x, (y + _stun), (xscale * image_xscale), yscale, angle, image_blend, image_alpha)
-}
-with (obj_player)
-{
-	if (visible && flash && bbox_in_camera(view_camera[0], 32))
-		draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, image_angle, image_blend, image_alpha)
 }
 with (obj_deadjohnparent)
 {

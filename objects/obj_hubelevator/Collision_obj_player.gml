@@ -1,4 +1,4 @@
-if (state == states.normal && other.grounded && other.key_up2)
+if (state == states.normal && other.grounded && other.key_up2 && !locked)
 {
 	state = states.titlescreen
 	playerid = other.id

@@ -18,8 +18,8 @@ if global.use_temperature
 }
 var collect_x = irandom_range((-collect_shake), collect_shake)
 var collect_y = irandom_range((-collect_shake), collect_shake)
-var tv_x = 845
-var tv_y = 80
+var tv_x = 845 - 139
+var tv_y = 80 - 134
 var _cx = (tv_x + combo_posX)
 var _cy = (((tv_y + 117) + hud_posY) + combo_posY)
 var _perc = (global.combotime / 60)
@@ -46,11 +46,24 @@ for (var i = num; i > 0; i--)
 	_tx -= 22
 	_ty -= 8
 }
+if (!surface_exists(tvsurface))
+	tvsurface = surface_create(278, 268)
+gpu_set_blendmode(bm_normal)
+surface_set_target(tvsurface)
+	draw_sprite_ext(spr_tv_bg, 0, 139, 134, 1, 1, 0, c_white, alpha)
+	draw_sprite_ext(sprite_index, image_index, 139, 134, 1, 1, 0, c_white, alpha)
+	if cardboardvisual != -4
+		draw_sprite_ext(cardboardvisual, 0, 139, cardboardy, 1, 1, 0, c_white, alpha)
+	gpu_set_blendmode(bm_subtract)
+	draw_sprite(spr_tv_clip, 0, 139, 134)
+	gpu_set_blendmode(bm_normal)
+surface_reset_target()
 shader_set(global.Pal_Shader)
-	draw_sprite_ext(spr_tv_bg, 0, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
 	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.patterntexture)
-	draw_sprite_ext(sprite_index, image_index, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
+	draw_sprite_ext(sprite_index, image_index, ((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
+	if state == states.normal
+		draw_surface(tvsurface, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY))
 	pattern_reset()
 	if (state = states.tv_whitenoise)
 		draw_sprite_ext(spr_tv_whitenoise, floor(noiseindex), (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)

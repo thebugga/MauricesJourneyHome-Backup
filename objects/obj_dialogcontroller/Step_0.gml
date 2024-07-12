@@ -33,15 +33,27 @@ else
             dialogheight = scr_calculate_height(currenttext)
             dialogcharacter = dialog[currentdialog][1]
             dialogexpression = dialog[currentdialog][2]
-            var func = dialog[currentdialog][3]
-
+			effect_shake = 0
+			if dialog[currentdialog][3] != -4
+			{
+				switch dialog[currentdialog][3]
+				{
+					case "angershake":
+					effect_shake = 1
+					break
+				}
+			}
+            var func = dialog[currentdialog][4]
             if (func != -4)
             {
-				collect_shake = 1
+                if (npcID != noone && instance_exists(npcID))
+                {
+                    with (npcID)
+                        method(id, func)()
+                }
+                else
+                    method(id, func)()
             }
-			else{
-				collect_shake = 0
-			}
         }
         else
             instance_destroy()
@@ -74,7 +86,7 @@ else
 	dialogblinktime = irandom_range(20, 1000)
 	}
 dialogindex += 0.35
-if floor(dialogindex) >= (sprite_get_number(dialogsprite) - 1)
+if floor(dialogindex) > (sprite_get_number(dialogsprite) - 1)
 {
 if (dialogsprite == talk_sprites[dialogcharacter][dialogexpression][2] || dialogsprite == talk_sprites[dialogcharacter][dialogexpression][3])
 dialogsprite = talk_sprites[dialogcharacter][dialogexpression][0]

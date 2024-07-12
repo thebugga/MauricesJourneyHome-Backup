@@ -17,5 +17,6 @@ elavatorsprite = spr_elevator_bg
 elavatorindex = 0
 chary = 0
 charvely = 0
+locked = true
 trapdoor = false
 fadealpha = 0

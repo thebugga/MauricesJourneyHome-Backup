@@ -123,40 +123,55 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
         argument2 = false
     with (obj_tv)
     {
-        if (expressionsprite != argument0 && bubblespr == -4)
+        if ((expressionsprite != argument0 || cardboardexprsprite != argument0) && bubblespr == -4)
         {
-            state = (250 << 0)
-            expressionsprite = argument0
-            switch expressionsprite
+            var _card = 1
+			switch argument0
             {
                 case spr_tv_exprhurt:
                 case spr_tv_exprhurtN:
                 case spr_tv_hurtG:
                     expressionbuffer = 60
+					cardboardexprsprite = argument0
                     break
                 case spr_tv_exprhurt1:
                 case spr_tv_exprhurt2:
                 case spr_tv_exprhurt3:
+					state = states.tv_whitenoise
                     expressionbuffer = 100
+					expressionsprite = argument0
+					_card = 0
                     break
                 case spr_tv_exprcollect:
                     expressionbuffer = 150
+					cardboardexprsprite = expressionsprite
                     if obj_player.isgustavo
                     {
-                        expressionsprite = spr_tv_happyG
+                        cardboardexprsprite = spr_tv_happyG
                         if (irandom(100) <= 50)
                             fmod_event_one_shot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y)
                     }
                     if (irandom(100) <= 50)
                         scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y)
                     break
+				case spr_tv_exprmach3:
+					cardboardexprsprite = argument0
+					break
+				case spr_tv_exprmach4:
+					cardboardexprsprite = argument0
+					break
             }
 
-            if ((!argument2) && instance_exists(obj_player1) && (!obj_player1.ispeppino))
+            if ((!argument2) && instance_exists(obj_player1) && (obj_player1.character != "M"))
             {
-                var n = asset_get_index(sprite_get_name(argument0) + "N")
+                var n = asset_get_index(sprite_get_name(argument0) + obj_player1.character)
                 if (n > -1)
-                    expressionsprite = n
+				{
+					if _card == 1
+						cardboardexprsprite = n
+					else
+						expressionsprite = n
+				}
             }
             if argument1
                 reset_palette = true

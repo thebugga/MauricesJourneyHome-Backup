@@ -1,6 +1,6 @@
-shader_set(global.Pal_Shader);
-var spr_pal = spr_palette;
-pal_swap_set(spr_pal, 1, false);
-event_inherited();
-pattern_reset();
-shader_reset();
+shader_set(global.Pal_Shader)
+pal_swap_set(spr_palette, obj_player1.player_paletteselect[!obj_player1.player_index], false)
+pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, obj_player1.player_patterntexture[!obj_player1.player_index])
+event_inherited()
+pattern_reset()
+reset_shader_fix()

@@ -41,10 +41,11 @@ switch state
 {
 	case states.normal:
 		idlespr = spr_tv_idle
-		if (!obj_player.ispeppino)
-			idlespr = spr_tv_idleN
+		cardboardsprite = -4
 		if (global.combo >= 3 && (!obj_player.isgustavo))
 			idlespr = spr_tv_exprcombo
+		if (global.combo >= 50 && (!obj_player.isgustavo))
+			idlespr = spr_tv_exprheat
 		if global.panic
 			idlespr = spr_tv_exprpanic
 		if obj_player.isgustavo
@@ -64,30 +65,30 @@ switch state
 			case states.knightpep:
 			case states.knightpepattack:
 			case states.knightpepslopes:
-				idlespr = spr_tv_knight
+				cardboardsprite = spr_tv_knight
 				break
 			case states.bombpep:
-				idlespr = spr_tv_bombpep
+				cardboardsprite = spr_tv_bombpep
 				break
 			case states.fireass:
-				idlespr = spr_tv_fireass
+				cardboardsprite = spr_tv_fireass
 				if (obj_player1.sprite_index == obj_player1.spr_scaredjump1 or obj_player1.sprite_index == obj_player1.spr_scaredjump2)
-					idlespr = spr_tv_scaredjump
+					cardboardsprite = spr_tv_scaredjump
 				break
 			case states.tumble:
 				if (obj_player1.sprite_index == obj_player1.spr_tumble or obj_player1.sprite_index == obj_player1.spr_tumblestart or obj_player1.sprite_index == obj_player1.spr_tumbleend)
-					idlespr = spr_tv_tumble
+					cardboardsprite = spr_tv_tumble
 				break
 			case states.firemouth:
-				idlespr = spr_tv_firemouth
+				cardboardsprite = spr_tv_firemouth
 				break
 			case states.ghost:
 			case states.ghostpossess:
-				idlespr = spr_tv_ghost
+				cardboardsprite = spr_tv_ghost
 				break
 			case states.stunned:
 				if (obj_player1.sprite_index == obj_player1.spr_squished)
-					idlespr = spr_tv_squished
+					cardboardsprite = spr_tv_squished
 				break
 			case states.normal:
 			case states.jump:
@@ -106,11 +107,11 @@ switch state
 			case states.freefall:
 			case states.freefallland:
 				if obj_player1.shotgunAnim
-					idlespr = spr_tv_shotgun
+					cardboardsprite = spr_tv_shotgun
 				break
 			case states.pistol:
 				if global.mort
-					idlespr = spr_tv_mort
+					cardboardsprite = spr_tv_mort
 				break
 			case states.shotgun:
 			case states.shotgunfreefall:
@@ -118,37 +119,37 @@ switch state
 			case states.shotgundash:
 			case states.shotguncrouch:
 			case states.shotguncrouchjump:
-				idlespr = spr_tv_shotgun
+				cardboardsprite = spr_tv_shotgun
 				break
 			case states.barrel:
-				idlespr = spr_tv_barrel
+				cardboardsprite = spr_tv_barrel
 				break
 			case states.golf:
-				idlespr = spr_tv_golf
+				cardboardsprite = spr_tv_golf
 				break
 			case states.rocket:
-				idlespr = spr_tv_rocket
+				cardboardsprite = spr_tv_rocket
 				break
 			case states.cheeseball:
-				idlespr = spr_tv_cheeseball
+				cardboardsprite = spr_tv_cheeseball
 				break
 			case states.cheesepep:
 			case states.cheesepepstick:
 			case states.cheesepepstickside:
 			case states.cheesepepstickup:
-				idlespr = spr_tv_cheesepep
+				cardboardsprite = spr_tv_cheesepep
 				break
 			case states.boxxedpep:
 			case states.boxxedpepjump:
 			case states.boxxedpepspin:
-				idlespr = spr_tv_boxxedpep
+				cardboardsprite = spr_tv_boxxedpep
 				break
 			case states.mach2:
 			case states.climbwall:
 			case states.machroll:
 			case states.grind:
 				if obj_player1.skateboarding
-					idlespr = spr_tv_clown
+					cardboardsprite = spr_tv_clown
 				break
 			default:
 				_transfo = 0
@@ -174,8 +175,6 @@ switch state
 					tv_do_expression(spr_tv_exprhurt)
 				else if (state == states.ratmounthurt)
 					tv_do_expression(spr_tv_hurtG)
-				else if (global.stylethreshold >= 3 && (!obj_player.isgustavo))
-					tv_do_expression(spr_tv_exprheat)
 			}
 		}
 		switch sprite_index
@@ -308,10 +307,7 @@ switch state
 			noisebuffer = noisemax
 			noiseindex = 0
 			if (expressionsprite != -4)
-			{
 				state = states.tv_expression
-				sprite_index = expressionsprite
-			}
 			else
 				state = states.normal
 			image_index = 0
@@ -320,8 +316,9 @@ switch state
 	case states.tv_expression:
 		switch expressionsprite
 		{
-			case spr_tv_exprhurt:
-				if (obj_player1.state != states.hurt)
+                case spr_tv_exprhurt1:
+                case spr_tv_exprhurt2:
+                case spr_tv_exprhurt3:
 				{
 					if (expressionbuffer > 0)
 						expressionbuffer--
@@ -330,65 +327,6 @@ switch state
 						state = states.tv_whitenoise
 						expressionsprite = -4
 					}
-				}
-				break
-			case spr_tv_hurtG:
-				if (obj_player1.state != states.ratmounthurt)
-				{
-					if (expressionbuffer > 0)
-						expressionbuffer--
-					else
-					{
-						state = states.tv_whitenoise
-						expressionsprite = -4
-					}
-				}
-				break
-			case spr_tv_exprcollect:
-			case spr_tv_happyG:
-				if (expressionbuffer > 0)
-					expressionbuffer--
-				else
-				{
-					state = states.tv_whitenoise
-					expressionsprite = -4
-				}
-				break
-			case spr_tv_exprmach3:
-				with (obj_player1)
-				{
-					if (state != states.mach3 && (state != states.chainsaw or tauntstoredstate != states.mach3) && sprite_index != spr_mach3boost && mach4mode == 0)
-					{
-						other.state = states.tv_whitenoise
-						other.expressionsprite = -4
-					}
-					if (mach4mode)
-						tv_do_expression(spr_tv_exprmach4)
-				}
-				break
-			case spr_tv_exprmach4:
-				with (obj_player1)
-				{
-					if (mach4mode == 0)
-					{
-						other.state = states.tv_whitenoise
-						other.expressionsprite = -4
-					}
-				}
-				break
-			case spr_tv_exprheat:
-				_transfo = 0
-				with (obj_player1)
-				{
-					if (!scr_transformationcheck())
-						_transfo = 1
-					if isgustavo
-						_transfo = 1
-				}
-				if (global.stylethreshold < 3 or _transfo)
-				{
-					state = states.tv_whitenoise
-					expressionsprite = -4
 				}
 				break
 		}
@@ -400,7 +338,65 @@ switch state
 		}
 		break
 }
-
+if cardboardexprsprite != -4
+{
+	cardboardsprite = cardboardexprsprite
+	switch cardboardsprite
+	{
+		case spr_tv_exprhurt:
+        case spr_tv_exprhurtN:
+			sprite_index = cardboardexprsprite
+			cardboardsprite = spr_tv_idle
+			if (obj_player1.state != states.hurt)
+			{
+				if (expressionbuffer > 0)
+					expressionbuffer--
+				else
+					cardboardexprsprite = -4
+			}
+			break
+		case spr_tv_hurtG:
+			if (obj_player1.state != states.ratmounthurt)
+			{
+				if (expressionbuffer > 0)
+					expressionbuffer--
+				else
+					cardboardexprsprite = -4
+			}
+			break
+		case spr_tv_exprcollect:
+		case spr_tv_happyG:
+			if (expressionbuffer > 0)
+				expressionbuffer--
+			else
+				cardboardexprsprite = -4
+			break
+		case spr_tv_exprmach3:
+			with (obj_player1)
+			{
+				if (state != states.mach3 && (state != states.chainsaw or tauntstoredstate != states.mach3) && sprite_index != spr_mach3boost && mach4mode == 0)
+					other.cardboardexprsprite = -4
+				if (mach4mode)
+					tv_do_expression(spr_tv_exprmach4)
+			}
+			break
+		case spr_tv_exprmach4:
+			with (obj_player1)
+			{
+				if (mach4mode == 0)
+					other.cardboardexprsprite = -4
+			}
+			break
+	}
+}
+if cardboardvisual != cardboardsprite
+{
+	cardboardy = Approach(cardboardy, 268, 6)
+	if cardboardy >= 268
+		cardboardvisual = cardboardsprite
+}
+else if cardboardvisual != -4
+	cardboardy = Approach(cardboardy, 134, 6)
 var change_pos = 0
 if (obj_player.x > (room_width - 224) && obj_player.y < 187)
 	change_pos = 1

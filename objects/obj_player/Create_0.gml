@@ -278,7 +278,7 @@ scr_characterspr();
 paletteselect = 1;
 player_paletteselect[0] = 1;
 player_patterntexture[0] = -4;
-player_paletteselect[1] = 1;
+player_paletteselect[1] = 6;
 player_patterntexture[1] = -4;
 player_paletteindex = 0;
 player_index = 0;

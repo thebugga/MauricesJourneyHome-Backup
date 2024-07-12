@@ -4,24 +4,57 @@ var x1 = rpadding
 var y1 = (540 - (((dialogheight + rpadding) + (padding * 2)) + ds_h))
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
-var collect_x = irandom_range(-collect_shake, collect_shake);
-var collect_y = irandom_range(-collect_shake, collect_shake);
-if collect_shake > 0
-    collect_shake = 4
 for (var i = 0; i < 3; i++)
 {
-var dial = dialogsidel[i]
-if (dial != -4 && dial != dialogcharacter)
-draw_sprite_ext(talk_sprites[dial][0][0],0, (rpadding + (75 * i)), y1,1,1,0,c_gray,1)
-var diar = dialogsider[i]
-if (diar != -4 && diar != dialogcharacter)
-draw_sprite_ext(talk_sprites[diar][0][0],0, ((960 - rpadding) - (75 * i)), y1,-1,1,0,c_gray,1)
+	var dial = dialogsidel[i]
+	if (dial != -4 && dial != dialogcharacter)
+	{
+		if dialogpalette[dial] != -4
+		{
+			shader_set(global.Pal_Shader)
+			pal_swap_set(dialogpalette[dial][0], dialogpalette[dial][1], false)
+			pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, dialogpalette[dial][2])
+			draw_sprite_ext(talk_sprites[dial][0][0],0, (rpadding + (75 * i)), y1,1,1,0,c_gray,1)
+			pattern_reset()
+			reset_shader_fix()
+		}
+		else
+		draw_sprite_ext(talk_sprites[dial][0][0],0, (rpadding + (75 * i)), y1,1,1,0,c_gray,1)
+	}
+	var diar = dialogsider[i]
+	if (diar != -4 && diar != dialogcharacter)
+	{
+		if dialogpalette[diar] != -4
+		{
+			shader_set(global.Pal_Shader)
+			pal_swap_set(dialogpalette[diar][0], dialogpalette[diar][1], false)
+			pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, dialogpalette[diar][2])
+			draw_sprite_ext(talk_sprites[diar][0][0],0, ((960 - rpadding) - (75 * i)), y1,-1,1,0,c_gray,1)
+			pattern_reset()
+			reset_shader_fix()
+		}
+		else
+		draw_sprite_ext(talk_sprites[diar][0][0],0, ((960 - rpadding) - (75 * i)), y1,-1,1,0,c_gray,1)
+	}
 }
 var sidescale = 1
 if dialogcharx > 480
 sidescale = -1
 if (dialogsprite != -4)
-    draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + collect_x), (y1 + collect_y),sidescale,1,0,c_white,1)
+{
+    if dialogpalette[dialogcharacter] != -4
+	{
+		trace(dialogpalette[dialogcharacter])
+		shader_set(global.Pal_Shader)
+		pal_swap_set(dialogpalette[dialogcharacter][0], dialogpalette[dialogcharacter][1], false)
+		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, dialogpalette[dialogcharacter][2])
+		draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),sidescale,1,0,c_white,1)
+		pattern_reset()
+		reset_shader_fix()
+	}
+	else
+	draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),sidescale,1,0,c_white,1)
+}
 var bw = ((960 - rpadding) - x1)
 var bh = ((540 - rpadding) - y1 + 16)
 draw_sprite(spr_tutorialbubble_rope, 0, (rpadding * 2), 540 - 6)

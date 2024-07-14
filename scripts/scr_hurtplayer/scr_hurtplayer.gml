@@ -213,6 +213,7 @@ function scr_hurtplayer(argument0)
 			global.style -= 25
 			global.hurtcounter++
 			global.player_damage++
+			scr_tvtopmessage(choose("OW!","DON'T TOUCH THAT!", "YOUCH!", "YOU SUCK!"))
 			var loseamount = (50 * (global.stylethreshold + 1))
 			if (!global.pizzadelivery)
 			{

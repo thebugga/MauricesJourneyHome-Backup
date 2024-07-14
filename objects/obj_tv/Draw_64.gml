@@ -18,34 +18,104 @@ if global.use_temperature
 }
 var collect_x = irandom_range((-collect_shake), collect_shake)
 var collect_y = irandom_range((-collect_shake), collect_shake)
-var tv_x = 845 - 139
-var tv_y = 80 - 134
-var _cx = (tv_x + combo_posX)
-var _cy = (((tv_y + 117) + hud_posY) + combo_posY)
-var _perc = (global.combotime / 60)
-var _minX = (_cx - 56)
-var _maxX = (_cx + 59)
-combofill_x = lerp(combofill_x, (_minX + ((_maxX - _minX) * _perc)), 0.5)
-combofill_y = _cy
-shader_set(global.Pal_Shader)
-pal_swap_set(spr_tv_combofillpalette, (!global.combodropped) ? 2 : 1, false)
-draw_sprite(spr_tv_combobubblefill, combofill_index, combofill_x, combofill_y)
-reset_shader_fix()
-draw_sprite(spr_tv_combobubble, -1, _cx, _cy)
-draw_set_font(global.combofont2)
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
-var _tx = (_cx - 64)
-var _ty = (_cy - 12)
-var _str = string(global.combo)
-var num = string_length(_str)
-for (var i = num; i > 0; i--)
+var tv_x = 0
+var tv_y = -54
+var _score = global.collect
+if global.coop
+	_score += global.collectN
+var rx = (tv_x + 25)
+var ry = (tv_y + 225)
+var rank_ix = 0
+if (scr_is_prank())
+	rank_ix = 5
+else if (_score >= global.srank)
+	rank_ix = 4
+else if (_score >= global.arank)
+	rank_ix = 3
+else if (_score >= global.brank)
+	rank_ix = 2
+else if (_score >= global.crank)
+	rank_ix = 1
+if (previousrank != rank_ix && rank_state == 0)
 {
-	var char = string_char_at(_str, i)
-	draw_text(_tx, _ty, char)
-	_tx -= 22
-	_ty -= 8
+	rank_state = sign(rank_ix - previousrank)
+	rank_newx = 50 + (rank_state * 100)
+	previousrank = rank_ix
 }
+var perc = 0
+switch rank_ix
+{
+	case 5:
+	case 4:
+		perc = 1
+	break
+	case 3:
+		perc = ((_score - global.arank) / (global.srank - global.arank))
+	break
+	case 2:
+		perc = ((_score - global.brank) / (global.arank - global.brank))
+	break
+	case 1:
+		perc = ((_score - global.crank) / (global.brank - global.crank))
+	break
+	default:
+		perc = (_score / global.crank)
+}
+if abs(rank_state) == 1
+{
+	rank_x = Approach(rank_x, 50 - (25 * sign(rank_state)), 2.5)
+	rank_newx = Approach(rank_newx, 50 + (25 * sign(rank_state)), 7.5)
+	rank_xscale = Approach(rank_xscale, 0.5, 0.05)
+	rank_yscale = Approach(rank_yscale, 1.5, 0.05)
+	if rank_x == 50 - (25 * sign(rank_state))
+		 rank_state += sign(rank_state)
+}
+if abs(rank_state) == 2
+{
+	rank_x = Approach(rank_x, 50, 2.5)
+	rank_newx = Approach(rank_newx, 50 + (100 * sign(rank_state)), 7.5)
+	rank_xscale = Approach(rank_xscale, 1, 0.05)
+	rank_yscale = Approach(rank_yscale, 1, 0.05)
+	if rank_x == 50
+		 rank_state += sign(rank_state)
+}
+if abs(rank_state) == 3
+{
+	rank_x = Approach(rank_x, 50 - (100 * sign(rank_state)), 5)
+	rank_newx = Approach(rank_newx, 50, 5)
+	if rank_newx == 50
+		 {
+			rank_state = 0
+			rank_visual = previousrank
+			rank_x = 50
+			rank_newx = -50
+			rank_xscale = 1
+			rank_yscale = 1
+		 }
+}
+if (!surface_exists(rank_surf))
+    rank_surf = surface_create(100, 100)
+if (!surface_exists(rank_clip))
+    rank_clip = surface_create(100, 100)
+gpu_set_blendmode(bm_normal) 
+surface_set_target(rank_clip)
+	draw_set_alpha(1)
+	draw_clear(c_white)
+	gpu_set_blendmode(bm_subtract)
+	draw_sprite(spr_ranks_clip, 0, 50, 50)
+surface_reset_target()
+gpu_set_blendmode(bm_normal)
+surface_set_target(rank_surf)
+	draw_clear(ds_map_find_value(rankbg_color, rank_ix))
+	draw_rectangle_color(0, 100 - (perc * 100), 100, 100, ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), false)
+	draw_sprite(spr_ranks_hud, previousrank, rank_newx, 50)
+	draw_sprite_ext(spr_ranks_hud, rank_visual, rank_x, 50, rank_xscale, rank_yscale, 0, c_white, 1)
+	gpu_set_blendmode(bm_subtract)
+	draw_surface(rank_clip, 0, 0)
+	gpu_set_blendmode(bm_normal) 
+surface_reset_target()
+draw_set_alpha(1)
+draw_surface(rank_surf, rx, ry)
 if (!surface_exists(tvsurface))
 	tvsurface = surface_create(278, 268)
 gpu_set_blendmode(bm_normal)
@@ -98,7 +168,7 @@ if global.panic
 {
 	var _fill = global.fill
 	var _currentbarpos = (chunkmax - _fill)
-	_perc = (_currentbarpos / chunkmax)
+	var _perc = (_currentbarpos / chunkmax)
 	var _max_x = 299
 	var _barpos = (_max_x * _perc)
 	if (!surface_exists(bar_surface))
@@ -130,4 +200,31 @@ if global.panic
 	draw_set_valign(fa_middle);
 	draw_set_font(global.bigfont);
 	draw_text(timer_x + 153, timer_y + 18, concat(minutes, ":", seconds));
+}
+if (!ds_list_empty(messagelist))
+{
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_top);
+	draw_set_font(global.smallfont);
+	if ds_list_size(messagelist) > 5
+		ds_list_delete(messagelist, 1)
+	for (var i = 0; i < ds_list_size(messagelist); i++)
+	{
+		var b = ds_list_find_value(messagelist, i)
+		{
+			draw_set_alpha(b.alpha)
+			draw_text(540, (((ds_list_size(messagelist) - 1) * 16) - (16 * i)), b.text)
+			draw_set_alpha(1)
+			if b.timer > 0
+				b.timer--
+			else
+				b.alpha -= 0.02
+			if b.alpha <= 0
+			{
+				ds_list_delete(messagelist, i)
+				i--
+				b = undefined
+			}
+		}
+	}
 }

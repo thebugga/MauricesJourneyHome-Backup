@@ -15,13 +15,18 @@ lock = false;
 comboend = false;
 followtarget = -4;
 followspeed = 10;
-previousrank = 0;
-rank_scale = 1;
 original_cam_width = 960;
 original_cam_height = 540;
 coop_zoom_width = (original_cam_width / 4) * 1.5;
 coop_zoom_height = (original_cam_height / 4) * 1.5;
 hud_posY = 0;
+combo_state = 0
+combo_posX = 0
+combo_vsp = 0
+combo_posY = 0
+combofill_x = 0
+combofill_y = 0
+combofill_index = 0
 offset_x = 0;
 offset_y = 0;
 offset_speed = 4;
@@ -67,19 +72,3 @@ healthshake = 0;
 healthold = 8;
 healthshaketime = 0;
 playerhealthup = false;
-rank_state = 0
-rank_visual = 0
-rank_x = 50
-rank_newx = -50
-rank_xscale = 1
-rank_yscale = 1
-rank_clip = -4
-rank_surf = -4
-rankbg_color = ds_map_create()
-ds_map_set(rankbg_color, 0, #283040)
-ds_map_set(rankbg_color, 1, #086800)
-ds_map_set(rankbg_color, 2, #003088)
-ds_map_set(rankbg_color, 3, #800000)
-ds_map_set(rankbg_color, 4, #D07800)
-ds_map_set(rankbg_color, 5, #882858)
-ds_map_set(rankbg_color, 6, #882858)

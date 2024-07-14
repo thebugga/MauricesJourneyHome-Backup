@@ -398,9 +398,7 @@ if cardboardvisual != cardboardsprite
 else if cardboardvisual != -4
 	cardboardy = Approach(cardboardy, 134, 6)
 var change_pos = 0
-if (obj_player.x > (room_width - 224) && obj_player.y < 187)
-	change_pos = 1
-if (bubblespr != -4 && obj_player.x > 316 && obj_player.y < 101)
+if (bubblespr == -4 && obj_player1.x < 224 && obj_player1.y < 300)
 	change_pos = 1
 var spd = 15
 if change_pos
@@ -455,52 +453,3 @@ if (hand_index > (sprite_get_number(hand_sprite) - 1))
 	hand_index = frac(hand_index)
 if (johnface_index > (sprite_get_number(johnface_sprite) - 1))
 	johnface_index = frac(johnface_index)
-combo_posX = Wave(-5, 5, 2, 20)
-if (global.combotime > 0 && global.combo != 0)
-{
-	switch combo_state
-	{
-		case 0:
-			combo_posY += combo_vsp
-			combo_vsp += 0.5
-			if (combo_posY > 20)
-				combo_state++
-			break
-		case 1:
-			combo_posY = lerp(combo_posY, 0, 0.05)
-			if (combo_posY < 1)
-			{
-				combo_posY = 0
-				combo_vsp = 0
-				combo_state++
-			}
-			break
-		case 2:
-			if (global.combotime < 30)
-			{
-				combo_posY += combo_vsp
-				if (combo_vsp < 20)
-					combo_vsp += 0.5
-				if (combo_posY > 0)
-				{
-					combo_posY = 0
-					combo_vsp = -1
-					if (global.combotime < 15)
-						combo_vsp = -2
-				}
-			}
-			else
-				combo_posY = Approach(combo_posY, 0, 10)
-			break
-	}
-
-}
-else
-{
-	combo_posY = Approach(combo_posY, -500, 5)
-	combo_vsp = 0
-	combo_state = 0
-}
-combofill_index += 0.35
-if (combofill_index > (sprite_get_number(spr_tv_combobubblefill) - 1))
-	combofill_index = frac(combofill_index)

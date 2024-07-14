@@ -19,6 +19,7 @@ with (obj_player)
 				y = other.y
 			}
 			global.secretfound++
+			scr_tvtopmessage(string(global.secretfound) + " OUT OF 3 SECRETS REVEALED!")
 			other.sprite_index = spr_secretportal_close
 			other.image_index = 0
 			instance_destroy(other)

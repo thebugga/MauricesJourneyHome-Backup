@@ -21,3 +21,19 @@ function scr_ghostcollectible(pizzasona = false)
 	return q;
 }
 
+function scr_tvtopmessage(_message = "")
+{
+	var q = -4
+	with (obj_tv)
+	{
+		q = 
+		{
+			text: _message,
+			timer: 500,
+			alpha: 1
+		}
+		trace(q)
+		ds_list_add(messagelist, q)
+	}
+	return q;
+}

@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d21d1426-8930-4629-8f6a-55bb310e2bc3","name":"d21d1426-8930-4629-8f6a-55bb310e2bc3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c61ea65d-931c-48f0-b78f-dce782c30072","name":"c61ea65d-931c-48f0-b78f-dce782c30072","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":540,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"22abf6c1-9056-4617-a36b-3d1b0787be4f","blendMode":0,"displayName":"default","isLocked":false,"name":"22abf6c1-9056-4617-a36b-3d1b0787be4f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"55008f07-84f9-4c49-96f2-b156187c5b22","blendMode":0,"displayName":"default","isLocked":false,"name":"55008f07-84f9-4c49-96f2-b156187c5b22","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_elevator_maurice1",
   "nineSlice":null,
@@ -59,8 +59,8 @@
     },
     "name":"spr_elevator_maurice1",
     "playback":1,
-    "playbackSpeed":2.0,
-    "playbackSpeedType":0,
+    "playbackSpeed":1.0,
+    "playbackSpeedType":1,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
     "showBackdrop":true,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d21d1426-8930-4629-8f6a-55bb310e2bc3","path":"sprites/spr_elevator_maurice1/spr_elevator_maurice1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"778bf10a-deb4-4e14-bdff-b5745d06c792","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c61ea65d-931c-48f0-b78f-dce782c30072","path":"sprites/spr_elevator_maurice1/spr_elevator_maurice1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"dadebe56-9cd3-4025-9fff-8940554a6fef","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

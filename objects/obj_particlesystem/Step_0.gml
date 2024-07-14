@@ -53,7 +53,7 @@ if (!ds_list_empty(global.collect_list))
 		{
 			with (b)
 			{
-				var _dir = point_direction(x, y, 110, 80)
+				var _dir = point_direction(x, y, 850, 80)
 				hsp = lengthdir_x(16, _dir)
 				vsp = lengthdir_y(16, _dir)
 				x += hsp
@@ -61,7 +61,7 @@ if (!ds_list_empty(global.collect_list))
 				image_index += 0.35
 				if (image_index > (image_number - 1))
 					image_index = frac(image_index)
-				outofx = x < 140
+				outofx = x > 820
 				outofy = y < 120
 				if (outofx && outofy)
 				{

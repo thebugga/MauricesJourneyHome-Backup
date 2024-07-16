@@ -1,6 +1,7 @@
 function scr_player_Sjump()
 {
-	move = key_right + key_left;
+	move_h = (key_right + key_left)
+	move_v = (key_down - key_up)
 	hsp = 0;
 	mach2 = 0;
 	jumpAnim = true;
@@ -15,8 +16,10 @@ function scr_player_Sjump()
 	{
 		if superjumptimer > 0
 		{
-			vsp = sjumpvsp
-			superjumptimer--
+			hsp = lengthdir_x(sjumpvsp, sjumpangle)
+			vsp = lengthdir_y(sjumpvsp, sjumpangle)
+			if character != "D"
+				superjumptimer--
 			if steppybuffer > 0
 				steppybuffer--;
 			else
@@ -45,6 +48,7 @@ function scr_player_Sjump()
 	}
 	else
 		vsp = -10
+	if character != "D"
 	sjumpvsp -= 0.1;
 	if character == "V" && image_index > 3
 		vsp = -11;
@@ -55,13 +59,87 @@ function scr_player_Sjump()
 		hsp = xscale * a;
 		vsp = 0;
 	}
+	if character == "D" && (sprite_index == spr_superjump || sprite_index == spr_playerN_jetpackboost || sprite_index == spr_playerN_jetpackboostdown) 
+	{
+		if move_h == 0 && move_v == 0
+		{
+			if sjumpangle == 270
+			sjumpangle += choose(-5, 5)
+			else
+			{
+				if sjumpangle > 270 || sjumpangle < 90
+				sjumpangle += 5
+				if sjumpangle < 270 && sjumpangle > 90
+				sjumpangle -= 5
+			}
+		}
+		else
+		{
+			var _diff = sign(angle_difference(point_direction(0, 0, -move_h, -move_v), sjumpangle))
+			move = clamp(move + _diff, -5,5)
+			sjumpangle += move
+		}
+		var _xscale = sign(lengthdir_x(sjumpvsp, sjumpangle))
+		var _dir = point_direction(0, 0, hsp, vsp)
+		if _dir > 45 && _dir < 135
+			sprite_index = spr_superjump
+		else if _dir > 245 && _dir < 295
+			sprite_index = spr_playerN_jetpackboostdown
+		else
+		{
+			sprite_index = spr_playerN_jetpackboost
+			if _xscale != 0
+				xscale = _xscale
+		}
+		if ((place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles))
+		{
+			sprite_index = spr_slipbanan1
+			movespeed = abs(lengthdir_x(sjumpvsp, sjumpangle))
+			if (movespeed > 14)
+				movespeed = 14
+			xscale *= -1
+			hsp = (movespeed * xscale)
+			image_index = 0
+			state = states.slipbanan
+			instance_create(x, y, obj_playerexplosion)
+		}
+		if grounded && vsp > 0
+		{
+			if sprite_index == spr_playerN_jetpackboost
+			{
+				jumpstop = true;
+				vsp = -6;
+				flash = true;
+				movespeed = 13;
+				image_index = 0;
+				sprite_index = spr_rockethitwall;
+				state = states.mach3;
+				with (instance_create(x, y, obj_crazyrunothereffect))
+					image_xscale = other.xscale;
+			}
+			else if sprite_index == spr_playerN_jetpackboostdown
+			{
+				sprite_index = spr_slipbanan1
+				movespeed = abs(lengthdir_x(sjumpvsp, sjumpangle))
+				if (movespeed > 14)
+					movespeed = 14
+				if _xscale != 0
+				xscale = _xscale
+				hsp = (movespeed * xscale)
+				vsp = -(lengthdir_y(sjumpvsp, sjumpangle) / 2)
+				image_index = 0
+				state = states.slipbanan
+			}
+			instance_create(x, y, obj_playerexplosion)
+		}
+	}
 	if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 	{
 		pizzapepper = 0;
 		a = 0;
 		if sprite_index == spr_player_supersidejump
 			sprite_index = spr_player_supersidejumpland;
-		if (sprite_index == spr_superjump || sprite_index == spr_superspringplayer)
+		else
 			sprite_index = spr_superjumpland;
 		with obj_camera
 		{
@@ -84,37 +162,15 @@ function scr_player_Sjump()
 	}
 	else if ((key_attack2 || input_buffer_slap > 0) && character == "M" && sprite_index != spr_superspringplayer)
 	{
-		if ispeppino
-		{
+			jumpstop = true
 		    sprite_index = spr_player_jumpdive1
-		    state = states.mach2
+			image_index = 0
 			if move != 0
 				xscale = move;
 		    movespeed = 10
-			vsp = -15
-			fmod_event_one_shot_3d("event:/sfx/maurice/superjumpcancel", x, y);
-		}
-		else
-		{
-			image_speed = 0.5;
-			input_buffer_shoot = 0;
-			if move != 0
-				xscale = move;
-			input_buffer_slap = 0;
-			key_slap = false;
-			key_slap2 = false;
-			jumpstop = true;
-			vsp = -5;
-			state = states.mach2;
-			movespeed = 12;
-			sprite_index = spr_playerN_sidewayspin;
-			image_index = 0;
-			with (instance_create(x, y, obj_crazyrunothereffect))
-				image_xscale = other.xscale;
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
-			return true;
-		}
+			vsp = -10
+		    state = states.mach2
+			fmod_event_one_shot_3d("event:/sfx/maurice/superjumpcancel", x, y)
 	}
 	if sprite_index == spr_player_Sjumpcancelstart
 	{
@@ -132,19 +188,6 @@ function scr_player_Sjump()
 				image_xscale = other.xscale;
 		}
 	}
-	if character == "N" && key_jump2
-	{
-		jumpstop = false;
-		vsp = -15;
-		state = states.jump;
-		sprite_index = spr_playerN_noisebombspinjump;
-		image_index = 0;
-		with (instance_create(x, y, obj_jumpdust))
-			image_xscale = other.xscale;
-	}
-	if !ispeppino && character == "M" && sprite_index == spr_superjump
-		hsp = move * 3;
-
 	image_speed = 0.5;
 	scr_collide_player();
 }

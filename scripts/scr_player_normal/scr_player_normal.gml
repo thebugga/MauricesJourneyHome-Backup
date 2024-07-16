@@ -320,7 +320,7 @@ function state_player_normal()
 			jumpAnim = true;
 		state = states.jump;
 	}
-	if input_buffer_shoot > 0
+	if input_buffer_shoot > 0 && character == "M"
 	{
 		input_buffer_shoot = 0
 		sprite_index = spr_pistolshot;
@@ -335,12 +335,25 @@ function state_player_normal()
 	}
     if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol))
     {
-        input_buffer_slap = 0
-        suplexmove = true
-        fmod_event_instance_play(suplexdashsnd)
-        state = states.slap
-        image_index = 0
-		slaphand = choose(-1, 1)
+		if character == "M"
+		{
+	        input_buffer_slap = 0
+	        suplexmove = true
+	        fmod_event_instance_play(suplexdashsnd)
+	        state = states.slap
+	        image_index = 0
+			slaphand = choose(-1, 1)
+		}
+		else if character == "D"
+		{
+	        input_buffer_slap = 0
+	        suplexmove = true
+	        fmod_event_instance_play(suplexdashsnd)
+	        state = states.handstandjump
+			sprite_index = spr_suplexdash
+	        image_index = 0
+			movespeed = 8
+		}
     }
     else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && ((!global.pistol) || (!ispeppino)))
     {
@@ -349,107 +362,27 @@ function state_player_normal()
         image_index = 0
         sprite_index = spr_breakdanceuppercut
         fmod_event_instance_play(snd_uppercut)
-        if ispeppino
+        if character == "M"
             vsp = -14
         else
             vsp = -20
         particle_set_scale((4 << 0), xscale, 1)
         create_particle(x, y, (4 << 0), 0)
-        if (!ispeppino)
-        {
-            repeat (4)
-            {
-                with (instance_create((x + (irandom_range(-40, 40))), (y + (irandom_range(-40, 40))), obj_explosioneffect))
-                {
-                    sprite_index = spr_shineeffect
-                    image_speed = 0.35
-                }
-            }
-        }
     }
-	switch character
+	if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu)
 	{
-		case "M":
-			if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu)
-			{
-				sprite_index = spr_mach1;
-				image_index = 0;
-				state = states.mach2;
-				if movespeed < 6
-					movespeed = 6;
-			}
-			if global.kungfu && key_attack && state != states.handstandjump
-			{
-				state = states.blockstance;
-				sprite_index = spr_player_airattack;
-				hsp = 0;
-				movespeed = 0;
-			}
-			break;
-		case "N":
-			if (pogochargeactive || pizzapepper > 0)
-			{
-				if key_attack2
-				{
-					state = states.Sjumpprep;
-					image_index = 0;
-					sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
-					hsp = 0;
-					vsp = 0;
-				}
-			}
-			else if key_attack && !key_slap2
-			{
-				sprite_index = spr_playerN_pogostart;
-				image_index = 0;
-				state = states.pogo;
-			}
-			break;
-		case "V":
-			if (key_attack && !place_meeting(x + xscale, y, obj_solid))
-			{
-				if pizzapepper == 0
-				{
-					movespeed = 6;
-					sprite_index = spr_mach1;
-					image_index = 0;
-					jumpAnim = true;
-					state = states.mach1;
-				}
-				else
-				{
-					movespeed = 21;
-					sprite_index = spr_crazyrun;
-					jumpAnim = true;
-					state = states.mach3;
-					movespeed = 20;
-				}
-			}
-			if (key_shoot2 && !instance_exists(dynamite_inst))
-			{
-				if move == 0
-					movespeed = 0;
-				state = states.dynamite;
-				sprite_index = spr_playerV_dynamitethrow;
-				image_index = 0;
-				with (instance_create(x, y, obj_dynamite))
-				{
-					image_xscale = other.xscale;
-					movespeed = 6;
-					vsp = -6;
-					other.dynamite_inst = id;
-					playerid = other.id;
-				}
-			}
-			if key_slap2
-			{
-				if move == 0
-					movespeed = 0;
-				sprite_index = spr_playerV_revolverstart;
-				image_index = 0;
-				state = states.revolver;
-			}
-			break;
+		sprite_index = spr_mach1;
+		image_index = 0;
+		state = states.mach2;
+		if movespeed < 6
+			movespeed = 6;
+	}
+	if global.kungfu && key_attack && state != states.handstandjump
+	{
+		state = states.blockstance;
+		sprite_index = spr_player_airattack;
+		hsp = 0;
+		movespeed = 0;
 	}
 	scr_dotaunt();
 	if sprite_index == spr_shotgunshoot

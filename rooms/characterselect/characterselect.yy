@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"characterselect",
-  "creationCodeFile":"${project_dir}/rooms/characterselect/RoomCreationCode.gml",
+  "creationCodeFile":"rooms/characterselect/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
@@ -10,6 +10,7 @@
     {"name":"inst_25A833AA","path":"rooms/characterselect/characterselect.yy",},
     {"name":"inst_BA5CA113","path":"rooms/characterselect/characterselect.yy",},
     {"name":"inst_3E0F1F8B","path":"rooms/characterselect/characterselect.yy",},
+    {"name":"inst_11F9A3F5","path":"rooms/characterselect/characterselect.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -18,6 +19,7 @@
         {"$GMRInstance":"v1","%Name":"inst_25A833AA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_25A833AA","objectId":{"name":"obj_peppinoselect","path":"objects/obj_peppinoselect/obj_peppinoselect.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":71.0,},
         {"$GMRInstance":"v1","%Name":"inst_BA5CA113","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_BA5CA113","objectId":{"name":"obj_noiseselect","path":"objects/obj_noiseselect/obj_noiseselect.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":371.0,"y":170.0,},
         {"$GMRInstance":"v1","%Name":"inst_3E0F1F8B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3E0F1F8B","objectId":{"name":"obj_characterselect","path":"objects/obj_characterselect/obj_characterselect.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":96.0,},
+        {"$GMRInstance":"v1","%Name":"inst_11F9A3F5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_11F9A3F5","objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":4.0,"x":-160.0,"y":256.0,},
       ],"layers":[],"name":"Compatibility_Instances_Depth_0","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Backgrounds_1","animationFPS":15.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Backgrounds_1","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_characterselectbackground","path":"sprites/spr_characterselectbackground/spr_characterselectbackground.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

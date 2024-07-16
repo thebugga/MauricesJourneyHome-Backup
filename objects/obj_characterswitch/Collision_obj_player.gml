@@ -4,11 +4,11 @@ with (other)
 	{
 		switch character
 		{
-			case "P":
-				character = "V"
+			case "M":
+				character = "D"
 				break;
-			case "V":
-				character = "P"
+			case "D":
+				character = "M"
 				break;
 		}
 		other.respawn = 200

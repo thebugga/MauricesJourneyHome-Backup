@@ -297,38 +297,40 @@ function state_player_jump()
 	}
 	if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol))
     {
-        input_buffer_slap = 0
-        suplexmove = true
-        fmod_event_instance_play(suplexdashsnd)
-        state = states.slap
-        image_index = 0
-		slaphand = choose(-1, 1)
+		if character == "M"
+		{
+	        input_buffer_slap = 0
+	        suplexmove = true
+	        fmod_event_instance_play(suplexdashsnd)
+	        state = states.slap
+	        image_index = 0
+			slaphand = choose(-1, 1)
+		}
+		else if character == "D"
+		{
+	        input_buffer_slap = 0
+	        suplexmove = true
+	        fmod_event_instance_play(suplexdashsnd)
+	        state = states.handstandjump
+			sprite_index = spr_suplexdashjump
+	        image_index = 0
+			movespeed = 8
+		}
     }
-    else if input_buffer_slap > 0 && key_up && shotgunAnim == 0 && (!global.pistol || character == "N")
+    else if input_buffer_slap > 0 && key_up && shotgunAnim == 0 && (!global.pistol || character == "D")
 	{
 		input_buffer_slap = 0;
 		state = states.punch;
 		image_index = 0;
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
-		if character != "N"
+		if character == "M"
 			vsp = -10;
 		else
 			vsp = -21;
 		movespeed = hsp;
-		if character == "N"
-		{
-			repeat 4
-			{
-				with (instance_create(x + irandom_range(-40, 40), y + irandom_range(-40, 40), obj_explosioneffect))
-				{
-					sprite_index = spr_shineeffect;
-					image_speed = 0.35;
-				}
-			}
-		}
 	}
-	if input_buffer_shoot > 0
+	if input_buffer_shoot > 0 && character == "M"
 	{
 		input_buffer_shoot = 0
 		sprite_index = spr_pistolshot;
@@ -411,86 +413,13 @@ function state_player_jump()
 			}
 		}
 	}
-	switch character
+	if key_attack && grounded && fallinganimation < 40
 	{
-		default:
-			if key_attack && grounded && fallinganimation < 40
-			{
-				sprite_index = spr_mach1;
-				image_index = 0;
-				state = states.mach2;
-				if movespeed < machspeed
-					movespeed = machspeed;
-			}
-			break;
-		case "V":
-			if key_attack && grounded && fallinganimation < 40
-			{
-				jumpAnim = true;
-				if pizzapepper == 0
-				{
-					sprite_index = spr_mach1;
-					image_index = 0;
-					movespeed = 6;
-					state = states.mach1;
-				}
-				else
-				{
-					sprite_index = spr_crazyrun;
-					movespeed = 20;
-					state = states.mach3;
-				}
-			}
-			if (key_shoot2 && !instance_exists(dynamite_inst))
-			{
-				sprite_index = spr_playerV_dynamitethrow;
-				image_index = 0;
-				if move == 0
-					movespeed = 0;
-				state = states.dynamite;
-				with (instance_create(x, y, obj_dynamite))
-				{
-					image_xscale = other.xscale;
-					other.dynamite_inst = id;
-					playerid = other.id;
-					movespeed = 6;
-					vsp = -6;
-				}
-			}
-			if (sprite_index == spr_playerV_superjump && floor(image_index) == image_number - 1)
-			if key_slap2
-			{
-				sprite_index = spr_playerV_airrevolver;
-				image_index = 0;
-				vsp = -5;
-				state = states.revolver;
-				with (instance_create(x + (xscale * 20), y + 20, obj_shotgunbullet))
-				{
-					is_solid = false;
-					image_xscale = other.xscale;
-				}
-				fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
-			}
-			break;
-		case "PN":
-			if (key_attack2 && (pogochargeactive || pizzapepper > 0))
-			{
-				if !key_up
-					sprite_index = spr_playerN_jetpackstart;
-				else
-					sprite_index = spr_superjumpprep;
-				image_index = 0;
-				hsp = 0;
-				vsp = 0;
-				state = states.Sjumpprep;
-			}
-			if key_attack && !pogochargeactive && !key_slap2 && pizzapepper == 0
-			{
-				sprite_index = spr_playerN_pogostart;
-				image_index = 0;
-				state = states.pogo;
-			}
-			break;
+		sprite_index = spr_mach1;
+		image_index = 0;
+		state = states.mach2;
+		if movespeed < machspeed
+			movespeed = machspeed;
 	}
 	if (!key_attack || move != xscale)
 		mach2 = 0;

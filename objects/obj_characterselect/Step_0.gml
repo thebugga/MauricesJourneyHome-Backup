@@ -17,14 +17,12 @@ if (obj_player1.key_jump && selected == 0 && obj_peppinoselect.sprite_index != s
 	obj_peppinoselect.image_index = 0
 	with (obj_player1)
 	{
-		character = "P"
-		ispeppino = 1
+		character = "M"
 		scr_characterspr()
 	}
 	with (obj_player2)
 	{
-		character = "P"
-		ispeppino = 0
+		character = "D"
 		scr_characterspr()
 		if (global.coop == true)
 		{
@@ -42,14 +40,12 @@ if (obj_player1.key_jump && selected == 1 && obj_noiseselect.sprite_index != spr
 	obj_noiseselect.image_index = 0
 	with (obj_player1)
 	{
-		character = "P"
-		ispeppino = 0
+		character = "D"
 		scr_characterspr()
 	}
 	with (obj_player2)
 	{
-		character = "P"
-		ispeppino = 1
+		character = "M"
 		scr_characterspr()
 		if (global.coop == true)
 		{

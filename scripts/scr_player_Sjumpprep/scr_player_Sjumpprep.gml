@@ -1,8 +1,5 @@
 function scr_player_Sjumpprep()
 {
-	switch character
-	{
-		case "M":
 			if (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft)
 				move = key_left + key_right;
 			else
@@ -47,56 +44,12 @@ function scr_player_Sjumpprep()
 				instance_create(x, y, obj_explosioneffect);
 				sprite_index = spr_superjump;
 				state = states.Sjump;
-				sjumpvsp = -12;
+				sjumpvsp = character == "D" ? -15 : -12;
 				superjumptimer = 45
+				sjumpangle = 270
 				image_index = 0;
 				if !ispeppino
 					scr_fmod_soundeffect(snd_noiseSjumprelease, x, y);
 			}
 			image_speed = 0.35;
-			break;
-		case "N":
-			hsp = 0;
-			vsp = 0;
-			pogochargeactive = false;
-			pogocharge = 50;
-			if floor(image_index) == image_number - 1
-			{
-				if sprite_index == spr_playerN_jetpackstart
-				{
-					if pizzapepper == 0
-					{
-						state = states.mach3;
-						sprite_index = spr_playerN_jetpackboost;
-						instance_create(x, y, obj_jumpdust);
-						movespeed = 15;
-					}
-					else
-					{
-						state = states.mach3;
-						sprite_index = spr_crazyrun;
-						instance_create(x, y, obj_jumpdust);
-						movespeed = 21;
-					}
-				}
-				else if sprite_index == spr_superjumpprep
-				{
-					var sjumpsnd = superjumpsnd;
-					if !ispeppino
-						sjumpsnd = snd_noiseSjump;
-					fmod_event_instance_set_parameter(superjumpsnd, "state", 2, true);
-					instance_create(x, y, obj_explosioneffect);
-					sprite_index = spr_superjump;
-					state = states.Sjump;
-					vsp = -15;
-					if !ispeppino
-						scr_fmod_soundeffect(snd_noiseSjumprelease, x, y);
-				}
-			}
-			if sprite_index == spr_playerN_jetpackstart
-				image_speed = 0.5;
-			else
-				image_speed = 0.3;
-			break;
-	}
 }

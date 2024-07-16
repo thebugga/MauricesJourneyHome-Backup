@@ -1,6 +1,6 @@
 function scr_player_bump()
 {
-	if (sprite_index != spr_player_wallsplat)
+	if (sprite_index != spr_wallsplat)
 	{
 		movespeed = 0
 		mach2 = 0
@@ -29,6 +29,25 @@ function scr_player_bump()
 		}
 		if (sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && sprite_index != spr_rockethitwall && sprite_index != spr_tumbleend && sprite_index != spr_hitwall)
 			sprite_index = ((!skateboarding) ? spr_bump : spr_clownbump)
+		if (sprite_index == spr_hitwall && character == "D")
+		{
+			if image_index >= 3 && !grounded
+				image_speed = 0
+			else
+				image_speed = 0.35
+			if (input_buffer_slap > 0 && !grounded)
+			{
+			    input_buffer_slap = 0
+				jumpstop = true
+				mach2 = 0
+				sprite_index = spr_playerN_skateboarddoublejump
+				image_index = 0
+			    movespeed = 10
+				vsp = -10
+			    state = states.mach2
+				fmod_event_one_shot_3d("event:/sfx/maurice/superjumpcancel", x, y)
+			}
+		}
 	}
 	else
 	{

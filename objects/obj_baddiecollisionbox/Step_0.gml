@@ -90,35 +90,55 @@ for (var i = 0; i < 2; i++)
 					Instakill()
 				else if (state == states.handstandjump && global.attackstyle == 0)
 				{
-					image_index = 0
+					var otherbaddie = other.baddieID
+					otherbaddie.image_xscale = (-xscale)
 					if (!key_up)
 					{
-						if (movespeed <= 10)
-							sprite_index = spr_haulingstart
-						else
-							sprite_index = spr_swingding
-						if (!grounded)
-							vsp = -6
-						swingdingendcooldown = 0
-						state = states.grab
-						baddiegrabbedID = other.baddieID
-						grabbingenemy = 1
-						other.baddieID.state = states.grabbed
-						other.baddieID.grabbedby = _playerindex
+						sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_punch)
+						image_index = 0
+						otherbaddie.hithsp = (-otherbaddie.image_xscale * 25)
+						otherbaddie.hitvsp = -8
 					}
 					else if key_up
 					{
-						baddiegrabbedID = other.baddieID
-						grabbingenemy = 1
-						other.baddieID.state = states.grabbed
-						other.baddieID.grabbedby = _playerindex
-						sprite_index = spr_piledriver
-						vsp = -14
-						state = states.superslam
-						dir = move
-						image_index = 0
-						image_speed = 0.35
+						sprite_index = spr_uppercutfinishingblow
+						image_index = 3
+						otherbaddie.hithsp = 0
+						otherbaddie.hitvsp = -25
 					}
+					otherbaddie.stunned = 100
+					hitLag = 5
+					hitX = x
+					hitY = y
+					otherbaddie.hitLag = 5
+					otherbaddie.hitX = otherbaddie.x
+					otherbaddie.hitY = otherbaddie.y
+					state = states.tackle
+					movespeed = 3
+					vsp = -6
+					instance_create(otherbaddie.x, otherbaddie.y, obj_parryeffect)
+					global.combotime = 60
+					global.heattime = 60
+					GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 0.8, 0.8, 0.65)
+					scr_soundeffect(sfx_punch)
+					scr_soundeffect(sfx_killingblow)
+					otherbaddie.thrown = true
+					otherbaddie.alarm[3] = 1
+					otherbaddie.state = states.stun
+					instance_create(x, y, obj_slapstar)
+					instance_create(x, y, obj_slapstar)
+					instance_create(x, y, obj_slapstar)
+					instance_create(x, y, obj_baddiegibs)
+					instance_create(x, y, obj_baddiegibs)
+					instance_create(x, y, obj_baddiegibs)
+					with (obj_camera)
+					{
+						shake_mag = 3
+						shake_mag_acc = (3 / room_speed)
+					}
+					otherbaddie.hsp = otherbaddie.hithsp
+					otherbaddie.vsp = otherbaddie.hitvsp
+					otherbaddie.linethrown = true
 				}
 				else if (state == states.handstandjump && global.attackstyle == 3)
 				{

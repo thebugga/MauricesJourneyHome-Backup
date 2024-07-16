@@ -38,7 +38,7 @@ function scr_player_mach2()
 			sprite_index = spr_clownjump;
 		vsp = jumpspeed;
 	}
-	if input_buffer_jump > 0 && !can_jump && !ispeppino && key_up && character == "P" && noisedoublejump && !skateboarding && sprite_index != spr_clownjump
+	if input_buffer_jump > 0 && !can_jump && key_up && character == "P" && noisedoublejump && !skateboarding && sprite_index != spr_clownjump
 		scr_player_do_noisecrusher();
 	var mortjump = false;
 	if key_jump && global.mort == 1 && sprite_index != spr_mortdoublejump && !grounded && !skateboarding
@@ -116,36 +116,6 @@ function scr_player_mach2()
 			create_particle(x, y, particle.jumpdust, 0);
 		}
 	}
-	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
-	{
-		var _climb = true;
-		if !ispeppino
-			_climb = ledge_bump(32, abs(hsp) + 1);
-		if _climb
-		{
-			wallspeed = 10;
-			grabclimbbuffer = 0;
-			if movespeed < 1
-				wallspeed = 1;
-			else
-			vsp -= 0.5
-				movespeed = wallspeed;
-			state = states.climbwall;
-		}
-	}
-	if (!grounded && place_meeting(x + sign(hsp), y, obj_climbablewall) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_metalblock))
-	{
-		var _climb = true;
-		if !ispeppino
-			_climb = ledge_bump(32);
-		if _climb
-		{
-			wallspeed = 10;
-			grabclimbbuffer = 0;
-			vsp -= 0.5
-			state = states.climbwall;
-		}
-	}
 	if (!instance_exists(dashcloudid) && grounded)
 	{
 		with (instance_create(x, y, obj_dashcloud))
@@ -176,6 +146,68 @@ function scr_player_mach2()
 		sprite_index = spr_player_jumpdive2;
 	if (grounded && (sprite_index == spr_playerN_sidewayspin || sprite_index == spr_playerN_grindcancel || sprite_index == spr_playerN_sidewayspinend))
 		sprite_index = spr_mach;
+	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
+	{
+		var _climb = true;
+		if !ispeppino
+			_climb = ledge_bump(32, abs(hsp) + 1);
+		if _climb
+		{
+			if character == "M"
+			{
+				wallspeed = 10;
+				grabclimbbuffer = 0;
+				if movespeed < 1
+					wallspeed = 1;
+				else
+				vsp -= 0.5
+					movespeed = wallspeed;
+				state = states.climbwall;
+			}
+			else if character == "D"
+			{
+				sprite_index = spr_rockethitwall;
+				image_index = 0;
+				flash = false;
+				hsp = -6 * xscale;
+				vsp = -8;
+				mach2 = 0;
+				state = states.bump;
+				fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
+				instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
+			}
+		}
+	}
+	if ((grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
+	{
+		var _climb = true;
+		if !ispeppino
+			_climb = ledge_bump(32, abs(hsp) + 1);
+		if _climb
+		{
+			wallspeed = 10;
+			grabclimbbuffer = 0;
+			if movespeed < 1
+				wallspeed = 1;
+			else
+			vsp -= 0.5
+				movespeed = wallspeed;
+			state = states.climbwall;
+		}
+	}
+	if (!grounded && place_meeting(x + sign(hsp), y, obj_climbablewall) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_metalblock))
+	{
+		var _climb = true;
+		if !ispeppino
+			_climb = ledge_bump(32);
+		if _climb
+		{
+			wallspeed = 10;
+			grabclimbbuffer = 0;
+			vsp -= 0.5
+			state = states.climbwall;
+		}
+	}
 	if (scr_mach_check_dive() && !skateboarding && sprite_index != spr_playerN_grindcancel && !place_meeting(x, y, obj_dashpad))
 	{
 		particle_set_scale(particle.jumpdust, xscale, 1);
@@ -286,12 +318,26 @@ function scr_player_mach2()
 	}
 	if input_buffer_slap > 0 && !key_up && !skateboarding && shotgunAnim == 0 && !global.pistol && sprite_index != spr_player_jumpdive1 && sprite_index != spr_player_jumpdive2
 	{
-        input_buffer_slap = 0
-        suplexmove = true
-        fmod_event_instance_play(suplexdashsnd)
-        state = states.slap
-        image_index = 0
-		slaphand = choose(-1, 1)
+        
+		if character == "M"
+		{
+	        input_buffer_slap = 0
+	        suplexmove = true
+	        fmod_event_instance_play(suplexdashsnd)
+	        state = states.slap
+	        image_index = 0
+			slaphand = choose(-1, 1)
+		}
+		else if character == "D"
+		{
+	        input_buffer_slap = 0
+	        suplexmove = true
+	        fmod_event_instance_play(suplexdashsnd)
+	        state = states.handstandjump
+			sprite_index = spr_suplexdash
+	        image_index = 0
+			movespeed = 8
+		}
 	}
 	else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && !skateboarding && (!global.pistol || !ispeppino))
 	{
@@ -300,24 +346,13 @@ function scr_player_mach2()
 		image_index = 0;
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
-		if ispeppino
+		if character == "M"
 			vsp = -10;
 		else
 			vsp = -21;
 		movespeed = hsp;
 		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
-		if !ispeppino
-		{
-			repeat 4
-			{
-				with (instance_create(x + irandom_range(-40, 40), y + irandom_range(-40, 40), obj_explosioneffect))
-				{
-					sprite_index = spr_shineeffect;
-					image_speed = 0.35;
-				}
-			}
-		}
 	}
 	if input_buffer_shoot > 0 && !skateboarding
 	{

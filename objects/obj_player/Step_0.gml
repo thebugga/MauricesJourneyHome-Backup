@@ -1012,7 +1012,7 @@ if (toomuchalarm1 > 0)
 		toomuchalarm1 = 6
 	}
 }
-if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && state != states.gameover&& room != hub_tutorial1)
+if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && state != states.gameover && room != hub_tutorial1)
 {
 	if (room != Oldtitlescreen && room != rank_room)
 	{

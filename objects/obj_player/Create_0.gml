@@ -72,6 +72,7 @@ parryID = -4;
 bodyslam_notif = false;
 swingdingthrow = false;
 sjumptimer = 0;
+sjumpangle = 270;
 can_jump = false;
 coyote_time = 0;
 invtime = 0;

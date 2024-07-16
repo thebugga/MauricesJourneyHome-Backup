@@ -11,7 +11,7 @@ switch state
 		global.currentsavefile = saveselect
 		with (obj_player)
 		{
-			targetRoom = hub_outside
+			targetRoom = characterselect
 			targetDoor = "A"
 		}
 		instance_create(0, 0, obj_fadeout)

@@ -5,8 +5,11 @@ if (!deactivated)
 		var _index = scr_anybutton_pressed(i);
 		if (_index > -2)
 		{
-			device_selected[0] = true;
-			if player_input_device[0] != _index
+			var device_index = 0
+			if device_selected[0] == 1 && player_input_device[0] != _index
+				device_index = 1
+			device_selected[device_index] = true;
+			if player_input_device[device_index] != _index
 			{
 				for (var j = 0; j < gamepad_get_device_count(); j++)
 				{
@@ -14,8 +17,9 @@ if (!deactivated)
 						gamepad_set_vibration(j, 0, 0);
 				}
 			}
-			player_input_device[0] = _index;
+			player_input_device[device_index] = _index;
 			press_start = false;
+			i = gamepad_get_device_count()
 		}
 	}
 	for (i = 0; i < 2; i++)
@@ -49,9 +53,10 @@ else
 				scr_pause_activate_objects(false);
 				alarm[0] = 1;
 			}
-			else if (device_to_reconnect == 1 && global.coop)
+			else if (device_to_reconnect == 1 && (global.coop || global.swapmode))
 			{
 				global.coop = false;
+				global.swapmode = false;
 				instance_destroy(obj_swapmodefollow);
 				device_selected[device_to_reconnect] = false;
 				player_input_device[device_to_reconnect] = -2;

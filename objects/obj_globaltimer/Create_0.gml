@@ -7,3 +7,4 @@ timer = get_milliseconds()
 global.level_minutes = 0
 global.level_seconds = 0
 depth = -600
+debug = false

@@ -15,7 +15,9 @@ if (!deactivated)
 }
 else
 {
+	draw_set_alpha(0.5)
 	draw_rectangle_color(0, 0, 960, 540, c_black, c_black, c_black, c_black, 0)
+	draw_set_alpha(1)
 	draw_set_font(global.smallfont)
 	_txt = "CONTROLLER DISCONNECTED\n\nPRESS START TO CONTINUE"
 	var _h = (string_height(_txt) / 2)

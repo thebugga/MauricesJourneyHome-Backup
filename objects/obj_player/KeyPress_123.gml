@@ -1,1 +1,1 @@
-room_goto(rm_levelselect)
+obj_globaltimer.debug = !obj_globaltimer.debug

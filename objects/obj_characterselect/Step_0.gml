@@ -1,57 +1,128 @@
 image_speed = 0.35
-if ((obj_player1.key_right2 or (-obj_player2.key_left2)) && selected == 0 && ready == 0)
+if !stopper
 {
-	selected += 1
-	scr_soundeffect(sfx_step)
-}
-if (((-obj_player1.key_left2) or obj_player2.key_right2) && selected == 1 && ready == 0)
-{
-	selected -= 1
-	scr_soundeffect(sfx_step)
-}
-if (obj_player1.key_jump && selected == 0 && obj_peppinoselect.sprite_index != spr_peppinoselected)
-{
-	ready = 1
-	scr_soundeffect(sfx_collecttoppin)
-	obj_peppinoselect.sprite_index = spr_peppinoselected
-	obj_peppinoselect.image_index = 0
-	with (obj_player1)
+	if !ready
 	{
-		character = "M"
-		scr_characterspr()
-	}
-	with (obj_player2)
-	{
-		character = "D"
-		scr_characterspr()
-		if (global.coop == true)
+		if ((obj_player1.key_down2) && selected < (array_length(character) - 1))
 		{
-			obj_noiseselect.sprite_index = spr_noiseselected
-			obj_noiseselect.image_index = 0
+			selected += 1
+			scr_soundeffect(sfx_step)
+		}
+		if ((obj_player1.key_up2) && selected > 0)
+		{
+			selected -= 1
+			scr_soundeffect(sfx_step)
+		}
+		p1_sprite = character[selected][2]
+		if (obj_player1.key_jump)
+		{
+			ready = true
+			scr_soundeffect(sfx_collecttoppin)
+			p1_sprite = character[selected][3]
+			p1_index = 0
 		}
 	}
-	alarm[0] = 100
-}
-if (obj_player1.key_jump && selected == 1 && obj_noiseselect.sprite_index != spr_noiseselected)
-{
-	ready = 1
-	scr_soundeffect(sfx_collecttoppin)
-	obj_noiseselect.sprite_index = spr_noiseselected
-	obj_noiseselect.image_index = 0
-	with (obj_player1)
+	if (obj_player1.key_slap2 && ready)
 	{
-		character = "D"
-		scr_characterspr()
+		ready = false
+		scr_soundeffect(sfx_hurt1)
 	}
-	with (obj_player2)
+	if p1_boxheight == 220
 	{
-		character = "M"
-		scr_characterspr()
-		if (global.coop == true)
+		if !ready2
 		{
-			obj_peppinoselect.sprite_index = spr_peppinoselected
-			obj_peppinoselect.image_index = 0
+			if ((obj_player2.key_down2) && selected2 < (array_length(character) - 1))
+			{
+				selected2 += 1
+				scr_soundeffect(sfx_step)
+			}
+			if ((obj_player2.key_up2) && selected2 > 0)
+			{
+				selected2 -= 1
+				scr_soundeffect(sfx_step)
+			}
+			p2_sprite = character[selected2][2]
+			if (obj_player2.key_jump)
+			{
+				ready2 = true
+				scr_soundeffect(sfx_collecttoppin)
+				p2_sprite = character[selected2][3]
+				p2_index = 0
+			}
+		}
+		if (obj_player2.key_slap2)
+		{
+			if ready2
+			{
+				ready2 = false
+				scr_soundeffect(sfx_hurt1)
+			}
+			else
+			{
+				p2_connect = false
+				scr_soundeffect(sfx_hurt1)
+			}
+		}
+		if obj_player1.key_taunt2
+		{
+			multimode = !multimode
+			mode_scale = 2
 		}
 	}
-	alarm[0] = 100
+	if (obj_player2.key_jump)
+		p2_connect = true
+	if ready && ready2 == p2_connect
+	{
+		with (obj_player1)
+		{
+			character = other.character[other.selected][1]
+			scr_characterspr()
+		}
+		with (obj_player2)
+		{
+			character = other.character[other.selected2][1]
+			scr_characterspr()
+		}
+		if p2_connect
+		{
+			if !multimode
+				global.coop = true
+			else
+				global.swapmode = true
+		}
+		scr_soundeffect(sfx_collecttoppin)
+		alarm[0] = 100
+		stopper = true
+	}
+}
+if floor(p1_index) == (sprite_get_number(p1_sprite) - 1)
+{
+	if p1_sprite == character[selected][2]
+		p1_index = 0
+}
+else
+	p1_index += 0.35
+if floor(p2_index) == (sprite_get_number(p2_sprite) - 1)
+{
+	if p2_sprite == character[selected2][2]
+		p2_index = 0
+}
+else
+	p2_index += 0.35
+if shadowtimer > 0
+	shadowtimer--
+else
+{
+	var _scale = choose(-1, 1)
+	var q = 
+	{
+		index: choose(spr_player_move, spr_playerN_move, spr_playerV_move, spr_pepperman_move),
+		scale: _scale,
+		x: 480 - (1000 * _scale),
+		y: 370,
+		movespeed: irandom_range(2, 5),
+		vsp: 0
+	}
+	ds_list_add(shadows, q)
+	shadowtimer = irandom(1000)
 }

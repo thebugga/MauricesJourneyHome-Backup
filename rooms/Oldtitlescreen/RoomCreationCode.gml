@@ -277,6 +277,7 @@ enum states
 }
 pal_swap_init_system(shd_pal_swapper)
 global.coop = false
+global.swapmode = false
 global.currentsavefile = 1
 global.mach_color1 = make_colour_rgb(96, 208, 72)
 global.mach_color2 = make_colour_rgb(248, 0, 0)

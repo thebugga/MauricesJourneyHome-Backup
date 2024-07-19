@@ -5,16 +5,18 @@ draw_set_halign(fa_center)
 draw_set_color(c_white)
 if is_bossroom()
 	exit;
-if global.use_temperature
+if obj_player1.character == "D"
 {
+	if obj_player1.state == states.Sjump
+		jetpack_x = Approach(jetpack_x, 864, 5)
+	else
+		jetpack_x = Approach(jetpack_x, 1014, 5)
 	var _width = sprite_get_width(spr_temperature_meterfill)
 	var _height = sprite_get_height(spr_temperature_meterfill)
-	global.temperature = clamp(global.temperature, 0, (global.temp_thresholdnumber * 100))
-	var _tmp = (global.temperature / (global.temp_thresholdnumber * 100))
-	var _top = 0
+	var _tmp = (obj_player1.superjumptimer / 200)
 	var _height2 = (_height * _tmp)
-	draw_sprite_part_ext(spr_temperature_meterfill, 0, 0, _top, _width, _height2, 864, (192 + _height), 1, -1, c_white, 1)
-	draw_sprite(spr_temperature_meter, 0, 864, 192)
+	draw_sprite_part_ext(spr_temperature_meterfill, 0, 0, 0, _width, _height2, jetpack_x, (192 + _height), 1, -1, c_white, 1)
+	draw_sprite(spr_temperature_meter, 0, jetpack_x, 192)
 }
 var collect_x = irandom_range((-collect_shake), collect_shake)
 var collect_y = irandom_range((-collect_shake), collect_shake)

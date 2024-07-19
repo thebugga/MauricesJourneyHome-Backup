@@ -44,8 +44,8 @@ function scr_player_Sjumpprep()
 				instance_create(x, y, obj_explosioneffect);
 				sprite_index = spr_superjump;
 				state = states.Sjump;
-				sjumpvsp = character == "D" ? -15 : -12;
-				superjumptimer = 45
+				sjumpvsp = character == "D" ? 15 : -12;
+				superjumptimer = character == "D" ? 200 : 45;
 				sjumpangle = 270
 				image_index = 0;
 				if !ispeppino

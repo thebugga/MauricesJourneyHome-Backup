@@ -2,7 +2,6 @@ function scr_player_Sjump()
 {
 	move_h = (key_right + key_left)
 	move_v = (key_down - key_up)
-	hsp = 0;
 	mach2 = 0;
 	jumpAnim = true;
 	dashAnim = true;
@@ -16,10 +15,9 @@ function scr_player_Sjump()
 	{
 		if superjumptimer > 0
 		{
-			hsp = lengthdir_x(sjumpvsp, sjumpangle)
-			vsp = lengthdir_y(sjumpvsp, sjumpangle)
-			if character != "D"
-				superjumptimer--
+			hsp = -lengthdir_x(sjumpvsp, sjumpangle)
+			vsp = -lengthdir_y(sjumpvsp, sjumpangle)
+			superjumptimer--
 			if steppybuffer > 0
 				steppybuffer--;
 			else
@@ -39,7 +37,7 @@ function scr_player_Sjump()
 				piledrivereffect = 15;
 			}
 		}
-		else
+		else if character != "D"
 		{
 			sprite_index = spr_machfreefall;
 			if grounded
@@ -49,7 +47,7 @@ function scr_player_Sjump()
 	else
 		vsp = -10
 	if character != "D"
-	sjumpvsp -= 0.1;
+		sjumpvsp -= 0.1;
 	if character == "V" && image_index > 3
 		vsp = -11;
 	if sprite_index == spr_player_supersidejump
@@ -75,12 +73,12 @@ function scr_player_Sjump()
 		}
 		else
 		{
-			var _diff = sign(angle_difference(point_direction(0, 0, -move_h, -move_v), sjumpangle))
+			var _diff = sign(angle_difference(sjumpangle, point_direction(0, 0, move_h, move_v)))
 			move = clamp(move + _diff, -5,5)
 			sjumpangle += move
 		}
-		var _xscale = sign(lengthdir_x(sjumpvsp, sjumpangle))
 		var _dir = point_direction(0, 0, hsp, vsp)
+		var _xscale = sign(lengthdir_x(sjumpvsp, _dir))
 		if _dir > 45 && _dir < 135
 			sprite_index = spr_superjump
 		else if _dir > 245 && _dir < 295
@@ -94,7 +92,7 @@ function scr_player_Sjump()
 		if ((place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles))
 		{
 			sprite_index = spr_slipbanan1
-			movespeed = abs(lengthdir_x(sjumpvsp, sjumpangle))
+			movespeed = abs(lengthdir_x(sjumpvsp, _dir))
 			if (movespeed > 14)
 				movespeed = 14
 			xscale *= -1
@@ -120,13 +118,13 @@ function scr_player_Sjump()
 			else if sprite_index == spr_playerN_jetpackboostdown
 			{
 				sprite_index = spr_slipbanan1
-				movespeed = abs(lengthdir_x(sjumpvsp, sjumpangle))
+				movespeed = abs(lengthdir_x(sjumpvsp, _dir))
 				if (movespeed > 14)
 					movespeed = 14
 				if _xscale != 0
 				xscale = _xscale
 				hsp = (movespeed * xscale)
-				vsp = -(lengthdir_y(sjumpvsp, sjumpangle) / 2)
+				vsp = -(lengthdir_y(sjumpvsp, _dir) / 2)
 				image_index = 0
 				state = states.slipbanan
 			}

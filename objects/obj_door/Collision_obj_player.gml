@@ -65,11 +65,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 			other.visited = true;
 			if (ds_list_find_index(global.saveroom, other.id) == -1)
 				ds_list_add(global.saveroom, other.id);
-			with (instance_create(x, y, obj_fadeout))
-			{
-				offload_arr = door.offload_arr;
-				group_arr = door.group_arr;
-			}
+			instance_create(x, y, obj_fadeout)
 		}
 	}
 }

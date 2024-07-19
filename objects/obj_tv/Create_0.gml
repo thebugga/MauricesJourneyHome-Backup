@@ -35,6 +35,7 @@ cardboardvisual = -4
 cardboardexprsprite = -4
 cardboardy = 402
 sprite_index = spr_tv_off
+jetpack_x = 1014
 bubbleindex = 0
 bubblespr = -4
 idleanim = 180

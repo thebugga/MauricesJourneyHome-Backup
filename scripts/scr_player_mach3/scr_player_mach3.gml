@@ -164,7 +164,7 @@ function scr_player_mach3()
 			if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0))
 			{
 				sprite_index = spr_machslidestart;
-				if ispeppino
+				if character == "M"
 					fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);
 				else
 					fmod_event_one_shot_3d("event:/sfx/playerN/break", x, y);

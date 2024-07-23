@@ -1,1 +1,0 @@
-obj_globaltimer.debug = !obj_globaltimer.debug

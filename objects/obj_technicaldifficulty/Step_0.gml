@@ -1,24 +1,18 @@
-static_index += (0.35 * static_dir)
-if (alarm[0] > 0)
+if playerid != -4 && startedx == -4
 {
-	with (obj_player)
-	{
-		state = states.actor
-		hsp = 0
-		vsp = 0
-	}
+	startedx = playerid.x
+	startedy = playerid.y
 }
-if (use_static)
+if showboard
+	x = Approach(x, 0, 20)
+else
+	x = Approach(x, -960, 20)
+if (alarm[2] > 0)
 {
-	if (static_dir > 0 && floor(static_index) == (sprite_get_number(spr_tvstatic) - 1))
+	with (playerid)
 	{
-		use_static = false
-		with (obj_ghostfollow)
-		{
-			x = xstart
-			y = ystart
-		}
+		sprite_index = spr_machfreefall
+		x = lerp(roomstartx, other.startedx, other.alarm[2] / 200)
+		y = lerp(roomstarty - 25, other.startedy, other.alarm[2] / 200)
 	}
-	else if (static_dir < 0 && static_index <= 0)
-		instance_destroy()
 }

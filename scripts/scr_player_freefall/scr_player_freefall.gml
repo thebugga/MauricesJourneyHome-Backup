@@ -143,15 +143,6 @@ function scr_player_freefall()
 	image_speed = 0.35
 	if (sprite_index == spr_bodyslamstart)
 		image_speed = 0.4
-	if (character == "M")
-	{
-		if (!key_down)
-		{
-			state = states.jump
-			sprite_index = spr_fall
-			image_index = 0
-		}
-	}
 	exit;
 }
 

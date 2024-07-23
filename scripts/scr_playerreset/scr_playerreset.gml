@@ -89,8 +89,6 @@ function scr_playerreset()
 		global.golfhit = 0
 		global.railspeed = global.maxrailspeed
 		global.temperature = 0
-		if (room != freezer_1)
-			global.use_temperature = 0
 		global.heatmeter_count = 0
 		global.monsterspeed = 0
 		global.timedgate = 0
@@ -144,7 +142,6 @@ function scr_playerreset()
 			instance_destroy(obj_coopflag)
 		if instance_exists(obj_cooppointer)
 			instance_destroy(obj_cooppointer)
-		instance_destroy(obj_swapmodefollow)
 		if instance_exists(obj_toppinwarrior)
 			instance_destroy(obj_toppinwarrior)
 		if instance_exists(obj_timesup)
@@ -430,7 +427,11 @@ function scr_playerreset()
 		anger = 0
 		angry = 0
 	}
-	instance_destroy(obj_followcharacter)
+	with (obj_followcharacter)
+	{
+		if id != obj_swapmodefollow.id && id != obj_swapmodefollowparm.id
+			instance_destroy()
+	}
 	instance_destroy(obj_shotgunback)
 	exit;
 }

@@ -38,6 +38,9 @@
     "name":"spr_hungrypillar",
     "path":"sprites/spr_hungrypillar/spr_hungrypillar.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_hungrypillar_mask",
+    "path":"sprites/spr_hungrypillar_mask/spr_hungrypillar_mask.yy",
+  },
   "visible":true,
 }

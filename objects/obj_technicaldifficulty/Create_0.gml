@@ -1,11 +1,15 @@
 depth = -100
 image_speed = 0.35
 sprite = -4
-static_index = 0
-static_max = 15
-static_dir = 1
-use_static = true
-alarm[0] = 80
+showboard = true
+startedx = -4
+startedy = -4
+alarm[0] = 100
+alarm[1] = 200
 scr_soundeffect(sfx_tvswitch)
 with (obj_player)
+{
 	state = states.actor
+	hsp = 0
+	vsp = 0
+}

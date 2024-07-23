@@ -15,8 +15,13 @@ function scr_player_Sjump()
 	{
 		if superjumptimer > 0
 		{
-			hsp = -lengthdir_x(sjumpvsp, sjumpangle)
-			vsp = -lengthdir_y(sjumpvsp, sjumpangle)
+			if character == "D"
+			{
+				hsp = -lengthdir_x(sjumpvsp, sjumpangle)
+				vsp = -lengthdir_y(sjumpvsp, sjumpangle)
+			}
+			else
+				vsp = sjumpvsp
 			superjumptimer--
 			if steppybuffer > 0
 				steppybuffer--;
@@ -45,7 +50,10 @@ function scr_player_Sjump()
 		}
 	}
 	else
+	{
+		hsp = 0
 		vsp = -10
+	}
 	if character != "D"
 		sjumpvsp -= 0.1;
 	if character == "V" && image_index > 3
@@ -161,10 +169,11 @@ function scr_player_Sjump()
 	else if ((key_attack2 || input_buffer_slap > 0) && character == "M" && sprite_index != spr_superspringplayer)
 	{
 			jumpstop = true
+			input_buffer_slap = 0
 		    sprite_index = spr_player_jumpdive1
 			image_index = 0
-			if move != 0
-				xscale = move;
+			if move_h != 0
+				xscale = move_h;
 		    movespeed = 10
 			vsp = -10
 		    state = states.mach2

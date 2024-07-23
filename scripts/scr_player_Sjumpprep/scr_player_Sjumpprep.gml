@@ -47,6 +47,7 @@ function scr_player_Sjumpprep()
 				sjumpvsp = character == "D" ? 15 : -12;
 				superjumptimer = character == "D" ? 200 : 45;
 				sjumpangle = 270
+				hsp = 0
 				image_index = 0;
 				if !ispeppino
 					scr_fmod_soundeffect(snd_noiseSjumprelease, x, y);

@@ -1,1 +1,2 @@
-use_static = 0
+showboard = false
+scr_soundeffect(sfx_tvswitchback)

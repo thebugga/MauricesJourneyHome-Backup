@@ -42,6 +42,9 @@ function scr_player_bump()
 				mach2 = 0
 				sprite_index = spr_playerN_skateboarddoublejump
 				image_index = 0
+				move = (key_left + key_right)
+				if move != 0
+					xscale = move
 			    movespeed = 10
 				vsp = -10
 			    state = states.mach2

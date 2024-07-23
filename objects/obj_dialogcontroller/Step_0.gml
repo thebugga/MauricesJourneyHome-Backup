@@ -9,56 +9,56 @@ else
         displaytext = scr_separate_text(displaytext)
         textbuffer = textspeed
     }
-    else if obj_player1.key_jump2
+    else if obj_player1.key_jump
     {
-if (currentpos < string_length(currenttext))
-{
-    while (currentpos <= string_length(currenttext))
-    {
-        currentpos++
-        displaytext = string_insert(string_char_at(currenttext, currentpos), displaytext, (string_length(displaytext) + 1))
-        displaytext = scr_separate_text(displaytext)
-    }
-}
-else
-{
-        if (currentdialog < (array_length(dialog) - 1))
-        {
-            currentdialog += 1
-            currentpos = 0
-            textbuffer = textspeed
-            displaytext = ""
-            currenttext = scr_calculate_text(dialog[currentdialog][0])
-            obj_player1.key_jump = 0
-            dialogheight = scr_calculate_height(currenttext)
-            dialogcharacter = dialog[currentdialog][1]
-            dialogexpression = dialog[currentdialog][2]
-			effect_shake = 0
-			if dialog[currentdialog][3] != -4
-			{
-				switch dialog[currentdialog][3]
+		if (currentpos < string_length(currenttext))
+		{
+		    while (currentpos <= string_length(currenttext))
+		    {
+		        currentpos++
+		        displaytext = string_insert(string_char_at(currenttext, currentpos), displaytext, (string_length(displaytext) + 1))
+		        displaytext = scr_separate_text(displaytext)
+		    }
+		}
+		else
+		{
+	        if (currentdialog < (array_length(dialog) - 1))
+	        {
+	            currentdialog += 1
+	            currentpos = 0
+	            textbuffer = textspeed
+	            displaytext = ""
+	            currenttext = scr_calculate_text(dialog[currentdialog][0])
+	            obj_player1.key_jump = 0
+	            dialogheight = scr_calculate_height(currenttext)
+	            dialogcharacter = dialog[currentdialog][1]
+	            dialogexpression = dialog[currentdialog][2]
+				effect_shake = 0
+				if dialog[currentdialog][3] != -4
 				{
-					case "angershake":
-					effect_shake = 1
-					break
+					switch dialog[currentdialog][3]
+					{
+						case "angershake":
+						effect_shake = 1
+						break
+					}
 				}
-			}
-            var func = dialog[currentdialog][4]
-            if (func != -4)
-            {
-                if (npcID != noone && instance_exists(npcID))
-                {
-                    with (npcID)
-                        method(id, func)()
-                }
-                else
-                    method(id, func)()
-            }
-        }
-        else
-            instance_destroy()
-    }
-  }
+	            var func = dialog[currentdialog][4]
+	            if (func != -4)
+	            {
+	                if (npcID != noone && instance_exists(npcID))
+	                {
+	                    with (npcID)
+	                        method(id, func)()
+	                }
+	                else
+	                    method(id, func)()
+	            }
+	        }
+	        else
+	            instance_destroy()
+	    }
+	}
 }
 
 	if currentpos < string_length(currenttext)

@@ -821,14 +821,16 @@ if (state == states.gameover && y > (room_height * 2))
 		with (obj_player2)
 		{
 			scr_playerreset()
-			targetDoor = "A"
+			targetDoor = "HUB"
+			room = backtohubroom
+			x = backtohubstartx
 		}
 	}
 	with (obj_player)
 	{
-		targetDoor = "A"
-		room = hub_reception
-		room = rm_levelselect
+		targetDoor = "HUB"
+		room = backtohubroom
+		x = backtohubstartx
 	}
 }
 if (baddiegrabbedID == obj_null && (state == states.grab or state == states.superslam or state == states.tacklecharge))
@@ -1027,11 +1029,10 @@ if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalha
 			sprite_index = spr_ghostidle
 		}
 		state = states.actor
-		visible = false
 		hsp = 0
 		vsp = 0
 		scr_soundeffect(sfx_groundpound)
-		with (instance_create(x, y + 540, obj_technicaldifficulty))
+		with (instance_create(-960, 0, obj_technicaldifficulty))
 		{
 			playerid = other.id
 			if (!other.isgustavo)

@@ -3,8 +3,8 @@ with other
 {
 	if (place_meeting(x, y, other) && key_up && grounded && (state == states.normal || state == states.mach1 || state == states.mach2 || state == states.mach3) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.victory && state != states.comingoutdoor && spotlight == 1)
 	{
-		audio_stop_all();
-		
+		audio_stop_all()
+		stop_music()
 		global.collect = 0;
 		global.startgate = true;
 		global.leveltosave = other.level;
@@ -36,16 +36,26 @@ with other
 		exit;
 	}
 }
-if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_player1.state == states.victory) || (floor(obj_player2.image_index) == (obj_player2.image_number - 1) && obj_player2.state == states.victory))
+if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_player1.state == states.victory) || (floor(obj_player2.image_index) == (obj_player2.image_number - 1) && obj_player2.state == states.victory)) && !instance_exists(obj_fadeout) && !instance_exists(obj_titlecard)
 {
 	with obj_player
 	{
 		obj_music.fadeoff = 0;
 		targetDoor = other.targetDoor;
 		targetRoom = other.targetRoom;
+		if other.titlecardi == -4
 		{
 			with (instance_create_unique(0, 0, obj_fadeout))
 				restarttimer = true;
+		}
+	}
+	if titlecardi != -4
+	{
+		with instance_create(0, 0, obj_titlecard)
+		{
+			titlecardi = other.titlecardi
+			titlecardmu = other.titlecardmu
+			titlecredit = other.titlecredit
 		}
 	}
 }

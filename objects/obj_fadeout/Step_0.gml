@@ -65,6 +65,32 @@ if instance_exists(obj_player)
 			if (global.coop == true)
 				obj_player2.state = states.crouchjump
 		}
+		if (other.fadein == 1 && obj_player1.lastroom == characterselect && obj_player1.state != states.machslide)
+		{
+			xscale = 1
+			movespeed = 12
+			sprite_index = spr_machslidestart;
+			if character == "M"
+				fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);
+			else
+				fmod_event_one_shot_3d("event:/sfx/playerN/break", x, y);
+			state = states.machslide;
+			image_index = 0;
+			launched = false;
+			if (global.coop == true)
+			{
+				obj_player2.xscale = 1
+				obj_player2.movespeed = 12
+				obj_player2.sprite_index = spr_machslidestart;
+				if obj_player2.character == "M"
+					fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);
+				else
+					fmod_event_one_shot_3d("event:/sfx/playerN/break", x, y);
+				obj_player2.state = states.machslide;
+				obj_player2.image_index = 0;
+				obj_player2.launched = false;
+			}
+		}
 	}
 	if instance_exists(obj_player2)
 	{

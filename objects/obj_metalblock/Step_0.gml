@@ -10,15 +10,6 @@ if (place_meeting(x, (y + 1), obj_player1) or place_meeting(x, (y - 1), obj_play
 {
 	if (place_meeting(x, (y - 1), obj_player1) && obj_player1.state == states.freefall && obj_player1.freefallsmash >= 10)
 	{
-		with (instance_place(x, (y - 1), obj_player1))
-		{
-			if (character == "M")
-			{
-				state = states.jump
-				vsp = -7
-				sprite_index = spr_jump
-			}
-		}
 		playerindex = 0
 		instance_destroy()
 	}

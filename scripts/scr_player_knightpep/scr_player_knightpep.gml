@@ -2,16 +2,19 @@ function scr_player_knightpep()
 {
 	alarm[5] = 2
 	alarm[7] = 60
-	if (sprite_index == spr_knightpep_attack && movespeed > 0)
-		movespeed -= 0.05
-	if (sprite_index == spr_knightpep_attack && floor(image_index) == (image_number - 1))
-		sprite_index = spr_knightpep_idle
+	if (sprite_index == spr_knightpep_attack)
+	{
+		if movespeed > 0
+			movespeed -= 0.05
+		if floor(image_index) == (image_number - 1)
+			sprite_index = spr_knightpepidle
+	}
 	if (sprite_index == spr_knightpepland or sprite_index == spr_knightpepwalk or sprite_index == spr_knightpepidle)
 	{
 		move = (key_left + key_right)
 		hsp = (move * movespeed)
 	}
-	else if (sprite_index == spr_knightpep_attack or sprite_index == spr_knightpepjump or sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_doublejump or sprite_index == spr_knightpep_downtrust)
+	else if (sprite_index == spr_knightpep_attack or sprite_index == spr_knightpepjump or sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_doublejump)
 	{
 		hsp = (xscale * movespeed)
 		move = (key_left + key_right)
@@ -33,19 +36,6 @@ function scr_player_knightpep()
 	}
 	else if grounded
 		hsp = 0
-	if ((!grounded) && key_down2 && sprite_index != spr_knightpep_downtrust)
-	{
-		with (instance_create(x, y, obj_parryeffect))
-			sprite_index = spr_knightpep_downcloud
-		sprite_index = spr_knightpep_downtrust
-		vsp = -5
-		hsp = 0
-		movespeed = 0
-	}
-	if (sprite_index == spr_knightpep_downtrust && vsp >= 0)
-		vsp += 0.5
-	if key_jump
-		input_buffer_jump = 0
 	if (grounded && vsp > 0)
 		jumpstop = 0
 	if (dir != xscale && grounded)
@@ -64,8 +54,9 @@ function scr_player_knightpep()
 	}
 	if (grounded && vsp > 0)
 		jumpstop = 0
-	if (input_buffer_jump < 8 && vsp > 0 && grounded && (sprite_index == spr_knightpepidle or sprite_index == spr_knightpep_downtrust or sprite_index == spr_knightpepland or sprite_index == spr_knightpepwalk))
+	if (input_buffer_jump > 0 && vsp > 0 && grounded && (sprite_index == spr_knightpepidle or sprite_index == spr_knightpepland or sprite_index == spr_knightpepwalk))
 	{
+		input_buffer_jump = 0
 		image_index = 0
 		sprite_index = spr_knightpepjumpstart
 		scr_soundeffect(sfx_jump)
@@ -77,32 +68,29 @@ function scr_player_knightpep()
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepjumpstart)
 		sprite_index = spr_knightpepjump
-	if ((floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepjump) or ((!grounded) && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_downtrust && sprite_index != spr_knightpep_doublejump))
+	if ((floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepjump) or ((!grounded) && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_doublejump && sprite_index != spr_knightpep_attack))
 		sprite_index = spr_knightpepfall
-	if ((sprite_index == spr_knightpep_downtrust or sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_doublejump) && grounded && vsp > 0 && (!scr_slope()))
+	if move != 0 && grounded && vsp > 0
 	{
-		with (obj_baddie)
+		if steppybuffer > 0
+			steppybuffer--;
+		else
 		{
-			if (point_in_camera(x, y, view_camera[0]) && shakestun && grounded && vsp > 0)
-			{
-				vsp = -7
-				hsp = 0
-			}
+			create_particle(x, y + 43, particle.cloudeffect, 0);
+			steppybuffer = 12;
+			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 		}
-		with (obj_camera)
-		{
-			shake_mag = 10
-			shake_mag_acc = (30 / room_speed)
-		}
+	}
+	if ((sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_doublejump) && grounded && vsp > 0)
+	{
 		combo = 0
 		bounce = 0
 		image_index = 0
 		freefallstart = 0
 		momemtum = 0
-		scr_soundeffect(sfx_groundpound)
 		create_particle(x, y, particle.landcloud, 0)
+		fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 		sprite_index = spr_knightpepland
-		GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 1, 1, 0.9)
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepland)
 	{
@@ -143,7 +131,7 @@ function scr_player_knightpep()
 				movespeed = 0
 		}
 	}
-	if ((!grounded) && place_meeting((x + sign(hsp)), y, obj_solid) && (!scr_slope()))
+	if ((!grounded) && place_meeting((x + sign(hsp)), y, obj_solid))
 		movespeed = 0
 	if (move != 0 && hsp != 0 && sprite_index != spr_knightpep_doublejump)
 	{
@@ -156,8 +144,13 @@ function scr_player_knightpep()
 	}
 	else
 		image_speed = 0.35
-	if (floor(image_index) == 4 && sprite_index == spr_knightpepstart)
-		instance_create(x, (y - 600), obj_thunder)
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepstart)
+	{
+		sprite_index = spr_knightpepthunder
+		GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 1, 1, 0.9)
+		scr_soundeffect(sfx_becomeknight)
+		image_index = 0
+	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepthunder)
 		sprite_index = spr_knightpepidle
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpep_doublejump)
@@ -168,22 +161,43 @@ function scr_player_knightpep()
 		steppy = 1
 	if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
 		steppy = 0
-	if (sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_downtrust)
+	if (sprite_index == spr_knightpepfall)
 	{
 		knightmomentum += 0.35
 		trace(knightmomentum)
 	}
-	if (scr_slope() && sprite_index != spr_knightpepthunder)
+	if (input_buffer_slap > 0) && sprite_index != spr_knightpepstart && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_attack
 	{
-		if (sprite_index == spr_knightpep_downtrust)
-			movespeed = 11
+		input_buffer_slap = 0
+		if !instance_exists(obj_wizardball)
+		{
+			sprite_index = spr_knightpep_attack
+			image_index = 0
+			if !instance_exists(obj_wizardball)
+			{
+				with (instance_create(x, y, obj_wizardball))
+				{
+					playerid = other.id
+					image_xscale = other.xscale
+					if (other.key_up)
+					{
+						starthsp = 8
+						startvsp = -10
+					}
+					else
+					{
+						starthsp = 12
+						startvsp = -6
+					}
+					movespeed = starthsp
+					vsp = startvsp
+				}
+			}
+		}
 		else
-			movespeed = 8
-		with (instance_place(x, (y + 1), obj_slope))
-			other.xscale = (-sign(image_xscale))
-		state = states.knightpepslopes
-		sprite_index = spr_knightpepdownslope
-		slope_buffer = 20
+		{
+			instance_destroy(obj_wizardball)
+		}
 	}
 	exit;
 }

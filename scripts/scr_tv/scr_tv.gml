@@ -17,18 +17,18 @@ function tv_reset() //gml_Script_tv_reset
     }
 }
 
-function tv_create_prompt(argument0, argument1, argument2, argument3) //gml_Script_tv_create_prompt
+function tv_create_prompt(argument0, argument1, argument2, argument3, argument4) //gml_Script_tv_create_prompt
 {
-    return [argument0, argument1, argument2, argument3];
+    return [argument0, argument1, argument2, argument3, argument4];
 }
 
-function tv_push_prompt(argument0, argument1, argument2, argument3) //gml_Script_tv_push_prompt
+function tv_push_prompt(argument0, argument1, argument2, argument3, argument4) //gml_Script_tv_push_prompt
 {
     with (obj_tv)
     {
-        var b = [argument0, argument1, argument2, argument3]
+        var b = [argument0, argument1, argument2, argument3, argument4]
         var play = false
-        switch argument1
+        switch argument2
         {
             case (0 << 0):
                 play = true
@@ -71,7 +71,7 @@ function tv_push_prompt_array(argument0) //gml_Script_tv_push_prompt_array
         with (obj_tv)
         {
             var b = argument0[i]
-            tv_push_prompt(b[0], b[1], b[2], b[3])
+            tv_push_prompt(b[0], b[1], b[2], b[3], b[4])
         }
     }
 }
@@ -87,7 +87,7 @@ function tv_push_prompt_once(argument0, argument1) //gml_Script_tv_push_prompt_o
             return false;
         if (b != 1)
         {
-            tv_push_prompt(argument0[0], argument0[1], argument0[2], argument0[3])
+            tv_push_prompt(argument0[0], argument0[1], argument0[2], argument0[3], argument0[4])
             ds_map_set(special_prompts, argument1, 1)
             ini_open_from_string(obj_savesystem.ini_str)
             ini_write_real("Prompts", argument1, 1)
@@ -144,7 +144,7 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
                     break
                 case spr_tv_exprcollect:
                     expressionbuffer = 150
-					cardboardexprsprite = expressionsprite
+					cardboardexprsprite = argument0
                     if obj_player.isgustavo
                     {
                         cardboardexprsprite = spr_tv_happyG
@@ -155,8 +155,6 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
                         scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y)
                     break
 				case spr_tv_exprmach3:
-					cardboardexprsprite = argument0
-					break
 				case spr_tv_exprmach4:
 					cardboardexprsprite = argument0
 					break
@@ -164,7 +162,7 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
 
             if ((!argument2) && instance_exists(obj_player1) && (obj_player1.character != "M"))
             {
-                var n = asset_get_index(sprite_get_name(argument0) + obj_player1.character)
+                var n = asset_get_index(concat(sprite_get_name(argument0), "N"))
                 if (n > -1)
 				{
 					if _card == 1

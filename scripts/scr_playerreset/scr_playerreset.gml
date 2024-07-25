@@ -32,8 +32,8 @@ function scr_playerreset()
 			shownrankc = 0
 			ds_list_clear(tvprompts_list)
 			prompt = ""
-			bubblespr = -4
-			promptx = promptxstart
+			headline = ""
+			promptx = 960
 			if (!global.levelreset)
 			{
 				sprite_index = spr_tv_off

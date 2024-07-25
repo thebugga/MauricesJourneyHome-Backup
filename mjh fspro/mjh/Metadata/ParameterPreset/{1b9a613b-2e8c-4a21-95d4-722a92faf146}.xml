@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{1b9a613b-2e8c-4a21-95d4-722a92faf146}">
 		<property name="name">
-			<value>isnoise</value>
+			<value>character</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6861f597-28e9-4976-b1e9-4593fff7b248}</destination>

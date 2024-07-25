@@ -9,8 +9,6 @@ function scr_player_knightpepslopes()
 	if (knightmiddairstop == 0)
 		hsp = (xscale * movespeed)
 	image_speed = 0.35
-	if key_jump
-		input_buffer_jump = 0
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
 		vsp /= 2
@@ -18,18 +16,16 @@ function scr_player_knightpepslopes()
 	}
 	if (grounded && vsp > 0)
 		jumpstop = 0
-	if ((!scr_slope()) && grounded)
+	if (grounded)
 		sprite_index = spr_knightpepcharge
-	if scr_slope()
-		sprite_index = spr_knightpepdownslope
-	if (input_buffer_jump < 8)
+	if (input_buffer_jump > 0)
 	{
 		if (grounded or (!doublejump))
 		{
+			input_buffer_jump = 0
 			vsp = -11
 			sprite_index = spr_knightpep_fly
 			image_index = 0
-			input_buffer_jump = 8
 			if (!grounded)
 			{
 				vsp = -11

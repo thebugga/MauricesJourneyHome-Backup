@@ -1,13 +1,14 @@
+var _player = (obj_player1.spotlight ? obj_player1 : obj_player2)
 if (room == rm_editor)
 	exit;
-if (obj_player.state == states.knightpep or (obj_player.state == states.chainsaw && (obj_player.tauntstoredstate == states.knightpep or obj_player.tauntstoredstate == states.knightpepslopes)) or obj_player.state == states.knightpepattack or obj_player.state == states.knightpepslopes or obj_player.state == states.knightpepbump)
-	sprite_index = spr_swordstonetaken
+if (_player.state == states.knightpep or (_player.state == states.chainsaw && _player.tauntstoredstate == states.knightpep))
+	visible = false
 else
-	sprite_index = spr_swordstone
-if (sprite_index == spr_swordstone && (!instance_exists(ID)))
+	visible = true
+if (visible && (!instance_exists(ID)))
 {
 	with (instance_create(x, (y - 20), obj_grabmarker))
 		other.ID = id
 }
-else if (sprite_index == spr_swordstonetaken && instance_exists(ID))
+else if (!visible && instance_exists(ID))
 	instance_destroy(ID)

@@ -37,12 +37,8 @@ if (player == 0 && place_meeting(x, y, obj_player))
 				other.y = (y - 35)
 				other.effectid = instance_create((other.x + 18), other.y, obj_treasureeffect)
 				other.vsp = 0
-				obj_tv.showtext = 1
-				obj_tv.message = "YOU GOT A TOWER SECRET TREASURE!!!"
-				obj_tv.alarm[0] = 200
+				scr_tvtopmessage("SECRET TREASURE ATTAINED!!!")
 				other.player = (object_index == obj_player1 ? 1 : 2)
-				var music = obj_music.musicID
-				//ds_list_clear(global.instancelist)
 			}
 		}
 	}

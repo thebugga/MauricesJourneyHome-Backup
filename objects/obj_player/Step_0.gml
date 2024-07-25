@@ -29,16 +29,6 @@ var prevmask = mask_index;
 if state != states.grab
 	swingdingthrow = false;
 
-// reset noise walljumps
-if !ispeppino && !isgustavo
-{
-	if can_jump && vsp > 0
-	{
-		noisewalljump = 0;
-		noisedoublejump = true;
-	}
-}
-
 switch state
 {
 	case states.normal:
@@ -666,30 +656,24 @@ if (state != states.mach2 && state != states.mach3 && state != states.trickjump 
 	ramp = 0
 	ramp_points = 0
 }
-if ((!scr_slope()))
-    angle = lerp(obj_player.angle, 0, 0.3)
-else if (!(place_meeting(x, (y + 1), obj_solid)))
+var _toangle = 0
+if grounded
 {
-    with (instance_place(x, (y + 1), obj_slope))
-    {
-        if (abs(image_yscale) < abs(image_xscale))
-        {
-            if (sign(image_xscale) == 1)
-                other.angle = lerp(obj_player.angle, 15, 0.3)
-
-            else
-                other.angle = lerp(obj_player.angle, -15, 0.3)
-
-        }
-        else if (sign(image_xscale) == 1)
-            other.angle = lerp(obj_player.angle, 30, 0.3)
-
-        else
-            other.angle = lerp(obj_player.angle, -30, 0.3)
-
-    }
+	if ((!scr_slope()))
+	    _toangle = 0
+	else if (!(place_meeting(x, (y + 1), obj_solid)))
+	{
+	    with (instance_place(x, (y + 1), obj_slope))
+	    {
+				if (sign(image_xscale) == 1)
+					_toangle = point_direction(-image_xscale, image_yscale, 0, 0)
+				else
+					_toangle = point_direction(image_xscale, -image_yscale, 0, 0)
+	    }
+	}
 }
-
+var _diff = angle_difference(_toangle, angle)
+angle += _diff / 4
 if (state != states.door && state != states.chainsaw && state != states.hit && place_meeting(x, y, obj_boxofpizza))
 	state = states.crouch
 if (shoot_buffer > 0)
@@ -728,8 +712,6 @@ if ((!instance_exists(superchargedeffectid)) && supercharged)
 		other.superchargedeffectid = id
 	}
 }
-if (state != states.Sjump)
-	sjumpvsp = -12
 if (state != states.freefall)
 	freefallvsp = 20
 if (supercharge > 9 && state != states.backbreaker)
@@ -853,7 +835,7 @@ if (sprite_index == spr_winding && state != states.normal)
 	windingAnim = 0
 if (state != states.grab)
 	swingdingbuffer = 0
-if (state == states.antigrav or state == states.bazooka or state == states.rocket or state == states.rocketslide)
+if (state == states.antigrav or state == states.bazooka or state == states.rocket or state == states.rocketslide or state == states.secretenter)
 	grav = 0
 else if (state == states.barrel)
 	grav = 0.6
@@ -899,7 +881,7 @@ if (object_index == obj_player1)
 			}
 		}
 	}
-	if (!((state == states.door or state == states.tube or state == states.taxi or state == states.gottreasure or state == states.victory or state == states.gottreasure or state == states.actor or state == states.comingoutdoor or (state == states.knightpep && (sprite_index == spr_knightpepstart or sprite_index == spr_knightpepthunder)) or instance_exists(obj_fadeout) or place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))))
+	if (!((state == states.door or state == states.tube or state == states.taxi or state == states.gottreasure or state == states.victory or state == states.gottreasure or state == states.actor or state == states.comingoutdoor or state == states.secretenter or (state == states.knightpep && (sprite_index == spr_knightpepstart or sprite_index == spr_knightpepthunder)) or instance_exists(obj_fadeout) or place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))))
 	{
 		if (global.combotime > 0)
 			global.combotime -= 0.15
@@ -1040,7 +1022,6 @@ if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalha
 			else
 				sprite = spr_technicaldifficulty4
 		}
-		vsp = 10
 	}
 	else
 	{

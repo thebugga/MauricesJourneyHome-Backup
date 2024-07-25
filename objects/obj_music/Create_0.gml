@@ -21,4 +21,5 @@ panicstart = false;
 add_music(REALLYREALTitlescreen, "event:/music/title", noone, false);
 add_music(hub_outside, "event:/music/hub", noone, false);
 add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
+add_music(wizard_1, "event:/music/wizardry", noone, false);
 

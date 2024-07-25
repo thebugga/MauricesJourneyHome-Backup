@@ -151,14 +151,6 @@ if verticalhallway
 	y = floor(y)
 	verticalstate = states.normal
 }
-if (character == "M" && place_meeting(x, y, obj_boxofpizza))
-{
-	while place_meeting(x, y, obj_boxofpizza)
-	{
-		var _inst = instance_place(x, y, obj_boxofpizza)
-		y -= _inst.image_yscale
-	}
-}
 if (state == states.taxi)
 {
 	x = obj_stopsign.x

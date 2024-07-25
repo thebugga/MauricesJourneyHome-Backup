@@ -15,28 +15,10 @@ if (targetgolf != -4 && (!view_visible[1]))
 	view_visible[1] = true
 	view_enabled = true
 }
-if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
-{
-	if (prompt != -4)
-		prompt_buffer = 2
-	bubbleindex += image_speed
-	if (floor(bubbleindex) == sprite_get_number(bubblespr))
-	{
-		bubbleindex = 0
-		switch bubblespr
-		{
-			case spr_tv_bubbleopen:
-				bubblespr = spr_tv_bubble
-				break
-			case spr_tv_bubbleclose:
-				bubblespr = spr_tv_bubbleclosed
-				if (prompt == -4 or prompt == "")
-					bubblespr = -4
-				break
-		}
-
-	}
-}
+if (prompt != -4 && prompt != "")
+	newsy = Approach(newsy, 470, 5)
+else
+	newsy = Approach(newsy, 540, 5)
 switch state
 {
 	case states.normal:
@@ -155,15 +137,14 @@ switch state
 				_transfo = 0
 				break
 		}
-
-		if (!obj_player1.ispeppino)
+		if obj_player1.character != "M"
 		{
 			var spr = sprite_get_name(idlespr)
 			spr = asset_get_index(concat(spr, "N"))
 			if (spr > -1)
 				idlespr = spr
 		}
-		if (!_transfo)
+		if (!_transfo) && expressionbuffer == 0
 		{
 			with (obj_player1)
 			{
@@ -171,7 +152,7 @@ switch state
 					tv_do_expression(spr_tv_exprmach4)
 				else if (state == states.mach3 or sprite_index == spr_mach3boost)
 					tv_do_expression(spr_tv_exprmach3)
-				else if (state == states.hurt)
+				if (state == states.hurt)
 					tv_do_expression(spr_tv_exprhurt)
 				else if (state == states.ratmounthurt)
 					tv_do_expression(spr_tv_hurtG)
@@ -199,12 +180,12 @@ switch state
 				if (idleanim <= 0 && floor(image_index) == (image_number - 1))
 				{
 					sprite_index = choose(spr_tv_idleanim1, spr_tv_idleanim2)
-					if (!obj_player1.ispeppino)
+					if obj_player1.character != "M"
 					{
-						if (sprite_index == spr_tv_idleanim1)
-							sprite_index = spr_tv_idleanim1N
-						if (sprite_index == spr_tv_idleanim2)
-							sprite_index = spr_tv_idleanim2N
+						var spr = sprite_get_name(sprite_index)
+						spr = asset_get_index(concat(spr, "N"))
+						if (spr > -1)
+							sprite_index = spr
 					}
 					image_index = 0
 				}
@@ -231,68 +212,44 @@ switch state
 			{
 				var b = ds_list_find_value(tvprompts_list, 0)
 				prompt_buffer = prompt_max
-				if (b[0] != "" && b[0] != -4)
+				if (b[1] != "" && b[1] != -4)
 				{
-					bubblespr = spr_tv_bubbleopen
-					bubbleindex = 0
-					prompt = b[0]
-					promptspd = b[3]
-					promptx = promptxstart
+					headline = b[0]
+					prompt = b[1]
+					promptspd = b[4]
+					promptx = 960
 				}
 				else
-				{
-					if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
-						bubblespr = spr_tv_bubbleclose
-					if (bubblespr == spr_tv_bubbleclosed)
-						bubblespr = -4
-					bubbleindex = 0
-					promptx = promptxstart
 					prompt = -4
-				}
-				if (b[1] == tvprompt.normal)
+				if (b[2] == tvprompt.normal)
 				{
 					sprite_index = spr_tv_open
 					image_index = 0
-					tvsprite = b[2]
-					if (!obj_player1.ispeppino)
-					{
-						spr = sprite_get_name(tvsprite)
-						spr = asset_get_index(concat(spr, "N"))
-						if (spr > -1)
-							tvsprite = spr
-					}
+					tvsprite = b[3]
 				}
 				else
 				{
-					tvsprite = b[2]
-					if (!obj_player1.ispeppino)
-					{
-						spr = sprite_get_name(tvsprite)
-						spr = asset_get_index(concat(spr, "N"))
-						if (spr > -1)
-							tvsprite = spr
-					}
-					sprite_index = tvsprite
-					image_index = 0
+					tvsprite = b[3]
 				}
-				state = states.transitioncutscene
+				state = states.tv_whitenoise
 			}
 			else
-				bubblespr = -4
+				prompt = -4
 		}
 		break
 	case states.transitioncutscene:
-		if (sprite_index == spr_tv_open && floor(image_index) == (image_number - 1))
+		if (sprite_index == spr_tv_open && floor(image_index) == (image_number - 1)) || (sprite_index != spr_tv_open && sprite_index != tvsprite)
+		{
 			sprite_index = tvsprite
+					image_index = 0
+		}
 		if (sprite_index == tvsprite)
 		{
-			if (prompt_buffer > 0)
-				prompt_buffer--
-			else
+			if (prompt == -4 || prompt == "") && newsy == 540
 			{
-				promptx = promptxstart
+				promptx = 960
 				ds_list_delete(tvprompts_list, 0)
-				state = states.normal
+				state = states.tv_whitenoise
 			}
 		}
 		break
@@ -304,9 +261,11 @@ switch state
 		}
 		else
 		{
-			noisebuffer = noisemax
+			noisebuffer = 14
 			noiseindex = 0
-			if (expressionsprite != -4)
+			if (prompt != -4 && prompt != "")
+				state = states.transitioncutscene
+			else if (expressionsprite != -4)
 				state = states.tv_expression
 			else
 				state = states.normal
@@ -338,6 +297,13 @@ switch state
 		}
 		break
 }
+if obj_player1.character != "M"
+{
+	var spr = sprite_get_name(cardboardsprite)
+	spr = asset_get_index(concat(spr, "N"))
+	if (spr > -1)
+		cardboardsprite = spr
+}
 if cardboardexprsprite != -4
 {
 	cardboardsprite = cardboardexprsprite
@@ -365,6 +331,7 @@ if cardboardexprsprite != -4
 			}
 			break
 		case spr_tv_exprcollect:
+		case spr_tv_exprcollectN:
 		case spr_tv_happyG:
 			if (expressionbuffer > 0)
 				expressionbuffer--
@@ -372,6 +339,7 @@ if cardboardexprsprite != -4
 				cardboardexprsprite = -4
 			break
 		case spr_tv_exprmach3:
+		case spr_tv_exprmach3N:
 			with (obj_player1)
 			{
 				if (state != states.mach3 && (state != states.chainsaw or tauntstoredstate != states.mach3) && sprite_index != spr_mach3boost && mach4mode == 0)
@@ -381,6 +349,7 @@ if cardboardexprsprite != -4
 			}
 			break
 		case spr_tv_exprmach4:
+		case spr_tv_exprmach4N:
 			with (obj_player1)
 			{
 				if (mach4mode == 0)

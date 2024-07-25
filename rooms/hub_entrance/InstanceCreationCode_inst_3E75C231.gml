@@ -1,1 +1,1 @@
-targetRoom = hub_theatre
+targetRoom = hub_wizardtower

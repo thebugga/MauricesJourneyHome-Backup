@@ -122,8 +122,7 @@ if (!surface_exists(tvsurface))
 	tvsurface = surface_create(278, 268)
 gpu_set_blendmode(bm_normal)
 surface_set_target(tvsurface)
-	draw_sprite_ext(spr_tv_bg, 0, 139, 134, 1, 1, 0, c_white, alpha)
-	draw_sprite_ext(sprite_index, image_index, 139, 134, 1, 1, 0, c_white, alpha)
+	draw_clear_alpha(c_black, 0)
 	if cardboardvisual != -4
 		draw_sprite_ext(cardboardvisual, 0, 139, cardboardy, 1, 1, 0, c_white, alpha)
 	gpu_set_blendmode(bm_subtract)
@@ -134,34 +133,26 @@ shader_set(global.Pal_Shader)
 	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.patterntexture)
 	draw_sprite_ext(sprite_index, image_index, ((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
-	if state == states.normal
+	if state == states.normal && sprite_index != spr_tv_open
 		draw_surface(tvsurface, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY))
 	pattern_reset()
 	if (state = states.tv_whitenoise)
-		draw_sprite_ext(spr_tv_whitenoise, floor(noiseindex), (tv_x + collect_x), ((tv_y + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
+		draw_sprite_ext(spr_tv_whitenoise, floor(noiseindex), ((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
 reset_shader_fix()
-if (bubblespr != -4)
-	draw_sprite_ext(bubblespr, bubbleindex, 512, 53, 1, 1, 1, c_white, alpha)
-if (!surface_exists(promptsurface))
-	promptsurface = surface_create(290, 102)
-surface_set_target(promptsurface)
-draw_clear_alpha(c_black, 0)
+draw_rectangle_color(0, newsy, 960, newsy + 50, c_red, c_red, c_red, c_red, false)
+draw_rectangle_color(0, newsy + 50, 960, newsy + 70, c_white, c_white, c_white, c_white, false)
 draw_set_font(font1)
 draw_set_halign(fa_left)
 draw_set_valign(fa_middle)
-if (bubblespr == spr_tv_bubble)
+if (newsy == 470)
 {
 	promptx -= promptspd
-	if (bubblespr != 433 && promptx < (350 - string_width(prompt)))
-	{
-		bubblespr = spr_tv_bubbleclose
-		bubbleindex = 0
-	}
-	draw_text_color((promptx - 350), 50, prompt, c_black, c_black, c_black, c_black, 1)
+	if promptx < -(string_width(prompt))
+		prompt = ""
 }
-draw_set_halign(fa_left)
-surface_reset_target()
-draw_surface(promptsurface, 350, 0)
+draw_text_color(promptx, 60 + newsy, prompt, c_black, c_black, c_black, c_black, 1)
+draw_set_font(global.creditsfont)
+draw_text_color(100, 25 + newsy, headline, c_white, c_white, c_white, c_white, 1)
 draw_set_font(global.smallnumber_fnt)
 draw_set_halign(fa_center)
 if instance_exists(obj_pizzaball)

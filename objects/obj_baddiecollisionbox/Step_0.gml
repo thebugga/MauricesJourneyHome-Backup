@@ -234,14 +234,6 @@ for (var i = 0; i < 2; i++)
 					vsp = 0
 				}
 				var pepp_grab = 0
-				if (character == "M" && instance_exists(other.baddieID) && (state == states.normal or state == states.jump) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == states.stun && other.baddieID.stuntouchbuffer == 0 && (!other.baddieID.thrown) && (!other.baddieID.invincible))
-				{
-					other.baddieID.pepperman_grab = 1
-					pepperman_grabID = other.baddieID.id
-					other.baddieID.state = states.grabbed
-					other.baddieID.grabbedby = _playerindex
-					pepp_grab = 1
-				}
 				if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && (state == states.tumble or state == states.mach2) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && (!pepp_grab) && other.baddieID.thrown == false && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && (!other.baddieID.invincible))
 				{
 					var lag = 0
@@ -277,7 +269,7 @@ for (var i = 0; i < 2; i++)
 							vsp = irandom_range(-6, -11)
 					}
 				}
-				if (character != "M" && instance_exists(other.baddieID) && state == states.grabbing && (!other.baddieID.invincible))
+				if (instance_exists(other.baddieID) && state == states.grabbing && (!other.baddieID.invincible))
 				{
 					if (instance_exists(other.baddieID) && y < (other.baddieID.y - 50) && attacking == 0 && state != states.handstandjump && other.baddieID.state != states.grabbed && sprite_index != spr_player_mach2jump && (state == states.jump or state == states.mach1 or (state == states.grab && sprite_index != spr_swingding)) && vsp > 0 && other.baddieID.vsp >= 0 && sprite_index != spr_stompprep && (!other.baddieID.invincible))
 					{

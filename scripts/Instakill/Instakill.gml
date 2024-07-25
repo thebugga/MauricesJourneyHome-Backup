@@ -48,7 +48,7 @@ function Instakill()
 				vsp = -10
 			boxxedpepjump = 10
 		}
-		if (character == "M" && state == states.freefall)
+		if (character == "PM" && state == states.freefall)
 		{
 			vsp = -11
 			state = states.jump

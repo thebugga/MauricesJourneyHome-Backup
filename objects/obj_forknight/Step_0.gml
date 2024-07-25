@@ -102,9 +102,4 @@ if (boundbox == 0)
 		baddieID = other.id
 		other.boundbox = 1
 	}
-	with (instance_create(x, y, obj_objecticontracker))
-	{
-		objectID = other.id
-		other.boundbox = 1
-	}
 }

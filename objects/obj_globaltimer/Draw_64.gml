@@ -55,6 +55,7 @@ if debug
 	draw_text(32, 232, "current room = " + room_get_name(room));
 	draw_text(32, 252, "last room = " + room_get_name(obj_player1.lastroom));
 	draw_text(32, 272, "state = " + string(obj_player1.state));
+	draw_text(32, 292, string(obj_player1.input_buffer_slap));
 draw_set_font(global.creditsfont)
 draw_text(10, 530, "https://discord.gg/2avBw3ztEu")
 }

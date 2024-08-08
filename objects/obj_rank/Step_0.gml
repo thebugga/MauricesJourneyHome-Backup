@@ -2,7 +2,7 @@ if (floor(image_index) == (image_number - 1))
 	image_speed = 0
 if (global.collect >= global.collectN)
 {
-	if (obj_player1.character == "P" && obj_player1.ispeppino)
+	if (obj_player1.character == "M")
 	{
 		if (global.rank == "s")
 			sprite_index = spr_rankS
@@ -35,7 +35,7 @@ if (global.collect >= global.collectN)
 }
 if (global.collectN > global.collect)
 {
-	if (obj_player2.character == "P" && obj_player1.ispeppino)
+	if (obj_player2.character == "M")
 	{
 		if (global.rank == "s")
 			sprite_index = spr_rankS
@@ -68,5 +68,3 @@ if (global.collectN > global.collect)
 }
 if instance_exists(obj_treasureviewer)
 	visible = false
-if brown
-	brownfade = Approach(brownfade, 1, 0.07);

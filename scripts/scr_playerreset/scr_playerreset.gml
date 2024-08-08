@@ -112,7 +112,7 @@ function scr_playerreset()
 		global.combotime = 0
 		global.heattime = 0
 		global.pizzacoin = 0
-		global.toppintotal = 1
+		global.toppintotal = 0
 		global.hit = 0
 		global.playerhealth = 9
 		global.panic = false
@@ -385,7 +385,7 @@ function scr_playerreset()
 		global.combotime = 0
 		global.heattime = 0
 		global.pizzacoin = 0
-		global.toppintotal = 1
+		global.toppintotal = 0
 		global.hit = 0
 		in_water = 0
 		key_particles = 0

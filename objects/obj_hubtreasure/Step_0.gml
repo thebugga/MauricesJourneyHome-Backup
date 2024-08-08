@@ -21,24 +21,21 @@ if (!got)
 		{
 			if (state != states.gotoplayer)
 			{
-				if grounded
+				hsp = 0
+				vsp = 0
+				state = states.gottreasure
+				scr_soundeffect(sfx_treasure)
+				with (other)
 				{
-					hsp = 0
-					vsp = 0
-					state = states.gottreasure
-					scr_soundeffect(sfx_secretfound)
-					with (other)
-					{
-						got = 1
-						if (got_func != -4)
-							got_func()
-						alarm[0] = 150
-						sprite_index = spr_got
-						playerid = other.id
-					}
+					got = 1
+					if (got_func != -4)
+						got_func()
+					alarm[0] = 150
+					sprite_index = spr_got
+					playerid = other.id
 				}
-				//ds_list_clear(global.instancelist)
 			}
+			//ds_list_clear(global.instancelist)
 		}
 	}
 	ds_list_clear(global.instancelist)

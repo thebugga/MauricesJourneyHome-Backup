@@ -56,6 +56,7 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 			titlecardi = other.titlecardi
 			titlecardmu = other.titlecardmu
 			titlecredit = other.titlecredit
+			wip = other.titlewip
 		}
 	}
 }

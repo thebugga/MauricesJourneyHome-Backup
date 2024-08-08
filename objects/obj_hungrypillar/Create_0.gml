@@ -1,4 +1,5 @@
 hp = 0
+scaredbuffer = 0
 image_speed = 0.35
 depth = 2
 if (room == rm_editor)

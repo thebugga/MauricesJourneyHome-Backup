@@ -899,24 +899,38 @@ if (object_index == obj_player1)
 }
 if (key_jump && (!grounded) && (state == states.mach2 or state == states.mach3) && (state != (states.climbwall & walljumpbuffer)) <= 0)
 	input_buffer_walljump = 24
-if (input_buffer_jump < 8)
-	input_buffer_jump++
-if (input_buffer_secondjump < 8)
-	input_buffer_secondjump++
-if (input_buffer_highjump < 8)
-	input_buffer_highjump++
-if (input_attack_buffer > 0)
-	input_attack_buffer--
-if (input_finisher_buffer > 0)
-	input_finisher_buffer--
-if (input_up_buffer > 0)
-	input_up_buffer--
-if (input_down_buffer > 0)
-	input_down_buffer--
-if (input_buffer_walljump > 0)
-	input_buffer_walljump--
-if (input_buffer_slap < 8)
-	input_buffer_slap++
+if boxxeddashbuffer > 0
+	boxxeddashbuffer--;
+if coyote_time > 0
+	coyote_time--;
+if input_buffer_jump > 0
+	input_buffer_jump--;
+if input_taunt_p2 > 0
+	input_taunt_p2--;
+if input_buffer_down > 0
+	input_buffer_down--;
+if input_buffer_mach > 0
+	input_buffer_mach--;
+if input_buffer_jump_negative > 0
+	input_buffer_jump_negative--;
+if input_buffer_secondjump < 8
+	input_buffer_secondjump++;
+if input_buffer_highjump < 8
+	input_buffer_highjump++;
+if input_attack_buffer > 0
+	input_attack_buffer--;
+if input_buffer_shoot > 0
+	input_buffer_shoot--;
+if input_finisher_buffer > 0
+	input_finisher_buffer--;
+if input_up_buffer > 0
+	input_up_buffer--;
+if input_down_buffer > 0
+	input_down_buffer--;
+if input_buffer_walljump > 0
+	input_buffer_walljump--;
+if input_buffer_slap > 0
+	input_buffer_slap--;
 if (key_particles == 1)
 	create_particle((x + random_range(-25, 25)), (y + random_range(-35, 25)), particle.keyparticles, 0)
 if (inv_frames == 0 && hurted == 0 && state != states.ghost)
@@ -1017,10 +1031,13 @@ if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalha
 		with (instance_create(-960, 0, obj_technicaldifficulty))
 		{
 			playerid = other.id
-			if (!other.isgustavo)
-				sprite = choose(spr_technicaldifficulty1, spr_technicaldifficulty2, spr_technicaldifficulty3)
-			else
-				sprite = spr_technicaldifficulty4
+			if other.character == "M"
+			{
+				sprite = spr_technicaldifficulty_maurice
+				if other.isgustavo
+					sprite = spr_technicaldifficulty_gary
+			}
+			frame = irandom(sprite_get_number(sprite) - 1)
 		}
 	}
 	else
@@ -1081,36 +1098,4 @@ if (state == states.boulder)
 if (state != states.comingoutdoor)
 	image_blend = c_white
 prevstate = state
-prevsprite = sprite_index
-if boxxeddashbuffer > 0
-	boxxeddashbuffer--;
-if coyote_time > 0
-	coyote_time--;
-if input_buffer_jump > 0
-	input_buffer_jump--;
-if input_taunt_p2 > 0
-	input_taunt_p2--;
-if input_buffer_down > 0
-	input_buffer_down--;
-if input_buffer_mach > 0
-	input_buffer_mach--;
-if input_buffer_jump_negative > 0
-	input_buffer_jump_negative--;
-if input_buffer_secondjump < 8
-	input_buffer_secondjump++;
-if input_buffer_highjump < 8
-	input_buffer_highjump++;
-if input_attack_buffer > 0
-	input_attack_buffer--;
-if input_buffer_shoot > 0
-	input_buffer_shoot--;
-if input_finisher_buffer > 0
-	input_finisher_buffer--;
-if input_up_buffer > 0
-	input_up_buffer--;
-if input_down_buffer > 0
-	input_down_buffer--;
-if input_buffer_walljump > 0
-	input_buffer_walljump--;
-if input_buffer_slap > 0
-	input_buffer_slap--;;
+prevsprite = sprite_index;

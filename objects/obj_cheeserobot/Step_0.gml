@@ -37,13 +37,9 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = 0
-idlespr = spr_cheeserobot_idle
-stunfallspr = spr_cheeserobot_stun
-walkspr = spr_cheeserobot_walk
-stunspr = spr_cheeserobot_stun
-grabbedspr = spr_cheeserobot_stun
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = (0.15 * room_speed)
+scr_scareenemy()
 if (hp <= 0)
 	instance_destroy()
 if (state != states.grabbed)
@@ -52,15 +48,28 @@ if (state != states.stun)
 	thrown = false
 if (bombreset > 0)
 	bombreset--
-if (x != obj_player.x && state != states.pizzagoblinthrow && bombreset == 0)
+var player = instance_nearest(x, y, obj_player)
+if (state != states.pizzagoblinthrow && bombreset <= 0 && grounded)
 {
-	if (obj_player.x > (x - 400) && obj_player.x < (x + 400) && y <= (obj_player.y + 20) && y >= (obj_player.y - 20))
+	if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 20) && y >= (player.y - 20))
 	{
 		if (state == states.walk or state == states.idle)
 		{
+			if x != player.x
+				image_xscale = (-(sign((x - player.x))))
 			image_index = 0
-			image_xscale = (-(sign((x - obj_player.x))))
 			state = states.pizzagoblinthrow
 		}
+	}
+}
+
+if (boundbox == 0)
+{
+	with (instance_create(x, y, obj_baddiecollisionbox))
+	{
+		sprite_index = other.sprite_index
+		mask_index = other.sprite_index
+		baddieID = other.id
+		other.boundbox = 1
 	}
 }

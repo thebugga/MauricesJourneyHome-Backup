@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_technicaldifficulty3",
-    "path":"sprites/spr_technicaldifficulty3/spr_technicaldifficulty3.yy",
+    "name":"spr_technicaldifficulty_bg",
+    "path":"sprites/spr_technicaldifficulty_bg/spr_technicaldifficulty_bg.yy",
   },
   "spriteMaskId":null,
   "visible":true,

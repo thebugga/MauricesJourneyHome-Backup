@@ -31,14 +31,3 @@ if (visible == true && obj_player.state != states.ejected)
 		}
 	}
 }
-if (visible == false && global.boxhp <= 5)
-{
-	x = xstart
-	y = ystart
-	visible = true
-	repeat (4)
-		instance_create(x, y, obj_debris)
-	if (!audio_is_playing(sfx_breakblock1))
-		scr_soundeffect(sfx_breakblock1)
-	mask_index = sprite_index
-}

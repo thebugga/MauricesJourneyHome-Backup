@@ -29,7 +29,6 @@ else
 	            textbuffer = textspeed
 	            displaytext = ""
 	            currenttext = scr_calculate_text(dialog[currentdialog][0])
-	            obj_player1.key_jump = 0
 	            dialogheight = scr_calculate_height(currenttext)
 	            dialogcharacter = dialog[currentdialog][1]
 	            dialogexpression = dialog[currentdialog][2]
@@ -56,7 +55,10 @@ else
 	            }
 	        }
 	        else
+			{
+	            obj_player1.input_buffer_jump = 0
 	            instance_destroy()
+			}
 	    }
 	}
 }

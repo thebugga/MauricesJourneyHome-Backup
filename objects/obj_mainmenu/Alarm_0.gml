@@ -8,12 +8,14 @@ switch state
 		flicker = 1
 		break
 	case states.transition:
-		global.currentsavefile = saveselect
 		with (obj_player)
 		{
 			targetRoom = hub_outside
 			targetDoor = "A"
 		}
-		instance_create(0, 0, obj_fadeout)
+		with instance_create(0, 0, obj_fadeout)
+			gamestart = true
+		global.currentsavefile = saveselect
+		gamesave_async_load()
 		break
 }

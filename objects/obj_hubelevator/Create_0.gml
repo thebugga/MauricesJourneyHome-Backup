@@ -17,6 +17,8 @@ elavatorsprite = spr_elevator_bg
 elavatorindex = 0
 chary = -14
 charvely = 0
-locked = true
-trapdoor = false
 fadealpha = 0
+if (global.elevatorcutscene1 == -4)
+	global.elevatorcutscene1 = quick_ini_read_real(get_savefile_ini(), "Cutscene", "elevator1", 0)
+if (global.elevatorcutscene2 == -4)
+	global.elevatorcutscene2 = quick_ini_read_real(get_savefile_ini(), "Cutscene", "elevator2", 0)

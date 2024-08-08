@@ -3,7 +3,7 @@ with (obj_player)
 {
 	if (room == rank_room && check_player_coop())
 	{
-		var tx = 480
+		var tx = 340
 		if (object_index == obj_player2)
 			tx += 100
 		var ty = 270
@@ -28,3 +28,7 @@ if (fadein == 0)
 	fadealpha += 0.1
 else if (fadein == 1)
 	fadealpha -= 0.1
+if receiptonscreen
+	receiptx = Approach(receiptx, 640, 10)
+else
+	receiptx = Approach(receiptx, 960, 10)

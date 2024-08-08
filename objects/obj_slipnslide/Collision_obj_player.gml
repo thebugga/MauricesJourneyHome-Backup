@@ -1,16 +1,10 @@
 with (other)
 {
-	if (state != states.trashroll && state != states.trashjump && state != states.cheeseball)
+	if (state != states.trashroll && state != states.trashjump && state != states.cheeseball && grounded && movespeed != 0)
 	{
-		sprite_index = spr_slipbanan1
 		other.drop = 1
-		vsp = -11
-		movespeed += 2
-		if (movespeed > 14)
-			movespeed = 14
-		hsp = (movespeed * xscale)
-		image_index = 0
-		state = states.slipbanan
+		state = states.slipnslide
+		sprite_index = spr_slipnslide
+		instance_destroy(other)
 	}
-	instance_destroy(other)
 }

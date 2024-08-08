@@ -121,13 +121,14 @@ function scr_pizzagoblin_throw()
 				}
 				break
 			case obj_cheeserobot:
-				with (instance_create(x, y, obj_cheeseblob))
+				with (instance_create(x, y, obj_arcprojectile))
 				{
-					sprite_index = spr_cheeserobot_goop
+					sprite_index = spr_junk
+					image_index = irandom(sprite_get_number(spr_junk))
+					image_speed = 0
 					image_xscale = other.image_xscale
-					hsp = (other.image_xscale * 8)
-					vsp = 0
-					grav = 0
+					hsp = (image_xscale * 6)
+					vsp = -8
 				}
 				break
 			case obj_spitcheese:
@@ -182,7 +183,7 @@ function scr_pizzagoblin_throw()
 					{
 						baddieID = other.id
 						image_xscale = other.image_xscale
-						hsp = ((-other.image_xscale) * 4)
+						hsp = (other.image_xscale * 4)
 						vsp = -5
 					}
 				}
@@ -192,7 +193,7 @@ function scr_pizzagoblin_throw()
 					{
 						baddieID = other.id
 						image_xscale = other.image_xscale
-						hsp = ((-other.image_xscale) * 4)
+						hsp = (other.image_xscale * 4)
 						vsp = -5
 					}
 				}

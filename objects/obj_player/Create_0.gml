@@ -587,7 +587,7 @@ if (!variable_global_exists("saveroom"))
 	global.savedcombo = 0;
 	global.heattime = 0;
 	global.pizzacoin = 0;
-	global.toppintotal = 1;
+	global.toppintotal = 0;
 	global.hit = 0;
 	global.baddieroom = ds_list_create();
 	global.hp = 2;
@@ -624,8 +624,8 @@ if (!variable_global_exists("saveroom"))
 	global.wartimerfont1 = font_add_sprite_ext(spr_wartimer_font1, "1234567890", 1, 0)
 	global.wartimerfont2 = font_add_sprite_ext(spr_wartimer_font2, "1234567890", 1, 0)
 	global.moneyfont = font_add_sprite_ext(spr_stickmoney_font, "0123456789$-", 1, 0)
-	global.moneyfont = font_add_sprite_ext(spr_stickmoney_font, "0123456789$-", true, 0);
 	global.creditsfont = font_add_sprite_ext(spr_truefont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz:.!0123456789?'\"ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜáäãàâéèêëíîïóöõôúùûüÇç_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль/", true, 2);
+	global.tutorialfont = font_add_sprite_ext(spr_minitruefont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!,.:0123456789'?-", true, 2);
 	global.font_map = ds_map_create();
 	ds_map_set(global.font_map, "bigfont_en", global.bigfont);
 	ds_map_set(global.font_map, "smallfont_en", global.smallfont);
@@ -659,6 +659,8 @@ if (!variable_global_exists("saveroom"))
 	global.option_sfx_volume = ini_read_real("Option", "sfx_volume", 100)
 	global.option_fullscreen = ini_read_real("Option", "fullscreen", 0)
 	global.option_resolution = ini_read_real("Option", "resolution", 1)
+	global.option_timer = ini_read_real("Option", "timer", 0)
+	global.option_timer_type = ini_read_real("Option", "timertype", 0)
 	ini_close()
 	
 	global.throw_frame = 0;

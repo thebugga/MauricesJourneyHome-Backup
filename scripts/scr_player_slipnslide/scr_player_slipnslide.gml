@@ -25,9 +25,10 @@ function scr_player_slipnslide()
 	}
 	if (scr_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
-		state = states.jump
-		vsp = -14
-		jumpstop = 1
+		vsp = -5
+		sprite_index = spr_slipbanan1
+		image_index = 0
+		state = states.slipbanan
 	}
 	if (scr_slope() && movespeed <= 0)
 		movespeed = 2
@@ -52,8 +53,27 @@ function scr_player_slipnslide()
 		image_index = 0
 		state = states.slipbanan
 	}
-	if (sprite_index == spr_slipnslide && place_meeting(x, (y + 1), obj_current))
-		sprite_index = spr_currentplayer
+	if (sprite_index == spr_slipnslide)
+	{
+		if grounded
+		{
+			movespeed -= 0.1
+			if (input_buffer_jump > 0 && grounded)
+			{
+				input_buffer_jump = 0;
+				scr_fmod_soundeffect(jumpsnd, x, y)
+				particle_set_scale(particle.highjumpcloud2, xscale, 1);
+				create_particle(x, y, particle.highjumpcloud2, 0);
+				vsp = -10
+				jumpstop = false;
+			}
+		}
+		if ((!key_jump2) && jumpstop == 0 && vsp < 0.5)
+		{
+			vsp /= 2
+			jumpstop = 1
+		}
+	}
 	exit;
 }
 

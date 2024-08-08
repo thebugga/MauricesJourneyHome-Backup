@@ -23,11 +23,11 @@ if (room == Oldtitlescreen)
 	special_prompts = -4
 }
 if (room == rm_test)
-{
-	global.srank = 1000
-	global.arank = (global.srank - (global.srank / 4))
-	global.brank = (global.srank - ((global.srank / 4) * 2))
-	global.crank = (global.srank - ((global.srank / 4) * 3))
-}
+	global.srank = 5000
+else if (room == wizard_1)
+	global.srank = 10000
+global.arank = (global.srank / 2)
+global.brank = (global.srank / 4)
+global.crank = (global.srank / 8)
 if (room == custom_lvl_room)
 	alarm[1] = 4

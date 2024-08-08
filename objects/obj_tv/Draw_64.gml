@@ -48,8 +48,10 @@ var perc = 0
 switch rank_ix
 {
 	case 5:
-	case 4:
 		perc = 1
+	break
+	case 4:
+	perc = ((global.treasure + global.toppintotal + global.secretfound + global.lap + !global.combodropped) / 11)
 	break
 	case 3:
 		perc = ((_score - global.arank) / (global.srank - global.arank))

@@ -6,6 +6,18 @@ if (fadealpha > 1)
 	{
 		if (custom_level == 0)
 		{
+	        if gamestart
+	        {
+	            ini_open_from_string(obj_savesystem.ini_str)
+	            global.file_minutes = ini_read_real("Game", "minutes", 0)
+	            global.file_seconds = ini_read_real("Game", "seconds", 0)
+	            ini_close()
+	        }
+	        if restarttimer
+	        {
+	            global.level_minutes = 0
+	            global.level_seconds = 0
+	        }
 			with (obj_player)
 			{
 				if place_meeting(x, y, obj_goldendoor)

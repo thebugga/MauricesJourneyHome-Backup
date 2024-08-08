@@ -65,8 +65,12 @@ else
 				scr_room_goto(rm)
 				pause = 0
 				obj_player1.targetDoor = "A"
+				obj_player1.input_buffer_jump = 0
 				if instance_exists(obj_player2)
+				{
 					obj_player2.targetDoor = "A"
+					obj_player2.input_buffer_jump = 0
+				}
 			}
 			else
 				scr_soundeffect(sfx_enemyprojectile)
@@ -83,11 +87,13 @@ else
 		obj_player1.targetDoor = "N"
 		obj_player1.x = obj_player1.backtohubstartx
 		obj_player1.y = obj_player1.backtohubstarty
+		obj_player1.input_buffer_jump = 0
 		if instance_exists(obj_player2)
 		{
 			obj_player2.targetDoor = "N"
 			obj_player2.x = obj_player2.backtohubstartx
 			obj_player2.y = obj_player2.backtohubstarty
+			obj_player2.input_buffer_jump = 0
 		}
 		room = obj_player1.backtohubroom
 		exit;

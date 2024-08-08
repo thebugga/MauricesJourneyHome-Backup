@@ -1,5 +1,5 @@
 scr_collide()
 if scr_solid(x, (y + 1))
-	hsp = 0
+	hsp = Approach(hsp, 0, 0.5)
 if (banana == 2)
 	instance_destroy()

@@ -1,0 +1,1 @@
+targetRoom = wizard_5

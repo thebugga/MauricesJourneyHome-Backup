@@ -1,6 +1,7 @@
 depth = -100
 image_speed = 0.35
 sprite = -4
+frame = 0
 showboard = true
 startedx = -4
 startedy = -4

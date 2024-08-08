@@ -1,14 +1,20 @@
-if (room == Oldtitlescreen or room == hub_loadingscreen or room == rank_room)
-	exit;
-if (instance_exists(obj_pause) && obj_pause.pause)
+if (room == Oldtitlescreen or room == rm_eggplantdisclaimer or room == rm_logo or room == REALLYREALTitlescreen or room == rank_room or !global.option_timer or (instance_exists(obj_pause) && obj_pause.pause))
 	exit;
 draw_set_color(c_white)
 var seconds = 0
 var minutes = 0
 var s_str = ""
 var m_str = ""
+if global.option_timer_type == 0
+{
 seconds = global.level_seconds
 minutes = global.level_minutes
+}
+if global.option_timer_type == 1
+{
+seconds = global.file_seconds
+minutes = global.file_minutes
+}
 var mm = frac(seconds)
 mm = string(mm)
 mm = string_copy(mm, 3, string_length(mm) - 3)

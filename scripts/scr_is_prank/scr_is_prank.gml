@@ -1,7 +1,61 @@
 function scr_is_prank()
 {
-	if (global.treasure && global.secretfound >= 3 && global.collect > global.srank && global.lap && !global.combodropped)
+	if (global.treasure && global.toppintotal >= 5 && global.secretfound >= 3 && global.collect > global.srank && global.lap && !global.combodropped)
 		return true;
 	else
 		return false;
 }
+
+function scr_do_rank(argument0, argument1) //gml_Script_scr_do_rank
+{
+    if (argument0 == undefined)
+        argument0 = true
+    if (argument1 == undefined)
+        argument1 = false
+    var ex = x
+    var ey = y
+    var cx = camera_get_view_x(view_camera[0])
+    var cy = camera_get_view_y(view_camera[0])
+    rankpos_x = ex - cx
+    rankpos_y = ey - cy
+    if (global.timeattack == true)
+        obj_timeattack.stop = true
+    targetDoor = "none"
+    obj_camera.alarm[2] = -1
+    var roomname = room_get_name(room)
+    var namestring = string_letters(roomname)
+    scr_savescore(global.leveltosave)
+    if (global.combo > 0)
+    {
+        global.combotime = 0
+        global.combo = 0
+        obj_camera.alarm[4] = -1
+        for (var i = 0; i < global.comboscore; i += 10)
+            create_collect((obj_player1.x + (irandom_range(-60, 60))), (obj_player1.y - 100 + (irandom_range(-60, 60))), choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect), 10)
+        global.comboscore = 0
+    }
+    if (!instance_exists(obj_endlevelfade))
+    {
+        with (instance_create(x, y, obj_endlevelfade))
+        {
+            do_rank = true
+            toppinvisible = argument0
+        }
+    }
+    obj_player1.state = states.door
+    obj_player1.sprite_index = obj_player1.spr_lookdoor
+    if instance_exists(obj_player2)
+    {
+        obj_player2.state = states.door
+        obj_player2.sprite_index = obj_player2.spr_lookdoor
+        if global.coop
+            obj_player2.visible = true
+    }
+    obj_endlevelfade.alarm[0] = 240
+    image_index = 0
+    global.panic = false
+    global.snickchallenge = false
+    global.leveltorestart = -4
+    gamesave_async_save()
+}
+

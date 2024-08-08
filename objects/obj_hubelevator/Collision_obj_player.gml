@@ -1,4 +1,4 @@
-if (state == states.normal && other.grounded && other.key_up2 && !locked)
+if (state == states.normal && other.grounded && other.key_up2 && global.elevatorcutscene1)
 {
 	state = states.titlescreen
 	playerid = other.id

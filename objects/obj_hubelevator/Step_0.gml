@@ -38,7 +38,7 @@ switch state
         
 		        showinside = true
 		        fadein = false
-		        alarm[0] = (trapdoor ? 400 : 600)  
+		        alarm[0] = (global.elevatorcutscene2 ? 600 : 400)  
 		    }
 		}
 		else

@@ -1,6 +1,7 @@
 targetRoom = wizard_1
 targetDoor = "A"
 level = "wizard"
-titlecardi = 1
+titlecardi = 2
 titlecardmu = mu_title_entrance
-titlecredit = [830, 75, false, true, "ButterMan2001\nand Pizzy", "???", "???"]
+titlecredit = [716, 303, true, true, "ButterMan2001", "???", "???"]
+titlewip = true

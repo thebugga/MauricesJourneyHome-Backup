@@ -22,6 +22,9 @@ switch state
 			global.graveyardcutscene = ini_read_real("Cutscene", "graveyard", 0)
 			global.bombcutscene = ini_read_real("Cutscene", "bomb", 0)
 			global.doisecutscene1 = ini_read_real("Cutscene", "doise1", 0)
+			global.wizardcutscene = ini_read_real("Cutscene", "wizard", 0)
+			global.potioncutscene = ini_read_real("Cutscene", "potion", 0)
+			global.dougiecutscene1 = ini_read_real("Cutscene", "dougie1", 0)
 			
 			//global.entrancecutscene = ini_read_real("cutscene", "entrance", 0)
 			//global.medievalcutscene = ini_read_real("cutscene", "medieval", 0)

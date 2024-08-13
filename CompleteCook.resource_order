@@ -105,6 +105,7 @@
     {"name":"wizard_3","order":2,"path":"rooms/wizard_3/wizard_3.yy",},
     {"name":"wizard_4","order":3,"path":"rooms/wizard_4/wizard_4.yy",},
     {"name":"wizard_5","order":5,"path":"rooms/wizard_5/wizard_5.yy",},
+    {"name":"wizard_6","order":6,"path":"rooms/wizard_6/wizard_6.yy",},
     {"name":"wizard_secret1","order":4,"path":"rooms/wizard_secret1/wizard_secret1.yy",},
     {"name":"noise_aftimg_set_pal","order":4,"path":"scripts/noise_aftimg_set_pal/noise_aftimg_set_pal.yy",},
     {"name":"noise_aftimg_set_pattern","order":3,"path":"scripts/noise_aftimg_set_pattern/noise_aftimg_set_pattern.yy",},

@@ -39,7 +39,7 @@ function scr_player_Sjumpprep()
 				else
 					sprite_index = spr_superjumppreplight;
 			}
-			if (!scr_check_superjump() && grounded && (character == "S" || (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright)) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+			if (((character == "M" && !scr_check_superjump()) || (character == "D" && key_jump2)) && grounded && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 			{
 				instance_create(x, y, obj_explosioneffect);
 				sprite_index = spr_superjump;
@@ -49,8 +49,6 @@ function scr_player_Sjumpprep()
 				sjumpangle = 270
 				hsp = 0
 				image_index = 0;
-				if !ispeppino
-					scr_fmod_soundeffect(snd_noiseSjumprelease, x, y);
 			}
 			image_speed = 0.35;
 }

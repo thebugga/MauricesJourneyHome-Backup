@@ -1235,6 +1235,7 @@
     {"id":{"name":"wizard_3","path":"rooms/wizard_3/wizard_3.yy",},},
     {"id":{"name":"wizard_4","path":"rooms/wizard_4/wizard_4.yy",},},
     {"id":{"name":"wizard_5","path":"rooms/wizard_5/wizard_5.yy",},},
+    {"id":{"name":"wizard_6","path":"rooms/wizard_6/wizard_6.yy",},},
     {"id":{"name":"wizard_secret1","path":"rooms/wizard_secret1/wizard_secret1.yy",},},
     {"id":{"name":"__background_get_element","path":"scripts/__background_get_element/__background_get_element.yy",},},
     {"id":{"name":"__background_get_internal","path":"scripts/__background_get_internal/__background_get_internal.yy",},},
@@ -4871,6 +4872,7 @@
     {"roomId":{"name":"wizard_4","path":"rooms/wizard_4/wizard_4.yy",},},
     {"roomId":{"name":"wizard_secret1","path":"rooms/wizard_secret1/wizard_secret1.yy",},},
     {"roomId":{"name":"wizard_5","path":"rooms/wizard_5/wizard_5.yy",},},
+    {"roomId":{"name":"wizard_6","path":"rooms/wizard_6/wizard_6.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

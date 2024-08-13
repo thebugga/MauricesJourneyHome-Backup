@@ -9,5 +9,5 @@ if grounded && other.visible && ((character == "M" && key_slap2) || (character =
 	state = states.knightpep
 	hsp = 0
 	vsp = 0
-	tv_push_prompt_once(tv_create_prompt((character == "M" ? "Wizard Maurice arrizes!" : "Wizard Doise arrizes!"), "Press Slap to throw a whimsical baseball, & press it again to teleport to it. You can also double jump!", tvprompt.transfo, spr_tv_knight, 3), "knight")
+	tv_push_prompt_once(tv_create_prompt((character == "M" ? "Wizard Maurice arises!" : "Wizard Doise arises!"), "Press Slap to throw a whimsical baseball, & press it again to teleport to it. You can also double jump!", tvprompt.transfo, spr_tv_knight, 3), "knight")
 }

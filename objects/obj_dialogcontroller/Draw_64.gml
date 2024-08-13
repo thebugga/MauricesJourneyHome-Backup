@@ -55,7 +55,7 @@ if (dialogsprite != -4)
 	draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),sidescale,1,0,c_white,1)
 }
 var bw = ((960 - rpadding) - x1)
-var bh = ((540 - rpadding) - y1 + 16)
+var bh = ((540 - rpadding) - y1)
 draw_sprite(spr_tutorialbubble_rope, 0, (rpadding * 2), 540 - 6)
 draw_sprite(spr_tutorialbubble_rope, 0, (960 - (rpadding * 2)), 540 - 6)
 if (!surface_exists(surf))

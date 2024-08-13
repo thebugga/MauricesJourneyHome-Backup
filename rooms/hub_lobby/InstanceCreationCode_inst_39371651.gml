@@ -5,21 +5,25 @@ if (global.bombcutscene == -4)
 	global.bombcutscene = quick_ini_read_real(get_savefile_ini(), "Cutscene", "bomb", 0)
 if global.bombcutscene
 {
-	scene_info = [[cutscene_do_dialog, [dialog_create("Oh Cool! this'll surely get rid of that blockade!", 1, 0)], [0, -4, -4, -4], [1, -4, -4, -4]], [cutscene_waitfor_dialog], [cutscene_set_player_actor], [cutscene_wait, 20], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_222_gml_RoomCC_hub_industrialcomplex_2_Create
+	scene_info = [[cutscene_do_dialog, [dialog_create("Oh! Blockade that soon be gotten gone-gone-done when bomb the tows!", 1, 0)], [0, -4, -4, -4], [1, -4, -4, -4]], [cutscene_waitfor_dialog], [cutscene_set_player_actor], [cutscene_wait, 20], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_222_gml_RoomCC_hub_industrialcomplex_2_Create
 	{
 	    doisey = obj_dialognpc.id
 	    with (doisey)
 	    {
-	        sprite_index = spr_playerN_noisebombthrow
-			if !instance_exists(obj_pizzagoblinbomb)
+			if sprite_index != spr_playerN_noisebombthrow
 			{
-				with (instance_create(x, y, obj_pizzagoblinbomb))
-		        {
-		            defused = true
-		            state = states.normal
-		            movespeed = 6
-		            vsp = -6
-		        }
+		        sprite_index = spr_playerN_noisebombthrow
+				image_index = 0
+				if !instance_exists(obj_pizzagoblinbomb)
+				{
+					with (instance_create(x, y, obj_pizzagoblinbomb))
+			        {
+			            defused = true
+			            state = states.normal
+			            movespeed = 6
+			            vsp = -6
+			        }
+				}
 			}
 			if floor(image_index) >= sprite_get_number(sprite_index) - 1
 			{
@@ -88,7 +92,7 @@ if global.bombcutscene
 	        cutscene_end_action()
 		}
 	}
-	], [cutscene_wait, 50], [cutscene_do_dialog, [dialog_create("Awesome! Catch you on the flipside pal!", 1, 0, function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_670_gml_RoomCC_hub_industrialcomplex_2_Create
+	], [cutscene_wait, 50], [cutscene_do_dialog, [dialog_create("Ecstatic! You see around I will soon.", 1, 0, function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_670_gml_RoomCC_hub_industrialcomplex_2_Create
 	{
 	    global.doisecutscene1 = true
 	    quick_ini_write_real(get_savefile_ini(), "cutscene", "doise1", true)
@@ -117,9 +121,11 @@ if global.bombcutscene
 	}
 }
 else
-	dialog[0] = dialog_create("If only I could break this totem thing blocking the way.", 1, 0)
-dialogsidel = [0, -4, -4, -4]
-dialogsider = [1, -4, -4, -4]
+{
+	dialog[0] = dialog_create("This that pillar the on way, prevent myself needed to have through. Help!", 1, 0)
+	dialogsidel = [0, -4, -4, -4]
+	dialogsider = [1, -4, -4, -4]
+}
 if (global.doisecutscene1 == -4)
 	global.doisecutscene1 = quick_ini_read_real(get_savefile_ini(), "Cutscene", "doise1", 0)
 if (global.doisecutscene1)

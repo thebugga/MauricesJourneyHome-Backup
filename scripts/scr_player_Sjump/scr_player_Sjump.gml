@@ -67,17 +67,14 @@ function scr_player_Sjump()
 	}
 	if character == "D" && (sprite_index == spr_superjump || sprite_index == spr_playerN_jetpackboost || sprite_index == spr_playerN_jetpackboostdown) 
 	{
+		if sjumpangle == 270
+			sjumpangle += choose(-5, 5)
 		if move_h == 0 && move_v == 0
 		{
-			if sjumpangle == 270
-			sjumpangle += choose(-5, 5)
-			else
-			{
-				if sjumpangle > 270 || sjumpangle < 90
-				sjumpangle += 5
-				if sjumpangle < 270 && sjumpangle > 90
-				sjumpangle -= 5
-			}
+			if sjumpangle > 270 || sjumpangle < 90
+			sjumpangle += 5
+			if sjumpangle < 270 && sjumpangle > 90
+			sjumpangle -= 5
 		}
 		else
 		{
@@ -97,7 +94,7 @@ function scr_player_Sjump()
 			if _xscale != 0
 				xscale = _xscale
 		}
-		if ((place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles))
+		if ((place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && sprite_index == spr_playerN_jetpackboost)
 		{
 			sprite_index = spr_slipbanan1
 			movespeed = abs(lengthdir_x(sjumpvsp, _dir))

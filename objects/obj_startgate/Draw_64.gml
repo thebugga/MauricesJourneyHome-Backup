@@ -1,0 +1,5 @@
+draw_set_font(global.creditsfont)
+draw_set_halign(fa_center)
+draw_set_valign(fa_top)
+draw_set_color(c_white)
+draw_shaking_text(480, msgy, msg, 1)

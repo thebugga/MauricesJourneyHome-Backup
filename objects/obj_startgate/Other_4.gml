@@ -10,25 +10,22 @@ ini_close()
 
 switch level
 {
-	case "entrance":
-		msg = "ENTRANCE"
+	case "graveyard":
+		msg = "Garbage Graveyard"
 		break
-	case "medieval":
-		msg = "PIZZASCAPE"
+	case "wizard":
+		msg = "Pizzardry"
 		break
-	case "chateau":
-		msg = "PIZZASCARE"
+	case "lair":
+		msg = "Dragon's Lair"
 		break
-	case "ruin":
-		msg = "TEH ANCIENT CHEESE"
-		break
-	case "dungeon":
-		msg = "BLOODSAUCE DUNGEON"
+	case "school":
+		msg = "Snick's Classroom"
 		break
 	case "floorroom":
 		msg = "OREGANO DESERT"
 		break
-	case "graveyard":
+	case "graveyard2":
 		msg = "THE WASTEYARD"
 		break
 	case "farm":

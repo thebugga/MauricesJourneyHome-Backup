@@ -87,13 +87,11 @@ else
 		obj_player1.targetDoor = "N"
 		obj_player1.x = obj_player1.backtohubstartx
 		obj_player1.y = obj_player1.backtohubstarty
-		obj_player1.input_buffer_jump = 0
 		if instance_exists(obj_player2)
 		{
 			obj_player2.targetDoor = "N"
 			obj_player2.x = obj_player2.backtohubstartx
 			obj_player2.y = obj_player2.backtohubstarty
-			obj_player2.input_buffer_jump = 0
 		}
 		room = obj_player1.backtohubroom
 		exit;

@@ -1,0 +1,5 @@
+var leftx = ((sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index)) / (sprite_get_width(sprite_index) / 2))
+var rightx = ((sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index)) / (sprite_get_width(sprite_index) / 2))
+var realtop = (sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_index))
+var realbottom = (sprite_get_bbox_bottom(sprite_index) - sprite_get_yoffset(sprite_index))
+draw_sprite_pos(sprite_index, -1, x + (leftx * anglex), (y + realtop) + (leftx * angley1), x + (rightx * anglex), (y + realtop) + (rightx * angley1), x + (rightx * anglex), (y + realbottom) - (rightx * angley2), x + (leftx * anglex), (y + realbottom) - (leftx * angley2), 1)

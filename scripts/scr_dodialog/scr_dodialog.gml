@@ -24,14 +24,15 @@ function do_dialog(argument0, argument1, argument2) //do_dialog
 
 function npc_do_dialog() //npc_do_dialog
 {
-    do_dialog(dialog,dialogsidel,dialogsider)
+    do_dialog(dialog, dialogsidel, dialogsider)
 }
 
 function do_dialog_cutscene(argument0, argument1=0, argument2=0) //do_dialog_cutscene
 {
     with (instance_create(argument1, argument2, obj_cutscene_handler))
     {
-        scene_info = argument0
+        recipient = other.id
+		scene_info = argument0
         for (var i = 0; i < array_length(scene_info); i++)
             scene_info[i][0] = method(id, scene_info[i][0])
     }

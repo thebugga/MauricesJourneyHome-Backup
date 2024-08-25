@@ -1,6 +1,11 @@
 var playerid = obj_player1
 if (obj_player1.spotlight == 0)
 	playerid = obj_player2
+if (image_alpha == 0)
+{
+	x = playerid.x
+	y = playerid.y
+}
 if (image_alpha == 1)
 {
 	var dir = point_direction(x, y, playerid.x, playerid.y)

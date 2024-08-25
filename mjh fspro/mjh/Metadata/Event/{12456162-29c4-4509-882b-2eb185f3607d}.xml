@@ -171,7 +171,7 @@
 	</object>
 	<object class="PitchShifterEffect" id="{bfdea627-7374-4b06-8cc4-6e28f991d7ad}">
 		<property name="pitch">
-			<value>1.19999993</value>
+			<value>0.74000001</value>
 		</property>
 	</object>
 	<object class="HighpassEffect" id="{382b5ca9-e1ad-462e-9500-38297a7ae4b4}">

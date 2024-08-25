@@ -4,10 +4,9 @@ else
 	fadealpha = Approach(fadealpha, 0, 0.1)
 if (fadealpha == 1)
 	fadedin = true
-image_index = titlecardi
 if titlestate == 1
 {
-	if !titlecredit[2]
+	if !titlecredit[image_index][3]
 		titlealpha = Approach(titlealpha, 0, 0.1)
 	layoutalpha = Approach(layoutalpha, 1, 0.1)
 	skipalpha = Approach(skipalpha, 1, 0.1)
@@ -22,7 +21,7 @@ if titlestate == 3
 	artalpha = Approach(artalpha, 0, 0.1)
 	musicalpha = Approach(musicalpha, 1, 0.1)
 }
-if wip & wipshow
+if titlecredit[image_index][4] & wipshow
 {
 	if wipscale > 1
 	{

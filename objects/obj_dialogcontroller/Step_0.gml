@@ -22,8 +22,20 @@ else
 		}
 		else
 		{
+			var func = dialog[currentdialog][4]
+	        if (func != -4)
+	        {
+	            if (npcID != noone && instance_exists(npcID))
+	            {
+	                with (npcID)
+	                    method(id, func)()
+	            }
+	            else
+	                method(id, func)()
+	        }
 	        if (currentdialog < (array_length(dialog) - 1))
 	        {
+				
 	            currentdialog += 1
 	            currentpos = 0
 	            textbuffer = textspeed
@@ -42,17 +54,7 @@ else
 						break
 					}
 				}
-	            var func = dialog[currentdialog][4]
-	            if (func != -4)
-	            {
-	                if (npcID != noone && instance_exists(npcID))
-	                {
-	                    with (npcID)
-	                        method(id, func)()
-	                }
-	                else
-	                    method(id, func)()
-	            }
+	            
 	        }
 	        else
 			{

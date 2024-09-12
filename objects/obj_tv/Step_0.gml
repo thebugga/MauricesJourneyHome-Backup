@@ -312,7 +312,7 @@ if cardboardexprsprite != -4
 		case spr_tv_exprhurt:
         case spr_tv_exprhurtN:
 			sprite_index = cardboardexprsprite
-			cardboardsprite = spr_tv_idle
+			cardboardsprite = spr_tv_exprhurtboard
 			if (obj_player1.state != states.hurt)
 			{
 				if (expressionbuffer > 0)

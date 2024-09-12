@@ -1,4 +1,3 @@
-mach3destroy = 0
 platformid = -4
 hsp_carry = 0
 vsp_carry = 0
@@ -9,40 +8,36 @@ vsp = 0
 grav = 0.5
 grounded = false
 movespeed = 0
+funnyangle = 0
 state = states.normal
-team = 1
-important = 1
-mach3destroy = 0
-jugglecount = 0
-max_hp = 400
-hp = 0
-invincible = 0
-inv_timer = -1
-inv_max = 25
-player_hurtstates = ds_map_create()
-boss_hurtstates = ds_map_create()
-boss_unparryablestates = ds_map_create()
-destroyable = 0
-stuntouchbuffer = 0
-lungehurt = 1
 hitLag = 0
 hitX = x
 hitY = y
 hithsp = 0
 hitvsp = 0
 hitstate = states.normal
-stunfallspr = sprite_index
-walkspr = sprite_index
-spr_dead = sprite_index
-fallspr = sprite_index
-bumpspr = sprite_index
-parryspr = sprite_index
-defeatplayerspr = sprite_index
-lastplayerid = obj_player1.id
+stunned = false
+stunnedbuffer = 0
+jugglecount = 0
+bouncetimes = 3
+targetplayer = obj_bossplayer.id
 attacking = 0
-destroyed = 0
-playerdestroyed = 0
-colliding = 1
+invincible = false
+max_hp = 400
+hp = 200
+max_phase = 6
+phase = 0
+spr_idle = spr_boss_september
+spr_walk = spr_boss_september
+spr_fall = spr_boss_september
+spr_hit = spr_boss_september_hit
+spr_flung = spr_boss_september_flung
+normal_spd = 0
+player_hurtstates = ds_map_create()
+boss_hurtstates = ds_map_create()
+boss_unparryablestates = ds_map_create()
+destroyed = false
+playerdestroyed = false
 function SUPER_player_destroy(argument0)
 {
 	depth = argument0.depth
@@ -85,7 +80,6 @@ function SUPER_player_destroy(argument0)
 
 function SUPER_boss_destroy(argument0)
 {
-	destroyed = 1
 	depth = argument0.depth
 	global.attackstyle = 0
 	global.savedattackstyle = 0
@@ -105,7 +99,7 @@ function SUPER_boss_destroy(argument0)
 			tauntstoredsprite = sprite_index
 			tauntstoredstate = state
 		}
-		lag = (room_speed * 3)
+		var lag = (room_speed * 3)
 		other.image_xscale = (-xscale)
 		other.hitLag = lag
 		other.hitX = ((room_width / 2) + (xscale * 16))
@@ -147,7 +141,7 @@ function SUPER_boss_hurt(argument0, argument1)
 		hp -= argument0
 	if (argument1.state != states.playersuperattack)
 	{
-		with (obj_bosscontroller)
+		with (obj_bossplayer)
 			super += 30
 	}
 	with (argument1)
@@ -217,7 +211,7 @@ function SUPER_boss_hurt_noplayer(argument0)
 		hp -= argument0
 	if (obj_player.state != states.playersuperattack)
 	{
-		with (obj_bosscontroller)
+		with (obj_bossplayer)
 			super += 30
 	}
 	lag = 8
@@ -250,9 +244,9 @@ function SUPER_boss_hurt_noplayer(argument0)
 
 function SUPER_player_hurt(argument0, argument1)
 {
-	if instance_exists(obj_bosscontroller)
-		obj_bosscontroller.player_hp -= argument0
-	with (obj_bosscontroller)
+	if instance_exists(obj_bossplayer)
+		obj_bossplayer.player_hp -= argument0
+	with (obj_bossplayer)
 		super += 80
 	with (argument1)
 	{

@@ -7,8 +7,8 @@ function SUPER_player_hurt(argument0, argument1)
 {
 	if ((!collisioned) && argument1.state != states.arenaround)
 	{
-		if instance_exists(obj_bosscontroller)
-			obj_bosscontroller.player_hp -= argument0
+		if instance_exists(obj_bossplayer)
+			obj_bossplayer.player_hp -= argument0
 		collisioned = 1
 		with (argument1)
 		{

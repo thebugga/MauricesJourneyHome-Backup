@@ -881,3 +881,33 @@ function scr_characterspr()
 	exit;
 }
 
+function scr_bosscharacterspr()
+{
+	if (character == "M")
+	{
+		spr_idle = spr_bossmaurice_idle
+		spr_move = spr_bossmaurice_move
+		spr_jumpprep = spr_player_Sjumpprep
+		spr_jump = spr_player_Sjumpstart
+		spr_fall = spr_player_Sjump
+		spr_land = spr_player_land
+		spr_hurt = spr_player_hurt
+		spr_duck = spr_player_crouch
+		spr_punch = spr_bossmaurice_punch
+		spr_palette = spr_peppalette
+	}
+	if (character == "D")
+	{
+		spr_idle = spr_playerN_idle
+		spr_move = spr_playerN_move
+		spr_jumpprep = spr_playerN_Sjumpstart
+		spr_jump = spr_playerN_pogostart
+		spr_fall = spr_playerN_pogofall
+		spr_land = spr_playerN_land
+		spr_hurt = spr_playerN_hurt
+		spr_duck = spr_playerN_crouch
+		spr_punch = spr_bossmaurice_punch
+		spr_palette = spr_noisepalette
+	}
+	exit;
+}

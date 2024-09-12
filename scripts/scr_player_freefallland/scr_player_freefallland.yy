@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_player_freefallland",
   "parent":{
-    "name":"States",
-    "path":"folders/Scripts/Player/States.yy",
+    "name":"Normal",
+    "path":"folders/Scripts/Player/States/Normal.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -433,7 +433,7 @@ function scr_playerreset(argument0)
 	}
 	with (obj_followcharacter)
 	{
-		if id != obj_swapmodefollow.id && id != obj_swapmodefollowparm.id
+		if id != obj_swapmodefollow.id
 			instance_destroy()
 	}
 	instance_destroy(obj_shotgunback)

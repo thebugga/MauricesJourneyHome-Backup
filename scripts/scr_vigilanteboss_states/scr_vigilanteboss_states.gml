@@ -107,7 +107,7 @@ function boss_vigilante_decide_attack()
 		if is_undefined(cancel_buffer)
 			cancel_buffer = cancel_maxdefault
 		combo_count = irandom(2)
-		if (important && (hp < duelhp_threshold or obj_bosscontroller.seconds < duelseconds_threshold))
+		if (important && (hp < duelhp_threshold or obj_bossplayer.seconds < duelseconds_threshold))
 		{
 			if (hitstate != states.boss_superattack)
 			{

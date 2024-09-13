@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_noisearrow",
-    "path":"sprites/spr_noisearrow/spr_noisearrow.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

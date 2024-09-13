@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_santasleightpep",
-    "path":"sprites/spr_santasleightpep/spr_santasleightpep.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

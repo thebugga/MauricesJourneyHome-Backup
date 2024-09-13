@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_Hranksign",
-    "path":"sprites/spr_Hranksign/spr_Hranksign.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

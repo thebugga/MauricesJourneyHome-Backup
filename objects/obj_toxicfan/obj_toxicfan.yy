@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_toxicfan",
-    "path":"sprites/spr_toxicfan/spr_toxicfan.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

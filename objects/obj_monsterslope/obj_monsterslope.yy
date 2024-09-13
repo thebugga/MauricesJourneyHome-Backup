@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_monsterslope",
-    "path":"sprites/spr_monsterslope/spr_monsterslope.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

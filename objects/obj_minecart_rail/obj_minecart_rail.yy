@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_ghost_cartrail",
-    "path":"sprites/spr_ghost_cartrail/spr_ghost_cartrail.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

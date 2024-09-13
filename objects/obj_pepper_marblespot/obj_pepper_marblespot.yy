@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_pepper_marbleblock",
-    "path":"sprites/spr_pepper_marbleblock/spr_pepper_marbleblock.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

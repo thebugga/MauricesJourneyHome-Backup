@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_menuselection",
-    "path":"sprites/spr_menuselection/spr_menuselection.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

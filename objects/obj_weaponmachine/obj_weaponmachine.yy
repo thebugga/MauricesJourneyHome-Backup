@@ -36,10 +36,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_weaponmachine",
-    "path":"sprites/spr_weaponmachine/spr_weaponmachine.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

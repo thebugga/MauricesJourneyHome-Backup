@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_phone",
-    "path":"sprites/spr_phone/spr_phone.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

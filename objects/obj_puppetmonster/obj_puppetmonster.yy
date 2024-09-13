@@ -34,10 +34,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_monstertomato_idle",
-    "path":"sprites/spr_monstertomato_idle/spr_monstertomato_idle.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":{
     "name":"spr_player_mask",
     "path":"sprites/spr_player_mask/spr_player_mask.yy",

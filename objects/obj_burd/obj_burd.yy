@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_burd",
-    "path":"sprites/spr_burd/spr_burd.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

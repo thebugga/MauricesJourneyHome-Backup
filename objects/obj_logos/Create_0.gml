@@ -1,1 +1,2 @@
-alarm[0] = 400
+logos = 0
+logosbuffer = 340;

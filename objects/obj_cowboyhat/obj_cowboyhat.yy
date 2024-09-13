@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_cowboyhat1",
-    "path":"sprites/spr_cowboyhat1/spr_cowboyhat1.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

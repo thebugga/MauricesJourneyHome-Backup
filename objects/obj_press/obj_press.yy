@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_press",
-    "path":"sprites/spr_press/spr_press.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

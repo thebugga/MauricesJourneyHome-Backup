@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_toxiccloud",
-    "path":"sprites/spr_toxiccloud/spr_toxiccloud.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

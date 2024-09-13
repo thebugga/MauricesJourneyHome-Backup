@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_woodenwalls",
-    "path":"sprites/spr_woodenwalls/spr_woodenwalls.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

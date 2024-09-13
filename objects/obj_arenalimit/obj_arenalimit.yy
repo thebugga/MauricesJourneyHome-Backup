@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_camera_1x1",
-    "path":"sprites/spr_camera_1x1/spr_camera_1x1.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

@@ -34,10 +34,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_gustavoblock",
-    "path":"sprites/spr_gustavoblock/spr_gustavoblock.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

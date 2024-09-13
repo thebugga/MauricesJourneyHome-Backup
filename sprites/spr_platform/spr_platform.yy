@@ -24,7 +24,7 @@
   "name":"spr_platform",
   "nineSlice":{
     "$GMNineSliceData":"",
-    "bottom":0,
+    "bottom":21,
     "enabled":true,
     "guideColour":[4294902015,4294902015,4294902015,4294902015,],
     "highlightColour":1728023040,

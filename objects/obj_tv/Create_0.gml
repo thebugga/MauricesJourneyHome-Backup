@@ -38,7 +38,6 @@ jetpack_x = 1014
 bubbleindex = 0
 bubblespr = -4
 idleanim = 180
-noisesprite = spr_noiseHUD_idle
 xi = 500
 yi = 600
 imageindexstore = 0

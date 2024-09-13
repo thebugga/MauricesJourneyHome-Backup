@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_wetfloor",
-    "path":"sprites/spr_wetfloor/spr_wetfloor.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

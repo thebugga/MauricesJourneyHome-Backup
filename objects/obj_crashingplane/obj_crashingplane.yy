@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_crashingplane",
-    "path":"sprites/spr_crashingplane/spr_crashingplane.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

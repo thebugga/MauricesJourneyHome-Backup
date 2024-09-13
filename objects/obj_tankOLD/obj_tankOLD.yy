@@ -42,9 +42,6 @@
     "name":"spr_tank_walk",
     "path":"sprites/spr_tank_walk/spr_tank_walk.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_placeholder_tank",
-    "path":"sprites/spr_placeholder_tank/spr_placeholder_tank.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

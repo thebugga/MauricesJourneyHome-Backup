@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_arenadoor",
-    "path":"sprites/spr_arenadoor/spr_arenadoor.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

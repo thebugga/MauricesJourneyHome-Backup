@@ -33,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_electricpotato",
-    "path":"sprites/spr_electricpotato/spr_electricpotato.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

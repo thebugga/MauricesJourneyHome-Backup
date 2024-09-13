@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_pizzacutterthwomp",
-    "path":"sprites/spr_pizzacutterthwomp/spr_pizzacutterthwomp.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

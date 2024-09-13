@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_graffiti",
-    "path":"sprites/spr_graffiti/spr_graffiti.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

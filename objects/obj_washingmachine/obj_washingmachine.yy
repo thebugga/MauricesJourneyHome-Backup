@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_washingmachine",
-    "path":"sprites/spr_washingmachine/spr_washingmachine.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

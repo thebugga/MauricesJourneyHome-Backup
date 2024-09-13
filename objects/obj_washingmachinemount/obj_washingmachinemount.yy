@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_washingmachinemount",
-    "path":"sprites/spr_washingmachinemount/spr_washingmachinemount.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

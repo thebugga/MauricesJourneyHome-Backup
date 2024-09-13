@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_credittransformation",
-    "path":"sprites/spr_credittransformation/spr_credittransformation.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

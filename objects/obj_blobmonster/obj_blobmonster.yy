@@ -26,19 +26,18 @@
   "physicsRestitution":0.1,
   "physicsSensor":false,
   "physicsShape":1,
-  "physicsShapePoints":[],
+  "physicsShapePoints":[
+    {"x":0.0,"y":0.0,},
+    {"x":194.0,"y":0.0,},
+    {"x":194.0,"y":222.0,},
+    {"x":0.0,"y":222.0,},
+  ],
   "physicsStartAwake":true,
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_monstercheese_walk",
-    "path":"sprites/spr_monstercheese_walk/spr_monstercheese_walk.yy",
-  },
-  "spriteMaskId":{
-    "name":"spr_monstercheese_idle",
-    "path":"sprites/spr_monstercheese_idle/spr_monstercheese_idle.yy",
-  },
+  "spriteId":null,
+  "spriteMaskId":null,
   "visible":true,
 }

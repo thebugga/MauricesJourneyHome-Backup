@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_camera_2x2",
-    "path":"sprites/spr_camera_2x2/spr_camera_2x2.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

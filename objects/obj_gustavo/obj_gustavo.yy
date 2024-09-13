@@ -31,13 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_gustavo_idle",
-    "path":"sprites/spr_gustavo_idle/spr_gustavo_idle.yy",
-  },
-  "spriteMaskId":{
-    "name":"spr_gustavo_idle",
-    "path":"sprites/spr_gustavo_idle/spr_gustavo_idle.yy",
-  },
+  "spriteId":null,
+  "spriteMaskId":null,
   "visible":true,
 }

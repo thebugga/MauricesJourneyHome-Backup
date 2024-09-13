@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_piraneapple_sign",
-    "path":"sprites/spr_piraneapple_sign/spr_piraneapple_sign.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -30,13 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_baddiebutton_perma",
-    "path":"sprites/spr_baddiebutton_perma/spr_baddiebutton_perma.yy",
-  },
-  "spriteMaskId":{
-    "name":"spr_baddiebutton",
-    "path":"sprites/spr_baddiebutton/spr_baddiebutton.yy",
-  },
+  "spriteId":null,
+  "spriteMaskId":null,
   "visible":true,
 }

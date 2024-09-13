@@ -33,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_pistolbullet",
-    "path":"sprites/spr_pistolbullet/spr_pistolbullet.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

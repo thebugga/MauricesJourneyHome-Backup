@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_drip1",
-    "path":"sprites/spr_drip1/spr_drip1.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

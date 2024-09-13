@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_doortransitionend",
-    "path":"sprites/spr_doortransitionend/spr_doortransitionend.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

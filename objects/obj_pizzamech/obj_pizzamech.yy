@@ -33,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_pizzamech",
-    "path":"sprites/spr_pizzamech/spr_pizzamech.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

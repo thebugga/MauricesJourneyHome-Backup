@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_spiderweb",
-    "path":"sprites/spr_spiderweb/spr_spiderweb.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -33,13 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_monstershroom_walk",
-    "path":"sprites/spr_monstershroom_walk/spr_monstershroom_walk.yy",
-  },
-  "spriteMaskId":{
-    "name":"spr_monstershroom_idle",
-    "path":"sprites/spr_monstershroom_idle/spr_monstershroom_idle.yy",
-  },
+  "spriteId":null,
+  "spriteMaskId":null,
   "visible":true,
 }

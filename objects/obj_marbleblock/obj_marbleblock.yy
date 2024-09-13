@@ -35,10 +35,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_mach4block",
-    "path":"sprites/spr_mach4block/spr_mach4block.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

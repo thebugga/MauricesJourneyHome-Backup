@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_easy",
-    "path":"sprites/spr_easy/spr_easy.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_hard",
-    "path":"sprites/spr_hard/spr_hard.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

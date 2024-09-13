@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_snick_exe",
-    "path":"sprites/spr_snick_exe/spr_snick_exe.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

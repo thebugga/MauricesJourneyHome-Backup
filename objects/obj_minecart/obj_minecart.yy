@@ -33,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_ghost_cart",
-    "path":"sprites/spr_ghost_cart/spr_ghost_cart.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

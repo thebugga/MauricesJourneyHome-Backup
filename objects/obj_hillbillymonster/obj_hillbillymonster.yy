@@ -33,13 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_hillbilly_idle",
-    "path":"sprites/spr_hillbilly_idle/spr_hillbilly_idle.yy",
-  },
-  "spriteMaskId":{
-    "name":"spr_hillbilly_idle",
-    "path":"sprites/spr_hillbilly_idle/spr_hillbilly_idle.yy",
-  },
+  "spriteId":null,
+  "spriteMaskId":null,
   "visible":true,
 }

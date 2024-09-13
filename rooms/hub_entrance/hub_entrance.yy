@@ -71,8 +71,8 @@
   ],
   "name":"hub_entrance",
   "parent":{
-    "name":"Tower Hub",
-    "path":"folders/Rooms/Tower Hub.yy",
+    "name":"Open World Hub",
+    "path":"folders/Rooms/Open World Hub.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

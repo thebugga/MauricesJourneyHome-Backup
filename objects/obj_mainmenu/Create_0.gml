@@ -1,6 +1,6 @@
 scr_init_input()
 state = states.backbreaker
-alarm[0] = 120
+alarm[0] = 200
 flicker_buffer = 2
 flicker = 1
 menufade = 0

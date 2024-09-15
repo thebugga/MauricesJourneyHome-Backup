@@ -36,8 +36,6 @@ if (global.stylethreshold <= 0)
 	else
 		pizzascore_index = 0
 }
-var sw = sprite_get_width(spr_heatmeter_fill)
-var sh = sprite_get_height(spr_heatmeter_fill)
 var b = global.stylemultiplier
 var hud_xx = 839
 var hud_yy = 90 + hud_posY
@@ -45,7 +43,6 @@ var hud_scorex = hud_xx + irandom_range(-collect_shake, collect_shake)
 var hud_scorey = hud_yy + irandom_range(-collect_shake, collect_shake)
 if global.heatmeter
 {
-	draw_sprite_part(spr_heatmeter_fill, pizzascore_index, 0, 0, (sw * b), sh, (hud_xx - 95), (hud_yy + 24))
 	shader_set(global.Pal_Shader)
 	pal_swap_set(98, global.stylethreshold, 0)
 	draw_sprite_ext(spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha)

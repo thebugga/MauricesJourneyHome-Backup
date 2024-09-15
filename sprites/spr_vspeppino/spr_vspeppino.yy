@@ -23,7 +23,7 @@
   ],
   "name":"spr_vspeppino",
   "nineSlice":null,
-  "origin":0,
+  "origin":6,
   "parent":{
     "name":"Boss",
     "path":"folders/Sprites/Boss.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":0,
+    "yorigin":357,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

@@ -1,5 +1,12 @@
-collide = 1
-hsp = 0
+bounce = true
 vsp = 0
 grav = 0.5
 grounded = false
+flashalpha = 0
+mx = -64
+dx = 0
+doisealpha = 0
+spincounts = 0
+anglex = 0
+angley1 = 0
+angley2 = 0

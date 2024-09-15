@@ -116,7 +116,7 @@ function boss_destroy(argument0)
 		angry = 1
 		fakedeath = 0
 		destroyable = 0
-		with (obj_bosscontroller)
+		with (obj_bossplayer)
 		{
 			alarm[1] = (room_speed * 4)
 			fakedeath = 1

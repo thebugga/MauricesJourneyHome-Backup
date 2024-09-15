@@ -1,15 +1,21 @@
-function scr_playerreset()
+function scr_playerreset(argument0)
 {
+    if (argument0 == undefined)
+        argument0 = true
 	trace("playerreset")
 	global.lap = 0
 	global.laps = 0
 	global.secretfound = 0
-	with (obj_music)
-	{
-		secret = 0
-		music = -4
-		secretmusic = -4
-	}
+    if argument0
+    {
+        with (obj_music)
+        {
+            secretend = true
+            secret = false
+            exitmusic = false
+        }
+        stop_music()
+    }
 	instance_destroy(obj_combotitle)
 	instance_destroy(obj_comboend)
 	instance_destroy(obj_sandparticle)
@@ -118,8 +124,6 @@ function scr_playerreset()
 		global.panic = false
 		global.level_minutes = 0
 		global.level_seconds = 0
-		with (obj_stylebar)
-			sprite = spr_mild
 		with (obj_music)
 			arena = 0
 		if instance_exists(obj_endlevelfade)
@@ -144,8 +148,6 @@ function scr_playerreset()
 			instance_destroy(obj_cooppointer)
 		if instance_exists(obj_toppinwarrior)
 			instance_destroy(obj_toppinwarrior)
-		if instance_exists(obj_timesup)
-			instance_destroy(obj_timesup)
 	}
 	with (obj_player)
 	{
@@ -429,7 +431,7 @@ function scr_playerreset()
 	}
 	with (obj_followcharacter)
 	{
-		if id != obj_swapmodefollow.id && id != obj_swapmodefollowparm.id
+		if id != obj_swapmodefollow.id
 			instance_destroy()
 	}
 	instance_destroy(obj_shotgunback)

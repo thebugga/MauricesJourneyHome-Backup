@@ -1,5 +1,7 @@
-image_xscale = playerid.xscale
-x = playerid.x
-y = playerid.y
-if ((playerid.image_index > 3 or playerid.state != states.slap) && playerid.state != states.handstandjump && playerid.state != states.hookshot)
+image_xscale = playerid.image_xscale
+x = playerid.x + (offsetx * image_xscale)
+y = playerid.y + offsety
+if lifetime > 0
+	lifetime--
+else
 	instance_destroy()

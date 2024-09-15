@@ -1,0 +1,6 @@
+shader_set(global.Pal_Shader)
+pal_swap_set(spr_palette, paletteselect, false)
+pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.patterntexture)
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, funnyangle, image_blend, image_alpha)
+pattern_reset()
+reset_shader_fix()

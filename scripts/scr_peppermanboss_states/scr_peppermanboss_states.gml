@@ -550,7 +550,7 @@ function boss_pepperman_fistmatch()
 		fist_buffer--
 	else
 	{
-		obj_bosscontroller.player_hp -= fist_dmg
+		obj_bossplayer.player_hp -= fist_dmg
 		sprite_index = spr_pepperman_shoulderstart
 		fist_buffer = fist_max
 		scr_soundeffect(sfx_killingblow)

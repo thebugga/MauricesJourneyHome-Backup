@@ -214,3 +214,22 @@ function destroy_sounds(argument0) //gml_Script_destroy_sounds
     }
 }
 
+function find_videos(folder)
+{
+	with (obj_theaterhandler)
+	{
+		var file = file_find_first(folder + "*", fa_directory)
+		while (file != "") && string_pos(file, ".mp4") > -1
+		{
+			array_insert(video_array, 0, folder + file)
+		    file = file_find_next()
+		}
+		file_find_close()
+		trace(video_array)
+	}
+}
+function draw_reset() {
+	draw_set_alpha(1)
+	draw_set_color(c_white)
+}
+

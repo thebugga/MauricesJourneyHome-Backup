@@ -4,6 +4,6 @@ if (global.snickchallenge == 1)
 	instance_destroy()
 for (var i = 0; i < image_yscale; i++)
 {	
-	totem_face[i] = irandom_range(1, 3)
+	totem_face[i] = irandom_range(1, 7)
 	totem_index[i] = 0
 }

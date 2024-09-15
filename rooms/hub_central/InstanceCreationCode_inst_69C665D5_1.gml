@@ -1,1 +1,1 @@
-targetRoom = hub_scrappedroom
+targetRoom = hub_dougieroom

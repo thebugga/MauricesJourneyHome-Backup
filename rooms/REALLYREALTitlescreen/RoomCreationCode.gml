@@ -28,8 +28,9 @@ global.graveyardcutscene = -4
 global.bombcutscene = -4
 global.doisecutscene1 = -4
 global.wizardcutscene = -4
-global.potioncutscene = -4
 global.dougiecutscene1 = -4
+global.templecutscene = -4
+global.dougiecutscene2 = -4
 
 //global.entrancecutscene = -4
 //global.medievalcutscene = -4

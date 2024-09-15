@@ -10,8 +10,8 @@ switch state
 	case states.transition:
 		with (obj_player)
 		{
-			targetRoom = tower_entrancehall
-			targetDoor = "D"
+			targetRoom = hub_outside
+			targetDoor = "A"
 		}
 		with instance_create(0, 0, obj_fadeout)
 			gamestart = true

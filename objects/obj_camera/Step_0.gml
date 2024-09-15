@@ -233,23 +233,32 @@ if (instance_exists(player))
 				targetgolf = -4;
 			if targetgolf == noone
 			{
-				if (!global.coop || room == characterselect || room == rm_levelselect || room == Oldtitlescreen)
+				if is_bossroom()
 				{
-					var cam_x = (tx - (cam_width / 2)) + chargecamera + p2pdistancex;
-					var cam_y = ty - (cam_height / 2) - 50;
-					cam_x = clamp(cam_x, 0, room_width - cam_width);
-					cam_y = clamp(cam_y, 0, room_height - cam_height);
-					camera_zoom(1, 0.035);
+					var cam_x = ((obj_bossplayer.x + obj_bosscontroller.bossID.x) / 2) - (cam_width / 2);
+					var cam_y = ((obj_bossplayer.y + obj_bosscontroller.bossID.y) / 2) - (cam_height / 2);
+						camera_zoom(1, 0.035);
 				}
-				else if obj_player2.state != states.titlescreen
+				else
 				{
-					cam_x = ((obj_player1.x + obj_player2.x) / 2) - (cam_width / 2);
-					cam_y = ((obj_player1.y + obj_player2.y) / 2) - (cam_height / 2);
-					var disx = abs(obj_player1.x - obj_player2.x) / coop_zoom_width;
-					var disy = abs(obj_player1.y - obj_player2.y) / coop_zoom_height;
-					var dis = max(disx, disy);
-					dis = max(1, dis);
-					camera_zoom(dis, 0.035);
+					if (!global.coop || room == characterselect || room == rm_levelselect || room == Oldtitlescreen)
+					{
+						cam_x = (tx - (cam_width / 2)) + chargecamera + p2pdistancex;
+						cam_y = ty - (cam_height / 2) - 50;
+						cam_x = clamp(cam_x, 0, room_width - cam_width);
+						cam_y = clamp(cam_y, 0, room_height - cam_height);
+						camera_zoom(1, 0.035);
+					}
+					else if obj_player2.state != states.titlescreen
+					{
+						cam_x = ((obj_player1.x + obj_player2.x) / 2) - (cam_width / 2);
+						cam_y = ((obj_player1.y + obj_player2.y) / 2) - (cam_height / 2);
+						var disx = abs(obj_player1.x - obj_player2.x) / coop_zoom_width;
+						var disy = abs(obj_player1.y - obj_player2.y) / coop_zoom_height;
+						var dis = max(disx, disy);
+						dis = max(1, dis);
+						camera_zoom(dis, 0.035);
+					}
 				}
 			}
 			else

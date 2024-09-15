@@ -41,6 +41,7 @@ draw_sprite_ext(spr_multimodes, multimode, 250, 400, mode_scale, mode_scale, 0, 
 
 var shadowclip = surface_create(960, 540)
 surface_set_target(shadowclip)
+draw_clear_alpha(c_black, 0)
 for (var i = 0; i < ds_list_size(shadows); i++)
 {
 	var b = ds_list_find_value(shadows, i)

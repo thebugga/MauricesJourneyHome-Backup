@@ -1,1 +1,2 @@
-targetRoom = hub_wizardtower
+targetRoom = boss_september
+targetDoor = "A"

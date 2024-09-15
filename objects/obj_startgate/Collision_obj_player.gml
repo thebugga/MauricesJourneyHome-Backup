@@ -41,7 +41,7 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 	with obj_player
 	{
 		obj_music.fadeoff = 0;
-		targetDoor = other.targetDoor;
+		targetDoor = "A";
 		targetRoom = other.targetRoom;
 		if other.titlecardi == -4
 		{
@@ -52,11 +52,6 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 	if titlecardi != -4
 	{
 		with instance_create(0, 0, obj_titlecard)
-		{
-			titlecardi = other.titlecardi
-			titlecardmu = other.titlecardmu
-			titlecredit = other.titlecredit
-			wip = other.titlewip
-		}
+			image_index = other.titlecardi
 	}
 }

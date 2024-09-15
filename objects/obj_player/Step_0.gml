@@ -794,26 +794,32 @@ if (global.playerhealth <= 0 && state != states.gameover)
 	sprite_index = spr_playerV_dead
 	state = states.gameover
 }
-if (state == states.gameover && y > (room_height * 2))
+if (state == states.gameover && y > (room_height * 2) && (!instance_exists(obj_backtohub)))
 {
-	targetDoor = "A"
-	scr_playerreset()
-	if (global.coop == true)
-	{
-		with (obj_player2)
-		{
-			scr_playerreset()
-			targetDoor = "HUB"
-			room = backtohubroom
-			x = backtohubstartx
-		}
-	}
-	with (obj_player)
-	{
-		targetDoor = "HUB"
-		room = backtohubroom
-		x = backtohubstartx
-	}
+	targetDoor = "HUB"
+    scr_playerreset()
+    if (global.coop == true)
+    {
+        with (obj_player2)
+        {
+            scr_playerreset()
+            targetDoor = "HUB"
+        }
+    }
+    with (obj_player1)
+    {
+        image_index = 0
+        image_blend = c_white
+        visible = true
+    }
+    with (obj_player)
+    {
+        x = -1000
+        y = -1000
+    }
+    instance_create(0, 0, obj_backtohub)
+    global.leveltorestart = -4
+    global.leveltosave = -4
 }
 if (baddiegrabbedID == obj_null && (state == states.grab or state == states.superslam or state == states.tacklecharge))
 	state = states.normal
@@ -1010,7 +1016,7 @@ if (toomuchalarm1 > 0)
 		toomuchalarm1 = 6
 	}
 }
-if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && state != states.gameover && room != hub_tutorial1)
+if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && room != timesuproom && room != hub_tutorial1)
 {
 	if (room != Oldtitlescreen && room != rank_room)
 	{

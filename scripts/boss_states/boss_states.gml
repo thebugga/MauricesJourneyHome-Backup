@@ -67,13 +67,13 @@ function state_boss_arenaround()
 	}
 	if (hsp != 0 && grounded)
 	{
-		sprite_index = walkspr
+		sprite_index = spr_walk
 		image_xscale = sign(hsp)
 	}
 	else if grounded
-		sprite_index = idlespr
+		sprite_index = spr_idle
 	else
-		sprite_index = fallspr
+		sprite_index = spr_fall
 }
 
 function boss_decide_taunt(argument0)
@@ -151,14 +151,14 @@ function state_player_arenaround()
 		hsp = (x < (room_width / 2) ? (-_normal_spd) : _normal_spd)
 	else if ((!is_bossside) && hsp != 0)
 	{
-		xscale = (-sign(hsp))
+		image_xscale = (-sign(hsp))
 		hsp = 0
 	}
 	if (hsp != 0 && grounded)
 	{
 		image_speed = 0.6
 		sprite_index = spr_move
-		xscale = sign(hsp)
+		image_xscale = sign(hsp)
 	}
 	else
 	{

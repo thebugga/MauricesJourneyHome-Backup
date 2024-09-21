@@ -61,7 +61,7 @@ if !global.dougiecutscene1
 	], [cutscene_wait, 20], [cutscene_player_pos_approach, 320, 270, 5], [cutscene_set_player_pos, 320, 270], [cutscene_do_dialog, [dialog_create("Done", 3, 0, -4, function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_670_gml_RoomCC_hub_industrialcomplex_2_Create
 	{
 	    global.dougiecutscene1 = true
-	    quick_ini_write_real(get_savefile_ini(), "cutscene", "dougie1", true)
+	    quick_ini_write_real(get_savefile_ini(), "Cutscene", "dougie1", true)
 	}
 	), dialog_create("How did you do that", 0, 0), dialog_create("Why do you think i'm a fuckin' wizard?", 3, 0)], [0, -4, -4, -4], [3, -4, -4, -4]], [cutscene_waitfor_dialog], [cutscene_player_clone_destroy], [cutscene_player_float, false], [cutscene_set_player_normal]]
 }

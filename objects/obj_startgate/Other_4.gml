@@ -21,7 +21,7 @@ ds_map_set(_rank_map, "a", 3)
 ds_map_set(_rank_map, "b", 2)
 ds_map_set(_rank_map, "c", 1)
 ds_map_set(_rank_map, "d", 0)
-rank = ds_map_find_value(_rank_map, ini_read_string("Rank", string(level), "d"))
+rank = ds_map_find_value(_rank_map, ini_read_string("Ranks", string(level), "d"))
 ini_close()
 
 for (var i = 0; i < secret_count; i++)

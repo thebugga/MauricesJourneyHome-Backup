@@ -63,7 +63,7 @@ if global.bombcutscene
 	], [cutscene_wait, 50], [cutscene_do_dialog, [dialog_create("Ecstatic! You see around I will soon.", 1, 0, -4, function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_670_gml_RoomCC_hub_industrialcomplex_2_Create
 	{
 	    global.doisecutscene1 = true
-	    quick_ini_write_real(get_savefile_ini(), "cutscene", "doise1", true)
+	    quick_ini_write_real(get_savefile_ini(), "Cutscene", "doise1", true)
 	}
 	)], [0, -4, -4, -4], [1, -4, -4, -4]], [cutscene_waitfor_dialog], [cutscene_set_player_actor], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_874_gml_RoomCC_hub_industrialcomplex_2_Create
 	{

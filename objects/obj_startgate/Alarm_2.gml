@@ -1,6 +1,6 @@
-alarm[2] = irandom(25)
-var number = round(rank - 2.5) - 1
-if irandom(4) > number
+alarm[2] = irandom_range(1, 25)
+var number = (rank - 2.5) - frac(rank - 2.5)
+if irandom(3) <= abs(number)
 {
 	if number < 0
 	{
@@ -12,9 +12,9 @@ if irandom(4) > number
 			vsp = (-(irandom_range(1, 3)))
 		}
 	}
-	if number > 0
+	else if number > 0
 	{
-		with (instance_create(x, y, obj_dashcloud))
-			sprite_index = asset_get_index(concat("spr_rank_sparkle", irandom_range(1, 4)))
+		with (instance_create(x + irandom_range(-50, 50), (y - 175) + irandom_range(-50, 50), obj_dashcloud))
+			sprite_index = choose(spr_rank_sparkle1, spr_rank_sparkle2, spr_rank_sparkle3, spr_rank_sparkle4)
 	}
 }

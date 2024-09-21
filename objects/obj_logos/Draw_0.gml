@@ -1,12 +1,13 @@
-var _switch = false;
+var _switch = false
 if logosbuffer > 0
-	logosbuffer--;
+	logosbuffer--
 else
-	_switch = true;
+	_switch = true
 
-if logosbuffer == 0{
-logosbuffer = 340;
-logos++
+if logosbuffer == 0
+{
+	logosbuffer = 150
+	logos++
 }	
 switch(logos){
 	case 0:
@@ -14,10 +15,10 @@ switch(logos){
 		break
 	case 1:
         draw_sprite(spr_tourdep,-1,0,0)
+		alarm[0] = 140
 		break
 	case 2:
         draw_sprite(spr_BALLS,-1,32,224)
-		alarm[0] = 50
 		break
 }
 		

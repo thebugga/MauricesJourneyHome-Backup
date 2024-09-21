@@ -51,7 +51,7 @@ if global.bombcutscene
 			}
 	    }
 	}
-	], [cutscene_move_player, obj_player.id, 480, 8, 12], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_480_gml_RoomCC_hub_industrialcomplex_2_Create
+	], [cutscene_move_player, obj_player1.id, 480, 8, 12], [cutscene_player_idleanim], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_480_gml_RoomCC_hub_industrialcomplex_2_Create
 	{
 	    if (!instance_exists(obj_pizzagoblinbomb))
 		{

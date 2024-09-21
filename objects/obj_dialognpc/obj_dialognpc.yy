@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_playerN_idle",
+    "path":"sprites/spr_playerN_idle/spr_playerN_idle.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

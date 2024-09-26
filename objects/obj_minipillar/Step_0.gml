@@ -1,19 +1,12 @@
-if (room == rm_editor)
+if (global.panic == panic)
 {
-	mask_index = spr_minipillarwoke
-	exit;
-}
-if (global.panic == false)
-{
-	x = -100
-	y = -100
-	sprite_index = spr_minipillarsleep
-	mask_index = spr_minipillarsleep
+	x = -sprite_width
+	y = -sprite_height
+	image_alpha = 0.5
 }
 else
 {
-	mask_index = spr_minipillarwoke
-	sprite_index = spr_minipillarwoke
 	x = xstart
 	y = ystart
+	image_alpha = 1
 }

@@ -5,7 +5,7 @@ if (global.spaceblockswitch == 1)
 		x = xstart
 		y = ystart
 		sprite_index = spr_spaceblock_closed
-		mask_index = spr_minipillarwoke
+		mask_index = spr_minipillar
 		image_alpha = 1
 	}
 }

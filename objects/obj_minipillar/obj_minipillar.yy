@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_minipillarsleep",
-    "path":"sprites/spr_minipillarsleep/spr_minipillarsleep.yy",
+    "name":"spr_minipillar",
+    "path":"sprites/spr_minipillar/spr_minipillar.yy",
   },
   "spriteMaskId":null,
   "visible":true,

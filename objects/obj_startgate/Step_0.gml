@@ -1,17 +1,12 @@
-if obj_player.visible && highscore > 0
+if obj_player1.visible && highscore > 0
 {
 	if (msg != "" && distance_to_object(obj_player) < 50)
 		msgy = Approach(msgy, 480, 5)
 		else
 		msgy = Approach(msgy, 550, 5)
-	if place_meeting(x, y, obj_player)
+	if distance_to_object(obj_player) < 50 && !drawing
 	{
-		image_speed = 0.35
 		drawing = true
-	}
-	else
-	{
-		image_speed = 0
-		image_index = 0
+		alarm[1] = 1
 	}
 }

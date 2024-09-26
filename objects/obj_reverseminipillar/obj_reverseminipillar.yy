@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_minipillarwoke",
-    "path":"sprites/spr_minipillarwoke/spr_minipillarwoke.yy",
+    "name":"spr_minipillar",
+    "path":"sprites/spr_minipillar/spr_minipillar.yy",
   },
   "spriteMaskId":null,
   "visible":true,

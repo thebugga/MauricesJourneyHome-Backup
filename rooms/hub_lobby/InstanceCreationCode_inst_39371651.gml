@@ -51,7 +51,7 @@ if global.bombcutscene
 			}
 	    }
 	}
-	], [cutscene_move_player, obj_player.id, 480, 8, 12], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_480_gml_RoomCC_hub_industrialcomplex_2_Create
+	], [cutscene_move_player, obj_player1.id, 480, 8, 12], [cutscene_player_idleanim], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_480_gml_RoomCC_hub_industrialcomplex_2_Create
 	{
 	    if (!instance_exists(obj_pizzagoblinbomb))
 		{
@@ -63,7 +63,7 @@ if global.bombcutscene
 	], [cutscene_wait, 50], [cutscene_do_dialog, [dialog_create("Ecstatic! You see around I will soon.", 1, 0, -4, function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_670_gml_RoomCC_hub_industrialcomplex_2_Create
 	{
 	    global.doisecutscene1 = true
-	    quick_ini_write_real(get_savefile_ini(), "cutscene", "doise1", true)
+	    quick_ini_write_real(get_savefile_ini(), "Cutscene", "doise1", true)
 	}
 	)], [0, -4, -4, -4], [1, -4, -4, -4]], [cutscene_waitfor_dialog], [cutscene_set_player_actor], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_874_gml_RoomCC_hub_industrialcomplex_2_Create
 	{

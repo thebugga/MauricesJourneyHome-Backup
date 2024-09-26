@@ -181,6 +181,7 @@
     {"name":"spr_hungrypillar2","order":2,"path":"sprites/spr_hungrypillar2/spr_hungrypillar2.yy",},
     {"name":"spr_hungrypillar3","order":2,"path":"sprites/spr_hungrypillar3/spr_hungrypillar3.yy",},
     {"name":"spr_maurice_mask_1","order":9,"path":"sprites/spr_maurice_mask_1/spr_maurice_mask_1.yy",},
+    {"name":"spr_minipillarwokeface","order":1,"path":"sprites/spr_minipillarwokeface/spr_minipillarwokeface.yy",},
     {"name":"spr_minitruefont","order":7,"path":"sprites/spr_minitruefont/spr_minitruefont.yy",},
     {"name":"spr_multimodes","order":5,"path":"sprites/spr_multimodes/spr_multimodes.yy",},
     {"name":"spr_multiswitch","order":6,"path":"sprites/spr_multiswitch/spr_multiswitch.yy",},

@@ -1220,6 +1220,7 @@
     {"id":{"name":"editor_room","path":"rooms/editor_room/editor_room.yy",},},
     {"id":{"name":"garbage_1","path":"rooms/garbage_1/garbage_1.yy",},},
     {"id":{"name":"garbage_2","path":"rooms/garbage_2/garbage_2.yy",},},
+    {"id":{"name":"garbage_3","path":"rooms/garbage_3/garbage_3.yy",},},
     {"id":{"name":"hub_bossroom","path":"rooms/hub_bossroom/hub_bossroom.yy",},},
     {"id":{"name":"hub_cafeteria","path":"rooms/hub_cafeteria/hub_cafeteria.yy",},},
     {"id":{"name":"hub_central","path":"rooms/hub_central/hub_central.yy",},},
@@ -4695,6 +4696,7 @@
     {"roomId":{"name":"tower_entrancehall","path":"rooms/tower_entrancehall/tower_entrancehall.yy",},},
     {"roomId":{"name":"tower_garbagehall","path":"rooms/tower_garbagehall/tower_garbagehall.yy",},},
     {"roomId":{"name":"garbage_2","path":"rooms/garbage_2/garbage_2.yy",},},
+    {"roomId":{"name":"garbage_3","path":"rooms/garbage_3/garbage_3.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

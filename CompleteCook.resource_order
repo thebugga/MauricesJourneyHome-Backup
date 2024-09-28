@@ -104,6 +104,7 @@
     {"name":"obj_uparrow","order":4,"path":"objects/obj_uparrow/obj_uparrow.yy",},
     {"name":"obj_wizardball","order":29,"path":"objects/obj_wizardball/obj_wizardball.yy",},
     {"name":"garbage_2","order":1,"path":"rooms/garbage_2/garbage_2.yy",},
+    {"name":"garbage_3","order":2,"path":"rooms/garbage_3/garbage_3.yy",},
     {"name":"hub_bossroom","order":13,"path":"rooms/hub_bossroom/hub_bossroom.yy",},
     {"name":"hub_cafeteria","order":8,"path":"rooms/hub_cafeteria/hub_cafeteria.yy",},
     {"name":"hub_central","order":9,"path":"rooms/hub_central/hub_central.yy",},

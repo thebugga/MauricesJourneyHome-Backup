@@ -1,1 +1,1 @@
-targetRoom = garbage_2
+targetRoom = garbage_1

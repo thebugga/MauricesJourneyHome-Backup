@@ -128,7 +128,7 @@ function scr_player_mach2()
 		sprite_index = spr_mach;
 	if (floor(image_index) == image_number - 1 && sprite_index == spr_suplexdash)
 		sprite_index = spr_mach;
-	if !grounded && sprite_index != spr_playerN_skateboarddoublejump && sprite_index != spr_playerN_sidewayspin && sprite_index != spr_playerN_grindcancel && sprite_index != spr_playerN_sidewayspinend && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_longjump && sprite_index != spr_longjumpend && sprite_index != spr_player_jumpdive1 && sprite_index != spr_player_jumpdive2
+	if !grounded && sprite_index != spr_playerN_skateboarddoublejump && sprite_index != spr_playerN_sidewayspin && sprite_index != spr_playerN_grindcancel && sprite_index != spr_playerN_sidewayspinend && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_longjump && sprite_index != spr_longjumpend && sprite_index != spr_player_jumpdive1 && sprite_index != spr_player_jumpdive2
 	{
 		sprite_index = spr_secondjump1;
 		if skateboarding
@@ -155,26 +155,24 @@ function scr_player_mach2()
 		{
 			if character == "M"
 			{
-				wallspeed = 10;
+				sprite_index = spr_mach2jump;
+				image_index = 0;
+				xscale *= -1;
+				vsp = key_jump2 ? -12 : -8;
+				fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
+				instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
+			}
+			else if character == "D"
+			{
 				grabclimbbuffer = 0;
 				if movespeed < 1
 					wallspeed = 1;
 				else
-				vsp -= 0.5
-					movespeed = wallspeed;
+				{
+					vsp -= 0.5
+					wallspeed = movespeed;
+				}
 				state = states.climbwall;
-			}
-			else if character == "D"
-			{
-				sprite_index = spr_rockethitwall;
-				image_index = 0;
-				flash = false;
-				hsp = -6 * xscale;
-				vsp = -8;
-				mach2 = 0;
-				state = states.bump;
-				fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
-				instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
 			}
 		}
 	}
@@ -190,8 +188,10 @@ function scr_player_mach2()
 			if movespeed < 1
 				wallspeed = 1;
 			else
-			vsp -= 0.5
-				movespeed = wallspeed;
+			{
+				vsp -= 0.5
+				wallspeed = movespeed;
+			}
 			state = states.climbwall;
 		}
 	}

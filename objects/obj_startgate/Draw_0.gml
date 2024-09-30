@@ -10,7 +10,6 @@ if showingstage >= 6
 	draw_ellipse_color(x - (rank_scale * 50), (y - 175) - (rank_scale * 50), x + (rank_scale * 50), (y - 175) + (rank_scale * 50), ds_map_find_value(rankbg_color, rank), ds_map_find_value(rankbg_color, rank), false)
 	draw_ellipse_color(x - (rank_scale * 50), (y - 175) - (rank_scale * 50), x + (rank_scale * 50), (y - 175) + (rank_scale * 50), c_black, c_black, true)
 	draw_sprite_ext(spr_ranks_gate, rank, x, y - 175, rank_scale, rank_scale, rank_angle, c_white, 1)
-	draw_text(x, y - 200, alarm[2])
 }
 var spr = asset_get_index(concat(sprite_get_name(sprite_index), "_bg"))
 if (spr > -1)

@@ -16,7 +16,7 @@ if pause
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_middle)
 	draw_set_font(global.bigfont)
-	draw_sprite_ext(spr_title, 0, 480, 50, 0.5, 0.5, 0, c_white, 1)
+	draw_sprite_ext(spr_title, 0, 480, 150, 0.5, 0.5, 0, c_white, 1)
 	for (var i = 0; i < array_length(pause_menu); i++)
 	{
 		var c = c_gray

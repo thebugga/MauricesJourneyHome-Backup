@@ -96,7 +96,7 @@ function scr_player_mach3()
 			
 			if (floor(image_index) == image_number - 1 && sprite_index == spr_playerN_skateboarddoublejump)
 				image_index = image_number - 3;
-			if sprite_index == spr_playerN_skateboarddoublejump && grounded && vsp > 0
+			if sprite_index == spr_mach2jump && grounded && vsp > 0
 				sprite_index = mach3_spr;
 			
 			if !key_jump2 && jumpstop == 0 && vsp < 0.5
@@ -206,39 +206,24 @@ function scr_player_mach3()
 				{
 					if character == "M"
 					{
-						machhitAnim = false
-						vsp -= 0.5
-						state = states.climbwall
+						sprite_index = spr_mach2jump;
+						image_index = 0;
+						xscale *= -1;
+						vsp = key_jump2 ? -12 : -8;
+						fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
+						instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
 					}
 					else if character == "D"
 					{
-						with obj_camera
+						grabclimbbuffer = 0;
+						if movespeed < 1
+							wallspeed = 1;
+						else
 						{
-							shake_mag = 20;
-							shake_mag_acc = 40 / room_speed;
+							vsp -= 0.5
+							wallspeed = movespeed;
 						}
-						with obj_baddie
-						{
-							if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0)
-							{
-								stun = true;
-								alarm[0] = 200;
-								ministun = false;
-								vsp = -5;
-								hsp = 0;
-							}
-						}
-						sprite_index = spr_hitwall;
-						fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y);
-						fmod_event_one_shot_3d("event:/sfx/maurice/bumpwall", x, y);
-						hsp = 0;
-						flash = false;
-						state = states.bump;
-						hsp = -6 * xscale;
-						vsp = -12;
-						mach2 = 0;
-						image_index = 0;
-						instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
+						state = states.climbwall;
 					}
 				}
 			}
@@ -250,7 +235,13 @@ function scr_player_mach3()
 				if _climb
 				{
 					machhitAnim = false
-					vsp -= 0.5
+					if movespeed < 1
+						wallspeed = 1;
+					else
+					{
+						vsp -= 0.5
+						wallspeed = movespeed;
+					}
 					state = states.climbwall
 				}
 			}

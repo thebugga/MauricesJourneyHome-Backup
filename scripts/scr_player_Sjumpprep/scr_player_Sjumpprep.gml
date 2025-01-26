@@ -39,7 +39,7 @@ function scr_player_Sjumpprep()
 				else
 					sprite_index = spr_superjumppreplight;
 			}
-			if (((character == "M" && !scr_check_superjump()) || (character == "D" && key_jump2)) && grounded && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+			if (((character == "M" && !scr_check_superjump()) || character == "D") && grounded && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 			{
 				instance_create(x, y, obj_explosioneffect);
 				sprite_index = spr_superjump;

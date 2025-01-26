@@ -1,8 +1,4 @@
-var _data = video_draw();
-var _status = _data[0];
-if (_status == 0)
-{
-	var _surface = _data[1];
-	draw_surface(_surface, x, y);
-}
+var _data = video_draw()
+if (_data[0] == 0)
+	draw_surface(_data[1], x, y)
 draw_self()

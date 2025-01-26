@@ -160,6 +160,7 @@
     {"name":"spr_dialogue_mauricenormaltalkblink","order":4,"path":"sprites/spr_dialogue_mauricenormaltalkblink/spr_dialogue_mauricenormaltalkblink.yy",},
     {"name":"spr_dialogue_socknormal","order":5,"path":"sprites/spr_dialogue_socknormal/spr_dialogue_socknormal.yy",},
     {"name":"spr_dois","order":30,"path":"sprites/spr_dois/spr_dois.yy",},
+    {"name":"spr_doisepattern_test","order":47,"path":"sprites/spr_doisepattern_test/spr_doisepattern_test.yy",},
     {"name":"spr_dragonmount_idle","order":31,"path":"sprites/spr_dragonmount_idle/spr_dragonmount_idle.yy",},
     {"name":"spr_drilleffect","order":2,"path":"sprites/spr_drilleffect/spr_drilleffect.yy",},
     {"name":"spr_elevator_bg","order":25,"path":"sprites/spr_elevator_bg/spr_elevator_bg.yy",},

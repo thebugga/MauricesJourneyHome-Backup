@@ -310,7 +310,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"CompleteCook",
   "resources":[
@@ -2153,6 +2153,7 @@
     {"id":{"name":"spr_dialogue_socknormal","path":"sprites/spr_dialogue_socknormal/spr_dialogue_socknormal.yy",},},
     {"id":{"name":"spr_direction","path":"sprites/spr_direction/spr_direction.yy",},},
     {"id":{"name":"spr_dois","path":"sprites/spr_dois/spr_dois.yy",},},
+    {"id":{"name":"spr_doisepattern_test","path":"sprites/spr_doisepattern_test/spr_doisepattern_test.yy",},},
     {"id":{"name":"spr_donotpound","path":"sprites/spr_donotpound/spr_donotpound.yy",},},
     {"id":{"name":"spr_doorA","path":"sprites/spr_doorA/spr_doorA.yy",},},
     {"id":{"name":"spr_doorkey","path":"sprites/spr_doorkey/spr_doorkey.yy",},},

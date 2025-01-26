@@ -218,14 +218,16 @@ function find_videos(folder)
 {
 	with (obj_theaterhandler)
 	{
+		var _array = []
 		var file = file_find_first(folder + "*", fa_directory)
 		while (file != "") && string_pos(file, ".mp4") > -1
 		{
-			array_insert(video_array, 0, folder + file)
+			array_insert(_array, 0, folder + file)
 		    file = file_find_next()
 		}
 		file_find_close()
-		trace(video_array)
+		trace(_array)
+		return _array
 	}
 }
 function draw_reset() {

@@ -4,27 +4,16 @@ if (obj_player.state == states.pizzathrow)
 playerid = (obj_player1.spotlight ? obj_player1 : obj_player2)
 if (state != states.backbreaker)
 {
-	if (object_index != obj_pizzakinpineapple or (sprite_index != spr_monsterpineapple_smile && sprite_index != spr_monsterpineapple_pose1 && sprite_index != spr_monsterpineapple_pose2 && sprite_index != spr_monsterpineapple_pose3))
+	if (sprite_index == spr_intro && floor(image_index) == (image_number - 1))
+		sprite_index = spr_idle
+	if (sprite_index != spr_intro)
 	{
-		if (sprite_index == spr_intro && floor(image_index) == (image_number - 1))
-			sprite_index = spr_idle
-		if (sprite_index != spr_intro)
-		{
-			image_alpha = playerid.image_alpha
-			sprite_index = (xprev != x) ? spr_run : spr_idle
-			depth = -6
-		}
-		if (global.panic && sprite_index == spr_idle && !instance_exists(obj_ghostcollectibles))
-			sprite_index = spr_panic
+		image_alpha = playerid.image_alpha
+		sprite_index = (xprev != x) ? spr_run : spr_idle
+		depth = -6
 	}
-	else if (object_index == obj_pizzakinpineapple)
-	{
-		if (image_index > (image_number - 1))
-		{
-			image_index = 0
-			sprite_index = spr_toppinpineapple
-		}
-	}
+	if (global.panic && sprite_index == spr_idle && !instance_exists(obj_ghostcollectibles))
+		sprite_index = spr_panic
 }
 else
 {

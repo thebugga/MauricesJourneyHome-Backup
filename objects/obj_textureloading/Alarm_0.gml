@@ -27,3 +27,4 @@ else
     screen_apply_vsync()
 }
 alarm[0] = 1
+}

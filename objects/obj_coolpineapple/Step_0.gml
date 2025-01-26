@@ -67,14 +67,14 @@ if (state == states.walk)
 	if point_in_camera(x, y, view_camera[0])
 	{
 		var _taunt = 0
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			if (state == states.backbreaker)
 				_taunt = 1
 		}
 		if _taunt
 		{
-			taunteffect_inst = instance_create(x, y, obj_baddietaunteffect)
+			taunteffect_inst = instance_create(x, y, obj_parent_enemytaunteffect)
 			sprite_index = spr_coolpinea_taunt
 			image_speed = 0
 			index = choose(0, 1, 2)
@@ -119,7 +119,7 @@ switch state
 				image_xscale = other.image_xscale
 			trail_count = trail_max
 		}
-		if (instance_exists(taunteffect_inst) && taunteffect_inst.object_index == obj_baddietaunteffect)
+		if (instance_exists(taunteffect_inst) && taunteffect_inst.object_index == obj_parent_enemytaunteffect)
 		{
 			instance_destroy(taunteffect_inst)
 			taunteffect_inst = -4
@@ -190,7 +190,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

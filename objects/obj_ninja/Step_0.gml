@@ -40,7 +40,7 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = 0
-targetplayer = instance_nearest(x, y, obj_player)
+targetplayer = instance_nearest(x, y, obj_parent_player)
 if (state == states.walk)
 {
 	if (sprite_index == spr_pizzaboy)
@@ -179,7 +179,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

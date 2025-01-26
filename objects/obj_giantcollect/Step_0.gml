@@ -4,7 +4,7 @@ else
 	depth = 2
 if !visible
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		sprite_index = spr_machfreefall
 		hsp = Approach(hsp, 0, 0.2)

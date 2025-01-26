@@ -1,9 +1,9 @@
 if (state == states.stun && hp == 0 && stunned > 40 && slapped == 0)
 {
 	slapped = 1
-	instance_create((x + (obj_player.xscale * 40)), y, obj_punchdust)
+	instance_create((x + (obj_parent_player.xscale * 40)), y, obj_punchdust)
 	state = states.grabbed
-	obj_player.state = states.grab
+	obj_parent_player.state = states.grab
 	instance_destroy(other)
 }
 if (hp == 0 && (!((state == states.stun && stunned > 40))) && state != states.grabbed && slapped == 0)

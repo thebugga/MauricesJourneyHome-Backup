@@ -149,7 +149,7 @@ function scr_player_Sjump()
 			shake_mag = 10;
 			shake_mag_acc = 30 / room_speed;
 		}
-		with obj_baddie
+		with obj_parent_enemy
 		{
 			if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0)
 			{

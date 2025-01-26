@@ -83,7 +83,7 @@ if (state == states.walk)
 if (state == states.walk && point_in_camera(x, y, view_camera[0]))
 {
 	var p = 0
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if (state == states.backbreaker && sprite_index == spr_taunt)
 			p = 1
@@ -122,7 +122,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

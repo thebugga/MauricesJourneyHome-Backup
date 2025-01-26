@@ -114,7 +114,7 @@ if (state != states.stun)
 if (bombreset > 0)
 	bombreset--
 invincible = state == states.mach2
-targetplayer = instance_nearest(x, y, obj_player)
+targetplayer = instance_nearest(x, y, obj_parent_player)
 if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0)
 {
 	if (targetplayer.x > (x - 400) && targetplayer.x < (x + 400) && y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20))
@@ -159,7 +159,7 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0)
 }
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

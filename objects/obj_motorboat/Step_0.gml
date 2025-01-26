@@ -1,7 +1,7 @@
 switch state
 {
 	case states.normal:
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			if (other.state != states.walk && state == states.normal && vsp > 0 && key_up && place_meeting(x, (y + 1), other))
 			{

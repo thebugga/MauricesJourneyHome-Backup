@@ -6,7 +6,7 @@ function cutscene_space_middle()
 
 function cutscene_space_end()
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		state = states.normal
 		x = backtohubstartx

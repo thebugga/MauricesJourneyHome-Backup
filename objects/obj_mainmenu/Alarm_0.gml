@@ -8,7 +8,7 @@ switch state
 		flicker = 1
 		break
 	case states.transition:
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			targetRoom = hub_outside
 			targetDoor = "A"

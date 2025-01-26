@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-var playerid = instance_place(x, (y - 1), obj_player)
+var playerid = instance_place(x, (y - 1), obj_parent_player)
 with (playerid)
 {
 	if (state != states.boots && state != states.gameover && state != states.rideweenie && state != states.gotoplayer)

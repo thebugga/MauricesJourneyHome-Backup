@@ -1,5 +1,5 @@
 scr_collide()
-if (grounded && vsp > 0 && (!instance_exists(blockID)) && (!(place_meeting(x, y, obj_player))))
+if (grounded && vsp > 0 && (!instance_exists(blockID)) && (!(place_meeting(x, y, obj_parent_player))))
 {
 	with (instance_create(x, y, obj_solid))
 	{

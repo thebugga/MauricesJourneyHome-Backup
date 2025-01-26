@@ -10,7 +10,7 @@ if (floor(image_index) == (image_number - 1) && (sprite_index == spr_cheesedrago
 }
 if (attackcycle == 0 && attacked == 0 && floor(image_index) == 13 && sprite_index == spr_cheesedragon_stomp)
 {
-	with (obj_baddie)
+	with (obj_parent_enemy)
 	{
 		if grounded
 		{

@@ -7,7 +7,7 @@ if (global.timedgate == 1)
 }
 if (global.miniboss == true)
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		instance_create(x, y, obj_bangeffect)
 		repeat (6)

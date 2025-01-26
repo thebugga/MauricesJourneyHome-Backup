@@ -93,7 +93,7 @@ function scr_enemy_rage()
 			if (floor(image_index) > 10)
 			{
 				hsp = (image_xscale * 8)
-				with (instance_create(x, y, obj_baddieragehitbox))
+				with (instance_create(x, y, obj_parent_enemyragehitbox))
 				{
 					ID = other.id
 					image_xscale = other.image_xscale

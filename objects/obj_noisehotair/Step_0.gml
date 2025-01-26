@@ -1,4 +1,4 @@
-if (obj_player.x > (x - 200) && obj_player.x < (x + 200) && sprite_index != spr_noisehotairthrow && goingup == 0)
+if (obj_parent_player.x > (x - 200) && obj_parent_player.x < (x + 200) && sprite_index != spr_noisehotairthrow && goingup == 0)
 {
 	sprite_index = spr_noisehotairthrow
 	image_index = 0

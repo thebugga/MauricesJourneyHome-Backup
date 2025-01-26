@@ -8,9 +8,9 @@ if (player == 2)
 	if (got && obj_player2.state != states.gottreasure)
 		instance_destroy()
 }
-if (player == 0 && place_meeting(x, y, obj_player))
+if (player == 0 && place_meeting(x, y, obj_parent_player))
 {
-	var num = instance_place_list(x, y, obj_player, global.instancelist, false)
+	var num = instance_place_list(x, y, obj_parent_player, global.instancelist, false)
 	for(var i = 0; i < num; i++)
 	{
 		var _player = ds_list_find_value(global.instancelist, i)

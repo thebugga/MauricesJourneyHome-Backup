@@ -9,7 +9,7 @@ if !global.elevatorcutscene2
 		}
 		else
 		{
-			with (obj_player)
+			with (obj_parent_player)
 			{
 		        lastroom_x = x
 		        lastroom_y = y
@@ -35,7 +35,7 @@ if !global.elevatorcutscene2
 else
 {
     stop_music()
-	with (obj_player)
+	with (obj_parent_player)
 	{
         lastroom_x = x
         lastroom_y = y

@@ -70,7 +70,7 @@ if (state != states.pizzagoblinthrow && bombreset == 0 && grounded)
 }
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

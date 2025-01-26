@@ -37,7 +37,7 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
 }
 if (state == states.idle or state == states.walk)
 	state = states.charge
-if (hitboxcreate == 0 && state == states.charge && obj_player.state != states.mach3)
+if (hitboxcreate == 0 && state == states.charge && obj_parent_player.state != states.mach3)
 {
 	hitboxcreate = 1
 	with (instance_create(x, y, obj_forkhitbox))
@@ -53,7 +53,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

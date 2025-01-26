@@ -6,7 +6,7 @@ if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup
 		if (state == states.charge && place_meeting((x + hsp), y, other))
 			other.sprite_index = spr_haystackburningup
 	}
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if ((state == states.firemouth && (place_meeting((x + hsp), y, other) or place_meeting(x, (y + 1), other))) or (state == states.fireass && place_meeting(x, (y + 1), other)))
 			other.sprite_index = spr_haystackburningup
@@ -39,7 +39,7 @@ else if (sprite_index == spr_haystackburning)
 		if (sprite_index != spr_haystackburningup && sprite_index != spr_haystackburning)
 			sprite_index = spr_haystackburningup
 	}
-	with (instance_place(x, (y - 1), obj_baddie))
+	with (instance_place(x, (y - 1), obj_parent_enemy))
 	{
 		if (state != states.grabbed)
 			instance_destroy()
@@ -53,7 +53,7 @@ else if (sprite_index == spr_haystackburning)
 		sprite_index = spr_haystack
 		firetimer = 200
 	}
-	playerid = instance_place(x, (y - 1), obj_player)
+	playerid = instance_place(x, (y - 1), obj_parent_player)
 	with (playerid)
 	{
 		if (state != states.fireass && state != states.knightpep)

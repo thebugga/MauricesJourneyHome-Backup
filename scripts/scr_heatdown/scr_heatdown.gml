@@ -8,7 +8,7 @@ function scr_heatdown()
 		global.baddierage = 0
 		obj_heatafterimage.visible = false
 	}
-	if instance_exists(obj_baddie)
+	if instance_exists(obj_parent_enemy)
 	{
 		with (obj_tv)
 		{

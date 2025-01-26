@@ -81,7 +81,7 @@ function scr_player_rocket()
 		}
 		hsp = 0
 		image_speed = 0.35
-		with (obj_baddie)
+		with (obj_parent_enemy)
 		{
 			if (point_in_camera(x, y, view_camera[0]) && shakestun && grounded && vsp > 0)
 			{
@@ -106,7 +106,7 @@ function scr_player_rocket()
 		with (instance_create(x, y, obj_superdashcloud))
 		{
 			if (other.fightball == 1)
-				instance_create(obj_player.x, obj_player.y, obj_slapstar)
+				instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar)
 			image_xscale = other.xscale
 			other.dashcloudid = id
 		}
@@ -116,7 +116,7 @@ function scr_player_rocket()
 		with (instance_create(x, y, obj_superdashcloud))
 		{
 			if (other.fightball == 1)
-				instance_create(obj_player.x, obj_player.y, obj_slapstar)
+				instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar)
 			image_xscale = other.xscale
 			sprite_index = spr_watereffect
 			other.dashcloudid = id

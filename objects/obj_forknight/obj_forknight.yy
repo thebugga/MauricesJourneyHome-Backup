@@ -15,8 +15,8 @@
   },
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_baddie",
-    "path": "objects/obj_baddie/obj_baddie.yy",
+    "name": "obj_parent_enemy",
+    "path": "objects/obj_parent_enemy/obj_parent_enemy.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

@@ -69,7 +69,7 @@ if (state != states.stun)
 	birdcreated = 0
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = (0.15 * room_speed)
-var player = instance_nearest(x, y, obj_player)
+var player = instance_nearest(x, y, obj_parent_player)
 var check = (player.x > (x - 300) && player.x < (x + 300))
 if (state == states.walk && check && y <= (player.y + 60) && y >= (player.y - 60) && state != states.punch && chargebuffer <= 0)
 {
@@ -95,7 +95,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

@@ -8,7 +8,7 @@ function cutscene_superpinball_start()
 	}
 	if _finish
 	{
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			if check_player_coop()
 			{
@@ -29,7 +29,7 @@ function cutscene_superpinball_middle()
 		t = id
 	}
 	movespeed += 0.25
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if check_player_coop()
 		{
@@ -43,7 +43,7 @@ function cutscene_superpinball_middle()
 
 function cutscene_superpinball_middle2()
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if (vsp >= 0 && check_player_coop())
 		{
@@ -57,7 +57,7 @@ function cutscene_superpinball_middle2()
 
 function cutscene_superpinball_middle3()
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if check_player_coop()
 		{
@@ -76,7 +76,7 @@ function cutscene_superpinball_middle4()
 
 function cutscene_superpinball_middle5()
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if check_player_coop()
 		{
@@ -89,7 +89,7 @@ function cutscene_superpinball_middle5()
 
 function cutscene_superpinball_end()
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if check_player_coop()
 			state = states.normal

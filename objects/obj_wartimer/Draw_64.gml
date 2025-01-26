@@ -4,7 +4,7 @@ else
 	draw_set_font(global.wartimerfont2)
 var xx = 480
 var yy = 540
-if (obj_player.y > (room_height - 139))
+if (obj_parent_player.y > (room_height - 139))
 	draw_set_alpha(0.3)
 else
 	draw_set_alpha(1)

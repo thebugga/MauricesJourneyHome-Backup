@@ -68,7 +68,7 @@ function scr_player_ratmountgroundpound()
 			}
 			if (freefallsmash >= 10)
 			{
-				with (obj_baddie)
+				with (obj_parent_enemy)
 				{
 					if (shakestun && grounded && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0 && (!invincible) && groundpound)
 					{

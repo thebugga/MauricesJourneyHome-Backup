@@ -8,5 +8,5 @@ text = "menu_skip"
 showtext = false
 skipbuffer = 0
 startbuffer = false
-with (obj_player)
+with (obj_parent_player)
     state = states.titlescreen

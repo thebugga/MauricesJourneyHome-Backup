@@ -89,7 +89,7 @@ if (kidsparty_lightning or dark_lightning)
 			draw_set_color(c_white)
 			for (var i = 0; i < 2; i++)
 			{
-				var _player = asset_get_index(concat("obj_player", (i + 1)))
+				var _player = asset_get_index(concat("obj_parent_player", (i + 1)))
 				draw_set_alpha(circle_alpha_out)
 				with (_player)
 				{

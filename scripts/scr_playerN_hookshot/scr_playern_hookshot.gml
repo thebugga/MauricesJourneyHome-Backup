@@ -30,9 +30,9 @@ function scr_playerN_hookshot()
 		}
 		vsp = -5
 		with (instance_create(x, (y + 35), obj_bangeffect))
-			image_xscale = obj_player.image_xscale
+			image_xscale = obj_parent_player.image_xscale
 		instance_create(x, y, obj_landcloud)
-		with (obj_baddie)
+		with (obj_parent_enemy)
 		{
 			if (grounded && point_in_camera(x, y, view_camera[0]))
 			{

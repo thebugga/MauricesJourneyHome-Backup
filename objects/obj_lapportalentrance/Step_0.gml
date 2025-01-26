@@ -1,6 +1,6 @@
 if active
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		state = states.actor
 		hsp = 0
@@ -19,7 +19,7 @@ if (floor(image_index) == (image_number - 1))
 			break
 		case spr_pizzaportalentrancestart:
 			sprite_index = spr_pizzaportal_disappear
-			with (obj_player)
+			with (obj_parent_player)
 			{
 				state = states.normal
 				visible = true

@@ -21,7 +21,7 @@ switch state
 			if playerid.key_slap2
 			{
 				state = states.normal
-				with (obj_player)
+				with (obj_parent_player)
 				{
 					state = states.normal
 					key_slap2 = 0

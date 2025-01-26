@@ -47,10 +47,10 @@ function scr_player_machfreefall()
 		jumpstop = 0
 		image_index = 0
 		with (instance_create(x, (y + 35), obj_bangeffect))
-			image_xscale = obj_player.image_xscale
+			image_xscale = obj_parent_player.image_xscale
 		create_particle(x, y, particle.landcloud, 0)
 		freefallstart = 0
-		with (obj_baddie)
+		with (obj_parent_enemy)
 		{
 			if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0)
 			{

@@ -1,6 +1,6 @@
 function scr_ratblock_destroy()
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if ((other.sprite_index == spr_rattumbleblock or other.sprite_index == spr_rattumbleblock_big) && sprite_index == spr_tumble && (place_meeting((x + 1), y, other) or place_meeting((x - 1), y, other)))
 			instance_destroy(other)

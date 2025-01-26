@@ -1,7 +1,7 @@
 function cutscene_player_pos_lerp(argument0, argument1, argument2)
 {
 	var _finish = 0
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		hsp = 0
 		vsp = 0
@@ -21,7 +21,7 @@ function cutscene_player_pos_lerp(argument0, argument1, argument2)
 function cutscene_player_pos_approach(argument0, argument1, argument2)
 {
 	var _finish = 0
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		hsp = 0
 		vsp = 0

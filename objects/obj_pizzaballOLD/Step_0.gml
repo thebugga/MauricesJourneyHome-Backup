@@ -28,5 +28,5 @@ with (instance_place(x, (y + 1), obj_destructibleplatform))
 	if (falling == 1)
 		image_speed = 0.35
 }
-if (grounded && obj_player.state == states.freefallland)
+if (grounded && obj_parent_player.state == states.freefallland)
 	vsp = -11

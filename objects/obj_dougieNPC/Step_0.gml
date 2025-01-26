@@ -1,6 +1,6 @@
 if (!global.dougiecutscene2)
 {
-    with (obj_player)
+    with (obj_parent_player)
     {
         if (x > 800)
 		{

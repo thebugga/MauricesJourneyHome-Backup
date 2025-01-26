@@ -3,7 +3,7 @@ if (obj_player1.spotlight == 1)
 else
 	playerid = obj_player2
 spawn = 1
-if (instance_number(obj_baddie) < 20)
+if (instance_number(obj_parent_enemy) < 20)
 {
 	var spawnx = playerid.x
 	var spawny = (playerid.y - 200)

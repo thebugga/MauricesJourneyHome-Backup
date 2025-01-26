@@ -1,6 +1,6 @@
 if (sprite_index == spr_taximove)
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		obj_player1.lastroom = room
 		obj_player2.lastroom = room
@@ -10,8 +10,8 @@ if (sprite_index == spr_taximove)
 		obj_player1.targetRoom = other.targetRoom
 		obj_player2.targetDoor = other.targetDoor
 		obj_player2.targetRoom = other.targetRoom
-		obj_player.image_index = 0
-		obj_player.mach2 = 0
+		obj_parent_player.image_index = 0
+		obj_parent_player.mach2 = 0
 		if (instance_exists(obj_player2) && global.coop == true)
 		{
 			if (object_index == obj_player2)

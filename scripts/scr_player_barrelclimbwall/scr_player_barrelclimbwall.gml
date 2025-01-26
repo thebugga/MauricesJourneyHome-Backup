@@ -19,7 +19,7 @@ function scr_player_barrelclimbwall()
 	}
 	with (instance_place(x, (y + vsp), obj_destructibles))
 		instance_destroy()
-	with (instance_place(x, (y + vsp), obj_baddie))
+	with (instance_place(x, (y + vsp), obj_parent_enemy))
 	{
 		if destroyable
 			instance_destroy()

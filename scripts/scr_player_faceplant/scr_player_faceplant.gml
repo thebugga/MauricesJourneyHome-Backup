@@ -18,7 +18,7 @@ function scr_player_faceplant()
 		}
 		hsp = 0
 		image_speed = 0.35
-		with (obj_baddie)
+		with (obj_parent_enemy)
 		{
 			if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded)
 			{

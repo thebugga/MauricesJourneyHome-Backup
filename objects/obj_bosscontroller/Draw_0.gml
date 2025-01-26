@@ -9,7 +9,7 @@ if (state == states.transitioncutscene or state == states.victory or state == st
 	draw_set_alpha(1)
 }
 var _super_bg = 0
-with (obj_player)
+with (obj_parent_player)
 {
 	if (state == states.playersuperattack && superattackstate == states.punch)
 		_super_bg = 1

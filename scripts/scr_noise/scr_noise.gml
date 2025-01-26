@@ -236,7 +236,7 @@ function scr_noise_pistol()
 		case states.idle:
 			sprite_index = spr_playerN_minigunidle
 			b = noone
-			with (obj_player)
+			with (obj_parent_player)
 			{
 				if (check_player_coop() && y > (other.y - 100) && y < (other.y + 30) && x > (other.x - 500) && x < (other.x + 500))
 					b = id

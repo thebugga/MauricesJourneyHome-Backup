@@ -59,7 +59,7 @@ switch state
 
 		break
 	case states.robotchase:
-		playerid = instance_nearest(x, y, obj_player)
+		playerid = instance_nearest(x, y, obj_parent_player)
 		sprite_index = spr_monstertomato_chase
 		var dir = point_direction(x, y, playerid.x, playerid.y)
 		if (!((x > (playerid.x - 8) && x < (playerid.x + 8) && y > (playerid.y - 8) && y < (playerid.y + 8))))

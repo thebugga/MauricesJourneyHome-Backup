@@ -1,4 +1,4 @@
-var player = instance_nearest(x, y, obj_player)
+var player = instance_nearest(x, y, obj_parent_player)
 switch state
 {
 	case states.normal:

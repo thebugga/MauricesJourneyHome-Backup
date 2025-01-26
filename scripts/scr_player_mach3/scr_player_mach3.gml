@@ -279,7 +279,7 @@ function scr_player_mach3()
 						shake_mag = 20;
 						shake_mag_acc = 40 / room_speed;
 					}
-					with obj_baddie
+					with obj_parent_enemy
 					{
 						if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0)
 						{
@@ -307,7 +307,7 @@ function scr_player_mach3()
 					else
 					{
 						fightball = false;
-						with obj_player
+						with obj_parent_player
 						{
 							sprite_index = spr_hitwall;
 							instance_create(x + 10, y + 10, obj_bumpeffect);
@@ -335,7 +335,7 @@ function scr_player_mach3()
 		with (instance_create(x, y, obj_superdashcloud))
 		{
 			if other.fightball == 1
-				instance_create(obj_player.x, obj_player.y, obj_slapstar);
+				instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar);
 			image_xscale = other.xscale;
 			other.dashcloudid = id;
 		}
@@ -345,7 +345,7 @@ function scr_player_mach3()
 		with (instance_create(x, y, obj_superdashcloud))
 		{
 			if other.fightball == 1
-				instance_create(obj_player.x, obj_player.y, obj_slapstar);
+				instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar);
 			image_xscale = other.xscale;
 			sprite_index = spr_watereffect;
 			other.dashcloudid = id;

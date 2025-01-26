@@ -2,7 +2,7 @@ if (state == states.transitioncutscene)
 	exit;
 if (state == states.victory)
 	exit;
-if (obj_player.state != states.playersuperattack)
+if (obj_parent_player.state != states.playersuperattack)
 {
 	round_timer--
 	if (round_timer <= 0)

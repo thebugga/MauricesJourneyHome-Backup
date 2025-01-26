@@ -1,4 +1,4 @@
-with (obj_baddie)
+with (obj_parent_enemy)
 {
 	if (place_meeting((x + hsp), y, obj_enemyblock) && thrown == true)
 		instance_destroy(instance_place((x + hsp), y, obj_enemyblock))

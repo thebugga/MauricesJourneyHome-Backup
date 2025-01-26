@@ -141,7 +141,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 if (state != states.walk)
 	attract_player = 0
 var _dis = 300
-if (state == states.walk && obj_player1.isgustavo && (!obj_player1.cutscene) && obj_player1.state != states.taxi && ((distance_to_object(obj_player) < _dis && obj_player1.brick) or distance_to_object(obj_ratmountgroundpound) < _dis or (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && (!obj_brickcomeback.trapped)) or distance_to_object(obj_brickball) < _dis))
+if (state == states.walk && obj_player1.isgustavo && (!obj_player1.cutscene) && obj_player1.state != states.taxi && ((distance_to_object(obj_parent_player) < _dis && obj_player1.brick) or distance_to_object(obj_ratmountgroundpound) < _dis or (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && (!obj_brickcomeback.trapped)) or distance_to_object(obj_brickball) < _dis))
 {
 	state = states.blockstance
 	sprite_index = spr_hamkuff_chain1

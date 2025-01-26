@@ -1,4 +1,4 @@
-with (obj_player)
+with (obj_parent_player)
 {
 	var _pindex = (object_index == obj_player1) ? 0 : 1;
 	var _dvc = other.player_input_device[_pindex];

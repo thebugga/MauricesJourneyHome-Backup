@@ -12,7 +12,7 @@ if use_dark
 		}
 	}
 }
-if (obj_player1.finisher or obj_player2.finisher or (obj_player.state == states.playersuperattack && obj_player.superattackstate == states.transitioncutscene))
+if (obj_player1.finisher or obj_player2.finisher or (obj_parent_player.state == states.playersuperattack && obj_parent_player.superattackstate == states.transitioncutscene))
 	finisher_alpha = Approach(finisher_alpha, 0.3, 0.1)
 else if (finisher_alpha > 0)
 	finisher_alpha = Approach(finisher_alpha, 0, 0.02)
@@ -23,7 +23,7 @@ if (finisher_alpha > 0)
 	draw_set_alpha(1)
 }
 var _kungfu = global.kungfu
-with (obj_baddie)
+with (obj_parent_enemy)
 	draw_enemy(_kungfu, true)
 shader_set(global.Pal_Shader)
 with (obj_sausageman_dead)
@@ -44,7 +44,7 @@ with (obj_heatafterimage)
 		pattern_reset()
 	}
 }
-with (obj_player)
+with (obj_parent_player)
 {
 	if (visible && bbox_in_camera(view_camera[0], 32))
 	{
@@ -59,7 +59,7 @@ with (obj_player)
 	draw_superslam_enemy()
 }
 shader_set(shd_hit)
-with (obj_baddie)
+with (obj_parent_enemy)
 {
 	_stun = 0
 	if (state == states.stun)

@@ -149,20 +149,20 @@ function scr_playerreset(argument0)
 		if instance_exists(obj_toppinwarrior)
 			instance_destroy(obj_toppinwarrior)
 	}
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		ratpowerup = -4
 		scale_xs = 1
 		scale_ys = 1
 		obj_camera.targetgolf = -4
 		ds_list_clear(global.baddietomb)
-		obj_player.supercharge = 0
-		obj_player.supercharged = 0
+		obj_parent_player.supercharge = 0
+		obj_parent_player.supercharged = 0
 		pistol = 0
 		if instance_exists(obj_gnome_checklist)
 		{
 			var destroy = 1
-			with (obj_player)
+			with (obj_parent_player)
 			{
 				if (state == states.gameover or state == states.timesup)
 					destroy = 0
@@ -186,7 +186,7 @@ function scr_playerreset(argument0)
 		ds_list_clear(global.saveroom)
 		ds_list_clear(global.escaperoom)
 		ds_list_clear(global.baddieroom)
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			ds_list_clear(hitlist)
 			image_blend = make_colour_hsv(0, 0, 255)

@@ -42,7 +42,7 @@ if (place_meeting((x + hsp), y, obj_iceblock) && state == states.charge)
 	with (instance_place((x + hsp), y, obj_iceblock))
 		instance_destroy()
 }
-targetplayer = instance_nearest(x, y, obj_player)
+targetplayer = instance_nearest(x, y, obj_parent_player)
 if (state == states.walk && attack_cooldown <= 0)
 {
 	if (x != targetplayer.x && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y < (y + 50) && targetplayer.y > (y - 50))
@@ -85,7 +85,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

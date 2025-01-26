@@ -1,13 +1,13 @@
 if (room == rm_editor)
 	exit;
-var targetplayer = (global.coop ? instance_nearest(x, y, obj_player) : obj_player1)
+var targetplayer = (global.coop ? instance_nearest(x, y, obj_parent_player) : obj_player1)
 if (bombreset > 0)
 	bombreset--
 if (state == states.walk)
 {
 	if (!chasing)
 	{
-		targetplayer = instance_nearest(x, y, obj_player)
+		targetplayer = instance_nearest(x, y, obj_parent_player)
 		if (targetplayer.x > (x - 1900) && targetplayer.x < (x + 1900) && y <= (targetplayer.y + 540) && y >= (targetplayer.y - 540))
 		{
 			chasing = 1
@@ -119,7 +119,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

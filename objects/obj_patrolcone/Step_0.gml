@@ -16,7 +16,7 @@ var points = get_triangle_points(x, y, image_angle, len, size)
 var _col = 0
 if (!instance_exists(obj_jumpscare))
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if rectangle_in_triangle(bbox_left, bbox_top, bbox_right, bbox_bottom, other.x, other.y, points[0], points[1], points[2], points[3])
 			_col = 1

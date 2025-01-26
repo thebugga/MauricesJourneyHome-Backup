@@ -1,4 +1,4 @@
-if (obj_player.x > (x - 200) && obj_player.x < (x + 200))
+if (obj_parent_player.x > (x - 200) && obj_parent_player.x < (x + 200))
 {
 	if (pushing == 0)
 	{

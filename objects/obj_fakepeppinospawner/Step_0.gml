@@ -15,7 +15,7 @@ else if (!instance_exists(inst))
 		targetRoom = other.targetRoom
 	}
 }
-if (global.key_inv == 1 && obj_player.state != states.keyget)
+if (global.key_inv == 1 && obj_parent_player.state != states.keyget)
 	global.chase = 1
 if (global.panic == true)
 	global.chase = 1

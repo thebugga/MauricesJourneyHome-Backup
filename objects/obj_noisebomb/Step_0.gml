@@ -1,6 +1,6 @@
 if (room == rank_room or room == timesuproom)
 	visible = false
-if (obj_player.state == states.pizzathrow)
+if (obj_parent_player.state == states.pizzathrow)
 	visible = false
 if (obj_player1.spotlight == 1)
 	playerid = obj_player1
@@ -16,8 +16,8 @@ if (sprite_index == spr_noisebomb_intro && floor(image_index) == (image_number -
 }
 if (global.miniboss == true && sprite_index != spr_noisebomb_intro)
 {
-	image_alpha = obj_player.image_alpha
-	if (obj_player.hsp != 0)
+	image_alpha = obj_parent_player.image_alpha
+	if (obj_parent_player.hsp != 0)
 		sprite_index = spr_noisebomb_walk
 	else
 		sprite_index = spr_noisebomb_idle

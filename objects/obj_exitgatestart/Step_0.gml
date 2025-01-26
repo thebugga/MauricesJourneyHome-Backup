@@ -1,12 +1,12 @@
-drawing = place_meeting(x, y, obj_player)
-if place_meeting(x, y, obj_player)
+drawing = place_meeting(x, y, obj_parent_player)
+if place_meeting(x, y, obj_parent_player)
 	image_speed = 0.35
 else
 {
 	image_speed = 0
 	image_index = 0
 }
-if (msg != "" && distance_to_object(obj_player) < 50)
+if (msg != "" && distance_to_object(obj_parent_player) < 50)
 {
 	with (obj_tv)
 	{

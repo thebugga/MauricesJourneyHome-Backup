@@ -4,7 +4,7 @@ if room == rm_editor
 
 if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == false
 {
-	with obj_baddie
+	with obj_parent_enemy
 	{
 		if escape == true
 		{

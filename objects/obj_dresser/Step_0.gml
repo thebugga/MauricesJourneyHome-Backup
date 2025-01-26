@@ -10,6 +10,6 @@ if up
 		quick_ini_write_real(get_savefile_ini(), "Game", "paletteselect" + string(playerid.player_index), playerid.player_paletteselect[playerid.player_index])
 		up = false
 		playerid = noone
-		obj_player.state = states.normal
+		obj_parent_player.state = states.normal
 	}
 }

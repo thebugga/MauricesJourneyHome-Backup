@@ -14,7 +14,7 @@ if (!global.panic)
 }
 else
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if check_player_coop()
 			state = states.animatronic

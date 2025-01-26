@@ -1,4 +1,4 @@
-if (active && x != xstart && (!(place_meeting(xstart, ystart, obj_baddie))) && (!(place_meeting(xstart, ystart, obj_player))))
+if (active && x != xstart && (!(place_meeting(xstart, ystart, obj_parent_enemy))) && (!(place_meeting(xstart, ystart, obj_parent_player))))
 {
 	x = xstart
 	y = ystart

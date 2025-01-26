@@ -1,6 +1,6 @@
-if (floor(image_index) == (image_number - 1) && obj_player.state != states.door)
+if (floor(image_index) == (image_number - 1) && obj_parent_player.state != states.door)
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		state = states.door
 		image_index = 0

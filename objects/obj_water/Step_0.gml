@@ -1,6 +1,6 @@
-if place_meeting(x, (y - 1), obj_player)
+if place_meeting(x, (y - 1), obj_parent_player)
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if (state != states.gotoplayer && state != states.trashjump && state != states.trashjumpprep && state != states.mach3 && state != states.parry && sprite_index != spr_mach3boost)
 		{
@@ -28,5 +28,5 @@ if place_meeting(x, (y - 1), obj_player)
 		}
 	}
 }
-with (instance_place(x, (y - 1), obj_baddie))
+with (instance_place(x, (y - 1), obj_parent_enemy))
 	instance_destroy()

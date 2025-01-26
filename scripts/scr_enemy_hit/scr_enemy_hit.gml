@@ -13,7 +13,7 @@ function scr_enemy_hit()
 			_player = obj_player1
 		else
 			_player = 323
-		if (obj_player.tauntstoredstate == states.mach2 or obj_player.tauntstoredstate == states.tumble or obj_player.state == states.mach2 or obj_player.state == states.tumble)
+		if (obj_parent_player.tauntstoredstate == states.mach2 or obj_parent_player.tauntstoredstate == states.tumble or obj_parent_player.state == states.mach2 or obj_parent_player.state == states.tumble)
 			thrown = false
 		else
 			thrown = true

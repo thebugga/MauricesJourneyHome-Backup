@@ -11,9 +11,9 @@ if (obj_explosion != obj_dynamiteexplosion_boss && obj_explosion != obj_canonexp
 	instance_destroy()
 	instance_create(x, y, obj_explosion)
 }
-if (place_meeting((x + hsp), y, obj_solid) or place_meeting((x + hsp), (y + vsp), obj_destructibles) or (obj_explosion != obj_canonexplosion && place_meeting(x, y, obj_baddie)))
+if (place_meeting((x + hsp), y, obj_solid) or place_meeting((x + hsp), (y + vsp), obj_destructibles) or (obj_explosion != obj_canonexplosion && place_meeting(x, y, obj_parent_enemy)))
 	image_xscale *= -1
-if (place_meeting((x + hsp), (y + vsp), obj_destructibles) or place_meeting((x + hsp), (y + vsp), obj_metalblock) or place_meeting((x + hsp), (y + vsp), obj_ratblock) or (obj_explosion != obj_canonexplosion && place_meeting(x, y, obj_baddie)))
+if (place_meeting((x + hsp), (y + vsp), obj_destructibles) or place_meeting((x + hsp), (y + vsp), obj_metalblock) or place_meeting((x + hsp), (y + vsp), obj_ratblock) or (obj_explosion != obj_canonexplosion && place_meeting(x, y, obj_parent_enemy)))
 {
 	instance_destroy()
 	instance_create(x, y, obj_explosion)

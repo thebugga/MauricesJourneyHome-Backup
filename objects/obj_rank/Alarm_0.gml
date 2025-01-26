@@ -1,7 +1,7 @@
 global.levelcomplete = 1
 global.levelcompletename = global.leveltosave
 scr_playerreset()
-with (obj_player)
+with (obj_parent_player)
 {
 	targetRoom = backtohubroom
 	room = backtohubroom

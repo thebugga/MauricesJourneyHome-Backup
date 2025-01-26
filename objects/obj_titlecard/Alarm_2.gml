@@ -1,7 +1,7 @@
 titlestate++
 if titlestate == 4
 {
-	with obj_player
+	with obj_parent_player
 	{
 		with (instance_create_unique(0, 0, obj_fadeout))
 			restarttimer = true;

@@ -2,7 +2,7 @@ if (fadealpha > 1)
 {
 	obj_camera.lock = false
 	fadein = 1
-	if instance_exists(obj_player)
+	if instance_exists(obj_parent_player)
 	{
 		if (custom_level == 0)
 		{
@@ -18,7 +18,7 @@ if (fadealpha > 1)
 	            global.level_minutes = 0
 	            global.level_seconds = 0
 	        }
-			with (obj_player)
+			with (obj_parent_player)
 			{
 				if place_meeting(x, y, obj_goldendoor)
 					game_restart()
@@ -26,7 +26,7 @@ if (fadealpha > 1)
 			if (room != obj_player1.targetRoom or roomreset)
 			{
 				scr_room_goto(obj_player1.targetRoom)
-				with (obj_player)
+				with (obj_parent_player)
 				{
 					if (state == states.ejected or state == states.policetaxi)
 					{
@@ -39,7 +39,7 @@ if (fadealpha > 1)
 			{
 				if (room != obj_player2.targetRoom or roomreset)
 					scr_room_goto(obj_player1.targetRoom)
-				with (obj_player)
+				with (obj_parent_player)
 				{
 					if (state == states.ejected)
 						state = states.normal
@@ -57,7 +57,7 @@ if (fadein == 0)
 	fadealpha += 0.1
 else if (fadein == 1)
 	fadealpha -= 0.1
-if instance_exists(obj_player)
+if instance_exists(obj_parent_player)
 {
 	with (obj_player1)
 	{

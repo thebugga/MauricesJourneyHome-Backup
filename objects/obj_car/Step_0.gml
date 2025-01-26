@@ -1,9 +1,9 @@
 switch state
 {
 	case states.normal:
-		if place_meeting(x, y, obj_player)
+		if place_meeting(x, y, obj_parent_player)
 		{
-			var num = instance_place_list(x, y, obj_player, global.instancelist, 0)
+			var num = instance_place_list(x, y, obj_parent_player, global.instancelist, 0)
 			for (var i = 0; i < num; i++)
 			{
 				var b = ds_list_find_value(global.instancelist, i)

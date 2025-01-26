@@ -52,7 +52,7 @@ if (state != states.walk)
 if (state == states.walk)
 {
 	var x1 = 270
-	playerid = instance_nearest(x, y, obj_player)
+	playerid = instance_nearest(x, y, obj_parent_player)
 	var t = (playerid.x > (x - x1) && playerid.x < (x + x1) && playerid.y > (y - 100) && playerid.y < (y + 100))
 	if (cooldown > 0)
 		cooldown--
@@ -97,7 +97,7 @@ else if (state == states.punch)
 		}
 	}
 	x1 = 450
-	playerid = instance_nearest(x, y, obj_player)
+	playerid = instance_nearest(x, y, obj_parent_player)
 	t = (playerid.x > (x - x1) && playerid.x < (x + x1) && playerid.y > (y - 400) && playerid.y < (y + 400))
 	hsp = (image_xscale * attackspeed)
 	var q = outofsight
@@ -155,7 +155,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

@@ -1,4 +1,4 @@
-active = place_meeting(x, y, obj_baddie)
+active = place_meeting(x, y, obj_parent_enemy)
 if (active != preactive)
 {
 	var _alreadyactive = 0

@@ -16,6 +16,6 @@ repeat (3)
 		vsp = random_range(-10, 10)
 	}
 }
-with (obj_baddie)
+with (obj_parent_enemy)
 	rattime = 0
 instance_create(x, y, obj_bangeffect)

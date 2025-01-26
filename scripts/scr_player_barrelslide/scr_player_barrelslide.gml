@@ -44,7 +44,7 @@ function scr_player_barrelslide()
 	}
 	with (instance_place((x + hsp), y, obj_destructibles))
 		instance_destroy()
-	with (instance_place((x + hsp), y, obj_baddie))
+	with (instance_place((x + hsp), y, obj_parent_enemy))
 	{
 		if destroyable
 			instance_destroy()

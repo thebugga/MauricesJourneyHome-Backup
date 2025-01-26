@@ -1,4 +1,4 @@
-with (instance_place((x - 1), y, obj_player))
+with (instance_place((x - 1), y, obj_parent_player))
 {
 	if (state == states.mort && other.eaten == 0)
 	{
@@ -8,7 +8,7 @@ with (instance_place((x - 1), y, obj_player))
 		state = states.normal
 	}
 }
-with (instance_place((x + 1), y, obj_player))
+with (instance_place((x + 1), y, obj_parent_player))
 {
 	if (state == states.mort && other.eaten == 0)
 	{

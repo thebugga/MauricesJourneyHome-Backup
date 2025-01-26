@@ -65,7 +65,7 @@ if (sprite_index == scaredspr)
 if (bombreset == 0 && state == states.walk)
 {
 	attacking = 0
-	targetplayer = (global.coop ? instance_nearest(x, y, obj_player) : obj_player1)
+	targetplayer = (global.coop ? instance_nearest(x, y, obj_parent_player) : obj_player1)
 	if (targetplayer.x > (x - threshold_x) && targetplayer.x < (x + threshold_x) && y <= (targetplayer.y + threshold_y) && y >= (targetplayer.y - threshold_y))
 	{
 		attacking = 1
@@ -174,7 +174,7 @@ if (state == states.idle)
 }
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

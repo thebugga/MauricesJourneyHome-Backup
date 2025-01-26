@@ -13,7 +13,7 @@ if (playerid != noone)
 
 if (!got)
 {
-	var num = instance_place_list(x, y, obj_player, global.instancelist, 0)
+	var num = instance_place_list(x, y, obj_parent_player, global.instancelist, 0)
 	for(var i = 0; i < num; i++)
 	{
 		var _player = ds_list_find_value(global.instancelist, i)

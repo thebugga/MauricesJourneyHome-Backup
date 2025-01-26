@@ -38,7 +38,7 @@ if titlecredit[image_index][4] & wipshow
 }
 if titlestate != 0 && obj_player1.key_jump2 && !instance_exists(obj_fadeout)
 {
-	with obj_player
+	with obj_parent_player
 	{
 		input_buffer_jump = 0
 		with (instance_create_unique(0, 0, obj_fadeout))

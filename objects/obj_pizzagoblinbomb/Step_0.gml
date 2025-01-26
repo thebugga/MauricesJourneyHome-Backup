@@ -6,7 +6,7 @@ if (countdown == 0)
 	instance_destroy()
 if (kickbuffer > 0)
 {
-	if (!(place_meeting(x, y, obj_player)))
+	if (!(place_meeting(x, y, obj_parent_player)))
 		kickbuffer = 0
 }
 switch state

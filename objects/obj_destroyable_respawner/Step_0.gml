@@ -3,7 +3,7 @@ if (spawn_buffer > 0)
 else if (content != noone)
 {
 	var _collidewithplayer = 0
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		var _oldmask = mask_index
 		mask_index = spr_player_mask

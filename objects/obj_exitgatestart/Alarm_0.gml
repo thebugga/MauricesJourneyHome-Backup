@@ -1,4 +1,4 @@
-with (obj_player)
+with (obj_parent_player)
 {
 	targetDoor = "A"
 	targetRoom = other.targetRoom

@@ -1,7 +1,7 @@
 if ((!global.horse) && (obj_player1.state == states.normal or obj_player1.state == states.mach1 or obj_player1.state == states.pogo or obj_player1.state == states.mach2 or obj_player1.state == states.mach3 or obj_player1.state == states.Sjumpprep) && obj_player1.key_up && obj_player1.grounded && (global.gerome == 1 or image_index == 1) && place_meeting(x, y, obj_player1))
 {
 	ds_list_add(global.saveroom, id)
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		targetRoom = other.targetRoom
 		targetDoor = other.targetDoor

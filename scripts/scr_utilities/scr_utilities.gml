@@ -235,3 +235,21 @@ function draw_reset() {
 	draw_set_color(c_white)
 }
 
+function choose_non_repeat(_arrayOfNumbers) {
+
+    // Get the length of the array and choose any one index except the last index
+    var _arrayLength = array_length(_arrayOfNumbers);
+    var _chosenIndex = irandom_range(0, _arrayLength - 2);
+
+    // Remember what we choose
+    var _result = _arrayOfNumbers[_chosenIndex];
+
+    // Move the chosen result to the end of the array
+    array_delete(_arrayOfNumbers, _chosenIndex, 1);
+    array_push(_arrayOfNumbers, _result);
+
+   // return the number we chose
+    return _result;
+
+}
+

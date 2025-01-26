@@ -34,7 +34,7 @@ if (activated == 1)
 		else
 		{
 			var c = 0
-			with (obj_baddie)
+			with (obj_parent_enemy)
 			{
 				if (santaID == other.id)
 					c++

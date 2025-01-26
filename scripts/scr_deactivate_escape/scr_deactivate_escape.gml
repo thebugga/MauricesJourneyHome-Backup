@@ -1,6 +1,6 @@
 function scr_deactivate_escape()
 {
-	with (obj_baddie)
+	with (obj_parent_enemy)
 	{
 		hitboxcreate = 0
 		boundbox = 0

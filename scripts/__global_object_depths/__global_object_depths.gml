@@ -248,7 +248,7 @@ function __global_object_depths()
 	
 	
 	global.__objectNames[0] = "obj_solid"
-	global.__objectNames[1] = "obj_player"
+	global.__objectNames[1] = "obj_parent_player"
 	global.__objectNames[2] = "obj_pause"
 	global.__objectNames[3] = "obj_music"
 	global.__objectNames[4] = "obj_tv"
@@ -283,10 +283,10 @@ function __global_object_depths()
 	global.__objectNames[33] = "obj_slaphitbox"
 	global.__objectNames[34] = "obj_shotgunbullet"
 	global.__objectNames[35] = "obj_hurtbox"
-	global.__objectNames[36] = "obj_baddiecollisionbox"
+	global.__objectNames[36] = "obj_parent_enemycollisionbox"
 	global.__objectNames[37] = "obj_boss"
-	global.__objectNames[38] = "obj_baddie"
-	global.__objectNames[39] = "obj_baddiedead"
+	global.__objectNames[38] = "obj_parent_enemy"
+	global.__objectNames[39] = "obj_parent_enemydead"
 	global.__objectNames[40] = "obj_robotknife"
 	global.__objectNames[41] = "obj_spitcheesespike"
 	global.__objectNames[42] = "obj_pineahitbox"

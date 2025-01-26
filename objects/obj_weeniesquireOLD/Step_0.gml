@@ -10,7 +10,7 @@ if (stun == 0 && chargebuffer > 0)
 	chargebuffer--
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionboxother))
+	with (instance_create(x, y, obj_parent_enemycollisionboxother))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

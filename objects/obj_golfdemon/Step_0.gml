@@ -57,7 +57,7 @@ if (state != states.chase)
 	momentum = 0
 if (state == states.walk or state == states.idle)
 {
-	var targetplayer = instance_nearest(x, y, obj_player)
+	var targetplayer = instance_nearest(x, y, obj_parent_player)
 	if (sprite_index != spr_golfdemon_idle2 && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y > (y - 200) && targetplayer.y < (y + 200))
 	{
 		sprite_index = spr_golfdemon_idle2
@@ -78,7 +78,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

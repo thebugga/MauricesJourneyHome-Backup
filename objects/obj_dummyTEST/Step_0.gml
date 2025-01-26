@@ -51,7 +51,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionboxTEST))
+	with (instance_create(x, y, obj_parent_enemycollisionboxTEST))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

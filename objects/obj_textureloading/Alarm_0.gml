@@ -12,8 +12,6 @@ else if (ds_list_size(global.lang_textures_to_load) > 0)
     }
     ds_list_delete(global.lang_textures_to_load, 0)
 }
-else if (len > 0)
-{
 if (len > 0)
 {
     var tex = array_pop(tex_list)
@@ -27,4 +25,3 @@ else
     screen_apply_vsync()
 }
 alarm[0] = 1
-}

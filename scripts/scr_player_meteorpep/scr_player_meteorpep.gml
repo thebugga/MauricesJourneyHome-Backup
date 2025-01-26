@@ -16,7 +16,7 @@ function scr_player_meteorpep()
 	if (scr_solid((x - 1), y) && xscale == 1 && hsp != 0)
 	{
 		movespeed = 0
-		with (obj_baddie)
+		with (obj_parent_enemy)
 		{
 			if point_in_camera(x, y, view_camera[0])
 			{

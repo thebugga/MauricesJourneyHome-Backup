@@ -1,2 +1,2 @@
-if instance_exists(obj_baddie)
-	obj_baddie.slapped = 0
+if instance_exists(obj_parent_enemy)
+	obj_parent_enemy.slapped = 0

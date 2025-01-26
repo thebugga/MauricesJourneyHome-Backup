@@ -1,6 +1,6 @@
-if place_meeting(x, (y - 1), obj_player)
+if place_meeting(x, (y - 1), obj_parent_player)
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if (state != states.golf && state != states.tackle && state != states.gotoplayer && state != states.trashjump && state != states.trashroll)
 		{

@@ -1,6 +1,6 @@
 function cutscene_set_player_pos(argument0, argument1)
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if (object_index != obj_player2 or global.coop)
 		{

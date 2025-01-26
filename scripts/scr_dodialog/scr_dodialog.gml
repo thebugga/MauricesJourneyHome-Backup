@@ -11,7 +11,7 @@ function do_dialog(argument0, argument1, argument2) //do_dialog
         currenttext = scr_calculate_text(dialog[0][0])
         dialogheight = scr_calculate_height(currenttext)
     }
-    with (obj_player)
+    with (obj_parent_player)
     {
         sprite_index = spr_idle
         image_speed = 0.35

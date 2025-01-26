@@ -8,7 +8,7 @@ if (!shot)
 	i = 0
 	while (i < t)
 	{
-		if (collision_line(x, (y + (i * n)), (x + (image_xscale * range)), (y + (i * n)), obj_player, false, true) != -4)
+		if (collision_line(x, (y + (i * n)), (x + (image_xscale * range)), (y + (i * n)), obj_parent_player, false, true) != -4)
 		{
 			shot = 1
 			break

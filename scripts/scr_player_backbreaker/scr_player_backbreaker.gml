@@ -42,7 +42,7 @@ function scr_player_backbreaker()
 			instance_create(x, y, obj_tauntaftereffectspawner)
 			var c = 0
 			var lag = 20
-			with (obj_baddie)
+			with (obj_parent_enemy)
 			{
 				if point_in_camera(x, y, view_camera[0])
 				{

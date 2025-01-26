@@ -141,7 +141,7 @@ function toggle_hitboxes_function()
 		global.showhitboxesarray[i++] = obj_parryhitbox;
 		global.showhitboxesarray[i++] = obj_pineahitbox;
 		global.showhitboxesarray[i++] = obj_forkhitbox;
-		global.showhitboxesarray[i++] = obj_baddieragehitbox;
+		global.showhitboxesarray[i++] = obj_parent_enemyragehitbox;
 		global.showhitboxesarray[i++] = obj_peasantohitbox;
 		global.showhitboxesarray[i++] = obj_enguardehitbox;
 	}

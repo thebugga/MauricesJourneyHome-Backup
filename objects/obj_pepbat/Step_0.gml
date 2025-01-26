@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-var targetplayer = instance_nearest(x, y, obj_player)
+var targetplayer = instance_nearest(x, y, obj_parent_player)
 switch state
 {
 	case states.idle:
@@ -99,8 +99,8 @@ if (state != states.stun)
 scr_scareenemy()
 if (bombreset > 0)
 	bombreset--
-targetplayer = (global.coop ? instance_nearest(x, y, obj_player) : obj_player1)
-if (x != targetplayer.x && state == states.walk && state != states.pizzagoblinthrow && obj_player.state != states.tumble && bombreset <= 0 && grounded)
+targetplayer = (global.coop ? instance_nearest(x, y, obj_parent_player) : obj_player1)
+if (x != targetplayer.x && state == states.walk && state != states.pizzagoblinthrow && obj_parent_player.state != states.tumble && bombreset <= 0 && grounded)
 {
 	if (targetplayer.x > (x - 80) && targetplayer.x < (x + 80) && y <= (targetplayer.y + 30) && y >= (targetplayer.y - 30))
 	{
@@ -117,7 +117,7 @@ if (grounded && state == states.pizzagoblinthrow && floor(image_index) == 3)
 	vsp = -5
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

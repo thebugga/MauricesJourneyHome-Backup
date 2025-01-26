@@ -49,7 +49,7 @@ function scr_monster_detect(argument0, argument1, argument2)
 
 function scr_puppet_detect()
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if ((object_index != obj_player2 or global.coop) && (!(place_meeting(x, y, obj_puppetsafezone))))
 			return id;
@@ -101,7 +101,7 @@ function scr_puppet_appear(argument0)
 
 function scr_monsterinvestigate(argument0, argument1, argument2)
 {
-	targetplayer = instance_nearest(x, y, obj_player)
+	targetplayer = instance_nearest(x, y, obj_parent_player)
 	image_speed = 0.35
 	switch investigatestate
 	{
@@ -152,7 +152,7 @@ function scr_monster_detect_audio()
 		}
 		else
 		{
-			targetplayer = instance_nearest(x, y, obj_player)
+			targetplayer = instance_nearest(x, y, obj_parent_player)
 			if (object_index == obj_blobmonster)
 			{
 				state = states.fall

@@ -1,6 +1,6 @@
 function scr_playersounds()
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if (state != states.tube && sprite_index != spr_knightpepstart && state != states.bombgrab && state != states.chainsaw && state != states.door && state != states.secretenter && state != states.victory && state != states.stunned && state != states.fireass)
 		{

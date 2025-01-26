@@ -54,8 +54,8 @@ if (state != states.stun)
 scr_scareenemy()
 if (bombreset > 0)
 	bombreset--
-var targetplayer = (global.coop ? instance_nearest(x, y, obj_player) : obj_player1)
-if (x != targetplayer.x && state != states.pizzagoblinthrow && obj_player.state != states.tumble && bombreset <= 0 && grounded)
+var targetplayer = (global.coop ? instance_nearest(x, y, obj_parent_player) : obj_player1)
+if (x != targetplayer.x && state != states.pizzagoblinthrow && obj_parent_player.state != states.tumble && bombreset <= 0 && grounded)
 {
 	if (targetplayer.x > (x - 80) && targetplayer.x < (x + 80) && y <= (targetplayer.y + 100) && y >= (targetplayer.y - 100))
 	{
@@ -72,7 +72,7 @@ if (grounded && state == states.pizzagoblinthrow && floor(image_index) == 3)
 	vsp = -5
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

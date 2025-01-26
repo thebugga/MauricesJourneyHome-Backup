@@ -1,6 +1,6 @@
 if (room == hub_loadingscreen && state != 2 && (!instance_exists(obj_fadeout)))
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		targetRoom = rm_logo
 		targetDoor = "A"

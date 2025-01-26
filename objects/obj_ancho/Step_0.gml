@@ -73,7 +73,7 @@ if (sprite_index == spr_ancho_chargestart && floor(image_index) == (image_number
 	sprite_index = spr_ancho_charge
 	movespeed = 10
 }
-var player = instance_nearest(x, y, obj_player)
+var player = instance_nearest(x, y, obj_parent_player)
 if (ragebuffer > 0)
 	ragebuffer--
 if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60) && important == 0)
@@ -102,7 +102,7 @@ if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >=
 		if (state == states.walk)
 		{
 			image_index = 0
-			image_xscale = (-(sign((x - obj_player.x))))
+			image_xscale = (-(sign((x - obj_parent_player.x))))
 			state = states.charge
 			sprite_index = spr_ancho_chargestart
 		}
@@ -114,7 +114,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

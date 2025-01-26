@@ -48,7 +48,7 @@ switch state
 		break
 }
 
-var targetplayer = instance_nearest(x, y, obj_player)
+var targetplayer = instance_nearest(x, y, obj_parent_player)
 if (cooldown > 0)
 	cooldown--
 if (state == states.walk && cooldown <= 0)
@@ -126,7 +126,7 @@ if (state != states.grabbed)
 	depth = 0
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

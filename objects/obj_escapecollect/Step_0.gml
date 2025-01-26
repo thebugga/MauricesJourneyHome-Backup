@@ -2,7 +2,7 @@ if (room == rm_editor)
 	exit;
 if (global.collectsound < 10)
 	global.collectsound += 1
-if (distance_to_object(obj_player) < 10)
+if (distance_to_object(obj_parent_player) < 10)
 {
 	if (global.timeattack == 1)
 		instance_destroy()
@@ -20,7 +20,7 @@ if (global.panic == true)
 	}
 	if (gotowardsplayer == 1)
 	{
-		move_towards_point(obj_player.x, obj_player.y, movespeed)
+		move_towards_point(obj_parent_player.x, obj_parent_player.y, movespeed)
 		movespeed++
 	}
 }

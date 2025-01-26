@@ -4,7 +4,7 @@ if (trashbuffer > 0)
 switch state
 {
 	case states.normal:
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			if (other.state == states.normal && state != states.trashjumpprep && other.trashbuffer <= 0 && place_meeting(x, y, other))
 			{

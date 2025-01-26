@@ -9,13 +9,13 @@ if independant
 	active = 1
 if active
 {
-	with (instance_place((x + 1), y, obj_player))
+	with (instance_place((x + 1), y, obj_parent_player))
 		scr_hurtplayer(id)
-	with (instance_place((x - 1), y, obj_player))
+	with (instance_place((x - 1), y, obj_parent_player))
 		scr_hurtplayer(id)
-	with (instance_place(x, (y + 1), obj_player))
+	with (instance_place(x, (y + 1), obj_parent_player))
 		scr_hurtplayer(id)
-	with (instance_place(x, (y - 1), obj_player))
+	with (instance_place(x, (y - 1), obj_parent_player))
 		scr_hurtplayer(id)
 }
 image_index = active

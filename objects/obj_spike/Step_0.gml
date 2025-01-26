@@ -1,4 +1,4 @@
-with (obj_player)
+with (obj_parent_player)
 {
 	if (place_meeting((x + 1), y, other) or place_meeting((x - 1), y, other) or place_meeting(x, (y + 1), other) or place_meeting(x, (y - 1), other))
 	{

@@ -49,7 +49,7 @@ else
 	grav = 0
 if (bombreset > 0 && state == states.walk)
 	bombreset--
-var player = instance_nearest(x, y, obj_player)
+var player = instance_nearest(x, y, obj_parent_player)
 if (ragebuffer > 0)
 	ragebuffer--
 if (player.x > (x - 200) && player.x < (x + 200) && player.y <= (y + 400) && player.y >= (y - 60))
@@ -78,7 +78,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

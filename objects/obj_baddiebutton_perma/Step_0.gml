@@ -1,6 +1,6 @@
 if (!used)
 {
-	active = place_meeting(x, y, obj_baddie)
+	active = place_meeting(x, y, obj_parent_enemy)
 	if active
 	{
 		with (obj_baddiegate)

@@ -5,7 +5,7 @@ switch state
 {
 	case states.idle:
 		sprite_index = idlespr
-		playerid = instance_nearest(x, y, obj_player)
+		playerid = instance_nearest(x, y, obj_parent_player)
 		var x1 = 370
 		if (image_xscale > 0)
 			var t = (playerid.x > (x - 16) && playerid.x < (x + x1) && playerid.y > (y - 16) && playerid.y < (y + 200))
@@ -113,7 +113,7 @@ if (grounded && state == states.pizzagoblinthrow && floor(image_index) == 3)
 	vsp = -5
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

@@ -1,7 +1,7 @@
 switch fall
 {
 	case 0:
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			if (vsp > 0 && place_meeting(x, (y + 1), other) && (!(place_meeting(x, y, other))))
 				other.fall = 1

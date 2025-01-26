@@ -75,7 +75,7 @@ switch global.boxhp
 		break
 }
 
-with (instance_place(x, y, obj_player))
+with (instance_place(x, y, obj_parent_player))
 {
 	if ((state == states.handstandjump or state == states.punch or state == states.lungeattack) && other.sprite_index != spr_present)
 	{
@@ -133,7 +133,7 @@ with (instance_place(x, y, obj_player))
 		}
 	}
 }
-if (place_meeting(x, y, obj_baddie) && obj_baddie.thrown == true && sprite_index != spr_present)
+if (place_meeting(x, y, obj_parent_enemy) && obj_parent_enemy.thrown == true && sprite_index != spr_present)
 {
 	if (character == 0)
 	{

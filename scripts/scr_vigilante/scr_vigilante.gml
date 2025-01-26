@@ -183,7 +183,7 @@ function scr_vigilante_freefall()
 	move = sign((targetplayer.x - x))
 	if (x > (targetplayer.x - 32) && x < (targetplayer.x + 32))
 		move = 0
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		if place_meeting(x, y, other)
 		{

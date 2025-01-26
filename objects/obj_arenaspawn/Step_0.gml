@@ -20,13 +20,13 @@ switch state
 		}
 		break
 	case states.arenaintro:
-		with (obj_player)
+		with (obj_parent_player)
 			state = states.gottreasure
 		if (cutscene_count > 0)
 			cutscene_count--
 		else
 		{
-			with (obj_player)
+			with (obj_parent_player)
 			{
 				state = states.normal
 				image_index = 0
@@ -87,7 +87,7 @@ switch state
 			if (!finish)
 				_doorfinish = 0
 		}
-		if ((!instance_exists(obj_baddie)) && (!instance_exists(obj_arena_pizzaportal)) && ((!instance_exists(obj_arenadoor)) or _doorfinish))
+		if ((!instance_exists(obj_parent_enemy)) && (!instance_exists(obj_arena_pizzaportal)) && ((!instance_exists(obj_arenadoor)) or _doorfinish))
 		{
 			wave++
 			if (wave > maxwave)
@@ -101,7 +101,7 @@ switch state
 					instance_destroy(block_inst)
 				}
 				cutscene_count = outro_max
-				with (obj_player)
+				with (obj_parent_player)
 				{
 					with (obj_music)
 						arena = 0

@@ -155,10 +155,10 @@ switch state
 			bossID.image_xscale = sign(obj_bossplayer.x - bossID.x)
 			obj_bossplayer.image_xscale = sign(bossID.x - obj_bossplayer.x)
 		}
-		if (super >= supermax && obj_player.state != states.playersuperattack)
+		if (super >= supermax && obj_parent_player.state != states.playersuperattack)
 		{
 			var p = 0
-			with (obj_player)
+			with (obj_parent_player)
 			{
 				if ((!p) && key_shoot2 && check_player_coop())
 				{
@@ -203,7 +203,7 @@ switch state
 			case 2:
 				super_portrait_index += 0.35
 				super_portrait_x += 1
-				if (obj_player.state != states.playersuperattack or obj_player.superattackstate != states.transitioncutscene)
+				if (obj_parent_player.state != states.playersuperattack or obj_parent_player.superattackstate != states.transitioncutscene)
 					super_portrait_state = 0
 				break
 		}
@@ -211,7 +211,7 @@ switch state
 	
 	case states.transitioncutscene:
 		instance_destroy(obj_baddiespawner)
-		instance_destroy(obj_baddie)
+		instance_destroy(obj_parent_enemy)
 		if (player_hp > 0)
 		{
 			if ((!instance_exists(bossID)) or bossID.state != states.hit)
@@ -223,7 +223,7 @@ switch state
 		else
 		{
 			var hit = 0
-			with (obj_player)
+			with (obj_parent_player)
 			{
 				if (state == states.hit)
 					hit = 1

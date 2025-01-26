@@ -5,7 +5,7 @@ switch state
 		{
 			visible = false
 			instance_deactivate_object(baddieID)
-			with (obj_baddiecollisionbox)
+			with (obj_parent_enemycollisionbox)
 			{
 				if (baddieID == other.baddieID)
 					instance_destroy()
@@ -15,7 +15,7 @@ switch state
 			state = 1
 		break
 	case 1:
-		var p = instance_nearest(x, y, obj_player)
+		var p = instance_nearest(x, y, obj_parent_player)
 		visible = false
 		image_index = 0
 		if distance_to_pos(x, y, p.x, p.y, 500, 100)

@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-targetplayer = instance_nearest(x, y, obj_player)
+targetplayer = instance_nearest(x, y, obj_parent_player)
 wastedhits = (8 - elitehit)
 if (elitehit <= 2)
 	attackpool = [states.boss_shield, states.turn, states.pistol, states.pistol, states.pistol]
@@ -94,7 +94,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

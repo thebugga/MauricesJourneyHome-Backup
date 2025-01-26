@@ -8,7 +8,7 @@ startedy = -4
 alarm[0] = 100
 alarm[1] = 200
 scr_soundeffect(sfx_tvswitch)
-with (obj_player)
+with (obj_parent_player)
 {
 	state = states.actor
 	hsp = 0

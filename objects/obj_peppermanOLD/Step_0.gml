@@ -1,4 +1,4 @@
-targetplayer = (global.coop ? instance_nearest(x, y, obj_player) : obj_player1)
+targetplayer = (global.coop ? instance_nearest(x, y, obj_parent_player) : obj_player1)
 if (obj_bossplayer.state == states.arenaintro)
 	exit;
 if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)

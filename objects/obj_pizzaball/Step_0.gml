@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-if (state == states.walk && grounded && vsp > 0 && obj_player.state == states.freefallland)
+if (state == states.walk && grounded && vsp > 0 && obj_parent_player.state == states.freefallland)
 	scr_pizzaball_go_to_thrown(0, -10)
 switch state
 {
@@ -77,7 +77,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

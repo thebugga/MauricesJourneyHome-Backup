@@ -16,7 +16,7 @@ else if finish
 if (global.panic == true)
 	finish = 1
 var hide = 0
-with (obj_player)
+with (obj_parent_player)
 {
 	if (x > (room_width - 215) && y > (room_height - 215))
 		hide = 1

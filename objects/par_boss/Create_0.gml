@@ -209,7 +209,7 @@ function SUPER_boss_hurt_noplayer(argument0)
 {
 	if important
 		hp -= argument0
-	if (obj_player.state != states.playersuperattack)
+	if (obj_parent_player.state != states.playersuperattack)
 	{
 		with (obj_bossplayer)
 			super += 30

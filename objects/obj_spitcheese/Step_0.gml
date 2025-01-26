@@ -43,7 +43,7 @@ if (state != states.stun)
 scr_scareenemy()
 if (bombreset > 0)
 	bombreset--
-var player = instance_nearest(x, y, obj_player)
+var player = instance_nearest(x, y, obj_parent_player)
 if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
 {
 	if (bombreset <= 0)
@@ -67,7 +67,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

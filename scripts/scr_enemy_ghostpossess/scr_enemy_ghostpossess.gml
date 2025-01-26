@@ -108,7 +108,7 @@ function scr_enemy_ghostpossess()
 					var dir = (image_xscale * 8)
 					with (instance_place((x + dir), y, obj_destructibles))
 						instance_destroy()
-					with (instance_place((x + dir), y, obj_baddie))
+					with (instance_place((x + dir), y, obj_parent_enemy))
 					{
 						if destroyable
 							instance_destroy()
@@ -122,7 +122,7 @@ function scr_enemy_ghostpossess()
 				if (floor(image_index) > 10)
 				{
 					hsp = (image_xscale * 8)
-					with (instance_place((x + (image_xscale * 8)), y, obj_baddie))
+					with (instance_place((x + (image_xscale * 8)), y, obj_parent_enemy))
 					{
 						if destroyable
 							instance_destroy()

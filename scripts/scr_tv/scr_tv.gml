@@ -100,7 +100,7 @@ function tv_push_prompt_once(argument0, argument1) //gml_Script_tv_push_prompt_o
 
 function tv_default_condition() //gml_Script_tv_default_condition
 {
-    return place_meeting(x, y, obj_player);
+    return place_meeting(x, y, obj_parent_player);
 }
 
 function tv_get_palette() //gml_Script_tv_get_palette
@@ -145,7 +145,7 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
                 case spr_tv_exprcollect:
                     expressionbuffer = 150
 					cardboardexprsprite = argument0
-                    if obj_player.isgustavo
+                    if obj_parent_player.isgustavo
                     {
                         cardboardexprsprite = spr_tv_happyG
                         if (irandom(100) <= 50)

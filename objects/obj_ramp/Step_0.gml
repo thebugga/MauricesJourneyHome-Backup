@@ -3,9 +3,9 @@ if used
 else
 	image_index = 0
 var s = 16
-if place_meeting(x, (y - s), obj_player)
+if place_meeting(x, (y - s), obj_parent_player)
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		var by = 4
 		if (state == states.mach3)

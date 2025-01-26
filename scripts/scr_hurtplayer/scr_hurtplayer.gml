@@ -59,7 +59,7 @@ function scr_hurtplayer(argument0)
 					global.kungfu = 0
 					if (!instance_exists(obj_fadeout))
 					{
-						with (obj_player)
+						with (obj_parent_player)
 							targetRoom = lastroom
 						instance_create(x, y, obj_fadeout)
 					}
@@ -94,7 +94,7 @@ function scr_hurtplayer(argument0)
 			if (instance_exists(possessID) && object_get_parent(possessID) == 407)
 			{
 				state = states.ghost
-				with (obj_baddie)
+				with (obj_parent_enemy)
 				{
 					if (is_controllable && state == states.ghostpossess && playerid == other.id)
 						instance_destroy()
@@ -176,7 +176,7 @@ function scr_hurtplayer(argument0)
 					global.kungfu = 0
 					if (!instance_exists(obj_fadeout))
 					{
-						with (obj_player)
+						with (obj_parent_player)
 							targetRoom = lastroom
 						instance_create(x, y, obj_fadeout)
 					}

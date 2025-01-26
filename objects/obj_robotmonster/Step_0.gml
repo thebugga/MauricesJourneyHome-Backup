@@ -1,4 +1,4 @@
-targetplayer = instance_nearest(x, y, obj_player)
+targetplayer = instance_nearest(x, y, obj_parent_player)
 switch state
 {
 	case states.robotidle:
@@ -19,7 +19,7 @@ switch state
 		}
 		break
 	case states.robotroaming:
-		targetplayer = instance_nearest(x, y, obj_player)
+		targetplayer = instance_nearest(x, y, obj_parent_player)
 		image_speed = 0.35
 		sprite_index = walkspr
 		hsp = (image_xscale * 4)
@@ -106,7 +106,7 @@ switch state
 		}
 		break
 	case states.robotseeking:
-		targetplayer = instance_nearest(x, y, obj_player)
+		targetplayer = instance_nearest(x, y, obj_parent_player)
 		hsp = (image_xscale * 6)
 		if (place_meeting((x + sign(hsp)), y, obj_monstersolid) && ((!(place_meeting((x + sign(hsp)), y, obj_monsterslope))) or place_meeting((x + sign(hsp)), (y - 4), obj_solid)))
 			state = states.robotroaming

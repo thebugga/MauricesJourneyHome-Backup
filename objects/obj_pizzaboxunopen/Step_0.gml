@@ -1,5 +1,5 @@
 var roomname = string_letters(room_get_name(room))
-if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
+if (place_meeting(x, y, obj_parent_player) && sprite_index == spr_pizzaboxunopen)
 {
 	global.combotime = 60
 	ds_list_add(global.saveroom, id)
@@ -7,7 +7,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		scr_soundeffect(sfx_collecttoppin)
 	if (content == obj_noisebomb)
 	{
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			state = states.backbreaker
 			sprite_index = spr_player_bossintro

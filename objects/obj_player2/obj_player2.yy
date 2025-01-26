@@ -15,8 +15,8 @@
   },
   "persistent": true,
   "parentObjectId": {
-    "name": "obj_player",
-    "path": "objects/obj_player/obj_player.yy",
+    "name": "obj_parent_player",
+    "path": "objects/obj_parent_player/obj_parent_player.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

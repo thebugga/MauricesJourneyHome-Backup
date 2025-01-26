@@ -54,7 +54,7 @@ if (state != states.stun)
 scr_scareenemy()
 if (elite && ragecooldown == 0)
 {
-	var player = instance_nearest(x, y, obj_player)
+	var player = instance_nearest(x, y, obj_parent_player)
 	var check = (image_xscale > 0 ? (player.x > x && player.x < (x + 400)) : (player.x < x && player.x > (x - 400)))
 	if (state == states.walk)
 	{
@@ -95,7 +95,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

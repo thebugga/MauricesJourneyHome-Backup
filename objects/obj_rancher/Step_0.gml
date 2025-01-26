@@ -48,7 +48,7 @@ if (state != states.stun)
 	thrown = false
 if (bombreset > 0)
 	bombreset--
-var targetplayer = (global.coop ? instance_nearest(x, y, obj_player) : obj_player1)
+var targetplayer = (global.coop ? instance_nearest(x, y, obj_parent_player) : obj_player1)
 if (sprite_index != scaredspr && x != targetplayer.x && state != states.pizzagoblinthrow && bombreset <= 0 && grounded && targetplayer.state != states.ghost && targetplayer.state != states.ghostpossess)
 {
 	if (targetplayer.x > (x - 400) && targetplayer.x < (x + 400) && y <= (targetplayer.y + 100) && y >= (targetplayer.y - 100))
@@ -64,7 +64,7 @@ if (sprite_index != scaredspr && x != targetplayer.x && state != states.pizzagob
 }
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

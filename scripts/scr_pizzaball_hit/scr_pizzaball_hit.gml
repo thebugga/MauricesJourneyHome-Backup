@@ -9,7 +9,7 @@ function scr_pizzaball_hit()
 		x = hitX
 		y = hitY
 		var s = -1
-		with (instance_nearest(x, y, obj_player))
+		with (instance_nearest(x, y, obj_parent_player))
 			s = tauntstoredstate
 		if (s != states.mach2)
 			scr_pizzaball_go_to_thrown((hithsp * 1.5), -12)

@@ -294,7 +294,7 @@ global.smallnumber_fnt = font_add_sprite_ext(spr_smallnumber, "1234567890-", tru
 global.levelcomplete = 0
 global.levelcompletename = -4
 global.option_sfx_volume = 4
-with (obj_player)
+with (obj_parent_player)
 	state = states.normal
 global.loadeditor = 0
 room_goto(rm_eggplantdisclaimer)

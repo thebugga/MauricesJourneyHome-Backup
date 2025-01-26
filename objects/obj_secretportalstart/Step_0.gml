@@ -5,7 +5,7 @@ switch sprite_index
 	case spr_secretportal_spawnopen:
 		with (obj_heatafterimage)
 			visible = false
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			if (object_index != obj_player2 or global.coop)
 			{
@@ -26,7 +26,7 @@ switch sprite_index
 		{
 			scr_soundeffect(sfx_secretexit)
 			sprite_index = spr_secretportal_spawnidle
-			with (obj_player)
+			with (obj_parent_player)
 			{
 				if (object_index != obj_player2 or global.coop)
 				{
@@ -56,7 +56,7 @@ switch sprite_index
 		{
 			with (obj_heatafterimage)
 				visible = false
-			with (obj_player)
+			with (obj_parent_player)
 			{
 				if check_player_coop()
 				{

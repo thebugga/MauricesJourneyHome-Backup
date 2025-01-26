@@ -1,4 +1,4 @@
-with (obj_player)
+with (obj_parent_player)
 {
 	obj_music.fadeoff = 0
 	targetDoor = "A"

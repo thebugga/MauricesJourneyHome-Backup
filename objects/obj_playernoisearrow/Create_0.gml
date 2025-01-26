@@ -1,4 +1,4 @@
-baddieID = instance_nearest(x, y, obj_baddie)
+baddieID = instance_nearest(x, y, obj_parent_enemy)
 if instance_exists(baddieID)
 	direction = point_direction(x, y, baddieID.x, baddieID.y)
 speed = 8

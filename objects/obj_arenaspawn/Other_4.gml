@@ -5,7 +5,7 @@ if (ds_list_find_index(global.saveroom, id) != -1)
 }
 else
 {
-	with (obj_baddie)
+	with (obj_parent_enemy)
 	{
 		if arena
 		{

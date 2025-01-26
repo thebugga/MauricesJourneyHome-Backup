@@ -1,6 +1,6 @@
 function cutscene_entrance_start()
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		state = states.actor
 		sprite_index = spr_walkfront

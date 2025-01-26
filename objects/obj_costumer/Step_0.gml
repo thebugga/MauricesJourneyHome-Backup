@@ -24,7 +24,7 @@ if (cutscenetimer < 0 && throwcoin == 1 && numberofcoinsthrow != 0)
 }
 if (numberofcoinsthrow == 0 && done == 0)
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		image_index = 0
 		sprite_index = spr_player_levelcomplete

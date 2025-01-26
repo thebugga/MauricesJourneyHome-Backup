@@ -89,9 +89,9 @@ function state_boss_taunt()
 	if (taunt_buffer > 0 && state == states.backbreaker)
 	{
 		taunt_buffer--
-		if place_meeting(x, y, obj_player)
+		if place_meeting(x, y, obj_parent_player)
 		{
-			var playerinst = instance_place(x, y, obj_player)
+			var playerinst = instance_place(x, y, obj_parent_player)
 			var s = ds_map_find_value(player_hurtstates, playerinst.state)
 			if (!is_undefined(s))
 			{

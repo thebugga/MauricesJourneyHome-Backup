@@ -17,7 +17,7 @@ function scr_player_parry()
 	{
 		parry_count--
 		var parry_threshold = 64
-		with (obj_baddie)
+		with (obj_parent_enemy)
 		{
 			if (distance_to_object(other) < parry_threshold && state != states.hit && state != states.grabbed && state != states.stun && parryable && (!((state == states.stun && thrown == true))))
 			{

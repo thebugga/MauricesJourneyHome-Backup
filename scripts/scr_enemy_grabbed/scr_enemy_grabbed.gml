@@ -2,7 +2,7 @@ function scr_enemy_grabbed()
 {
 	if (!pepperman_grab)
 	{
-		var _obj_player = asset_get_index(concat("obj_player", grabbedby))
+		var _obj_player = asset_get_index(concat("obj_parent_player", grabbedby))
 		image_xscale = (-_obj_player.xscale)
 		stunned = 200
 		_obj_player.baddiegrabbedID = id
@@ -472,7 +472,7 @@ function check_grabbed_solid(argument0)
 		exit;
 	if ((!(place_meeting(x, y, obj_destructibles))) && (scr_solid(x, y) or collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != -4))
 	{
-		var _dist = abs((x - obj_player.x))
+		var _dist = abs((x - obj_parent_player.x))
 		x = argument0.x
 		y = argument0.y
 		if (!(scr_solid((x + argument0.xscale), y)))

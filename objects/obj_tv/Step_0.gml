@@ -24,13 +24,13 @@ switch state
 	case states.normal:
 		idlespr = spr_tv_idle
 		cardboardsprite = -4
-		if (global.combo >= 3 && (!obj_player.isgustavo))
+		if (global.combo >= 3 && (!obj_parent_player.isgustavo))
 			idlespr = spr_tv_exprcombo
-		if (global.combo >= 50 && (!obj_player.isgustavo))
+		if (global.combo >= 50 && (!obj_parent_player.isgustavo))
 			idlespr = spr_tv_exprheat
 		if global.panic
 			idlespr = spr_tv_exprpanic
-		if obj_player.isgustavo
+		if obj_parent_player.isgustavo
 		{
 			idlespr = spr_tv_idleG
 			if global.panic

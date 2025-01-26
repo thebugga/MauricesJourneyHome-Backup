@@ -1,4 +1,4 @@
-with (obj_player)
+with (obj_parent_player)
     state = other.savedstate
 var func = dialog[currentdialog][2]
 if (func != -4)

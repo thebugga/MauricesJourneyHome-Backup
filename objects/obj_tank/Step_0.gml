@@ -68,7 +68,7 @@ if ((!instance_exists(spawnenemyID)) && state == states.walk)
 		other.spawnenemyID = id
 	}
 }
-var player = instance_nearest(x, y, obj_player)
+var player = instance_nearest(x, y, obj_parent_player)
 if (bombreset > 0)
 	bombreset--
 if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
@@ -111,7 +111,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		baddieID = other.id

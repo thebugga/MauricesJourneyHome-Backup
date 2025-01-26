@@ -18,7 +18,7 @@ function scr_fakepeppino_walk()
 		sprite_index = spr_fakepeppino_jumpstart
 		movespeed = 0
 	}
-	if (image_xscale != (-(sign((x - obj_player.x)))) && sprite_index == spr_fakepeppino_walk)
+	if (image_xscale != (-(sign((x - obj_parent_player.x)))) && sprite_index == spr_fakepeppino_walk)
 	{
 		movespeed = 0
 		sprite_index = spr_fakepeppino_idle

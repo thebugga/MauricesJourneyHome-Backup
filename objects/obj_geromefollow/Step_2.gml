@@ -16,7 +16,7 @@ if (state != states.backbreaker)
 			sprite_index = spr_gerome_taunt
 			image_index = irandom(sprite_get_number(sprite_index) - 1)
 			state = states.backbreaker
-			tauntID = instance_create(x, y, obj_baddietaunteffect)
+			tauntID = instance_create(x, y, obj_parent_enemytaunteffect)
 		}
 	}
 }

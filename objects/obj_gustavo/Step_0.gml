@@ -13,7 +13,7 @@ if (sprite_index == spr_gustavo_givepizza)
 }
 if (state == states.normal)
 {
-	var player = instance_nearest(x, y, obj_player)
+	var player = instance_nearest(x, y, obj_parent_player)
 	if (player.x != x)
 		image_xscale = (-(sign((x - player.x))))
 }

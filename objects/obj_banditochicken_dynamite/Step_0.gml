@@ -6,9 +6,9 @@ if (scr_solid(x, (y + 1)) && vsp > 0)
 	if (movespeed > 0)
 		movespeed -= 1
 }
-if (place_meeting((x + hsp), y, obj_solid) or place_meeting((x + hsp), (y + vsp), obj_destructibles) or place_meeting(x, y, obj_baddie))
+if (place_meeting((x + hsp), y, obj_solid) or place_meeting((x + hsp), (y + vsp), obj_destructibles) or place_meeting(x, y, obj_parent_enemy))
 	image_xscale *= -1
-if place_meeting(x, y, obj_player)
+if place_meeting(x, y, obj_parent_player)
 	instance_destroy()
 if (countdown <= 0)
 	instance_destroy()

@@ -6,7 +6,7 @@ switch state
 			hsp = 0
 			vsp = 0
 			sprite_index = spr_meatball_idle
-			if (point_in_camera(x, y, view_camera[0]) && (obj_camera.shake_mag >= 10 or obj_player.state == states.freefallland))
+			if (point_in_camera(x, y, view_camera[0]) && (obj_camera.shake_mag >= 10 or obj_parent_player.state == states.freefallland))
 			{
 				active = 1
 				sprite_index = spr_meatball_roll
@@ -164,7 +164,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

@@ -139,7 +139,7 @@ function scr_player_bombpepup()
 			shake_mag = 10
 			shake_mag_acc = (30 / room_speed)
 		}
-		with (obj_baddie)
+		with (obj_parent_enemy)
 		{
 			if point_in_camera(x, y, view_camera[0])
 			{
@@ -163,7 +163,7 @@ function scr_player_bombpepup()
 			shake_mag = 10
 			shake_mag_acc = (30 / room_speed)
 		}
-		with (obj_baddie)
+		with (obj_parent_enemy)
 		{
 			if point_in_camera(x, y, view_camera[0])
 			{
@@ -206,7 +206,7 @@ function scr_player_bombpepside()
 			shake_mag_acc = (40 / room_speed)
 		}
 		hsp = 0
-		with (obj_baddie)
+		with (obj_parent_enemy)
 		{
 			if point_in_camera(x, y, view_camera[0])
 			{

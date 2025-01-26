@@ -49,7 +49,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 if (state != states.stun)
 	birdcreated = 0
 scr_scareenemy()
-var player = instance_nearest(x, y, obj_player)
+var player = instance_nearest(x, y, obj_parent_player)
 if (ragebuffer > 0)
 	ragebuffer--
 if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
@@ -102,7 +102,7 @@ if (state != states.stun)
 	thrown = false
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		baddieID = other.id

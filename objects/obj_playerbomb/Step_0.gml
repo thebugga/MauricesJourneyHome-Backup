@@ -9,7 +9,7 @@ if (!kick)
 	if (countdown > 0)
 	{
 		countdown--
-		if (!(place_meeting(x, y, obj_player)))
+		if (!(place_meeting(x, y, obj_parent_player)))
 			countdown = 0
 	}
 }

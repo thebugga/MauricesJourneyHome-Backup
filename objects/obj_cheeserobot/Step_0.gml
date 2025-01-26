@@ -48,7 +48,7 @@ if (state != states.stun)
 	thrown = false
 if (bombreset > 0)
 	bombreset--
-var player = instance_nearest(x, y, obj_player)
+var player = instance_nearest(x, y, obj_parent_player)
 if (state != states.pizzagoblinthrow && bombreset <= 0 && grounded)
 {
 	if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 20) && y >= (player.y - 20))
@@ -65,7 +65,7 @@ if (state != states.pizzagoblinthrow && bombreset <= 0 && grounded)
 
 if (boundbox == 0)
 {
-	with (instance_create(x, y, obj_baddiecollisionbox))
+	with (instance_create(x, y, obj_parent_enemycollisionbox))
 	{
 		sprite_index = other.sprite_index
 		mask_index = other.sprite_index

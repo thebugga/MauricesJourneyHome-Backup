@@ -5,4 +5,4 @@ voyage_buffer = 60
 tower_x = 480
 text_x = -240
 stickerray = []
-stickerscount  = [1,2,3];
+stickerscount  = [1,2,3,4,5,6,7];

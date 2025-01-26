@@ -1,6 +1,6 @@
 array_push(stickerray,
 {
-	index : choose_non_repeat(stickerscount),
+	index : irandom(sprite_get_number(spr_voyagelogo_sticker) - 1),
 	scale : 2
 }
 )

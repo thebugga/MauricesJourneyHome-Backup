@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_heatup",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_heatup",
-  "parent":{
-    "name":"Player",
-    "path":"folders/Scripts/Player.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_heatup",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Player",
+    "path": "folders/Scripts/Player.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

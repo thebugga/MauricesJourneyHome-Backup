@@ -1,12 +1,10 @@
 {
-  "$GMShader":"",
-  "%Name":"Shader4",
-  "name":"Shader4",
-  "parent":{
-    "name":"Shaders",
-    "path":"folders/Shaders.yy",
+  "resourceType": "GMShader",
+  "resourceVersion": "1.0",
+  "name": "Shader4",
+  "type": 1,
+  "parent": {
+    "name": "Shaders",
+    "path": "folders/Shaders.yy",
   },
-  "resourceType":"GMShader",
-  "resourceVersion":"2.0",
-  "type":1,
 }

@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_player_Sjumpland",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_player_Sjumpland",
-  "parent":{
-    "name":"Normal",
-    "path":"folders/Scripts/Player/States/Normal.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_player_Sjumpland",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Normal",
+    "path": "folders/Scripts/Player/States/Normal.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

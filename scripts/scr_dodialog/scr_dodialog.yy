@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_dodialog",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_dodialog",
-  "parent":{
-    "name":"Utilities",
-    "path":"folders/Scripts/Utilities.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_dodialog",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Utilities",
+    "path": "folders/Scripts/Utilities.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

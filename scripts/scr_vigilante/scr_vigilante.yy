@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_vigilante",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_vigilante",
-  "parent":{
-    "name":"Boss",
-    "path":"folders/Scripts/Boss.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_vigilante",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Boss",
+    "path": "folders/Scripts/Boss.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

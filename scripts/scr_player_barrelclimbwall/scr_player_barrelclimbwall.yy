@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_player_barrelclimbwall",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_player_barrelclimbwall",
-  "parent":{
-    "name":"Normal",
-    "path":"folders/Scripts/Player/States/Normal.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_player_barrelclimbwall",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Normal",
+    "path": "folders/Scripts/Player/States/Normal.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

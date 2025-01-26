@@ -1,5 +1,5 @@
 scr_initenemy()
-elite = true
+elite = false
 hit = 0
 elitehit = 9
 wastedhits = 0

@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_hillbillymonster",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_hillbillymonster",
-  "parent":{
-    "name":"Monsters",
-    "path":"folders/Scripts/Enemies/Monsters.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_hillbillymonster",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Monsters",
+    "path": "folders/Scripts/Enemies/Monsters.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_ratblock",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_ratblock",
-  "parent":{
-    "name":"Player",
-    "path":"folders/Scripts/Player.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_ratblock",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Player",
+    "path": "folders/Scripts/Player.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

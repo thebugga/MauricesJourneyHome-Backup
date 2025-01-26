@@ -51,12 +51,16 @@ function toggle_collision_function()
 		global.showcollisionarray[i++] = obj_solid;
 		global.showcollisionarray[i++] = obj_slope;
 		global.showcollisionarray[i++] = obj_platform;
+		global.showcollisionarray[i++] = obj_sidePlatform;
+		global.showcollisionarray[i++] = obj_movingplatformnewtrigger;
 		global.showcollisionarray[i++] = obj_secretbigblock;
+		global.showcollisionarray[i++] = obj_secrettile;
 		global.showcollisionarray[i++] = obj_secrettrigger;
 		global.showcollisionarray[i++] = obj_secretblock;
 		global.showcollisionarray[i++] = obj_secretdestroyable;
 		global.showcollisionarray[i++] = obj_secretmetalblock;
 		global.showcollisionarray[i++] = obj_crashplaneblock;
+		global.showcollisionarray[i++] = obj_slopePlatform;
 		global.showcollisionarray[i++] = obj_mach3solid;
 		global.showcollisionarray[i++] = obj_iceblock;
 		global.showcollisionarray[i++] = obj_iceblockslope;
@@ -73,7 +77,7 @@ function toggle_collision_function()
 				visible = global.showcollisions
 		}
 	}
-	layer_set_visible("Tiles_Solid",global.showcollisions)
+	layer_set_visible("Tiles_Solid",global.showcollisions);	
 }
 #endregion
 
@@ -189,136 +193,42 @@ function toggle_hitboxes_function()
 		}
 	}	
 
-
 	#endregion
 	
-#region Noclip
-	function sh_noclip() 
-	{
-		obj_player.state = states.debugstate
-	}
-	function meta_noclip() 
-	{	
-		return {
-			description: "allows you to go through walls"
-		}
-	}
+#region noclip
 
-#endregion
-
-#region Panic
-	function sh_panic(args) {
-		var fill = args[1];
-		global.panic = true
-		global.fill = fill
-    global.wave = 0
-    global.maxwave = (((global.minutes * 60) + global.seconds) * 60)
-    if global.panicbg
-        scr_panicbg_init()
-		with (obj_tv)
-			chunkmax = global.fill
-	}
-	function meta_panic() 
-	{	
-		return {
-			description: "activates pizza time",
-			arguments: ["<fill>"],
-			suggestions: [
-				4000
-			],
-			argumentDescriptions: [
-				"sets fill timer",
-			]
-		}
-	}	
-#endregion
-
-
-
-function sh_switch_char(args)
+#region laps
+function sh_lap(args)
 {
-	with (obj_player)
-	{
-		ispeppino = !ispeppino
-		scr_characterspr();
-	}
+	global.lap = true
+	global.laps++
 }
 
-function meta_switch_char()
+function meta_lap()
 {
 	return 
 	{
-		description: "Switches character",
+		description: "Toggles Lap",
 		arguments: [],
 		suggestions: [],
 		argumentDescriptions: []
 	};
 }
-
-function sh_player_room(args)
+	#endregion
+function sh_noclip(args)
 {
-	var _room = args[1]
-	var _door = args[2]
-	if _room == undefined
-		return "No room defined";
-	if _door == undefined
-		_door = "A";
-	_room = asset_get_index(_room);
-	if _room == -1
-		return "Room does not exist";
-	with (obj_player)
-	{
-		target_room = _room;
-		target_door = _door;
-	}
-	instance_create(x, y, obj_fadeout);
-	return "Attempting to go to room " + room_get_name(_room) + " at door " + _door;
+	with (obj_player1)
+		state = (state == (208 << 0) ? state = (0 << 0) : (208 << 0));
 }
 
-function meta_player_room()
-{
-	var i = 0;
-	var pizza = [];
-	while room_exists(i)
-	{
-		array_push(pizza, room_get_name(i));
-		i++;
-	}
-	return 
-	{
-		description: "Go to given room",
-		arguments: ["<targetRoom>", "<targetDoor:A>"],
-		suggestions: pizza,
-		argumentDescriptions: []
-	};
-}
-
-function sh_alltoppins(args)
-{
-	if !instance_exists(obj_pizzakincheese)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakincheese);
-	if !instance_exists(obj_pizzakintomato)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakintomato);
-	if !instance_exists(obj_pizzakinsausage)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakinsausage);
-	if !instance_exists(obj_pizzakinpineapple)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakinpineapple);
-	if !instance_exists(obj_pizzakinshroom)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakinshroom);
-	global.cheesefollow = true;
-	global.tomatofollow = true;
-	global.sausagefollow = true;
-	global.pineapplefollow = true;
-	global.shroomfollow = true;
-}
-
-function meta_alltoppins()
+function meta_noclip()
 {
 	return 
 	{
-		description: "Gives you all the toppins",
+		description: "Toggles noclip",
 		arguments: [],
 		suggestions: [],
 		argumentDescriptions: []
 	};
 }
+	#endregion

@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_editor_utilities",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_editor_utilities",
-  "parent":{
-    "name":"Editor",
-    "path":"folders/Scripts/Editor.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_editor_utilities",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Editor",
+    "path": "folders/Scripts/Editor.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

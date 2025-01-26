@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_ghostcollectibles",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_ghostcollectibles",
-  "parent":{
-    "name":"Utilities",
-    "path":"folders/Scripts/Utilities.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_ghostcollectibles",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Utilities",
+    "path": "folders/Scripts/Utilities.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

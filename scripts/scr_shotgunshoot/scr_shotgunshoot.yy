@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_shotgunshoot",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_shotgunshoot",
-  "parent":{
-    "name":"Utilities",
-    "path":"folders/Scripts/Utilities.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_shotgunshoot",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Utilities",
+    "path": "folders/Scripts/Utilities.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

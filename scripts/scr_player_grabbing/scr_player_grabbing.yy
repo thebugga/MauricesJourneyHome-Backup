@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_player_grabbing",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_player_grabbing",
-  "parent":{
-    "name":"Normal",
-    "path":"folders/Scripts/Player/States/Normal.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_player_grabbing",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Normal",
+    "path": "folders/Scripts/Player/States/Normal.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

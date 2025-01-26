@@ -2,11 +2,14 @@ if room == rank_room
 	visible = false;
 else
 	visible = true;
-if ispeppino == obj_player1.ispeppino
+if obj_player1.ispeppino == "M"
 {
-	ispeppino = !obj_player1.ispeppino;
-	if !obj_player1.ispeppino && obj_player1.noisecrusher
-		isgustavo = true;
+	character = "D"
+	alarm[0] = 1;
+}
+if obj_player1.ispeppino == "D"
+{
+	character = "M"
 	alarm[0] = 1;
 }
 playerid = obj_player1.id;
@@ -23,5 +26,10 @@ if obj_player1.key_taunt2 && taunttimer <= 0 && usable
 }
 if !isgustavo && obj_player1.key_taunt
 	breakdance_pressed++;
-
+if room == hub_lobby or room == hub_theatre
+{
+	visible = false
+}
+else
+	visible = true
 scr_characterspr()

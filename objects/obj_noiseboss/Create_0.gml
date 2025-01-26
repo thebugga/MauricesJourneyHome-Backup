@@ -4,7 +4,7 @@ with (obj_player1)
 	state = states.ratmount
 	brick = 1
 }
-elite = true
+elite = false
 hit = 0
 elitehit = 8
 wastedhits = 0

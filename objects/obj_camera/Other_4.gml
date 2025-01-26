@@ -7,6 +7,3 @@ with obj_camera
 }
 if global.coop
 	camera_zoom(1, 100);
-if ((global.panic == 1) && global.panicbg)
-    scr_panicbg_init()
-global.wave = (global.maxwave - (global.fill))

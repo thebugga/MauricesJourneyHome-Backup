@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"cutscene_space",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"cutscene_space",
-  "parent":{
-    "name":"Cutscene",
-    "path":"folders/Scripts/Cutscene.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "cutscene_space",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Cutscene",
+    "path": "folders/Scripts/Cutscene.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

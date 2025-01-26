@@ -1,1 +1,1 @@
-targetRoom = garbage_1
+targetRoom = rm_placeholder

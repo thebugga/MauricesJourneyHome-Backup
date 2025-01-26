@@ -139,7 +139,7 @@ function state_player_normal()
 				{
 					idleanim = random_range(0, 100);
 					if (irandom(100) <= 25)
-						fmod_event_one_shot_3d("event:/sfx/voice/myea", x, y);
+						fmod_event_one_shot_3d("event:/sfx/maurice/ok", x, y);
 					image_index = 0;
 					if idleanim <= 16
 						sprite_index = spr_idle1;

@@ -1,11 +1,9 @@
 {
-  "$GMNotes":"",
-  "%Name":"Readme",
-  "name":"Readme",
-  "parent":{
-    "name":"Notes",
-    "path":"folders/Notes.yy",
+  "resourceType": "GMNotes",
+  "resourceVersion": "1.1",
+  "name": "Readme",
+  "parent": {
+    "name": "Notes",
+    "path": "folders/Notes.yy",
   },
-  "resourceType":"GMNotes",
-  "resourceVersion":"2.0",
 }

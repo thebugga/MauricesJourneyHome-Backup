@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"cutscene_set_player_visible",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"cutscene_set_player_visible",
-  "parent":{
-    "name":"Cutscene",
-    "path":"folders/Scripts/Cutscene.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "cutscene_set_player_visible",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Cutscene",
+    "path": "folders/Scripts/Cutscene.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

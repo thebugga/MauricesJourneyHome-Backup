@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"Instakill",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"Instakill",
-  "parent":{
-    "name":"Enemies",
-    "path":"folders/Scripts/Enemies.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "Instakill",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Enemies",
+    "path": "folders/Scripts/Enemies.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

@@ -8,7 +8,7 @@ spritequeue = ds_queue_create();
 ispeppino = false;
 isgustavo = false;
 animatronic = 0;
-character = "P";
+character = "D";
 alarm[0] = 5;
 taunttimer = 0;
 tauntID = noone;
@@ -28,7 +28,7 @@ get_character_spr = function()
 	tauntID = -4;
 	scr_characterspr();
 	
-	if ispeppino
+	if character = "M"
 	{
 		spr_palette = spr_peppalette;
 		spr_idle = spr_player_idle;
@@ -46,7 +46,7 @@ get_character_spr = function()
 		spr_fightball = spr_player_fightball;
 		
 	}
-	else
+	else if character = "D"
 	{
 		spr_palette = spr_noisepalette;
 		spr_idle = spr_playerN_idle;

@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_fakepeppino_hit",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_fakepeppino_hit",
-  "parent":{
-    "name":"Fakepep States",
-    "path":"folders/Scripts/Fakepep States.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_fakepeppino_hit",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Fakepep States",
+    "path": "folders/Scripts/Fakepep States.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

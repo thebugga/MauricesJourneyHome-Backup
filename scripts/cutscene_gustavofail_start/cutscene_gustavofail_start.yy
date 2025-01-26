@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"cutscene_gustavofail_start",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"cutscene_gustavofail_start",
-  "parent":{
-    "name":"Cutscene",
-    "path":"folders/Scripts/Cutscene.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "cutscene_gustavofail_start",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Cutscene",
+    "path": "folders/Scripts/Cutscene.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

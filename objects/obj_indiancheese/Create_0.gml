@@ -38,4 +38,4 @@ heavy = 0
 depth = 0
 jumptimer = 50
 arcprojectiletimer = 25
-elite = true
+elite = false

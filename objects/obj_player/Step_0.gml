@@ -656,24 +656,6 @@ if (state != states.mach2 && state != states.mach3 && state != states.trickjump 
 	ramp = 0
 	ramp_points = 0
 }
-var _toangle = 0
-if grounded
-{
-	if ((!scr_slope()))
-	    _toangle = 0
-	else if (!(place_meeting(x, (y + 1), obj_solid)))
-	{
-	    with (instance_place(x, (y + 1), obj_slope))
-	    {
-				if (sign(image_xscale) == 1)
-					_toangle = point_direction(-image_xscale, image_yscale, 0, 0)
-				else
-					_toangle = point_direction(image_xscale, -image_yscale, 0, 0)
-	    }
-	}
-}
-var _diff = angle_difference(_toangle, angle)
-angle += _diff / 4
 if (state != states.door && state != states.chainsaw && state != states.hit && place_meeting(x, y, obj_boxofpizza))
 	state = states.crouch
 if (shoot_buffer > 0)

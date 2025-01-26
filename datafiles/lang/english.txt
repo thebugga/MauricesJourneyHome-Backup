@@ -1,0 +1,12 @@
+# -----------
+# PROPERTIES
+# -----------
+lang = "en"
+display_name = "ENGLISH"
+custom_fonts = false
+custom_graphics = false
+game_version = "V1.1.02"
+use_ttf = false
+separation_map = " "
+default_letter = "A"
+

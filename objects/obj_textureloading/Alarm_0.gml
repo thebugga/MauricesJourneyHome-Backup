@@ -1,19 +1,27 @@
-if (!(ds_exists(tex_list, 2)))
-	exit;
-if (!ds_list_empty(tex_list))
+var len = array_length(tex_list)
+if (ds_queue_size(global.lang_to_load) > 0)
+    lang_parse_file(ds_queue_dequeue(global.lang_to_load))
+else if (ds_list_size(global.lang_textures_to_load) > 0)
 {
-	var b = ds_list_find_value(tex_list, 0)
-	for (var i = 0; i < array_length(b); i++)
-	{
-		if (!texture_is_ready(b[i]))
-			texture_prefetch(b[i])
-	}
-	ds_list_delete(tex_list, 0)
-	currenttexture++
+    lang_tex--
+    var name = ds_list_find_value(global.lang_textures_to_load, 0)
+    if is_undefined(ds_map_find_value(global.lang_texture_map, name))
+    {
+        var filename = concat("lang/graphics/", name)
+        ds_map_set(global.lang_texture_map, name, sprite_add(filename, 1, false, false, 0, 0))
+    }
+    ds_list_delete(global.lang_textures_to_load, 0)
+}
+else if (len > 0)
+{
+    var tex = array_pop(tex_list)
+    trace("Loading texture: ", tex)
+    if (!texture_is_ready(tex))
+        texture_prefetch(tex)
 }
 else
 {
-	ds_list_destroy(tex_list)
-	room_goto(Oldtitlescreen)
+    room_goto(Oldtitlescreen)
+    screen_apply_vsync()
 }
 alarm[0] = 1

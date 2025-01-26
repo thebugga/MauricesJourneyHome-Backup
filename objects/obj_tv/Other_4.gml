@@ -26,6 +26,8 @@ if (room == rm_test)
 	global.srank = 5000
 else if (room == wizard_1)
 	global.srank = 10000
+else if (room == garbage_1)
+	global.srank = 20000
 global.arank = (global.srank / 2)
 global.brank = (global.srank / 4)
 global.crank = (global.srank / 8)

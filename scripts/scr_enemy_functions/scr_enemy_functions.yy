@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_enemy_functions",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_enemy_functions",
-  "parent":{
-    "name":"States",
-    "path":"folders/Scripts/Enemies/States.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_enemy_functions",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "States",
+    "path": "folders/Scripts/Enemies/States.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

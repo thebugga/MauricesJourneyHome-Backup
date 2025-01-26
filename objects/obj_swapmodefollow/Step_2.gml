@@ -76,7 +76,6 @@ image_blend = obj_player1.image_blend;
 image_xscale = obj_player1.xscale * obj_player1.scale_xs;
 image_yscale = obj_player1.yscale * obj_player1.scale_ys;
 following_moonwalk_fix();
-visible = true;
 
 usable = true;
 if instance_exists(obj_titlecard)

@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_enemy_ratgrabbed",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_enemy_ratgrabbed",
-  "parent":{
-    "name":"States",
-    "path":"folders/Scripts/Enemies/States.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_enemy_ratgrabbed",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "States",
+    "path": "folders/Scripts/Enemies/States.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

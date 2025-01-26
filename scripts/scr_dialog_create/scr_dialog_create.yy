@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scr_dialog_create",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scr_dialog_create",
-  "parent":{
-    "name":"Utilities",
-    "path":"folders/Scripts/Utilities.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scr_dialog_create",
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Utilities",
+    "path": "folders/Scripts/Utilities.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

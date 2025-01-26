@@ -54,8 +54,8 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = (0.15 * room_speed)
 scr_scareenemy()
 var player = instance_nearest(x, y, obj_player)
-//if elite
-//{
+if elite
+{
 	var check = (image_xscale > 0 ? (player.x > x && player.x < (x + 200)) : (player.x < x && player.x > (x - 200)))
 	if (state == states.walk)
 	{
@@ -78,7 +78,7 @@ var player = instance_nearest(x, y, obj_player)
 	}
 	if (ragebuffer > 0)
 		ragebuffer--
-//}
+}
 if (state != states.grabbed)
 	depth = 0
 if (state != states.stun)

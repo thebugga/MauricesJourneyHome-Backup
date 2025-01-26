@@ -18,7 +18,7 @@ switch(logos){
 		alarm[0] = 140
 		break
 	case 2:
-        draw_sprite(spr_BALLS,-1,32,224)
+        draw_sprite(spr_voyage,-1,0,0)
 		break
 }
 		

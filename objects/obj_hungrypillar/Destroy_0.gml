@@ -74,10 +74,7 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 			global.seconds = 30
 			break
 	}
-    global.wave = 0
-    global.maxwave = (((global.minutes * 60) + global.seconds) * 60)
-    global.wave = (global.maxwave - (global.fill))
-    if global.panic
-        scr_panicbg_init()
 	ds_list_add(global.saveroom, id)
+	idkanymore = 0
 }
+

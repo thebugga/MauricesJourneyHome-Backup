@@ -78,7 +78,6 @@ function scr_playersounds()
 		if ((state == states.freefall or sprite_index == spr_piledriver) && !audio_is_playing(freefallsnd))
 		{
 			freefallsnd = audio_play_sound(sfx_groundpoundloop, 1, true)
-			audio_sound_loop_start(freefallsnd, 1.08)
 			sfx_gain(freefallsnd)
 		}
 		else if (state != states.freefall && sprite_index != spr_piledriver && (audio_is_playing(sfx_groundpoundloop)))

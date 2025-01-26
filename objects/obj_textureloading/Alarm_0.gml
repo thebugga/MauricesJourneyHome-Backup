@@ -1,4 +1,5 @@
 var len = array_length(tex_list)
+<<<<<<< Updated upstream
 if (ds_queue_size(global.lang_to_load) > 0)
     lang_parse_file(ds_queue_dequeue(global.lang_to_load))
 else if (ds_list_size(global.lang_textures_to_load) > 0)
@@ -14,6 +15,10 @@ else if (ds_list_size(global.lang_textures_to_load) > 0)
 }
 else if (len > 0)
 {
+=======
+if (len > 0)
+{
+>>>>>>> Stashed changes
     var tex = array_pop(tex_list)
     trace("Loading texture: ", tex)
     if (!texture_is_ready(tex))
@@ -22,6 +27,9 @@ else if (len > 0)
 else
 {
     room_goto(Oldtitlescreen)
+<<<<<<< Updated upstream
     screen_apply_vsync()
+=======
+>>>>>>> Stashed changes
 }
 alarm[0] = 1

@@ -1,5 +1,4 @@
 {
-<<<<<<< Updated upstream
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_manual",
@@ -58,7 +57,6 @@
             {"id":"0e6d4abe-8d39-497d-9baa-1a5c7a8db044","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b213fef6-5322-4f88-96bc-2f3155421ecd","path":"sprites/spr_manual/spr_manual.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"57dea0d2-b6d1-445d-ab9a-69e1358c3681","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f4bb0f8b-75b8-4d1b-ae58-e305b24c52f0","path":"sprites/spr_manual/spr_manual.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
-=======
   "$GMSprite":"",
   "%Name":"spr_manual",
   "bboxMode":0,
@@ -152,7 +150,6 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6fc3863d-3331-44e2-8899-698894a1fe54","path":"sprites/spr_manual/spr_manual.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"bc5c93e9-ba5c-4916-84d1-d93cb89fafbb","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
->>>>>>> Stashed changes
     ],
     "visibleRange": null,
     "lockOrigin": false,

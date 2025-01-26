@@ -7,9 +7,7 @@ switch(logos)
         draw_sprite(spr_tourdep, 0, 0, 0)
 		break
 	case 2:
-<<<<<<< Updated upstream
         draw_sprite(spr_voyage,-1,0,0)
-=======
 	case 3:
 		draw_clear(c_navy)
 		var text_w = sprite_get_width(spr_voyagelogo_text)
@@ -25,7 +23,6 @@ switch(logos)
 				thing.scale = Approach(thing.scale, 1, 0.1)
 			}
 		}
->>>>>>> Stashed changes
 		break
 }
 		

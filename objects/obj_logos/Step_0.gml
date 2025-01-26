@@ -1,7 +1,5 @@
-<<<<<<< Updated upstream
 if obj_player.key_jump2
 logos++
-=======
 if logosbuffer > 0
 	logosbuffer--
 else
@@ -28,4 +26,3 @@ if logos == 2
 	if voyage_state > 1
 		text_x = lerp(text_x, 310, 0.05)
 }
->>>>>>> Stashed changes

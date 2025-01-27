@@ -136,7 +136,7 @@ if (grabbed == 1)
 	}
 	if (obj_parent_player.state == states.superslam)
 	{
-		if (obj_parent_player.character == "P")
+		if (global.playerCharacter == Characters.Maurice)
 		{
 			if (floor(obj_parent_player.image_index) == 0)
 			{

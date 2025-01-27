@@ -39,13 +39,13 @@ function scr_player_Sjumpprep()
 				else
 					sprite_index = spr_superjumppreplight;
 			}
-			if (((character == "M" && !scr_check_superjump()) || character == "D") && grounded && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+			if (((global.playerCharacter == Characters.Maurice && !scr_check_superjump()) || global.playerCharacter == Characters.Doise) && grounded && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 			{
 				instance_create(x, y, obj_explosioneffect);
 				sprite_index = spr_superjump;
 				state = states.Sjump;
-				sjumpvsp = character == "D" ? 15 : -12;
-				superjumptimer = character == "D" ? 200 : 45;
+				sjumpvsp = global.playerCharacter == Characters.Doise ? 15 : -12;
+				superjumptimer = global.playerCharacter == Characters.Doise ? 200 : 45;
 				sjumpangle = 270
 				hsp = 0
 				image_index = 0;

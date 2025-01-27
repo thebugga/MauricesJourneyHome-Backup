@@ -49,7 +49,7 @@ draw_text(960 - ((string_length(finalstr) - 1) * string_width("A")), 540 - 8, fi
 if debug
 {
 	draw_text(32, 32, "fps = " + string(fps_real));
-	draw_text(32, 52, "character = " + string(obj_player1.character));
+	draw_text(32, 52, "character = " + string(global.playerCharacter));
 	draw_text(32, 72, "hsp = " + string(obj_player1.hsp));
 	draw_text(32, 92, "vsp = " + string(obj_player1.vsp));
 	draw_text(32, 112, "movespeed = " + string(obj_player1.movespeed));

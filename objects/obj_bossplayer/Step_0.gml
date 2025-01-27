@@ -46,7 +46,7 @@ if key_jump
 	input_text += "Z"
 if key_slap2
 	input_text += "X"
-if character == "M"
+if global.playerCharacter == Characters.Maurice
 {
 	if string_ends_with(input_text, "ZDLX")
 	{

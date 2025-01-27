@@ -75,12 +75,12 @@ if !stopper
 	{
 		with (obj_player1)
 		{
-			character = other.character[other.selected][1]
+			global.playerCharacter = other.character[other.selected][1]
 			scr_characterspr()
 		}
 		with (obj_player2)
 		{
-			character = other.character[other.selected2][1]
+			global.playerCharacter = other.character[other.selected2][1]
 			scr_characterspr()
 		}
 		if p2_connect
@@ -116,7 +116,7 @@ else
 	var _scale = choose(-1, 1)
 	var q = 
 	{
-		index: choose(spr_player_move, spr_playerN_move, spr_playerV_move, spr_pepperman_move),
+		index: choose_non_repeat(charactersprites),
 		scale: _scale,
 		x: 480 - (1000 * _scale),
 		y: 370,

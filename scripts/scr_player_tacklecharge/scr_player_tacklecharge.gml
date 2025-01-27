@@ -67,7 +67,7 @@ function scr_player_tacklecharge()
 	if (key_down && grounded)
 	{
 		sprite_index = spr_crouchslip
-		if (character == "P")
+		if (global.playerCharacter == Characters.Maurice)
 			machhitAnim = 0
 		state = states.crouchslide
 	}

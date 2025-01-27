@@ -13,7 +13,7 @@ if healthshaketime > 0
 }
 if healthshaketime == 0
 	healthshake = 0;
-if obj_player1.character == "V"
+if global.playerCharacter == Characters.Vigilante
 {
 	if healthold != global.playerhealth
 	{
@@ -22,7 +22,7 @@ if obj_player1.character == "V"
 		healthold = global.playerhealth;
 	}
 }
-else if obj_player1.character == "P"
+else if global.playerCharacter == Characters.Maurice
 {
 	if healthold != global.hp
 	{
@@ -122,7 +122,7 @@ if shoving == 1 && image_index >= 3 && bang == 0
 {
 	with (instance_create(x, y, obj_fallingHUDface))
 	{
-		if ((obj_player1.spotlight == 0 && obj_player1.character == "P") || (obj_player1.spotlight == 1 && obj_player2.character == "P"))
+		if ((obj_player1.spotlight == 0 && global.playerCharacter == Characters.Maurice) || (obj_player1.spotlight == 1 && global.playerCharacter == Characters.Maurice))
 		{
 			sprite = spr_pepinoHUDscream;
 			hsp = random_range(-1, -5);

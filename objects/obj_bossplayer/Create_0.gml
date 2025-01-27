@@ -23,7 +23,7 @@ movespeed = 0
 prevframe = 0
 landAnim = false
 scr_initinput()
-character = obj_player1.character;
+character = global.playerCharacter;
 scr_bosscharacterspr();
 paletteselect = 1;
 player_index = 0;

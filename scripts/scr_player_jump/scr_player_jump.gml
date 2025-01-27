@@ -67,30 +67,6 @@ function state_player_jump()
 			jumpstop = true;
 		}
 	}
-	if character == "PN"
-	{
-		if key_jump && wallclingcooldown == 10
-		{
-			if (place_meeting(x + xscale, y, obj_solid))
-			{
-				fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
-				sprite_index = spr_playerN_wallclingstart;
-				image_index = 0;
-				state = states.hang;
-				xscale *= -1;
-				vsp = 0;
-				doublejump = false;
-			}
-			else if !doublejump && sprite_index != spr_freefall && sprite_index != spr_facestomp
-			{
-				sprite_index = spr_playerN_doublejumpOLD;
-				image_index = 0;
-				jumpstop = false;
-				vsp = -9;
-				doublejump = true;
-			}
-		}
-	}
 	if (global.mort && (sprite_index == spr_mortdoublejump || sprite_index == spr_mortdoublejumpstart))
 	{
 		if vsp > 6
@@ -132,12 +108,12 @@ function state_player_jump()
 			sprite_index = spr_jump;
 			if shotgunAnim
 				sprite_index = spr_shotgunjump;
-			if global.pistol && character == "P"
+			if global.pistol && global.playerCharacter == Characters.Maurice
 				sprite_index = spr_pistoljump1;
 			image_index = 0;
 		};
 	}
-	if !can_jump && character == "N" && key_up && noisedoublejump && input_buffer_jump > 0 && !key_down && !key_attack
+	if !can_jump && global.playerCharacter == Characters.Doise && key_up && noisedoublejump && input_buffer_jump > 0 && !key_down && !key_attack
 	{
 		freefallstart = 0;
 		railmomentum = false;
@@ -156,7 +132,7 @@ function state_player_jump()
 				sprite_index = spr_player_mortland;
 			if sprite_index != spr_shotgunshoot
 				image_index = 0;
-			if global.pistol && character != "N"
+			if global.pistol && global.playerCharacter != Characters.Doise
 				sprite_index = spr_pistolland;
 			input_buffer_secondjump = 0;
 			state = states.normal;
@@ -244,7 +220,7 @@ function state_player_jump()
 			pistolanim = -4;
 			vsp = -6;
 		}
-		else if character != "N"
+		else if global.playerCharacter != Characters.Doise
 		{
 			fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
 			sprite_index = spr_shotgunjump1;
@@ -297,7 +273,7 @@ function state_player_jump()
 	}
 	if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol))
     {
-		if character == "M"
+		if global.playerCharacter == Characters.Maurice
 		{
 	        input_buffer_slap = 0
 	        suplexmove = true
@@ -306,7 +282,7 @@ function state_player_jump()
 	        image_index = 0
 			slaphand = choose(-1, 1)
 		}
-		else if character == "D"
+		else if global.playerCharacter == Characters.Doise
 		{
 	        input_buffer_slap = 0
 	        suplexmove = true
@@ -317,20 +293,20 @@ function state_player_jump()
 			movespeed = 8
 		}
     }
-    else if input_buffer_slap > 0 && key_up && shotgunAnim == 0 && (!global.pistol || character == "D")
+    else if input_buffer_slap > 0 && key_up && shotgunAnim == 0 && (!global.pistol || global.playerCharacter == Characters.Doise)
 	{
 		input_buffer_slap = 0;
 		state = states.punch;
 		image_index = 0;
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
-		if character == "M"
+		if global.playerCharacter == Characters.Maurice
 			vsp = -10;
 		else
 			vsp = -21;
 		movespeed = hsp;
 	}
-	if input_buffer_shoot > 0 && character == "M"
+	if input_buffer_shoot > 0 && global.playerCharacter == Characters.Maurice
 	{
 		input_buffer_shoot = 0
 		sprite_index = spr_pistolshot;
@@ -377,7 +353,7 @@ function state_player_jump()
 					shake_mag_acc = 3 / room_speed;
 				}
 			}
-			else if character != "V" && shoot
+			else if global.playerCharacter != Characters.Vigilante && shoot
 			{
 				sprite_index = spr_pistolshot;
 				image_index = 0;
@@ -389,7 +365,7 @@ function state_player_jump()
 					shake_mag = 3;
 					shake_mag = 3 / room_speed;
 				}
-				if character != "N"
+				if global.playerCharacter != Characters.Doise
 				{
 					with (instance_create(x + (xscale * 20), y, obj_shotgunbullet))
 					{
@@ -408,7 +384,7 @@ function state_player_jump()
 					}
 				}
 			}
-			else if character != "V"
+			else if global.playerCharacter != Characters.Vigilante
 			{
 			}
 		}
@@ -523,7 +499,7 @@ function state_pepperman_jump()
 function scr_player_jump()
 {
 	
-	if character != "PM"
+	if global.playerCharacter != Characters.Pepperman
 		state_player_jump();
 	else
 		state_pepperman_jump();

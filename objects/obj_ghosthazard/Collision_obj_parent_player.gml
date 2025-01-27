@@ -1,6 +1,6 @@
 with (other)
 {
-	if (character == "V")
+	if (global.playerCharacter == Characters.Vigilante)
 		scr_hurtplayer(id)
 	else if ((!isgustavo) && state != states.ghost && state != states.ghostpossess && state != states.actor && state != states.parry && state != states.gotoplayer)
 	{

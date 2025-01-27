@@ -8,7 +8,7 @@ spritequeue = ds_queue_create();
 ispeppino = false;
 isgustavo = false;
 animatronic = 0;
-character = "D";
+global.playerFollowCharacter = Characters.Doise
 alarm[0] = 5;
 taunttimer = 0;
 tauntID = noone;
@@ -26,9 +26,9 @@ get_character_spr = function()
 	breakdance_index = 0;
 	instance_destroy(tauntID);
 	tauntID = -4;
-	scr_characterspr();
+	scr_followcharacterspr();
 	
-	if character = "M"
+	if global.playerFollowCharacter == Characters.Maurice
 	{
 		spr_palette = spr_peppalette;
 		spr_idle = spr_player_idle;
@@ -46,7 +46,7 @@ get_character_spr = function()
 		spr_fightball = spr_player_fightball;
 		
 	}
-	else if character = "D"
+	else if global.playerFollowCharacter == Characters.Doise
 	{
 		spr_palette = spr_noisepalette;
 		spr_idle = spr_playerN_idle;

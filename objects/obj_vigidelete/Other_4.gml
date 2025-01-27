@@ -1,4 +1,4 @@
-if (obj_player1.character == "V")
+if (global.playerCharacter == Characters.Vigilante)
 {
 	with (all)
 	{

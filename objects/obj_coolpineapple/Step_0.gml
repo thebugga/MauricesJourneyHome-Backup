@@ -74,7 +74,7 @@ if (state == states.walk)
 		}
 		if _taunt
 		{
-			taunteffect_inst = instance_create(x, y, obj_parent_enemytaunteffect)
+			taunteffect_inst = instance_create(x, y, obj_baddietaunteffect)
 			sprite_index = spr_coolpinea_taunt
 			image_speed = 0
 			index = choose(0, 1, 2)
@@ -119,7 +119,7 @@ switch state
 				image_xscale = other.image_xscale
 			trail_count = trail_max
 		}
-		if (instance_exists(taunteffect_inst) && taunteffect_inst.object_index == obj_parent_enemytaunteffect)
+		if (instance_exists(taunteffect_inst) && taunteffect_inst.object_index == obj_baddietaunteffect)
 		{
 			instance_destroy(taunteffect_inst)
 			taunteffect_inst = -4

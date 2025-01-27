@@ -1,6 +1,6 @@
 if (other.state != states.gotoplayer && visible)
 {
-    if (obj_player1.character == "V")
+    if (global.playerCharacter == Characters.Vigilante)
         global.playerhealth = clamp((global.playerhealth + 100), 0, 100)
     global.heattime = 60
     with (obj_camera)
@@ -19,7 +19,7 @@ if (other.state != states.gotoplayer && visible)
     {
         for (var xx = 0; xx < 4; xx++)
         {
-            create_collect(_x, _y, (spotplayer.character == "M" ? choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect) : choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5)))
+            create_collect(_x, _y, (spotplayer.global.playerCharacter == Characters.Maurice ? choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect) : choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5)))
             _x += 16
         }
         _x = _xstart

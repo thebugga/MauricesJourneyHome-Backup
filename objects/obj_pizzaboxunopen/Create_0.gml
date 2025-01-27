@@ -1,5 +1,5 @@
 image_speed = 0.35
 content = obj_pizzakinshroom
-if (obj_parent_player.character == "S")
+if (global.playerCharacter == Characters.Snick)
 	instance_destroy()
 depth = -104

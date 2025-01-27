@@ -299,7 +299,7 @@ for (var i = 0; i < 2; i++)
 								sprite_index = spr_stompprep
 						}
 					}
-					if (other.baddieID.thrown == false && (character == "P" or character == "N"))
+					if (other.baddieID.thrown == false && (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.Doise))
 					{
 						movespeed = 0
 						image_index = 0

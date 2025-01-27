@@ -117,7 +117,7 @@ function scr_player_mach3()
 					image_index = 0;
 					sprite_index = spr_mach3jump;
 				}
-				if character == "M"
+				if global.playerCharacter == Characters.Maurice
 					vsp = jumpspeed;
 				else
 					vsp = -13;
@@ -164,7 +164,7 @@ function scr_player_mach3()
 			if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0))
 			{
 				sprite_index = spr_machslidestart;
-				if character == "M"
+				if global.playerCharacter == Characters.Maurice
 					fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);
 				else
 					fmod_event_one_shot_3d("event:/sfx/playerN/break", x, y);
@@ -194,7 +194,7 @@ function scr_player_mach3()
 					sprite_index = spr_mach2jump;
 				else
 					sprite_index = spr_machroll;
-				if character == "V"
+				if global.playerCharacter == Characters.Vigilante
 					sprite_index = spr_playerV_divekickstart;
 			}
 			if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
@@ -204,7 +204,7 @@ function scr_player_mach3()
 					_climb = ledge_bump(40);
 				if _climb
 				{
-					if character == "M"
+					if global.playerCharacter == Characters.Maurice
 					{
 						sprite_index = spr_mach2jump;
 						image_index = 0;
@@ -213,7 +213,7 @@ function scr_player_mach3()
 						fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
 						instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
 					}
-					else if character == "D"
+					else if global.playerCharacter == Characters.Doise
 					{
 						grabclimbbuffer = 0;
 						if movespeed < 1
@@ -252,7 +252,7 @@ function scr_player_mach3()
 				image_index = 0;
 				sprite_index = spr_breakdanceuppercut;
 				fmod_event_instance_play(snd_uppercut);
-				if character == "M"
+				if global.playerCharacter == Characters.Maurice
 					vsp = -10;
 				else
 					vsp = -21;

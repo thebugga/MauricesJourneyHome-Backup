@@ -1,3 +1,3 @@
 image_speed = 0
-if (obj_parent_player.character == "P")
+if (global.playerCharacter == Characters.Maurice)
 	instance_destroy()

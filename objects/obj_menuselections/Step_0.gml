@@ -61,42 +61,42 @@ if (levelselect == 1)
 					obj_parent_player.targetRoom = desert_1
 					obj_parent_player.player_x = 208
 					obj_parent_player.player_y = 434
-					obj_parent_player.character = "P"
+					global.playerCharacter = "P"
 				}
 				if (other.b == 1)
 				{
 					obj_parent_player.targetRoom = floor2_room0
 					obj_parent_player.player_x = 208
 					obj_parent_player.player_y = 434
-					obj_parent_player.character = "P"
+					global.playerCharacter = "P"
 				}
 				if (other.b == 2)
 				{
 					obj_parent_player.targetRoom = floor3_room0
 					obj_parent_player.player_x = 976
 					obj_parent_player.player_y = 434
-					obj_parent_player.character = "P"
+					global.playerCharacter = "P"
 				}
 				if (other.b == 3)
 				{
 					obj_parent_player.targetRoom = floor4_room0
 					obj_parent_player.player_x = 304
 					obj_parent_player.player_y = 402
-					obj_parent_player.character = "P"
+					global.playerCharacter = "P"
 				}
 				if (other.b == 4)
 				{
 					obj_parent_player.targetRoom = floor5_room1
 					obj_parent_player.player_x = 244
 					obj_parent_player.player_y = 187
-					obj_parent_player.character = "P"
+					global.playerCharacter = "P"
 				}
 				if (other.b == 5)
 				{
 					obj_parent_player.targetRoom = golf_room1
 					obj_parent_player.player_x = 176
 					obj_parent_player.player_y = 402
-					obj_parent_player.character = "P"
+					global.playerCharacter = "P"
 				}
 			}
 		}
@@ -108,14 +108,14 @@ if (levelselect == 1)
 				{
 					obj_parent_player.player_x = 250
 					obj_parent_player.player_y = 250
-					obj_parent_player.character = "P"
+					global.playerCharacter = "P"
 				}
 				if (other.b == 1)
 				{
 					obj_parent_player.targetRoom = floor2_roomtreasure
 					obj_parent_player.player_x = 250
 					obj_parent_player.player_y = 250
-					obj_parent_player.character = "P"
+					global.playerCharacter = "P"
 				}
 			}
 		}

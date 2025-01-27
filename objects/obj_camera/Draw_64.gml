@@ -167,7 +167,7 @@ var defaultx = 80
 var defaulty = 406
 xx = defaultx
 yy = defaulty
-if (obj_player1.character == "V")
+if (global.playerCharacter == Characters.Vigilante)
 {
 	for (var i = 0; i < 9; i++) 
 	{

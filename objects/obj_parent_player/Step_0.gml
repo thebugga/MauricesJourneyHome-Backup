@@ -846,7 +846,7 @@ if (sprite_index == spr_player_idlevomitblood && image_index > 28 && image_index
 	with (instance_create((x + random_range(-5, 5)), (y + 46), obj_vomit))
 		sprite_index = spr_vomit2
 }
-if (global.stylethreshold >= 2 && (!instance_exists(angryeffectid)) && state == states.normal && character != "V")
+if (global.stylethreshold >= 2 && (!instance_exists(angryeffectid)) && state == states.normal && global.playerCharacter != Characters.Vigilante)
 {
 	with (instance_create(x, y, obj_angrycloud))
 	{
@@ -1000,7 +1000,7 @@ if (toomuchalarm1 > 0)
 }
 if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && room != timesuproom && room != hub_tutorial1)
 {
-	if (room != Oldtitlescreen && room != rank_room)
+	if (room != Oldtitlescreen && room != rank_room && room != rm_placeholder)
 	{
 		with (obj_camera)
 		{
@@ -1019,7 +1019,7 @@ if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalha
 		with (instance_create(-960, 0, obj_technicaldifficulty))
 		{
 			playerid = other.id
-			if other.character == "M"
+			if global.playerCharacter == Characters.Maurice
 			{
 				sprite = spr_technicaldifficulty_maurice
 				if other.isgustavo
@@ -1035,12 +1035,12 @@ if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalha
 		y = -100
 	}
 }
-if (character == "S")
+if (global.playerCharacter == Characters.Snick)
 {
 	if (state == states.crouchjump or state == states.crouch)
 		state = states.normal
 }
-if (character != "PM")
+if (global.playerCharacter != Characters.Pepperman)
 {
 	if (!(scr_solid_player(x, y)))
 	{

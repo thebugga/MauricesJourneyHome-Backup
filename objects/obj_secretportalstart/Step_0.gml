@@ -37,7 +37,7 @@ switch sprite_index
 						sprite_index = spr_bodyslamstart
 						image_index = 0
 						state = states.freefallprep
-						vsp = (character == "P" ? -5 : -7)
+						vsp = (global.playerCharacter == Characters.Maurice ? -5 : -7)
 					}
 					else if isgustavo
 						state = states.ratmount;
@@ -85,7 +85,7 @@ switch sprite_index
 								image_index = 0;
 								state = states.freefallprep;
 								freefallsmash = 0;
-								vsp = (character == "P") ? -5 : -7;
+								vsp = (global.playerCharacter == Characters.Maurice) ? -5 : -7;
 							}
 							if state == states.knightpep
 							{

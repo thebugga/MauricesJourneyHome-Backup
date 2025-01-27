@@ -67,7 +67,7 @@ function scr_player_handstandjump()
 		image_index = 0;
 		sprite_index = airattackdashstart;
 	}
-	if (grounded && sprite_index == airattackdash && (!key_attack || character == "N") && global.attackstyle != 2)
+	if (grounded && sprite_index == airattackdash && (!key_attack || global.playerCharacter == Characters.Doise) && global.attackstyle != 2)
 	{
 		if global.attackstyle != 3
 		{
@@ -81,7 +81,7 @@ function scr_player_handstandjump()
 			image_index = image_number - 6;
 		}
 	}
-	if grounded && sprite_index == airattackdash && key_attack && character != "N" && global.attackstyle != 2
+	if grounded && sprite_index == airattackdash && key_attack && global.playerCharacter != Characters.Doise && global.attackstyle != 2
 		state = states.mach2;
 	if (floor(image_index) == image_number - 1 && sprite_index == attackdash)
 		state = states.normal;

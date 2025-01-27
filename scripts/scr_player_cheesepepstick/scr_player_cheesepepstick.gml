@@ -46,7 +46,7 @@ function scr_player_cheesepepstickside()
 	hurted = 1
 	move = (key_down - key_up)
 	moveside = (key_left + key_right)
-	if (character == "P" && (!ispeppino) && move != 0)
+	if (global.playerCharacter == Characters.Maurice && (!ispeppino) && move != 0)
 		yscale = (-move)
 	hsp = 0
 	vsp = (move * movespeed)

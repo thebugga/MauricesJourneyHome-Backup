@@ -160,7 +160,7 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
 					break
             }
 
-            if ((!argument2) && instance_exists(obj_player1) && (obj_player1.character != "M"))
+            if ((!argument2) && instance_exists(obj_player1) && (global.playerCharacter != Characters.Maurice))
             {
                 var n = asset_get_index(concat(sprite_get_name(argument0), "N"))
                 if (n > -1)

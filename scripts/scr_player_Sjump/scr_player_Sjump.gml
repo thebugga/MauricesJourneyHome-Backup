@@ -15,7 +15,7 @@ function scr_player_Sjump()
 	{
 		if superjumptimer > 0
 		{
-			if character == "D"
+			if global.playerCharacter == Characters.Doise
 			{
 				hsp = -lengthdir_x(sjumpvsp, sjumpangle)
 				vsp = -lengthdir_y(sjumpvsp, sjumpangle)
@@ -42,7 +42,7 @@ function scr_player_Sjump()
 				piledrivereffect = 15;
 			}
 		}
-		else if character != "D"
+		else if global.playerCharacter != Characters.Doise
 		{
 			sprite_index = spr_machfreefall;
 			if grounded
@@ -54,9 +54,9 @@ function scr_player_Sjump()
 		hsp = 0
 		vsp = -10
 	}
-	if character != "D"
+	if global.playerCharacter != Characters.Doise
 		sjumpvsp -= 0.1;
-	if character == "V" && image_index > 3
+	if global.playerCharacter == Characters.Vigilante && image_index > 3
 		vsp = -11;
 	if sprite_index == spr_player_supersidejump
 	{
@@ -65,7 +65,7 @@ function scr_player_Sjump()
 		hsp = xscale * a;
 		vsp = 0;
 	}
-	if character == "D" && (sprite_index == spr_superjump || sprite_index == spr_playerN_jetpackboost || sprite_index == spr_playerN_jetpackboostdown) 
+	if global.playerCharacter == Characters.Doise && (sprite_index == spr_superjump || sprite_index == spr_playerN_jetpackboost || sprite_index == spr_playerN_jetpackboostdown) 
 	{
 		if sjumpangle == 270
 			sjumpangle += choose(-5, 5)
@@ -163,7 +163,7 @@ function scr_player_Sjump()
 		state = states.Sjumpland;
 		machhitAnim = false;
 	}
-	else if ((key_attack2 || input_buffer_slap > 0) && character == "M" && sprite_index != spr_superspringplayer)
+	else if ((key_attack2 || input_buffer_slap > 0) && global.playerCharacter == Characters.Maurice && sprite_index != spr_superspringplayer)
 	{
 			jumpstop = true
 			input_buffer_slap = 0

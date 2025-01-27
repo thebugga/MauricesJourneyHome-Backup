@@ -275,6 +275,15 @@ enum states
 	machcancelstart,
 	machcancel
 }
+
+enum Characters
+{
+	Maurice,
+	Doise,
+	Vigilante,
+	Pepperman,
+	Snick
+}
 pal_swap_init_system(shd_pal_swapper)
 global.coop = false
 global.swapmode = false

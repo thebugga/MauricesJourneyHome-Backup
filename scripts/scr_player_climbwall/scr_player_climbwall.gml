@@ -3,9 +3,9 @@ function scr_player_climbwall()
 	if (windingAnim < 200)
 	    windingAnim++
     vsp = -wallspeed
-	if character == "M"
+	if global.playerCharacter == Characters.Maurice
 		wallspeed -= 0.25
-	else if character == "D"
+	else if global.playerCharacter == Characters.Doise
 	{
 	    if (wallspeed < 20)
 	        wallspeed += 0.15
@@ -30,7 +30,7 @@ function scr_player_climbwall()
 	}
 	if (!(scr_solid((x + xscale), y)))
 	{
-	    if character == "M"
+	    if global.playerCharacter == Characters.Maurice
 		{
 			instance_create(x, y, obj_jumpdust)
 		    vsp = 0
@@ -38,7 +38,7 @@ function scr_player_climbwall()
 			movespeed = wallspeed
 		    state = states.mach2
 		}
-		else if character == "D"
+		else if global.playerCharacter == Characters.Doise
         {
             with (instance_create(x, y, obj_noiseeffect))
                 sprite_index = spr_noisewalljumpeffect

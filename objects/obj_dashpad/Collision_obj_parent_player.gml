@@ -14,7 +14,7 @@ with (other)
 				y = other.y - 14
 			vsp = 0
 			create_particle(x, y, particle.jumpdust, 0)
-			if (character == "P" or character == "V")
+			if (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.Vigilante)
 			{
 				if (sprite_index != spr_dashpadmach)
 				{
@@ -22,7 +22,7 @@ with (other)
 					image_index = 0
 				}
 			}
-			else if (character == "N")
+			else if (global.playerCharacter == Characters.Doise)
 			{
 				if (sprite_index != spr_crazyrun)
 				{

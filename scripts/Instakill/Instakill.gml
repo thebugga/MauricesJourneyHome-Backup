@@ -5,7 +5,7 @@ function Instakill()
 		other.baddieID.grabbedby = 1
 		if (object_index == obj_player2)
 			other.baddieID.grabbedby = 2
-		if (state == states.mach3 && sprite_index != spr_mach3hit && (character == "P" or character == "V"))
+		if (state == states.mach3 && sprite_index != spr_mach3hit && (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.Vigilante))
 		{
 			if (fightball == 0)
 				sprite_index = spr_mach3hit
@@ -48,7 +48,7 @@ function Instakill()
 				vsp = -10
 			boxxedpepjump = 10
 		}
-		if (character == "PM" && state == states.freefall)
+		if (global.playerCharacter == Characters.Pepperman && state == states.freefall)
 		{
 			vsp = -11
 			state = states.jump

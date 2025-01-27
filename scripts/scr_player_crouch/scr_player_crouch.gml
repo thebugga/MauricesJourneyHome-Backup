@@ -72,7 +72,7 @@ function scr_player_crouch()
 		crouchAnim = 1
 		jumpAnim = 1
 	}
-	if (key_shoot2 && character == "V" && (!instance_exists(dynamite_inst)))
+	if (key_shoot2 && global.playerCharacter == Characters.Vigilante && (!instance_exists(dynamite_inst)))
 	{
 		if (move == 0)
 			movespeed = 0
@@ -88,7 +88,7 @@ function scr_player_crouch()
 			playerid = other.id
 		}
 	}
-	if (key_slap2 && character == "V")
+	if (key_slap2 && global.playerCharacter == Characters.Vigilante)
 	{
 		if (move == 0)
 			movespeed = 0

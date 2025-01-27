@@ -12,17 +12,17 @@ function scr_collide_destructibles()
 					GamepadSetVibration(0, 0.8, 0.8, 0.5)
 					instance_destroy()
 				}
-				with (instance_place(((x + hsp) + xscale), y, obj_destructibles))
+				with (instance_place(((x +obj_player1. hsp) + xscale), y, obj_destructibles))
 				{
 					GamepadSetVibration(0, 0.8, 0.8, 0.5)
 					instance_destroy()
 				}
-				with (instance_place(x, ((y + vsp) + 1), obj_destructibles))
+				with (instance_place(x, ((y + obj_player1.vsp) + 1), obj_destructibles))
 				{
 					GamepadSetVibration(0, 0.8, 0.8, 0.5)
 					instance_destroy()
 				}
-				with (instance_place(x, ((y + vsp) - 1), obj_destructibles))
+				with (instance_place(x, ((y + obj_player1.vsp) - 1), obj_destructibles))
 				{
 					GamepadSetVibration(0, 0.8, 0.8, 0.5)
 					instance_destroy()
@@ -48,9 +48,9 @@ function scr_collide_destructibles()
 				with (instance_place((x + xscale), y, obj_fightballblock))
 					instance_destroy()
 			}
-			if (state == states.ratmountattack && place_meeting((x + hsp), y, obj_gustavodestroyable))
+			if (state == states.ratmountattack && place_meeting((x +obj_player1. hsp), y, obj_gustavodestroyable))
 			{
-				with (instance_place((x + hsp), y, obj_gustavodestroyable))
+				with (instance_place((x +obj_player1. hsp), y, obj_gustavodestroyable))
 				{
 					GamepadSetVibration(0, 0.8, 0.8, 0.5)
 					instance_destroy()
@@ -58,9 +58,9 @@ function scr_collide_destructibles()
 			}
 			if (state == states.trashroll or state == states.boxxedpepspin or ratmount_movespeed == 12 or state == states.ratmountpunch or state == states.ratmounttumble or state == states.punch or state == states.handstandjump or state == states.ratmountattack or state == states.lungeattack or state == states.cheeseball or state == states.bombpepside or state == states.rocket or state == states.shotgundash or state == states.faceplant or state == states.slipnslide or state == states.tacklecharge or sprite_index == spr_barrelroll or state == states.chainsawbump or state == states.mach3 or state == states.knightpep or state == states.machroll or state == states.knightpepslopes or state == states.knightpepattack or state == states.tumble or state == states.hookshot or state == states.shoulderbash)
 			{
-				if place_meeting((x + hsp), y, obj_destructibles)
+				if place_meeting((x +obj_player1. hsp), y, obj_destructibles)
 				{
-					with (instance_place((x + hsp), y, obj_destructibles))
+					with (instance_place((x +obj_player1. hsp), y, obj_destructibles))
 					{
 						GamepadSetVibration(0, 0.8, 0.8, 0.5)
 						instance_destroy()
@@ -136,20 +136,20 @@ function scr_collide_destructibles()
 			}
 			if (vsp >= 0 && (state == states.freefall or state == states.superslam or state == states.freefallland or state == states.ratmountgroundpound or (state == states.slipbanan && vsp >= 10)))
 			{
-				if place_meeting(x, ((y + vsp) + 2), obj_destructibles)
+				if place_meeting(x, ((y + obj_player1.vsp) + 2), obj_destructibles)
 				{
-					with (instance_place(x, ((y + vsp) + 2), obj_destructibles))
+					with (instance_place(x, ((y + obj_player1.vsp) + 2), obj_destructibles))
 					{
 						with (_obj_player)
 						{
-							if place_meeting(x, ((y + vsp) + 2), obj_bigdestructibles)
+							if place_meeting(x, ((y + obj_player1.vsp) + 2), obj_bigdestructibles)
 							{
-								var _inst = instance_place(x, ((y + vsp) + 2), obj_bigdestructibles)
+								var _inst = instance_place(x, ((y + obj_player1.vsp) + 2), obj_bigdestructibles)
 								if instance_exists(_inst)
 								{
 									var j = 0
 									var _max = 256
-									while (!(place_meeting(x, ((y + vsp) + 1), obj_bigdestructibles)))
+									while (!(place_meeting(x, ((y + obj_player1.vsp) + 1), obj_bigdestructibles)))
 									{
 										y += 1
 										j++
@@ -177,12 +177,12 @@ function scr_collide_destructibles()
 			{
 				with (obj_destructibles)
 				{
-					if place_meeting((x - _obj_player.hsp), y, _obj_player)
+					if place_meeting((x - obj_player1.hsp), y, _obj_player)
 					{
 						var _destroyed = 0
 						with (_obj_player)
 						{
-							if (place_meeting((x + hsp), y, obj_bigdestructibles) && state != states.crouchslide && state != states.mach2 && state != states.machroll)
+							if (place_meeting((x +obj_player1. hsp), y, obj_bigdestructibles) && state != states.crouchslide && state != states.mach2 && state != states.machroll)
 							{
 								state = states.finishingblow
 								sprite_index = spr_player_lungehit

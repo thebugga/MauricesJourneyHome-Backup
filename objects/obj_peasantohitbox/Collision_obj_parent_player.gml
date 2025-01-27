@@ -1,6 +1,6 @@
 with (other)
 {
-	//if (character == "V")
+	//if (global.playerCharacter == Characters.Vigilante)
 	//	scr_hurtplayer(id)
 	//else
 	if (state != states.mach3 && (state != states.chainsaw or tauntstoredstate != states.mach3) && state != states.boots && state != states.gameover && state != states.rideweenie && state != states.gotoplayer)

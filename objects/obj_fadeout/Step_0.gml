@@ -82,7 +82,7 @@ if instance_exists(obj_parent_player)
 			xscale = 1
 			movespeed = 12
 			sprite_index = spr_machslidestart;
-			if character == "M"
+			if global.playerCharacter == Characters.Maurice
 				fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);
 			else
 				fmod_event_one_shot_3d("event:/sfx/playerN/break", x, y);
@@ -94,7 +94,7 @@ if instance_exists(obj_parent_player)
 				obj_player2.xscale = 1
 				obj_player2.movespeed = 12
 				obj_player2.sprite_index = spr_machslidestart;
-				if obj_player2.character == "M"
+				if global.playerCharacter == Characters.Maurice
 					fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);
 				else
 					fmod_event_one_shot_3d("event:/sfx/playerN/break", x, y);

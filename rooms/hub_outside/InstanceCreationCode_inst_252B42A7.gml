@@ -1,0 +1,1 @@
+global.playerFollowCharacter = Characters.Doise

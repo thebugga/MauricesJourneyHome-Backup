@@ -6,6 +6,6 @@ with (other)
 	global.collected = 0
 	global.collectsound = 0
 }
-if (obj_parent_player.character == "S")
+if (global.playerCharacter == Characters.Snick)
 	sprite_index = spr_snickcollectible1
 depth = 11

@@ -320,22 +320,9 @@ function state_player_normal()
 			jumpAnim = true;
 		state = states.jump;
 	}
-	if input_buffer_shoot > 0 && character == "M"
-	{
-		input_buffer_shoot = 0
-		sprite_index = spr_pistolshot;
-		image_index = 0;
-		state = states.pistolaim
-		with (instance_create(x + (xscale * 20), y, obj_shotgunbullet))
-		{
-			pistol = true;
-			sprite_index = spr_peppinobullet;
-			image_xscale = other.xscale;
-		}
-	}
     if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol))
     {
-		if character == "M"
+		if global.playerCharacter == Characters.Maurice
 		{
 	        input_buffer_slap = 0
 	        suplexmove = true
@@ -344,7 +331,7 @@ function state_player_normal()
 	        image_index = 0
 			slaphand = choose(-1, 1)
 		}
-		else if character == "D"
+		else if global.playerCharacter == Characters.Doise
 		{
 	        input_buffer_slap = 0
 	        suplexmove = true
@@ -362,7 +349,7 @@ function state_player_normal()
         image_index = 0
         sprite_index = spr_breakdanceuppercut
         fmod_event_instance_play(snd_uppercut)
-        if character == "M"
+        if global.playerCharacter == Characters.Maurice
             vsp = -14
         else
             vsp = -20
@@ -444,7 +431,7 @@ function state_pepperman_normal()
 	}
 	if (sprite_index == spr_pepperman_throw && floor(image_index) == image_number - 1)
 		sprite_index = spr_pepperman_idle;
-	if (move != 0 && (floor(image_index) == 4 || floor(image_index) == 11) && steppy == 0 && character != "V")
+	if (move != 0 && (floor(image_index) == 4 || floor(image_index) == 11) && steppy == 0 && global.playerCharacter != Characters.Vigilante)
 	{
 		instance_create(x, y + 38, obj_cloudeffect);
 		steppy = true;
@@ -464,7 +451,7 @@ function pepperman_grab_reset()
 }
 function scr_player_normal()
 {
-	if character != "PM"
+	if global.playerCharacter != Characters.Pepperman
 		state_player_normal();
 	else
 		state_pepperman_normal();

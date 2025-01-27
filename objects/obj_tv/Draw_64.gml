@@ -5,7 +5,7 @@ draw_set_halign(fa_center)
 draw_set_color(c_white)
 if is_bossroom()
 	exit;
-if obj_player1.character == "D"
+if global.playerCharacter == Characters.Doise
 {
 	if obj_player1.state == states.Sjump
 		jetpack_x = Approach(jetpack_x, 864, 5)

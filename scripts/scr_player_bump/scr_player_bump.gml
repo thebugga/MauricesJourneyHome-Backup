@@ -29,7 +29,7 @@ function scr_player_bump()
 		}
 		if (sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && sprite_index != spr_rockethitwall && sprite_index != spr_tumbleend && sprite_index != spr_hitwall)
 			sprite_index = ((!skateboarding) ? spr_bump : spr_clownbump)
-		if (sprite_index == spr_hitwall && character == "D")
+		if (sprite_index == spr_hitwall && global.playerCharacter == Characters.Doise)
 		{
 			if image_index >= 3 && !grounded
 				image_speed = 0

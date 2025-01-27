@@ -137,7 +137,7 @@ switch state
 				_transfo = 0
 				break
 		}
-		if obj_player1.character != "M"
+		if global.playerCharacter != Characters.Maurice
 		{
 			var spr = sprite_get_name(idlespr)
 			spr = asset_get_index(concat(spr, "N"))
@@ -180,7 +180,7 @@ switch state
 				if (idleanim <= 0 && floor(image_index) == (image_number - 1))
 				{
 					sprite_index = choose(spr_tv_idleanim1, spr_tv_idleanim2)
-					if obj_player1.character != "M"
+					if global.playerCharacter != Characters.Maurice
 					{
 						var spr = sprite_get_name(sprite_index)
 						spr = asset_get_index(concat(spr, "N"))
@@ -297,7 +297,7 @@ switch state
 		}
 		break
 }
-if obj_player1.character != "M"
+if global.playerCharacter != Characters.Maurice
 {
 	var spr = sprite_get_name(cardboardsprite)
 	spr = asset_get_index(concat(spr, "N"))

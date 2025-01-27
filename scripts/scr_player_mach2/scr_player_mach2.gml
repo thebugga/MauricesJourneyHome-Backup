@@ -38,7 +38,7 @@ function scr_player_mach2()
 			sprite_index = spr_clownjump;
 		vsp = jumpspeed;
 	}
-	if input_buffer_jump > 0 && !can_jump && key_up && character == "P" && noisedoublejump && !skateboarding && sprite_index != spr_clownjump
+	if input_buffer_jump > 0 && !can_jump && key_up && global.playerCharacter == Characters.Maurice && noisedoublejump && !skateboarding && sprite_index != spr_clownjump
 		scr_player_do_noisecrusher();
 	var mortjump = false;
 	if key_jump && global.mort == 1 && sprite_index != spr_mortdoublejump && !grounded && !skateboarding
@@ -153,7 +153,7 @@ function scr_player_mach2()
 			_climb = ledge_bump(32, abs(hsp) + 1);
 		if _climb
 		{
-			if character == "M"
+			if global.playerCharacter == Characters.Maurice
 			{
 				sprite_index = spr_mach2jump;
 				image_index = 0;
@@ -162,7 +162,7 @@ function scr_player_mach2()
 				fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
 				instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
 			}
-			else if character == "D"
+			else if global.playerCharacter == Characters.Doise
 			{
 				grabclimbbuffer = 0;
 				if movespeed < 1
@@ -220,15 +220,15 @@ function scr_player_mach2()
 			sprite_index = spr_mach2jump;
 		else
 			sprite_index = spr_machroll;
-		if character == "V"
+		if global.playerCharacter == Characters.Vigilante
 			sprite_index = spr_playerV_divekickstart;
 	}
-	if (key_attack && !place_meeting(x + xscale, y, obj_solid) && character == "S" && grounded)
+	if (key_attack && !place_meeting(x + xscale, y, obj_solid) && global.playerCharacter == Characters.Snick && grounded)
 	{
 		state = states.handstandjump;
 		movespeed = 0;	
 	}
-	if ((!key_attack && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0) || (character == "S" && move == 0 && grounded))
+	if ((!key_attack && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0) || (global.playerCharacter == Characters.Snick && move == 0 && grounded))
 	{
 		image_index = 0;
 		state = states.machslide;
@@ -262,7 +262,7 @@ function scr_player_mach2()
 		state = states.normal;
 		instance_create(x, y, obj_genericpoofeffect);
 	}
-	if key_slap2 && character == "V"
+	if key_slap2 && global.playerCharacter == Characters.Vigilante
 	{
 		vsp = -5;
 		state = states.revolver
@@ -276,7 +276,7 @@ function scr_player_mach2()
 		}
 		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
 	}
-	if (key_shoot2 && character == "V" && !instance_exists(dynamite_inst))
+	if (key_shoot2 && global.playerCharacter == Characters.Vigilante && !instance_exists(dynamite_inst))
 	{
 		vsp = -5;
 		state = states.dynamite;
@@ -319,7 +319,7 @@ function scr_player_mach2()
 	if input_buffer_slap > 0 && !key_up && !skateboarding && shotgunAnim == 0 && !global.pistol && sprite_index != spr_player_jumpdive1 && sprite_index != spr_player_jumpdive2
 	{
         
-		if character == "M"
+		if global.playerCharacter == Characters.Maurice
 		{
 	        input_buffer_slap = 0
 	        suplexmove = true
@@ -328,7 +328,7 @@ function scr_player_mach2()
 	        image_index = 0
 			slaphand = choose(-1, 1)
 		}
-		else if character == "D"
+		else if global.playerCharacter == Characters.Doise
 		{
 	        input_buffer_slap = 0
 	        suplexmove = true
@@ -346,7 +346,7 @@ function scr_player_mach2()
 		image_index = 0;
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
-		if character == "M"
+		if global.playerCharacter == Characters.Maurice
 			vsp = -10;
 		else
 			vsp = -21;

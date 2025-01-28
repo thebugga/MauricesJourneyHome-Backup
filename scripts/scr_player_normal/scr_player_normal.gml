@@ -329,7 +329,7 @@ function state_player_normal()
 	        fmod_event_instance_play(suplexdashsnd)
 	        state = states.slap
 	        image_index = 0
-			slaphand = choose(-1, 1)
+			slaphand = 1
 		}
 		else if global.playerCharacter == Characters.Doise
 		{

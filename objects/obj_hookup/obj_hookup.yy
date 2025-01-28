@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_hookup",
-  "spriteId": {
-    "name": "spr_flyingladder",
-    "path": "sprites/spr_flyingladder/spr_flyingladder.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

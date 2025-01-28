@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_treasureshadow",
-  "spriteId": {
-    "name": "spr_treasureshadow",
-    "path": "sprites/spr_treasureshadow/spr_treasureshadow.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "managed": true,

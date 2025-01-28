@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_smokingprojectile",
-  "spriteId": {
-    "name": "spr_pizzaslug_smoke",
-    "path": "sprites/spr_pizzaslug_smoke/spr_pizzaslug_smoke.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

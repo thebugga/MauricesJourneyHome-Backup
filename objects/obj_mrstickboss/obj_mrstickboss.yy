@@ -2,17 +2,11 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_mrstickboss",
-  "spriteId": {
-    "name": "spr_mrstick_idle",
-    "path": "sprites/spr_mrstick_idle/spr_mrstick_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
-  "spriteMaskId": {
-    "name": "spr_mrstick_mask",
-    "path": "sprites/spr_mrstick_mask/spr_mrstick_mask.yy",
-  },
+  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
     "name": "par_boss",

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_geromefollow",
-  "spriteId": {
-    "name": "spr_gerome_collected",
-    "path": "sprites/spr_gerome_collected/spr_gerome_collected.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

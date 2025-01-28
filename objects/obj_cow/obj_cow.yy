@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_cow",
-  "spriteId": {
-    "name": "spr_cowidle",
-    "path": "sprites/spr_cowidle/spr_cowidle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

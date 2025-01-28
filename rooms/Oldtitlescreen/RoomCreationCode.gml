@@ -281,7 +281,7 @@ enum Characters
 	Maurice,
 	Doise,
 	Vigilante,
-	Pepperman,
+	Clownmato,
 	Snick
 }
 pal_swap_init_system(shd_pal_swapper)
@@ -309,3 +309,5 @@ global.loadeditor = 0
 room_goto(rm_eggplantdisclaimer)
 instance_destroy(obj_cutscene_handler)
 gamesave_async_load()
+globalvar c_rainbow;
+c_rainbow = make_color_hsv((room_speed/50) mod 255,255,255);

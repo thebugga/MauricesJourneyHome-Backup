@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_rocket",
-  "spriteId": {
-    "name": "spr_rocketnerd",
-    "path": "sprites/spr_rocketnerd/spr_rocketnerd.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

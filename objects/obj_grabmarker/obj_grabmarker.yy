@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_grabmarker",
-  "spriteId": {
-    "name": "spr_grabicon",
-    "path": "sprites/spr_grabicon/spr_grabicon.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

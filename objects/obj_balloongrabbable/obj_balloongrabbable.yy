@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_balloongrabbable",
-  "spriteId": {
-    "name": "spr_ratballoon",
-    "path": "sprites/spr_ratballoon/spr_ratballoon.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

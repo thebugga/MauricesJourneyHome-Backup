@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_ballgoal",
-  "spriteId": {
-    "name": "spr_ballgoal",
-    "path": "sprites/spr_ballgoal/spr_ballgoal.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

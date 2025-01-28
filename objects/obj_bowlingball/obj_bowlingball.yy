@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_bowlingball",
-  "spriteId": {
-    "name": "spr_bowlingballtrap",
-    "path": "sprites/spr_bowlingballtrap/spr_bowlingballtrap.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

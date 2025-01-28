@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_antigrav",
   "spriteId": {
-    "name": "spr_antigrav",
-    "path": "sprites/spr_antigrav/spr_antigrav.yy",
+    "name": "spr_superspring_idle",
+    "path": "sprites/spr_superspring_idle/spr_superspring_idle.yy",
   },
   "solid": false,
   "visible": true,

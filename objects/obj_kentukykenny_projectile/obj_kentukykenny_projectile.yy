@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_kentukykenny_projectile",
-  "spriteId": {
-    "name": "spr_kentukykenny_projectile",
-    "path": "sprites/spr_kentukykenny_projectile/spr_kentukykenny_projectile.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

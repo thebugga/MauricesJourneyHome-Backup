@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_timedgateclock",
-  "spriteId": {
-    "name": "spr_button_idle",
-    "path": "sprites/spr_button_idle/spr_button_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

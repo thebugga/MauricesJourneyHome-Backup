@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_bazooka",
-  "spriteId": {
-    "name": "spr_bazooka_missile",
-    "path": "sprites/spr_bazooka_missile/spr_bazooka_missile.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

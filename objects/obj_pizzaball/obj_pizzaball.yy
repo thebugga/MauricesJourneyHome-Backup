@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_pizzaball",
-  "spriteId": {
-    "name": "spr_pizzaball_idle1",
-    "path": "sprites/spr_pizzaball_idle1/spr_pizzaball_idle1.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

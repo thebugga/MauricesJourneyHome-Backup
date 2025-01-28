@@ -16,11 +16,6 @@ function scr_player_slap()
 		sprite_index = spr_player_slap1
 	if (slaphand == 2)
 		sprite_index = spr_player_slap2
-	if (floor(image_index) == 1 && (!instance_exists(obj_slaphitbox2)))
-	{
-		with instance_create(x, y, obj_slaphitbox2)
-			playerid = other.id
-	}
 	if floor(image_index) == (image_number - 1)
 	{
 		if input_buffer_slap == 0

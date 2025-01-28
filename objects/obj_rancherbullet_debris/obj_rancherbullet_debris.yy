@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_rancherbullet_debris",
-  "spriteId": {
-    "name": "spr_ranchbullet",
-    "path": "sprites/spr_ranchbullet/spr_ranchbullet.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_gabbie",
   "spriteId": {
-    "name": "Sprite2862",
-    "path": "sprites/Sprite2862/Sprite2862.yy",
+    "name": "spr_gabbie",
+    "path": "sprites/spr_gabbie/spr_gabbie.yy",
   },
   "solid": false,
   "visible": true,

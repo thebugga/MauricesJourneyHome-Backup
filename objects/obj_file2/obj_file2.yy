@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_file2",
-  "spriteId": {
-    "name": "spr_file2empty",
-    "path": "sprites/spr_file2empty/spr_file2empty.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

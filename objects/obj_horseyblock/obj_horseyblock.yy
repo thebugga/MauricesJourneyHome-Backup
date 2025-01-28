@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_horseyblock",
-  "spriteId": {
-    "name": "spr_horsey_cage",
-    "path": "sprites/spr_horsey_cage/spr_horsey_cage.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

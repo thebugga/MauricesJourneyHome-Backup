@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_hoop",
-  "spriteId": {
-    "name": "spr_hoop",
-    "path": "sprites/spr_hoop/spr_hoop.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

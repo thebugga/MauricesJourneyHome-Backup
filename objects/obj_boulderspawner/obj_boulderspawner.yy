@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_boulderspawner",
-  "spriteId": {
-    "name": "spr_meatball_idle",
-    "path": "sprites/spr_meatball_idle/spr_meatball_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "managed": true,

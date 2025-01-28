@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_trashOLD",
-  "spriteId": {
-    "name": "spr_trash",
-    "path": "sprites/spr_trash/spr_trash.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

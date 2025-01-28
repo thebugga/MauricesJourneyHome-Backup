@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_conveyorspawner",
-  "spriteId": {
-    "name": "spr_factoryspawner",
-    "path": "sprites/spr_factoryspawner/spr_factoryspawner.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

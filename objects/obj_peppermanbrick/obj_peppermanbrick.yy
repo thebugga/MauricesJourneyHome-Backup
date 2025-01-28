@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_peppermanbrick",
-  "spriteId": {
-    "name": "spr_bowlingballfalling",
-    "path": "sprites/spr_bowlingballfalling/spr_bowlingballfalling.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

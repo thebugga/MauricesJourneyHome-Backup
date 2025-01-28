@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noisegoblin_arrow",
-  "spriteId": {
-    "name": "spr_archergoblin_arrow",
-    "path": "sprites/spr_archergoblin_arrow/spr_archergoblin_arrow.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

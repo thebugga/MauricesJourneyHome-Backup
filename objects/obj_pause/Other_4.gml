@@ -9,7 +9,7 @@ if (room == characterselect or room == rm_levelselect or string_copy(room_get_na
 		exit;
 	}
 	]
-	pause_menu[1] = ["OPTIONS", spr_file1, function()
+	pause_menu[1] = ["OPTIONS", spr_player_bossintro, function()
 	{
 		scr_soundeffect(sfx_enemyprojectile)
 		instance_create(x, y, obj_option)
@@ -40,7 +40,7 @@ else
 		exit;
 	}
 	]
-	pause_menu[1] = ["OPTIONS", spr_file1, function()
+	pause_menu[1] = ["OPTIONS", spr_player_bossintro, function()
 	{
 		scr_soundeffect(sfx_enemyprojectile)
 		instance_create(x, y, obj_option)

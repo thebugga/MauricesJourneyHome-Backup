@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_banditobomb",
-  "spriteId": {
-    "name": "spr_banditodynamite",
-    "path": "sprites/spr_banditodynamite/spr_banditodynamite.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

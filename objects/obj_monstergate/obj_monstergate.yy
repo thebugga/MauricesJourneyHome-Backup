@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_monstergate",
-  "spriteId": {
-    "name": "spr_alertgate",
-    "path": "sprites/spr_alertgate/spr_alertgate.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

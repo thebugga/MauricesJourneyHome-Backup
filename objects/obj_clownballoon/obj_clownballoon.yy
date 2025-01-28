@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_clownballoon",
-  "spriteId": {
-    "name": "spr_balloon",
-    "path": "sprites/spr_balloon/spr_balloon.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

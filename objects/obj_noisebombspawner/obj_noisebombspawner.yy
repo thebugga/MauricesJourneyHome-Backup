@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noisebombspawner",
-  "spriteId": {
-    "name": "spr_noise_throwbomb",
-    "path": "sprites/spr_noise_throwbomb/spr_noise_throwbomb.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noisetrap_crosshair",
-  "spriteId": {
-    "name": "spr_canoncrosshair",
-    "path": "sprites/spr_canoncrosshair/spr_canoncrosshair.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

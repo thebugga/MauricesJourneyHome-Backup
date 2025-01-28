@@ -398,7 +398,7 @@ function state_pepperman_normal()
 	if move != 0 && movespeed == 0
 		xscale = move;
 	hsp = xscale * movespeed;
-	if sprite_index != spr_pepperman_throw
+	if sprite_index != spr_mach1
 	{
 		if hsp != 0
 			sprite_index = spr_move;
@@ -421,16 +421,16 @@ function state_pepperman_normal()
 		state = states.jump;
 		sprite_index = spr_fall;
 	}
-	if (key_attack && (!place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == noone && sprite_index != spr_pepperman_throw)
+	if (key_attack && (!place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == noone && sprite_index != spr_mach1)
 	{
 		if move != 0
 			xscale = move;
 		state = states.shoulderbash;
-		sprite_index = spr_pepperman_shoulderstart;
+		sprite_index = spr_mach1;
 		image_index = 0;
 	}
-	if (sprite_index == spr_pepperman_throw && floor(image_index) == image_number - 1)
-		sprite_index = spr_pepperman_idle;
+	if (sprite_index == spr_mach1 && floor(image_index) == image_number - 1)
+		sprite_index = spr_idle;
 	if (move != 0 && (floor(image_index) == 4 || floor(image_index) == 11) && steppy == 0 && global.playerCharacter != Characters.Vigilante)
 	{
 		instance_create(x, y + 38, obj_cloudeffect);
@@ -451,7 +451,7 @@ function pepperman_grab_reset()
 }
 function scr_player_normal()
 {
-	if global.playerCharacter != Characters.Pepperman
+	if global.playerCharacter != Characters.Clownmato
 		state_player_normal();
 	else
 		state_pepperman_normal();

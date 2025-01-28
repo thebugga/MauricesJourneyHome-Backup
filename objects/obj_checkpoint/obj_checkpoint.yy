@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_checkpoint",
-  "spriteId": {
-    "name": "spr_checkpoint",
-    "path": "sprites/spr_checkpoint/spr_checkpoint.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

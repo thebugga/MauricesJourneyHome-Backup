@@ -93,7 +93,7 @@ var p_color = global.prank_enemykilled ? c_white : c_gray
 draw_sprite_ext(spr_toppinshroom_pause, 0, hud_xx-100, hud_yy, 1, 1, 0, global.toppintotal == 5 ? c_white : c_gray, alpha)
 draw_sprite_ext(spr_secretblock, 0, hud_xx-25, hud_yy, 1, 1, 0, global.secretfound >= 3 ? c_white : c_gray, alpha)
 draw_text_color(hud_xx+50, hud_yy + 50, "P", p_color, p_color, p_color, p_color, alpha)
-draw_sprite_ext(spr_gerome_taunt, 0, hud_xx+100, hud_yy, 1, 1, 0, global.treasure ? c_white : c_gray, alpha)
+draw_sprite_ext(spr_treasure1, 0, hud_xx+100, hud_yy, 1, 1, 0, global.treasure ? c_white : c_gray, alpha)
 draw_set_alpha(alpha)
 draw_text(hud_xx-75, hud_yy + 50, global.toppintotal)
 draw_text(hud_xx, hud_yy + 50, global.secretfound)

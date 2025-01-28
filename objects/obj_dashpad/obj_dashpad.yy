@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_dashpad",
-  "spriteId": {
-    "name": "spr_dashpad",
-    "path": "sprites/spr_dashpad/spr_dashpad.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

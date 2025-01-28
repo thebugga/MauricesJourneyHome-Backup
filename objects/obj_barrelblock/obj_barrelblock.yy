@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_barrelblock",
-  "spriteId": {
-    "name": "spr_barrelblock",
-    "path": "sprites/spr_barrelblock/spr_barrelblock.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

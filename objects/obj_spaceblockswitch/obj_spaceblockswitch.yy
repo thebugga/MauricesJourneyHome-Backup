@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_spaceblockswitch",
-  "spriteId": {
-    "name": "spr_switchblock_happy",
-    "path": "sprites/spr_switchblock_happy/spr_switchblock_happy.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

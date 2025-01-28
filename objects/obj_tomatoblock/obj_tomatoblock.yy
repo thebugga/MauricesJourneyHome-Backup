@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_tomatoblock",
-  "spriteId": {
-    "name": "spr_tomatoblock",
-    "path": "sprites/spr_tomatoblock/spr_tomatoblock.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

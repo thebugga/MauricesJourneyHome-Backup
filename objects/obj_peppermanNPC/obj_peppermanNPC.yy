@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_peppermanNPC",
-  "spriteId": {
-    "name": "spr_pepperman_idle",
-    "path": "sprites/spr_pepperman_idle/spr_pepperman_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

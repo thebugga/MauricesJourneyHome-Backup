@@ -102,7 +102,7 @@ function scr_player_tumble()
 		vsp /= 2
 		jumpstop = 1
 	}
-	if (grounded && vsp > 0 && (!(place_meeting(x, y, obj_bigcheese))))
+	if (grounded && vsp > 0)
 		jumpstop = 0
 	if (input_buffer_jump < 8 && grounded && hsp != 0 && sprite_index == spr_tumble)
 	{

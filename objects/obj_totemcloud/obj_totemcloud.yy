@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_totemcloud",
-  "spriteId": {
-    "name": "spr_totemcloud_idle",
-    "path": "sprites/spr_totemcloud_idle/spr_totemcloud_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

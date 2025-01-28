@@ -242,8 +242,11 @@ function sh_character(argument0)
         case "Vigilante":
             choosen_character = Characters.Vigilante;
             break;
-        case "Pepperman":
-            choosen_character = Characters.Pepperman;
+        case "Clownmato":
+            choosen_character = Characters.Clownmato;
+            break;
+        case "Snick":
+            choosen_character = Characters.Snick;
             break;
     }
     
@@ -437,7 +440,7 @@ function meta_throwarc()
 
 function sh_editor(args)
 {
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		targetRoom = editor_room;
 		targetDoor = "A";
@@ -497,7 +500,7 @@ function sh_set_combo(args)
 		return "Combo not defined";
 	global.combo = get_real(combo);
 	global.combotime = get_real(combotime);
-	with (obj_player)
+	with (obj_parent_player)
 		supercharge = 10;
 }
 
@@ -663,7 +666,7 @@ function sh_player_room(args)
 	_room = asset_get_index(_room);
 	if _room == -1
 		return "Room does not exist";
-	with (obj_player)
+	with (obj_parent_player)
 	{
 		targetRoom = _room;
 		targetDoor = _door;
@@ -766,7 +769,7 @@ function sh_player_set_state(state)
 	_state = ds_map_find_value(state_map, _state);
 	if !is_undefined(_state)
 	{
-		with (obj_player)
+		with (obj_parent_player)
 		{
 			if object_index == obj_player1 || global.coop
 			{

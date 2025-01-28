@@ -1040,7 +1040,7 @@ if (global.playerCharacter == Characters.Snick)
 	if (state == states.crouchjump or state == states.crouch)
 		state = states.normal
 }
-if (global.playerCharacter != Characters.Pepperman)
+if (global.playerCharacter != Characters.Clownmato)
 {
 	if (!(scr_solid_player(x, y)))
 	{
@@ -1053,7 +1053,7 @@ if (global.playerCharacter != Characters.Pepperman)
 		mask_index = spr_crouchmask
 }
 else
-	mask_index = spr_pepperman_mask
+	mask_index = spr_player_mask
 if (state == states.gottreasure or sprite_index == spr_knightpepstart or sprite_index == spr_knightpepthunder or state == states.keyget or state == states.chainsaw or state == states.door or state == states.ejected or state == states.victory or state == states.comingoutdoor or state == states.gameover or state == states.gotoplayer or state == states.policetaxi or state == states.actor or place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))
 	cutscene = 1
 else

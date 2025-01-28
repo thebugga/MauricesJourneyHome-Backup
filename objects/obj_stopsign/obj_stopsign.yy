@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_stopsign",
-  "spriteId": {
-    "name": "spr_stopsign",
-    "path": "sprites/spr_stopsign/spr_stopsign.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

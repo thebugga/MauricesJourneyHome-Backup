@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_taxi",
-  "spriteId": {
-    "name": "spr_taxiidle",
-    "path": "sprites/spr_taxiidle/spr_taxiidle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

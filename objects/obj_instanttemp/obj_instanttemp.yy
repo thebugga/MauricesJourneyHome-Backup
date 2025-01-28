@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_instanttemp",
-  "spriteId": {
-    "name": "spr_heater1",
-    "path": "sprites/spr_heater1/spr_heater1.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

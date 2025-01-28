@@ -2,17 +2,11 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_peppermanOLD",
-  "spriteId": {
-    "name": "spr_pepperman_idle",
-    "path": "sprites/spr_pepperman_idle/spr_pepperman_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
-  "spriteMaskId": {
-    "name": "spr_pepperman_mask",
-    "path": "sprites/spr_pepperman_mask/spr_pepperman_mask.yy",
-  },
+  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
     "name": "par_boss",

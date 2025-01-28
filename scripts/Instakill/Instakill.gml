@@ -48,7 +48,7 @@ function Instakill()
 				vsp = -10
 			boxxedpepjump = 10
 		}
-		if (global.playerCharacter == Characters.Pepperman && state == states.freefall)
+		if (global.playerCharacter == Characters.Clownmato && state == states.freefall)
 		{
 			vsp = -11
 			state = states.jump

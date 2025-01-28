@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noisebomb",
-  "spriteId": {
-    "name": "spr_noisebomb",
-    "path": "sprites/spr_noisebomb/spr_noisebomb.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

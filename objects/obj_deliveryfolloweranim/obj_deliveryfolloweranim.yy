@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_deliveryfolloweranim",
-  "spriteId": {
-    "name": "spr_gnomepizza_dead",
-    "path": "sprites/spr_gnomepizza_dead/spr_gnomepizza_dead.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

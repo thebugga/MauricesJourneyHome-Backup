@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_nuketerminal",
-  "spriteId": {
-    "name": "spr_warterminal",
-    "path": "sprites/spr_warterminal/spr_warterminal.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_cleaningwater",
-  "spriteId": {
-    "name": "spr_water",
-    "path": "sprites/spr_water/spr_water.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

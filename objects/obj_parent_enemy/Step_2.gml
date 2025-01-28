@@ -11,11 +11,11 @@ if (state == states.stun && (!thrown))
 	linethrown = false
 if (object_index != obj_pizzaball && (place_meeting((x + 1), y, obj_spike) or place_meeting((x - 1), y, obj_spike) or place_meeting(x, (y + 1), obj_spike) or place_meeting(x, (y - 1), obj_spike)))
 	instance_destroy()
-if (state != states.grabbed && state != states.pummel && object_index != obj_pepbat && object_index != obj_ghoul && object_index != obj_fakesanta && use_collision)
+if (state != states.grabbed && state != states.pummel && object_index != obj_fakesanta && use_collision)
 	scr_collide()
 if (invtime > 0)
 	invtime--
-if (sprite_index == walkspr && hsp != 0 && floor(image_index) == (image_number - 1) && object_index != obj_ghoul)
+if (sprite_index == walkspr && hsp != 0 && floor(image_index) == (image_number - 1))
 	create_particle((x - (image_xscale * 20)), (y + 43), particle.cloudeffect, 0)
 if (state == states.walk)
 	image_speed = (0.35 + (global.baddiespeed * 0.05))

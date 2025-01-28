@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_morthook",
-  "spriteId": {
-    "name": "spr_morthook2",
-    "path": "sprites/spr_morthook2/spr_morthook2.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_sausageeyes",
-  "spriteId": {
-    "name": "spr_sausageman_idle",
-    "path": "sprites/spr_sausageman_idle/spr_sausageman_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

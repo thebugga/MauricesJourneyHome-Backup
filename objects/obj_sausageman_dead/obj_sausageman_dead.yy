@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_sausageman_dead",
-  "spriteId": {
-    "name": "spr_sausageman_shot",
-    "path": "sprites/spr_sausageman_shot/spr_sausageman_shot.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

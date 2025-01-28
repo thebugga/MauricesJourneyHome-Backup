@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_arena_pizzaportal",
-  "spriteId": {
-    "name": "spr_pizzaportal_appear",
-    "path": "sprites/spr_pizzaportal_appear/spr_pizzaportal_appear.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -79,27 +79,6 @@ function draw_enemy(_kungfu, usepalette)
 		}
 		if (object_index == obj_peppinoclone or usepalette)
 			shader_reset()
-		if (object_index == obj_hamkuff)
-		{
-			if (state == states.blockstance && instance_exists(playerid))
-			{
-				var x1 = (x + 3)
-				var y1 = (y + 30)
-				if (sprite_index == spr_hamkuff_chain2)
-				{
-					x1 = (x + 7)
-					y1 = (y + 33)
-				}
-				var dis = point_distance(x1, y1, playerid.x, playerid.y)
-				var w = 24
-				var len = (dis div w)
-				var dir = point_direction(x1, y1, playerid.x, (playerid.y + 16))
-				var xx = lengthdir_x(w, dir)
-				var yy = lengthdir_y(w, dir)
-				for (i = 0; i < len; i++)
-					draw_sprite_ext(spr_hamkuff_sausage, -1, (x1 + (xx * i)), (y1 + (yy * i)), 1, 1, dir, b, 1)
-			}
-		}
 	}
 }
 function draw_superslam_enemy()

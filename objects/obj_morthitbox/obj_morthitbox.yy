@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_morthitbox",
-  "spriteId": {
-    "name": "spr_morthitbox",
-    "path": "sprites/spr_morthitbox/spr_morthitbox.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "managed": true,

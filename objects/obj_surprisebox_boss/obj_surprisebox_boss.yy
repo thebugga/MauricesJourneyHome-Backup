@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_surprisebox_boss",
-  "spriteId": {
-    "name": "spr_bighitbox",
-    "path": "sprites/spr_bighitbox/spr_bighitbox.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

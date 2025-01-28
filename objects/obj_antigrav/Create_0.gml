@@ -1,6 +1,6 @@
 image_speed = 0.35
 depth = -5
-mask_index = spr_presentbox_idle
+mask_index = spr_superspring_idle
 use_collision = 0
 hsp = 0
 vsp = 0

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_totem",
-  "spriteId": {
-    "name": "spr_totemcheese",
-    "path": "sprites/spr_totemcheese/spr_totemcheese.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

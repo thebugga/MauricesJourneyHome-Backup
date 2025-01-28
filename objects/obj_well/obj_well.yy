@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_well",
-  "spriteId": {
-    "name": "spr_well",
-    "path": "sprites/spr_well/spr_well.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

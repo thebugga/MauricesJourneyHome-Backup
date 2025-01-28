@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_controls",
-  "spriteId": {
-    "name": "spr_controls",
-    "path": "sprites/spr_controls/spr_controls.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

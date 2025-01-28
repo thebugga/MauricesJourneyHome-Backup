@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_jumpscare",
-  "spriteId": {
-    "name": "spr_staticjumpscare",
-    "path": "sprites/spr_staticjumpscare/spr_staticjumpscare.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

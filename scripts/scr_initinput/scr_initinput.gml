@@ -2,7 +2,6 @@ function scr_initinput(open_savedata = true)
 {
 	tdp_input_init();
 	global.spr_gamepadbuttons = spr_gamepadbuttons;
-	global.spr_joystick = spr_santa;
 	
 	if open_savedata
 		ini_open("saveData.ini");

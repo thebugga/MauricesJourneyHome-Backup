@@ -1,7 +1,5 @@
 function scr_enemy_stun()
 {
-	if (object_index == obj_ninja)
-		attack = 1
 	switch global.stylethreshold
 	{
 		case 0:
@@ -20,19 +18,10 @@ function scr_enemy_stun()
 	if (stuntouchbuffer > 0)
 		stuntouchbuffer--
 	var t = thrown
-	if (sprite_index != spr_tank_hitwall)
-	{
 		if (thrown == false)
 			sprite_index = stunfallspr
 		else
 			sprite_index = spr_dead
-	}
-	else if (floor(image_index) == (image_number - 1) && sprite_index == spr_tank_hitwall)
-	{
-		state = states.walk
-		stunned = 0
-		sprite_index = spr_tank_walk
-	}
 	image_speed = 0.35
 	if linethrown
 	{

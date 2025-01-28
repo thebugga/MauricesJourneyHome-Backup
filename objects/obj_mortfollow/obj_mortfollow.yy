@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_mortfollow",
-  "spriteId": {
-    "name": "spr_mortidle",
-    "path": "sprites/spr_mortidle/spr_mortidle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

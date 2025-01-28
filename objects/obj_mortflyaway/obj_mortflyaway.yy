@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_mortflyaway",
-  "spriteId": {
-    "name": "spr_mortspawn",
-    "path": "sprites/spr_mortspawn/spr_mortspawn.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

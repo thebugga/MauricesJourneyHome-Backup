@@ -19,7 +19,7 @@ if (other.state != states.gotoplayer && visible)
     {
         for (var xx = 0; xx < 4; xx++)
         {
-            create_collect(_x, _y, (spotplayer.global.playerCharacter == Characters.Maurice ? choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect) : choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5)))
+            create_collect(_x, _y, (global.playerCharacter == Characters.Maurice ? choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect) : choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5)))
             _x += 16
         }
         _x = _xstart

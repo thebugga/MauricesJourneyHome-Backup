@@ -46,7 +46,7 @@ function scr_player_ladder()
 	crouchslideAnim = 1
 	crouchAnim = 1
 	machhitAnim = 0
-	if ((!(place_meeting(x, y, obj_ladder))) && (!(place_meeting(x, y, obj_stairs))))
+	if ((!(place_meeting(x, y, obj_ladder))) && (!(place_meeting(x, y, obj_ladder))))
 	{
 		landAnim = 0
 		jumpAnim = 0

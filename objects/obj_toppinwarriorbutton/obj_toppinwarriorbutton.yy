@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_toppinwarriorbutton",
-  "spriteId": {
-    "name": "spr_toppinwarriorbutton",
-    "path": "sprites/spr_toppinwarriorbutton/spr_toppinwarriorbutton.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_mushroom",
-  "spriteId": {
-    "name": "spr_bigmushroom",
-    "path": "sprites/spr_bigmushroom/spr_bigmushroom.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

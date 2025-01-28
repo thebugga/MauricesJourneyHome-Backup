@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_movingplatform",
-  "spriteId": {
-    "name": "spr_chigaco",
-    "path": "sprites/spr_chigaco/spr_chigaco.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_reversespaceblock",
-  "spriteId": {
-    "name": "spr_spaceblock_closed",
-    "path": "sprites/spr_spaceblock_closed/spr_spaceblock_closed.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

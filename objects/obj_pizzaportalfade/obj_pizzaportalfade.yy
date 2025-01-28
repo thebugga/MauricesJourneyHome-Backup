@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_pizzaportalfade",
-  "spriteId": {
-    "name": "spr_pizzaportalfade",
-    "path": "sprites/spr_pizzaportalfade/spr_pizzaportalfade.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

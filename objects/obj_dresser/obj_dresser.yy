@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_dresser",
   "spriteId": {
-    "name": "sprite1343",
-    "path": "sprites/sprite1343/sprite1343.yy",
+    "name": "spr_palettedresser",
+    "path": "sprites/spr_palettedresser/spr_palettedresser.yy",
   },
   "solid": false,
   "visible": true,

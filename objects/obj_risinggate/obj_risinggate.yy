@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_risinggate",
-  "spriteId": {
-    "name": "spr_entrancegate",
-    "path": "sprites/spr_entrancegate/spr_entrancegate.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

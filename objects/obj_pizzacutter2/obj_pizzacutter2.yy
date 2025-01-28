@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_pizzacutter2",
-  "spriteId": {
-    "name": "spr_pizzacuttersaw",
-    "path": "sprites/spr_pizzacuttersaw/spr_pizzacuttersaw.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

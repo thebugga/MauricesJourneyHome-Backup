@@ -21,15 +21,15 @@
   "width": 32,
   "height": 32,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "backgroundgroup",
+    "path": "texturegroups/backgroundgroup",
   },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7613d6cc-b388-4c9e-8d04-a7e0c85d38f2",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"56c6a9bb-e9fc-4faf-bee4-1e36f95f0f80",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9659e339-56cb-48f5-8d1b-aa5dd06e1275",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d8869f13-6546-4b9c-a7e0-de23074c0ee7",},
   ],
   "sequence": {
     "resourceType": "GMSequence",
@@ -37,7 +37,7 @@
     "name": "spr_minipillar",
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 10.0,
+    "playbackSpeed": 30.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
@@ -46,8 +46,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9ce6f7f1-5f09-4cb4-bb3a-fced54728fa9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7613d6cc-b388-4c9e-8d04-a7e0c85d38f2","path":"sprites/spr_minipillar/spr_minipillar.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"c82446aa-34c2-46f0-ac60-15ebcd741186","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"56c6a9bb-e9fc-4faf-bee4-1e36f95f0f80","path":"sprites/spr_minipillar/spr_minipillar.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0ddff2f8-a696-4526-b568-e6862c816f2b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9659e339-56cb-48f5-8d1b-aa5dd06e1275","path":"sprites/spr_minipillar/spr_minipillar.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"36c432be-7cd6-4a6b-9d5f-6af38136ba79","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d8869f13-6546-4b9c-a7e0-de23074c0ee7","path":"sprites/spr_minipillar/spr_minipillar.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
@@ -66,13 +66,13 @@
     "eventStubScript": null,
   },
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"998135b9-daf3-400a-ad18-a3c016ed40d4","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2ab0224f-6437-475f-9ef8-7f824191665c","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": {
-    "left": 8,
-    "top": 8,
-    "right": 8,
-    "bottom": 8,
+    "left": 9,
+    "top": 10,
+    "right": 7,
+    "bottom": 9,
     "guideColour": [
       4294902015,
       4294902015,
@@ -90,11 +90,11 @@
       0,
     ],
     "resourceVersion": "1.0",
-    "loadedVersion": {},
+    "loadedVersion": null,
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Level structure",
-    "path": "folders/Sprites/Level structure.yy",
+    "name": "Sprites",
+    "path": "folders/Sprites.yy",
   },
 }

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_bigspitcheesespike",
-  "spriteId": {
-    "name": "spr_spitcheese_bigspike",
-    "path": "sprites/spr_spitcheese_bigspike/spr_spitcheese_bigspike.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -299,7 +299,6 @@ function __global_object_depths()
 	global.__objectNames[49] = "obj_cheeseslime"
 	global.__objectNames[50] = "obj_cheeserobot"
 	global.__objectNames[51] = "obj_robot"
-	global.__objectNames[52] = "obj_pizzagoblin"
 	global.__objectNames[53] = "obj_piraneapple"
 	global.__objectNames[54] = "obj_coolpinea"
 	global.__objectNames[55] = "obj_bigcheese"

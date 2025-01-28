@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_soundtrap",
-  "spriteId": {
-    "name": "spr_presentbox_idle",
-    "path": "sprites/spr_presentbox_idle/spr_presentbox_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

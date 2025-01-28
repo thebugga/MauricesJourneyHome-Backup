@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_exitdoorsign",
-  "spriteId": {
-    "name": "spr_exitsign",
-    "path": "sprites/spr_exitsign/spr_exitsign.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "managed": true,

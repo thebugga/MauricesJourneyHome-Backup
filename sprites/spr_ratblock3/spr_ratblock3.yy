@@ -73,6 +73,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Rat block",
-    "path": "folders/Sprites/Level structure/Rat block.yy",
+    "path": "folders/Sprites/Rat block.yy",
   },
 }

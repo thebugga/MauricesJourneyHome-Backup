@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_evilbanana",
-  "spriteId": {
-    "name": "spr_banana1",
-    "path": "sprites/spr_banana1/spr_banana1.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

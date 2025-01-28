@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_current",
-  "spriteId": {
-    "name": "spr_current",
-    "path": "sprites/spr_current/spr_current.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

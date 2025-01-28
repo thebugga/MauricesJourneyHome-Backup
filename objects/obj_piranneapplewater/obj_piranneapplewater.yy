@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_piranneapplewater",
-  "spriteId": {
-    "name": "spr_piraneapplewater",
-    "path": "sprites/spr_piraneapplewater/spr_piraneapplewater.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

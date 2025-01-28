@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_enguardehitbox",
-  "spriteId": {
-    "name": "spr_enguardehitbox",
-    "path": "sprites/spr_enguardehitbox/spr_enguardehitbox.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

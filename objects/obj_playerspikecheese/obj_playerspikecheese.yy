@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_playerspikecheese",
-  "spriteId": {
-    "name": "spr_spitcheese_spike",
-    "path": "sprites/spr_spitcheese_spike/spr_spitcheese_spike.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

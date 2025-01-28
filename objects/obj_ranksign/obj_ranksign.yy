@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_ranksign",
-  "spriteId": {
-    "name": "spr_ranksign",
-    "path": "sprites/spr_ranksign/spr_ranksign.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "managed": true,

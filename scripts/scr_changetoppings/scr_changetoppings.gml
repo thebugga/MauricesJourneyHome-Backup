@@ -5,9 +5,9 @@ function scr_changetoppings()
 	{
 		if (ds_list_find_index(global.saveroom, id) == -1)
 		{
-			if _spotplayer.global.playerCharacter == Characters.Maurice
+			if _global.playerCharacter == Characters.Maurice
 				sprite_index = choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect)
-			if _spotplayer.global.playerCharacter == Characters.Doise
+			if _global.playerCharacter == Characters.Doise
 				sprite_index = choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5)
 			instance_create((x + (sprite_width / 2)), (y + (sprite_height / 2)), obj_cloudeffect)
 			repeat (3)
@@ -18,9 +18,9 @@ function scr_changetoppings()
 	{
 		if (ds_list_find_index(global.saveroom, id) == -1)
 		{
-			if _spotplayer.global.playerCharacter == Characters.Maurice
+			if _global.playerCharacter == Characters.Maurice
 				sprite_index = choose(spr_pizzacollect1, spr_pizzacollect2, spr_pizzacollect3)
-			if _spotplayer.global.playerCharacter == Characters.Doise
+			if _global.playerCharacter == Characters.Doise
 				sprite_index = choose(spr_pizzacollect1halloween, spr_pizzacollect2halloween, spr_pizzacollect3halloween)
 			instance_create((x + (sprite_width / 2)), (y + (sprite_height / 2)), obj_cloudeffect)
 			repeat (3)
@@ -31,9 +31,9 @@ function scr_changetoppings()
 	{
 		if (ds_list_find_index(global.saveroom, id) == -1)
 		{
-			if _spotplayer.global.playerCharacter == Characters.Maurice
+			if _global.playerCharacter == Characters.Maurice
 				sprite_index = spr_giantpizza
-			if _spotplayer.global.playerCharacter == Characters.Doise
+			if _global.playerCharacter == Characters.Doise
 				sprite_index = spr_giantpizzahalloween
 			instance_create((x + (sprite_width / 2)), (y + (sprite_height / 2)), obj_cloudeffect)
 			repeat (5)
@@ -44,9 +44,9 @@ function scr_changetoppings()
 	{
 		if (ds_list_find_index(global.saveroom, id) == -1)
 		{
-			if _spotplayer.global.playerCharacter == Characters.Maurice
+			if _global.playerCharacter == Characters.Maurice
 				sprite_index = spr_destroyable2
-			if _spotplayer.global.playerCharacter == Characters.Doise
+			if _global.playerCharacter == Characters.Doise
 				sprite_index = spr_halloweensmallblock
 			instance_create((x + (sprite_width / 2)), (y + (sprite_height / 2)), obj_cloudeffect)
 			repeat (3)
@@ -57,9 +57,9 @@ function scr_changetoppings()
 	{
 		if (ds_list_find_index(global.saveroom, id) == -1)
 		{
-			if _spotplayer.global.playerCharacter == Characters.Maurice
+			if _global.playerCharacter == Characters.Maurice
 				sprite_index = spr_bigbreakable
-			if _spotplayer.global.playerCharacter == Characters.Doise
+			if _global.playerCharacter == Characters.Doise
 				sprite_index = spr_halloweenbigblock
 			instance_create((x + (sprite_width / 2)), (y + (sprite_height / 2)), obj_cloudeffect)
 			repeat (3)

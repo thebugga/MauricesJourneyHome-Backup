@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_antigravbubble",
-  "spriteId": {
-    "name": "spr_antigrav_bubble",
-    "path": "sprites/spr_antigrav_bubble/spr_antigrav_bubble.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

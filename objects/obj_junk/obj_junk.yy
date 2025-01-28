@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_junk",
-  "spriteId": {
-    "name": "spr_junk",
-    "path": "sprites/spr_junk/spr_junk.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

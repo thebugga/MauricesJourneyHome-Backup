@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_knightplatform",
-  "spriteId": {
-    "name": "spr_knightplatform",
-    "path": "sprites/spr_knightplatform/spr_knightplatform.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

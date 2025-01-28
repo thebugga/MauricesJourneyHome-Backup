@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_deliverypizzabox",
-  "spriteId": {
-    "name": "spr_gnomepizza_pickup",
-    "path": "sprites/spr_gnomepizza_pickup/spr_gnomepizza_pickup.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

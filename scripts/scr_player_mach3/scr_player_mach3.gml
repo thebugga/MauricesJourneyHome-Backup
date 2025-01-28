@@ -325,11 +325,6 @@ function scr_player_mach3()
 				}
 			}
 	var b = false;
-	with obj_hamkuff
-	{
-		if state == states.blockstance && playerid == other.id
-			b = true;
-	}
 	if (!instance_exists(dashcloudid) && grounded && !place_meeting(x, y + 1, obj_water) && !b)
 	{
 		with (instance_create(x, y, obj_superdashcloud))

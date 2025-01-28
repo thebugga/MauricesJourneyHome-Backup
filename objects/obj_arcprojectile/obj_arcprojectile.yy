@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_arcprojectile",
-  "spriteId": {
-    "name": "spr_indiancheese_axe",
-    "path": "sprites/spr_indiancheese_axe/spr_indiancheese_axe.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

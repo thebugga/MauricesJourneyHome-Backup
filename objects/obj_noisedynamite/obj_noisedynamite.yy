@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noisedynamite",
-  "spriteId": {
-    "name": "spr_noisedynamite",
-    "path": "sprites/spr_noisedynamite/spr_noisedynamite.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

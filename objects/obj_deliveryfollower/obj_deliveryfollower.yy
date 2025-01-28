@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_deliveryfollower",
-  "spriteId": {
-    "name": "spr_gnomepizza_idle",
-    "path": "sprites/spr_gnomepizza_idle/spr_gnomepizza_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

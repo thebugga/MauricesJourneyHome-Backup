@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noiserock",
-  "spriteId": {
-    "name": "spr_noiserock",
-    "path": "sprites/spr_noiserock/spr_noiserock.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

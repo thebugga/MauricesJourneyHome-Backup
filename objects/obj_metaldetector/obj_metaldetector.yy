@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_metaldetector",
-  "spriteId": {
-    "name": "spr_metaldetector",
-    "path": "sprites/spr_metaldetector/spr_metaldetector.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

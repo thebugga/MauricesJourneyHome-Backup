@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_timedgate",
-  "spriteId": {
-    "name": "spr_timedgate",
-    "path": "sprites/spr_timedgate/spr_timedgate.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

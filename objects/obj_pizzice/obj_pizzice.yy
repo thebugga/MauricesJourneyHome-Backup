@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_pizzice",
-  "spriteId": {
-    "name": "spr_pizzice_walk",
-    "path": "sprites/spr_pizzice_walk/spr_pizzice_walk.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

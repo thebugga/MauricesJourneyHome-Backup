@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_haystackrope",
-  "spriteId": {
-    "name": "spr_haystackrope",
-    "path": "sprites/spr_haystackrope/spr_haystackrope.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

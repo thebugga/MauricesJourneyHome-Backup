@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_farmer2",
-  "spriteId": {
-    "name": "spr_farmer1_idle",
-    "path": "sprites/spr_farmer1_idle/spr_farmer1_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

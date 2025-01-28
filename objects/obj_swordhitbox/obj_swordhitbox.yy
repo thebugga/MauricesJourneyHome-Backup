@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_swordhitbox",
-  "spriteId": {
-    "name": "spr_swordhitbox",
-    "path": "sprites/spr_swordhitbox/spr_swordhitbox.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "managed": true,

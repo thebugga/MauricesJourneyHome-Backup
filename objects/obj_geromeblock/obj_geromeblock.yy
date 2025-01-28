@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_geromeblock",
-  "spriteId": {
-    "name": "spr_minipillar",
-    "path": "sprites/spr_minipillar/spr_minipillar.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

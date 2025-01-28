@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_gustavoswitch",
-  "spriteId": {
-    "name": "spr_gustavoswitch1",
-    "path": "sprites/spr_gustavoswitch1/spr_gustavoswitch1.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

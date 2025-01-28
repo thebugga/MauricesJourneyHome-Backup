@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_iceblockslope",
-  "spriteId": {
-    "name": "spr_frozenslope",
-    "path": "sprites/spr_frozenslope/spr_frozenslope.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "managed": true,

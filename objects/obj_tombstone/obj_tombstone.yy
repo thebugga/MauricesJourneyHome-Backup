@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_tombstone",
-  "spriteId": {
-    "name": "spr_tombstone",
-    "path": "sprites/spr_tombstone/spr_tombstone.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_gerome",
-  "spriteId": {
-    "name": "spr_gerome_idle1",
-    "path": "sprites/spr_gerome_idle1/spr_gerome_idle1.yy",
-  },
+  "spriteId": null,
   "solid": true,
   "visible": true,
   "managed": true,

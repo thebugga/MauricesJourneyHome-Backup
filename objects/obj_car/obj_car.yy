@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_car",
-  "spriteId": {
-    "name": "spr_mrcar",
-    "path": "sprites/spr_mrcar/spr_mrcar.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

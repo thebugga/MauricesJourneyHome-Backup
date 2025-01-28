@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_farmer2projectile",
-  "spriteId": {
-    "name": "spr_farmer1_attack",
-    "path": "sprites/spr_farmer1_attack/spr_farmer1_attack.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

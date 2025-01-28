@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_mortgrain",
-  "spriteId": {
-    "name": "spr_corn",
-    "path": "sprites/spr_corn/spr_corn.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

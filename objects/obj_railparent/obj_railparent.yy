@@ -34,7 +34,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "World 4",
-    "path": "folders/Objects/Level/World 4.yy",
+    "name": "MauriceJourneyHome_GMS2",
+    "path": "MauriceJourneyHome_GMS2.yyp",
   },
 }

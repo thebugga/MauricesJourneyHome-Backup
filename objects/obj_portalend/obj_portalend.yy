@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_portalend",
-  "spriteId": {
-    "name": "spr_pizzaportal",
-    "path": "sprites/spr_pizzaportal/spr_pizzaportal.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

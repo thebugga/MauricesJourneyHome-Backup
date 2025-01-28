@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_cheesedragon",
-  "spriteId": {
-    "name": "spr_cheesedragon_idle",
-    "path": "sprites/spr_cheesedragon_idle/spr_cheesedragon_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

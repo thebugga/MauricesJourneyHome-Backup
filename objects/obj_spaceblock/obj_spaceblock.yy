@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_spaceblock",
-  "spriteId": {
-    "name": "spr_spaceblock_open",
-    "path": "sprites/spr_spaceblock_open/spr_spaceblock_open.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

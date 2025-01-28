@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_farmer3follow",
-  "spriteId": {
-    "name": "spr_farmer2_idle",
-    "path": "sprites/spr_farmer2_idle/spr_farmer2_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

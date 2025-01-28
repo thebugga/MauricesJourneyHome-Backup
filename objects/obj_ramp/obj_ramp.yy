@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_ramp",
-  "spriteId": {
-    "name": "spr_ramp",
-    "path": "sprites/spr_ramp/spr_ramp.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_freezerblock",
-  "spriteId": {
-    "name": "spr_frozenblock",
-    "path": "sprites/spr_frozenblock/spr_frozenblock.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

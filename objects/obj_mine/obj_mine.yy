@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_mine",
-  "spriteId": {
-    "name": "spr_mine",
-    "path": "sprites/spr_mine/spr_mine.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

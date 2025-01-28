@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_revolvershot",
-  "spriteId": {
-    "name": "sprite1039",
-    "path": "sprites/sprite1039/sprite1039.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_freemilk",
-  "spriteId": {
-    "name": "spr_freemilk",
-    "path": "sprites/spr_freemilk/spr_freemilk.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

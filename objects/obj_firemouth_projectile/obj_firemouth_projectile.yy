@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_firemouth_projectile",
-  "spriteId": {
-    "name": "spr_firemouth_projectile",
-    "path": "sprites/spr_firemouth_projectile/spr_firemouth_projectile.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

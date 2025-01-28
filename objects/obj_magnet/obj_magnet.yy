@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_magnet",
-  "spriteId": {
-    "name": "spr_sirnose_idle",
-    "path": "sprites/spr_sirnose_idle/spr_sirnose_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

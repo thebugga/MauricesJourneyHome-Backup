@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_ghostwall",
-  "spriteId": {
-    "name": "spr_cheesegratter",
-    "path": "sprites/spr_cheesegratter/spr_cheesegratter.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

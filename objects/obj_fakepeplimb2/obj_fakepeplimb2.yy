@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_fakepeplimb2",
-  "spriteId": {
-    "name": "spr_fakepeplimb2_attack",
-    "path": "sprites/spr_fakepeplimb2_attack/spr_fakepeplimb2_attack.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

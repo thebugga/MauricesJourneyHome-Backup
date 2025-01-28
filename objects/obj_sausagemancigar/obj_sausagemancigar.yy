@@ -2,17 +2,11 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_sausagemancigar",
-  "spriteId": {
-    "name": "spr_cigar_idle",
-    "path": "sprites/spr_cigar_idle/spr_cigar_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
-  "spriteMaskId": {
-    "name": "spr_cigar_idle",
-    "path": "sprites/spr_cigar_idle/spr_cigar_idle.yy",
-  },
+  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
     "name": "obj_hurtbox",

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_pepgoblin_kickhitbox",
-  "spriteId": {
-    "name": "sprite1025",
-    "path": "sprites/sprite1025/sprite1025.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "managed": true,

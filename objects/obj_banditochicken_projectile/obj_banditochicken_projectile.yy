@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_banditochicken_projectile",
-  "spriteId": {
-    "name": "spr_banditochicken_projectile",
-    "path": "sprites/spr_banditochicken_projectile/spr_banditochicken_projectile.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

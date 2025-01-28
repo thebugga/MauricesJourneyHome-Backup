@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_superspring",
   "spriteId": {
-    "name": "spr_presentbox_idle",
-    "path": "sprites/spr_presentbox_idle/spr_presentbox_idle.yy",
+    "name": "spr_superspring_idle",
+    "path": "sprites/spr_superspring_idle/spr_superspring_idle.yy",
   },
   "solid": false,
   "visible": true,

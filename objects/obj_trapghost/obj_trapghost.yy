@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_trapghost",
-  "spriteId": {
-    "name": "spr_kingghost",
-    "path": "sprites/spr_kingghost/spr_kingghost.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

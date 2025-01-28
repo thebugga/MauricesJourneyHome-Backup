@@ -67,11 +67,6 @@ with (obj_parent_enemy)
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
 		draw_sprite_ext(sprite_index, image_index, x, (y + _stun), (xscale * image_xscale), yscale, angle, image_blend, image_alpha)
 }
-with (obj_deadjohnparent)
-{
-	if (visible && flash && bbox_in_camera(view_camera[0], 32))
-		draw_sprite_ext(sprite_index, image_index, (x + hurtx), y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
-}
 with (obj_smallnumber)
 {
 	if (visible && flash)

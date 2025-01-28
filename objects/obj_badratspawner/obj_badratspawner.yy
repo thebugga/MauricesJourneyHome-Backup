@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_badratspawner",
-  "spriteId": {
-    "name": "spr_badrat_stun",
-    "path": "sprites/spr_badrat_stun/spr_badrat_stun.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_siren",
-  "spriteId": {
-    "name": "spr_siren",
-    "path": "sprites/spr_siren/spr_siren.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

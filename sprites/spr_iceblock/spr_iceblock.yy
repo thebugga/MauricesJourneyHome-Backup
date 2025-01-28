@@ -107,6 +107,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Warps",
-    "path": "folders/Sprites/Level structure/Warps.yy",
+    "path": "folders/Sprites/Warps.yy",
   },
 }

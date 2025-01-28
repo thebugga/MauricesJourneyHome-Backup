@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_teleporter",
-  "spriteId": {
-    "name": "spr_teleportportal",
-    "path": "sprites/spr_teleportportal/spr_teleportportal.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

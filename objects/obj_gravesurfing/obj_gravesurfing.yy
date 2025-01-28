@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_gravesurfing",
-  "spriteId": {
-    "name": "spr_corpse",
-    "path": "sprites/spr_corpse/spr_corpse.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

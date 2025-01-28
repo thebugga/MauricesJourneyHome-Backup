@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noisematch",
-  "spriteId": {
-    "name": "spr_noisehotairmatch",
-    "path": "sprites/spr_noisehotairmatch/spr_noisehotairmatch.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

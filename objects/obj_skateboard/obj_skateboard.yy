@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_skateboard",
-  "spriteId": {
-    "name": "spr_clowntent",
-    "path": "sprites/spr_clowntent/spr_clowntent.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

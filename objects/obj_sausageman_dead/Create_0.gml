@@ -12,5 +12,5 @@ if (x != obj_parent_player.x)
 	image_xscale = (-(sign((x - obj_parent_player.x))))
 depth = -999
 paletteselect = 0
-spr_palette = spr_plug
+spr_palette = spr_null
 d = 255

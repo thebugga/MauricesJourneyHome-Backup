@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_factorygate",
-  "spriteId": {
-    "name": "spr_arenagate_open",
-    "path": "sprites/spr_arenagate_open/spr_arenagate_open.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

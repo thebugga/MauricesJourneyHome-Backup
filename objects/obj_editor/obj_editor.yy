@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_editor",
-  "spriteId": {
-    "name": "spr_point",
-    "path": "sprites/spr_point/spr_point.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

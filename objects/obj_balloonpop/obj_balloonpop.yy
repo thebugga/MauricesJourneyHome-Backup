@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_balloonpop",
-  "spriteId": {
-    "name": "spr_balloonpop",
-    "path": "sprites/spr_balloonpop/spr_balloonpop.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

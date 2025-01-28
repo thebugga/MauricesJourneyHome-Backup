@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_motodude",
-  "spriteId": {
-    "name": "spr_pizzacar_move",
-    "path": "sprites/spr_pizzacar_move/spr_pizzacar_move.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

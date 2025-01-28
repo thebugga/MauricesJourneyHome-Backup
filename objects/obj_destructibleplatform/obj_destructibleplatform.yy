@@ -2,17 +2,11 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_destructibleplatform",
-  "spriteId": {
-    "name": "spr_cheeseblock",
-    "path": "sprites/spr_cheeseblock/spr_cheeseblock.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
-  "spriteMaskId": {
-    "name": "spr_cheeseblock",
-    "path": "sprites/spr_cheeseblock/spr_cheeseblock.yy",
-  },
+  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
     "name": "obj_solid",

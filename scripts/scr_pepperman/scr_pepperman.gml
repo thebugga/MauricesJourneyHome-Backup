@@ -1,7 +1,7 @@
 function scr_pepperman_walk()
 {
 	hsp = 0
-	sprite_index = spr_pepperman_idle
+	sprite_index = spr_idle
 	if (idle_timer > 10000)
 	{
 		if (point_in_camera(x, y, view_camera[0]) && (!instance_exists(marbledeathID)))
@@ -18,7 +18,7 @@ function scr_pepperman_walk()
 		if (distance_to_object(b) < 400 && b.y > (y - 64) && b.y < (y + 8))
 		{
 			state = states.shoulderbash
-			sprite_index = spr_pepperman_shoulderstart
+			sprite_index = spr_mach1
 			image_index = 0
 			if (b.x != x)
 				image_xscale = sign((b.x - x))
@@ -54,7 +54,7 @@ function pepperman_nearestspot()
 	if (hsp > -2 && hsp < 2)
 		vsp = (-jump_speed)
 	trace(hsp, " ", vsp)
-	sprite_index = spr_pepperman_jump
+	sprite_index = spr_jump
 	image_index = 0
 	exit;
 }
@@ -66,13 +66,13 @@ function scr_pepperman_jump()
 	if (x >= (targetspot.x - 32) && x <= (targetspot.x + 32) && y < (targetspot.y - 48) && (!(place_meeting(x, y, obj_solid))))
 	{
 		state = states.freefall
-		sprite_index = spr_pepperman_groundpound
+		sprite_index = spr_bodyslamfall
 		vsp = 11
 		hsp = 0
 		grounded = false
 	}
-	if (sprite_index == spr_pepperman_jump && floor(image_index) == (image_number - 1))
-		sprite_index = spr_pepperman_fall
+	if (sprite_index == spr_jump && floor(image_index) == (image_number - 1))
+		sprite_index = spr_fall
 	exit;
 }
 
@@ -162,8 +162,8 @@ function scr_pepperman_freefall()
 function scr_pepperman_shoulderbash()
 {
 	hsp = (image_xscale * (8 + wastedhits))
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_pepperman_shoulderstart)
-		sprite_index = spr_pepperman_shoulderloop
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach1)
+		sprite_index = spr_mach4
 	if ((place_meeting((x + hsp), y, obj_solid) or scr_solid_slope((x + hsp), y) or place_meeting((x + hsp), y, obj_pepper_marbleblock)) && (!(place_meeting((x + hsp), y, obj_destructibles))))
 	{
 		with (instance_place((x + hsp), y, obj_pepper_marbleblock))

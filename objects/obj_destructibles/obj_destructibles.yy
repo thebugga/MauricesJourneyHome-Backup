@@ -30,7 +30,6 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_toppinwarriorattack","path":"objects/obj_toppinwarriorattack/obj_toppinwarriorattack.yy",},},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_parent_player","path":"objects/obj_parent_player/obj_parent_player.yy",},},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_canonexplosion","path":"objects/obj_canonexplosion/obj_canonexplosion.yy",},},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_slaphitbox2","path":"objects/obj_slaphitbox2/obj_slaphitbox2.yy",},},
   ],
   "properties": [],
   "overriddenProperties": [],

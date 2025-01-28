@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_cheeseballspawner",
-  "spriteId": {
-    "name": "spr_cheeseball",
-    "path": "sprites/spr_cheeseball/spr_cheeseball.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

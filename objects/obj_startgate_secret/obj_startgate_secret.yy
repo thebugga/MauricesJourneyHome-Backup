@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_startgate_secret",
-  "spriteId": {
-    "name": "spr_grabbiehand_idle",
-    "path": "sprites/spr_grabbiehand_idle/spr_grabbiehand_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

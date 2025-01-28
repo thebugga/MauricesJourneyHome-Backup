@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_weeniemount",
-  "spriteId": {
-    "name": "spr_weeniemount",
-    "path": "sprites/spr_weeniemount/spr_weeniemount.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

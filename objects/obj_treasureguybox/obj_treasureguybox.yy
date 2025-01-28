@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_treasureguybox",
-  "spriteId": {
-    "name": "spr_treasureguy_chest",
-    "path": "sprites/spr_treasureguy_chest/spr_treasureguy_chest.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_noisehotair",
-  "spriteId": {
-    "name": "spr_noisehotair",
-    "path": "sprites/spr_noisehotair/spr_noisehotair.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

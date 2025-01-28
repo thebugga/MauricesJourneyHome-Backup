@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_santanoise",
-  "spriteId": {
-    "name": "spr_santanoise",
-    "path": "sprites/spr_santanoise/spr_santanoise.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

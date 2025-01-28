@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_flush",
-  "spriteId": {
-    "name": "spr_flush_idle",
-    "path": "sprites/spr_flush_idle/spr_flush_idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

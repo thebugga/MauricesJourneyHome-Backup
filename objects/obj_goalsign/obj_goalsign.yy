@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_goalsign",
-  "spriteId": {
-    "name": "spr_goalsign",
-    "path": "sprites/spr_goalsign/spr_goalsign.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

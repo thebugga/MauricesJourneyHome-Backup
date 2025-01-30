@@ -280,7 +280,7 @@ function __global_object_depths()
 	global.__objectNames[30] = "obj_noise_pushbutton"
 	global.__objectNames[31] = "obj_hookshot"
 	global.__objectNames[32] = "obj_swordhitbox"
-	global.__objectNames[33] = "obj_slaphitbox"
+	global.__objectNames[33] = "obj_lungehitbox"
 	global.__objectNames[34] = "obj_shotgunbullet"
 	global.__objectNames[35] = "obj_hurtbox"
 	global.__objectNames[36] = "obj_parent_enemycollisionbox"

@@ -24,7 +24,7 @@ function scr_bossplayer_normal()
 		{
 			hsp = 0
 			sprite_index = spr_punch
-			with instance_create(x, y, obj_slaphitbox)
+			with instance_create(x, y, obj_lungehitbox)
 			{
 				offsetx = 170
 				offsety = 30

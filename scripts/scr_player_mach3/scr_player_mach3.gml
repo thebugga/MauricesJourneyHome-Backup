@@ -182,6 +182,11 @@ function scr_player_mach3()
 				state = states.machslide;
 				image_index = 0;
 			}
+			if global.playerCharacter == Characters.Doise
+			{
+			if key_down
+			state = states.freefallprep
+			}
 			if (scr_mach_check_dive() && fightball == 0 && (sprite_index != spr_dashpadmach || dropboost) && sprite_index != spr_rockethitwall)
 			{
 				particle_set_scale(particle.jumpdust, xscale, 1);

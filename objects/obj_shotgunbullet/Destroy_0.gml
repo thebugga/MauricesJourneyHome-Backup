@@ -6,7 +6,7 @@ if pistol
 		image_xscale = other.image_xscale
 	}
 }
-if (sprite_index == spr_mortprojectile)
+if (sprite_index == spr_mortdead)
 {
 	with (instance_create(x, y, obj_sausageman_dead))
 	{
@@ -14,7 +14,7 @@ if (sprite_index == spr_mortprojectile)
 		image_xscale = other.image_xscale
 	}
 }
-if (sprite_index != sprite10391)
+if (sprite_index != spr_bulletdisappear)
 {
 	repeat (6)
 		create_particle((x + random_range(-25, 25)), (y + random_range(-25, 25)), particle.shotgunimpact, 0)

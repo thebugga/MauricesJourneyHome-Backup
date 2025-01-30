@@ -3,9 +3,9 @@ function scr_bossplayer_spinkick()
 	move = (key_left + key_right)
 	hsp = Approach(hsp, move * 7, 0.5)
 	image_speed = 0.35
-	if floor(image_index) == 1 && sprite_index == spr_player_kungfuair2 && !instance_exists(obj_slaphitbox)
+	if floor(image_index) == 1 && sprite_index == spr_player_kungfuair2 && !instance_exists(obj_lungehitbox)
 	{
-		with instance_create(x, y, obj_slaphitbox)
+		with instance_create(x, y, obj_lungehitbox)
 		{
 			sweepoff = true
 			offsetx = 170

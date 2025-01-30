@@ -157,17 +157,6 @@ function scr_playerreset(argument0)
 		obj_parent_player.supercharge = 0
 		obj_parent_player.supercharged = 0
 		pistol = 0
-		if instance_exists(obj_gnome_checklist)
-		{
-			var destroy = 1
-			with (obj_parent_player)
-			{
-				if (state == states.gameover or state == states.timesup)
-					destroy = 0
-			}
-			if destroy
-				instance_destroy(obj_gnome_checklist)
-		}
 		obj_timeattack.stop = 0
 		obj_player1.spotlight = 1
 		obj_player2.x = -1000

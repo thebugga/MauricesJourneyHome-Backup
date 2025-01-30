@@ -599,6 +599,7 @@
     {"id":{"name":"obj_retry","path":"objects/obj_retry/obj_retry.yy",},"order":0,},
     {"id":{"name":"obj_reverseminipillar","path":"objects/obj_reverseminipillar/obj_reverseminipillar.yy",},"order":0,},
     {"id":{"name":"obj_reversespaceblock","path":"objects/obj_reversespaceblock/obj_reversespaceblock.yy",},"order":0,},
+    {"id":{"name":"spr_reverseminipillar2","path":"sprites/spr_reverseminipillar2/spr_reverseminipillar2.yy",},"order":82,},
     {"id":{"name":"obj_revolvershot","path":"objects/obj_revolvershot/obj_revolvershot.yy",},"order":0,},
     {"id":{"name":"obj_risingboilingsauce","path":"objects/obj_risingboilingsauce/obj_risingboilingsauce.yy",},"order":0,},
     {"id":{"name":"obj_risinggate","path":"objects/obj_risinggate/obj_risinggate.yy",},"order":0,},
@@ -2797,6 +2798,7 @@
     {"id":{"name":"spr_timer_pizzaface3","path":"sprites/spr_timer_pizzaface3/spr_timer_pizzaface3.yy",},"order":0,},
     {"id":{"name":"spr_timesup","path":"sprites/spr_timesup/spr_timesup.yy",},"order":44,},
     {"id":{"name":"spr_tinytaunt","path":"sprites/spr_tinytaunt/spr_tinytaunt.yy",},"order":0,},
+    {"id":{"name":"obj_slaphitbox","path":"objects/obj_slaphitbox/obj_slaphitbox.yy",},"order":1,},
     {"id":{"name":"spr_title_characters","path":"sprites/spr_title_characters/spr_title_characters.yy",},"order":40,},
     {"id":{"name":"spr_title_collysia","path":"sprites/spr_title_collysia/spr_title_collysia.yy",},"order":41,},
     {"id":{"name":"spr_title_doise","path":"sprites/spr_title_doise/spr_title_doise.yy",},"order":45,},
@@ -3306,6 +3308,6 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"watchmojo.mp4","CopyToMask":-1,"filePath":"datafiles/videos",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.0.3.83",
+    "IDEVersion": "2022.0.3.85",
   },
 }

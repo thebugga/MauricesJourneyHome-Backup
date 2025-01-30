@@ -23,7 +23,7 @@ switch state
 		break
 }
 
-if (!instance_exists(obj_slaphitbox))
+if (!instance_exists(obj_lungehitbox))
 	slapped = 0
 stunned = 100
 if (cigar == 0)

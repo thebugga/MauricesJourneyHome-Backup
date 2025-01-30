@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_cheeseballblock",
-  "spriteId": {
-    "name": "spr_cheeseballblock",
-    "path": "sprites/spr_cheeseballblock/spr_cheeseballblock.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

@@ -43,7 +43,7 @@ var hud_scorex = hud_xx + irandom_range(-collect_shake, collect_shake)
 var hud_scorey = hud_yy + irandom_range(-collect_shake, collect_shake)
 if global.heatmeter
 {
-	shader_set(global.Pal_Shader)
+	shader_set(global.retro_pal_swapper)
 	pal_swap_set(98, global.stylethreshold, 0)
 	draw_sprite_ext(spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha)
 	shader_reset()
@@ -55,7 +55,7 @@ var _minX = (_cx - 56)
 var _maxX = (_cx + 59)
 combofill_x = lerp(combofill_x, (_minX + ((_maxX - _minX) * _perc)), 0.5)
 combofill_y = _cy
-shader_set(global.Pal_Shader)
+shader_set(global.retro_pal_swapper)
 pal_swap_set(spr_tv_combofillpalette, (!global.combodropped) ? 2 : 1, false)
 draw_sprite(spr_tv_combobubblefill, combofill_index, combofill_x, combofill_y)
 reset_shader_fix()

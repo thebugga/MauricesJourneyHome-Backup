@@ -25,7 +25,7 @@ if (finisher_alpha > 0)
 var _kungfu = global.kungfu
 with (obj_parent_enemy)
 	draw_enemy(_kungfu, true)
-shader_set(global.Pal_Shader)
+shader_set(global.retro_pal_swapper)
 with (obj_sausageman_dead)
 {
 	if (visible && bbox_in_camera(view_camera[0], 32))
@@ -41,19 +41,19 @@ with (obj_heatafterimage)
 	{
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
 		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, 1, c_white, alpha)
-		pattern_reset()
+		//pattern_reset()
 	}
 }
 with (obj_parent_player)
 {
 	if (visible && bbox_in_camera(view_camera[0], 32))
 	{
-		shader_set(global.Pal_Shader)
+		shader_set(global.retro_pal_swapper)
 		pal_swap_set(spr_palette, paletteselect, 0)
-		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.patterntexture)
+		////pattern_setup(global.patterntexture, [1,2], sprite_index, image_index, 1, 1, 1, 1);
 		b = get_dark(image_blend, other.use_dark)
 		draw_sprite_ext(sprite_index, image_index, x, y, (xscale * scale_xs), (yscale * scale_ys), angle, b, image_alpha)
-		pattern_reset()
+		//pattern_reset()
 		reset_shader_fix()
 	}
 	draw_superslam_enemy()
@@ -65,7 +65,40 @@ with (obj_parent_enemy)
 	if (state == states.stun)
 		_stun = 25
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
-		draw_sprite_ext(sprite_index, image_index, x, (y + _stun), (xscale * image_xscale), yscale, angle, image_blend, image_alpha)
+	{
+		var xstretch
+var ystretch
+
+
+var image_xscalestretch = 1
+var image_yscalestretch = 0.5
+
+
+if image_xscale == 1
+    xstretch = (image_xscale + image_xscalestretch)
+else if image_xscale == -1
+    xstretch = (image_xscale - image_xscalestretch)
+if image_yscale > 0
+    ystretch = (image_yscale + image_yscalestretch)
+else if image_yscale < 0
+    ystretch = (image_yscale - image_yscalestretch)
+	
+	
+if image_xscalestretch > 0
+    image_xscalestretch -= 0.1
+if image_xscalestretch < 0
+    image_xscalestretch += 0.1
+	
+	
+if image_yscalestretch > 0
+    image_yscalestretch -= 0.1
+if image_yscalestretch < 0
+    image_yscalestretch += 0.1
+	
+draw_sprite_ext(sprite_index,image_index,x,y,xstretch, ystretch,image_angle,image_blend,image_alpha)
+
+
+	}
 }
 with (obj_smallnumber)
 {

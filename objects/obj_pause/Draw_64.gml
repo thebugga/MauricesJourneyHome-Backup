@@ -28,10 +28,10 @@ if pause
 		}
 		draw_text_color(480, yy, pause_menu[i][0], c, c, c, c, 1)
 	}
-	//shader_set(global.Pal_Shader)
+	//shader_set(global.retro_pal_swapper)
 	//pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
-	//pattern_set(global.Base_Pattern_Color, pause_menu[selected][1], peppino_index, 1, 1, global.patterntexture)
+	////pattern_set(global.Base_Pattern_Color, pause_menu[selected][1], peppino_index, 1, 1, global.patterntexture)
 	draw_sprite(peppino_sprite, peppino_index, 240, 270)
-	//pattern_reset()
+	////pattern_reset()
 	//reset_shader_fix()
 }

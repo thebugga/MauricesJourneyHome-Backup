@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_warblock",
-  "spriteId": {
-    "name": "spr_bombblock",
-    "path": "sprites/spr_bombblock/spr_bombblock.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

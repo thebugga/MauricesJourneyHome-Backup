@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_enemyblock",
-  "spriteId": {
-    "name": "spr_enemyblock",
-    "path": "sprites/spr_enemyblock/spr_enemyblock.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

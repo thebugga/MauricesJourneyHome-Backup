@@ -38,17 +38,6 @@ function scr_player_climbwall()
 			movespeed = wallspeed
 		    state = states.mach2
 		}
-		else if global.playerCharacter == Characters.Doise
-        {
-            with (instance_create(x, y, obj_noiseeffect))
-                sprite_index = spr_noisewalljumpeffect
-            sprite_index = spr_playerN_wallbounce
-            state = states.machcancel
-            savedmove = xscale
-            hsp = 0
-            movespeed = 0
-            image_index = 0
-        }
 	}
 	if (vsp == 15)
 	{
@@ -79,4 +68,15 @@ function scr_player_climbwall()
 	    state = states.mach2
 	    xscale *= -1
 	}
+	if global.playerCharacter == Characters.Doise
+    {
+           with (instance_create(x, y, obj_noiseeffect))
+                sprite_index = spr_noisewalljumpeffect
+            sprite_index = spr_playerN_wallbounce
+            state = states.machcancel
+            savedmove = xscale
+            hsp = 0
+            movespeed = 0
+            image_index = 0
+    }
 }

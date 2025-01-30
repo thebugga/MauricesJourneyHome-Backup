@@ -4,7 +4,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && ((!elite) or elitehit <= 
 {
 	if (irandom(200) >= 150)
 		scr_soundeffect(asset_get_index(concat("sfx_scream", irandom_range(1, 10))))
-	if (object_index != obj_peppinoclone && object_index != obj_ghoul)
+	if (object_index != obj_peppinoclone)
 	{
 		with (instance_create(x, y, obj_sausageman_dead))
 		{
@@ -21,27 +21,6 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && ((!elite) or elitehit <= 
 			depth = other.depth
 			sprite_index = spr_pepclone_death
 			image_xscale = other.image_xscale
-		}
-	}
-	else if (object_index == obj_ghoul)
-	{
-		var i = 0
-		repeat sprite_get_number(spr_ghoul_gibs)
-		{
-			with (create_debris(x, y, spr_ghoul_gibs))
-			{
-				image_index = i
-				vsp = (-(irandom_range(10, 14)))
-			}
-			i++
-		}
-	}
-	if (object_index == obj_tank)
-	{
-		repeat (3)
-		{
-			with (instance_create(x, y, obj_sausageman_dead))
-				sprite_index = other.spr_content_dead
 		}
 	}
 }

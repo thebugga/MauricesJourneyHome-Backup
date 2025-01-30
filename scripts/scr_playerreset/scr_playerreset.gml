@@ -20,12 +20,10 @@ function scr_playerreset(argument0)
 	instance_destroy(obj_comboend)
 	instance_destroy(obj_sandparticle)
 	instance_destroy(obj_lap2visual)
-	instance_destroy(obj_gravecorpse, false)
 	with (obj_camera)
 		alarm[4] = -1
 	if (!global.levelreset)
 	{
-		instance_destroy(obj_deliverytimer)
 		instance_destroy(obj_wartimer)
 		with (obj_cutscene_handler)
 			instance_destroy()

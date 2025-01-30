@@ -3,7 +3,7 @@ var _y = y
 if obj_player1.state == states.arenaintro
 {
 	var _sprite = spr_player_levelcomplete;
-	if !ispeppino
+	if global.playerCharacter == Characters.Doise
 		_sprite = spr_playerN_levelcomplete;
 	image_speed = 0.35;
 	if sprite_index != _sprite

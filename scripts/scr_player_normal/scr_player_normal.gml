@@ -331,7 +331,7 @@ function state_player_normal()
 	        image_index = 0
 			slaphand = 1
 		}
-		else if global.playerCharacter == Characters.Doise
+		else
 		{
 	        input_buffer_slap = 0
 	        suplexmove = true
@@ -356,13 +356,21 @@ function state_player_normal()
         particle_set_scale((4 << 0), xscale, 1)
         create_particle(x, y, (4 << 0), 0)
     }
-	if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu)
+	if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu) && global.playerCharacter != Characters.Clownmato
 	{
 		sprite_index = spr_mach1;
 		image_index = 0;
 		state = states.mach2;
 		if movespeed < 6
 			movespeed = 6;
+	}
+	if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu) && global.playerCharacter == Characters.Clownmato
+	{
+		sprite_index = spr_mach4;
+		image_index = 0;
+		state = states.mach3;
+		if movespeed < 12
+			movespeed = 12;
 	}
 	if global.kungfu && key_attack && state != states.handstandjump
 	{
@@ -451,8 +459,5 @@ function pepperman_grab_reset()
 }
 function scr_player_normal()
 {
-	if global.playerCharacter != Characters.Clownmato
 		state_player_normal();
-	else
-		state_pepperman_normal();
 }

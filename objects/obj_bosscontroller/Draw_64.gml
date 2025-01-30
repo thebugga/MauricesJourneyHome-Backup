@@ -64,10 +64,10 @@ var sp = ((super % (supermax / 3)) / (supermax / 3)) * 100
 if (super > supermax)
 	sp = 100
 draw_healthbar(64, 240, 200, 252, sp, c_dkgray, c_aqua, c_aqua, 0, 1, 1)
-shader_set(global.Pal_Shader)
+shader_set(global.retro_pal_swapper)
 pal_swap_set(obj_bossplayer.spr_palette, obj_bossplayer.paletteselect, false)
-pattern_set(global.Base_Pattern_Color, spr_boss_icons, portrait1_index, 1, 1, global.patterntexture)
+//pattern_set(global.Base_Pattern_Color, spr_boss_icons, portrait1_index, 1, 1, global.patterntexture)
 draw_sprite(spr_boss_icons, portrait1_index, 113, 104)
-pattern_reset()
+//pattern_reset()
 reset_shader_fix()
 draw_sprite_ext(spr_boss_icons, portrait2_index, 848, 104, -1, 1, 0, c_white, 1)

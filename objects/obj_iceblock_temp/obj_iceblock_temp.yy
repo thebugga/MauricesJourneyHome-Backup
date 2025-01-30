@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_iceblock_temp",
-  "spriteId": {
-    "name": "spr_iceblock",
-    "path": "sprites/spr_iceblock/spr_iceblock.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

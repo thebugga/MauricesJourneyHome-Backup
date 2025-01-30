@@ -709,7 +709,7 @@ function scr_characterspr()
 	if (global.playerCharacter == Characters.Clownmato)
 	{
 		spr_idle = spr_clownmato_idle
-		spr_move = spr_player_move
+		spr_move = spr_clownmato_move
 		spr_crawl = spr_player_crawl
 		spr_idle = spr_clownmato_idle
 		spr_hurt = spr_player_hurt

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_pizzaslice",
-  "spriteId": {
-    "name": "spr_pizzaslice",
-    "path": "sprites/spr_pizzaslice/spr_pizzaslice.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

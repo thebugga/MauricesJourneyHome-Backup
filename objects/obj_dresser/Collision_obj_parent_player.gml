@@ -2,7 +2,7 @@ if other.key_up2 && other.state == states.normal
 {
 	up = true
 	playerid = other.id
-	walk_sprite = other.spr_walkfront
+	walk_sprite = other.spr_idle
 	obj_parent_player.state = states.actor
 	obj_parent_player.hsp = 0
 }

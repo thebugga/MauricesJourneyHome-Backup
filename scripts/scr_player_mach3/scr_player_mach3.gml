@@ -23,7 +23,7 @@ function scr_player_mach3()
 					instance_create_unique(x, y, obj_swapgusfightball);
 				exit;
 			}
-			if !ispeppino && grounded && vsp > 0
+			if global.playerCharacter == Characters.Doise && grounded && vsp > 0
 			{
 				if (sprite_index == spr_mach4 && place_meeting(x, y + 1, obj_water))
 					sprite_index = spr_playerN_mach3water;
@@ -200,11 +200,15 @@ function scr_player_mach3()
 			if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
 			{
 				var _climb = true;
-				if !ispeppino
+				if global.playerCharacter == Characters.Doise
 					_climb = ledge_bump(40);
 				if _climb
 				{
-					if global.playerCharacter == Characters.Maurice
+					if global.playerCharacter == Characters.Clownmato
+					{
+						state = states.hang
+					}
+					else if global.playerCharacter == Characters.Maurice
 					{
 						sprite_index = spr_mach2jump;
 						image_index = 0;
@@ -213,24 +217,12 @@ function scr_player_mach3()
 						fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
 						instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
 					}
-					else if global.playerCharacter == Characters.Doise
-					{
-						grabclimbbuffer = 0;
-						if movespeed < 1
-							wallspeed = 1;
-						else
-						{
-							vsp -= 0.5
-							wallspeed = movespeed;
-						}
-						state = states.climbwall;
-					}
 				}
 			}
 			if ((grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
 			{
 				var _climb = true;
-				if !ispeppino
+				if global.playerCharacter == Characters.Doise
 					_climb = ledge_bump(40);
 				if _climb
 				{

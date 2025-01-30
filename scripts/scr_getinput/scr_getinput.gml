@@ -196,7 +196,7 @@ function scr_mach_check_dive()
 
 function scr_check_dive()
 {
-	if !ispeppino
+	if global.playerCharacter == Characters.Doise
 		return scr_check_groundpound2();
 	return key_down;
 }

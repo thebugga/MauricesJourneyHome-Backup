@@ -53,12 +53,12 @@ function draw_enemy(_kungfu, usepalette)
 		b = get_dark(c, obj_drawcontroller.use_dark)
 		if (object_index == obj_peppinoclone)
 		{
-			shader_set(global.Pal_Shader)
+			shader_set(global.retro_pal_swapper)
 			pal_swap_set(spr_peppalette, 1, 0)
 		}
 		else
 		{
-			shader_set(global.Pal_Shader)
+			shader_set(global.retro_pal_swapper)
 			pal_swap_set(spr_palette, paletteselect, 0)
 		}
 		var _ys = 1

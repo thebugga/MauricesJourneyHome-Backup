@@ -1,6 +1,6 @@
 function scr_player_ratmountbounce()
 {
-	if !ispeppino
+	if global.playerCharacter == Characters.Doise
 	{
 		isgustavo = false;
 		scr_player_noisecrusher();

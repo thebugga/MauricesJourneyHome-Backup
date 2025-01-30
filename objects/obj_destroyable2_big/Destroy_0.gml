@@ -3,8 +3,17 @@ if (room == rm_editor)
 if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 {
 	scr_sleep(5)
-	with (instance_create((x + 32), (y + 32), obj_parryeffect))
-		sprite_index = spr_bigpizzablockdead
+
+	repeat (6)
+	{
+		with (create_debris((x + 16), y, sprite_index))
+		{
+			if (sprite_index == spr_bigbreakable)
+				sprite_index = spr_bigdebris
+			else
+				sprite_index = spr_halloweendebris
+		}
+	}
 	if (content == obj_null)
 	{
 		global.heattime += 10

@@ -157,17 +157,6 @@ if (place_meeting(x, y, obj_parent_player) && sprite_index == spr_pizzaboxunopen
 		if (global.toppintotal == 5)
 			scr_tvtopmessage("ALL TOPPINS RECIEVED!")
 	}
-	if (content == obj_noisey)
-	{
-		scr_soundeffect(sfx_enemyprojectile)
-		with (instance_create(x, (y - 25), content))
-		{
-			image_xscale = other.image_xscale
-			state = states.stun
-			stunned = 20
-			vsp = -5
-		}
-	}
 	sprite_index = spr_pizzaboxopen
 }
 if (sprite_index == spr_pizzaboxopen && floor(image_index) == 16)

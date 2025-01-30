@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_desertdestroyable",
-  "spriteId": {
-    "name": "spr_desertdestroyable",
-    "path": "sprites/spr_desertdestroyable/spr_desertdestroyable.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

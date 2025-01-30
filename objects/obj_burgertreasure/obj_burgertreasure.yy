@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_burgertreasure",
-  "spriteId": {
-    "name": "spr_foodtreasure",
-    "path": "sprites/spr_foodtreasure/spr_foodtreasure.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

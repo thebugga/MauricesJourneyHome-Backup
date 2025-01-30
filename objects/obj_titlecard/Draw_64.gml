@@ -8,14 +8,14 @@ if (fadedin)
 	x = cardshakex
 	y = cardshakey
 	draw_self()
-		shader_set(global.Pal_Shader)
+		shader_set(global.retro_pal_swapper)
 		pal_swap_set(spr_peppalette, obj_player1.player_paletteselect[0], false)
-		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, obj_player1.player_patterntexture[0])
+		//pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, obj_player1.player_patterntexture[0])
 		draw_sprite(spr_titlecards_maurice, image_index, cardshakex, cardshakey)
 		pal_swap_set(spr_noisepalette, obj_player1.player_paletteselect[1], false)
-		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, obj_player1.player_patterntexture[1])
+		//pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, obj_player1.player_patterntexture[1])
 		draw_sprite(spr_titlecards_doise, image_index, cardshakex, cardshakey)
-		pattern_reset()
+		//pattern_reset()
 		reset_shader_fix()
 	draw_sprite_ext(spr_titlecard_titles, image_index, 0 + irandom_range(-1, 1) + irandom_range(-wipshake, wipshake), 0 + irandom_range(-1, 1) + irandom_range(-wipshake, wipshake), 1, 1, 0, c_white, titlealpha)
 	if wipshow

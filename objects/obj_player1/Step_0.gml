@@ -23,5 +23,4 @@ if (room == custom_lvl_room)
 			bound_camera = 0
 	}
 }
-scr_getinput()
 event_inherited()

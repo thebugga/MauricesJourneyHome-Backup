@@ -1,6 +1,13 @@
 up = false
 playerid = spr_dois
-selected = 0
+h_select = [0, 0, 0]
+h_selectmax = [6, 4, 0]
+v_select = 0
+v_selectnames = ["Clothes", "Hats", "some other 3rd thing"]
+cloth_namesM = ["Basic Bastard", "Steamin' Mad", "the G.O.A.T.", "Pretty Pink", "BlackOut", "Snick Scum", "RED GUY"]
+cloth_namesD = ["Average Doi", "the G.O.A.T. 2", "BlackOut", "Mauridoise", "Spooky Month", "", ""]
+hat_names = ["Nothing", "the Yankees", "Velveetalante", "Pepper Shaker", "Unintended Sidekick"]
+hat_sprites = [-4, "the Yankees", "Velveetalante", "Pepper Shaker", "Unintended Sidekick"]
 walk_sprite = -4
 walk_index = 0
 bg_place = 0

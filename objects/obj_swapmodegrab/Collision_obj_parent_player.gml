@@ -18,7 +18,7 @@ with (other)
         pistolanim = -4
         if (!isgustavo)
         {
-            if (!key_up_p2)
+            if (!obj_swapmodefollow.key_up)
             {
                 swingdingthrow = false
                 image_index = 0

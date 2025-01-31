@@ -14,7 +14,10 @@
     "path": "sprites/spr_player_mask/spr_player_mask.yy",
   },
   "persistent": true,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_parent_enemy",
+    "path": "objects/obj_parent_enemy/obj_parent_enemy.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

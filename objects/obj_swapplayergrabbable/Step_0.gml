@@ -1,16 +1,16 @@
 if (room == rm_editor)
     return;
-if (sprite_index == spr_player_ratmountgameover && (!gusrat))
-{
-    gusrat = true
-    with (create_debris(x, y, spr_ratblock_dead))
-    {
-        image_xscale = other.image_xscale
-        hsp = (-image_xscale) * 4
-        vsp = -8
-        image_angle = 0
-    }
-}
+//if (sprite_index == spr_player_ratmountgameover && (!gusrat))
+//{
+//    gusrat = true
+//    with (create_debris(x, y, spr_ratblock_dead))
+//    {
+//        image_xscale = other.image_xscale
+//        hsp = (-image_xscale) * 4
+//        vsp = -8
+//        image_angle = 0
+//    }
+//}
 if (state != states.grabbed && state != states.hit && (state != states.stun || (grounded && vsp > 0)))
     instance_destroy()
 switch state

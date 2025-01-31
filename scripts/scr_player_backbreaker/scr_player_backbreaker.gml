@@ -76,6 +76,19 @@ function scr_player_backbreaker()
 			supercharge = 0
 			supercharged = 0
 		}
+        if (obj_swapmodefollow.input_buffer_taunt > 0 && global.swapmode)
+        {
+            if ((!swap_taunt) && swap_player(false))
+            {
+                obj_swapmodefollow.input_buffer_taunt = 0
+                if (taunttimer < 10)
+                    taunttimer = 10
+                swap_taunt = true
+                with (instance_create(0, 0, obj_swapmodeeffect))
+                    taunt = true
+                return;
+            }
+        }
 		taunttimer--
 		vsp = 0
 	}

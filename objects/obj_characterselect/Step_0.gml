@@ -44,10 +44,15 @@ if !stopper
 			p2_sprite = character[selected2][2]
 			if (obj_player2.key_jump)
 			{
-				ready2 = true
-				scr_soundeffect(sfx_collecttoppin)
-				p2_sprite = character[selected2][3]
-				p2_index = 0
+				if selected != selected2
+				{
+					ready2 = true
+					scr_soundeffect(sfx_collecttoppin)
+					p2_sprite = character[selected2][3]
+					p2_index = 0
+				}
+				else
+					scr_soundeffect(sfx_hitenemy)
 			}
 		}
 		if (obj_player2.key_slap2)
@@ -73,26 +78,23 @@ if !stopper
 		p2_connect = true
 	if ready && ready2 == p2_connect
 	{
-		with (obj_player1)
-		{
-			global.playerCharacter = other.character[other.selected][1]
-			scr_characterspr()
-		}
-		with (obj_player2)
-		{
-			global.playerCharacter = other.character[other.selected2][1]
-			scr_characterspr()
-		}
-		if p2_connect
-		{
-			if !multimode
-				global.coop = true
-			else
-				global.swapmode = true
-		}
-		scr_soundeffect(sfx_collecttoppin)
-		alarm[0] = 100
-		stopper = true
+			with (obj_player1)
+			{
+				global.playerCharacter = other.character[other.selected][1]
+				scr_characterspr()
+			}
+			with (obj_player2)
+			{
+				//global.playerCharacter = other.character[other.selected2][1]
+				scr_characterspr()
+			}
+			
+			global.coop = p2_connect && !multimode
+			global.swapmode = p2_connect && multimode
+			
+			scr_soundeffect(sfx_collecttoppin)
+			alarm[0] = 100
+			stopper = true
 	}
 }
 if floor(p1_index) == (sprite_get_number(p1_sprite) - 1)

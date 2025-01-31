@@ -26,7 +26,10 @@ function swap_player(argument0, argument1) //gml_Script_swap_player
             else if (global.leveltosave == "freezer")
                 global.noisejetpack = true
         }
-        ispeppino = (!ispeppino)
+        var og_player = global.playerCharacter
+		global.playerCharacter = global.playerFollowCharacter
+		global.playerFollowCharacter = og_player
+		player_index = !player_index
         if ispeppino
         {
             if noisecrusher
@@ -76,8 +79,8 @@ function swap_player(argument0, argument1) //gml_Script_swap_player
                 ispeppino = (!obj_player1.ispeppino)
                 if ((!obj_player1.ispeppino) && obj_player1.noisecrusher)
                     isgustavo = true
-                self.get_character_spr()
             }
+            self.get_character_spr()
         }
         with (obj_tv)
         {
@@ -89,7 +92,7 @@ function swap_player(argument0, argument1) //gml_Script_swap_player
                 sprite_index = (other.ispeppino ? spr_tv_idle : spr_tv_idleN)
                 if (sprite_index == spr_tv_idle && other.isgustavo)
                     sprite_index = spr_tv_idleG
-                tv_get_palette()
+                //tv_get_palette()
             }
         }
         return true;

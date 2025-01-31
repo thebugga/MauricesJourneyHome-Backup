@@ -3,6 +3,9 @@ prevmove = move
 prevmovespeed = movespeed
 previcemovespeed = icemovespeed
 prevxscale = xscale
+
+scr_getinput(player_index)
+
 var prevmask = mask_index
 
 // input buffers and coyote time
@@ -16,8 +19,6 @@ if key_down2
 	input_buffer_down = 15;
 if key_attack2
 	input_buffer_mach = 15;
-if key_taunt
-	input_taunt_p2 = 5;
 
 if grounded && vsp > 0
 	coyote_time = 8;
@@ -893,8 +894,6 @@ if coyote_time > 0
 	coyote_time--;
 if input_buffer_jump > 0
 	input_buffer_jump--;
-if input_taunt_p2 > 0
-	input_taunt_p2--;
 if input_buffer_down > 0
 	input_buffer_down--;
 if input_buffer_mach > 0
@@ -981,6 +980,14 @@ if (state == states.mach3 or state == states.mach2 or state == states.Sjump or r
 			playerid = other.object_index
 			image_xscale = other.xscale
 		}
+        if (sprite_index == spr_fightball && instance_exists(obj_swapmodefollow))
+        {
+            with (create_mach3effect(x, y, obj_swapmodefollow.spr_fightball, (image_index - 1)))
+            {
+                playerid = other.object_index
+                image_xscale = other.xscale
+            }
+        }
 	}
 }
 if ((!(state == states.mach3)) && (!(state == states.mach2)) && (!(state == states.Sjump)) && ratmount_movespeed < 12)

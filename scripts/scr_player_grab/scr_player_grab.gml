@@ -157,9 +157,7 @@ function scr_player_grab()
 	}
 	if (movespeed == 2 && sprite_index == spr_swingding)
 		sprite_index = spr_haulingidle
-	if key_jump
-		input_buffer_jump = 0
-	if (grounded && input_buffer_jump < 8 && (!key_down) && (!key_attack) && vsp > 0 && sprite_index != spr_swingding)
+	if (grounded && input_buffer_jump > 0 && (!key_down) && (!key_attack) && vsp > 0 && sprite_index != spr_swingding)
 	{
 		scr_soundeffect(sfx_jump)
 		sprite_index = spr_haulingjump

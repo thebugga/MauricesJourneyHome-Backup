@@ -55,6 +55,7 @@
   "creationCodeFile": "rooms/Oldtitlescreen/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
+    {"name":"inst_87C9D95D","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
     {"name":"inst_1C7C47D5","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
     {"name":"inst_912FB54D","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
     {"name":"inst_15D323B5","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
@@ -82,7 +83,6 @@
     {"name":"inst_4C6D723B","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
     {"name":"inst_2517BBE2","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
     {"name":"inst_C2CD8D5","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
-    {"name":"inst_87C9D95D","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
     {"name":"inst_7331CD53","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
     {"name":"inst_7E49183C","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},
     {"name":"inst_700A63E6","path":"rooms/Oldtitlescreen/Oldtitlescreen.yy",},

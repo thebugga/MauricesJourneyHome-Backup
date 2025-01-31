@@ -18,6 +18,7 @@ breakdance_index = 0;
 notecreate = 0;
 grabbuffer = 0;
 steppybuffer = 0;
+input_buffer_taunt = 0
 
 get_character_spr = function()
 {

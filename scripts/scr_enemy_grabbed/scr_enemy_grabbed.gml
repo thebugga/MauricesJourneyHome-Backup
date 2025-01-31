@@ -2,7 +2,7 @@ function scr_enemy_grabbed()
 {
 	if (!pepperman_grab)
 	{
-		var _obj_player = asset_get_index(concat("obj_parent_player", grabbedby))
+		var _obj_player = asset_get_index(concat("obj_player", grabbedby))
 		image_xscale = (-_obj_player.xscale)
 		stunned = 200
 		_obj_player.baddiegrabbedID = id
@@ -147,9 +147,6 @@ function scr_enemy_grabbed()
 			hitLag = lag
 			hitX = x
 			hitY = y
-			if (object_index != obj_noisey && object_index != obj_tank)
-			{
-			}
 			GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 0.8, 0.8, 0.65)
 			scr_soundeffect(sfx_punch)
 			scr_soundeffect(sfx_killingblow)
@@ -248,7 +245,7 @@ function scr_enemy_grabbed()
 		}
 		if (_obj_player.state == states.superslam or (_obj_player.state == states.chainsaw && sprite_index == spr_player_piledriver))
 		{
-			if (_obj_player.global.playerCharacter == Characters.Maurice && _obj_player.ispeppino)
+			if (global.playerCharacter == Characters.Maurice && _obj_player.ispeppino)
 			{
 				if (_obj_player.sprite_index != _obj_player.spr_piledriverland)
 				{

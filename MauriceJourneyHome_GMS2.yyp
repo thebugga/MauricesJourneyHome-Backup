@@ -337,6 +337,7 @@
     {"id":{"name":"obj_haystack","path":"objects/obj_haystack/obj_haystack.yy",},"order":0,},
     {"id":{"name":"obj_haystackrope","path":"objects/obj_haystackrope/obj_haystackrope.yy",},"order":0,},
     {"id":{"name":"obj_heatafterimage","path":"objects/obj_heatafterimage/obj_heatafterimage.yy",},"order":0,},
+    {"id":{"name":"obj_playerhat","path":"objects/obj_playerhat/obj_playerhat.yy",},"order":14,},
     {"id":{"name":"obj_hiddenobject","path":"objects/obj_hiddenobject/obj_hiddenobject.yy",},"order":0,},
     {"id":{"name":"obj_hiddenobjecttrigger","path":"objects/obj_hiddenobjecttrigger/obj_hiddenobjecttrigger.yy",},"order":0,},
     {"id":{"name":"obj_highjumpcloud1","path":"objects/obj_highjumpcloud1/obj_highjumpcloud1.yy",},"order":0,},

@@ -145,6 +145,14 @@ if spr != noone
 }
 if room == characterselect
 	usable = false;
+if (obj_player1.sprite_index == obj_player1.spr_fightball)
+{
+    x = obj_player1.x
+    y = obj_player1.y
+    image_index = obj_player1.image_index
+    sprite_index = spr_fightball
+    usable = false
+}
 if instance_exists(obj_swapmodegrab) || instance_exists(obj_swapplayergrabbable)
 {
 	grabbuffer = 40;
@@ -158,8 +166,26 @@ with obj_sausageman_dead
 		other.usable = false;
 	}
 }
-if obj_player1.key_slap && sprite_index != spr_fightball && usable && grabbuffer <= 0 && visible
-&& !instance_exists(obj_swapmodegrab) && !instance_exists(obj_swapdeatheffect) && !instance_exists(obj_swapplayergrabbable)
+if key_slap2 && sprite_index != spr_fightball && usable && grabbuffer <= 0 && visible && !instance_exists(obj_swapmodegrab) && !instance_exists(obj_swapdeatheffect) && !instance_exists(obj_swapplayergrabbable)
+{
+    with (instance_create(x, y, obj_swapmodegrab))
+    {
+        spr_palette = other.spr_palette
+        //patterntexture = other.patterntexture
+        paletteselect = other.paletteselect
+        sprite_index = other.spr_suplexdash
+        spr_fall = other.spr_fall
+        ispeppino = other.ispeppino
+        isgustavo = other.isgustavo
+        if (x != obj_player1.x)
+            image_xscale = sign(obj_player1.x - x)
+        else
+            image_xscale = other.image_xscale
+        particle_set_scale((5 << 0), image_xscale, 1)
+        create_particle(x, y, (5 << 0), 0)
+    }
+    usable = false
+}
 if breakdance_pressed >= 10 && usable
 {
 	breakdance_speed = Approach(breakdance_speed, 0.6, 0.005);

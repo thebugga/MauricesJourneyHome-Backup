@@ -30,7 +30,7 @@ function scr_init_input()
 function scr_check_superjump()
 {
 	var sj = global.gamepad_superjump;
-	if obj_inputAssigner.player_input_device[0] < 0
+	if obj_inputAssigner.player_input_device[player_index] < 0
 		sj = global.keyboard_superjump;
 	return ((sj && key_up) || key_superjump);
 }
@@ -38,7 +38,7 @@ function scr_check_superjump()
 function scr_check_groundpound()
 {
 	var gp = global.gamepad_groundpound;
-	if obj_inputAssigner.player_input_device[0] < 0
+	if obj_inputAssigner.player_input_device[player_index] < 0
 		gp = global.keyboard_groundpound;
 	return ((gp && key_down2) || key_groundpound);
 }
@@ -82,9 +82,12 @@ function scr_menu_getinput()
 	key_quit2 = tdp_input_get("menu_quit").pressed || tdp_input_get("menu_quitC").pressed;
 }
 
-function scr_getinput()
+function scr_getinput(_index)
 {
-	var _dvc = obj_inputAssigner.player_input_device[0];
+	if _index == undefined
+		_index = 0
+	var _dvc = obj_inputAssigner.player_input_device[_index];
+	var _keyadd = _index == 1 ? "P2" : ""
 	tdp_input_update(_dvc);
 	
 	if instance_exists(obj_debugcontroller) && obj_debugcontroller.active
@@ -95,30 +98,30 @@ function scr_getinput()
 	var vertpress_dz = global.input_controller_deadzone_press;
 	var horizpress_dz = global.input_controller_deadzone_press;
 	
-	key_up = tdp_input_get("player_up").held || tdp_input_get("player_upC").held;
-	key_up2 = tdp_input_get("player_up").pressed || tdp_input_get("player_upC").pressed;
-	key_right = tdp_input_get("player_right").held || tdp_input_get("player_rightC").held;
-	key_right2 = tdp_input_get("player_right").pressed || tdp_input_get("player_rightC").pressed;
-	key_left = -(tdp_input_get("player_left").held || tdp_input_get("player_leftC").held);
-	key_left2 = -(tdp_input_get("player_left").pressed || tdp_input_get("player_leftC").pressed);
-	key_down = tdp_input_get("player_down").held || tdp_input_get("player_downC").held;
-	key_down2 = tdp_input_get("player_down").pressed || tdp_input_get("player_downC").pressed;
-	key_jump = tdp_input_get("player_jump").pressed || tdp_input_get("player_jumpC").pressed;
-	key_jump2 = tdp_input_get("player_jump").held || tdp_input_get("player_jumpC").held;
-	key_slap = tdp_input_get("player_slap").held || tdp_input_get("player_slapC").held;
-	key_slap2 = tdp_input_get("player_slap").pressed || tdp_input_get("player_slapC").pressed;
-	key_taunt = tdp_input_get("player_taunt").held || tdp_input_get("player_tauntC").held;
-	key_taunt2 = tdp_input_get("player_taunt").pressed || tdp_input_get("player_tauntC").pressed;
-	key_attack = tdp_input_get("player_attack").held || tdp_input_get("player_attackC").held;
-	key_attack2 = tdp_input_get("player_attack").pressed || tdp_input_get("player_attackC").pressed;
-	key_shoot = tdp_input_get("player_shoot").held || tdp_input_get("player_shootC").held;
-	key_shoot2 = tdp_input_get("player_shoot").pressed || tdp_input_get("player_shootC").pressed;
+	key_up = tdp_input_get("player_up" + _keyadd).held || tdp_input_get("player_upC").held;
+	key_up2 = tdp_input_get("player_up" + _keyadd).pressed || tdp_input_get("player_upC").pressed;
+	key_right = tdp_input_get("player_right" + _keyadd).held || tdp_input_get("player_rightC").held;
+	key_right2 = tdp_input_get("player_right" + _keyadd).pressed || tdp_input_get("player_rightC").pressed;
+	key_left = -(tdp_input_get("player_left" + _keyadd).held || tdp_input_get("player_leftC").held);
+	key_left2 = -(tdp_input_get("player_left" + _keyadd).pressed || tdp_input_get("player_leftC").pressed);
+	key_down = tdp_input_get("player_down" + _keyadd).held || tdp_input_get("player_downC").held;
+	key_down2 = tdp_input_get("player_down" + _keyadd).pressed || tdp_input_get("player_downC").pressed;
+	key_jump = tdp_input_get("player_jump" + _keyadd).pressed || tdp_input_get("player_jumpC").pressed;
+	key_jump2 = tdp_input_get("player_jump" + _keyadd).held || tdp_input_get("player_jumpC").held;
+	key_slap = tdp_input_get("player_slap" + _keyadd).held || tdp_input_get("player_slapC").held;
+	key_slap2 = tdp_input_get("player_slap" + _keyadd).pressed || tdp_input_get("player_slapC").pressed;
+	key_taunt = tdp_input_get("player_taunt" + _keyadd).held || tdp_input_get("player_tauntC").held;
+	key_taunt2 = tdp_input_get("player_taunt" + _keyadd).pressed || tdp_input_get("player_tauntC").pressed;
+	key_attack = tdp_input_get("player_attack" + _keyadd).held || tdp_input_get("player_attackC").held;
+	key_attack2 = tdp_input_get("player_attack" + _keyadd).pressed || tdp_input_get("player_attackC").pressed;
+	key_shoot = tdp_input_get("player_shoot" + _keyadd).held || tdp_input_get("player_shootC").held;
+	key_shoot2 = tdp_input_get("player_shoot" + _keyadd).pressed || tdp_input_get("player_shootC").pressed;
 	key_start = tdp_input_get("menu_start").pressed || tdp_input_get("menu_startC").pressed;
 	key_chainsaw = false;
 	key_chainsaw2 = false;
-	key_superjump = tdp_input_get("player_superjumpC").held || tdp_input_get("player_superjump").held;
-	key_groundpound = tdp_input_get("player_groundpoundC").pressed || tdp_input_get("player_groundpound").pressed;
-	key_groundpound2 = tdp_input_get("player_groundpoundC").held || tdp_input_get("player_groundpound").held;
+	key_superjump = tdp_input_get("player_superjumpC").held || tdp_input_get("player_superjump" + _keyadd).held;
+	key_groundpound = tdp_input_get("player_groundpoundC").pressed || tdp_input_get("player_groundpound" + _keyadd).pressed;
+	key_groundpound2 = tdp_input_get("player_groundpoundC").held || tdp_input_get("player_groundpound" + _keyadd).held;
 	key_left_axis = scr_get_move_axis("player_leftC");
 	key_right_axis = scr_get_move_axis("player_rightC");
 	key_up_axis = scr_get_move_axis("player_upC");
@@ -136,7 +139,7 @@ function scr_getinput()
 		stickpressed_vertical = false;
 	
 	// gamepad analog stick bullshit
-	if object_index == obj_player1
+	if object_index == obj_parent_player
     {
         if state == states.Sjumpprep || state == states.crouch || state == states.ratmountcrouch
         {

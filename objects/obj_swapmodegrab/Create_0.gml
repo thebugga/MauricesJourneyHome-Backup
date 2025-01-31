@@ -8,5 +8,5 @@ depth = -3
 slidecloudID = -4
 alarm[0] = 1
 usepalette = true
-grab_snd = fmod_event_create_instance("event:/sfx/pep/suplexdash")
+grab_snd = fmod_event_create_instance("event:/sfx/maurice/suplexdash")
 fmod_event_instance_play(grab_snd)

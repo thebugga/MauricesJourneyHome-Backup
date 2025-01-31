@@ -13,4 +13,11 @@ with (instance_create(x, y, obj_fadeout))
 		obj_player2.hallwaydirection = 1;
 	}
 }
+if global.swapmode
+{
+	with instance_create(obj_player1.x, obj_player1.y, obj_swapmodefollow)
+		global.playerFollowCharacter = other.character[other.selected2][1]
+}
+else if instance_exists(obj_swapmodefollow)
+	instance_destroy(obj_swapmodefollow)
 gamesave_async_load()

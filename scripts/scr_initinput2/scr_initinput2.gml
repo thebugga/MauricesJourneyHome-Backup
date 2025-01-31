@@ -2,6 +2,17 @@ function scr_initinput2()
 {
 	ini_open("saveData.ini")
 	
+    tdp_input_ini_read("player_upP2", [tdp_action(tdp_input.keyboard, ord("W"))]);
+    tdp_input_ini_read("player_rightP2", [tdp_action(tdp_input.keyboard, ord("D"))]);
+    tdp_input_ini_read("player_leftP2", [tdp_action(tdp_input.keyboard, ord("A"))]);
+    tdp_input_ini_read("player_downP2", [tdp_action(tdp_input.keyboard, ord("S"))]);
+    tdp_input_ini_read("player_jumpP2", [tdp_action(tdp_input.keyboard, ord("L"))]);
+    tdp_input_ini_read("player_slapP2", [tdp_action(tdp_input.keyboard, ord("K"))]);
+    tdp_input_ini_read("player_tauntP2", [tdp_action(tdp_input.keyboard, ord("O"))]);
+    tdp_input_ini_read("player_shootP2", [tdp_action(tdp_input.keyboard, ord("I"))]);
+    tdp_input_ini_read("player_attackP2", [tdp_action(tdp_input.keyboard, ord("J"))]);
+    tdp_input_ini_read("player_groundpoundP2", []);
+    tdp_input_ini_read("player_superjumpP2", []);
 	// I can't be bothered please
 	global.key_upN = ini_read_string("ControlsKeys2", "up", 87)
 	global.key_rightN = ini_read_string("ControlsKeys2", "right", 68)

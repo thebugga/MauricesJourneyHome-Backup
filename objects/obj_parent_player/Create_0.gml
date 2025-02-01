@@ -341,6 +341,9 @@ speedlineseffectid = obj_null;
 angryeffectid = obj_null;
 thrown = false;
 transformationsnd = false;
+timeup_anglediff = 0
+timeup_angle = 0
+timeup_dist = 0
 
 mach1snd = -1;
 mach2snd = -1;

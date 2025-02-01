@@ -164,26 +164,14 @@ if global.panic
 	var _fill = global.fill
 	var _currentbarpos = (chunkmax - _fill)
 	var _perc = (_currentbarpos / chunkmax)
-	var _max_x = 299
+	var _max_x = 135
 	var _barpos = (_max_x * _perc)
-	if (!surface_exists(bar_surface))
-		bar_surface = surface_create(298, 30)
-	var _barfillpos = (floor(_barpos) + 13)
-	if (_barfillpos > 0)
-	{
-		surface_resize(bar_surface, _barfillpos, 30)
-		surface_set_target(bar_surface)
-		draw_clear_alpha(c_black, 0)
-		var clip_x = (timer_x + 3)
-		var clip_y = (timer_y + 5)
-		for (i = 0; i < 3; i++)
-			draw_sprite(spr_timer_barfill, 0, (barfill_x + (i * 173)), 0)
-		surface_reset_target()
-		draw_surface(bar_surface, clip_x, clip_y)
-	}
-	draw_sprite(spr_timer_bar, -1, timer_x, timer_y)
-	draw_sprite(johnface_sprite, johnface_index, ((timer_x + 13) + _barpos), (timer_y + 20))
-	draw_sprite(pizzaface_sprite, pizzaface_index, (timer_x + 320), (timer_y + 10))
+	var _hand = 0
+	if global.playerCharacter == Characters.Doise
+		_hand = 1
+	draw_sprite(spr_timer_bar, _hand, timer_x, timer_y)
+	draw_sprite(johnface_sprite, johnface_index, ((timer_x + 41) + _barpos), (timer_y + 60))
+	draw_sprite(pizzaface_sprite, pizzaface_index, (timer_x + 224), (timer_y + 62))
 	var minutes = 0;
 	for (var seconds = ceil(global.fill / 12); seconds > 59; seconds -= 60)
 		minutes++;
@@ -194,7 +182,7 @@ if global.panic
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	draw_set_font(global.bigfont);
-	draw_text(timer_x + 153, timer_y + 18, concat(minutes, ":", seconds));
+	draw_text(timer_x + 123, timer_y + 72, concat(minutes, ":", seconds));
 }
 if (!ds_list_empty(messagelist))
 {

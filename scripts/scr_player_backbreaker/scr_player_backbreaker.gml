@@ -76,7 +76,7 @@ function scr_player_backbreaker()
 			supercharge = 0
 			supercharged = 0
 		}
-        if (obj_swapmodefollow.input_buffer_taunt > 0 && global.swapmode)
+        if (global.swapmode && obj_swapmodefollow.input_buffer_taunt > 0)
         {
             if ((!swap_taunt) && swap_player(false))
             {

@@ -6,14 +6,6 @@ function scr_player_timesup()
 	alarm[7] = -1
 	alarm[8] = -1
 	alarm[5] = -1
-	if place_meeting(x, y, obj_timesup)
-	{
-		state = states.gameover
-		sprite_index = spr_deathend
-		alarm[10] = 5
-		vsp = -8
-		hsp = -4
-	}
 	if (room == timesuproom)
 	{
 		obj_player1.x = 480
@@ -23,6 +15,14 @@ function scr_player_timesup()
 	}
 	if (floor(image_index) == 9)
 		image_speed = 0
+	if obj_timesup.image_xscale >= 1
+	{
+		timeup_anglediff = -obj_timesup.image_angle
+		timeup_angle = point_direction(obj_timesup.x, obj_timesup.y, x, y) - obj_timesup.image_angle
+		timeup_dist = point_distance(obj_timesup.x, obj_timesup.y, x, y)
+		state = states.gameover
+		image_speed = 0.35
+	}
 	exit;
 }
 

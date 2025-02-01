@@ -777,7 +777,7 @@ if (global.playerhealth <= 0 && state != states.gameover)
 	sprite_index = spr_playerV_dead
 	state = states.gameover
 }
-if (state == states.gameover && y > (room_height * 2) && (!instance_exists(obj_backtohub)))
+if (state == states.gameover && y > (room_height * 4) && (!instance_exists(obj_backtohub)))
 {
 	targetDoor = "HUB"
     scr_playerreset()
@@ -836,7 +836,7 @@ else if (state == states.jetpackjump)
 	grav = 0.5
 else if (state == states.boxxedpepspin)
 	grav = 0.6
-else
+else if (state != states.gameover)
 	grav = 0.5
 if (state == states.barrel && key_jump2 && (!jumpstop))
 	grav = 0.4

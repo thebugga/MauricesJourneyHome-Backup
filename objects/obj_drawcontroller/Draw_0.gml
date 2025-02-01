@@ -46,7 +46,7 @@ with (obj_heatafterimage)
 }
 with (obj_parent_player)
 {
-	if (visible && bbox_in_camera(view_camera[0], 32))
+	if (visible && (bbox_in_camera(view_camera[0], 32) || state == states.gameover))
 	{
 		shader_set(global.retro_pal_swapper)
 		pal_swap_set(spr_palette, paletteselect, 0)

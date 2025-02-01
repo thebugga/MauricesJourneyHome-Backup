@@ -152,6 +152,7 @@ function scr_playerreset(argument0)
 		ratpowerup = -4
 		scale_xs = 1
 		scale_ys = 1
+		angle = 0
 		obj_camera.targetgolf = -4
 		ds_list_clear(global.baddietomb)
 		obj_parent_player.supercharge = 0
@@ -418,7 +419,7 @@ function scr_playerreset(argument0)
 	}
 	with (obj_followcharacter)
 	{
-		if id != obj_swapmodefollow.id
+		if object_index != obj_swapmodefollow
 			instance_destroy()
 	}
 	instance_destroy(obj_shotgunback)

@@ -1,10 +1,8 @@
-grav = 0
-hsp = 0
-vsp = 0
-grounded = false
-image_speed = 0
-alarm[0] = 40
+image_xscale = 0
+image_yscale = 0
+image_angle = -45
+alarm[0] = 55
 global.panic = false
-platformid = -4
-hsp_carry = 0
-vsp_carry = 0
+zooming = false
+yspd = 3.5
+zspd = 0

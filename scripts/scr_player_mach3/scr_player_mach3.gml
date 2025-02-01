@@ -182,11 +182,11 @@ function scr_player_mach3()
 				state = states.machslide;
 				image_index = 0;
 			}
-			if global.playerCharacter == Characters.Doise
-			{
-			if key_down
-			state = states.freefallprep
-			}
+			//if global.playerCharacter == Characters.Doise
+			//{
+			//	if key_down
+			//	state = states.freefallprep
+			//}
 			if (scr_mach_check_dive() && fightball == 0 && (sprite_index != spr_dashpadmach || dropboost) && sprite_index != spr_rockethitwall)
 			{
 				particle_set_scale(particle.jumpdust, xscale, 1);
@@ -222,6 +222,18 @@ function scr_player_mach3()
 						fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
 						instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
 					}
+					else if global.playerCharacter == Characters.Doise
+					{
+						machhitAnim = false
+						if movespeed < 1
+							wallspeed = 1;
+						else
+						{
+							vsp -= 0.5
+							wallspeed = movespeed;
+						}
+						state = states.climbwall
+					}
 				}
 			}
 			if ((grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
@@ -242,7 +254,7 @@ function scr_player_mach3()
 					state = states.climbwall
 				}
 			}
-			if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && sprite_index != spr_dashpadmach && (!global.pistol || !ispeppino))
+			if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && sprite_index != spr_dashpadmach)
 			{
 				input_buffer_slap = 0;
 				state = states.punch;

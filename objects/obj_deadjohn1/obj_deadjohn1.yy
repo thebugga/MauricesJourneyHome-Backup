@@ -9,7 +9,10 @@
     "name": "World 1",
     "path": "folders/Objects/Game settings/Room structure/World 1.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_destroyable3",
+    "path": "objects/obj_destroyable3/obj_destroyable3.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

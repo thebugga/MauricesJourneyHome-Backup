@@ -32,7 +32,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": true,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_felix_idle",
+    "path": "sprites/spr_felix_idle/spr_felix_idle.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

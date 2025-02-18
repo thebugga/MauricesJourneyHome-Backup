@@ -1,3 +1,3 @@
-event_inherited()
-alarm[0] = 1
+hp = 2
+depth = 1
 spr_dead = sprite_index

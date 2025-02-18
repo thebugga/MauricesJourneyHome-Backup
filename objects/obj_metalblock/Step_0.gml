@@ -19,6 +19,11 @@ if (place_meeting(x, (y + 1), obj_player1) or place_meeting(x, (y - 1), obj_play
 		instance_destroy()
 		tile_layer_delete_at(1, x, y)
 	}
+	if (place_meeting(x, (y + 1), obj_player1) && obj_player1.state == states.Sjump)
+	{
+		playerindex = 0
+		instance_destroy()
+	}
 }
 with (obj_player2)
 {

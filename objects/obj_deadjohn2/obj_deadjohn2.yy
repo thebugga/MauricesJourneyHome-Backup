@@ -9,7 +9,10 @@
     "name": "World 1",
     "path": "folders/Objects/Game settings/Room structure/World 1.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_deadjohn1",
+    "path": "objects/obj_deadjohn1/obj_deadjohn1.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

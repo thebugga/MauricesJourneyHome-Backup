@@ -195,13 +195,14 @@ function scr_collide_destructibles() //gml_Script_scr_collide_destructibles
                     if (_destroyed && state == states.lungeattack)
                         hit_connected = 1
                 }
-				sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4)
-                image_index = 0
-				state = states.tackle
-				movespeed = 3
-				vsp = -3
+				with (obj_parent_player)
+				{
+					sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_punch)
+                	image_index = 0
+					state = states.tackle
+					movespeed = 3
+					vsp = -3
+				}
             }
         }
     }
-}
-

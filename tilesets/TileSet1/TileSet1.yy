@@ -26,13 +26,12 @@
     "FrameData": [],
     "SerialiseFrameCount": 1,
   },
-  "macroPageTiles": {
-    "SerialiseWidth": 0,
-    "SerialiseHeight": 0,
-    "TileSerialiseData": [],
-  },
-  "parent": {
-    "name": "Tilesets",
-    "path": "folders/Tilesets.yy",
-  },
+  "tileAnimationFrames": [],
+  "tileAnimationSpeed": 15.0,
+  "tileHeight": 16,
+  "tilehsep": 0,
+  "tilevsep": 0,
+  "tileWidth": 16,
+  "tilexoff": 0,
+  "tileyoff": 0,
 }

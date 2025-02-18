@@ -613,7 +613,7 @@ if (!variable_global_exists("saveroom"))
 	global.pigtotal_add = 0;
 	global.bullet = 0;
 	global.fuel = 3;
-	global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡¿?.1234567890:ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜÇ", true, 0);
+    global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡¿?.1234567890:ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇ+", 1, 0)
 	global.collectfont = font_add_sprite_ext(spr_font_collect, "0123456789", 1, 0)
 	global.combofont = font_add_sprite_ext(spr_font_combo, "0123456789/:", 1, 0)
 	global.combofont2 = font_add_sprite_ext(spr_tv_combobubbletext, "0123456789", 1, 0)

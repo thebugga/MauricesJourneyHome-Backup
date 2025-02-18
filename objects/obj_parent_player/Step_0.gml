@@ -6,6 +6,11 @@ prevxscale = xscale
 
 scr_getinput(player_index)
 
+if keyboard_check_pressed(vk_f6)
+{
+	debugstats = !debugstats
+}
+
 var prevmask = mask_index
 
 // input buffers and coyote time

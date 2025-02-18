@@ -46,22 +46,3 @@ draw_set_color(c_white)
 var _roomname = room_get_name(room);
 var finalstr = concat(hours, ":", m_str, ":", s_str, ".", mm)
 draw_text(960 - ((string_length(finalstr) - 1) * string_width("A")), 540 - 8, finalstr)
-if debug
-{
-	draw_text(32, 32, "fps = " + string(fps_real));
-	draw_text(32, 52, "character = " + string(global.playerCharacter));
-	draw_text(32, 72, "hsp = " + string(obj_player1.hsp));
-	draw_text(32, 92, "vsp = " + string(obj_player1.vsp));
-	draw_text(32, 112, "movespeed = " + string(obj_player1.movespeed));
-	draw_text(32, 132, "grounded = " + string(obj_player1.grounded));
-	draw_text(32, 152, "sprite_index = " + sprite_get_name(obj_player1.sprite_index));
-	draw_text(32, 172, "image_index = " + string(obj_player1.image_index));
-	draw_text(32, 192, "x = " + string(obj_player1.x));
-	draw_text(32, 212, "y = " + string(obj_player1.y));
-	draw_text(32, 232, "current room = " + room_get_name(room));
-	draw_text(32, 252, "last room = " + room_get_name(obj_player1.lastroom));
-	draw_text(32, 272, "state = " + string(obj_player1.state));
-	draw_text(32, 292, string(obj_player1.input_buffer_slap));
-draw_set_font(global.creditsfont)
-draw_text(10, 530, "https://discord.gg/2avBw3ztEu")
-}

@@ -1,5 +1,5 @@
 
-;
+#macro debug (GM_build_type == "run")
 
 if instance_number(object_index) > 1
 {
@@ -44,6 +44,7 @@ fightball_buffer1 = 0;
 fightball_buffer2 = 0;
 fightball_snd_buffer = 0;
 jump_p2 = 0;
+debugstats = false
 scr_init_input();
 supernoisefademax = 4;
 supernoisefade = (supernoisefademax * 20) / 2;

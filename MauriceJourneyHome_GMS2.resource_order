@@ -1,5 +1,7 @@
 {
-  "FolderOrderSettings": [],
+  "FolderOrderSettings": [
+    {"name":"Tower","order":1,"path":"folders/Rooms/Tower.yy",},
+  ],
   "ResourceOrderSettings": [
     {"name":"spr_voyagelogo_tower","order":54,"path":"sprites/spr_voyagelogo_tower/spr_voyagelogo_tower.yy",},
     {"name":"sp_antonDied","order":16,"path":"sprites/sp_antonDied/sp_antonDied.yy",},

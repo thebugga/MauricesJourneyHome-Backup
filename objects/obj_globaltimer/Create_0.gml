@@ -9,4 +9,3 @@ global.level_seconds = 0
 global.file_minutes = 0
 global.file_seconds = 0
 depth = -600
-debug = false

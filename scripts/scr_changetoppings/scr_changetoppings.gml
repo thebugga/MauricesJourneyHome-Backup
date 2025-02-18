@@ -27,5 +27,49 @@ function scr_changetoppings()
 				instance_create(((x + (sprite_width / 2)) + random_range(-10, 10)), ((y + (sprite_height / 2)) + random_range(-5, 5)), obj_cloudeffect)
 		}
 	}
+	with (obj_giantcollect)
+	{
+		if (ds_list_find_index(global.saveroom, id) == -1)
+		{
+			if _global.playerCharacter == Characters.Maurice
+				sprite_index = spr_giantpizza
+			if _global.playerCharacter == Characters.Doise
+				sprite_index = spr_giantpizzahalloween
+			instance_create((x + (sprite_width / 2)), (y + (sprite_height / 2)), obj_cloudeffect)
+			repeat (5)
+				instance_create(((x + (sprite_width / 2)) + random_range(-15, 15)), ((y + (sprite_height / 2)) + random_range(-5, 5)), obj_cloudeffect)
+		}
+	}
+	with (obj_destroyable2)
+	{
+		if (ds_list_find_index(global.saveroom, id) == -1)
+		{
+			if _global.playerCharacter == Characters.Maurice
+				sprite_index = spr_destroyable2
+				/*
+			if _global.playerCharacter == Characters.Doise
+				sprite_index = spr_halloweensmallblock
+				*/
+			instance_create((x + (sprite_width / 2)), (y + (sprite_height / 2)), obj_cloudeffect)
+			repeat (3)
+				instance_create(((x + (sprite_width / 2)) + random_range(-5, 5)), ((y + (sprite_height / 2)) + random_range(-5, 5)), obj_cloudeffect)
+		}
+	}
+	with (obj_destroyable2_big)
+	{
+		if (ds_list_find_index(global.saveroom, id) == -1)
+		{
+			if _global.playerCharacter == Characters.Maurice
+				sprite_index = spr_bigbreakable
+				/*
+			if _global.playerCharacter == Characters.Doise
+				sprite_index = spr_halloweenbigblock
+				*/
+			instance_create((x + (sprite_width / 2)), (y + (sprite_height / 2)), obj_cloudeffect)
+			repeat (3)
+				instance_create(((x + (sprite_width / 2)) + random_range(-10, 10)), ((y + (sprite_height / 2)) + random_range(-5, 5)), obj_cloudeffect)
+		}
+	}
+	exit;
 }
 

@@ -2,8 +2,6 @@ if (room == rm_editor)
 	exit;
 if (ds_list_find_index(global.baddieroom, id) == -1 && ((!elite) or elitehit <= 0))
 {
-	if (irandom(200) >= 150)
-		scr_soundeffect(asset_get_index(concat("sfx_scream", irandom_range(1, 10))))
 	if (object_index != obj_peppinoclone)
 	{
 		with (instance_create(x, y, obj_sausageman_dead))

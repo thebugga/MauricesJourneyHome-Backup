@@ -38,8 +38,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_towerblocksmall",
-    "path": "sprites/spr_towerblocksmall/spr_towerblocksmall.yy",
+    "name": "spr_destroyable1",
+    "path": "sprites/spr_destroyable1/spr_destroyable1.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_towerblock",
-    "path": "sprites/spr_towerblock/spr_towerblock.yy",
+    "name": "sprite387",
+    "path": "sprites/sprite387/sprite387.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -206,3 +206,5 @@ function scr_collide_destructibles() //gml_Script_scr_collide_destructibles
             }
         }
     }
+}
+

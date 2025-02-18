@@ -4,7 +4,7 @@ if fadein
     if (fadealpha >= 1)
     {
         if (!instance_exists(obj_player1))
-            instance_activate_object(obj_player1)
+            instance_activate_object(obj_parent_player)
         else
         {
             fadein = false

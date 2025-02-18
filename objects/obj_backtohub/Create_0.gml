@@ -1,4 +1,4 @@
 fadealpha = 0
 fadein = true
-reset = false
+reset = true
 depth = -1000

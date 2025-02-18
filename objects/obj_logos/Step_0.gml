@@ -1,4 +1,4 @@
-if obj_parent_player.key_jump2 && logos != 3
+if obj_player1.key_jump && logos != 3
 	logosbuffer = 0
 if logosbuffer > 0
 	logosbuffer--

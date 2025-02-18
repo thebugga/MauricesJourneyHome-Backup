@@ -1,7 +1,7 @@
 if (!instance_exists(obj_player1))
 {
     alarm[0] = 1
-    instance_activate_object(obj_player1)
+    instance_activate_object(obj_parent_player)
 }
 else
 {
@@ -12,10 +12,13 @@ else
         with (obj_music)
             event_perform(ev_other, ev_room_start)
     }
-    obj_player1.x = obj_player1.backtohubstartx
-    obj_player1.y = obj_player1.backtohubstarty
-    obj_player1.state = states.actor
-    obj_player1.sprite_index = obj_player1.spr_rockethitwall
-	obj_player1.visible = false
+	with obj_parent_player
+	{
+	    x = backtohubstartx
+	    y = backtohubstarty
+	    state = states.actor
+	    sprite_index = spr_rockethitwall
+		visible = false
+	}
     alarm[1] = 100
 }

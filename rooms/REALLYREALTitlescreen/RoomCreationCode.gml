@@ -86,3 +86,4 @@ global.dougiecutscene2 = -4
 //global.mrstickcutscene3 = -4
 //global.chateauswap = -4
 //global.warcutscene = -4
+room_goto(rm_levelselect)

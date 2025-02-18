@@ -36,7 +36,7 @@ if (phase == 0 && attacking)
 						choseattack = phase1attacks[j]
 					}
 					phase1attacks[j] = -4
-					with (instance_create(x, y, obj_pizzafacepart))
+					with (instance_create(x, y, obj_pizzamancerpart))
 					{
 						vsp = -11
 						hsp = choose(-5, 5)

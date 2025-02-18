@@ -13,7 +13,7 @@ with (obj_parent_player)
 				x = other.x
 				y = other.y
 			}
-			with (obj_pizzaface)
+			with (obj_pizzamancer)
 			{
 				x = other.x
 				y = other.y

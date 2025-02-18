@@ -8,8 +8,7 @@ function calculate_parrallax_still_x(_lay, _parrallax)
 	else
 		per_x = _cam_x / w
 	var si = layer_background_get_sprite(layer_background_get_id(lay))
-	var sw = sprite_get_width(si) - 960
-	var r = sw * per_x * _parrallax
+	var r = per_x * _parrallax
 	r = max(r, 0)
 	return r;
 }
@@ -23,8 +22,7 @@ function calculate_parrallax_still_y(_lay, _parrallax)
 	else
 		per_y = _cam_y / h
 	var si = layer_background_get_sprite(layer_background_get_id(lay))
-	var sh = sprite_get_height(si) - 540
-	var r = sh * per_y * _parrallax
+	var r = per_y * _parrallax
 	r = max(r, 0)
 	return r;
 }

@@ -47,9 +47,3 @@ if !instance_exists(obj_option)
 			image_index = 0
 	}
 }
-for (var i = 0; i < array_length(toppin_info); i++)
-{
-	toppin_info[i][0] += 0.35
-	if toppin_info[i][0] > sprite_get_number(toppin_info[i][1])
-		toppin_info[i][0] = frac(toppin_info[i][0])
-}

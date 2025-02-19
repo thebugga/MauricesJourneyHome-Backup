@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9107fa10-8a5b-46b5-886e-a219ef1435d8}">
+		<property name="assetPath" />
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.207125</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0f8c9c10-53db-48a6-991c-a4a74257fc99}</destination>
+		</relationship>
+	</object>
+</objects>

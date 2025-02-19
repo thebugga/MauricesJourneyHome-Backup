@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{467c90a3-2a17-4436-8c73-97a1332c8b90}">
 		<property name="assetPath">
-			<value>Pizza Tower OST - Pesto Anchovi (Unused).ogg</value>
+			<value>music/Pizza Tower OST - Pesto Anchovi (Unused).ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

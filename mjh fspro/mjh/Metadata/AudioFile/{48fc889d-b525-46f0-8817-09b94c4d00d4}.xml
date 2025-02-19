@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{48fc889d-b525-46f0-8817-09b94c4d00d4}">
 		<property name="assetPath">
-			<value>wip hub theme.ogg</value>
+			<value>music/wip hub theme.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

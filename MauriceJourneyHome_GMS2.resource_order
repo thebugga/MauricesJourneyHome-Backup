@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings": [
+    {"name":"Tower","order":1,"path":"folders/Rooms/Tower.yy",},
     {"name":"States","order":12,"path":"folders/Scripts/Player/States.yy",},
     {"name":"Utilities","order":13,"path":"folders/Scripts/Player/Utilities.yy",},
-    {"name":"Tower","order":1,"path":"folders/Rooms/Tower.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_voyagelogo_tower","order":54,"path":"sprites/spr_voyagelogo_tower/spr_voyagelogo_tower.yy",},

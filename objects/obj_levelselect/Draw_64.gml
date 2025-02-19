@@ -6,11 +6,9 @@ draw_set_font(global.bigfont)
 var _levelinfo = level_array[selected_world][selected_level]
 draw_text(480, 270 + 50 , concat(world_array[selected_world], "\n", selected_level + 1, ". ", _levelinfo[0]))
 
-var xx = 387
-var yy = 380 + 50 
 var c = c_white
 ini_open_from_string(obj_savesystem.ini_str)
-draw_text(480, yy - 38, ini_read_real("Highscore", _levelinfo[2], 0))
+draw_text(480, 392, ini_read_real("Highscore", _levelinfo[2], 0))
 var r = ini_read_string("Ranks", string(_levelinfo[2]), 0)
 switch r
 {
@@ -33,25 +31,30 @@ switch r
 		rank_index = 0
 		break;
 }
-draw_sprite(spr_ranks_hud, rank_index, xx - 67, yy + 26)
-for (var i = 0; i < array_length(toppin_info); i++)
+
+var rankbg_color = ds_map_create()
+ds_map_set(rankbg_color, 0, #a0b8d8)
+ds_map_set(rankbg_color, 1, #c8f8a8)
+ds_map_set(rankbg_color, 2, #98e8f8)
+ds_map_set(rankbg_color, 3, #eaad9c)
+ds_map_set(rankbg_color, 4, #f8f8a8)
+ds_map_set(rankbg_color, 5, #f8a0f8)
+
+draw_ellipse_color(330, 400, 430, 500, ds_map_find_value(rankbg_color, rank_index), ds_map_find_value(rankbg_color, rank_index), false)
+draw_ellipse_color(330, 400, 430, 500, c_black, c_black, true)
+draw_sprite(spr_ranks_gate, rank_index, 380, 450)
+
+for (var i = 0; i < 5; i++)
 {
-	var b = toppin_info[i]
-	var ix = b[0]
-	if !ini_read_real("Toppin", concat(_levelinfo[2], i + 1), 0)
-	{
-		c = c_black
-		ix = 0
-	}
-	else
-		c = c_white
-	draw_sprite_ext(b[1], i, xx + (i * 47), yy, 1, 1, 0, c, 1)
+	if ini_read_real("Toppin", concat(_levelinfo[2], i + 1), 0)
+		draw_sprite_ext(spr_goochling, i, 480, 450, 1, 1, 0, c, 1)
 }
-draw_sprite_ext(spr_lap2warning, 0, 616, (yy + 26), 1, 1, 0, c_white, 1)
+
+draw_sprite_ext(spr_lap2warning, 0, 580, 450, 1, 1, 0, c_white, 1)
 
 draw_set_font(global.smallfont)
 var sf = ini_read_real("Secret", _levelinfo[2], 0)
-	draw_text_color(480, (yy + 88), concat(sf, " OUT OF 3 SECRETS"), c_white, c_white, c_white, c_white, 1)
+	draw_text_color(480, 500, concat(sf, " OUT OF 3 SECRETS"), c_white, c_white, c_white, c_white, 1)
 ini_close()
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)

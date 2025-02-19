@@ -125,7 +125,7 @@ function tdp_get_icons(input)
 }
 function tdp_get_tutorial_icon(keyname)
 {
-	if obj_inputAssigner.player_input_device[swap.player1] >= 0
+	if obj_inputAssigner.player_input_device[0] >= 0
 		keyname += "C";
 	var in = tdp_input_get(keyname);
 	for (var i = 0; i < array_length(in.actions); i++)

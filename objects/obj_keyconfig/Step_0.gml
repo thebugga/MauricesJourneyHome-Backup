@@ -166,9 +166,9 @@ else
 		selecting = false;
 		exit;
 	}
-	var val = scr_checkanygamepad(obj_inputAssigner.player_input_device[swap.player1]);
+	var val = scr_checkanygamepad(obj_inputAssigner.player_input_device[0]);
 	if val == noone
-		val = scr_check_joysticks(obj_inputAssigner.player_input_device[swap.player1]);
+		val = scr_check_joysticks(obj_inputAssigner.player_input_device[0]);
 	if val != noone && val != gp_select
 	{
 		if !menu || scr_check_menu_repeats(input[key_select, 0], val, true)

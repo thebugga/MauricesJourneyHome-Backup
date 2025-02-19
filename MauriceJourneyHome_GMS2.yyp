@@ -1032,6 +1032,7 @@
     {"id":{"name":"__background_set_internal","path":"scripts/__background_set_internal/__background_set_internal.yy",},},
     {"id":{"name":"__background_set","path":"scripts/__background_set/__background_set.yy",},},
     {"id":{"name":"__global_object_depths","path":"scripts/__global_object_depths/__global_object_depths.yy",},},
+    {"id":{"name":"obj_mancy","path":"objects/obj_mancy/obj_mancy.yy",},},
     {"id":{"name":"__init_action","path":"scripts/__init_action/__init_action.yy",},},
     {"id":{"name":"__init_background","path":"scripts/__init_background/__init_background.yy",},},
     {"id":{"name":"__init_global","path":"scripts/__init_global/__init_global.yy",},},

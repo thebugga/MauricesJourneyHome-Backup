@@ -48,32 +48,7 @@ if global.heatmeter
 	draw_sprite_ext(spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha)
 	shader_reset()
 }
-var _cx = (hud_xx + combo_posX)
-var _cy = (((hud_yy + 75)) + combo_posY)
-var _perc = (global.combotime / 60)
-var _minX = (_cx - 56)
-var _maxX = (_cx + 59)
-combofill_x = lerp(combofill_x, (_minX + ((_maxX - _minX) * _perc)), 0.5)
-combofill_y = _cy
 shader_set(global.retro_pal_swapper)
-pal_swap_set(spr_tv_combofillpalette, (!global.combodropped) ? 2 : 1, false)
-draw_sprite(spr_tv_combobubblefill, combofill_index, combofill_x, combofill_y)
-reset_shader_fix()
-draw_sprite(spr_tv_combobubble, -1, _cx, _cy)
-draw_set_font(global.combofont2)
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
-var _tx = (_cx - 64)
-var _ty = (_cy - 12)
-var _str = string(global.combo)
-var _num = string_length(_str)
-for (var i = _num; i > 0; i--)
-{
-	var char = string_char_at(_str, i)
-	draw_text(_tx, _ty, char)
-	_tx -= 22
-	_ty -= 8
-}
 draw_sprite_ext(spr_pizzascore, pizzascore_index, hud_scorex, hud_scorey, 1, 1, 0, c_white, alpha)
 var _score = global.collect
 if global.coop

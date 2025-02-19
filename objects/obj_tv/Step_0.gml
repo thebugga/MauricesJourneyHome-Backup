@@ -15,6 +15,79 @@ if (targetgolf != -4 && (!view_visible[1]))
 	view_visible[1] = true
 	view_enabled = true
 }
+
+combo_posX = Wave(-5, 5, 2, 20)
+if (global.combotime > 0 && global.combo != 0)
+{
+	switch combo_state
+	{
+		case 0:
+			combo_posY += combo_vsp
+			combo_vsp += 0.5
+			if (combo_posY > 20)
+				combo_state++
+			break
+		case 1:
+			combo_posY = lerp(combo_posY, 0, 0.05)
+			if (combo_posY < 1)
+			{
+				combo_posY = 0
+				combo_vsp = 0
+				combo_state++
+			}
+			break
+		case 2:
+			if (global.combotime < 30)
+			{
+				combo_posY += combo_vsp
+				if (combo_vsp < 20)
+					combo_vsp += 0.5
+				if (combo_posY > 0)
+				{
+					combo_posY = 0
+					combo_vsp = -1
+					if (global.combotime < 15)
+						combo_vsp = -2
+				}
+			}
+			else
+				combo_posY = Approach(combo_posY, 0, 10)
+			break
+	}
+
+}
+else
+{
+	combo_posY = Approach(combo_posY, -500, 5)
+	combo_vsp = 0
+	combo_state = 0
+}
+combofill_index += 0.35
+if (combofill_index > (sprite_get_number(spr_tv_combobubblefill) - 1))
+	combofill_index = frac(combofill_index)
+
+if global.combo > 0
+{
+	comboend = true;
+	var ct = global.combotime;
+	if ct <= 40
+	{
+		if alarm[5] == -1
+		{
+			if ct >= 20
+				alarm[5] = 12;
+			else
+				alarm[5] = 5;
+		}
+	}
+	else
+		combobubblevisible = true;
+}
+else if comboend
+{
+	comboend = false;
+	event_perform(2, 4);
+}
 if (prompt != -4 && prompt != "")
 	newsy = Approach(newsy, 470, 5)
 else

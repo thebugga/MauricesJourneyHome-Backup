@@ -25,8 +25,12 @@ var tv_y = -54
 var _score = global.collect
 if global.coop
 	_score += global.collectN
-var rx = (tv_x + 25)
-var ry = (tv_y + 225)
+var hud_xx = 839
+var hud_yy = 90
+var hud_scorex = hud_xx + irandom_range(-collect_shake, collect_shake)
+var hud_scorey = hud_yy + irandom_range(-collect_shake, collect_shake)
+var rx = (hud_scorex - 220)
+var ry = 30
 var rank_ix = 0
 if (scr_is_prank())
 	rank_ix = 5
@@ -64,6 +68,31 @@ switch rank_ix
 	break
 	default:
 		perc = (_score / global.crank)
+}
+var _cx = (combo_posX + 130)
+var _cy = (((hud_yy + 125)) + combo_posY)
+var _perc = (global.combotime / 60)
+var _minX = (_cx - 56)
+var _maxX = (_cx + 59)
+combofill_x = lerp(combofill_x, (_minX + ((_maxX - _minX) * _perc)), 0.5)
+combofill_y = _cy
+pal_swap_set(spr_tv_combofillpalette, (!global.combodropped) ? 2 : 1, false)
+draw_sprite(spr_tv_combobubblefill, combofill_index, combofill_x, combofill_y)
+reset_shader_fix()
+draw_sprite(spr_tv_combobubble, -1, _cx, _cy)
+draw_set_font(global.combofont2)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+var _tx = (_cx - 64)
+var _ty = (_cy - 12)
+var _str = string(global.combo)
+var _num = string_length(_str)
+for (var i = _num; i > 0; i--)
+{
+	var char = string_char_at(_str, i)
+	draw_text(_tx, _ty, char)
+	_tx -= 22
+	_ty -= 8
 }
 if abs(rank_state) == 1
 {
@@ -188,7 +217,7 @@ if (!ds_list_empty(messagelist))
 {
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_top);
-	draw_set_font(global.smallfont);
+	draw_set_font(global.font_small);
 	if ds_list_size(messagelist) > 5
 		ds_list_delete(messagelist, 1)
 	for (var i = 0; i < ds_list_size(messagelist); i++)
@@ -196,7 +225,7 @@ if (!ds_list_empty(messagelist))
 		var b = ds_list_find_value(messagelist, i)
 		{
 			draw_set_alpha(b.alpha)
-			draw_text(540, (((ds_list_size(messagelist) - 1) * 16) - (16 * i)), b.text)
+			draw_text(490, (((ds_list_size(messagelist) - 1) * 16) - (16 * i)), b.text)
 			draw_set_alpha(1)
 			if b.timer > 0
 				b.timer--

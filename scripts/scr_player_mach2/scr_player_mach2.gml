@@ -153,27 +153,19 @@ function scr_player_mach2()
 			_climb = ledge_bump(32, abs(hsp) + 1);
 		if _climb
 		{
-			if global.playerCharacter == Characters.Maurice
+			if global.playerCharacter == Characters.Clownmato
 			{
-				sprite_index = spr_mach2jump;
-				image_index = 0;
-				xscale *= -1;
-				vsp = key_jump2 ? -12 : -8;
-				fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
-				instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
+				state = states.hang
 			}
-			else if global.playerCharacter == Characters.Doise
+			machhitAnim = false
+			if movespeed < 1
+				wallspeed = 1;
+			else
 			{
-				grabclimbbuffer = 0;
-				if movespeed < 1
-					wallspeed = 1;
-				else
-				{
-					vsp -= 0.5
-					wallspeed = movespeed;
-				}
-				state = states.climbwall;
+				vsp -= 0.5
+				wallspeed = movespeed;
 			}
+			state = states.climbwall
 		}
 	}
 	if ((grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
@@ -324,9 +316,11 @@ function scr_player_mach2()
 	        input_buffer_slap = 0
 	        suplexmove = true
 	        fmod_event_instance_play(suplexdashsnd)
-	        state = states.slap
+	        state = states.handstandjump
 	        image_index = 0
-			slaphand = choose(-1, 1)
+			slaphand = 1
+			sprite_index = spr_player_lungestart
+			movespeed = 10
 		}
 		else if global.playerCharacter == Characters.Doise
 		{

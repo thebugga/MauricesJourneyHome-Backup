@@ -121,6 +121,7 @@
     {"name":"scr_playerinit","order":1,"path":"scripts/scr_playerinit/scr_playerinit.yy",},
     {"name":"spr_palettedresser","order":60,"path":"sprites/spr_palettedresser/spr_palettedresser.yy",},
     {"name":"bg_tower","order":59,"path":"sprites/bg_tower/bg_tower.yy",},
+    {"name":"spr_felix_mask","order":83,"path":"sprites/spr_felix_mask/spr_felix_mask.yy",},
     {"name":"spr_timer_felixface","order":1,"path":"sprites/spr_timer_felixface/spr_timer_felixface.yy",},
     {"name":"shd_pal_html_surface","order":1,"path":"shaders/shd_pal_html_surface/shd_pal_html_surface.yy",},
     {"name":"spr_hungrypillar_dead12","order":1,"path":"sprites/spr_hungrypillar_dead12/spr_hungrypillar_dead12.yy",},

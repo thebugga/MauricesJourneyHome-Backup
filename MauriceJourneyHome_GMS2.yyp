@@ -2296,6 +2296,7 @@
     {"id":{"name":"spr_player_tumblestart","path":"sprites/spr_player_tumblestart/spr_player_tumblestart.yy",},},
     {"id":{"name":"spr_player_ufotransition","path":"sprites/spr_player_ufotransition/spr_player_ufotransition.yy",},},
     {"id":{"name":"spr_player_ungroundedattack","path":"sprites/spr_player_ungroundedattack/spr_player_ungroundedattack.yy",},},
+    {"id":{"name":"spr_felix_mask","path":"sprites/spr_felix_mask/spr_felix_mask.yy",},},
     {"id":{"name":"spr_player_uppercutfinishingblow","path":"sprites/spr_player_uppercutfinishingblow/spr_player_uppercutfinishingblow.yy",},},
     {"id":{"name":"spr_player_uppizzabox","path":"sprites/spr_player_uppizzabox/spr_player_uppizzabox.yy",},},
     {"id":{"name":"spr_player_uppunch","path":"sprites/spr_player_uppunch/spr_player_uppunch.yy",},},

@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite387",
-    "path": "sprites/sprite387/sprite387.yy",
+    "name": "spr_septemberblock",
+    "path": "sprites/spr_septemberblock/spr_septemberblock.yy",
   },
   "spriteMaskId": null,
   "visible": true,

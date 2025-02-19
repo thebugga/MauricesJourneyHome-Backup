@@ -15,7 +15,6 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 	with (instance_create((x + 16), (y + 16), obj_parryeffect))
 		sprite_index = spr_pizzablockdead
 	scr_sleep(5)
-	create_baddiegibsticks((x + 16), (y + 16))
 	//if //audio_is_playing(sfx_collecttopping)
 		//audio_stop_sound(sfx_collecttopping)
 	//scr_soundeffect(sfx_collecttopping)
@@ -34,3 +33,12 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
     scr_sound_multiple("event:/sfx/misc/breakblock", x, y)
 	ds_list_add(global.saveroom, id)
 }
+with (instance_create(x, y, obj_destroyable_respawner))
+{
+	image_xscale = other.image_xscale
+	image_yscale = other.image_yscale
+	sprite_index = other.sprite_index
+	content = other.object_index
+	spawn_buffer = 70
+}
+

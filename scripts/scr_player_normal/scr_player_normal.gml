@@ -327,9 +327,11 @@ function state_player_normal()
 	        input_buffer_slap = 0
 	        suplexmove = true
 	        fmod_event_instance_play(suplexdashsnd)
-	        state = states.slap
+	        state = states.handstandjump
 	        image_index = 0
 			slaphand = 1
+			sprite_index = spr_player_lungestart
+			movespeed = 10
 		}
 		else
 		{

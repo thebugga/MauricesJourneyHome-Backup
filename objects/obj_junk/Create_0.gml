@@ -1,3 +1,4 @@
+scr_initenemy()
 ratgrabbed = 0
 grabbed = 0
 state = states.normal

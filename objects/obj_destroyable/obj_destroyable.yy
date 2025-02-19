@@ -38,8 +38,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_destroyable1",
-    "path": "sprites/spr_destroyable1/spr_destroyable1.yy",
+    "name": "spr_destroyable",
+    "path": "sprites/spr_destroyable/spr_destroyable.yy",
   },
   "spriteMaskId": null,
   "visible": true,

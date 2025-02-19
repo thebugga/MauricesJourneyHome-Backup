@@ -3,10 +3,6 @@ function scr_player_climbwall()
 	if (windingAnim < 200)
 	    windingAnim++
     vsp = -wallspeed
-	if global.playerCharacter == Characters.Maurice
-		wallspeed -= 0.25
-	else if global.playerCharacter == Characters.Doise
-	{
 	    if (wallspeed < 20)
 	        wallspeed += 0.15
 	    if (wallspeed < 0)
@@ -16,7 +12,6 @@ function scr_player_climbwall()
 	        else
 	            movespeed += 0.4
 	    }
-	}
 	mach2 = 35
 	crouchslideAnim = true
 	if (vsp < -5)

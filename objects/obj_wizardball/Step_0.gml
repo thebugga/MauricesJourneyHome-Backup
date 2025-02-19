@@ -11,8 +11,8 @@ if grounded
 {
 	
 	if movespeed > 0
-		movespeed -= (playerid.global.playerCharacter == Characters.Doise ? 0.5 : 1)
-	if playerid.global.playerCharacter != Characters.Doise
+		movespeed -= (global.playerCharacter == Characters.Doise ? 0.5 : 1)
+	if global.playerCharacter != Characters.Doise
 		vsp = (movespeed / starthsp) * startvsp
 }
 if (place_meeting((x + image_xscale), y, obj_monstersolid) && (!(place_meeting((x + image_xscale), y, obj_destructibles))) && (!(place_meeting((x + image_xscale), y, obj_monsterslope))))

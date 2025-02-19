@@ -87,7 +87,7 @@ function Instakill()
 	}
 	var lag = 5;
 	if other.baddieID.heavy == true
-		lag = 15;
+		lag = 5;
 	other.baddieID.hitLag = lag;
 	other.baddieID.hitX = hx;
 	other.baddieID.hitY = hy;

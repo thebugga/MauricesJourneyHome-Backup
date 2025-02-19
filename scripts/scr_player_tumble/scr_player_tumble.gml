@@ -95,6 +95,22 @@ function scr_player_tumble()
 			//scr_soundeffectpitched(sfx_splat)
 		}
 	}
+if (sprite_index == spr_crouchslip && ispeppino && input_buffer_jump > 0 && global.attackstyle != 2)
+    {
+        input_buffer_jump = 0
+        particle_set_scale((5 << 0), xscale, 1)
+        create_particle(x, y, (5 << 0), 0)
+        sprite_index = spr_player_jumpdive1
+        vsp = -9
+    }
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_jumpdive1)
+        sprite_index = spr_player_jumpdive2
+    if (sprite_index == spr_player_jumpdive2 && key_attack && grounded)
+    {
+        sprite_index = spr_rollgetup
+        state = states.mach3
+    }
+
 	if key_jump
 		input_buffer_jump = 0
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)

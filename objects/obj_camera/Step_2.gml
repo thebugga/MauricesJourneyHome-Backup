@@ -1,22 +1,28 @@
 if global.panic
 {
-var layernum = 0
-for (i = 0; i < 3; i++)
-{
-    var layername = ("Backgrounds_" + string((i + 1)))
-    if layer_exists(layername)
-        layers[layernum++] = layername
+    if (global.panicshadetimer < 250000)
+    {
+        if (global.panicshadetimer < 40000)
+            global.panicshadetimer += 200
+        else
+            global.panicshadetimer += 50
+    }
+    else
+        global.panicshadetimer += 1
 }
-if (!layernum)
-    return;
-var bottom_id = layer_get_id(layers[0])
-var top_id = layer_get_id(layers[(layernum - 1)])
-layer_script_begin(bottom_id,scr_panicbg_start)
-layer_script_end(top_id, scr_panicbg_end)
-}
+if (global.panicshadetimer < 0)
+    global.panicshadetimer = 0
+if (global.wave < 0)
+    global.wave = 1
+if (global.maxwave < 0)
+    global.maxwave = 1
+if (global.fill < 0)
+    global.fill = 0
 idkanymore = cos(rotates)
 if (global.panic == 1)
 {
     rotates += 0.015
     camera_set_view_angle(view_camera[0], (idkanymore * 1.5))
 }
+
+

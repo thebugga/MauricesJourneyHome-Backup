@@ -25,15 +25,7 @@ function scr_player_climbwall()
 	}
 	if (!(scr_solid((x + xscale), y)))
 	{
-	    if global.playerCharacter == Characters.Maurice
-		{
-			instance_create(x, y, obj_jumpdust)
-		    vsp = 0
-		    mach2 = 35
-			movespeed = wallspeed
-		    state = states.mach2
-		}
-		else if global.playerCharacter == Characters.Doise
+		if global.playerCharacter == Characters.Doise
 	    {
 	        with (instance_create(x, y, obj_noiseeffect))
 	            sprite_index = spr_noisewalljumpeffect
@@ -44,6 +36,14 @@ function scr_player_climbwall()
 	        movespeed = 0
 	        image_index = 0
 	    }
+	    else
+		{
+			instance_create(x, y, obj_jumpdust)
+		    vsp = 0
+		    mach2 = 35
+			movespeed = wallspeed
+		    state = states.mach2
+		}
 	}
 	if (vsp == 15)
 	{

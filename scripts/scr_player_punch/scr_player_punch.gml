@@ -38,10 +38,6 @@ function scr_player_punch()
 	}
 	else
 	{
-		switch character
-		{
-			case "P":
-			case "N":
 				move = (key_left + key_right)
 				landAnim = 1
 				jumpstop = 0
@@ -151,10 +147,20 @@ function scr_player_punch()
 					with (instance_create(x, y, obj_dashcloud2))
 						image_xscale = other.xscale;
 				}
-				break;
 		}
-
-	}
-	exit;
+				if (input_buffer_slap > 0 && (!key_up) && sprite_index != spr_suplexbump && shotgunAnim == false && (!global.pistol))
+				{
+					xscale = dir
+					uppercutcancel = true
+					input_buffer_slap = 0
+					particle_set_scale((5 << 0), xscale, 1)
+					create_particle(x, y, (5 << 0), 0)
+					image_index = 0
+					sprite_index = spr_suplexdashjumpstart
+					suplexmove = true
+					fmod_event_instance_play(suplexdashsnd)
+					state = (42 << 0)
+					movespeed = 5
+				}
 }
 

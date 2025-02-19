@@ -72,6 +72,21 @@ function scr_player_crouch()
 		crouchAnim = 1
 		jumpAnim = 1
 	}
+if (input_buffer_slap > 0 && grounded && global.attackstyle != 2)
+{
+        with (instance_create(x, y, obj_jumpdust))
+            image_xscale = other.xscale
+        input_buffer_slap = 0
+        movespeed = 12
+        crouchslipbuffer = 25
+        grav = 0.5
+        sprite_index = spr_crouchslip
+        image_index = 0
+        machhitAnim = false
+        state = states.tumble
+        fmod_event_instance_play(snd_crouchslide)
+}
+
 	if (key_shoot2 && global.playerCharacter == Characters.Vigilante && (!instance_exists(dynamite_inst)))
 	{
 		if (move == 0)

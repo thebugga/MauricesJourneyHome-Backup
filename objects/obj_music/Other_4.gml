@@ -24,7 +24,7 @@ if !global.panic
 			savedmusicpos = 0;
 		}
 	}
-	if instance_exists(obj_hungrypillar)
+	if instance_exists(obj_totemsteve)
 	{
 		fmod_event_instance_play(pillarmusicID);
 		fmod_set_parameter("pillarfade", 0, true);

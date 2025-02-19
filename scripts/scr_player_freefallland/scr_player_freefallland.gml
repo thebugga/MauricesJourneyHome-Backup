@@ -15,7 +15,13 @@ function scr_player_freefallland()
 	alarm[4] = 14
 	vsp = 0
 	hsp = 0
-	if (floor(image_index) == (image_number - 1))
+	if key_jump2
+    {
+        vsp = -16
+        state = (92 << 0)
+        sprite_index = spr_player_groundpoundjump
+    }
+    if (floor(image_index) == (image_number - 1))
 	{
 		facehurt = 1
 		if (sprite_index != spr_player_poundcancel2)

@@ -34,7 +34,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_felix_idle",
+    "path": "sprites/spr_felix_idle/spr_felix_idle.yy",
+  },
   "spriteMaskId": {
     "name": "spr_pizzakinmask",
     "path": "sprites/spr_pizzakinmask/spr_pizzakinmask.yy",

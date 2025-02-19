@@ -1,6 +1,6 @@
+scr_getinput()
 if !instance_exists(obj_option)
 {
-	scr_getinput()
 	if !instance_exists(obj_fadeout)
 	{
 		var _m = (key_down2 - key_up2)
@@ -46,4 +46,39 @@ if !instance_exists(obj_option)
 		with obj_parent_player
 			image_index = 0
 	}
+}
+if keyboard_check_pressed(ord("1"))
+{
+    if ((global.playerCharacter == Characters.Maurice))
+    {
+        global.playerCharacter = Characters.Doise
+        with (obj_player1)
+            scr_characterspr()
+    }
+    else if ((global.playerCharacter == Characters.Doise))
+    {
+        global.playerCharacter = Characters.Vigilante
+        with (obj_player1)
+            scr_characterspr()
+    }
+    else if ((global.playerCharacter == Characters.Vigilante))
+    {
+        global.playerCharacter = Characters.Clownmato
+        with (obj_player1)
+            scr_characterspr()
+    }
+    else if ((global.playerCharacter == Characters.Clownmato))
+    {
+        global.playerCharacter = Characters.Maurice
+        with (obj_player1)
+            scr_characterspr()
+    }
+}
+
+if obj_player1.key_up2
+{
+    if (obj_player1.paletteselect < 6)
+        obj_player1.paletteselect += 1
+    else
+        obj_player1.paletteselect = 1
 }

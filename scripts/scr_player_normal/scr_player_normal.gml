@@ -320,7 +320,7 @@ function state_player_normal()
 			jumpAnim = true;
 		state = states.jump;
 	}
-    if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol))
+    if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol)) && global.playerCharacter != Characters.Vigilante
     {
 		if global.playerCharacter == Characters.Maurice
 		{
@@ -344,7 +344,7 @@ function state_player_normal()
 			movespeed = 8
 		}
     }
-    else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && ((!global.pistol) || (!ispeppino)))
+    else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && ((!global.pistol) || (!ispeppino))) && global.playerCharacter != Characters.Vigilante
     {
         state = states.punch
         input_buffer_slap = 0
@@ -387,6 +387,35 @@ function state_player_normal()
 		landAnim = false;
 		machslideAnim = false;
 		image_speed = 0.45;
+	}
+	if key_slap2 && global.playerCharacter == Characters.Vigilante
+	{
+		vsp = -5;
+		state = states.revolver
+		image_index = 0;
+		sprite_index = spr_playerV_airrevolver;
+		image_index = 0;
+		with (instance_create(x + (xscale * 20), y + 20, obj_shotgunbullet))
+		{
+			is_solid = false;
+			image_xscale = other.xscale;
+		}
+		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	}
+	if (key_shoot2 && global.playerCharacter == Characters.Vigilante && !instance_exists(dynamite_inst))
+	{
+		vsp = -5;
+		state = states.dynamite;
+		image_index = 0;
+		sprite_index = spr_playerV_dynamitethrow;
+		with (instance_create(x, y, obj_dynamite))
+		{
+			image_xscale = other.xscale;
+			other.dynamite_inst = id;
+			playerid = other.id;
+			movespeed = other.movespeed + 4;
+			vsp = -6;
+		}
 	}
 }
 function state_pepperman_normal()

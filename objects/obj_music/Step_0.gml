@@ -12,11 +12,11 @@ if fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_pause
 	fmod_event_instance_set_paused(pillarmusicID, savedpillarpause);
 	fmod_event_instance_set_paused(panicmusicID, savedpanicpause);
 }
-if instance_exists(obj_hungrypillar)
+if instance_exists(obj_totemsteve)
 {
 	fmod_event_instance_set_paused(pillarmusicID, false);
 	var p = false;
-	with obj_hungrypillar
+	with obj_totemsteve
 	{
 		if bbox_in_camera(view_camera[0], 0)
 			p = true;

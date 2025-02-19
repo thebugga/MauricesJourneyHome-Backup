@@ -8,14 +8,14 @@ for (var i = 0; i < array_length(text); i++)
 	if (b[0])
 	{
 		draw_set_halign(fa_left)
-		draw_text_color(receiptx + 20, 270 + (32 * yy), b[1], c_black, c_black, c_black, c_black, 1)
+		draw_text_color(receiptx + 20, 270 + (32 * yy), b[1], #88a8c8, #88a8c8, #88a8c8, #88a8c8, 1)
 		draw_set_halign(fa_right)
 		var money = string(b[2])
 		if string_last_pos(".", money) == 0
 			money += ".00"
 		else if (string_length(string(frac(b[2]))) < 4)
 			money += "0"
-		draw_text_color(receiptx + 280, 270 + (32 * yy), money, c_black, c_black, c_black, c_black, 1)
+		draw_text_color(receiptx + 280, 270 + (32 * yy), money, #88a8c8, #88a8c8, #88a8c8, #88a8c8, 1)
 		yy++
 	}
 }

@@ -542,7 +542,7 @@
     {"id":{"name":"obj_hubelevator","path":"objects/obj_hubelevator/obj_hubelevator.yy",},},
     {"id":{"name":"obj_hubtreasure","path":"objects/obj_hubtreasure/obj_hubtreasure.yy",},},
     {"id":{"name":"obj_hubwater","path":"objects/obj_hubwater/obj_hubwater.yy",},},
-    {"id":{"name":"obj_hungrypillar","path":"objects/obj_hungrypillar/obj_hungrypillar.yy",},},
+    {"id":{"name":"obj_totemsteve","path":"objects/obj_totemsteve/obj_totemsteve.yy",},},
     {"id":{"name":"obj_hurtbox","path":"objects/obj_hurtbox/obj_hurtbox.yy",},},
     {"id":{"name":"obj_hurtstars","path":"objects/obj_hurtstars/obj_hurtstars.yy",},},
     {"id":{"name":"obj_iceblock_breakable","path":"objects/obj_iceblock_breakable/obj_iceblock_breakable.yy",},},

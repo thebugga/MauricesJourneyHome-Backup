@@ -9,7 +9,7 @@ if global.panic
    instance_destroy()
    global.laps++
    global.lap = true
-   gzzzzzlobal.collect += 3000
+   global.collect += 3000
    global.combotime = 60
    with (instance_create(x, y, obj_smallnumber))
       number = string(3000)

@@ -210,6 +210,7 @@ function scr_hurtplayer(argument0)
 		if _hurt
 		{
 			global.combotime -= 25
+			scr_tvtopmessage(choose("OW!","DON'T TOUCH THAT!", "YOUCH!", "YOU SUCK!"))
 			global.style -= 25
 			global.hurtcounter++
 			global.player_damage++

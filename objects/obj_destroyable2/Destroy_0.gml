@@ -33,12 +33,3 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
     scr_sound_multiple("event:/sfx/misc/breakblock", x, y)
 	ds_list_add(global.saveroom, id)
 }
-with (instance_create(x, y, obj_destroyable_respawner))
-{
-	image_xscale = other.image_xscale
-	image_yscale = other.image_yscale
-	sprite_index = other.sprite_index
-	content = other.object_index
-	spawn_buffer = 70
-}
-

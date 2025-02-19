@@ -20,15 +20,13 @@ if global.playerCharacter == Characters.Doise
 }
 var collect_x = irandom_range((-collect_shake), collect_shake)
 var collect_y = irandom_range((-collect_shake), collect_shake)
-var hud_xx = (121 + irandom_range((-collect_shake), collect_shake))
-var hud_yy = (90 + irandom_range((-collect_shake), collect_shake))
 var tv_x = 0
 var tv_y = -54
 var _score = global.collect
 if global.coop
 	_score += global.collectN
-var rx = (hud_xx + 142)
-var ry = (hud_yy - 15)
+var rx = (tv_x + 25)
+var ry = (tv_y + 225)
 var rank_ix = 0
 if (scr_is_prank())
 	rank_ix = 5

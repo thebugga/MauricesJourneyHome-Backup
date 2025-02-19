@@ -1,2 +1,2 @@
-scr_deactivate_escape();
-camera_zoom(1);
+scr_deactivate_escape()
+camera_zoom(1)

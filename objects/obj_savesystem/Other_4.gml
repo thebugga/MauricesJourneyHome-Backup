@@ -1,2 +1,2 @@
-if (room == Oldtitlescreen)
+if (room == OldRealtitlescreen)
 	ini_str = ""

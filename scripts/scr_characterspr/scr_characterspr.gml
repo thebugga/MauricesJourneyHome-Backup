@@ -16,7 +16,7 @@ function scr_characterspr()
 		spr_crouchfall = spr_player_crouchfall
 		spr_couchstart = spr_player_couchstart
 		spr_bump = spr_player_bump
-		spr_wallsplat = spr_player_bump
+		spr_wallsplat = spr_player_wallsplat
 		spr_land = spr_player_land
 		spr_land2 = spr_player_land2
 		spr_lookdoor = spr_player_lookdoor
@@ -722,7 +722,7 @@ function scr_characterspr()
 		spr_crouchfall = spr_player_crouchfall
 		spr_couchstart = spr_player_couchstart
 		spr_bump = spr_player_bump
-		spr_wallsplat = spr_player_bump
+		spr_wallsplat = spr_player_wallsplat
 		spr_land = spr_player_land
 		spr_land2 = spr_player_land2
 		spr_lookdoor = spr_player_lookdoor
@@ -996,7 +996,7 @@ function scr_followcharacterspr()
 		spr_crouchfall = spr_player_crouchfall
 		spr_couchstart = spr_player_couchstart
 		spr_bump = spr_player_bump
-		spr_wallsplat = spr_player_bump
+		spr_wallsplat = spr_player_wallsplat
 		spr_land = spr_player_land
 		spr_land2 = spr_player_land2
 		spr_lookdoor = spr_player_lookdoor

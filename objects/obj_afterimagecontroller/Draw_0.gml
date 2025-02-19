@@ -1,14 +1,76 @@
-function noise_aftimg_set_pattern(sprite, subimg)
+for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 {
-	if sprite == noone
-	{
-		shader_set_uniform_i(global.N_Pattern_Enabled, 0);
-		exit;
-	}
-	shader_set_uniform_i(global.N_Pattern_Enabled, 1);
-	var _tex = sprite_get_texture(sprite, subimg);
-	texture_set_stage(global.N_Pattern_Tex, _tex);
-	texture_set_interpolation_ext(global.N_Pattern_Tex, 0);
-	var _uvs = sprite_get_uvs(sprite, subimg);
-	shader_set_uniform_f(global.N_Pattern_UVs, _uvs[0], _uvs[1], _uvs[2], _uvs[3]);
+    var b = ds_list_find_value(global.afterimage_list, i)
+    with (b)
+    {
+        if visible
+        {
+            b = image_blend
+            var a = other.alpha[identifier]
+            var shd = 0
+            if (identifier == (3 << 0))
+            {
+                a = alpha
+                shd = 1
+                shader_set(shd_color_afterimage)
+                shader_set_uniform_f(other.shd_color_red, 0.97)
+                shader_set_uniform_f(other.shd_color_green, 0.43)
+                shader_set_uniform_f(other.shd_color_blue, 0.09)
+            }
+            else if (identifier == (4 << 0))
+            {
+                a = alpha
+                shd = 1
+                shader_set(shd_color_afterimage)
+                shader_set_uniform_f(other.shd_color_red, 0.17)
+                shader_set_uniform_f(other.shd_color_green, 0.49)
+                shader_set_uniform_f(other.shd_color_blue, 0.9)
+            }
+            else if (identifier == (6 << 0))
+            {
+                a = alpha
+                shd = 1
+                shader_set(shd_color_afterimage)
+                shader_set_uniform_f(other.shd_color_red, 0.8745098039215686)
+                shader_set_uniform_f(other.shd_color_green, 0.1843137254901961)
+                shader_set_uniform_f(other.shd_color_blue, 0)
+            }
+            else if (identifier == (7 << 0))
+            {
+                a = alpha
+                shd = 1
+                shader_set(shd_color_afterimage)
+                shader_set_uniform_f(other.shd_color_red, 1)
+                shader_set_uniform_f(other.shd_color_green, 0)
+                shader_set_uniform_f(other.shd_color_blue, 0)
+            }
+            else if (identifier == (8 << 0))
+            {
+                a = alpha
+                shd = 1
+                shader_set(shd_noise_afterimage)
+                var pal = 1
+                if (obj_player1.paletteselect == 0)
+                    pal = 5
+                noise_aftimg_set_pal(obj_player1.spr_palette, obj_player1.paletteselect, pal)
+            }
+            else if (identifier == (5 << 0))
+            {
+                a = alpha
+                b = get_dark(other.image_blend, obj_drawcontroller.use_dark, 1, x, y)
+                if (instance_exists(playerid) && playerid.usepalette)
+                {
+                    shd = 1
+                    shader_set(global.retro_pal_swapper)
+                    pal_swap_set(playerid.spr_palette, playerid.paletteselect, 0)
+                }
+            }
+            draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a)
+            if shd
+            {
+                //pattern_reset()
+                shader_reset()
+            }
+        }
+    }
 }

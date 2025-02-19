@@ -2,12 +2,13 @@ enum tdp_input
 {
 	keyboard,
 	gamepad,
-	joystick
+	joystick,
+	mouse
 }
 
 function tdp_input_init()
 {
-	if (!variable_global_exists("input_list"))
+	if !variable_global_exists("input_list")
 	{
 		global.input_list = ds_map_create();
 		global.input_controller_deadzone = 0.4;
@@ -20,18 +21,18 @@ function tdp_input_destroy()
 {
 	ds_map_destroy(global.input_list);
 }
-function tdp_input_add(argument0)
+function tdp_input_add(input)
 {
-	ds_map_set(global.input_list, argument0.name, argument0);
+	ds_map_set(global.input_list, input.name, input);
 }
-function tdp_input_update(argument0 = -1)
+function tdp_input_update(device = -1)
 {
-	gamepad_set_axis_deadzone(argument0, global.input_controller_deadzone);
+	gamepad_set_axis_deadzone(device, global.input_controller_deadzone);
 	var key = ds_map_find_first(global.input_list);
 	var num = ds_map_size(global.input_list);
 	for (var i = 0; i < num; i++)
 	{
-		ds_map_find_value(global.input_list, key).update(argument0);
+		ds_map_find_value(global.input_list, key).update(device);
 		key = ds_map_find_next(global.input_list, key);
 	}
 }
@@ -39,20 +40,20 @@ function tdp_input_get(input_str)
 {
 	return ds_map_find_value(global.input_list, input_str);
 }
-function tdp_input_ini_read(argument0, argument1)
+function tdp_input_ini_read(keyname, input)
 {
-	tdp_input_deserialize(argument0, ini_read_string("Input", argument0, tdp_input_serialize(argument1)));
+	tdp_input_deserialize(keyname, ini_read_string("Input", keyname, tdp_input_serialize(input)));
 }
-function tdp_input_ini_write(argument0)
+function tdp_input_ini_write(keyname)
 {
-	ini_write_string("Input", argument0, tdp_input_serialize(argument0));
+	ini_write_string("Input", keyname, tdp_input_serialize(keyname));
 }
-function tdp_input_serialize(argument0)
+function tdp_input_serialize(input)
 {
-	if (is_array(argument0))
-		return tdp_input_serialize_array(argument0);
+	if is_array(input)
+		return tdp_input_serialize_array(input);
 	else
-		return tdp_input_serialize_key(argument0);
+		return tdp_input_serialize_key(input);
 }
 function tdp_action(_type, _value, _joystick_direction = 0)
 {
@@ -63,24 +64,24 @@ function tdp_action(_type, _value, _joystick_direction = 0)
 		joystick_direction: _joystick_direction
 	};
 }
-function tdp_input_serialize_key()
+function tdp_input_serialize_key(keyname)
 {
-	var in = tdp_input_get(argument0);
+	var in = tdp_input_get(keyname);
 	return tdp_input_serialize_array(in.actions);
 }
-function tdp_input_serialize_array(argument0)
+function tdp_input_serialize_array(array)
 {
 	var str = "";
-	for (var i = 0; i < array_length(argument0); i++)
+	for (var i = 0; i < array_length(array); i++)
 	{
-		var b = argument0[i];
-		with (b)
+		var b = array[i];
+		with b
 		{
 			str += string(type);
 			str += ",";
 			str += string(value);
 			str += ",";
-			if (type == tdp_input.joystick)
+			if type == tdp_input.joystick
 			{
 				str += string(joystick_direction);
 				str += ",";
@@ -89,17 +90,17 @@ function tdp_input_serialize_array(argument0)
 	}
 	return str;
 }
-function tdp_input_deserialize(argument0, argument1)
+function tdp_input_deserialize(keyname, str)
 {
-	var arr = string_split(argument1, ",");
-	var in = new tdp_input_key(argument0);
+	var arr = string_split(str, ",");
+	var in = new tdp_input_key(keyname);
 	for (var i = 0; i < array_length(arr); i += 2)
 	{
-		if (arr[i] == "")
+		if arr[i] == ""
 			break;
 		var type = real(arr[i]);
 		var value = real(arr[i + 1]);
-		if (type == tdp_input.joystick)
+		if type == tdp_input.joystick
 		{
 			var joystick_direction = real(arr[i + 2]);
 			i++;
@@ -111,40 +112,40 @@ function tdp_input_deserialize(argument0, argument1)
 	tdp_input_add(in);
 	show_debug_message(in);
 }
-function tdp_get_icons(argument0)
+function tdp_get_icons(input)
 {
 	var arr = array_create(0);
-	for (var i = 0; i < array_length(argument0.actions); i++)
+	for (var i = 0; i < array_length(input.actions); i++)
 	{
-		var q = tdp_get_icon(argument0.actions[i]);
-		if (q != -4)
+		var q = tdp_get_icon(input.actions[i]);
+		if q != noone
 			array_push(arr, q);
 	}
 	return arr;
 }
-function tdp_get_tutorial_icon(argument0)
+function tdp_get_tutorial_icon(keyname)
 {
-	if (obj_inputAssigner.player_input_device[0] >= 0)
-		argument0 += "C";
-	var in = tdp_input_get(argument0);
+	if obj_inputAssigner.player_input_device[swap.player1] >= 0
+		keyname += "C";
+	var in = tdp_input_get(keyname);
 	for (var i = 0; i < array_length(in.actions); i++)
 	{
 		var q = tdp_get_icon(in.actions[i]);
-		if (q != -4)
+		if q != noone
 			return q;
 	}
 	return noone;
 }
-function tdp_get_icon(argument0)
+function tdp_get_icon(input)
 {
-	switch (argument0.type)
+	switch input.type
 	{
 		case tdp_input.keyboard:
-			switch (argument0.value)
+			switch input.value
 			{
 				case vk_shift:
-                case vk_rshift:
-                case vk_lshift:
+				case vk_rshift:
+				case vk_lshift:
 					return 
 					{
 						sprite_index: spr_tutorialkeyspecial,
@@ -152,8 +153,8 @@ function tdp_get_icon(argument0)
 						str: ""
 					};
 				case vk_control:
-                case vk_lcontrol:
-                case vk_rcontrol:
+				case vk_lcontrol:
+				case vk_rcontrol:
 					return 
 					{
 						sprite_index: spr_tutorialkeyspecial,
@@ -207,13 +208,13 @@ function tdp_get_icon(argument0)
 					{
 						sprite_index: spr_tutorialkey,
 						image_index: 0,
-						str: scr_keyname(argument0.value)
+						str: scr_keyname(input.value)
 					};
 			}
 			break;
 		
 		case tdp_input.gamepad:
-			switch (argument0.value)
+			switch input.value
 			{
 				case gp_face1:
 					return 
@@ -331,10 +332,10 @@ function tdp_get_icon(argument0)
 			break;
 		
 		case tdp_input.joystick:
-			switch (argument0.value)
+			switch input.value
 			{
 				case gp_axislh:
-					if (argument0.joystick_direction == -1)
+					if input.joystick_direction == -1
 					{
 						return 
 						{
@@ -343,7 +344,7 @@ function tdp_get_icon(argument0)
 							str: ""
 						};
 					}
-					if (argument0.joystick_direction == 1)
+					if input.joystick_direction == 1
 					{
 						return 
 						{
@@ -354,7 +355,7 @@ function tdp_get_icon(argument0)
 					}
 					break;
 				case gp_axislv:
-					if (argument0.joystick_direction == -1)
+					if input.joystick_direction == -1
 					{
 						return 
 						{
@@ -363,7 +364,7 @@ function tdp_get_icon(argument0)
 							str: ""
 						};
 					}
-					if (argument0.joystick_direction == 1)
+					if input.joystick_direction == 1
 					{
 						return 
 						{
@@ -374,7 +375,7 @@ function tdp_get_icon(argument0)
 					}
 					break;
 				case gp_axisrh:
-					if (argument0.joystick_direction == -1)
+					if input.joystick_direction == -1
 					{
 						return 
 						{
@@ -383,7 +384,7 @@ function tdp_get_icon(argument0)
 							str: ""
 						};
 					}
-					if (argument0.joystick_direction == 1)
+					if input.joystick_direction == 1
 					{
 						return 
 						{
@@ -394,7 +395,7 @@ function tdp_get_icon(argument0)
 					}
 					break;
 				case gp_axisrv:
-					if (argument0.joystick_direction == -1)
+					if input.joystick_direction == -1
 					{
 						return 
 						{
@@ -403,7 +404,7 @@ function tdp_get_icon(argument0)
 							str: ""
 						};
 					}
-					if (argument0.joystick_direction == 1)
+					if input.joystick_direction == 1
 					{
 						return 
 						{
@@ -415,6 +416,62 @@ function tdp_get_icon(argument0)
 					break;
 			}
 			break;
+		
+		/*
+		case tdp_input.mouse:
+			switch input.value
+			{
+				case mb_left:
+					return 
+					{
+						sprite_index: spr_mouseinput,
+						image_index: 1,
+						str: ""
+					};
+					break;
+				case mb_middle:
+					return 
+					{
+						sprite_index: spr_mouseinput,
+						image_index: 2,
+						str: ""
+					};
+					break;
+				case mb_right:
+					return 
+					{
+						sprite_index: spr_mouseinput,
+						image_index: 3,
+						str: ""
+					};
+					break;
+				case mb_side1:
+					return 
+					{
+						sprite_index: spr_mouseinput,
+						image_index: 4,
+						str: ""
+					};
+					break;
+				case mb_side2:
+					return 
+					{
+						sprite_index: spr_mouseinput,
+						image_index: 5,
+						str: ""
+					};
+					break;
+				default:
+					return 
+					{
+						sprite_index: spr_mouseinput,
+						image_index: 0,
+						str: ""
+					};
+					break;
+			}
+			break;
+		*/
 	}
 	return noone;
 }

@@ -686,7 +686,7 @@ else
 		invhurt_buffer = invhurt_max
 	hurt_buffer = -1
 }
-if (room == Oldtitlescreen && instance_exists(obj_mainmenuselect))
+if (room == OldRealtitlescreen && instance_exists(obj_mainmenuselect))
 	state = states.titlescreen
 if (wallclingcooldown < 10)
 	wallclingcooldown++
@@ -1010,7 +1010,7 @@ if (toomuchalarm1 > 0)
 }
 if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && room != timesuproom && room != hub_tutorial1)
 {
-	if (room != Oldtitlescreen && room != rank_room && room != rm_placeholder)
+	if (room != OldRealtitlescreen && room != rank_room && room != rm_placeholder)
 	{
 		with (obj_camera)
 		{
@@ -1080,6 +1080,27 @@ if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.
 		playerid = other.object_index
 		other.speedlineseffectid = id
 	}
+}
+if (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+{
+    if (macheffect == 0)
+    {
+        macheffect = 1
+        toomuchalarm1 = 6
+        with (create_mach3effect(x, y, sprite_index, (image_index - 1)))
+        {
+            playerid = other.object_index
+            image_xscale = other.xscale
+        }
+        if (sprite_index == spr_fightball && instance_exists(obj_swapmodefollow))
+        {
+            with (create_mach3effect(x, y, obj_swapmodefollow.spr_fightball, (image_index - 1)))
+            {
+                playerid = other.object_index
+                image_xscale = other.xscale
+            }
+        }
+    }
 }
 with (obj_ratblock)
 	scr_ratblock_destroy()

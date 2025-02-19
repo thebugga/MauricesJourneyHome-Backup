@@ -1,116 +1,59 @@
-draw_set_font(global.bigfont)
-if (player == 0)
+draw_set_font(global.bigfont);
+draw_set_alpha(1);
+draw_set_halign(0);
+draw_set_valign(0);
+draw_set_color(c_white);
+var c = (key_select == -1) ? c_white : c_gray;
+tdp_draw_text_color((960 / 2) - 250, 50, lang_get_value("option_back"), c, c, c, c, 1);
+var ks = key_select;
+if ks < 0
+	ks = 0;
+select_visual = lerp(select_visual, ks, 0.1);
+var xx = (960 / 2) - 60;
+for (var i = 0; i < array_length(input); i++)
 {
-	if (key_select == -1)
-		draw_text_colour(280, 50, "BACK", c_white, c_white, c_white, c_white, 1)
+	draw_set_font(global.bigfont);
+	tdp_draw_set_halign(fa_left);
+	tdp_draw_set_valign(fa_top);
+	var b = input[i];
+	var in = controller ? tdp_input_get(concat(b[0], "C")) : tdp_input_get(b[0]);
+	c = (key_select == i) ? c_white : c_gray;
+	var yy = (50 - (select_visual * 50)) + (50 * i);
+	if array_length(b) < 2
+		draw_sprite_ext(spr_controlicons, i, xx, yy, 1, 1, 0, c, 1);
 	else
-		draw_text_colour(280, 50, "BACK", c_white, c_white, c_white, c_white, 0.5)
-	if (key_select == 0)
-		draw_text_colour(420, 50, "UP", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 50, "UP", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 50, scr_keyname(global.key_up))
-	if (key_select == 1)
-		draw_text_colour(420, 100, "DOWN", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 100, "DOWN", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 100, scr_keyname(global.key_down))
-	if (key_select == 2)
-		draw_text_colour(420, 150, "RIGHT", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 150, "RIGHT", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 150, scr_keyname(global.key_right))
-	if (key_select == 3)
-		draw_text_colour(420, 200, "LEFT", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 200, "LEFT", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 200, scr_keyname(global.key_left))
-	if (key_select == 4)
-		draw_text_colour(420, 250, "JUMP", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 250, "JUMP", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 250, scr_keyname(global.key_jump))
-	if (key_select == 5)
-		draw_text_colour(420, 300, "GRAB", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 300, "GRAB", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 300, scr_keyname(global.key_slap))
-	if (key_select == 6)
-		draw_text_colour(420, 350, "DASH", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 350, "DASH", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 350, scr_keyname(global.key_attack))
-	if (key_select == 7)
-		draw_text_colour(420, 400, "SHOOT", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 400, "SHOOT", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 400, scr_keyname(global.key_shoot))
-	if (key_select == 8)
-		draw_text_colour(420, 450, "TAUNT", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 450, "TAUNT", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 450, scr_keyname(global.key_taunt))
-	if (key_select == 9)
-		draw_text_colour(420, 500, "PAUSE", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 500, "PAUSE", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 500, scr_keyname(global.key_start))
+		tdp_draw_text_color(xx, yy, lang_get_value(b[1]), c, c, c, c, 1);
+	var icon_array = tdp_get_icons(in);
+	var x2 = 960 - 64;
+	tdp_text_commit(0, 0, 960, 540);
+	tdp_draw_set_halign(fa_center);
+	tdp_draw_set_valign(fa_middle);
+	draw_set_font(global.tutorialfont);
+	for (var j = array_length(icon_array) - 1; j >= 0; j--)
+	{
+		var q = icon_array[j];
+		draw_sprite_ext(q.sprite_index, q.image_index, x2, yy, 1, 1, 0, c, 1);
+		if q.str != ""
+			tdp_draw_text_color(x2 + 16, yy + 14, q.str, c_black, c_black, c_black, c_black, 1);
+		x2 -= 48;
+	}
+	tdp_text_commit(0, 0, 960, 540);
 }
-if (player == 1)
+draw_set_font(global.creditsfont);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+global.tdp_text_try_outline = true;
+scr_draw_text_arr(32, 540 - 240, tip);
+global.tdp_text_try_outline = false;
+tdp_text_commit(0, 0, 960, 540);
+if selecting
 {
-	draw_text_colour(280, 25, "PLAYER 2", c_white, c_white, c_white, c_white, 1)
-	if (key_select == -1)
-		draw_text_colour(280, 50, "BACK", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(280, 50, "BACK", c_white, c_white, c_white, c_white, 0.5)
-	if (key_select == 0)
-		draw_text_colour(420, 50, "UP", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 50, "UP", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 50, scr_keyname(global.key_upN))
-	if (key_select == 1)
-		draw_text_colour(420, 100, "DOWN", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 100, "DOWN", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 100, scr_keyname(global.key_downN))
-	if (key_select == 2)
-		draw_text_colour(420, 150, "RIGHT", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 150, "RIGHT", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 150, scr_keyname(global.key_rightN))
-	if (key_select == 3)
-		draw_text_colour(420, 200, "LEFT", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 200, "LEFT", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 200, scr_keyname(global.key_leftN))
-	if (key_select == 4)
-		draw_text_colour(420, 250, "JUMP", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 250, "JUMP", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 250, scr_keyname(global.key_jumpN))
-	if (key_select == 5)
-		draw_text_colour(420, 300, "GRAB", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 300, "GRAB", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 300, scr_keyname(global.key_slapN))
-	if (key_select == 6)
-		draw_text_colour(420, 350, "DASH", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 350, "DASH", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 350, scr_keyname(global.key_attackN))
-	if (key_select == 7)
-		draw_text_colour(420, 400, "SHOOT", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 400, "SHOOT", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 400, scr_keyname(global.key_shootN))
-	if (key_select == 8)
-		draw_text_colour(420, 450, "TAUNT", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 450, "TAUNT", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 450, scr_keyname(global.key_tauntN))
-	if (key_select == 9)
-		draw_text_colour(420, 500, "PAUSE", c_white, c_white, c_white, c_white, 1)
-	else
-		draw_text_colour(420, 500, "PAUSE", c_white, c_white, c_white, c_white, 0.5)
-	draw_text(580, 500, scr_keyname(global.key_startN))
+	draw_set_font(global.bigfont);
+	tdp_draw_set_halign(fa_center);
+	tdp_draw_set_valign(fa_middle);
+	draw_set_alpha(0.5);
+	draw_rectangle_color(0, 0, 960, 540, 0, 0, 0, 0, false);
+	draw_set_alpha(1);
+	tdp_draw_text_color(960 / 2, 540 / 2, lang_get_value("option_press_any"), c_white, c_white, c_white, c_white, 1);
 }
+tdp_text_commit(0, 0, 960, 540);

@@ -1,311 +1,195 @@
-scr_getinput()
-if (selecting == -1)
+depth = -400;
+scr_menu_getinput();
+key_reset = tdp_input_get("menu_reset_binds").pressed || tdp_input_get("menu_reset_bindsC").pressed;
+if startbuffer > 0
 {
-	if (((key_up2 && key_down2 != key_up2) or keyboard_check_pressed(vk_up)) && key_select > -1)
+	startbuffer--;
+	key_back2 = false;
+	key_jump = false;
+	key_jump2 = false;
+}
+if addbuffer > 0
+{
+	addbuffer--;
+	key_up = false;
+	key_up2 = false;
+	key_down = false;
+	key_down2 = false;
+	key_left = false;
+	key_left2 = false;
+	key_right = false;
+	key_right2 = false;
+	key_start = false;
+	key_back2 = false;
+	key_jump = false;
+	key_jump2 = false;
+	key_delete = false;
+	key_delete2 = false;
+	key_quit = false;
+	key_quit2 = false;
+	key_reset = false;
+}
+if !selecting
+{
+	if key_up2
 	{
-		key_select -= 1
-		//scr_soundeffect(sfx_step)
+		fmod_event_one_shot("event:/sfx/ui/step");
+		key_select--;
 	}
-	if (((key_down2 && key_up2 != key_down2) or keyboard_check_pressed(vk_down)) && key_select < 9)
+	if key_down2
 	{
-		key_select += 1
-		//scr_soundeffect(sfx_step)
+		fmod_event_one_shot("event:/sfx/ui/step");
+		key_select++;
+	}
+	if key_select != -1 && key_left2
+		key_select = -1;
+	else if key_select == -1 && key_right2
+		key_select = 0;
+	if key_reset
+	{
+		ini_open_from_string(obj_savesystem.ini_str);
+		ini_section_delete("Input");
+		scr_initinput(false);
+		obj_savesystem.ini_str = ini_close();
+	}
+	key_select = clamp(key_select, -1, array_length(input) - 1);
+	if ((key_jump || key_back2) && key_select <= -1) || (key_select > -1 && key_back2)
+	{
+		var _found = false;
+		for (var i = 0; i < array_length(input); i++)
+		{
+			var _v = input[i, 0];
+			if _v != "player_superjump" && _v != "player_groundpound"
+			{
+				if controller
+					_v = concat(_v, "C");
+				if !is_undefined(tdp_input_get(_v)) && tdp_input_get(_v).actions != noone && array_length(tdp_input_get(_v).actions) <= 0
+					_found = true;
+			}
+		}
+		if !_found
+		{
+			fmod_event_one_shot("event:/sfx/ui/select");
+			ini_open("saveData.ini")
+			for (i = 0; i < array_length(input); i++)
+			{
+				_v = input[i, 0];
+				if controller
+					_v = concat(_v, "C");
+				tdp_input_ini_write(_v);
+			}
+			ini_close();
+			if instance_exists(obj_option)
+				obj_option.alarm[2] = 1
+			instance_destroy();
+		}
+		else
+			fmod_event_one_shot("event:/sfx/ui/select");
+	}
+	else if key_select > -1
+	{
+		if key_jump
+		{
+			selecting = true;
+			startbuffer = 1;
+		}
+		else if key_delete2
+		{
+			if !controller
+				tdp_input_get(input[key_select, 0]).actions = array_create(0);
+			else
+				tdp_input_get(concat(input[key_select, 0], "C")).actions = array_create(0);
+			var name = input[key_select, 0];
+			if name == "menu_select"
+			{
+				selecting = true;
+				startbuffer = 1;
+			}
+		}
+		if selecting
+			menu = string_copy(input[key_select, 0], 0, 4) == "menu";
 	}
 }
-if (selecting == -1)
-{
-	if (player == 0 && ((key_right2 && key_right2 != key_left2) or keyboard_check_pressed(vk_right)))
-		player += 1
-	if (player == 1 && (((-key_left2) && key_left2 != key_right2) or keyboard_check_pressed(vk_left)))
-		player -= 1
-}
-if ((key_jump2 or keyboard_check_pressed(vk_return)) && selecting == -1 && key_select == -1)
-{
-	//scr_soundeffect(sfx_enemyprojectile)
-	ini_open("saveData.ini")
-	ini_write_string("ControlsKeys", "up", global.key_up)
-	ini_write_string("ControlsKeys", "right", global.key_right)
-	ini_write_string("ControlsKeys", "left", global.key_left)
-	ini_write_string("ControlsKeys", "down", global.key_down)
-	ini_write_string("ControlsKeys", "jump", global.key_jump)
-	ini_write_string("ControlsKeys", "slap", global.key_slap)
-	ini_write_string("ControlsKeys", "attack", global.key_attack)
-	ini_write_string("ControlsKeys", "shoot", global.key_shoot)
-	ini_write_string("ControlsKeys", "taunt", global.key_taunt)
-	ini_write_string("ControlsKeys", "start", global.key_start)
-	ini_write_string("ControlsKeys2", "up", global.key_upN)
-	ini_write_string("ControlsKeys2", "right", global.key_rightN)
-	ini_write_string("ControlsKeys2", "left", global.key_leftN)
-	ini_write_string("ControlsKeys2", "down", global.key_downN)
-	ini_write_string("ControlsKeys2", "jump", global.key_jumpN)
-	ini_write_string("ControlsKeys2", "slap", global.key_slapN)
-	ini_write_string("ControlsKeys2", "attack", global.key_attackN)
-	ini_write_string("ControlsKeys2", "shoot", global.key_shootN)
-	ini_write_string("ControlsKeys2", "taunt", global.key_tauntN)
-	ini_write_string("ControlsKeys2", "start", global.key_startN)
-	ini_close()
-	obj_option.alarm[0] = 2
-	instance_destroy()
-}
-scr_getinput()
-if (selecting == 0 && player == 0)
+else if !controller
 {
 	if keyboard_check_pressed(vk_anykey)
 	{
-		global.key_up = keyboard_key
-		selecting = -1
+		if keyboard_key != vk_f1
+		{
+			if !menu || scr_check_menu_repeats(input[key_select, 0], keyboard_key, false)
+			{
+				startbuffer = 5;
+				addbuffer = 5;
+				var in = tdp_input_get(input[key_select, 0]);
+				if !in.has_value(tdp_input.keyboard, keyboard_key)
+					array_push(in.actions, new tdp_input_action(0, keyboard_key));
+				selecting = false;
+			}
+			else if input[key_select, 0] != "menu_select" || !tdp_input_get(input[key_select, 0]).is_empty()
+			{
+				startbuffer = 5;
+				addbuffer = 5;
+				selecting = false;
+			}
+		}
 	}
-}
-if (key_select == 0 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
-{
-	selecting = key_select
-	global.key_up = -1
-}
-if (selecting == 1 && player == 0)
-{
-	if keyboard_check_pressed(vk_anykey)
+	/*
+	else if mouse_check_button_pressed(mb_any)
 	{
-		global.key_down = keyboard_key
-		selecting = -1
+		if mouse_button != mb_any
+		{
+			if !menu || scr_check_menu_repeats(input[key_select, 0], mouse_button, false)
+			{
+				startbuffer = 5;
+				addbuffer = 5;
+				var in = tdp_input_get(input[key_select, 0]);
+				if !in.has_value(tdp_input.mouse, mouse_button)
+					array_push(in.actions, new tdp_input_action(0, mouse_button));
+				selecting = false;
+			}
+			else if input[key_select, 0] != "menu_select" || !tdp_input_get(input[key_select, 0]).is_empty()
+			{
+				startbuffer = 5;
+				addbuffer = 5;
+				selecting = false;
+			}
+		}
 	}
+	*/
 }
-if (key_select == 1 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
+else
 {
-	selecting = key_select
-	global.key_down = -1
-}
-if (selecting == 2 && player == 0)
-{
-	if keyboard_check_pressed(vk_anykey)
+	if !debug && keyboard_check_pressed(vk_anykey)
 	{
-		global.key_right = keyboard_key
-		selecting = -1
+		startbuffer = 5;
+		addbuffer = 5;
+		selecting = false;
+		exit;
 	}
-}
-if (key_select == 2 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
-{
-	selecting = key_select
-	global.key_right = -1
-}
-if (selecting == 3 && player == 0)
-{
-	if keyboard_check_pressed(vk_anykey)
+	var val = scr_checkanygamepad(obj_inputAssigner.player_input_device[swap.player1]);
+	if val == noone
+		val = scr_check_joysticks(obj_inputAssigner.player_input_device[swap.player1]);
+	if val != noone && val != gp_select
 	{
-		global.key_left = keyboard_key
-		selecting = -1
+		if !menu || scr_check_menu_repeats(input[key_select, 0], val, true)
+		{
+			startbuffer = 5;
+			addbuffer = 5;
+			in = tdp_input_get(concat(input[key_select, 0], "C"));
+			if !is_array(val)
+			{
+				if !in.has_value(tdp_input.gamepad, val)
+					array_push(in.actions, new tdp_input_action(tdp_input.gamepad, val));
+			}
+			else if !in.has_value(tdp_input.joystick, val[0], val[1])
+				array_push(in.actions, new tdp_input_action(tdp_input.joystick, val[0], val[1]));
+			selecting = false;
+		}
+		else if input[key_select, 0] != "menu_select" || !tdp_input_get(concat(input[key_select, 0], "C")).is_empty()
+		{
+			startbuffer = 5;
+			addbuffer = 5;
+			selecting = false;
+		}
 	}
-}
-if (key_select == 3 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
-{
-	selecting = key_select
-	global.key_left = -1
-}
-if (selecting == 4 && player == 0)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_jump = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 4 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
-{
-	selecting = key_select
-	global.key_jump = -1
-}
-if (selecting == 5 && player == 0)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_slap = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 5 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
-{
-	selecting = key_select
-	global.key_slap = -1
-}
-if (selecting == 6 && player == 0)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_attack = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 6 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
-{
-	selecting = key_select
-	global.key_attack = -1
-}
-if (selecting == 7 && player == 0)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_shoot = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 7 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
-{
-	selecting = key_select
-	global.key_shoot = -1
-}
-if (selecting == 8 && player == 0)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_taunt = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 8 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
-{
-	selecting = key_select
-	global.key_taunt = -1
-}
-if (selecting == 9 && player == 0)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_start = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 9 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 0)
-{
-	selecting = key_select
-	global.key_start = -1
-}
-scr_getinput2()
-if (selecting == 0 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_upN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 0 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_upN = -1
-}
-if (selecting == 1 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_downN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 1 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_downN = -1
-}
-if (selecting == 2 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_rightN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 2 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_rightN = -1
-}
-if (selecting == 3 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_leftN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 3 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_leftN = -1
-}
-if (selecting == 4 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_jumpN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 4 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_jumpN = -1
-}
-if (selecting == 5 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_slapN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 5 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_slapN = -1
-}
-if (selecting == 6 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_attackN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 6 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_attackN = -1
-}
-if (selecting == 7 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_shootN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 7 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_shootN = -1
-}
-if (selecting == 8 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_tauntN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 8 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_tauntN = -1
-}
-if (selecting == 9 && player == 1)
-{
-	if keyboard_check_pressed(vk_anykey)
-	{
-		global.key_startN = keyboard_key
-		selecting = -1
-	}
-}
-if (key_select == 9 && (key_jump or keyboard_check_pressed(vk_return)) && selecting == -1 && player == 1)
-{
-	selecting = key_select
-	global.key_startN = -1
 }

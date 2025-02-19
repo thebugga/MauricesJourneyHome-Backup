@@ -78,6 +78,31 @@ function scr_player_mach3()
 					y = obj_player1.y;
 				}
 			}
+	if input_buffer_slap > 0 && !key_up && !skateboarding && shotgunAnim == 0 && !global.pistol && sprite_index != spr_player_jumpdive1 && sprite_index != spr_player_jumpdive2
+	{
+        
+		if global.playerCharacter == Characters.Maurice
+		{
+	        input_buffer_slap = 0
+	        suplexmove = true
+	        fmod_event_instance_play(suplexdashsnd)
+	        state = states.handstandjump
+	        image_index = 0
+			slaphand = 1
+			sprite_index = spr_player_lungestart
+			movespeed = 10
+		}
+		else if global.playerCharacter == Characters.Doise
+		{
+	        input_buffer_slap = 0
+	        suplexmove = true
+	        fmod_event_instance_play(suplexdashsnd)
+	        state = states.handstandjump
+			sprite_index = spr_suplexdash
+	        image_index = 0
+			movespeed = 8
+		}
+	}
 			if sprite_index == spr_crazyrun
 			{
 				if flamecloud_buffer > 0

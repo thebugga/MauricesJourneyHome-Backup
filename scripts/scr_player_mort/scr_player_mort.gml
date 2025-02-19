@@ -108,7 +108,7 @@ function mort_attack()
 		else
 		{
 			punch_afterimage = 5
-			create_blue_afterimage(x, y, sprite_index, image_index, xscale)
+			create_mach3effect(x, y, sprite_index, image_index, xscale)
 		}
 	}
 	exit;

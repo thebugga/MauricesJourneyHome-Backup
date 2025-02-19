@@ -1,6 +1,6 @@
 if ((!pause) && obj_savesystem.state == states.normal && (!instance_exists(obj_fadeout)))
 {
-    if (obj_player1.key_start && room != Oldtitlescreen && room != rm_eggplantdisclaimer && room != rm_logo && room != REALLYREALTitlescreen && room != rank_room && room != timesuproom)
+    if (obj_player1.key_start && room != OldRealtitlescreen && room != rm_eggplantdisclaimer && room != rm_logo && room != REALLYREALTitlescreen && room != rank_room && room != timesuproom)
     {
         selected = 0
         if (!instance_exists(obj_pausefadeout))

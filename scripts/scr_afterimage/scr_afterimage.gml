@@ -18,28 +18,31 @@ function create_afterimage(_x, _y, _sprite, _image_index)
 	ds_list_add(global.afterimage_list, q);
 	return q;
 }
-function create_mach3effect(_x, _y, _sprite, _image_index, _afterimage = false)
+function create_mach3effect(_x, _y, _sprite, _image_index, _afterimage) 
 {
-	var q = 
-	{
-		x: _x,
-		y: _y,
-		sprite_index: _sprite,
-		image_index: _image_index,
-		image_angle: 0,
-		alarm: [15, 6, -1],
-		image_blend: choose(global.mach_color1, global.mach_color2),
-		image_xscale: 1,
-		image_yscale: 1,
-		visible: true,
+    if (argument4 == undefined)
+        argument4 = 0
+    var q = 
+    {
+        x: argument0,
+        y: argument1,
+        sprite_index: argument2,
+        image_index: argument3,
+        image_angle: 0,
+        alarm: [15, 6, -1],
+        image_blend: choose(global.mach_color1, global.mach_color2),
+        image_xscale: 1,
+        image_yscale: 1,
+        visible: true,
 		identifier: afterimage.mach3effect,
-		playerid: obj_player1,
-		alpha: 1
-	};
-	if _afterimage
+        playerid: obj_player1,
+        alpha: 1
+    }
+
+    if argument4
 		q.identifier = afterimage.simple;
-	ds_list_add(global.afterimage_list, q);
-	return q;
+    ds_list_add(global.afterimage_list, q)
+    return q;
 }
 function create_heatattack_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {

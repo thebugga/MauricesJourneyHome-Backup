@@ -72,8 +72,10 @@ if !stopper
 			mode_scale = 2
 		}
 	}
+	/*
 	if (obj_player2.key_jump)
 		p2_connect = true
+	*/
 	if ready && ready2 == p2_connect
 	{
 			with (obj_player1)

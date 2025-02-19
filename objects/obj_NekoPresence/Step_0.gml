@@ -6,7 +6,7 @@ if ((room == characterselect))
     state = "Pick Your Poision"
 if ((room == Loadiingroom))
     state = "Leave and NEVER COME BACK"
-if ((room == Oldtitlescreen))
+if ((room == OldRealtitlescreen))
     state = "Boo did i scare you dont be scared im a friend"
 if ((room == hub_outside))
     state = "Here We Go Again"

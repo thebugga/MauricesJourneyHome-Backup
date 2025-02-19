@@ -23,7 +23,7 @@ else
 	}
 	else
 	{
-	    room_goto(Oldtitlescreen)
+	    room_goto(OldRealtitlescreen)
 	    screen_apply_vsync()
 	}
 }

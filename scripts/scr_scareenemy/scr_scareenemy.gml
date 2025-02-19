@@ -1,15 +1,13 @@
 function scr_scareenemy() //gml_Script_scr_scareenemy
 {
     var player = instance_nearest(x, y, obj_parent_player)
-    if (state != (4 << 0) && state != (138 << 0) && state != (137 << 0) && state != (266 << 0))
+    if (state != states.grabbed && state != states.stun && state != states.hit && state != (266 << 0))
     {
-        if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 90) && y >= (player.y - 130) && ((player.xscale > 0 && x >= player.x) || (player.xscale < 0 && x <= player.x)))
-        {
-            if (sprite_index != scaredspr && state != (126 << 0) && state != (138 << 0) && state != (155 << 0) && (player.state == (41 << 0) || player.ratmount_movespeed == 12 || player.state == (121 << 0) || player.state == (31 << 0) || player.state == (184 << 0) || player.state == (20 << 0) || player.state == (38 << 0) || player.state == (295 << 0) || player.state == (296 << 0) || (player.state == (32 << 0) && player.movespeed >= 12) || (player.state == (79 << 0) && player.swingdingdash <= 0 && player.sprite_index == player.spr_swingding)))
+            if (sprite_index != scaredspr && state != states.idle && state != states.stun && state != states.staggered && (player.state == states.chainsawbump || player.ratmount_movespeed == 12 || player.state == states.mach3 || player.state == states.rideweenie || player.state == states.rocket || player.state == states.tacklecharge || player.state == states.knightpepslopes || (player.state == states.grab && player.swingdingdash <= 0 && player.sprite_index == player.spr_swingding)))
             {
                 if (collision_line(x, y, player.x, player.y, obj_solid, false, true) == -4)
                 {
-                    state = (126 << 0)
+                    state = states.idle
                     sprite_index = scaredspr
                     if (x != player.x)
                         image_xscale = (-(sign((x - player.x))))
@@ -21,7 +19,6 @@ function scr_scareenemy() //gml_Script_scr_scareenemy
                     if grounded
                         vsp = -3
                 }
-            }
         }
     }
 }

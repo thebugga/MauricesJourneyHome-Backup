@@ -23,6 +23,7 @@ stunfallspr = spr_forknight_stun
 walkspr = spr_forknight_walk
 grabbedspr = spr_forknight_grabbed
 scaredspr = spr_forknight_scared
+landspr = spr_forknight_scared
 sprite_index = spr_forknight_walk
 flash = 0
 slapped = 0

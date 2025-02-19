@@ -68,7 +68,7 @@ function scr_player_rideweenie()
 	else
 	{
 		punch_afterimage = 5
-		create_blue_afterimage(x, y, sprite_index, image_index, xscale)
+		create_mach3effect(x, y, sprite_index, image_index, xscale)
 	}
 	image_speed = 0.5
 	exit;

@@ -42,6 +42,7 @@ with (obj_heatafterimage)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
 		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, 1, c_white, alpha)
 		//pattern_reset()
+		reset_shader_fix()
 	}
 }
 with (obj_parent_player)

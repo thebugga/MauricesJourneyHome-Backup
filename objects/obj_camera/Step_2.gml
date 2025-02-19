@@ -18,3 +18,11 @@ if (global.maxwave < 0)
     global.maxwave = 1
 if (global.fill < 0)
     global.fill = 0
+idkanymore = cos(rotates)
+if (global.panic == 1)
+{
+    rotates += 0.015
+    camera_set_view_angle(view_camera[0], (idkanymore * 0.8))
+}
+
+

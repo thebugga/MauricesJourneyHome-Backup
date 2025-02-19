@@ -1,6 +1,6 @@
 if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != states.grabbed && baddieID.state != states.hit && (!baddieID.invincible) && baddieID.instantkillable)
 {
-	scr_soundeffect(sfx_punch)
+	//scr_soundeffect(sfx_punch)
 	if (!baddieID.important)
 	{
 		global.style += (5 + global.combo)
@@ -14,7 +14,7 @@ if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != stat
 			instance_destroy()
 			instance_destroy(baddieID)
 		}
-		if (other.object_index == obj_playernoisearrow)
+		if (other.object_index == obj_parent_playernoisearrow)
 			instance_destroy(other)
 	}
 	else

@@ -59,7 +59,7 @@ function scr_player_knightpep()
 		input_buffer_jump = 0
 		image_index = 0
 		sprite_index = spr_knightpepjumpstart
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		vsp = -11
 		if (move == 0)
 			movespeed = 0
@@ -148,7 +148,7 @@ function scr_player_knightpep()
 	{
 		sprite_index = spr_knightpepthunder
 		GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 1, 1, 0.9)
-		scr_soundeffect(sfx_becomeknight)
+		//scr_soundeffect(sfx_becomeknight)
 		image_index = 0
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepthunder)

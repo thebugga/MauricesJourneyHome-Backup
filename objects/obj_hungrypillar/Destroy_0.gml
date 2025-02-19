@@ -21,8 +21,8 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 		image_alpha = 1
 	with obj_escapecollectbig
 		image_alpha = 1
-	scr_soundeffect(sfx_escaperumble)
-	scr_soundeffect(sfx_pillarimpact)
+	//scr_soundeffect(sfx_escaperumble)
+	//scr_soundeffect(sfx_pillarimpact)
 	obj_camera.alarm[1] = 60
 	instance_create(x, y, obj_flash)
 	instance_create(x, y, obj_bangeffect)
@@ -59,7 +59,7 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 				sprite_index = spr
 		}
 	}
-	scr_soundeffect(sfx_killenemy)
+	//scr_soundeffect(sfx_killenemy)
 	instance_create(x, y + 600, obj_itspizzatime)
 	global.panic = true
 	

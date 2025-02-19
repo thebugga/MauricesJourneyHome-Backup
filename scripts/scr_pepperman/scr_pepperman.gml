@@ -81,7 +81,7 @@ function scr_pepperman_freefall()
 	vsp = 20
 	if grounded
 	{
-		scr_soundeffect(sfx_groundpound)
+		//scr_soundeffect(sfx_groundpound)
 		oldtargetspot = targetspot
 		state = states.walk
 		if point_in_camera(x, y, 329)

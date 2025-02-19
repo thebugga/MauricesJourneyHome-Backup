@@ -46,7 +46,7 @@ function scr_player_grabbing()
 	grav = 0
 	if (scr_solid((x + 1), y) && xscale == 1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)))
 	{
-		scr_soundeffect(sfx_bumpwall)
+		//scr_soundeffect(sfx_bumpwall)
 		grav = 0.5
 		movespeed = 0
 		state = states.bump
@@ -60,7 +60,7 @@ function scr_player_grabbing()
 	}
 	if (scr_solid((x - 1), y) && xscale == -1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)))
 	{
-		scr_soundeffect(sfx_bumpwall)
+		//scr_soundeffect(sfx_bumpwall)
 		grav = 0.5
 		movespeed = 0
 		state = states.bump

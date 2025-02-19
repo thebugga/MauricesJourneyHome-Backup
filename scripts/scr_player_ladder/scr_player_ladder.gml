@@ -22,7 +22,7 @@ function scr_player_ladder()
 		{
 			create_particle(x, y + 43, particle.cloudeffect, 0)
 			steppybuffer = 12
-			scr_soundeffectpitched(sfx_step)
+			//scr_soundeffectpitched(sfx_step)
 		}
 		image_speed = 0.35
 	}

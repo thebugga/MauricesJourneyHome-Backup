@@ -33,4 +33,4 @@ else
 	}
 	instance_destroy()
 }
-scr_soundeffect(sfx_hitenemy)
+//scr_soundeffect(sfx_hitenemy)

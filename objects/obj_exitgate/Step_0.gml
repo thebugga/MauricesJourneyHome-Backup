@@ -42,7 +42,7 @@ if (drop && global.panic)
 			if (y >= drop_y)
 			{
 				depth = 50
-				scr_soundeffect(sfx_groundpound)
+				//scr_soundeffect(sfx_groundpound)
 				y = drop_y
 				dropstate = states.idle
 				handsprite = spr_grabbiehand_idle

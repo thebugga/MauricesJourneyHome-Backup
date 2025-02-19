@@ -1,7 +1,7 @@
 global.heattime = 60
 with (obj_camera)
 	healthshaketime = 120
-scr_soundeffect(sfx_collectgiantpizza)
+//scr_soundeffect(sfx_collectgiantpizza)
 global.collect += 1000
 var _x = (x - 48)
 var _y = (y - 48)

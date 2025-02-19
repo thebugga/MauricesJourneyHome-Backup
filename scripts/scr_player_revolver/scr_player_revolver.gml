@@ -21,7 +21,7 @@ function scr_player_revolver()
 			is_solid = 0
 			image_xscale = other.xscale
 		}
-		scr_soundeffect(sfx_killingblow)
+		//scr_soundeffect(sfx_killingblow)
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_revolvershoot)
 	{

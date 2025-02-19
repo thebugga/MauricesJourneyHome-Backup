@@ -22,7 +22,7 @@ function scr_player_barrelslide()
 	}
 	if (input_buffer_jump < 8 && grounded)
 	{
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		input_buffer_jump = 8
 		vsp = -8.5
 		jumpstop = 0

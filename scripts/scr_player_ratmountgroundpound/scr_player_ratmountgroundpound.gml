@@ -56,7 +56,7 @@ function scr_player_ratmountgroundpound()
 		{
 			if (move != 0)
 				movespeed = (xscale * 3)
-			scr_soundeffect(sfx_groundpound)
+			//scr_soundeffect(sfx_groundpound)
 			sprite_index = spr_lonegustavo_groundpoundland
 			image_index = 0
 			jumpAnim = 1

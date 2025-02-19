@@ -9,7 +9,7 @@ with (obj_parent_player)
 	state = states.backbreaker
 	sprite_index = spr_bossintro
 	image_index = 0
-	scr_soundeffect(sfx_scream5)
+	//scr_soundeffect(sfx_scream5)
 }
 sprite_index = spr_noisebomb_intro
 instance_create(x, y, obj_taunteffect)

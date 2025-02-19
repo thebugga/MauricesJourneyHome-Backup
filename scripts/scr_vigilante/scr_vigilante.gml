@@ -196,7 +196,7 @@ function scr_vigilante_freefall()
 	hsp = Approach(hsp, (move * 3), 0.5)
 	if (grounded && vsp > 0)
 	{
-		scr_soundeffect(sfx_groundpound)
+		//scr_soundeffect(sfx_groundpound)
 		state = states.freefallland
 		hsp = 0
 		sprite_index = spr_playerV_bodyslamland
@@ -316,7 +316,7 @@ function scr_vigilante_revolver()
 		image_index = 0
 		cooldown = (120 - (wastedhits * 10))
 		revolver = 80
-		scr_soundeffect(sfx_killingblow)
+		//scr_soundeffect(sfx_killingblow)
 		with (instance_create(x, y, obj_enemybullet))
 		{
 			image_xscale = other.image_xscale

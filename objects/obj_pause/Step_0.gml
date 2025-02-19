@@ -23,7 +23,7 @@ if (pause && (!instance_exists(obj_option)))
 	moveselect = ((-key_up2) + key_down2)
 	selected += moveselect
 	if (moveselect != 0 && selected >= 0 && selected <= 2)
-		scr_soundeffect(sfx_step)
+		//scr_soundeffect(sfx_step)
 	selected = clamp(selected, 0, (array_length(pause_menu) - 1))
 	peppino_sprite = pause_menu[selected][1]
 	if key_jump

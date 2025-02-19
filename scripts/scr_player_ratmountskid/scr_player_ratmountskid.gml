@@ -17,7 +17,7 @@ function scr_player_ratmountskid()
 	{
 		particle_set_scale(particle.highjumpcloud2, xscale, 1)
 		create_particle(x, y, particle.highjumpcloud2, 0)
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		if brick
 			sprite_index = spr_player_ratmountjump
 		else if (ratmount_movespeed >= 12)

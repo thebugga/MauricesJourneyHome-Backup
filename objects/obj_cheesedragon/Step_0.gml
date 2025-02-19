@@ -18,7 +18,7 @@ if (attackcycle == 0 && attacked == 0 && floor(image_index) == 13 && sprite_inde
 			hsp = 0
 		}
 	}
-	scr_soundeffect(sfx_groundpound)
+	//scr_soundeffect(sfx_groundpound)
 	with (obj_camera)
 	{
 		shake_mag = 20

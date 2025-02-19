@@ -13,7 +13,7 @@ switch state
 		scr_collide()
 		if grounded
 		{
-			scr_soundeffect(sfx_groundpound)
+			//scr_soundeffect(sfx_groundpound)
 			create_particle(x, y, particle.landcloud)
 			state = states.jump
 			with (obj_camera)

@@ -5,7 +5,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		image_xscale = other.image_xscale
 		sprite_index = other.spr_dead
 	}
-	scr_soundeffect(sfx_killenemy)
+	//scr_soundeffect(sfx_killenemy)
 	var x1 = ((x - sprite_xoffset) + (sprite_width / 2))
 	var y1 = ((y - sprite_yoffset) + (sprite_height / 2))
 	global.combo += 1

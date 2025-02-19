@@ -12,7 +12,7 @@ function scr_player_motorcycle()
 		input_buffer_jump = 0
 	if (grounded && input_buffer_jump < 8 && vsp > 0)
 	{
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		input_buffer_jump = 8
 		vsp = -11
 		jumped = 1

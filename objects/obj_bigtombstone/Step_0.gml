@@ -55,7 +55,7 @@ switch state
 				if grounded
 				{
 					substate = states.normal
-					scr_soundeffect(sfx_groundpound)
+					//scr_soundeffect(sfx_groundpound)
 					with (obj_camera)
 					{
 						shake_mag = 3

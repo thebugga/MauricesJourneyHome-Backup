@@ -167,7 +167,7 @@ function scr_monster_detect_audio()
 
 function scr_monster_audio_check()
 {
-	if (audio_is_playing(sfx_groundpound) or audio_is_playing(sfx_scream5))
+	//if (//audio_is_playing(sfx_groundpound) or //audio_is_playing(sfx_scream5))
 		return true;
 	return false;
 }

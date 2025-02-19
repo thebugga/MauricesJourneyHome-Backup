@@ -12,7 +12,7 @@ function SUPER_player_hurt(argument0, argument1)
 		collisioned = 1
 		with (argument1)
 		{
-			scr_soundeffect(sfx_killingblow)
+			//scr_soundeffect(sfx_killingblow)
 			var lag = 8
 			if (state == states.chainsaw or state == states.hit)
 			{

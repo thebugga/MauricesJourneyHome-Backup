@@ -24,7 +24,7 @@ if (!got)
 				hsp = 0
 				vsp = 0
 				state = states.gottreasure
-				scr_soundeffect(sfx_treasure)
+				//scr_soundeffect(sfx_treasure)
 				with (other)
 				{
 					got = 1

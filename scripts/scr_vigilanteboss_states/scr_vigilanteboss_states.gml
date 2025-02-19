@@ -480,7 +480,7 @@ function boss_vigilante_revolver()
 				sprite_index = spr_playerV_airrevolver
 				instance_create(x, y, obj_highjumpcloud2)
 			}
-			scr_soundeffect(sfx_killingblow)
+			//scr_soundeffect(sfx_killingblow)
 		}
 		else if (sprite_index == spr_playerV_revolvershoot or sprite_index == spr_playerV_airrevolver)
 		{
@@ -496,7 +496,7 @@ function boss_vigilante_revolver()
 				image_index = 0
 				with (instance_create((x + (image_xscale * 20)), (y + 20), obj_revolvershot))
 					image_xscale = other.image_xscale
-				scr_soundeffect(sfx_killingblow)
+				//scr_soundeffect(sfx_killingblow)
 				revolver_count--
 				revolver_jumpcount++
 				if (revolver_jump == revolver_jumpcount)

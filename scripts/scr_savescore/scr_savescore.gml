@@ -16,8 +16,8 @@ function scr_savescore(level)
 		global.rank = "c"
 	else
 		global.rank = "d"
-	audio_stop_sound(mu_pizzatime)
-	audio_stop_sound(mu_chase)
+	//audio_stop_sound(mu_pizzatime)
+	//audio_stop_sound(mu_chase)
 	ini_open_from_string(obj_savesystem.ini_str)
 	if (ini_read_real("Highscore", level, 0) < global.collect)
 		ini_write_real("Highscore", level, global.collect)

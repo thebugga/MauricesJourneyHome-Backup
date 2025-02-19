@@ -2,9 +2,9 @@ if (room == rm_editor)
 	exit;
 if (image_alpha == 1)
 {
-	if audio_is_playing(sfx_collecttopping)
-		audio_stop_sound(sfx_collecttopping)
-	scr_soundeffect(sfx_collecttopping)
+	//if //audio_is_playing(sfx_collecttopping)
+		//audio_stop_sound(sfx_collecttopping)
+	//scr_soundeffect(sfx_collecttopping)
 	global.heattime += 10
 	global.heattime = clamp(global.heattime, 0, 60)
 	global.combotime += 10

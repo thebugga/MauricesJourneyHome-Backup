@@ -11,13 +11,13 @@ else
 	{
 		updown_buffer = updown_max
 		audio_select -= 1
-		scr_soundeffect(sfx_step)
+		//scr_soundeffect(sfx_step)
 	}
 	if ((key_down2 or keyboard_check_pressed(vk_down)) && audio_select < 2)
 	{
 		updown_buffer = updown_max
 		audio_select += 1
-		scr_soundeffect(sfx_step)
+		//scr_soundeffect(sfx_step)
 	}
 }
 if (key_jump or keyboard_check_pressed(vk_return))

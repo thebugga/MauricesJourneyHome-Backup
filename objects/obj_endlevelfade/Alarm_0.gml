@@ -21,7 +21,7 @@ if (text_pos >= array_length(text))
 				sprite_index = spr_bombexplosion
 			repeat (6)
 				instance_create(obj_player1.x, obj_player1.y, obj_baddiegibs)
-			scr_soundeffect(sfx_explosion)
+			//scr_soundeffect(sfx_explosion)
 		}
 	}
 	else
@@ -45,7 +45,7 @@ else
 			shake_mag = 2
 			shake_mag_acc = 3 / room_speed
 		}
-		scr_soundeffect(sfx_killingblow)
+		//scr_soundeffect(sfx_killingblow)
 		text[text_pos][0] = true
 		text_pos++
 		alarm[0] = 40

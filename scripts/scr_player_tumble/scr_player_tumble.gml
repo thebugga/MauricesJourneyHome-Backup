@@ -15,7 +15,7 @@ function scr_player_tumble()
 	{
 		vsp = 10
 		sprite_index = spr_dive
-		scr_soundeffectpitched(sfx_dive, 1.1, 1.2)
+		//scr_soundeffectpitched(sfx_dive, 1.1, 1.2)
 	}
 	if (grounded && sprite_index == spr_dive)
 	{
@@ -92,7 +92,7 @@ function scr_player_tumble()
 			state = states.bump
 			image_index = 0
 			sprite_index = spr_player_wallsplat
-			scr_soundeffectpitched(sfx_splat)
+			//scr_soundeffectpitched(sfx_splat)
 		}
 	}
 	if key_jump
@@ -125,7 +125,7 @@ function scr_player_tumble()
 				state = states.mach2
 			image_index = 0
 			sprite_index = spr_rollgetup
-			scr_soundeffect(sfx_rollgetup)
+			//scr_soundeffect(sfx_rollgetup)
 		}
 	}
 	if (!key_down && !key_attack && grounded && vsp > 0 && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)

@@ -9,7 +9,7 @@ with (obj_parent_player)
 			obj_player1.lastroom = room
 			obj_player2.lastroom = room
 			other.depth = -10
-			scr_soundeffect(sfx_box)
+			//scr_soundeffect(sfx_box)
 			obj_player1.box = 1
 			obj_player2.box = 1
 			mach2 = 0
@@ -49,7 +49,7 @@ with (obj_parent_player)
 		{
 			obj_player1.lastroom = room
 			obj_player2.lastroom = room
-			scr_soundeffect(sfx_box)
+			//scr_soundeffect(sfx_box)
 			other.depth = -10
 			obj_player1.box = 1
 			obj_player2.box = 1

@@ -8,7 +8,7 @@ if (active && sprite_index != spr_secretportal_open && (!instance_exists(obj_jum
 	if (!touched)
 	{
 		obj_camera.lock = true
-		scr_soundeffect(sfx_secretenter)
+		//scr_soundeffect(sfx_secretenter)
 		if (!obj_music.secret)
 		{
 			obj_music.secret = 1

@@ -15,7 +15,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_parent_player) && obj_p
 	{
 		with obj_parent_player
 		{
-			var _obj_player = id;
+			var _obj_parent_player = id;
 			var _playerindex = (object_index == obj_player1) ? 1 : 2;
 			if (instance_exists(other.baddieID) && y < other.baddieID.y && attacking == 0 && !global.kungfu && sprite_index != spr_player_mach2jump && ((state == states.boots && vsp > 0) || state == states.jump || (isgustavo && ratmount_movespeed < 12 && state == states.ratmountjump) || state == states.mach1 || state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
 			{

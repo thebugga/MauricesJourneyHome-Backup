@@ -24,7 +24,7 @@ switch state
 			saveselect = clamp(saveselect + (key_left2 + key_right2), 1, 3)
 			if key_jump
 			{
-				scr_soundeffect(sfx_collectgiantpizza)
+				//scr_soundeffect(sfx_collectgiantpizza)
 				state = states.transition
 				alarm[0] = 200
 			}if key_shoot2
@@ -32,12 +32,12 @@ switch state
 	            if file_exists(concat("saves/saveData", saveselect, ".ini"))
 				{
 	                file_delete(concat("saves/saveData", saveselect, ".ini"))
-					scr_soundeffect(sfx_explosion)
+					//scr_soundeffect(sfx_explosion)
 				}
 			}
 			if key_start
 			{
-				scr_soundeffect(sfx_enemyprojectile)
+				//scr_soundeffect(sfx_enemyprojectile)
 				instance_create(x, y, obj_option)
 			}
 		}

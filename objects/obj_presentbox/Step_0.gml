@@ -97,7 +97,7 @@ with (instance_place(x, y, obj_parent_player))
 					shake_mag_acc = (40 / room_speed)
 				}
 				global.boxhp -= 1
-				scr_soundeffect(sfx_killenemy)
+				//scr_soundeffect(sfx_killenemy)
 				instance_create(x, y, obj_slapstar)
 				instance_create(x, y, obj_slapstar)
 				instance_create(x, y, obj_slapstar)
@@ -119,7 +119,7 @@ with (instance_place(x, y, obj_parent_player))
 					shake_mag = 20
 					shake_mag_acc = (40 / room_speed)
 				}
-				scr_soundeffect(sfx_killenemy)
+				//scr_soundeffect(sfx_killenemy)
 				instance_create(x, y, obj_slapstar)
 				instance_create(x, y, obj_slapstar)
 				instance_create(x, y, obj_slapstar)
@@ -143,7 +143,7 @@ if (place_meeting(x, y, obj_parent_enemy) && obj_parent_enemy.thrown == true && 
 			shake_mag_acc = (40 / room_speed)
 		}
 		global.boxhp -= 1
-		scr_soundeffect(sfx_killenemy)
+		//scr_soundeffect(sfx_killenemy)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)
@@ -165,7 +165,7 @@ if (place_meeting(x, y, obj_parent_enemy) && obj_parent_enemy.thrown == true && 
 			shake_mag = 20
 			shake_mag_acc = (40 / room_speed)
 		}
-		scr_soundeffect(sfx_killenemy)
+		//scr_soundeffect(sfx_killenemy)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)
@@ -187,7 +187,7 @@ if (place_meeting(x, y, obj_shotgunbullet) && sprite_index != spr_present)
 			shake_mag_acc = (40 / room_speed)
 		}
 		global.boxhp -= 1
-		scr_soundeffect(sfx_killenemy)
+		//scr_soundeffect(sfx_killenemy)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)
@@ -209,7 +209,7 @@ if (place_meeting(x, y, obj_shotgunbullet) && sprite_index != spr_present)
 			shake_mag = 20
 			shake_mag_acc = (40 / room_speed)
 		}
-		scr_soundeffect(sfx_killenemy)
+		//scr_soundeffect(sfx_killenemy)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)

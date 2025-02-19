@@ -99,7 +99,7 @@ function state_boss_taunt()
 				image_xscale = (-playerinst.xscale)
 				sprite_index = parryspr
 				image_index = 0
-				scr_soundeffect(sfx_parry)
+				//scr_soundeffect(sfx_parry)
 				taunt_buffer = 10
 				player_hurt(30, playerinst)
 			}
@@ -114,7 +114,7 @@ function state_boss_taunt()
 				image_xscale = (-playerinst.xscale)
 				sprite_index = parryspr
 				image_index = 0
-				scr_soundeffect(sfx_parry)
+				//scr_soundeffect(sfx_parry)
 				taunt_buffer = 10
 				player_hurt(30, playerinst)
 			}

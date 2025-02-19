@@ -30,7 +30,7 @@ with (other)
 					image_index = 0
 				}
 			}
-			scr_soundeffect(sfx_dashpad)
+			//scr_soundeffect(sfx_dashpad)
 			machhitAnim = false
 			state = states.mach3
 			xscale = sign(other.image_xscale)
@@ -72,7 +72,7 @@ with (other)
 			}
 			if (isgustavo && other.buffer == 0 && gusdashpadbuffer == 0)
 			{
-				scr_soundeffect(sfx_dashpad)
+				//scr_soundeffect(sfx_dashpad)
 				changecoord = true
 				if (place_meeting(x, y, obj_superspring))
 					changecoord = false

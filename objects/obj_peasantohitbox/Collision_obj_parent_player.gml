@@ -11,7 +11,7 @@ with (other)
 		vsp = -25
 		sprite_index = spr_fireass
 		image_index = 0
-		if (!audio_is_playing(sfx_scream5))
-			scr_soundeffect(sfx_scream5)
+		//if (!//audio_is_playing(sfx_scream5))
+			//scr_soundeffect(sfx_scream5)
 	}
 }

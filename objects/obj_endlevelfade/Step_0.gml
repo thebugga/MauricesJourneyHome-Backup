@@ -21,7 +21,7 @@ if (fadealpha > 1)
 	if (room != rank_room)
 	{
 		room = rank_room
-		scr_soundeffect(asset_get_index(concat("mu_rank", global.rank)))
+		//scr_soundeffect(asset_get_index(concat("mu_rank", global.rank)))
 	}
 }
 if (fadein == 0)

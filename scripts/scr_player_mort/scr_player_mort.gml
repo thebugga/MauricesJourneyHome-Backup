@@ -61,7 +61,7 @@ function scr_player_mort()
 		vsp = -11
 		sprite_index = spr_player_mortjumpstart
 		image_index = 0
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		create_particle(x, y, particle.jumpdust, 0)
 	}
 	mort_attack()

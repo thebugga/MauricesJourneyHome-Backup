@@ -136,7 +136,7 @@ function scr_player_grab()
 		hsp = (xscale * movespeed)
 		if (floor(image_index) == 0 && spinsndbuffer == 0)
 		{
-			scr_soundeffect(sfx_spin)
+			//scr_soundeffect(sfx_spin)
 			spinsndbuffer = 5
 		}
 		else if spinsndbuffer > 0
@@ -159,7 +159,7 @@ function scr_player_grab()
 		sprite_index = spr_haulingidle
 	if (grounded && input_buffer_jump > 0 && (!key_down) && (!key_attack) && vsp > 0 && sprite_index != spr_swingding)
 	{
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		sprite_index = spr_haulingjump
 		instance_create(x, y, obj_highjumpcloud2)
 		if (heavy == 0)

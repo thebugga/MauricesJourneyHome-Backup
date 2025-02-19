@@ -10,7 +10,7 @@ with (other)
 		global.key_inv = 1
 		key_particles = 1
 		alarm[7] = 30
-		scr_soundeffect(sfx_collecttoppin)
+		//scr_soundeffect(sfx_collecttoppin)
 		state = states.keyget
 		keysound = false
 		image_index = 0

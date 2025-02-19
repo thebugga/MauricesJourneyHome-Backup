@@ -14,7 +14,7 @@ switch state
 					if (hsp == 0)
 						hsp = player_inst.xscale
 					instance_destroy(inst)
-					scr_soundeffect(sfx_killingblow)
+					//scr_soundeffect(sfx_killingblow)
 					with (b)
 					{
 						hitX = x

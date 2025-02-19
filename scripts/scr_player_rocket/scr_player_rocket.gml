@@ -63,7 +63,7 @@ function scr_player_rocket()
 		if (move != 0 && move != xscale && sprite_index != spr_rocketstart)
 		{
 			state = states.rocketslide
-			scr_soundeffect(sfx_machslideboost)
+			//scr_soundeffect(sfx_machslideboost)
 			sprite_index = spr_player_rocketslide
 			image_index = 0
 		}
@@ -72,8 +72,8 @@ function scr_player_rocket()
 	{
 		pizzapepper = 0
 		sprite_index = spr_rockethitwall
-		scr_soundeffect(sfx_groundpound)
-		scr_soundeffect(sfx_bumpwall)
+		//scr_soundeffect(sfx_groundpound)
+		//scr_soundeffect(sfx_bumpwall)
 		with (obj_camera)
 		{
 			shake_mag = 20

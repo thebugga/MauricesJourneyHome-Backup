@@ -21,7 +21,7 @@ function scr_player_boots()
 	if (grounded && input_buffer_jump < 8 && (!key_down) && vsp > 0)
 	{
 		jumpstop = 0
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		sprite_index = spr_playerV_bootsjump
 		instance_create(x, y, obj_highjumpcloud2)
 		vsp = -11

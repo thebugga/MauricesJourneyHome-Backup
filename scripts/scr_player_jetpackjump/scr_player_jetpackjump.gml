@@ -70,7 +70,7 @@ function scr_player_jetpackjump()
 		if ((!doublejump) && key_slap2)
 		{
 			doublejump = 1
-			scr_soundeffect(sfx_explosion)
+			//scr_soundeffect(sfx_explosion)
 			instance_create(x, y, obj_playerexplosion)
 			sprite_index = spr_rockethitwall
 			jetpackbounce = 1

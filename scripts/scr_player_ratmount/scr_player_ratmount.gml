@@ -112,7 +112,7 @@ function scr_player_ratmount()
 	{
 		particle_set_scale(particle.highjumpcloud2, xscale, 1)
 		create_particle(x, y, particle.highjumpcloud2, 0)
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		if brick
 			sprite_index = spr_player_ratmountjump
 		else if (ratmount_movespeed >= 12)
@@ -184,7 +184,7 @@ function ratmount_dotaunt()
 {
 	if (key_taunt2 && state != states.backbreaker && brick)
 	{
-		scr_soundeffect(sfx_taunt)
+		//scr_soundeffect(sfx_taunt)
 		tauntstoredisgustavo = 1
 		taunttimer = 20
 		tauntstoredmovespeed = movespeed
@@ -225,7 +225,7 @@ function ratmount_shootpowerup()
 		switch ratpowerup
 		{
 			case 445:
-				with (instance_create((x + (20 * xscale)), y, obj_playernoisearrow))
+				with (instance_create((x + (20 * xscale)), y, obj_parent_playernoisearrow))
 					direction = point_direction(x, y, (x + (other.xscale * 4)), y)
 				break
 			case 222:
@@ -236,7 +236,7 @@ function ratmount_shootpowerup()
 				}
 				break
 			case 460:
-				with (instance_create((x + (20 * xscale)), y, obj_playerspikecheese))
+				with (instance_create((x + (20 * xscale)), y, obj_parent_playerspikecheese))
 				{
 					spd += other.movespeed
 					image_xscale = other.xscale

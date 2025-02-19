@@ -553,7 +553,7 @@ function boss_pepperman_fistmatch()
 		obj_bossplayer.player_hp -= fist_dmg
 		sprite_index = spr_mach1
 		fist_buffer = fist_max
-		scr_soundeffect(sfx_killingblow)
+		//scr_soundeffect(sfx_killingblow)
 		with (obj_camera)
 		{
 			shake_mag = 3
@@ -582,7 +582,7 @@ function boss_pepperman_fistmatch()
 			{
 				if key_slap2
 				{
-					scr_soundeffect(sfx_killingblow)
+					//scr_soundeffect(sfx_killingblow)
 					with (obj_camera)
 					{
 						shake_mag = 3

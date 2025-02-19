@@ -7,8 +7,8 @@ function scr_player_hang()
 	wallclingcooldown = 0
 	if (floor(image_index) == (image_number - 1))
 	{
-		scr_soundeffect(sfx_jump)
-		scr_soundeffect(sfx_woosh)
+		//scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_woosh)
 		jumpstop = 0
 		vsp = -15
 		state = states.jump

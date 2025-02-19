@@ -15,7 +15,7 @@ if (global.miniboss == true)
 		state = states.ejected
 		vsp = -10
 		audio_stop_all()
-		scr_soundeffect(mu_timesup)
+		//scr_soundeffect(mu_timesup)
 	}
 	alarm[2] = -1
 	global.miniboss = false

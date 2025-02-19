@@ -51,7 +51,7 @@ function scr_pizzagoblin_throw()
 		bombreset = global.reset_timer[object_index]
 		sprite_index = global.throw_sprite[object_index]
 		if point_in_rectangle(x, y, camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), (camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])), (camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0])))
-			scr_soundeffect(sfx_enemyprojectile)
+			//scr_soundeffect(sfx_enemyprojectile)
 		
 		switch object_index
 		{

@@ -42,7 +42,7 @@ function scr_player_ratmounttumble()
 	{
 		particle_set_scale(particle.highjumpcloud2, xscale, 1)
 		create_particle(x, y, particle.highjumpcloud2, 0)
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		vsp = -11
 		jumpstop = 0
 	}

@@ -10,5 +10,3 @@ if place_meeting(x, y, obj_parent_player)
 		}
 	}
 }
-if _sound
-	scr_soundeffect(sfx_collectgiantpizza)

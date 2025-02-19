@@ -23,7 +23,7 @@ function scr_player_ratmounttrickjump()
 		else
 		{
 			ramp_points = 0
-			scr_soundeffect(sfx_groundpound)
+			//scr_soundeffect(sfx_groundpound)
 			state = states.ratmount
 			sprite_index = spr_player_ratmountland
 			image_index = 0

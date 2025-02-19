@@ -24,11 +24,6 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && ((!elite) or elitehit <= 
 }
 if (ds_list_find_index(global.baddieroom, id) == -1 && !important)
 {
-	if ((!elite) or elitehit <= 0)
-	{
-		with (obj_player1)
-			supercharge += 1
-	}
 	global.combotime = 60
 	if ((!elite) or elitehit <= 0)
 		global.combo += 1
@@ -40,7 +35,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && !important)
 		global.collect += combototal
 		global.comboscore += combototal
 	}
-	scr_soundeffect(sfx_killenemy)
+	//scr_soundeffect(sfx_killenemy)
 	repeat (3)
 	{
 		with (create_debris(x, y, spr_slapstar))
@@ -68,7 +63,7 @@ else if (ds_list_find_index(global.baddieroom, id) == -1 && important == 1)
 	instance_create(x, y, obj_baddiegibs)
 	instance_create(x, y, obj_baddiegibs)
 	instance_create(x, y, obj_baddiegibs)
-	scr_soundeffect(sfx_killenemy)
+	//scr_soundeffect(sfx_killenemy)
 	with (obj_camera)
 	{
 		shake_mag = 3

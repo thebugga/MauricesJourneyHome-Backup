@@ -12,7 +12,7 @@ function scr_pizzaball_golf()
 		x = player.x
 		y = player.y
 		global.golfhit++
-		scr_soundeffect(sfx_punch)
+		//scr_soundeffect(sfx_punch)
 		if player.key_up
 			scr_pizzaball_go_to_thrown((player.xscale * 15), -16, 0)
 		else if player.key_down

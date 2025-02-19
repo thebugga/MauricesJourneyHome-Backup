@@ -55,7 +55,7 @@ function scr_player_mach1()
 		}
 		if key_jump
 		{
-			scr_soundeffect(sfx_jump)
+			//scr_soundeffect(sfx_jump)
 			sprite_index = spr_airdash1
 			image_index = 0
 			dir = xscale
@@ -88,7 +88,7 @@ function scr_player_mach1()
 		case "V":
 			if key_slap2
 			{
-				scr_soundeffect(sfx_killingblow)
+				//scr_soundeffect(sfx_killingblow)
 				sprite_index = spr_playerV_airrevolver
 				image_index = 0
 				vsp = -5

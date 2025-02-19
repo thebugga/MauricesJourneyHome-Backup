@@ -45,7 +45,7 @@ function scr_player_mortjump()
 			image_index = 0
 			doublejump = 0
 			jumpstop = 0
-			scr_soundeffect(sfx_jump)
+			//scr_soundeffect(sfx_jump)
 			create_particle(x, y, particle.jumpdust, 0)
 		}
 		else
@@ -58,7 +58,7 @@ function scr_player_mortjump()
 	}
 	else if ((!doublejump) && key_jump)
 	{
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		jumpstop = 0
 		input_buffer_jump = 8
 		doublejump = 1

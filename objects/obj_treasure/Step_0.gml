@@ -30,7 +30,7 @@ if (player == 0 && place_meeting(x, y, obj_parent_player))
 				{
 					other.alarm[0] = 150
 					state = states.gottreasure
-					scr_soundeffect(sfx_treasure)
+					//scr_soundeffect(sfx_treasure)
 				}
 				other.got = 1
 				other.x = (x - 18)

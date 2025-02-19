@@ -26,7 +26,7 @@ function scr_player_spiderweb()
 		sprite_index = spr_jump
 		image_index = 0
 		jumpAnim = 1
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 	}
 	exit;
 }

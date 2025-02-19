@@ -148,7 +148,7 @@ function scr_player_bombpepup()
 					vsp = -7
 			}
 		}
-		scr_soundeffect(sfx_groundpound)
+		//scr_soundeffect(sfx_groundpound)
 		image_index = 0
 		state = states.Sjumpland
 		machhitAnim = 0
@@ -198,8 +198,8 @@ function scr_player_bombpepside()
 	if (scr_solid((x + xscale), y) && (scr_solid_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
 		sprite_index = spr_hitwall
-		scr_soundeffect(sfx_groundpound)
-		scr_soundeffect(sfx_bumpwall)
+		//scr_soundeffect(sfx_groundpound)
+		//scr_soundeffect(sfx_bumpwall)
 		with (obj_camera)
 		{
 			shake_mag = 20
@@ -277,7 +277,7 @@ function scr_player_bombpep()
 	}
 	if (bombpeptimer == 0 && sprite_index == spr_bombpeprunabouttoexplode)
 	{
-		scr_soundeffect(sfx_bombpep2)
+		//scr_soundeffect(sfx_bombpep2)
 		hurted = 1
 		scr_losepoints()
 		instance_create(x, y, obj_bombexplosion)

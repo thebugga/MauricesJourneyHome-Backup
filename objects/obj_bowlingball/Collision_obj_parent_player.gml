@@ -1,6 +1,6 @@
 if (drop == 0)
 {
-	scr_soundeffect(sfx_pephurt)
+	//scr_soundeffect(sfx_pephurt)
 	instance_create(x, y, obj_stompeffect)
 	other.image_index = 0
 	other.state = states.stunned

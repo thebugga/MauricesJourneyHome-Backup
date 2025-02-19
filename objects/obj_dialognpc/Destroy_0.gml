@@ -1,7 +1,7 @@
-scr_soundeffect(asset_get_index(concat("sfx_scream", irandom_range(1, 10))))
+//scr_soundeffect(asset_get_index(concat("sfx_scream", irandom_range(1, 10))))
 with (instance_create(x, y, obj_sausageman_dead))
 	sprite_index = other.deathspr
-scr_soundeffect(sfx_killenemy)
+//scr_soundeffect(sfx_killenemy)
 repeat (3)
 {
 	with (create_debris(x, y, spr_slapstar))

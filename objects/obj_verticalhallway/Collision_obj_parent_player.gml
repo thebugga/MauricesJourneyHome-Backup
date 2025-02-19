@@ -26,7 +26,7 @@ with (other)
 			obj_player2.targetRoom = other.targetRoom
 		}
 		other.visited = 1
-		scr_soundeffect(sfx_door)
+		//scr_soundeffect(sfx_door)
 		instance_create(x, y, obj_fadeout)
 	}
 	y = (other.y + (other.sprite_height - 46))

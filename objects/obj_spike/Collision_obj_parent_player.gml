@@ -13,7 +13,7 @@ else
 		image_index = 0
 		hsp = (-6 * xscale)
 		vsp = -4
-		scr_soundeffect(sfx_loseknight)
+		//scr_soundeffect(sfx_loseknight)
 		repeat (3)
 			create_debris(x, y, spr_wooddebris)
 	}

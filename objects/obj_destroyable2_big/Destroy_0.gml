@@ -19,8 +19,6 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
     }
     else
         instance_create((x + 32), y, content)
-    repeat (3)
-        create_baddiegibsticks((x + 32), (y + 32))
     notification_push((46 << 0), [room])
     tile_layer_delete_at(1, x, y)
     tile_layer_delete_at(1, (x + 32), y)

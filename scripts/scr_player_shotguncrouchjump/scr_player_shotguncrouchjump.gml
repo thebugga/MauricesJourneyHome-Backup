@@ -24,7 +24,7 @@ function scr_player_shotguncrouchjump()
 		state = states.shotguncrouch
 		sprite_index = spr_shotgungoduck
 		image_index = 0
-		scr_soundeffect(sfx_step)
+		//scr_soundeffect(sfx_step)
 	}
 	exit;
 }

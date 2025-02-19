@@ -3,7 +3,7 @@ if (image_alpha == 1)
 	global.heattime = 60
 	with (obj_camera)
 		healthshaketime = 60
-	scr_soundeffect(sfx_collectpizza)
+	//scr_soundeffect(sfx_collectpizza)
 	instance_destroy()
 	global.combotime = 60
 	var val = heat_calculate(100)

@@ -16,9 +16,9 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 		sprite_index = spr_pizzablockdead
 	scr_sleep(5)
 	create_baddiegibsticks((x + 16), (y + 16))
-	if audio_is_playing(sfx_collecttopping)
-		audio_stop_sound(sfx_collecttopping)
-	scr_soundeffect(sfx_collecttopping)
+	//if //audio_is_playing(sfx_collecttopping)
+		//audio_stop_sound(sfx_collecttopping)
+	//scr_soundeffect(sfx_collecttopping)
 	global.heattime += 10
 	global.heattime = clamp(global.heattime, 0, 60)
 	global.combotime += 10

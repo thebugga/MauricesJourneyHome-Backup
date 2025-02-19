@@ -10,7 +10,7 @@ function scr_dotaunt()
 			with (instance_create(x + 16, y, obj_smallnumber))
 				number = "25"
 			create_collect(x, y, spr_taunteffect)
-			scr_soundeffect(sfx_collecttopping)
+			//scr_soundeffect(sfx_collecttopping)
 		}
 		if (!finisher)
 		{

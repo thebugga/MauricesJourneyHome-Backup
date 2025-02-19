@@ -1027,7 +1027,7 @@ if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalha
 		state = states.actor
 		hsp = 0
 		vsp = 0
-		scr_soundeffect(sfx_groundpound)
+		//scr_soundeffect(sfx_groundpound)
 		with (instance_create(-960, 0, obj_technicaldifficulty))
 		{
 			playerid = other.id

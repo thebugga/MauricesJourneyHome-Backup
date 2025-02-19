@@ -1,6 +1,6 @@
 if grounded && other.visible && ((global.playerCharacter == Characters.Maurice && key_slap2) || (global.playerCharacter == Characters.Doise && state = states.handstandjump))
 {
-	scr_soundeffect(sfx_knightsword)
+	//scr_soundeffect(sfx_knightsword)
 	momentum = 0
 	movespeed = 0
 	image_index = 0

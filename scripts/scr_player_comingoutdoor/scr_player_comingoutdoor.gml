@@ -31,7 +31,7 @@ function scr_player_comingoutdoor()
 		else
 		{
 			steppybuffer = 16
-			scr_soundeffectpitched(sfx_step)
+			//scr_soundeffectpitched(sfx_step)
 		}
 	}
 	if (sprite_index != spr_Timesup)

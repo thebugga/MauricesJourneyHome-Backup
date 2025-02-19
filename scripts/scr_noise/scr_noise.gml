@@ -261,7 +261,7 @@ function scr_noise_pistol()
 			{
 				shoot_buffer = 6
 				shoot_count--
-				scr_soundeffect(sfx_killingblow)
+				//scr_soundeffect(sfx_killingblow)
 				with (instance_create((x + (image_xscale * 32)), (y + 10), obj_enemybullet))
 				{
 					image_xscale = other.image_xscale

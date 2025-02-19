@@ -1,7 +1,7 @@
 if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != states.grabbed && (!baddieID.invincible) && baddieID.instantkillable)
 {
 	baddieID.invtime = 25
-	scr_soundeffect(sfx_punch)
+	//scr_soundeffect(sfx_punch)
 	if (!baddieID.important)
 	{
 		global.style += (5 + global.combo)

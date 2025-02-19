@@ -14,11 +14,11 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		sprite_index = spr_deadjohnsmoke
 		image_speed = 0.35
 	}
-	if (audio_is_playing(sfx_breakblock1))
+	//if (//audio_is_playing(sfx_breakblock1))
 	{
-		audio_stop_sound(sfx_breakblock1)
+		//audio_stop_sound(sfx_breakblock1)
 	}
-	scr_soundeffect(sfx_breakblock1)
+	//scr_soundeffect(sfx_breakblock1)
 	ds_list_add(global.saveroom, id)
 }
 scr_destroy_tiles(32, "Tiles_1")

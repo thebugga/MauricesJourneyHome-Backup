@@ -4,7 +4,7 @@ with (other)
 	{
 		image_index = 0
 		sprite_index = spr_shotgunpullout
-		scr_soundeffect(sfx_shotgungot)
+		//scr_soundeffect(sfx_shotgungot)
 		instance_destroy(other)
 		shotgunAnim = 1
 		state = states.shotgun

@@ -11,7 +11,7 @@ function cutscene_gustavofail_end(argument0)
 		if (!instance_exists(obj_slapstar))
 		{
 			instance_create((x - 20), (y - 20), obj_slapstar)
-			scr_soundeffect(sfx_pephurt)
+			//scr_soundeffect(sfx_pephurt)
 			with (instance_create((x - 20), (y - 20), obj_smallnumber))
 			{
 				negative = 1

@@ -2,7 +2,7 @@ if ((!other.baddieID.invincible) && other.baddieID.destroyable && playerid.state
 {
 	with (other)
 	{
-		scr_soundeffect(sfx_punch)
+		//scr_soundeffect(sfx_punch)
 		if ((!baddieID.elite) or baddieID.elitehit <= 0)
 		{
 			instance_destroy()

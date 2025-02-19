@@ -15,7 +15,7 @@ with (other)
 			global.currentsavefile = other.file
 			obj_player1.lastroom = room
 			obj_player2.lastroom = room
-			scr_soundeffect(sfx_door)
+			//scr_soundeffect(sfx_door)
 			obj_camera.chargecamera = 0
 			ds_list_add(global.saveroom, id)
 			if (object_index == obj_player1)

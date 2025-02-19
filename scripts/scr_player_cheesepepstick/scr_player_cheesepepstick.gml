@@ -25,7 +25,7 @@ function scr_player_cheesepepstick()
 	}
 	if (sprite_index == spr_cheesepepjumpstart && floor(image_index) == (image_number - 1))
 	{
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 		xscale *= -1
 		dir = xscale
 		state = states.cheesepepjump

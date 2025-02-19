@@ -30,7 +30,7 @@ function scr_player_shoulderbash()
 	if (input_buffer_jump < 8 && grounded)
 	{
 		vsp = (-shoulderbash_jumpspeed)
-		scr_soundeffect(sfx_jump)
+		//scr_soundeffect(sfx_jump)
 	}
 	if ((!instance_exists(dashcloudid)) && grounded)
 	{

@@ -117,8 +117,8 @@ function noise_do_attack_normal()
 		case states.boss_jetpackspin:
 			movespeed = 10
 			state = states.boss_jetpackspin
-			scr_soundeffect(sfx_jump)
-			scr_soundeffect(sfx_woosh)
+			//scr_soundeffect(sfx_jump)
+			//scr_soundeffect(sfx_woosh)
 			vsp = -15
 			sprite_index = spr_playerN_noisebombspinjump
 			image_index = 0
@@ -224,8 +224,8 @@ function noise_do_attack_angry()
 			jumpcount = 1
 			movespeed = 10
 			state = states.boss_jetpackspin
-			scr_soundeffect(sfx_jump)
-			scr_soundeffect(sfx_woosh)
+			//scr_soundeffect(sfx_jump)
+			//scr_soundeffect(sfx_woosh)
 			vsp = -15
 			sprite_index = spr_playerN_noisebombspinjump
 			image_index = 0
@@ -598,7 +598,7 @@ function boss_noise_pogo()
 		image_xscale *= -1
 	if (grounded && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach)
 	{
-		scr_soundeffect(sfx_Npogo3)
+		//scr_soundeffect(sfx_Npogo3)
 		image_index = 0
 		vsp = 0
 		movespeed = 0
@@ -691,8 +691,8 @@ function boss_noise_jetpack()
 		if (dx < 200)
 		{
 			state = states.boss_jetpackspin
-			scr_soundeffect(sfx_jump)
-			scr_soundeffect(sfx_woosh)
+			//scr_soundeffect(sfx_jump)
+			//scr_soundeffect(sfx_woosh)
 			vsp = -15
 			sprite_index = spr_playerN_noisebombspinjump
 			image_index = 0
@@ -731,8 +731,8 @@ function boss_noise_jetpackspin()
 			jumpcount--
 			movespeed = 10
 			state = states.boss_jetpackspin
-			scr_soundeffect(sfx_jump)
-			scr_soundeffect(sfx_woosh)
+			//scr_soundeffect(sfx_jump)
+			//scr_soundeffect(sfx_woosh)
 			vsp = -15
 			sprite_index = spr_playerN_noisebombspinjump
 			image_index = 0

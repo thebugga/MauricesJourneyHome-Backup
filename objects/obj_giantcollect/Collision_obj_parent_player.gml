@@ -5,7 +5,7 @@ if (other.state != states.gotoplayer && visible)
     global.heattime = 60
     with (obj_camera)
         healthshaketime = 120
-    scr_soundeffect(sfx_collectgiantpizza)
+    //scr_soundeffect(sfx_collectgiantpizza)
     if (other.object_index == obj_player1)
         global.collect += 1000
     else

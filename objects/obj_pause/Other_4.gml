@@ -11,7 +11,7 @@ if (room == characterselect or room == rm_levelselect or string_copy(room_get_na
 	]
 	pause_menu[1] = ["OPTIONS", spr_player_bossintro, function()
 	{
-		scr_soundeffect(sfx_enemyprojectile)
+		//scr_soundeffect(sfx_enemyprojectile)
 		instance_create(x, y, obj_option)
 		exit;
 	}
@@ -42,7 +42,7 @@ else
 	]
 	pause_menu[1] = ["OPTIONS", spr_player_bossintro, function()
 	{
-		scr_soundeffect(sfx_enemyprojectile)
+		//scr_soundeffect(sfx_enemyprojectile)
 		instance_create(x, y, obj_option)
 		exit;
 	}
@@ -72,8 +72,6 @@ else
 					obj_player2.input_buffer_jump = 0
 				}
 			}
-			else
-				scr_soundeffect(sfx_enemyprojectile)
 		}
 		exit;
 	}

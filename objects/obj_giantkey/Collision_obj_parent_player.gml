@@ -13,7 +13,7 @@ if (picked == 0)
 	with (playerid)
 	{
 		state = states.gottreasure
-		scr_soundeffect(sfx_secretfound)
+		//scr_soundeffect(sfx_secretfound)
 		global.giantkey = 1
 	}
 	obj_tv.showtext = 1

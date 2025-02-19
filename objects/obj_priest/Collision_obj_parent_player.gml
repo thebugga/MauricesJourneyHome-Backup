@@ -18,7 +18,7 @@ with (other)
 }
 if _transfo
 {
-	scr_soundeffect(sfx_pray)
+	//scr_soundeffect(sfx_pray)
 	var p = other.id
 	with (instance_create((other.x - 540), (camera_get_view_y(view_camera[0]) - 100), obj_priestangel))
 	{
@@ -35,7 +35,7 @@ if _transfo
 		global.combotime = 60
 		with (instance_create((x + 16), y, obj_smallnumber))
 			number = string(val)
-		scr_soundeffect(sfx_collecttopping)
+		//scr_soundeffect(sfx_collecttopping)
 		for (var i = 0; i < val; i += round((val / 16)))
 			create_collect((other.x + irandom_range(-60, 60)), (other.y + irandom_range(-60, 60)), choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect))
 	}

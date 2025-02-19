@@ -3,8 +3,8 @@ if (place_meeting(x, y, obj_parent_player) && sprite_index == spr_pizzaboxunopen
 {
 	global.combotime = 60
 	ds_list_add(global.saveroom, id)
-	if (!audio_is_playing(sfx_collecttoppin))
-		scr_soundeffect(sfx_collecttoppin)
+	//if (!//audio_is_playing(sfx_collecttoppin))
+		//scr_soundeffect(sfx_collecttoppin)
 	if (content == obj_noisebomb)
 	{
 		with (obj_parent_player)

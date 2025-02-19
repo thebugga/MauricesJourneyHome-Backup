@@ -19,7 +19,7 @@ function scr_player_superslam()
 		vsp += 0.5
 	if (grounded && (!(place_meeting(x, (y + 1), obj_destructibles))) && sprite_index == spr_piledriver && vsp > 0)
 	{
-		scr_soundeffect(sfx_groundpound)
+		//scr_soundeffect(sfx_groundpound)
 		sprite_index = spr_piledriverland
 		jumpAnim = 1
 		image_index = 0

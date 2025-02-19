@@ -56,7 +56,7 @@ if (_baddieID.state != states.grabbed && (!_baddieID.invincible) && _baddieID.hi
 				else
 					hitvsp = vsp
 				hitY = y
-				scr_soundeffect(sfx_killingblow)
+				//scr_soundeffect(sfx_killingblow)
 				var debriscount = floor((lunge_hits / 5))
 				repeat (2 + debriscount)
 				{

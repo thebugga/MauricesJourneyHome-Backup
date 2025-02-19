@@ -9,6 +9,6 @@ if ((!kick) && countdown <= 0)
 		other.jumpAnim = 1
 	}
 	countdown = 10
-	scr_soundeffect(sfx_stompenemy)
+	//scr_soundeffect(sfx_stompenemy)
 	create_particle(x, y, particle.jumpdust, 0)
 }

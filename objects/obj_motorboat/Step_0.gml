@@ -35,7 +35,7 @@ switch state
 				shake_mag = 5
 				shake_mag_acc = (5 / room_speed)
 			}
-			scr_soundeffect(sfx_groundpound)
+			//scr_soundeffect(sfx_groundpound)
 			dir *= -1
 		}
 		break

@@ -41,7 +41,7 @@ function scr_enemy_pummel()
 				other.hp--
 				instance_create(x, y, obj_slapstar)
 				instance_create(x, y, obj_baddiegibs)
-				scr_soundeffect(sfx_killingblow)
+				//scr_soundeffect(sfx_killingblow)
 				with (obj_camera)
 				{
 					shake_mag = 3
@@ -60,7 +60,7 @@ function scr_enemy_pummel()
 					instance_create(x, y, obj_highjumpcloud2)
 					instance_create(x, y, obj_slapstar)
 					instance_create(x, y, obj_baddiegibs)
-					scr_soundeffect(sfx_killingblow)
+					//scr_soundeffect(sfx_killingblow)
 					with (obj_camera)
 					{
 						shake_mag = 3
@@ -81,7 +81,7 @@ function scr_enemy_pummel()
 				}
 				else if key_down
 				{
-					scr_soundeffect(sfx_breakdance)
+					//scr_soundeffect(sfx_breakdance)
 					vsp = -4
 					movespeed = 9
 					state = states.punch

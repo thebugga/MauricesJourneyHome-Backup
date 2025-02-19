@@ -15,7 +15,6 @@ function set_audio_volume()
 	global.option_master_volume = (audiosaved_master / 100)
 	global.option_music_volume = (audiosaved_music / 100)
 	global.option_sfx_volume = (audiosaved_sfx / 100)
-	audio_sound_gain(mu_pause, (audiosaved_music * 0.8) / 100, 0)
 	set_master_gain(global.option_master_volume)
 }
 function set_audio_config()

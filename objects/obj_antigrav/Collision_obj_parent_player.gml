@@ -4,7 +4,7 @@ with (other)
 	{
 		state = states.antigrav
 		vsp = 0
-		scr_soundeffect(sfx_antigravstart)
+		//scr_soundeffect(sfx_antigravstart)
 		with (obj_antigravbubble)
 		{
 			if (playerid == other.id)

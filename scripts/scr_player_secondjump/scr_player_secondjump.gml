@@ -40,7 +40,7 @@ function scr_player_secondjump()
 		create_particle(x, y, particle.landcloud, 0)
 		freefallstart = 0
 		audio_sound_gain(sfx_jump, 0.7, 0)
-		if (!audio_is_playing(sfx_jump))
+		//if (!//audio_is_playing(sfx_jump))
 			audio_play_sound(sfx_jump, 1, false)
 	}
 	if (grounded && vsp > 0)

@@ -9,7 +9,7 @@ if (instance_exists(baddieID) && baddieID.stun == 1 && (other.state == states.ha
 		vsp = -3
 		instance_destroy(other)
 	}
-	scr_soundeffect(sfx_killenemy)
+	//scr_soundeffect(sfx_killenemy)
 	instance_create(x, y, obj_slapstar)
 	instance_create(x, y, obj_slapstar)
 	instance_create(x, y, obj_slapstar)

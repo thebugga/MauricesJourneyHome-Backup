@@ -23,7 +23,7 @@ function scr_player_pogo()
 		pogospeed = 6
 	if (grounded && (!key_slap2) && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach)
 	{
-		scr_soundeffect(sfx_Npogo3)
+		//scr_soundeffect(sfx_Npogo3)
 		pogospeedprev = 0
 		image_index = 0
 		movespeed = 0
@@ -69,7 +69,7 @@ function scr_player_pogo()
 	image_speed = 0.35
 	if (key_taunt2 && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach)
 	{
-		scr_soundeffect(sfx_taunt)
+		//scr_soundeffect(sfx_taunt)
 		taunttimer = 20
 		tauntstoredmovespeed = movespeed
 		tauntstoredsprite = sprite_index

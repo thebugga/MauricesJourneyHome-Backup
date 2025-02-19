@@ -42,7 +42,7 @@ function scr_player_cheeseball()
 	{
 		cheeseballbounce = 0
 		slopejump = 0
-		scr_soundeffect(sfx_groundpound)
+		//scr_soundeffect(sfx_groundpound)
 		image_index = 0
 		movespeed = 0
 		cheesepeptimer = 2

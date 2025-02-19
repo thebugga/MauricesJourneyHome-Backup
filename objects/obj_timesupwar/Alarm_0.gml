@@ -15,7 +15,7 @@ repeat round(explosionsnum)
 			create_debris(x, y, spr_debris)
 	}
 }
-scr_soundeffect(sfx_explosion)
+//scr_soundeffect(sfx_explosion)
 with (obj_camera)
 {
 	shake_mag = 30

@@ -54,7 +54,7 @@ function scr_player_playersuperattack()
 					punchcount--
 					randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 557, 556, 555, spr_punch])
 					image_index = 0
-					scr_soundeffect(sfx_killingblow)
+					//scr_soundeffect(sfx_killingblow)
 					with (bossID)
 					{
 						boss_hurt_noplayer(25)
@@ -76,7 +76,7 @@ function scr_player_playersuperattack()
 						movespeed = abs(hsp)
 						hitLag = 10
 					}
-					scr_soundeffect(sfx_killingblow)
+					//scr_soundeffect(sfx_killingblow)
 					superattackstate = states.grab
 					sprite_index = choose(spr_finishingblow1, spr_finishingblow2, spr_finishingblow3, spr_finishingblow4, spr_finishingblow5)
 					image_index = 0

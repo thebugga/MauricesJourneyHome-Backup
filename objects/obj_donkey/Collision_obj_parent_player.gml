@@ -1,6 +1,6 @@
 if (cooldown == 0)
 {
-	scr_soundeffect(sfx_cowkick)
+	//scr_soundeffect(sfx_cowkick)
 	other.x = (x - (image_xscale * 35))
 	other.y = y
 	sprite_index = spr_cowkick

@@ -240,7 +240,7 @@ switch scene
         if (_switch && (!obj_genericfade.fadein))
         {
             instance_destroy(obj_introprop)
-            peppino = instance_create(-130, 386, obj_playerprop)
+            peppino = instance_create(-130, 386, obj_parent_playerprop)
             peppino.alarm[0] = 1
             peppino.fake_hsp = 12
             peppino.sprite_index = spr_player_mach
@@ -295,7 +295,7 @@ switch scene
             scene++
             scenebuffer = 60
             instance_destroy(obj_introprop)
-            peppino = instance_create(200, 386, obj_playerprop)
+            peppino = instance_create(200, 386, obj_parent_playerprop)
             peppino.fake_hsp = 12
             peppino.alarm[0] = 1
             peppino.sprite_index = spr_player_mach
@@ -395,14 +395,14 @@ switch scene
         {
             instance_destroy(obj_introprop)
             layer_x("Backgrounds_4", 0)
-            peppino = instance_create(-700, 386, obj_playerprop)
+            peppino = instance_create(-700, 386, obj_parent_playerprop)
             peppino.alarm[0] = 1
             peppino.sprite_index = spr_player_mach4
             peppino.image_speed = 0.5
             pizzaface = instance_create(-700, 200, obj_introprop)
             pizzaface.sprite_index = spr_pizzaface
             pizzaface.image_speed = 0.35
-            gustavo = instance_create((room_width / 2), 386, obj_playerprop)
+            gustavo = instance_create((room_width / 2), 386, obj_parent_playerprop)
             gustavo.spr_palette = spr_ratmountpalette
             gustavo.sprite_index = spr_intro_gustavomap
             stick = instance_create((room_width * 0.55), 200, obj_introprop)

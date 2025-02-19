@@ -5,7 +5,7 @@ if !showlinks
 	frame = clamp(frame, 0, sprite_get_number(spr_manual))
 	if prevframe != frame
 	{
-		scr_soundeffect(sfx_step)
+		//scr_soundeffect(sfx_step)
 		prevframe = frame
 	}
 }

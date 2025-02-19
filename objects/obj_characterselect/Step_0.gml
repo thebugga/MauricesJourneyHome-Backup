@@ -6,18 +6,18 @@ if !stopper
 		if ((obj_player1.key_down2) && selected < (array_length(character) - 1))
 		{
 			selected += 1
-			scr_soundeffect(sfx_step)
+			//scr_soundeffect(sfx_step)
 		}
 		if ((obj_player1.key_up2) && selected > 0)
 		{
 			selected -= 1
-			scr_soundeffect(sfx_step)
+			//scr_soundeffect(sfx_step)
 		}
 		p1_sprite = character[selected][2]
 		if (obj_player1.key_jump)
 		{
 			ready = true
-			scr_soundeffect(sfx_collecttoppin)
+			//scr_soundeffect(sfx_collecttoppin)
 			p1_sprite = character[selected][3]
 			p1_index = 0
 		}
@@ -25,7 +25,7 @@ if !stopper
 	if (obj_player1.key_slap2 && ready)
 	{
 		ready = false
-		scr_soundeffect(sfx_hurt1)
+		//scr_soundeffect(sfx_hurt1)
 	}
 	if p1_boxheight == 220
 	{
@@ -34,12 +34,12 @@ if !stopper
 			if ((obj_player2.key_down2) && selected2 < (array_length(character) - 1))
 			{
 				selected2 += 1
-				scr_soundeffect(sfx_step)
+				//scr_soundeffect(sfx_step)
 			}
 			if ((obj_player2.key_up2) && selected2 > 0)
 			{
 				selected2 -= 1
-				scr_soundeffect(sfx_step)
+				//scr_soundeffect(sfx_step)
 			}
 			p2_sprite = character[selected2][2]
 			if (obj_player2.key_jump)
@@ -47,12 +47,10 @@ if !stopper
 				if selected != selected2
 				{
 					ready2 = true
-					scr_soundeffect(sfx_collecttoppin)
+					//scr_soundeffect(sfx_collecttoppin)
 					p2_sprite = character[selected2][3]
 					p2_index = 0
 				}
-				else
-					scr_soundeffect(sfx_hitenemy)
 			}
 		}
 		if (obj_player2.key_slap2)
@@ -60,12 +58,12 @@ if !stopper
 			if ready2
 			{
 				ready2 = false
-				scr_soundeffect(sfx_hurt1)
+				//scr_soundeffect(sfx_hurt1)
 			}
 			else
 			{
 				p2_connect = false
-				scr_soundeffect(sfx_hurt1)
+				//scr_soundeffect(sfx_hurt1)
 			}
 		}
 		if obj_player1.key_taunt2
@@ -92,7 +90,7 @@ if !stopper
 			global.coop = p2_connect && !multimode
 			global.swapmode = p2_connect && multimode
 			
-			scr_soundeffect(sfx_collecttoppin)
+			//scr_soundeffect(sfx_collecttoppin)
 			alarm[0] = 100
 			stopper = true
 	}

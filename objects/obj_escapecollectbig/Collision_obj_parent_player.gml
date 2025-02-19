@@ -8,7 +8,7 @@ if (image_alpha == 1)
 		with (obj_camera)
 			healthshaketime = 60
 		global.combotime = 60
-		scr_soundeffect(sfx_collectpizza)
+		//scr_soundeffect(sfx_collectpizza)
 		instance_destroy()
 		var val = heat_calculate(100)
 		if (other.object_index == obj_player1)

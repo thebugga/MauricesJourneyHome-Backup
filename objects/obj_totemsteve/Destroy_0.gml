@@ -13,7 +13,7 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 		}
 	}
 	
-	global.fill = 4000 // time left in frames
+	global.fill = 900 // time left in frames
 	with obj_tv
 		chunkmax = global.fill
 	

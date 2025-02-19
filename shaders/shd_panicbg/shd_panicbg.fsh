@@ -5,10 +5,10 @@ uniform float time;
 uniform float panic;
 
 //DDP You can change these values to tweak how intense the background is
-#define WAVELENGTH 48.0
-#define AMPLITUDE 0.005
+#define WAVELENGTH 60.0
+#define AMPLITUDE 0.003
 #define TINTAMOUNT 0.5
-#define TINTSPEED 2.0
+#define TINTSPEED 0.5
 
 void main() {
 	// Wobble back and forth more with time.

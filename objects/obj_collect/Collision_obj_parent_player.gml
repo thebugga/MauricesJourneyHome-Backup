@@ -6,8 +6,6 @@ if (other.state != states.gotoplayer)
         scr_sound_multiple("event:/sfx/misc/collect", x, y)
     else
         scr_sound_multiple("event:/sfx/misc/bellcollect", x, y)
-    if (global.playerCharacter == Characters.Vigilante)
-        global.playerhealth = clamp((global.playerhealth + 1), 0, 100)
     global.heattime += 10
     global.heattime = clamp(global.heattime, 0, 60)
     global.combotime += 10

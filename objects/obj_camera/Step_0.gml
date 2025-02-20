@@ -13,24 +13,6 @@ if healthshaketime > 0
 }
 if healthshaketime == 0
 	healthshake = 0;
-if global.playerCharacter == Characters.Vigilante
-{
-	if healthold != global.playerhealth
-	{
-		playerhealthup = healthold < global.hp;
-		healthshaketime = 30;
-		healthold = global.playerhealth;
-	}
-}
-else if global.playerCharacter == Characters.Maurice
-{
-	if healthold != global.hp
-	{
-		playerhealthup = healthold < global.hp;
-		healthshaketime = 30;
-		healthold = global.hp;
-	}
-}
 if global.coop == 1
 {
 	var p1 = player;

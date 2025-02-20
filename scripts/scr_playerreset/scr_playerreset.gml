@@ -118,7 +118,6 @@ function scr_playerreset(argument0)
 		global.pizzacoin = 0
 		global.toppintotal = 0
 		global.hit = 0
-		global.playerhealth = 9
 		global.panic = false
 		global.level_minutes = 0
 		global.level_seconds = 0
@@ -312,7 +311,6 @@ function scr_playerreset(argument0)
 		grav = 0.5
 		hsp = 0
 		vsp = 0
-		global.playerhealth = 9
 		xscale = 1
 		yscale = 1
 		pogospeed = 6

@@ -10,7 +10,8 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
             var shd = 0
             if (identifier == (3 << 0))
             {
-                a = alpha
+             
+			 a = alpha
                 shd = 1
                 shader_set(shd_color_afterimage)
                 shader_set_uniform_f(other.shd_color_red, 0.97)

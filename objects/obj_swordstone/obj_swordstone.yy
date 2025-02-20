@@ -28,7 +28,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_mortcube",
+    "path": "sprites/spr_mortcube/spr_mortcube.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

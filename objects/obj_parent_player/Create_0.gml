@@ -543,7 +543,6 @@ if (!variable_global_exists("saveroom"))
 	global.escaperoom = ds_list_create();
 	global.lap = false;
 	global.laps = 0;
-	global.playerhealth = 100;
 	global.instancelist = ds_list_create();
 	global.followerlist = ds_list_create();
 	global.maxrailspeed = 2;

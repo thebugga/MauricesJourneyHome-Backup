@@ -131,21 +131,3 @@ var defaultx = 80
 var defaulty = 406
 xx = defaultx
 yy = defaulty
-if (global.playerCharacter == Characters.Vigilante)
-{
-	for (var i = 0; i < 9; i++) 
-	{
-		if (i != 0)
-			xx += 44
-		if (xx >= (defaultx + 132))
-		{
-			xx = defaultx
-			yy += 42
-		}
-		draw_sprite_ext(spr_vigihp, hpindex, xx, yy, 1, 1, 0, c_black, 1)
-		if (i < global.playerhealth)
-			draw_sprite(spr_vigihp, hpindex, xx, yy)
-		hppos[i + 1][0] = xx
-		hppos[i + 1][1] = yy
-	}
-}

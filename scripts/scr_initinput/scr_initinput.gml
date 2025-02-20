@@ -15,7 +15,7 @@ function scr_initinput(open_savedata = true)
 	tdp_input_ini_read("menu_right", [tdp_action(tdp_input.keyboard, vk_right)]);
 	tdp_input_ini_read("menu_start", [tdp_action(tdp_input.keyboard, vk_escape)]);
 	tdp_input_ini_read("menu_select", [tdp_action(tdp_input.keyboard, ord("Z")), tdp_action(tdp_input.keyboard, vk_space)]);
-	tdp_input_ini_read("menu_back", [tdp_action(tdp_input.keyboard, ord("X")), tdp_action(tdp_input.keyboard, vk_escape)]);
+	tdp_input_ini_read("menu_back", [tdp_action(tdp_input.keyboard, ord("X"))]);
 	tdp_input_ini_read("menu_delete", [tdp_action(tdp_input.keyboard, ord("C"))]);
 	tdp_input_ini_read("menu_quit", [tdp_action(tdp_input.keyboard, ord("X"))]);
 	

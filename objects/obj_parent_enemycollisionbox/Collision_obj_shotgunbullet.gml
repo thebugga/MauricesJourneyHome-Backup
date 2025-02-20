@@ -14,8 +14,6 @@ if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != stat
 			instance_destroy()
 			instance_destroy(baddieID)
 		}
-		if (other.object_index == obj_parent_playernoisearrow)
-			instance_destroy(other)
 	}
 	else
 	{

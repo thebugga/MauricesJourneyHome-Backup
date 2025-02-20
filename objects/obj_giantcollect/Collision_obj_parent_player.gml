@@ -1,7 +1,5 @@
 if (other.state != states.gotoplayer && visible)
 {
-    if (global.playerCharacter == Characters.Vigilante)
-        global.playerhealth = clamp((global.playerhealth + 100), 0, 100)
     global.heattime = 60
     with (obj_camera)
         healthshaketime = 120

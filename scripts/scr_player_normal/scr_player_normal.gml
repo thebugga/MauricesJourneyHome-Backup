@@ -157,7 +157,7 @@ function state_player_normal()
 			}
 			else if !facehurt
 			{
-				if (windingAnim < 1800 || angry || global.playerhealth == 1 || shoot)
+				if (windingAnim < 1800 || angry|| shoot)
 				{
 					start_running = true;
 					movespeed = 0;

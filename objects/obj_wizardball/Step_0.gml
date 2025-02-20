@@ -1,12 +1,4 @@
 hsp = (image_xscale * movespeed)
-if (blur_effect > 0)
-	blur_effect--
-else
-{
-	blur_effect = 2
-	with (create_blur_afterimage(x, y, sprite_index, (image_index - 1), image_xscale))
-		playerid = other.id
-}
 if grounded
 {
 	

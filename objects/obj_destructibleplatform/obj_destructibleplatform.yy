@@ -32,7 +32,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_cheeseblock",
+    "path": "sprites/spr_cheeseblock/spr_cheeseblock.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

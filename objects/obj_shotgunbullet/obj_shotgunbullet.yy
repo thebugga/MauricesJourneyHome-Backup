@@ -32,7 +32,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_peppinobullet",
+    "path": "sprites/spr_peppinobullet/spr_peppinobullet.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

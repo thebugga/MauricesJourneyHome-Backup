@@ -774,12 +774,6 @@ if (state != states.grabbed && state != states.hurt)
 }
 if (state != states.freefall && (state != states.chainsaw or tauntstoredstate != states.freefall) && (state != states.backbreaker or tauntstoredstate != states.freefall))
 	freefallsmash = -14
-if (global.playerhealth <= 0 && state != states.gameover)
-{
-	image_index = 0
-	sprite_index = spr_playerV_dead
-	state = states.gameover
-}
 if (state == states.gameover && y > (room_height * 4) && (!instance_exists(obj_backtohub)))
 {
 	targetDoor = "HUB"

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{c327afe1-4111-465d-9991-8450bb56e375}">
 		<property name="assetPath">
-			<value>Virgill - Interference Ending ~Mario Forever Fastrun 5-1 Theme~ (Oscilloscope View) - SuperJet Spade (youtube, lB4tPC4tWT0).ogg</value>
+			<value>music/Virgill - Interference Ending ~Mario Forever Fastrun 5-1 Theme~ (Oscilloscope View) - SuperJet Spade (youtube, lB4tPC4tWT0).ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

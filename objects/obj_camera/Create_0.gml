@@ -66,4 +66,3 @@ global.timedgate = false;
 healthshake = 0;
 healthold = 8;
 healthshaketime = 0;
-playerhealthup = false;

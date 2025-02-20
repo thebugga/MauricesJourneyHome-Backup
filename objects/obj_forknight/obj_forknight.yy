@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_forknight_idle",
-    "path": "sprites/spr_forknight_idle/spr_forknight_idle.yy",
+    "name": "spr_forknight_walk",
+    "path": "sprites/spr_forknight_walk/spr_forknight_walk.yy",
   },
   "spriteMaskId": {
     "name": "spr_player_mask",

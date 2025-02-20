@@ -91,26 +91,17 @@ function scr_playerN_machcancel()
 		}
 	}
 	noisedoublejump = true;
-	if (input_buffer_slap > 0 && key_up && (!global.pistol || !ispeppino))
-	{
-		input_buffer_slap = 0;
-		state = states.punch;
-		image_index = 0;
-		sprite_index = spr_breakdanceuppercut;
-		fmod_event_instance_play(snd_uppercut);
-		vsp = -21;
-		movespeed = hsp;
-		particle_set_scale(particle.highjumpcloud2, xscale, 1);
-		create_particle(x, y, particle.highjumpcloud2, 0);
-		repeat 4
-		{
-			with (instance_create(x + irandom_range(-40, 40), y + irandom_range(-40, 40), obj_explosioneffect))
-			{
-				sprite_index = spr_shineeffect;
-				image_speed = 0.35;
-			}
-		}
-	}
+    if (input_buffer_slap > 0 && key_up && shotgunAnim == false && ((!global.pistol) || (!ispeppino)))
+    {
+        state = states.punch
+        input_buffer_slap = 0
+        image_index = 0
+        sprite_index = spr_breakdanceuppercut
+        fmod_event_instance_play(snd_uppercut)
+        vsp = -20
+        particle_set_scale((4 << 0), xscale, 1)
+        create_particle(x, y, (4 << 0), 0)
+    }
 	if grounded && !key_attack && vsp >= 0
 	{
 		state = 0;

@@ -20,7 +20,6 @@
     {"name":"inst_52C12E0B","path":"rooms/wizard_6/wizard_6.yy",},
     {"name":"inst_5DC64ECF","path":"rooms/wizard_6/wizard_6.yy",},
     {"name":"inst_175A0A18","path":"rooms/wizard_6/wizard_6.yy",},
-    {"name":"inst_17F7BD44","path":"rooms/wizard_6/wizard_6.yy",},
     {"name":"inst_4AB81B45","path":"rooms/wizard_6/wizard_6.yy",},
     {"name":"inst_778A06DD","path":"rooms/wizard_6/wizard_6.yy",},
     {"name":"inst_780CC21B","path":"rooms/wizard_6/wizard_6.yy",},
@@ -67,6 +66,7 @@
     {"name":"inst_474A0D7D","path":"rooms/wizard_6/wizard_6.yy",},
     {"name":"inst_6973CA10","path":"rooms/wizard_6/wizard_6.yy",},
     {"name":"inst_4A88B1A4","path":"rooms/wizard_6/wizard_6.yy",},
+    {"name":"inst_17F7BD44","path":"rooms/wizard_6/wizard_6.yy",},
   ],
   "isDnd": false,
   "layers": [

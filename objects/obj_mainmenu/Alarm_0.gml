@@ -10,7 +10,7 @@ switch state
 	case states.transition:
 		with (obj_parent_player)
 		{
-			targetRoom = tower_entrancehallway
+			targetRoom = rm_levelselect
 			targetDoor = "A"
             state = states.titlescreen
 		}

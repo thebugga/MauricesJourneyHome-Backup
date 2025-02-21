@@ -35,8 +35,6 @@ if (global.coop == true)
 	if (!instance_exists(obj_coopflag))
 		instance_create(x, y, obj_coopflag)
 }
-if (state == states.grab)
-	state = states.normal
 if (place_meeting(x, y, obj_boxofpizza) or place_meeting(x, (y - 1), obj_boxofpizza))
 {
 	box = 1

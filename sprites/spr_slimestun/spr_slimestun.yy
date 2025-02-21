@@ -25,7 +25,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9beeb780-3098-4d7e-b508-44311581b397","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 1,
+  "origin": 9,
   "parent": {
     "name": "Cheeseslime",
     "path": "folders/Sprites/Baddie/Cheeseslime.yy",
@@ -64,7 +64,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 50,
-    "yorigin": 0,
+    "yorigin": 75,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

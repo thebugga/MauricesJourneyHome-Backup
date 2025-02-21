@@ -12,7 +12,7 @@ switch state
 		{
 			targetRoom = tower_entrancehallway
 			targetDoor = "A"
-            state = states.victory
+            state = states.titlescreen
 		}
 		with instance_create(0, 0, obj_fadeout)
 			gamestart = true

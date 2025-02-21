@@ -14,9 +14,6 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 	}
     switch room
     {
-        case entrance_10:
-            global.fill = 1860
-            break
 		default:
             global.fill = 900
             break

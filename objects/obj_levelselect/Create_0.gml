@@ -6,9 +6,11 @@ global.leveltorestart = -4
 rank_index = 0
 
 world_array[0] = "SUNNY CHECKERS"
+world_array[1] = "TESTY TEST TEST"
 
 level_array[0][0] = ["GARGBAGE GRAVEYARD", garbage_1, "garbage"]
 level_array[0][1] = ["PIZZARDRY", wizard_1, "wizard"]
+level_array[1][0] = ["JOHN GUTTER", entrance_1, "entrance"]
 
 stickpressed = false
 key_up2 = false

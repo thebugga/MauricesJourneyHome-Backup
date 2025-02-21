@@ -18,8 +18,8 @@ panicmusicID = panicmusicP;
 kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
 panicstart = false;
 
-add_music(rm_levelselect, "event:/music/title", noone, false);
-add_music(hub_outside, "event:/music/hub", noone, false);
+add_music(REALLYREALTitlescreen, "event:/music/title", noone, false);
+add_music(tower_entrancehallway, "event:/music/hub", noone, false);
 add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
 add_music(hub_lobby, "event:/music/hub", noone, false);
 add_music(hub_theatre, "event:/music/hub", noone, false);

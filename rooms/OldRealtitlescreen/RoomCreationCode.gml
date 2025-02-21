@@ -294,7 +294,6 @@ global.afterimage_color1 = make_colour_rgb(255, 0, 0)
 global.afterimage_color2 = make_colour_rgb(0, 255, 0)
 global.smallnumber_color1 = make_colour_rgb(255, 255, 255)
 global.smallnumber_color2 = make_colour_rgb(248, 0, 0)
-global.optimize = 1
 global.autotile = 1
 global.heatmeter = false
 global.showcollisions = true
@@ -306,7 +305,7 @@ global.option_sfx_volume = 4
 with (obj_parent_player)
 	state = states.normal
 global.loadeditor = 0
-room_goto(rm_eggplantdisclaimer)
+room_goto(rm_logo)
 instance_destroy(obj_cutscene_handler)
 gamesave_async_load()
 globalvar c_rainbow;

@@ -1,5 +1,3 @@
-if obj_player1.state == states.debugstate
-	exit;
 if obj_player1.state == states.titlescreen
 	exit;
 if instance_exists(obj_jumpscare)

@@ -12,7 +12,7 @@ with (_boss)
 		var pstate = p.tauntstoredstate
 		var pmovespeed = p.tauntstoredmovespeed
 		var psprite = p.tauntstoredsprite
-		if (object_index == obj_pizzamancerboss && phase > 1)
+		if (object_index == obj_pizzafacebossOLD && phase > 1)
 			SUPER_boss_hurt(30, p)
 		else
 		{

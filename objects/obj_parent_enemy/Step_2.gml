@@ -46,3 +46,9 @@ if obj_parent_player.baddiegrabbedID = id
 	persistent = true
 else
 	persistent = false
+if (global.stylethreshold >= 3)
+{
+    elite = 1
+	paletteselect = 1
+	usepalette = 1
+}

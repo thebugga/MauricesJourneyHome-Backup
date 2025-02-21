@@ -12,8 +12,16 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 			instance_create(x, y, obj_genericpoofeffect)
 		}
 	}
-	
-	global.fill = 900 // time left in frames
+    switch room
+    {
+        case entrance_10:
+            global.fill = 1860
+            break
+		default:
+            global.fill = 900
+            break
+		
+	}
 	with obj_tv
 		chunkmax = global.fill
 	

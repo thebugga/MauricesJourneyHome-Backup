@@ -29,7 +29,7 @@ function Instakill()
 	else
 		other.baddieID.grabbedby = 2;
 	fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
-	if other.baddieID.elite && other.baddieID.object_index != obj_pepperman && other.baddieID.object_index != obj_pizzamancerboss && other.baddieID.object_index != obj_vigilanteboss && other.baddieID.object_index != obj_noiseboss && other.baddieID.object_index != obj_fakepepboss && other.baddieID.object_index != obj_pf_fakepep && other.baddieID.object_index != obj_pizzamancerboss_p3
+	if other.baddieID.elite && other.baddieID.object_index != obj_pepperman && other.baddieID.object_index != obj_pizzafacebossOLD && other.baddieID.object_index != obj_vigilanteboss && other.baddieID.object_index != obj_noiseboss
 		other.baddieID.elitehit = 0;
 	other.baddieID.player_instakillmove = true;
 	if !other.baddieID.important

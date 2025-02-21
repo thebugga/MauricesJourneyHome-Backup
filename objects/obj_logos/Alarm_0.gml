@@ -1,6 +1,6 @@
 with (obj_parent_player)
 {
-	targetRoom = characterselect
+	targetRoom = REALLYREALTitlescreen
 	targetDoor = "A"
 }
 instance_create(0, 0, obj_fadeout)

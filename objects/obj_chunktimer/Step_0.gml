@@ -1,9 +1,9 @@
-if (global.panic && global.fill > 0 && (!instance_exists(obj_ghostcollectibles)))
-	global.fill -= 0.2
-if (global.fill <= 0 && global.panic && (!instance_exists(obj_pizzamancer)))
+if (global.panic == true && global.fill > 0 && (!instance_exists(obj_ghostcollectibles)) && (!global.tutorial_room))
+    global.fill -= 0.2
+if (global.fill <= 0 && global.panic && (!global.tutorial_room) && (!instance_exists(obj_pizzamancer)))
 {
 	instance_create(obj_player1.x, obj_player1.y, obj_pizzamancer)
-	//scr_soundeffect(sfx_pizzaface)
+    fmod_event_one_shot("event:/sfx/pizzamancer/laugh")
 }
-floor((global.fill / 100))
-global.fill = clamp(global.fill, 0, 4000)
+if (global.fill <= 0)
+    global.fill = 0

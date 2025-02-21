@@ -14,4 +14,4 @@ changing_hdir = 0
 active = 1
 escape = false
 image_speed = 0.35
-mask_index = spr_chigaco
+mask_index = spr_mortcube

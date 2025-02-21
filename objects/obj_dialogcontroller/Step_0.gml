@@ -90,12 +90,14 @@ else
 	dialogblinktime = irandom_range(20, 1000)
 	}
 dialogindex += 0.35
+/*
 if floor(dialogindex) > (sprite_get_number(dialogsprite) - 1)
 {
 if (dialogsprite == talk_sprites[dialogcharacter][dialogexpression][2] || dialogsprite == talk_sprites[dialogcharacter][dialogexpression][3])
-dialogsprite = talk_sprites[dialogcharacter][dialogexpression][0]
+dialogsprite = talk_sprites[dialogcharacterz][dialogexpression][0]
 dialogindex = 0
 }
+*/
 for (var i = 0; i < 4; i++)
 {
 if dialogsidel[i] == dialogcharacter

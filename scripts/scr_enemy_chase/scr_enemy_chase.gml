@@ -1,6 +1,6 @@
 function scr_enemy_chase()
 {
-	if (object_index == obj_minijohn or object_index == obj_banditochicken or object_index == obj_golfdemon)
+	if (object_index == obj_minijohn)
 	{
 		var targetplayer = obj_player1
 		if (obj_player1.spotlight == 0)
@@ -8,8 +8,6 @@ function scr_enemy_chase()
 		if (x != targetplayer.x && (!(image_xscale == (-(sign((x - targetplayer.x)))))))
 		{
 			movespeed = 4
-			if (object_index == obj_golfdemon)
-				movespeed = 6
 			image_xscale = (-(sign((x - targetplayer.x))))
 			momentum = ((-image_xscale) * (movespeed + 4))
 		}
@@ -25,9 +23,6 @@ function scr_enemy_chase()
 			instance_create(x, (y + 43), obj_cloudeffect)
 			steppy = 20
 		}
-	}
-	if (object_index == obj_pickle)
-	{
 	}
 	if place_meeting(x, (y + 1), obj_railparent)
 	{

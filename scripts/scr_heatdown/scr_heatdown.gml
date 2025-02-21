@@ -8,15 +8,7 @@ function scr_heatdown()
 		global.baddierage = 0
 		obj_heatafterimage.visible = false
 	}
-	if instance_exists(obj_parent_enemy)
-	{
-		with (obj_tv)
-		{
-			message = "HEAT DOWN..."
-			alarm[0] = 200
-			showtext = 1
-		}
-	}
+	scr_tvtopmessage(["HEAT DOWN!!"])
 	obj_stylebar.toggle = 1
 	obj_stylebar.alarm[0] = 5
 	exit;

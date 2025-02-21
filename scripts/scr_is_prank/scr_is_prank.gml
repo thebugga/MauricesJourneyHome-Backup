@@ -18,6 +18,20 @@ function scr_do_rank(argument0, argument1) //gml_Script_scr_do_rank
     var cy = camera_get_view_y(view_camera[0])
     rankpos_x = ex - cx
     rankpos_y = ey - cy
+    if (global.tutorial_room)
+    {
+        var _lap = false
+        ini_open_from_string(obj_savesystem.ini_str)
+        ini_write_real("Tutorial", "finished", true)
+        if ((global.level_minutes < 2 || global.level_minutes < 1 || (global.level_minutes == 1 && global.level_seconds <= 40)) && ini_read_real("Tutorial", "lapunlocked", false) == false)
+        {
+            ini_write_real("Tutorial", "lapunlocked", true)
+            _lap = true
+        }
+        obj_savesystem.ini_str = ini_close()
+        if _lap
+            create_transformation_tip(lang_get_value("tutorial_lapunlock"))
+    }
     if (global.timeattack == true)
         obj_timeattack.stop = true
     targetDoor = "none"
@@ -40,6 +54,12 @@ function scr_do_rank(argument0, argument1) //gml_Script_scr_do_rank
         {
             do_rank = true
             toppinvisible = argument0
+            if (room == tower_tutorial_1)
+            {
+                do_rank = false
+                targetRoom = tower_entrancehallway
+                targetDoor = "HUB"
+            }
         }
     }
     obj_player1.state = states.door

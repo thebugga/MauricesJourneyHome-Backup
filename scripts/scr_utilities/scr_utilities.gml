@@ -198,10 +198,9 @@ function instance_random(object) {
 	return instance_find(object, irandom(instance_number(object) - 1));
 }
 
-function heat_calculate(num)
-{
-	trace(global.stylemultiplier)
-	return num + round(num * global.stylemultiplier);
+function heat_calculate(argument0)
+{	
+	return global.heatmeter ? (argument0 + round((argument0 * global.stylemultiplier))) : argument0;
 }
 
 function destroy_sounds(argument0) //gml_Script_destroy_sounds

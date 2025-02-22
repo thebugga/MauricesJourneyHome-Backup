@@ -193,5 +193,4 @@ function scr_player_Sjump()
 		}
 	}
 	image_speed = 0.5;
-	scr_collide_player();
 }

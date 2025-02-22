@@ -33,7 +33,7 @@ if state != states.normal
 		draw_sprite(elavatorsprite, 0, irandom_range(-shake, shake), irandom_range(-shake, shake))
 		shader_set(global.Pal_Shader)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
-		pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
+		//pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 		draw_sprite(charsprite, charindex, irandom_range(-shake, shake) , chary + irandom_range(-shake, shake))
 		pattern_reset()
 		reset_shader_fix()

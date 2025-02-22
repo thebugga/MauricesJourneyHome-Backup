@@ -3,7 +3,7 @@ if (global.collect >= global.collectN)
 	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
 if (global.collectN > global.collect)
 	pal_swap_set(obj_player2.spr_palette, obj_player2.paletteselect, false)
-pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
+//pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 draw_self()
 pattern_reset()
 shader_reset()

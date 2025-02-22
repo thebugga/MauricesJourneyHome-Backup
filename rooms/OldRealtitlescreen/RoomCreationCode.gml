@@ -287,7 +287,7 @@ enum Characters
 pal_swap_init_system(shd_pal_swapper,shd_pal_html_sprite,shd_pal_html_surface)
 global.coop = false
 global.swapmode = false
-global.currentsavefile = 1
+global.currentsavefile = 0
 global.mach_color1 = make_colour_rgb(96, 208, 72)
 global.mach_color2 = make_colour_rgb(0, 104, 232)
 global.afterimage_color1 = make_colour_rgb(255, 0, 0)

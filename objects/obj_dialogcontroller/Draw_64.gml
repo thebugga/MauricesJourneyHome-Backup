@@ -52,7 +52,7 @@ if (dialogsprite != -4)
 		reset_shader_fix()
 	}
 	else
-	draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),sidescale,1,0,c_white,1)
+		draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),sidescale,1,0,c_white,1)
 }
 var bw = ((960 - rpadding) - x1)
 var bh = ((540 - rpadding) - y1)

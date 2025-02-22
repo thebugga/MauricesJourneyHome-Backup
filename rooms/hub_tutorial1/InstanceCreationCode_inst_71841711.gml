@@ -1,6 +1,6 @@
-sprite_index = spr_pizzard_walk
-deathspr = spr_pizzard_dead
-deathsavename = "dougie"
-dialog[0] = dialog_create("Hello, Welcome to Burger King", 3, 0)
+sprite_index = spr_pizzy
+deathspr = spr_pizzy_dead
+deathsavename = "pizzy"
+dialog = [dialog_create("This is the tutorial from my own mod Pizzy Purple, it's a temporary placeholder atm", 4, 0), dialog_create("If you wanna skip it, take the left path", 4, 0)]
 dialogsidel = [0, 1, -4, -4]
-dialogsider = [3, -4, -4, -4]
+dialogsider = [4, -4, -4, -4]

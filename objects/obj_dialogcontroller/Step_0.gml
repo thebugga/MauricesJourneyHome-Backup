@@ -65,39 +65,37 @@ else
 	}
 }
 
-	if currentpos < string_length(currenttext)
-	{
+if currentpos < string_length(currenttext)
+{
 	if (talk_sprites[dialogcharacter][dialogexpression][1] != -4 && dialogsprite != talk_sprites[dialogcharacter][dialogexpression][3])
-	dialogsprite = talk_sprites[dialogcharacter][dialogexpression][1]
-	else if( talk_sprites[dialogcharacter][dialogexpression][1] == -4 && dialogsprite != talk_sprites[dialogcharacter][dialogexpression][2])
+		dialogsprite = talk_sprites[dialogcharacter][dialogexpression][1]
+	else if(talk_sprites[dialogcharacter][dialogexpression][1] == -4 && dialogsprite != talk_sprites[dialogcharacter][dialogexpression][2])
+		dialogsprite = talk_sprites[dialogcharacter][dialogexpression][0]
+}
+if( currentpos > string_length(currenttext) && dialogsprite != talk_sprites[dialogcharacter][dialogexpression][2])
 	dialogsprite = talk_sprites[dialogcharacter][dialogexpression][0]
-	}
-	if( currentpos > string_length(currenttext) && dialogsprite != talk_sprites[dialogcharacter][dialogexpression][2])
-	dialogsprite = talk_sprites[dialogcharacter][dialogexpression][0]
-	if dialogblinktime > 0
+if dialogblinktime > 0
 	dialogblinktime--
-	else
-	{
+else
+{
 	if currentpos <= string_length(currenttext)
 	{
-	if (talk_sprites[dialogcharacter][dialogexpression][1] != -4 && talk_sprites[dialogcharacter][dialogexpression][3] != -4)
-	dialogsprite = talk_sprites[dialogcharacter][dialogexpression][3]
-	else if( talk_sprites[dialogcharacter][dialogexpression][1] == -4 && talk_sprites[dialogcharacter][dialogexpression][2] != -4)
-	dialogsprite = talk_sprites[dialogcharacter][dialogexpression][2]
+		if (talk_sprites[dialogcharacter][dialogexpression][1] != -4 && talk_sprites[dialogcharacter][dialogexpression][3] != -4)
+			dialogsprite = talk_sprites[dialogcharacter][dialogexpression][3]
+		else if( talk_sprites[dialogcharacter][dialogexpression][1] == -4 && talk_sprites[dialogcharacter][dialogexpression][2] != -4)
+			dialogsprite = talk_sprites[dialogcharacter][dialogexpression][2]
 	}
 	else if( talk_sprites[dialogcharacter][dialogexpression][2] != -4)
-	dialogsprite = talk_sprites[dialogcharacter][dialogexpression][2]
+		dialogsprite = talk_sprites[dialogcharacter][dialogexpression][2]
 	dialogblinktime = irandom_range(20, 1000)
-	}
-dialogindex += 0.35
-/*
-if floor(dialogindex) > (sprite_get_number(dialogsprite) - 1)
-{
-if (dialogsprite == talk_sprites[dialogcharacter][dialogexpression][2] || dialogsprite == talk_sprites[dialogcharacter][dialogexpression][3])
-dialogsprite = talk_sprites[dialogcharacterz][dialogexpression][0]
-dialogindex = 0
 }
-*/
+dialogindex += 0.35
+if dialogsprite && floor(dialogindex) > (sprite_get_number(dialogsprite) - 1)
+{
+	if (dialogsprite == talk_sprites[dialogcharacter][dialogexpression][2] || dialogsprite == talk_sprites[dialogcharacter][dialogexpression][3])
+		dialogsprite = talk_sprites[dialogcharacterz][dialogexpression][0]
+	dialogindex = 0
+}
 for (var i = 0; i < 4; i++)
 {
 if dialogsidel[i] == dialogcharacter

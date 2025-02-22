@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_ptg",
+  "name": "obj_towerduds",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bluekazoo",
-    "path": "sprites/spr_bluekazoo/spr_bluekazoo.yy",
+    "name": "spr_towerduds",
+    "path": "sprites/spr_towerduds/spr_towerduds.yy",
   },
   "spriteMaskId": null,
   "visible": true,

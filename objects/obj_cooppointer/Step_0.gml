@@ -1,5 +1,5 @@
 playerid = obj_player2.id
-if (room != OldRealtitlescreen && room != rm_levelselect && room != characterselect)
+if (room != ObjectnMacroloadinRoom && room != rm_levelselect && room != characterselect)
 {
 	with (playerid)
 	{

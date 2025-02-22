@@ -23,7 +23,7 @@ else
 	}
 	else
 	{
-	    room_goto(OldRealtitlescreen)
+	    room_goto(ObjectnMacroloadinRoom)
 	    screen_apply_vsync()
 	}
 }

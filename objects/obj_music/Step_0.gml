@@ -1,24 +1,11 @@
 prevpillar_on_camera = pillar_on_camera;
-if fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_pause) && !obj_pause.pause && !instance_exists(obj_monster)
-{
-	trace("Stopping kidsparty music");
-	fmod_event_instance_stop(kidspartychaseID, false);
-	instance_destroy(obj_kidspartybg);
-	if music != -4
-	{
-		fmod_event_instance_set_paused(music.event, savedmusicpause);
-		fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
-	}
-	fmod_event_instance_set_paused(pillarmusicID, savedpillarpause);
-	fmod_event_instance_set_paused(panicmusicID, savedpanicpause);
-}
-if instance_exists(obj_totemsteve)
+if (instance_exists(obj_totemsteve))
 {
 	fmod_event_instance_set_paused(pillarmusicID, false);
 	var p = false;
 	with obj_totemsteve
 	{
-		if bbox_in_camera(view_camera[0], 0)
+		if (bbox_in_camera(view_camera[0], 0))
 			p = true;
 	}
 	if p != pillar_on_camera
@@ -39,10 +26,10 @@ if global.panic
 	{
 		trace("Starting panic music: step");
 		panicstart = true;
-			fmod_event_instance_play(panicmusicID);
-			fmod_event_instance_set_paused(panicmusicID, false);
-			fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
-		if music != noone
+		fmod_event_instance_play(panicmusicID);
+		fmod_event_instance_set_paused(panicmusicID, false);
+		fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
+		if music != -4
 		{
 			fmod_event_instance_stop(music.event, true);
 			fmod_event_instance_stop(music.event_secret, true);
@@ -51,12 +38,12 @@ if global.panic
 		fmod_set_parameter("pillarfade", 0, true);
 		fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
 	}
-	else if fmod_event_instance_is_playing(panicmusicID)
+	else if (fmod_event_instance_is_playing(panicmusicID))
 	{
 		if !global.lap
 		{
 			var secs = 56;
-			if fmod_get_parameter("character") >= 1
+			if (fmod_get_parameter("character") >= 1)
 				secs = 65;
 			if global.fill <= secs * 12
 				fmod_event_instance_set_parameter(panicmusicID, "state", 1, true);
@@ -73,19 +60,13 @@ else
 var _found = false;
 with obj_totem
 {
-	if fmod_event_instance_is_playing(snd) && distance_to_object(obj_player1) <= 400
+	if (fmod_event_instance_is_playing(snd) && distance_to_object(obj_player1) <= 400)
 		_found = true;
 }
 with obj_parent_player
 {
 	if state == states.gottreasure
 		_found = true;
-}
-if _found
-	fmod_set_parameter("totem", 1, false);
-else
-{
-	fmod_set_parameter("totem", 0, false);
 }
 if (exitmusic && fmod_event_instance_is_playing(panicmusicID))
 	fmod_event_instance_stop(panicmusicID, true);

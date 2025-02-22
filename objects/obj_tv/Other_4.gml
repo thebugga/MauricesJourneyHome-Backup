@@ -1,4 +1,4 @@
-if (special_prompts == -4 && room != OldRealtitlescreen && room != characterselect)
+if (special_prompts == -4 && room != ObjectnMacroloadinRoom && room != characterselect)
 {
 	special_prompts = ds_map_create()
 	ini_open(concat("saveData", global.currentsavefile, ".ini"))
@@ -16,7 +16,7 @@ if (special_prompts == -4 && room != OldRealtitlescreen && room != charactersele
 	ds_map_set(special_prompts, "rocket", ini_read_real("Prompts", "rocket", 0))
 	ini_close()
 }
-if (room == OldRealtitlescreen)
+if (room == ObjectnMacroloadinRoom)
 {
 	if (special_prompts != -4)
 		ds_map_destroy(special_prompts)

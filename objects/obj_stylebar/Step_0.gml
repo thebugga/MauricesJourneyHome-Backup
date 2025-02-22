@@ -22,7 +22,7 @@ if (global.stylethreshold == 3 && global.style > 55)
 visible = obj_tv.visible
 if (obj_parent_player.y < 200)
     alpha = 0.3
-else if (!((room == rank_room || room == timesuproom || room == OldRealtitlescreen || room == characterselect)))
+else if (!((room == rank_room || room == timesuproom || room == ObjectnMacroloadinRoom || room == characterselect)))
     alpha = 1
 index += 0.35
 global.stylemultiplier = ((global.style + (global.stylethreshold * 55)) / 220)

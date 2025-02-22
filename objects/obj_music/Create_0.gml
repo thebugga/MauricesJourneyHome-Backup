@@ -23,11 +23,11 @@ add_music(tower_entrancehallway, "event:/music/hub", noone, false);
 add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
 add_music(hub_lobby, "event:/music/hub", noone, false);
 add_music(hub_theatre, "event:/music/hub", noone, false);
-add_music(wizard_1, "event:/music/wizardry", noone, false);
-add_music(wizard_2, "event:/music/wizardry", noone, false);
+add_music(wizard_1, "event:/music/w1/wizardry", noone, false);
+add_music(wizard_2, "event:/music/w1/wizardry", noone, false);
 add_music(hub_wizardtower, "event:/music/wizardry", noone, false);
-add_music(garbage_1, "event:/music/garbage", "event:/music/pillarmusic", false)
-add_music(garbage_2, "event:/music/garbage", "event:/music/pillarmusic", false)
-add_music(hub_gravesite, "event:/music/graveyard", "event:/music/pillarmusic", false)
+add_music(garbage_1, "event:/music/w1/garbage", "event:/music/pillarmusic", false)
+add_music(garbage_2, "event:/music/w1/garbage", "event:/music/pillarmusic", false)
+add_music(hub_gravesite, "event:/music/w1/garbage", "event:/music/pillarmusic", false)
 add_music(characterselect, "event:/music/characterselect", "event:/music/pillarmusic", false)
 

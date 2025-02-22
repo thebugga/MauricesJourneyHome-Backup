@@ -1,2 +1,2 @@
-if (room == OldRealtitlescreen)
+if (room == ObjectnMacroloadinRoom)
 	ini_str = ""

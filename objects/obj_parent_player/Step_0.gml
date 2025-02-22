@@ -686,7 +686,7 @@ else
 		invhurt_buffer = invhurt_max
 	hurt_buffer = -1
 }
-if (room == OldRealtitlescreen && instance_exists(obj_mainmenuselect))
+if (room == ObjectnMacroloadinRoom && instance_exists(obj_mainmenuselect))
 	state = states.titlescreen
 if (wallclingcooldown < 10)
 	wallclingcooldown++
@@ -1004,7 +1004,7 @@ if (toomuchalarm1 > 0)
 }
 if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && room != timesuproom && room != hub_tutorial1)
 {
-	if (room != OldRealtitlescreen && room != rank_room && room != rm_placeholder)
+	if (room != ObjectnMacroloadinRoom && room != rank_room && room != rm_placeholder)
 	{
 		with (obj_camera)
 		{

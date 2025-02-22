@@ -14,7 +14,7 @@ with (other)
 				y = other.y - 14
 			vsp = 0
 			create_particle(x, y, particle.jumpdust, 0)
-			if (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.Vigilante)
+			if (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.MrOrange)
 			{
 				if (sprite_index != spr_dashpadmach)
 				{

@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_tv_combofillpalette",
-  "bbox_bottom": 4,
+  "bbox_bottom": 3,
   "bbox_left": 0,
   "bbox_right": 2,
   "bbox_top": 0,
@@ -17,7 +17,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 5,
+  "height": 4,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"afbc55bd-dfa1-475e-9025-491afd53879d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},

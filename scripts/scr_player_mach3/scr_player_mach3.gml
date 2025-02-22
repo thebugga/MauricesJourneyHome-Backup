@@ -224,7 +224,7 @@ function scr_player_mach3()
 					sprite_index = spr_mach2jump;
 				else
 					sprite_index = spr_machroll;
-				if global.playerCharacter == Characters.Vigilante
+				if global.playerCharacter == Characters.MrOrange
 					sprite_index = spr_playerV_divekickstart;
 			}
 			if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)))

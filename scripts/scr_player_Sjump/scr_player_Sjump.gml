@@ -56,7 +56,7 @@ function scr_player_Sjump()
 	}
 	if global.playerCharacter != Characters.Doise
 		sjumpvsp -= 0.1;
-	if global.playerCharacter == Characters.Vigilante && image_index > 3
+	if global.playerCharacter == Characters.MrOrange && image_index > 3
 		vsp = -11;
 	if sprite_index == spr_player_supersidejump
 	{

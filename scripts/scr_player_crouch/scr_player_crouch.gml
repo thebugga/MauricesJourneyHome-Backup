@@ -87,7 +87,7 @@ if (input_buffer_slap > 0 && grounded && global.attackstyle != 2)
         fmod_event_instance_play(snd_crouchslide)
 }
 
-	if (key_shoot2 && global.playerCharacter == Characters.Vigilante && (!instance_exists(dynamite_inst)))
+	if (key_shoot2 && global.playerCharacter == Characters.MrOrange && (!instance_exists(dynamite_inst)))
 	{
 		if (move == 0)
 			movespeed = 0
@@ -103,7 +103,7 @@ if (input_buffer_slap > 0 && grounded && global.attackstyle != 2)
 			playerid = other.id
 		}
 	}
-	if (key_slap2 && global.playerCharacter == Characters.Vigilante)
+	if (key_slap2 && global.playerCharacter == Characters.MrOrange)
 	{
 		if (move == 0)
 			movespeed = 0

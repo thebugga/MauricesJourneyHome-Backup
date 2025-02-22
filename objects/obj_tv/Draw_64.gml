@@ -69,13 +69,14 @@ switch rank_ix
 	default:
 		perc = (_score / global.crank)
 }
-var _cx = (combo_posX + 130)
-var _cy = (((hud_yy + 125)) + combo_posY)
+var _cx = tv_x + 340 + combo_posX
+var _cy = tv_y + 120 + hud_posY + combo_posY
 var _perc = (global.combotime / 60)
 var _minX = (_cx - 56)
 var _maxX = (_cx + 59)
 combofill_x = lerp(combofill_x, (_minX + ((_maxX - _minX) * _perc)), 0.5)
 combofill_y = _cy
+shader_set(global.Pal_Shader)
 pal_swap_set(spr_tv_combofillpalette, (!global.combodropped) ? 2 : 1, false)
 draw_sprite(spr_tv_combobubblefill, combofill_index, combofill_x, combofill_y)
 reset_shader_fix()

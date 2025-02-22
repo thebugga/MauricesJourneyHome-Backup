@@ -844,7 +844,7 @@ if (sprite_index == spr_player_idlevomitblood && image_index > 28 && image_index
 	with (instance_create((x + random_range(-5, 5)), (y + 46), obj_vomit))
 		sprite_index = spr_vomit2
 }
-if (global.stylethreshold >= 2 && (!instance_exists(angryeffectid)) && state == states.normal && global.playerCharacter != Characters.Vigilante)
+if (global.stylethreshold >= 2 && (!instance_exists(angryeffectid)) && state == states.normal && global.playerCharacter != Characters.MrOrange)
 {
 	with (instance_create(x, y, obj_angrycloud))
 	{

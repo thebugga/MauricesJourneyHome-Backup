@@ -23,7 +23,7 @@ function cutscene_gustavofail_end(argument0)
 				global.collect = 0
 			if (global.collect != 0)
 			{
-				if (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.Vigilante)
+				if (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.MrOrange)
 				{
 					repeat (10)
 					{

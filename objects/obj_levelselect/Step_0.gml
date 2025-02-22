@@ -57,17 +57,23 @@ if keyboard_check_pressed(ord("1"))
     }
     else if ((global.playerCharacter == Characters.Doise))
     {
-        global.playerCharacter = Characters.Vigilante
+        global.playerCharacter = Characters.MrOrange
         with (obj_player1)
             scr_characterspr()
     }
-    else if ((global.playerCharacter == Characters.Vigilante))
+    else if ((global.playerCharacter == Characters.MrOrange))
     {
         global.playerCharacter = Characters.Clownmato
         with (obj_player1)
             scr_characterspr()
     }
     else if ((global.playerCharacter == Characters.Clownmato))
+    {
+        global.playerCharacter = Characters.Snick
+        with (obj_player1)
+            scr_characterspr()
+    }
+    else if ((global.playerCharacter == Characters.Snick))
     {
         global.playerCharacter = Characters.Maurice
         with (obj_player1)

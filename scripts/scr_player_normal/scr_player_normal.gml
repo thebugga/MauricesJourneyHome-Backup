@@ -320,7 +320,7 @@ function state_player_normal()
 			jumpAnim = true;
 		state = states.jump;
 	}
-    if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol)) && global.playerCharacter != Characters.Vigilante
+    if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol)) && global.playerCharacter != Characters.MrOrange
     {
 		if global.playerCharacter == Characters.Maurice
 		{
@@ -344,7 +344,7 @@ function state_player_normal()
 			movespeed = 8
 		}
     }
-    else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && ((!global.pistol) || (!ispeppino))) && global.playerCharacter != Characters.Vigilante
+    else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && ((!global.pistol) || (!ispeppino))) && global.playerCharacter != Characters.MrOrange
     {
         state = states.punch
         input_buffer_slap = 0
@@ -388,7 +388,7 @@ function state_player_normal()
 		machslideAnim = false;
 		image_speed = 0.45;
 	}
-	if key_slap2 && global.playerCharacter == Characters.Vigilante
+	if key_slap2 && global.playerCharacter == Characters.MrOrange
 	{
 		vsp = -5;
 		state = states.revolver
@@ -402,7 +402,7 @@ function state_player_normal()
 		}
 		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
 	}
-	if (key_shoot2 && global.playerCharacter == Characters.Vigilante && !instance_exists(dynamite_inst))
+	if (key_shoot2 && global.playerCharacter == Characters.MrOrange && !instance_exists(dynamite_inst))
 	{
 		vsp = -5;
 		state = states.dynamite;
@@ -470,7 +470,7 @@ function state_pepperman_normal()
 	}
 	if (sprite_index == spr_mach1 && floor(image_index) == image_number - 1)
 		sprite_index = spr_idle;
-	if (move != 0 && (floor(image_index) == 4 || floor(image_index) == 11) && steppy == 0 && global.playerCharacter != Characters.Vigilante)
+	if (move != 0 && (floor(image_index) == 4 || floor(image_index) == 11) && steppy == 0 && global.playerCharacter != Characters.MrOrange)
 	{
 		instance_create(x, y + 38, obj_cloudeffect);
 		steppy = true;

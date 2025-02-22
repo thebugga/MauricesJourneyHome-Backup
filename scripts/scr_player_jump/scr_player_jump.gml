@@ -355,7 +355,7 @@ function state_player_jump()
 					shake_mag_acc = 3 / room_speed;
 				}
 			}
-			else if global.playerCharacter != Characters.Vigilante && shoot
+			else if global.playerCharacter != Characters.MrOrange && shoot
 			{
 				sprite_index = spr_pistolshot;
 				image_index = 0;
@@ -386,7 +386,7 @@ function state_player_jump()
 					}
 				}
 			}
-			else if global.playerCharacter != Characters.Vigilante
+			else if global.playerCharacter != Characters.MrOrange
 			{
 			}
 		}

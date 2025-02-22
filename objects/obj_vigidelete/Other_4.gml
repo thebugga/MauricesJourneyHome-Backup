@@ -1,4 +1,4 @@
-if (global.playerCharacter == Characters.Vigilante)
+if (global.playerCharacter == Characters.MrOrange)
 {
 	with (all)
 	{

@@ -240,7 +240,7 @@ function sh_character(argument0)
             choosen_character = Characters.Doise;
             break;
         case "Vigilante":
-            choosen_character = Characters.Vigilante;
+            choosen_character = Characters.MrOrange;
             break;
         case "Clownmato":
             choosen_character = Characters.Clownmato;

@@ -212,7 +212,7 @@ function scr_player_mach2()
 			sprite_index = spr_mach2jump;
 		else
 			sprite_index = spr_machroll;
-		if global.playerCharacter == Characters.Vigilante
+		if global.playerCharacter == Characters.MrOrange
 			sprite_index = spr_playerV_divekickstart;
 	}
 	if (key_attack && !place_meeting(x + xscale, y, obj_solid) && global.playerCharacter == Characters.Snick && grounded)
@@ -254,7 +254,7 @@ function scr_player_mach2()
 		state = states.normal;
 		instance_create(x, y, obj_genericpoofeffect);
 	}
-	if key_slap2 && global.playerCharacter == Characters.Vigilante
+	if key_slap2 && global.playerCharacter == Characters.MrOrange
 	{
 		vsp = -5;
 		state = states.revolver
@@ -268,7 +268,7 @@ function scr_player_mach2()
 		}
 		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
 	}
-	if (key_shoot2 && global.playerCharacter == Characters.Vigilante && !instance_exists(dynamite_inst))
+	if (key_shoot2 && global.playerCharacter == Characters.MrOrange && !instance_exists(dynamite_inst))
 	{
 		vsp = -5;
 		state = states.dynamite;

@@ -475,7 +475,7 @@ function scr_characterspr()
 		spr_palette = spr_noisepalette
 		paletteselect = 1
 	}
-	if (global.playerCharacter == Characters.Vigilante)
+	if (global.playerCharacter == Characters.MrOrange)
 	{
 		spr_idle = spr_playerV_idle
 		spr_move = spr_playerV_move

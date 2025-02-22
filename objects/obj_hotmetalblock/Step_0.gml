@@ -1,6 +1,6 @@
 with (obj_parent_player)
 {
-	if (global.playerCharacter != Characters.Vigilante)
+	if (global.playerCharacter != Characters.MrOrange)
 	{
 		if ((state == states.knightpepslopes or state == states.rocket) && (place_meeting((x + hsp), y, other) or place_meeting((x + xscale), y, other)))
 			instance_destroy(other)

@@ -89,7 +89,7 @@ function scr_player_boots()
 		machhitAnim = 0
 		state = states.crouchslide
 	}
-	if (key_shoot2 && global.playerCharacter == Characters.Vigilante)
+	if (key_shoot2 && global.playerCharacter == Characters.MrOrange)
 	{
 		state = states.dynamite
 		image_index = 0
@@ -101,7 +101,7 @@ function scr_player_boots()
 			vsp = -6
 		}
 	}
-	if (key_slap2 && global.playerCharacter == Characters.Vigilante)
+	if (key_slap2 && global.playerCharacter == Characters.MrOrange)
 	{
 		state = states.revolver
 		image_index = 0

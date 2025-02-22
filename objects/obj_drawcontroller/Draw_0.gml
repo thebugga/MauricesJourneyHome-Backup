@@ -25,7 +25,7 @@ if (finisher_alpha > 0)
 var _kungfu = global.kungfu
 with (obj_parent_enemy)
 	draw_enemy(_kungfu, true)
-shader_set(global.retro_pal_swapper)
+shader_set(global.Pal_Shader)
 with (obj_sausageman_dead)
 {
 	if (visible && bbox_in_camera(view_camera[0], 32))
@@ -41,23 +41,13 @@ with (obj_heatafterimage)
 	{
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
 		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, 1, c_white, alpha)
-		//pattern_reset()
+		pattern_reset()
 		reset_shader_fix()
 	}
 }
 with (obj_parent_player)
 {
-	if (visible && (bbox_in_camera(view_camera[0], 32) || state == states.gameover))
-	{
-		shader_set(global.retro_pal_swapper)
-		pal_swap_set(spr_palette, paletteselect, 0)
-		////pattern_setup(global.patterntexture, [1,2], sprite_index, image_index, 1, 1, 1, 1);
-		b = get_dark(image_blend, other.use_dark)
-		draw_sprite_ext(sprite_index, image_index, x, y, (xscale * scale_xs), (yscale * scale_ys), angle, b, image_alpha)
-		//pattern_reset()
-		reset_shader_fix()
-	}
-	draw_superslam_enemy()
+	draw_player()
 }
 shader_set(shd_hit)
 with (obj_parent_enemy)

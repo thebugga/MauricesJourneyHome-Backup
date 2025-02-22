@@ -171,7 +171,7 @@ if key_slap2 && sprite_index != spr_fightball && usable && grabbuffer <= 0 && vi
     with (instance_create(x, y, obj_swapmodegrab))
     {
         spr_palette = other.spr_palette
-        //patterntexture = other.patterntexture
+        patterntexture = other.patterntexture
         paletteselect = other.paletteselect
         sprite_index = other.spr_suplexdash
         spr_fall = other.spr_fall

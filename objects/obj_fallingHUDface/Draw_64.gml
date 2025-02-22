@@ -1,4 +1,4 @@
-shader_set(global.retro_pal_swapper)
+shader_set(global.Pal_Shader)
 if (obj_player1.spotlight == 0)
 	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
 if (obj_player1.spotlight == 1)

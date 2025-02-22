@@ -160,9 +160,10 @@ surface_set_target(tvsurface)
 	draw_sprite(spr_tv_clip, 0, 139, 134)
 	gpu_set_blendmode(bm_normal)
 surface_reset_target()
-shader_set(global.retro_pal_swapper)
+shader_set(global.Pal_Shader)
 	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
-	////pattern_setup(global.patterntexture, [1,2], sprite_index, image_index, 1, 1, 1, 1);
+    draw_sprite_ext(spr_tv_bgfinal, tv_bg_index,((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY),  1, 1, 0, c_white, alpha)
+    //pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, patterntexture)
 	draw_sprite_ext(sprite_index, image_index, ((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
 	if state == states.normal && sprite_index != spr_tv_open
 		draw_surface(tvsurface, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY))

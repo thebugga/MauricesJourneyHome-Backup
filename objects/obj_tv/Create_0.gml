@@ -37,6 +37,7 @@ noiseindex = 0
 expressionsprite = -4
 expressionbuffer = 0
 golfsurf = -4
+tv_bg_index = 0
 tvsprite = spr_tv_idle
 cardboardsprite = -4
 cardboardvisual = -4

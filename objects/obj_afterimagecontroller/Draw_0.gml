@@ -59,13 +59,13 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
             b = get_dark(other.image_blend, obj_drawcontroller.use_dark, 1, x, y)
             if (instance_exists(playerid) && playerid.usepalette) && shd
             {
-				shader_set(global.retro_pal_swapper)
+				shader_set(global.Pal_Shader)
 				pal_swap_set(playerid.spr_palette, playerid.paletteselect, 0)
             }
             draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a)
             if shd
             {
-                //pattern_reset()
+                pattern_reset()
                 shader_reset()
             }
         }

@@ -43,7 +43,7 @@ var hud_scorex = hud_xx + irandom_range(-collect_shake, collect_shake)
 var hud_scorey = hud_yy + irandom_range(-collect_shake, collect_shake)
 if global.heatmeter
 {
-	shader_set(global.retro_pal_swapper)
+	shader_set(global.Pal_Shader)
 	pal_swap_set(spr_heatmeter_palette, global.stylethreshold, 0)
     var sw = sprite_get_width(spr_heatmeter_fill)
     var sh = sprite_get_height(spr_heatmeter_fill)
@@ -51,7 +51,7 @@ if global.heatmeter
 	draw_sprite_ext(spr_heatmeter, pizzascore_index, hud_scorex, hud_scorey, 1, 1, 0, c_white, alpha)
 	shader_reset()
 }
-shader_set(global.retro_pal_swapper)
+shader_set(global.Pal_Shader)
 draw_sprite_ext(spr_pizzascore, pizzascore_index, hud_scorex, hud_scorey, 1, 1, 0, c_white, alpha)
 var _score = global.collect
 if global.coop

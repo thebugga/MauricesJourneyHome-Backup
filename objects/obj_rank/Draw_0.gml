@@ -1,11 +1,11 @@
-shader_set(global.retro_pal_swapper)
+shader_set(global.Pal_Shader)
 if (global.collect >= global.collectN)
 	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
 if (global.collectN > global.collect)
 	pal_swap_set(obj_player2.spr_palette, obj_player2.paletteselect, false)
-////pattern_setup(global.patterntexture, [1,2], sprite_index, image_index, 1, 1, 1, 1);
+pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 draw_self()
-//pattern_reset()
+pattern_reset()
 shader_reset()
 draw_set_font(global.smallfont)
 draw_set_halign(fa_left)

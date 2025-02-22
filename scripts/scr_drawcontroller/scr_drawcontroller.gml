@@ -53,12 +53,12 @@ function draw_enemy(_kungfu, usepalette)
 		b = get_dark(c, obj_drawcontroller.use_dark)
 		if (object_index == obj_peppinoclone)
 		{
-			shader_set(global.retro_pal_swapper)
+			shader_set(global.Pal_Shader)
 			pal_swap_set(spr_peppalette, 1, 0)
 		}
 		else
 		{
-			shader_set(global.retro_pal_swapper)
+			shader_set(global.Pal_Shader)
 			pal_swap_set(spr_palette, paletteselect, 0)
 		}
 		var _ys = 1
@@ -88,4 +88,18 @@ function draw_superslam_enemy()
 		with baddiegrabbedID
 			draw_enemy(global.kungfu, true);
 	}
+}
+
+function draw_player()
+{
+	var b = get_dark(image_blend, other.use_dark);
+	var pattern = global.palettetexture;
+	var ps = paletteselect;
+	var spr = spr_palette;
+	if object_index == obj_player1
+		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, xscale * scale_xs, yscale * scale_ys, pattern);
+	pal_swap_set(spr, ps, false);
+	draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	draw_superslam_enemy();
+	pattern_reset();
 }

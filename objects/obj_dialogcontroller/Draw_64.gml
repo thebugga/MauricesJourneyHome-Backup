@@ -11,11 +11,11 @@ for (var i = 0; i < 3; i++)
 	{
 		if dial < array_length(dialogpalette)
 		{
-			shader_set(global.retro_pal_swapper)
+			shader_set(global.Pal_Shader)
 			pal_swap_set(dialogpalette[dial][0], dialogpalette[dial][1], false)
-			//pattern_set(global.Base_Pattern_Color, talk_sprites[dial][0][0], 0, 1, 1, dialogpalette[dial][2])
+			pattern_set(global.Base_Pattern_Color, talk_sprites[dial][0][0], 0, 1, 1, dialogpalette[dial][2])
 			draw_sprite_ext(talk_sprites[dial][0][0], 0, (rpadding + (75 * i)), y1,1,1,0,c_gray,1)
-			//pattern_reset()
+			pattern_reset()
 			reset_shader_fix()
 		}
 		else
@@ -26,11 +26,11 @@ for (var i = 0; i < 3; i++)
 	{
 		if diar < array_length(dialogpalette)
 		{
-			shader_set(global.retro_pal_swapper)
+			shader_set(global.Pal_Shader)
 			pal_swap_set(dialogpalette[diar][0], dialogpalette[diar][1], false)
-			//pattern_set(global.Base_Pattern_Color, talk_sprites[diar][0][0], 0, -1, 1, dialogpalette[diar][2])
+			pattern_set(global.Base_Pattern_Color, talk_sprites[diar][0][0], 0, -1, 1, dialogpalette[diar][2])
 			draw_sprite_ext(talk_sprites[diar][0][0], 0, ((960 - rpadding) - (75 * i)), y1,-1,1,0,c_gray,1)
-			//pattern_reset()
+			pattern_reset()
 			reset_shader_fix()
 		}
 		else
@@ -44,11 +44,11 @@ if (dialogsprite != -4)
 {
     if dialogcharacter < array_length(dialogpalette)
 	{
-		shader_set(global.retro_pal_swapper)
+		shader_set(global.Pal_Shader)
 		pal_swap_set(dialogpalette[dialogcharacter][0], dialogpalette[dialogcharacter][1], false)
-		//pattern_set(global.Base_Pattern_Color, dialogsprite, dialogindex, sidescale, 1, dialogpalette[dialogcharacter][2])
+		pattern_set(global.Base_Pattern_Color, dialogsprite, dialogindex, sidescale, 1, dialogpalette[dialogcharacter][2])
 		draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),sidescale,1,0,c_white,1)
-		//pattern_reset()
+		pattern_reset()
 		reset_shader_fix()
 	}
 	else

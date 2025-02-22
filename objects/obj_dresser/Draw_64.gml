@@ -6,11 +6,11 @@ if up
 	draw_set_valign(fa_middle)
 	draw_set_font(global.creditsfont)
 	draw_text(480, 64, v_selectnames[v_select])
-	shader_set(global.retro_pal_swapper)
+	shader_set(global.Pal_Shader)
 	pal_swap_set(playerid.spr_palette, h_select[0] + 1, false)
-	////pattern_setup(global.patterntexture, [1,2], sprite_index, image_index, 1, 1, 1, 1);
+	pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 	draw_sprite_ext(walk_sprite, walk_index, 480, 270, 4, 4, 0, c_white, 1)
-	//pattern_reset()
+	pattern_reset()
 	reset_shader_fix()
 	if h_select[1] != 0
 		draw_sprite_ext(spr_gabbie, 0, 480, 230, 4, 4, 0, c_white, 1)

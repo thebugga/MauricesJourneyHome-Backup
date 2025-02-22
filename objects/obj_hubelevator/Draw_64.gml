@@ -31,11 +31,11 @@ if state != states.normal
 		draw_rectangle(0, 0, 10000, 10000, false)
 		draw_set_color(c_white)
 		draw_sprite(elavatorsprite, 0, irandom_range(-shake, shake), irandom_range(-shake, shake))
-		shader_set(global.retro_pal_swapper)
+		shader_set(global.Pal_Shader)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
-		////pattern_setup(global.patterntexture, [1,2], sprite_index, image_index, 1, 1, 1, 1);
+		pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 		draw_sprite(charsprite, charindex, irandom_range(-shake, shake) , chary + irandom_range(-shake, shake))
-		//pattern_reset()
+		pattern_reset()
 		reset_shader_fix()
 	}
 	draw_set_alpha(fadealpha)

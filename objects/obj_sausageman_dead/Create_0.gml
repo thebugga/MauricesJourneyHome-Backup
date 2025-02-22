@@ -14,3 +14,10 @@ depth = -999
 paletteselect = 0
 spr_palette = spr_null
 d = 255
+
+if sprite_index = spr_priest_dead
+{
+spinspeed = 0
+vsp = 4
+hsp = 4
+}

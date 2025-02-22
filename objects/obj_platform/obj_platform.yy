@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_baddie",
-    "path": "sprites/spr_baddie/spr_baddie.yy",
+    "name": "spr_platform",
+    "path": "sprites/spr_platform/spr_platform.yy",
   },
   "spriteMaskId": null,
   "visible": false,

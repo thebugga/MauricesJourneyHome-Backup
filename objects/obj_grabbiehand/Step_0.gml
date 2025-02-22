@@ -24,7 +24,7 @@ switch state
 			vsp = 0
 			sprite_index = spr_grabbiehand_catch
 		}
-		scr_collide()
+		scr_collision()
 		break
 	case states.stun:
 		if (stunned > 0)
@@ -37,7 +37,7 @@ switch state
 		}
 		if grounded
 			hsp = 0
-		scr_collide()
+		scr_collision()
 		break
 	case states.ejected:
 		var _dir = point_direction(x, y, xstart, ystart)
@@ -90,7 +90,7 @@ switch state
 			if fake
 				instance_destroy()
 		}
-		scr_collide()
+		scr_collision()
 		break
 	default:
 

@@ -17,4 +17,4 @@ if (state == states.normal)
 	if (player.x != x)
 		image_xscale = (-(sign((x - player.x))))
 }
-scr_collide()
+scr_collision()

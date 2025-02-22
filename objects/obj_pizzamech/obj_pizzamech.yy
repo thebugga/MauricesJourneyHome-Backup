@@ -13,8 +13,8 @@
     "path": "folders/Objects/Cutscenes.yy",
   },
   "parentObjectId": {
-    "name": "obj_movingplatform",
-    "path": "objects/obj_movingplatform/obj_movingplatform.yy",
+    "name": "obj_movingPlatform",
+    "path": "objects/obj_movingPlatform/obj_movingPlatform.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

@@ -1,226 +1,85 @@
-function instance_as_struct(inst)
+var i;
+
+for (i = 0; room_exists(i); i++)
+    global.RoomNameList[i] = room_get_name(i);
+
+for (i = 0; object_exists(i); i++)
+    global.ObjectNameList[i] = object_get_name(i);
+
+function scr_parseBool(argument0, argument1)
 {
-	var struct = {
-		// general
-		layer : inst.layer,
-		depth : inst.depth,
-		visible : inst.visible,
-		solid : inst.solid,
-		xstart : inst.xstart,
-		ystart : inst.ystart,
-		xprevious : inst.xprevious,
-		yprevious : inst.yprevious,
-		direction : inst.direction,
-		friction : inst.friction,
-		gravity : inst.gravity,
-		gravity_direction : inst.gravity_direction,
-		x : inst.x,
-		y : inst.y,
-		object_index : inst.object_index,
-		id : inst.id,
-		solid : inst.solid,
-		persistent : inst.persistent,
-		
-		// sprite
-		sprite_index : inst.sprite_index,
-		mask_index : inst.mask_index,
-		image_alpha : inst.image_alpha,
-		image_angle : inst.image_angle,
-		image_blend : inst.image_blend,
-		image_index : inst.image_index,
-		image_number : inst.image_number,
-		image_speed : inst.image_speed,
-		image_xscale : inst.image_xscale,
-		image_yscale : inst.image_yscale,
-		bbox_bottom : inst.bbox_bottom,
-		bbox_left : inst.bbox_left,
-		bbox_right : inst.bbox_right,
-		bbox_top : inst.bbox_top,
-		sprite_width : inst.sprite_width,
-		sprite_height : inst.sprite_height,
-		sprite_xoffset : inst.sprite_xoffset,
-		sprite_yoffset : inst.sprite_yoffset,
-		
-		// speed
-		speed : inst.speed,
-		hspeed : inst.hspeed,
-		vspeed : inst.vspeed,
-		
-		// timelines
-		timeline_index : inst.timeline_index,
-		timeline_position : inst.timeline_position,
-		timeline_speed : inst.timeline_speed,
-		timeline_running : inst.timeline_running,
-		timeline_loop : inst.timeline_loop,
-		
-		// sequence
-		in_sequence : inst.in_sequence,
-		sequence_instance : inst.sequence_instance,
-		
-		// path
-		path_index : inst.path_index,
-		path_position : inst.path_position,
-		path_positionprevious : inst.path_positionprevious,
-		path_speed : inst.path_speed,
-		path_scale : inst.path_scale,
-		path_orientation : inst.path_orientation,
-		path_endaction : inst.path_endaction,
-		
-		// physics
-		phy_active : inst.phy_active,
-		phy_angular_velocity : inst.phy_angular_velocity,
-		phy_angular_damping : inst.phy_angular_damping,
-		phy_linear_velocity_x : inst.phy_linear_velocity_x,
-		phy_linear_velocity_y : inst.phy_linear_velocity_y,
-		phy_linear_damping : inst.phy_linear_damping,
-		phy_speed_x : inst.phy_speed_x,
-		phy_speed_y : inst.phy_speed_y,
-		phy_position_x : inst.phy_position_x,
-		phy_position_y : inst.phy_position_y,
-		phy_position_xprevious : inst.phy_position_xprevious,
-		phy_position_yprevious : inst.phy_position_yprevious,
-		phy_rotation : inst.phy_rotation,
-		phy_fixed_rotation : inst.phy_fixed_rotation,
-		phy_bullet : inst.phy_bullet,
-		
-		// read only
-		phy_speed : inst.phy_speed,
-		phy_com_x : inst.phy_com_x,
-		phy_com_y : inst.phy_com_y,
-		phy_dynamic : inst.phy_dynamic,
-		phy_kinematic : inst.phy_kinematic,
-		phy_inertia : inst.phy_inertia,
-		phy_mass : inst.phy_mass,
-		phy_sleeping : inst.phy_sleeping
-	}
-	for (var i = 0; i < array_length(inst.alarm); i++)
-		struct.alarm[i] = inst.alarm[i];
-	var names = variable_instance_get_names(inst);
-	for (var i = 0; i < array_length(names); i++)
-		variable_struct_set(struct, names[i], variable_instance_get(inst, names[i]))	
+    var true_strings, false_strings;
+    
+    true_strings = ["1", "y", "true", "yes", "t", "+"];
+    false_strings = ["0", "n", "false", "no", "f", "-"];
+    argument0 = string_lower(argument0);
+    
+    if (array_contains(true_strings, argument0))
+    {
+        return true;
+    }
+    else if (array_contains(false_strings, argument0))
+    {
+        return false;
+    }
+    else
+    {
+        show_debug_message(string("SHELL WARNING: Couldn't parse {0} as a string, using default value of {1}.", argument0, argument1));
+        return argument1;
+    }
 }
 
-function tileset_exists(ind)
+function sh_escape(argument0)
 {
-	if tileset_get_name(ind) == undefined
-		return false;
-	return true;
+    var arg0, arg1, arg2, minutes, seconds;
+    
+    arg0 = scr_parseBool(string(argument0[1]), !global.panic);
+    arg1 = argument0[2];
+    arg2 = argument0[3];
+    global.panic = arg0;
+    minutes = real(string_digits(arg1));
+    seconds = real(string_digits(arg2));
+    global.EscapeTime = ((minutes * 60) + seconds) * 60;
+    
+    with (obj_hudManager.HUDObject_timer)
+        targetEscapeTime = global.EscapeTime;
+    
+    global.MaxEscapeTime = global.EscapeTime;
+    
+    if (!instance_exists(obj_panicchanger))
+        instance_create(x, y, obj_panicchanger);
 }
 
-function data_ensure(data, index, value = undefined)
+function meta_escape()
 {
-	if is_array(data)
-	{
-		while (index < 0)
-		{
-			if array_length(data) > 0
-				index = array_length(data) + (index + 1);
-			else
-				index = 0;
-		}
-		if array_length(data) > index
-			return data[index];
-		return value;
-	}
-	if is_struct(data)
-	{
-		if variable_struct_exists(data, index)
-			return variable_struct_get(data, index);
-		return value;
-	}
-	if instance_exists(data)
-	{
-		if variable_instance_exists(data, index)
-			return variable_instance_get(data, index);
-		return value;
-	}
-	if ds_exists(data, ds_type_grid)
-	{
-		if ds_grid_get(data, index[0], index[1]) != undefined
-			return ds_grid_get(data, index[0], index[1]);
-		return value;
-	}
-	if ds_exists(data, ds_type_list)
-	{
-		if ds_list_size(data) >= index
-			return ds_list_find_value(data, index);
-		return value;
-	}
-	if ds_exists(data, ds_type_map)
-	{
-		if ds_map_exists(data, index)
-			return ds_map_find_value(data, index);
-		return value;
-	}
-	if ds_exists(data, ds_type_priority)
-	{
-		if ds_priority_size(data) >= index
-			return ds_priority_find_priority(data, index);
-		return value;
-	}
-	if ds_exists(data, ds_type_queue)
-	{
-		if ds_queue_size(data) >= index
-		{
-			var temp_queue = ds_queue_create();
-			ds_queue_copy(temp_queue, data);
-			while ds_queue_size(data) != index
-				ds_queue_dequeue(temp_queue);
-			return ds_queue_dequeue(temp_queue);
-		}
-		return value;
-	}
-	if ds_exists(data, ds_type_stack)
-	{
-		if ds_stack_size(data) >= index
-		{
-			var temp_queue = ds_stack_create();
-			ds_stack_copy(temp_queue, data);
-			while ds_stack_size(data) != index
-				ds_stack_pop(temp_queue);
-			return ds_stack_pop(temp_queue);
-		}
-		return value;
-	}
+    return 
+    {
+        description: "Activates escape and sets escape time",
+        arguments: ["<bool>", "<min>", "<sec>", "<isSucroseTimer?>"],
+        suggestions: [["true", "false"], [], [], ["true", "false"]],
+        argumentDescriptions: ["Escape mode", "Minutes left", "Seconds left", "Toggles if Timer is Sucrose mode"]
+    };
 }
 
-function get_real(str)
+function sh_game_speed(argument0)
 {
-	var n = str;
-	if is_string(str)
-	{
-		if str == "true"
-		{
-			str = true;
-			return str;
-		}
-		else if str == "false"
-		{
-			str = false;
-			return str;
-		}
-		else
-		{
-			n = real(string_digits(str));
-			if string_char_at(str, 1) == "-"
-				n = -real(string_digits(str));
-		}
-	}
-	return n;
+    var arg0, new_game_speed;
+    
+    arg0 = argument0[1];
+    new_game_speed = max(round(real(string_digits(arg0))), 1);
+    game_set_speed(new_game_speed, gamespeed_fps);
 }
 
-function add_command(name, func, desc, argarray, sugarray, argdescarray)
+function meta_game_speed()
 {
-	var meta = {
-		description: desc,
-		arguments: argarray,
-		suggestions: sugarray,
-		argumentDescriptions: argdescarray
-	};
-	variable_global_set("sh_" + name, func);
-	variable_global_set("meta_" + name, meta);
+    return 
+    {
+        description: "Changes the game speed.",
+        arguments: ["<fps>"],
+        suggestions: [[]],
+        argumentDescriptions: ["Game speed, in frames per second."]
+    };
 }
-
 
 function sh_character(argument0)
 {
@@ -239,15 +98,6 @@ function sh_character(argument0)
         case "Doise":
             choosen_character = Characters.Doise;
             break;
-        case "Vigilante":
-            choosen_character = Characters.MrOrange;
-            break;
-        case "Clownmato":
-            choosen_character = Characters.Clownmato;
-            break;
-        case "Snick":
-            choosen_character = Characters.Snick;
-            break;
     }
     
     scr_player_changeCharacter(obj_parent_player, choosen_character);
@@ -259,609 +109,480 @@ function meta_character()
     {
         description: "Change the character you're currently playing as.",
         arguments: ["<character>"],
-        suggestions: [["Maurice"]],
+        suggestions: [["Maurice"],["Doise"]],
         argumentDescriptions: ["The character to switch to."]
     };
 }
-
-function sh_gateswitchmax(args)
+/*
+function sh_roomcheck(argument0)
 {
-	global.gateswitch = global.gateswitchmax;
-}
-
-function meta_gateswitchmax()
-{
-	return 
-	{
-		description: "",
-		arguments: [],
-		suggestions: [],
-		argumentDescriptions: []
-	};
-}
-
-function sh_show_debug_overlay(boolean)
-{
-	var val = get_real(data_ensure(boolean, 1, "false"))
-	show_debug_overlay(val);
-}
-
-function meta_show_debug_overlay()
-{
-	return 
-	{
-		description: "Toggles debug overlay",
-		arguments: [],
-		suggestions: [],
-		argumentDescriptions: []
-	};
-}
-
-function sh_roomcheck(args)
-{
-	instance_create_unique(0, 0, obj_roomcheck);
+    instance_create(0, 0, obj_roomCheck);
 }
 
 function meta_roomcheck()
 {
-	return 
-	{
-		description: "Check rooms. WARNING: Will break your save!",
-		arguments: [],
-		suggestions: [],
-		argumentDescriptions: []
-	};
+    return 
+    {
+        description: "Checks all rooms currently in the game.",
+        arguments: [],
+        suggestions: [],
+        argumentDescriptions: []
+    };
 }
 
-function sh_unlock_toppins(levelname)
+function sh_unlock(argument0)
 {
-	var level_name_ini = data_ensure(levelname, 1, undefined);
-	if is_undefined(level_name_ini)
-		return "Level name not given";
-	ini_open_from_string(obj_savesystem.ini_str);
-	ini_write_real("Toppin", concat(level_name_ini, 1), true);
-	ini_write_real("Toppin", concat(level_name_ini, 2), true);
-	ini_write_real("Toppin", concat(level_name_ini, 3), true);
-	ini_write_real("Toppin", concat(level_name_ini, 4), true);
-	ini_write_real("Toppin", concat(level_name_ini, 5), true);
-	obj_savesystem.ini_str = ini_close();
-	gamesave_async_save();
+    var type, levels, i, int_level, level_info, z, clothes_info, cheftask_info;
+    
+    type = argument0[1];
+    
+    if (type == "all" || type == "levels")
+    {
+        levels = ["tutorial", "entryway", "steamy", "mineshaft", "molasses"];
+        ini_open(global.SaveFileName);
+        
+        for (i = 0; i < array_length(levels); i++)
+        {
+            int_level = levels[i];
+            level_info = ds_map_find_value(global.GameLevelMap, int_level);
+            
+            for (z = 0; z < 3; z++)
+                ini_update_stat("Secret", string(int_level) + string(z + 1), true);
+            
+            ini_update_stat("Treasure", string(int_level), true);
+            ini_update_stat("Highscore", string(int_level), level_info.sRankRequirement + 150);
+            ini_update_stat("Laps", string(int_level), 1);
+            ini_update_stat("Confecti", string(int_level) + "1", true);
+            ini_update_stat("Confecti", string(int_level) + "2", true);
+            ini_update_stat("Confecti", string(int_level) + "3", true);
+            ini_update_stat("Confecti", string(int_level) + "4", true);
+            ini_update_stat("Confecti", string(int_level) + "5", true);
+            
+            if (int_level == "tutorial")
+            {
+                ini_update_stat("Misc", "completedtutorial", true);
+                
+                if (!ini_read_real("Misc", "lapunlockall", false))
+                {
+                    ini_write_real("Misc", "lapunlockall", true);
+                    scr_queueToolTipPrompt(string("[spr_promptfont]{0}", lang_get("prompt_lap_unlockall")));
+                }
+            }
+            
+            ini_write_string("Ranks", string(int_level), "p");
+        }
+        
+        ini_close();
+    }
+    
+    if (type == "all" || type == "clothes")
+    {
+        ini_open("optionData.ini");
+        clothes_info = scr_get_palettes(false);
+        
+        for (i = 0; i < array_length(clothes_info); i++)
+            ini_write_real("Palettes", clothes_info[i].taskKey, true);
+        
+        ini_close();
+    }
+    
+    if (type == "all" || type == "achievements")
+    {
+        levels = ["demoEN", "entryway", "steamy", "mineshaft", "molasses"];
+        ini_open(global.SaveFileName);
+        
+        for (z = 0; z < array_length(levels); z++)
+        {
+            cheftask_info = scr_get_chef_tasks(levels[z], false);
+            
+            for (i = 0; i < array_length(cheftask_info); i++)
+                ini_write_real("ChefTasks", cheftask_info[i].taskKey, true);
+        }
+        
+        ini_close();
+    }
 }
 
-function meta_unlock_toppins()
+function meta_unlock()
 {
-	return 
-	{
-		description: "Unlocks the toppins of the given level",
-		arguments: ["<level_name>"],
-		suggestions: [],
-		argumentDescriptions: []
-	};
+    return 
+    {
+        description: "Unlocks Stuff",
+        arguments: ["<type>"],
+        suggestions: [["all", "levels", "clothes", "achievements"]],
+        argumentDescriptions: ["Category to Unlock. (type:<levels> gives you P ranks)"]
+    };
+}
+*/
+
+function sh_toggle_collisions(argument0)
+{
+    var arg1;
+    
+    arg1 = scr_parseBool(argument0[1], !global.showcollisions);
+    global.showcollisions = arg1;
+    toggle_collision_function();
 }
 
-function sh_unlock_boss_key(worldn)
+function meta_toggle_collisions()
 {
-	var number = data_ensure(worldn, 1, undefined);
-	if is_undefined(number)
-		return "World number not given";
-	number = get_real(number);
-	ini_open_from_string(obj_savesystem.ini_str);
-	var n = concat("w", number, "stick");
-	ini_write_real(n, "bosskey", true);
-	obj_savesystem.ini_str = ini_close();
-	gamesave_async_save();
+    return 
+    {
+        description: "Toggles collision object visibility.",
+        arguments: ["<bool>"],
+        suggestions: [["true", "false"]],
+        argumentDescriptions: ["Visibility"]
+    };
 }
 
-function meta_unlock_boss_key()
+function sh_lock_camera(argument0)
 {
-	return 
-	{
-		description: "Unlocks the boss key of the given world (1, 2, 3, 4)",
-		arguments: ["<number>"],
-		suggestions: [["1", "2", "3", "4", "5"]],
-		argumentDescriptions: []
-	};
+    var arg1;
+    
+    with (obj_camera)
+    {
+        arg1 = scr_parseBool(argument0[1], !cameraLock);
+        cameraLock = arg1;
+    }
 }
 
-function sh_lockcam(boolean)
+function meta_lock_camera()
 {
-	with (obj_camera)
-		lock = data_ensure(boolean, 1, false);
+    return 
+    {
+        description: "Locks camera.",
+        arguments: ["<bool>"],
+        suggestions: [["true", "false"]],
+        argumentDescriptions: ["Lock"]
+    };
 }
 
-function meta_lockcam()
+function toggle_collision_function()
 {
-	return 
-	{
-		description: "Lock the camera in place",
-		arguments: ["<bool>"],
-		suggestions: [["true", "false"]],
-		argumentDescriptions: []
-	};
+    var array, length, i;
+    
+    if (!variable_global_exists("showcollisionarray"))
+        global.showcollisionarray = [obj_solid, obj_slope, obj_slopePlatform, obj_platform, obj_sidePlatform, obj_secretdestroyable, obj_secretbigblock, obj_secretblock, obj_doorA, obj_doorB, obj_doorC, obj_doorD, obj_doorE, obj_doorF];
+    
+    array = global.showcollisionarray;
+    length = array_length(array);
+    i = length - 1;
+    
+    while (i >= 0)
+    {
+        with (array[i])
+        {
+            if (object_index == array[i])
+            {
+                visible = global.showcollisions;
+                depth = 0;
+                
+                if (object_index != obj_solid && object_index != obj_slope)
+                    image_alpha = 0.6;
+            }
+        }
+        
+        i--;
+    }
 }
 
-function sh_bossinv(boolean)
+function sh_showtiles(argument0)
 {
-	global.boss_invincible = data_ensure(boolean, 1, false);
+    var arg1;
+    
+    arg1 = scr_parseBool(argument0[1], !global.showtiles);
+    global.showtiles = arg1;
+    show_tiles_function();
 }
 
-function meta_bossinv()
+function meta_showtiles()
 {
-	return 
-	{
-		description: "Makes you invincible in bossfights",
-		arguments: ["<bool>"],
-		suggestions: [["true", "false"]],
-		argumentDescriptions: []
-	};
+    return 
+    {
+        description: "Toggles tile layer visibility.",
+        arguments: ["<bool>"],
+        suggestions: [["true", "false"]],
+        argumentDescriptions: ["Visibility"]
+    };
 }
 
-function sh_hidetiles(args)
+function show_tiles_function()
 {
-	global.hidetiles = data_ensure(args, 1, true);
-	layer_set_visible("Tiles_BG", !global.hidetiles);
-	layer_set_visible("Tiles_BG2", !global.hidetiles);
-	layer_set_visible("Tiles_BG3", !global.hidetiles);
-	layer_set_visible("Tiles_1", !global.hidetiles);
-	layer_set_visible("Tiles_2", !global.hidetiles);
-	layer_set_visible("Tiles_3", !global.hidetiles);
-	layer_set_visible("Tiles_4", !global.hidetiles);
-	layer_set_visible("Tiles_Foreground1", !global.hidetiles);
-	layer_set_visible("Tiles_Foreground2", !global.hidetiles);
-	layer_set_visible("Tiles_Foreground3", !global.hidetiles);
+    var i;
+    
+    for (i = 0; i < array_length(tiles_array); i++)
+        layer_set_visible(tiles_array[i], global.showtiles);
 }
 
-function meta_hidetiles()
+function scr_shell_inittiles()
 {
-	return 
-	{
-		description: "",
-		arguments: ["<bool>"],
-		suggestions: [["true", "false"]],
-		argumentDescriptions: []
-	};
+    var _layers, i, tile_id;
+    
+    tiles_array = [];
+    _layers = layer_get_all();
+    
+    for (i = 0; i < array_length(_layers); i++)
+    {
+        tile_id = layer_tilemap_get_id_fixed(_layers[i]);
+        
+        if (layer_exists(_layers[i]) && tile_id != -1 && layer_get_visible(_layers[i]))
+            array_push(tiles_array, _layers[i]);
+    }
 }
 
-function sh_throwarc(args)
+global.PlayerDebugView = undefined;
+
+function toggle_debugView(argument0)
 {
-	global.throwarc = data_ensure(args, 1, true);
+    global.DebugVisuals = argument0;
+    show_debug_log(argument0);
+    
+    if (global.DebugVisuals)
+    {
+        show_debug_log(global.DebugVisuals);
+        global.PlayerDebugView = dbg_view("Player", true);
+        dbg_section("Sprite Info");
+        dbg_sprite(ref_create(obj_player1, "sprite_index"), ref_create(obj_player1, "image_index"), "Player Sprite", 100, 100);
+        dbg_section("Position Info");
+        dbg_watch(ref_create(obj_player1, "roomName"), "room");
+        dbg_watch(ref_create(obj_player1, "x"), "X Position");
+        dbg_watch(ref_create(obj_player1, "y"), "Y Position");
+        dbg_watch(ref_create(obj_player1, "roomStartX"), "Room X Position");
+        dbg_watch(ref_create(obj_player1, "roomStartY"), "Room Y Position");
+        dbg_section("Physics Info");
+        dbg_watch(ref_create(obj_player1, "movespeed"), "movespeed");
+        dbg_watch(ref_create(obj_player1, "verticalMovespeed"), "verticalMovespeed");
+        dbg_watch(ref_create(obj_player1, "hsp"), "hsp");
+        dbg_watch(ref_create(obj_player1, "fracHsp"), "fracHsp");
+        dbg_watch(ref_create(obj_player1, "vsp"), "vsp");
+        dbg_watch(ref_create(obj_player1, "fracVsp"), "fracVsp");
+        dbg_watch(ref_create(obj_player1, "grounded"), "grounded");
+        dbg_watch(ref_create(obj_player1, "groundedSlope"), "groundedSlope");
+        dbg_section("Misc Info");
+        dbg_watch(ref_create(obj_player1, "xscale"), "xscale");
+        dbg_watch(ref_create(obj_player1, "state"), "Player State");
+        dbg_watch(ref_create(obj_player1, "stateName"), "Player State Name");
+        dbg_watch(ref_create(obj_player1, "baddieGrabbedID"), "baddieGrabbedID");
+    }
+    else
+    {
+        dbg_view_delete(global.PlayerDebugView);
+    }
 }
 
-function meta_throwarc()
+function sh_toggle_debugmode(argument0)
 {
-	return 
-	{
-		description: "",
-		arguments: ["<bool>"],
-		suggestions: [["true", "false"]],
-		argumentDescriptions: []
-	};
+    var arg1;
+    
+    arg1 = scr_parseBool(argument0[1], !global.DebugVisuals);
+    toggle_debugView(arg1);
 }
 
-function sh_editor(args)
+function meta_toggle_debugmode()
 {
-	with (obj_parent_player)
-	{
-		targetRoom = editor_room;
-		targetDoor = "A";
-	}
-	instance_create_unique(0, 0, obj_fadeout);
+    return 
+    {
+        description: "Toggles debug mode.",
+        arguments: ["<bool>"],
+        suggestions: [["true", "false"]],
+        argumentDescriptions: ["Debug state"]
+    };
 }
 
-function meta_editor()
+function sh_room_goto(argument0)
 {
-	return 
-	{
-		description: "Takes you into the crashing editor.",
-		arguments: [],
-		suggestions: [],
-		argumentDescriptions: []
-	};
+    var arg1, arg2;
+    
+    arg1 = asset_get_index(argument0[1]);
+    arg2 = argument0[2];
+    
+    if (asset_get_type(argument0[1]) != 3)
+    {
+        return "Can't find room " + string(argument0[1]);
+    }
+    else
+    {
+        obj_parent_player.targetRoom = arg1;
+        obj_parent_player.targetDoor = arg2;
+        instance_create(0, 0, obj_fadeoutTransition);
+    }
 }
 
-function sh_noclip(args)
+function meta_room_goto()
 {
-	with (obj_player1)
-		state = (state == states.debugstate ? state = states.normal : states.debugstate);
+    return 
+    {
+        description: "Changes current room.",
+        arguments: ["<room_id>", "<door>"],
+        suggestions: [global.RoomNameList, ["N/A", "A", "B", "C", "D", "E", "P", "S"]],
+        argumentDescriptions: ["targetRoom", "targetDoor"]
+    };
+}
+
+function sh_instance_create(argument0)
+{
+    var _obj;
+    
+    _obj = asset_get_index(argument0[1]);
+    
+    if (_obj > -1)
+        instance_create(argument0[2] ?? mouse_x, argument0[3] ?? mouse_y, _obj);
+}
+
+function meta_instance_create()
+{
+    return 
+    {
+        description: "Spawn a new object.",
+        arguments: ["<object_id>", "<x>", "<y>"],
+        suggestions: [global.ObjectNameList, mouseArgumentType.worldX, mouseArgumentType.worldY],
+        argumentDescriptions: ["The object to spawn", "The X spawn coordinate", "The Y spawn coordinate"]
+    };
+}
+
+function sh_noclip()
+{
+    if (obj_parent_player.state != states.debugstate)
+        obj_parent_player.state = states.debugstate;
+    else
+        obj_parent_player.state = states.normal;
 }
 
 function meta_noclip()
 {
-	return 
-	{
-		description: "Toggles noclip",
-		arguments: [],
-		suggestions: [],
-		argumentDescriptions: []
-	};
+    return 
+    {
+        description: "Toggle noclip.",
+        arguments: [],
+        suggestions: [],
+        argumentDescriptions: []
+    };
 }
 
-function sh_givekey(boolean)
+function sh_give_all(argument0)
 {
-	global.key_inv = data_ensure(boolean, 1, true);
+    var toppin_objs, i;
+    
+    toppin_objs = [obj_pizzakinshroom, obj_pizzakincheese, obj_pizzakintomato, obj_pizzakinsausage, obj_pizzakinpineapple];
+    
+    for (i = 0; i < array_length(toppin_objs); i++)
+        instance_create(x, y, toppin_objs[i]);
+    
+    global.Treasure = true;
+    global.secretfound = 3;
+    global.Collect = global.srank;
 }
 
-function meta_givekey()
+function meta_give_all()
 {
-	return 
-	{
-		description: "Gives or takes a key",
-		arguments: ["<bool>"],
-		suggestions: [["true", "false"]],
-		argumentDescriptions: []
-	};
+    return 
+    {
+        description: "Gives you all 5 confecti, 3 secrets, secret treasure, and S rank score.",
+        arguments: [],
+        suggestions: [],
+        argumentDescriptions: []
+    };
 }
 
-function sh_set_combo(args)
+function sh_give_prank(argument0)
 {
-	var combo = data_ensure(args, 1, 0);
-	var combotime = data_ensure(args, 1, 60);
-	if combo == undefined
-		return "Combo not defined";
-	global.combo = get_real(combo);
-	global.combotime = get_real(combotime);
-	with (obj_parent_player)
-		supercharge = 10;
+    var toppin_objs, i;
+    
+    toppin_objs = [obj_pizzakinshroom, obj_pizzakincheese, obj_pizzakintomato, obj_pizzakinsausage, obj_pizzakinpineapple];
+    
+    for (i = 0; i < array_length(toppin_objs); i++)
+        instance_create(x, y, toppin_objs[i]);
+    
+    global.rank = "p";
+    global.panic = 1;
+    global.ComboLost = 0;
+    global.Treasure = true;
+    global.secretfound = 3;
+    global.Collect = global.srank * 1.8;
+    global.SecretsFound[0] = true;
+    global.SecretsFound[1] = true;
+    global.SecretsFound[2] = true;
+    global.lapcount = 1;
+}
+
+function meta_give_prank()
+{
+    return 
+    {
+        description: "gives you a specified rank",
+        arguments: ["rank"],
+        suggestions: ["d", "c", "a", "s", "p"],
+        argumentDescriptions: []
+    };
+}
+
+function sh_set_combo(argument0)
+{
+    global.Combo = real(string_digits(argument0[1]));
+    obj_parent_player.superTauntBuffer = global.Combo;
+    global.ComboTime = 60;
+    global.ComboFreeze = 15;
 }
 
 function meta_set_combo()
 {
-	return 
-	{
-		description: "Set the combo",
-		arguments: ["<combo>", "<combotime:optional>"],
-		suggestions: [],
-		argumentDescriptions: []
-	};
+    return 
+    {
+        description: "Set Combo",
+        arguments: ["<comboamount>"],
+        suggestions: [],
+        argumentDescriptions: []
+    };
 }
 
-function sh_giveheat(value)
+function sh_give_stat(argument0)
 {
-	global.style += data_ensure(value, 1, 100);
+    var arg1, add;
+    
+    arg1 = argument0[1];
+    add = argument0[2];
+    
+    switch (arg1)
+    {
+        case "combo":
+            global.Combo += add;
+            global.ComboTime = 60;
+            break;
+        
+        case "score":
+            global.Collect += add;
+            break;
+        
+        case "lap":
+            global.lapcount += add;
+            break;
+    }
 }
 
-function meta_giveheat()
+function meta_give_stat()
 {
-	return 
-	{
-		description: "Gives heat",
-		arguments: ["<real>"],
-		suggestions: [],
-		argumentDescriptions: []
-	};
+    return 
+    {
+        description: "Adds...",
+        arguments: ["<string>", "<real>"],
+        suggestions: [["combo", "score", "lap"]],
+        argumentDescriptions: ["Variable to add to", "Number to add by"]
+    };
 }
 
-function sh_alltoppins(args)
+function sh_lang_reload(argument0)
 {
-	if !instance_exists(obj_pizzakincheese)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakincheese);
-	if !instance_exists(obj_pizzakintomato)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakintomato);
-	if !instance_exists(obj_pizzakinsausage)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakinsausage);
-	if !instance_exists(obj_pizzakinpineapple)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakinpineapple);
-	if !instance_exists(obj_pizzakinshroom)
-		instance_create(obj_player1.x, obj_player1.y, obj_pizzakinshroom);
-	global.cheesefollow = true;
-	global.tomatofollow = true;
-	global.sausagefollow = true;
-	global.pineapplefollow = true;
-	global.shroomfollow = true;
+    scr_lang_reload();
 }
 
-function meta_alltoppins()
+function meta_lang_reload()
 {
-	return 
-	{
-		description: "Gives you all the toppins",
-		arguments: [],
-		suggestions: [],
-		argumentDescriptions: []
-	};
-}
-
-function sh_panic(args)
-{
-	var fill = data_ensure(args, 2, 4000);
-	fill = get_real(fill);
-	global.panic = data_ensure(args, 1, true);
-	global.fill = fill;
-	if global.panic
-		obj_camera.alarm[1] = 60;
-	obj_tv.chunkmax = global.fill;
-}
-
-function meta_panic()
-{
-	return 
-	{
-		description: "Toggles pizza time",
-		arguments: ["<bool>", "<fill>"],
-		suggestions: [],
-		argumentDescriptions: []
-	};
-}
-
-function sh_showcollisions(args)
-{
-	var toggle = get_real(data_ensure(args, 1, "true"));
-	showcollisions = toggle;
-	with (obj_solid)
-	{
-		if object_index == obj_solid || object_index == obj_secretbigblock || object_index == obj_secretblock || object_index == obj_secretmetalblock
-			visible = other.showcollisions;
-	}
-	with (obj_slope)
-	{
-		if object_index == obj_slope
-			visible = other.showcollisions;
-	}
-	with (obj_platform)
-	{
-		if object_index == obj_platform
-			visible = other.showcollisions;
-	}
-}
-
-function meta_showcollisions()
-{
-	return 
-	{
-		description: "Shows the collisions",
-		arguments: ["<bool>"],
-		suggestions: [["0", "1"]],
-		argumentDescriptions: []
-	};
-}
-
-function sh_showhud(boolean)
-{
-	var toggle = get_real(data_ensure(boolean, 1, "true"));
-	if toggle != undefined
-	{
-		showhud = toggle;
-		with (obj_tv)
-		{
-			visible = toggle;
-			show_debug_message(visible);
-		}
-		with (obj_camera)
-		{
-			visible = toggle
-			show_debug_message(visible);
-		}
-		with (obj_roomname)
-		{
-			visible = toggle;
-			show_debug_message(visible);
-		}
-		with (obj_pigtotal)
-		{
-			visible = toggle;
-			show_debug_message(visible);
-		}
-	}
-}
-
-function meta_showhud()
-{
-	return 
-	{
-		description: "Shows the HUD",
-		arguments: ["<bool:true>"],
-		suggestions: [["0", "1"]],
-		argumentDescriptions: []
-	};
-}
-
-function sh_player_room(args)
-{
-	var _room = data_ensure(args, 1, undefined);
-	var _door = data_ensure(args, 2, undefined);
-	if _room == undefined
-		return "No room defined";
-	if _door == undefined
-		_door = "A";
-	_room = asset_get_index(_room);
-	if _room == -1
-		return "Room does not exist";
-	with (obj_parent_player)
-	{
-		targetRoom = _room;
-		targetDoor = _door;
-	}
-	instance_create(x, y, obj_fadeout);
-	return "Attempting to go to room " + room_get_name(_room) + " at door " + _door;
-}
-
-function meta_player_room()
-{
-	var i = 0;
-	var pizza = [];
-	while room_exists(i)
-	{
-		array_push(pizza, room_get_name(i));
-		i++;
-	}
-	return 
-	{
-		description: "Go to given room",
-		arguments: ["<targetRoom>", "<targetDoor:A>"],
-		suggestions: pizza,
-		argumentDescriptions: []
-	};
-}
-
-function sh_camera_zoom(args)
-{
-	var zoom = get_real(data_ensure(args, 1, undefined));
-	var spd = get_real(data_ensure(args, 1, undefined));
-	if zoom == undefined
-		return "Zoom not defined";
-	with (obj_camera)
-	{
-		targetzoom = zoom;
-		targetzoom = clamp(targetzoom, 0, max_zoom);
-		if spd != undefined
-			zoomspd = abs(spd);
-	}
-}
-
-function meta_camera_zoom()
-{
-	return 
-	{
-		description: "Zoom",
-		arguments: ["<targetzoom>", "<spd:optional>"],
-		suggestions: [],
-		argumentDescriptions: []
-	};
-}
-
-function sh_destroyice(args)
-{
-	instance_destroy(obj_iceblock);
-	instance_destroy(obj_iceblockslope);
-}
-
-function meta_destroyice()
-{
-	return 
-	{
-		description: "",
-		arguments: [],
-		suggestions: [],
-		argumentDescriptions: []
-	};
-}
-
-function sh_hardmode(args)
-{
-	var toggle = get_real(data_ensure(args, 1, "false"));
-	global.hardmode = toggle;
-	with (obj_hardmode)
-		event_perform(ev_other, ev_room_start);
-}
-
-function meta_hardmode()
-{
-	return 
-	{
-		description: "Toggles hardmode",
-		arguments: ["<bool:false>"],
-		suggestions: ["false", "true"],
-		argumentDescriptions: []
-	};
-}
-
-function sh_player_set_state(state)
-{
-	var state_map = ds_map_create();
-	ds_map_set(state_map, "states.normal", states.normal);
-	ds_map_set(state_map, "states.cheesepep", states.cheesepep);
-	ds_map_set(state_map, "states.knightpep", states.knightpep);
-	ds_map_set(state_map, "states.firemouth", states.firemouth);
-	ds_map_set(state_map, "states.ratmount", states.ratmount);
-	var _state = data_ensure(state, 1, undefined);
-	if _state == undefined
-		return "No state input.";
-	_state = ds_map_find_value(state_map, _state);
-	if !is_undefined(_state)
-	{
-		with (obj_parent_player)
-		{
-			if object_index == obj_player1 || global.coop
-			{
-				state = _state;
-				var __spr = sprite_index;
-				switch _state
-				{
-					case states.normal:
-						__spr = spr_idle;
-						break;
-					case states.cheesepep:
-						__spr = spr_cheesepepidle;
-						break;
-					case states.knightpep:
-						__spr = spr_knightpepidle;
-						break;
-					case states.firemouth:
-						__spr = spr_firemouth;
-						break;
-					case states.ratmount:
-						__spr = spr_player_ratmountidle;
-						isgustavo = true;
-						brick = true;
-						break;
-				}
-
-				sprite_index = __spr;
-				image_index = 0;
-			}
-		}
-	}
-}
-
-function meta_player_set_state()
-{
-	return 
-	{
-		description: "Changes the player state",
-		arguments: ["<state>"],
-		suggestions: [],
-		argumentDescriptions: []
-	};
-}
-
-function sh_savedata(name, key, value, valuetype)
-{
-	switch valuetype
-	{
-		case "real":
-		case "float":
-		case "double":
-		case "bool":
-			value = get_real(value);
-			
-		case "int":
-		case "int32":
-		case "int64":
-			value = int64(get_real(value));
-	}
-	ini_open_from_string(obj_savesystem.ini_str);
-	ini_write_real(name, key, value);
-	ini_write_real(name, key, value);
-	ini_write_real(name, key, value);
-	ini_write_real(name, key, value);
-	ini_write_real(name, key, value);
-	obj_savesystem.ini_str = ini_close();
-	gamesave_async_save();
-}
-
-function meta_savedata()
-{
-	return 
-	{
-		description: "Saves a value in the game save data.",
-		arguments: [
-			"<name>",
-			"<key>",
-			"<value>",
-			"<value_type:string>"
-		],
-		suggestions: [
-			"",
-			"",
-			"",
-			["real", "bool", "int", "string"]
-		],
-		argumentDescriptions: [
-			"Name to save value in",
-			"Key to save in (Game, Player, achievements)",
-			"Value to save",
-			"Value's type"
-		]
-	};
+    return 
+    {
+        description: "Reload the lang directory",
+        arguments: [],
+        suggestions: [],
+        argumentDescriptions: []
+    };
 }
 

@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "wrap",
+  "name": "scr_mathFunctions",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Utilities",
-    "path": "folders/Scripts/Player/Utilities.yy",
+    "name": "Misc Scripts",
+    "path": "folders/Scripts/Unown Collisions/Misc Scripts.yy",
   },
 }

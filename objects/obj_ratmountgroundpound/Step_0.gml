@@ -19,6 +19,6 @@ if (hitbox == 0)
 		other.hitbox = 1
 	}
 }
-scr_collide()
+scr_collision()
 if (grounded && kicked && (!(place_meeting(x, (y + 1), obj_destructibles))) && (!(place_meeting(x, (y + 1), obj_metalblock))))
 	instance_destroy()

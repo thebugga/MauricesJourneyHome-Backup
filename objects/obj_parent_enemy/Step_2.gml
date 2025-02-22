@@ -12,7 +12,7 @@ if (state == states.stun && (!thrown))
 if (object_index != obj_pizzaball && (place_meeting((x + 1), y, obj_spike) or place_meeting((x - 1), y, obj_spike) or place_meeting(x, (y + 1), obj_spike) or place_meeting(x, (y - 1), obj_spike)))
 	instance_destroy()
 if (state != states.grabbed && state != states.pummel && object_index != obj_fakesanta && use_collision)
-	scr_collide()
+	scr_collision()
 if (invtime > 0)
 	invtime--
 if (sprite_index == walkspr && hsp != 0 && floor(image_index) == (image_number - 1))

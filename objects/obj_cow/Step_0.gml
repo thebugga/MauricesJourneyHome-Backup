@@ -29,4 +29,4 @@ switch state
 			instance_destroy()
 		break
 }
-scr_collide()
+scr_collision()

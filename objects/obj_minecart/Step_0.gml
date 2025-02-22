@@ -87,5 +87,5 @@ if _destroy
 		visible = true
 	}
 }
-scr_collide()
+scr_collision()
 event_inherited()

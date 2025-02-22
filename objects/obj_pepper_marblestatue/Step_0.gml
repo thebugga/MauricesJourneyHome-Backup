@@ -1,2 +1,2 @@
 event_inherited()
-scr_collide()
+scr_collision()

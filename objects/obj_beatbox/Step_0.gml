@@ -4,5 +4,5 @@ if (obj_player1.sprite_index != obj_player1.spr_breakdance)
     instance_destroy()
 	//audio_stop_sound(beatboxsnd)
 }
-scr_collide()
+scr_collision()
 

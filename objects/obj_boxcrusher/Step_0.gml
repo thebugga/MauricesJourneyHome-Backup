@@ -23,4 +23,4 @@ if (gobackup == 1)
 	y = Approach(y, ystart, 2)
 if (y == ystart)
 	gobackup = 0
-scr_collide()
+scr_collision()

@@ -1100,14 +1100,12 @@ with (obj_ratblock)
 	scr_ratblock_destroy()
 scr_collide_destructibles()
 if (state != states.ghostpossess && state != states.gotoplayer && state != states.debugstate && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != states.Sjump && state != states.ejected && state != states.comingoutdoor && state != states.boulder && state != states.keyget && state != states.victory && state != states.portal && state != states.timesup && state != states.gottreasure && state != states.gameover)
-	scr_collide_player()
+	scr_collision()
 if (state == states.tube or state == states.gotoplayer or state == states.debugstate)
 {
 	x += hsp
 	y += vsp
 }
-if (state == states.boulder)
-	scr_collide_player()
 if (state != states.comingoutdoor)
 	image_blend = c_white
 prevstate = state

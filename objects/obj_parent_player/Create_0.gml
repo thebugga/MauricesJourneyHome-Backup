@@ -6,6 +6,7 @@ if instance_number(object_index) > 1
 	instance_destroy();
 	exit;
 }
+scr_collision_init()
 global.patterntexture = spr_checkerboard
 global.current_level = noone;
 resetdoisecount = 0;

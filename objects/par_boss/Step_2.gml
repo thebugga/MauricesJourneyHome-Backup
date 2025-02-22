@@ -5,4 +5,4 @@ if (grounded && state != states.hit && state != states.stun)
 	else
 		jugglecount = 0
 }
-scr_collide()
+scr_collision()

@@ -230,7 +230,7 @@ if (grabbed == 1 && (!ratgrabbed))
 if (vsp > 0 && grounded && (!(place_meeting(x, y, obj_spike))))
 	hsp = 0
 if (grabbed == 0 && ratgrabbed == 0 && use_collision)
-	scr_collide()
+	scr_collision()
 if (place_meeting(x, y, obj_swordhitbox) && thrown == false)
 {
 	grabbed = 0

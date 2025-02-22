@@ -21,4 +21,4 @@ if (refresh <= 0)
 		refresh = 100
 	}
 }
-scr_collide()
+scr_collision()

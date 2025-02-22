@@ -1,23 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_movingplatform",
+  "name": "obj_movingPlatform",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_moving_vstop","path":"objects/obj_moving_vstop/obj_moving_vstop.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_moving_hstop","path":"objects/obj_moving_hstop/obj_moving_hstop.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "World 5",
-    "path": "folders/Objects/Game settings/Room structure/World 5.yy",
+    "name": "Collision",
+    "path": "folders/Objects/Unown Collisions/Collision.yy",
   },
   "parentObjectId": {
-    "name": "obj_platform",
-    "path": "objects/obj_platform/obj_platform.yy",
+    "name": "par_collision",
+    "path": "objects/par_collision/par_collision.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,9 +29,18 @@
   "physicsShape": 1,
   "physicsShapePoints": [],
   "physicsStartAwake": true,
-  "properties": [],
+  "properties": [
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"targetDirection","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":0,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"moveSpeed","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"4","varType":0,},
+  ],
   "solid": false,
-  "spriteId": null,
-  "spriteMaskId": null,
+  "spriteId": {
+    "name": "spr_unownMovingPlatform",
+    "path": "sprites/spr_unownMovingPlatform/spr_unownMovingPlatform.yy",
+  },
+  "spriteMaskId": {
+    "name": "spr_unownMovingPlatform",
+    "path": "sprites/spr_unownMovingPlatform/spr_unownMovingPlatform.yy",
+  },
   "visible": true,
 }

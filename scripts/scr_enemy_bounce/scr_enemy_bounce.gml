@@ -70,7 +70,7 @@ function scr_enemy_bounce()
 		sprite_index = landspr
 	}
 	image_speed = 0.35
-	scr_collide()
+	scr_collision()
 	exit;
 }
 

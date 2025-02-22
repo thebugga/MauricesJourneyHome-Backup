@@ -1,1 +1,1 @@
-screen_apply_size()
+screen_apply_size();

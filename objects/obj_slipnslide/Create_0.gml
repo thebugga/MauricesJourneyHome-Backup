@@ -1,3 +1,4 @@
+scr_collision_init()
 drop = 0
 hsp = 0
 vsp = 0

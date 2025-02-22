@@ -209,7 +209,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"fmod_gms","path":"extensions/fmod_gms/fmod_gms.yy",},},
@@ -2903,6 +2903,7 @@
     {"id":{"name":"spr_ratmount_skid","path":"sprites/spr_ratmount_skid/spr_ratmount_skid.yy",},},
     {"id":{"name":"spr_ratmountballooncloud","path":"sprites/spr_ratmountballooncloud/spr_ratmountballooncloud.yy",},},
     {"id":{"name":"spr_ratmountgroundpound_dead","path":"sprites/spr_ratmountgroundpound_dead/spr_ratmountgroundpound_dead.yy",},},
+    {"id":{"name":"obj_langload","path":"objects/obj_langload/obj_langload.yy",},},
     {"id":{"name":"spr_ratmountgroundpound","path":"sprites/spr_ratmountgroundpound/spr_ratmountgroundpound.yy",},},
     {"id":{"name":"spr_rattumbleblock_big_dead","path":"sprites/spr_rattumbleblock_big_dead/spr_rattumbleblock_big_dead.yy",},},
     {"id":{"name":"spr_rattumbleblock_big","path":"sprites/spr_rattumbleblock_big/spr_rattumbleblock_big.yy",},},

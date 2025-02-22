@@ -1,1 +1,1 @@
-last_fullscreen = false
+last_fullscreen = false;

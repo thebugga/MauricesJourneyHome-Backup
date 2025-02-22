@@ -347,6 +347,7 @@
     {"name":"__scribble_class_event","order":1,"path":"scripts/__scribble_class_event/__scribble_class_event.yy",},
     {"name":"__scribble_class_null_element","order":4,"path":"scripts/__scribble_class_null_element/__scribble_class_null_element.yy",},
     {"name":"spr_cheeseblock","order":3,"path":"sprites/spr_cheeseblock/spr_cheeseblock.yy",},
+    {"name":"obj_langload","order":24,"path":"objects/obj_langload/obj_langload.yy",},
     {"name":"spr_tutorialkeyspecial","order":85,"path":"sprites/spr_tutorialkeyspecial/spr_tutorialkeyspecial.yy",},
     {"name":"spr_entrancegate","order":1,"path":"sprites/spr_entrancegate/spr_entrancegate.yy",},
     {"name":"spr_hamofcheese_dead","order":89,"path":"sprites/spr_hamofcheese_dead/spr_hamofcheese_dead.yy",},

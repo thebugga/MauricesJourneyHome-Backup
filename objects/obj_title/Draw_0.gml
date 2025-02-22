@@ -12,7 +12,7 @@ if !bounce
 		mx = -64
 	draw_sprite_ext(spr_title_Mscroll, 0, mx, 152, 16, 1, 0, c_white, 1)
 }
-draw_sprite_ext(spr_title_doise, 0, 580, 370, 1, 1, 0, c_white, doisealpha * image_alpha)
+//draw_sprite_ext(spr_title_doise, 0, 580, 370, 1, 1, 0, c_white, doisealpha * image_alpha)
 var leftx = ((sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index)) / (sprite_get_width(sprite_index) / 2))
 var rightx = ((sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index)) / (sprite_get_width(sprite_index) / 2))
 var realtop = (sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_index))

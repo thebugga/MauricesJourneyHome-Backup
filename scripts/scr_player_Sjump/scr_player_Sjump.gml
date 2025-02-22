@@ -176,21 +176,6 @@ function scr_player_Sjump()
 		    state = states.mach2
 			fmod_event_one_shot_3d("event:/sfx/maurice/superjumpcancel", x, y)
 	}
-	if sprite_index == spr_player_Sjumpcancelstart
-	{
-		vsp = 0;
-		if floor(image_index) == image_number - 1
-		{
-			jumpstop = true;
-			vsp = -4;
-			flash = true;
-			movespeed = 13;
-			image_index = 0;
-			sprite_index = spr_player_Sjumpcancel;
-			state = states.mach3;
-			with (instance_create(x, y, obj_crazyrunothereffect))
-				image_xscale = other.xscale;
-		}
-	}
 	image_speed = 0.5;
+	scr_collision();
 }

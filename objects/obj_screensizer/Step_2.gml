@@ -24,13 +24,13 @@ if disappearbuffer > 0
 else
 {
 	captionalpha = Approach(captionalpha, 0, 0.1);
-	if (window_get_cursor() != -1 && window_has_focus() && room != REALLYREALTitlescreen)
+	if (window_get_cursor() != -1 && window_has_focus() && room != Mainmenu)
 		cr = cr_none;
 }
 
-if room != REALLYREALTitlescreen && gameframe_get_fullscreen() > 0
+if room != Mainmenu && gameframe_get_fullscreen() > 0
 	cr = cr_none;
-if room == REALLYREALTitlescreen && window_get_cursor() == -1
+if room == Mainmenu && window_get_cursor() == -1
 	cr = cr_default;
 if instance_exists(obj_inputAssigner) && obj_inputAssigner.player_input_device[0] >= 0
 	cr = cr_none;

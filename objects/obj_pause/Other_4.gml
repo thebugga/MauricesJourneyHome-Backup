@@ -20,7 +20,7 @@ if (room == characterselect or room == rm_levelselect or string_copy(room_get_na
 	{
 		pause = 0
 		instance_activate_all()
-		room = REALLYREALTitlescreen
+		room = Mainmenu
 		scr_playerreset()
 		obj_player1.targetDoor = "A"
 		if instance_exists(obj_player2)

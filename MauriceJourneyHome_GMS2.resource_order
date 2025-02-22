@@ -305,6 +305,7 @@
     {"name":"spr_player_swanson","order":1,"path":"sprites/spr_player_swanson/spr_player_swanson.yy",},
     {"name":"__scribble_tick","order":14,"path":"scripts/__scribble_tick/__scribble_tick.yy",},
     {"name":"scribble_markdown_format","order":5,"path":"scripts/scribble_markdown_format/scribble_markdown_format.yy",},
+    {"name":"spr_destroyable3","order":5,"path":"sprites/spr_destroyable3/spr_destroyable3.yy",},
     {"name":"spr_controlseggplant","order":61,"path":"sprites/spr_controlseggplant/spr_controlseggplant.yy",},
     {"name":"spr_controlicons","order":37,"path":"sprites/spr_controlicons/spr_controlicons.yy",},
     {"name":"scr_playerinit","order":12,"path":"scripts/scr_playerinit/scr_playerinit.yy",},

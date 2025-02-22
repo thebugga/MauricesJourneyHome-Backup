@@ -1,7 +1,7 @@
 if !global.panic
 {
 	var mu = ds_map_find_value(music_map, room);
-	if !is_undefined(mu)
+	if (!is_undefined(mu))
 	{
 		var prevmusic = music;
 		if (prevmusic == noone || mu.event_name != prevmusic.event_name)
@@ -14,23 +14,69 @@ if !global.panic
 				pos = music_get_pos_wrap(pos, fmod_event_get_length(mu.event_name));
 				fmod_event_instance_set_timeline_pos(mu.event, pos);
 			}
-			if prevmusic != noone
+			if prevmusic != -4
 			{
+				if room == Mainmenu
+					fmod_event_instance_stop(prevmusic.event, false);
+				else
 					fmod_event_instance_stop(prevmusic.event, true);
-				if prevmusic.event_secret != noone
+				if prevmusic.event_secret != -4
 					fmod_event_instance_stop(prevmusic.event_secret, true);
 			}
 			music = mu;
 			savedmusicpos = 0;
 		}
 	}
-	if instance_exists(obj_totemsteve)
+	if (instance_exists(obj_totemsteve))
 	{
 		fmod_event_instance_play(pillarmusicID);
 		fmod_set_parameter("pillarfade", 0, true);
 	}
 	else
 		fmod_event_instance_stop(pillarmusicID, true);
-	if music != noone && music.on_room_start != noone
+	if music != -4 && music.on_room_start != -4
 		music.on_room_start(room, music.event, music.event_secret);
+}
+	if secret
+	{
+		if music != -4 && music.event_secret != -4
+		{
+			fmod_event_instance_play(music.event_secret);
+			fmod_event_instance_set_paused(music.event_secret, false);
+			pos = fmod_event_instance_get_timeline_pos(music.event);
+			savedmusicpos = pos;
+			pos = music_get_pos_wrap(pos, fmod_event_get_length(music.event_secret_name));
+			fmod_event_instance_set_timeline_pos(music.event_secret, pos);
+			fmod_event_instance_set_paused(music.event, true);
+		}
+		if global.panic
+		{
+			trace("Pausing panic music: room_start");
+			savedpanicpos = fmod_event_instance_get_timeline_pos(panicmusicID);
+			fmod_event_instance_set_paused(panicmusicID, true);
+		}
+	}
+	else if secretend
+	{
+		secretend = false;
+		if music != -4
+		{
+			fmod_event_instance_stop(music.event_secret, true);
+			fmod_event_instance_set_paused(music.event, false);
+			fmod_event_instance_set_timeline_pos(music.event, savedmusicpos);
+		}
+		if global.panic
+		{
+			fmod_event_instance_set_timeline_pos(panicmusicID, savedpanicpos);
+			fmod_event_instance_set_paused(panicmusicID, false);
+			trace("Resuming panic music: room_start");
+		}
+	}
+if (room == rank_room)
+{
+	if music != -4
+	{
+		fmod_event_instance_stop(music.event, true);
+		fmod_event_instance_stop(music.event_secret, true);
+	}
 }

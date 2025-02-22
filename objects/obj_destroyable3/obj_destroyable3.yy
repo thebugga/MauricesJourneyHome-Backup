@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_septemberblock",
-    "path": "sprites/spr_septemberblock/spr_septemberblock.yy",
+    "name": "spr_destroyable3",
+    "path": "sprites/spr_destroyable3/spr_destroyable3.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -10,7 +10,7 @@ if (scene >= 0)
     }
     else if (showtext && (key_jump || key_start))
     {
-        room_goto(REALLYREALTitlescreen)
+        room_goto(Mainmenu)
         return;
     }
 }
@@ -597,7 +597,7 @@ switch scene
                 deccel = 0.1
                 color = c_white
             }
-            room_goto(REALLYREALTitlescreen)
+            room_goto(Mainmenu)
         }
         break
 }

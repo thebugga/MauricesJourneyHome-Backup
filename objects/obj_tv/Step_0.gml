@@ -1,4 +1,4 @@
-if (room == rm_eggplantdisclaimer or room == rm_logo or room == REALLYREALTitlescreen or room == rank_room or room == rm_levelselect or room == timesuproom or room == characterselect or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 3) == "hub" && !global.panic))
+if (room == rm_eggplantdisclaimer or room == rm_logo or room == Mainmenu or room == rank_room or room == rm_levelselect or room == timesuproom or room == characterselect or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 3) == "hub" && !global.panic))
 {
 	visible = false
 	sprite_index = spr_tv_off

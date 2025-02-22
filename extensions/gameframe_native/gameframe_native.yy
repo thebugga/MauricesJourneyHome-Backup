@@ -13,12 +13,12 @@
   "author": "",
   "classname": "",
   "copyToTargets": -1,
-  "date": "2025-01-26T15:49:11.2450933-03:00",
+  "date": "2025-01-26T13:49:11.2450933-05:00",
   "description": "",
   "exportToGame": true,
   "extensionVersion": "1.0.0",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":-1,"filename":"gameframe_x64.dll","final":"","functions":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"gameframe_x64.dll","constants":[],"copyToTargets":-1,"filename":"gameframe_x64.dll","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"gameframe_mouse_in_window","argCount":2,"args":[
             1,
             2,
@@ -63,8 +63,8 @@
         {"name":"gameframe_check_native_extension","path":"extensions/gameframe_native/gameframe_native.yy",},
         {"name":"gameframe_get_double_click_time","path":"extensions/gameframe_native/gameframe_native.yy",},
       ],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":-1,"filename":"autogen.gml","final":"","functions":[],"init":"","kind":2,"order":[],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":-1,"filename":"gameframe_native.gml","final":"","functions":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"autogen.gml","constants":[],"copyToTargets":-1,"filename":"autogen.gml","final":"","functions":[],"init":"","kind":2,"order":[],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"gameframe_native.gml","constants":[],"copyToTargets":-1,"filename":"gameframe_native.gml","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"gameframe_init_native","argCount":0,"args":[],"documentation":"","externalName":"gameframe_init_native","help":"","hidden":false,"kind":2,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"gameframe_get_monitors","argCount":0,"args":[],"documentation":"","externalName":"gameframe_get_monitors","help":"","hidden":false,"kind":2,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"gameframe_prepare_buffer","argCount":0,"args":[],"documentation":"","externalName":"gameframe_prepare_buffer","help":"","hidden":false,"kind":2,"returnType":1,},

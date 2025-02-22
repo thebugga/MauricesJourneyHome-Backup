@@ -38,11 +38,11 @@ if _transfo
 		//scr_soundeffect(sfx_collecttopping)
 		for (var i = 0; i < val; i += round((val / 16)))
 			create_collect((other.x + irandom_range(-60, 60)), (other.y + irandom_range(-60, 60)), choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect))
-			if onetime
-            {
-            instance_destroy()
-            with instance_create(x, y, obj_sausageman_dead)
-            sprite_index = spr_priest_dead
-           }
+		if onetime
+        {
+	        instance_destroy()
+	        with instance_create(x, y, obj_sausageman_dead)
+				sprite_index = spr_priest_dead
+		}
 	}
 }

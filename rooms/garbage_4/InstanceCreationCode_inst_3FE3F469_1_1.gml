@@ -1,2 +1,2 @@
-targetRoom = garbage_2
-targetDoor = "A"
+targetRoom = garbage_3
+targetDoor = "D"

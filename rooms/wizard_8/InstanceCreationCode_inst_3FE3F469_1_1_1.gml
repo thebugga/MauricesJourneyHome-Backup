@@ -1,2 +1,1 @@
-targetRoom = garbage_2
-targetDoor = "A"
+targetRoom = wizard_7

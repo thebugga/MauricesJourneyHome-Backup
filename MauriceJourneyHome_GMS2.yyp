@@ -765,6 +765,7 @@
     {"id":{"name":"obj_portalend","path":"objects/obj_portalend/obj_portalend.yy",},},
     {"id":{"name":"obj_portalentrance","path":"objects/obj_portalentrance/obj_portalentrance.yy",},},
     {"id":{"name":"obj_presentbox","path":"objects/obj_presentbox/obj_presentbox.yy",},},
+    {"id":{"name":"spr_priest_dead","path":"sprites/spr_priest_dead/spr_priest_dead.yy",},},
     {"id":{"name":"obj_priest","path":"objects/obj_priest/obj_priest.yy",},},
     {"id":{"name":"obj_priestangel","path":"objects/obj_priestangel/obj_priestangel.yy",},},
     {"id":{"name":"obj_priesthazard","path":"objects/obj_priesthazard/obj_priesthazard.yy",},},
@@ -1049,6 +1050,7 @@
     {"id":{"name":"__view_get","path":"scripts/__view_get/__view_get.yy",},},
     {"id":{"name":"__view_set_internal","path":"scripts/__view_set_internal/__view_set_internal.yy",},},
     {"id":{"name":"__view_set","path":"scripts/__view_set/__view_set.yy",},},
+    {"id":{"name":"wizard_7","path":"rooms/wizard_7/wizard_7.yy",},},
     {"id":{"name":"boss_states_stunhit","path":"scripts/boss_states_stunhit/boss_states_stunhit.yy",},},
     {"id":{"name":"boss_states","path":"scripts/boss_states/boss_states.yy",},},
     {"id":{"name":"Command","path":"scripts/Command/Command.yy",},},
@@ -3182,6 +3184,7 @@
     {"roomId":{"name":"tower_entrancehallway","path":"rooms/tower_entrancehallway/tower_entrancehallway.yy",},},
     {"roomId":{"name":"tower_tutorial_1","path":"rooms/tower_tutorial_1/tower_tutorial_1.yy",},},
     {"roomId":{"name":"hub_tutorial2","path":"rooms/hub_tutorial2/hub_tutorial2.yy",},},
+    {"roomId":{"name":"wizard_7","path":"rooms/wizard_7/wizard_7.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

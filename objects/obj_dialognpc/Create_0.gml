@@ -1,4 +1,4 @@
-dialogsidel = -4
+xxdialogsidel = -4
 dialogsider = -4
 dialog = -4
 dialogsprite = -4

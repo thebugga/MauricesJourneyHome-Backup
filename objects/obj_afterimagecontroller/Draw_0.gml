@@ -7,7 +7,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
         {
             b = image_blend
             var a = other.alpha[identifier]
-            var shd = 0
+            var shd = 1
             if (identifier == (3 << 0))
             {
              
@@ -55,16 +55,12 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
                     pal = 5
                 noise_aftimg_set_pal(obj_player1.spr_palette, obj_player1.paletteselect, pal)
             }
-            else if (identifier == (5 << 0))
+            a = alpha
+            b = get_dark(other.image_blend, obj_drawcontroller.use_dark, 1, x, y)
+            if (instance_exists(playerid) && playerid.usepalette) && shd
             {
-                a = alpha
-                b = get_dark(other.image_blend, obj_drawcontroller.use_dark, 1, x, y)
-                if (instance_exists(playerid) && playerid.usepalette)
-                {
-                    shd = 1
-                    shader_set(global.retro_pal_swapper)
-                    pal_swap_set(playerid.spr_palette, playerid.paletteselect, 0)
-                }
+				shader_set(global.retro_pal_swapper)
+				pal_swap_set(playerid.spr_palette, playerid.paletteselect, 0)
             }
             draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a)
             if shd

@@ -22,5 +22,7 @@ obj_player1.restartbuffer = 15;
 obj_player2.restartbuffer = 15;
 if instance_exists(obj_player2)
 	obj_player2.targetDoor = _d;
+	/*
 if rm == boss_pizzaface || rm == boss_noise || rm == boss_pepperman || rm == boss_fakepep || rm == boss_vigilante
 	global.bossintro = true;
+	*/

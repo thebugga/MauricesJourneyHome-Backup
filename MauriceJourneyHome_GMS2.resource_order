@@ -77,6 +77,7 @@
     {"name":"__shd_scribble_bake_effect_no_outline","order":4,"path":"shaders/__shd_scribble_bake_effect_no_outline/__shd_scribble_bake_effect_no_outline.yy",},
     {"name":"scribble_font_bake_shader","order":1,"path":"scripts/scribble_font_bake_shader/scribble_font_bake_shader.yy",},
     {"name":"scribble_anim_pulse","order":5,"path":"scripts/scribble_anim_pulse/scribble_anim_pulse.yy",},
+    {"name":"Sprite1713","order":1,"path":"sprites/Sprite1713/Sprite1713.yy",},
     {"name":"shd_pal_swapper","order":1,"path":"shaders/shd_pal_swapper/shd_pal_swapper.yy",},
     {"name":"obj_playerhat","order":20,"path":"objects/obj_playerhat/obj_playerhat.yy",},
     {"name":"obj_intro","order":9,"path":"objects/obj_intro/obj_intro.yy",},

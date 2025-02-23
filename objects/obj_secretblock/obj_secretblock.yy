@@ -37,8 +37,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite1029",
-    "path": "sprites/sprite1029/sprite1029.yy",
+    "name": "sprite10291",
+    "path": "sprites/sprite10291/sprite10291.yy",
   },
   "spriteMaskId": null,
   "visible": false,

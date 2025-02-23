@@ -552,6 +552,7 @@
     {"id":{"name":"obj_gustavopizza","path":"objects/obj_gustavopizza/obj_gustavopizza.yy",},},
     {"id":{"name":"obj_gustavoswitch","path":"objects/obj_gustavoswitch/obj_gustavoswitch.yy",},},
     {"id":{"name":"obj_hallway","path":"objects/obj_hallway/obj_hallway.yy",},},
+    {"id":{"name":"Sprite1713","path":"sprites/Sprite1713/Sprite1713.yy",},},
     {"id":{"name":"obj_hallwaymonster","path":"objects/obj_hallwaymonster/obj_hallwaymonster.yy",},},
     {"id":{"name":"obj_ham","path":"objects/obj_ham/obj_ham.yy",},},
     {"id":{"name":"obj_hamburger","path":"objects/obj_hamburger/obj_hamburger.yy",},},

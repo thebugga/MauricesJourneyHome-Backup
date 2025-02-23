@@ -1,4 +1,4 @@
-with (instance_create(x, y, obj_sausageman_dead))
+with (instance_create(x, y, obj_deatheffect))
 {
 	image_xscale = other.image_xscale
 	sprite_index = other.sprite_index

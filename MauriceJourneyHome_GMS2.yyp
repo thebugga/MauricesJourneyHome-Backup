@@ -873,7 +873,7 @@
     {"id":{"name":"obj_santasleight","path":"objects/obj_santasleight/obj_santasleight.yy",},},
     {"id":{"name":"obj_santasleight2","path":"objects/obj_santasleight2/obj_santasleight2.yy",},},
     {"id":{"name":"obj_sausageeyes","path":"objects/obj_sausageeyes/obj_sausageeyes.yy",},},
-    {"id":{"name":"obj_sausageman_dead","path":"objects/obj_sausageman_dead/obj_sausageman_dead.yy",},},
+    {"id":{"name":"obj_deatheffect","path":"objects/obj_deatheffect/obj_deatheffect.yy",},},
     {"id":{"name":"obj_sausagemancigar","path":"objects/obj_sausagemancigar/obj_sausagemancigar.yy",},},
     {"id":{"name":"obj_saveroom","path":"objects/obj_saveroom/obj_saveroom.yy",},},
     {"id":{"name":"obj_savesystem","path":"objects/obj_savesystem/obj_savesystem.yy",},},

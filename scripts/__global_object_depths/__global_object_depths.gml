@@ -292,7 +292,7 @@ function __global_object_depths()
 	global.__objectNames[42] = "obj_pineahitbox"
 	global.__objectNames[43] = "obj_sausagemancigar"
 	global.__objectNames[44] = "obj_forkhitbox"
-	global.__objectNames[45] = "obj_sausageman_dead"
+	global.__objectNames[45] = "obj_deatheffect"
 	global.__objectNames[46] = "obj_enemybird"
 	global.__objectNames[47] = "obj_slimedead"
 	global.__objectNames[48] = "obj_pizzaboy"

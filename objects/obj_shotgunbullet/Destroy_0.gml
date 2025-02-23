@@ -1,6 +1,6 @@
 if pistol
 {
-	with (instance_create(x, y, obj_sausageman_dead))
+	with (instance_create(x, y, obj_deatheffect))
 	{
 		sprite_index = spr_peppinobullet_dead
 		image_xscale = other.image_xscale
@@ -8,7 +8,7 @@ if pistol
 }
 if (sprite_index == spr_mortdead)
 {
-	with (instance_create(x, y, obj_sausageman_dead))
+	with (instance_create(x, y, obj_deatheffect))
 	{
 		sprite_index = spr_mortdead
 		image_xscale = other.image_xscale

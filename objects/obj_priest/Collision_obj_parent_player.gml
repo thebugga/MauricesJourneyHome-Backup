@@ -41,7 +41,7 @@ if _transfo
 		if onetime
         {
 	        instance_destroy()
-	        with instance_create(x, y, obj_sausageman_dead)
+	        with instance_create(x, y, obj_deatheffect)
 				sprite_index = spr_priest_dead
 		}
 	}

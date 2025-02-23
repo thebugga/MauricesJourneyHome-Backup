@@ -26,7 +26,7 @@ var _kungfu = global.kungfu
 with (obj_parent_enemy)
 	draw_enemy(_kungfu, true)
 shader_set(global.Pal_Shader)
-with (obj_sausageman_dead)
+with (obj_deatheffect)
 {
 	if (visible && bbox_in_camera(view_camera[0], 32))
 	{

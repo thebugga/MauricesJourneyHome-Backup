@@ -158,7 +158,7 @@ if instance_exists(obj_swapmodegrab) || instance_exists(obj_swapplayergrabbable)
 	grabbuffer = 40;
 	visible = false;
 }
-with obj_sausageman_dead
+with obj_deatheffect
 {
 	if sprite_index == other.spr_dead
 	{

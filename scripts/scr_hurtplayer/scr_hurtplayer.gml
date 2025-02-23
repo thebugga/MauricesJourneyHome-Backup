@@ -133,7 +133,7 @@ function scr_hurtplayer(argument0)
 		else if (pizzashield == 1)
 		{
 			pizzashield = 0
-			with (instance_create(x, y, obj_sausageman_dead))
+			with (instance_create(x, y, obj_deatheffect))
 				sprite_index = spr_pizzashield_collectible
 			hsp = ((-xscale) * 4)
 			vsp = -5

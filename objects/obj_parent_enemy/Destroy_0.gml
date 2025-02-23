@@ -4,7 +4,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && ((!elite) or elitehit <= 
 {
 	if (object_index != obj_peppinoclone)
 	{
-		with (instance_create(x, y, obj_sausageman_dead))
+		with (instance_create(x, y, obj_deatheffect))
 		{
 			sprite_index = other.spr_dead
 			spr_palette = other.spr_palette

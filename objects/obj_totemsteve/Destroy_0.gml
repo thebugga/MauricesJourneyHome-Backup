@@ -60,7 +60,7 @@ if ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fal
 		var spr = asset_get_index(concat("spr_hungrypillar_dead", totem_face[i]))
 		if (spr > -1)
 		{
-			with instance_create(x, ((bbox_top + 64) + (128 * i)), obj_sausageman_dead)
+			with instance_create(x, ((bbox_top + 64) + (128 * i)), obj_deatheffect)
 				sprite_index = spr
 		}
 	}

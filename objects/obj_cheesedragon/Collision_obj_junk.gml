@@ -17,7 +17,7 @@ if (lastform == 0)
 }
 else
 {
-	with (instance_create(x, y, obj_sausageman_dead))
+	with (instance_create(x, y, obj_deatheffect))
 	{
 		sprite_index = spr_cheesedragon_hurt
 		image_index = 4

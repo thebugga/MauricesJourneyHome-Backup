@@ -128,7 +128,7 @@ with (instance_place(x, y, obj_parent_player))
 				instance_create(x, y, obj_baddiegibs)
 				sprite_index = spr_present
 			}
-			with (instance_create(x, y, obj_sausageman_dead))
+			with (instance_create(x, y, obj_deatheffect))
 				sprite_index = other.deadspr
 		}
 	}
@@ -174,7 +174,7 @@ if (place_meeting(x, y, obj_parent_enemy) && obj_parent_enemy.thrown == true && 
 		instance_create(x, y, obj_baddiegibs)
 		sprite_index = spr_present
 	}
-	with (instance_create(x, y, obj_sausageman_dead))
+	with (instance_create(x, y, obj_deatheffect))
 		sprite_index = other.deadspr
 }
 if (place_meeting(x, y, obj_shotgunbullet) && sprite_index != spr_present)
@@ -218,7 +218,7 @@ if (place_meeting(x, y, obj_shotgunbullet) && sprite_index != spr_present)
 		instance_create(x, y, obj_baddiegibs)
 		sprite_index = spr_present
 	}
-	with (instance_create(x, y, obj_sausageman_dead))
+	with (instance_create(x, y, obj_deatheffect))
 		sprite_index = other.deadspr
 }
 switch character

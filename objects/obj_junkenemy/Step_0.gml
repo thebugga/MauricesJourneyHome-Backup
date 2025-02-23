@@ -7,7 +7,7 @@ if grounded
 	}
 	instance_create(x, y, obj_slapstar)
 	instance_create(x, y, obj_baddiegibs)
-	with (instance_create(x, y, obj_sausageman_dead))
+	with (instance_create(x, y, obj_deatheffect))
 	{
 		sprite_index = other.sprite_index
 		image_speed = 0

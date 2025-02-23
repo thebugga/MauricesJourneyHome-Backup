@@ -9,7 +9,7 @@ with (other)
 		grav /= 2
 		state = states.ghost
 		sprite_index = spr_ghostidle
-		with (instance_create(x, y, obj_sausageman_dead))
+		with (instance_create(x, y, obj_deatheffect))
 		{
 			hsp = (other.image_xscale * 3)
 			image_xscale = (-other.image_xscale)

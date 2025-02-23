@@ -2,7 +2,7 @@ if (room == rm_editor)
 	exit;
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-	with (instance_create((x + 64 ), (y + 128), obj_sausageman_dead))
+	with (instance_create((x + 64 ), (y + 128), obj_deatheffect))
 		sprite_index = spr_hamofcheese_dead
 	scr_sleep(5)
 	//if (//audio_is_playing(sfx_breakblock1) or //audio_is_playing(sfx_breakblock2))

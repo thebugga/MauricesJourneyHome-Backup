@@ -26,16 +26,16 @@ for (var i = 0; i < 2; i++)
 	else if obj_inputAssigner.player_input_device[i] > -2
 	{
 		draw_sprite_ext(spr_charactercontroller, _frame, _x, 150, control_scale[i], control_scale[i], 0, c_white, 1)
-		control_scale[i] = Approach(control_scale[i], 1, 0.1)
+		control_scale[i] = approach(control_scale[i], 1, 0.1)
 		if obj_inputAssigner.player_input_device[i] > -1
 			draw_text(_x, 100, _control)
 	}
 	
 }
-switch_index = Approach(switch_index, multimode * 4, 0.25)
+switch_index = approach(switch_index, multimode * 4, 0.25)
 draw_sprite(spr_multiswitch, switch_index, 50, 400)
-multialpha = Approach(multialpha, p2_connect, 0.1)
-mode_scale = Approach(mode_scale, 1, 0.1)
+multialpha = approach(multialpha, p2_connect, 0.1)
+mode_scale = approach(mode_scale, 1, 0.1)
 draw_sprite_ext(spr_multimodes, !multimode, 250, 400, 1, 1, 0, c_white, multialpha)
 draw_sprite_ext(spr_multimodes, multimode, 250, 400, mode_scale, mode_scale, 0, c_white, multialpha)
 
@@ -87,7 +87,7 @@ for (var i = 0; i < array_length(character); i++)
 var size = 440
 if (p2_connect)
 	size = 220
-p1_boxheight = Approach(p1_boxheight, size, 10)
+p1_boxheight = approach(p1_boxheight, size, 10)
 var p1_boxy = 30 + (((p1_boxheight - 220) / 220) * 20)
 var p2_boxy = 70 + p1_boxheight + (((p1_boxheight - 220) / 220) * 100)
 draw_sprite_ext(spr_characterframe, 0, 720, p1_boxy, 200 / 96, p1_boxheight / 96, 0, c_white, 1)

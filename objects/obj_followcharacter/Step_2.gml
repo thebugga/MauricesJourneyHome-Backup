@@ -9,7 +9,7 @@ if (playerid.state != states.ladder && playerid.state != states.door && playerid
 		space -= spaceaccel
 }
 else
-	space = Approach(space, 0, spaceaccel)
+	space = approach(space, 0, spaceaccel)
 if (dir != playerid.xscale)
 	dir = playerid.xscale
 if (followid != noone && (!instance_exists(followid)))
@@ -31,7 +31,7 @@ if (ds_queue_size(followqueue) > (LAG_STEPS * 2))
 		{
 			x = lerp(x, _x, interp);
 			y = lerp(y, _y, interp);
-			interp = Approach(interp, 1, 0.01);
+			interp = approach(interp, 1, 0.01);
 		}
 		else
 		{

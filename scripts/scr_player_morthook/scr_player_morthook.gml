@@ -11,8 +11,8 @@ function scr_player_morthook()
 		exit;
 	}
 	image_speed = 0.35
-	x = Approach(x, morthookID.x, movespeed)
-	y = Approach(y, morthookID.y, movespeed)
+	x = approach(x, morthookID.x, movespeed)
+	y = approach(y, morthookID.y, movespeed)
 	if (floor(x) == morthookID.x && floor(y) == morthookID.y)
 	{
 		if (sprite_index != spr_player_morthook)

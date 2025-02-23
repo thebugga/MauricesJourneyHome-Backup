@@ -20,7 +20,7 @@ if (sprite_index == spr_boxcrusher_land && floor(image_index) == (image_number -
 	gobackup = 1
 }
 if (gobackup == 1)
-	y = Approach(y, ystart, 2)
+	y = approach(y, ystart, 2)
 if (y == ystart)
 	gobackup = 0
 scr_collision()

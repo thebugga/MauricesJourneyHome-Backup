@@ -10,8 +10,8 @@ with (obj_parent_player)
 		var dir = point_direction(x, y, tx, ty)
 		var lx = lengthdir_x(accel, dir)
 		var ly = lengthdir_y(accel, dir)
-		x = Approach(x, tx, abs(lx))
-		y = Approach(y, ty, abs(ly))
+		x = approach(x, tx, abs(lx))
+		y = approach(y, ty, abs(ly))
 	}
 }
 obj_camera.visible = false
@@ -29,6 +29,6 @@ if (fadein == 0)
 else if (fadein == 1)
 	fadealpha -= 0.1
 if receiptonscreen
-	receiptx = Approach(receiptx, 640, 10)
+	receiptx = approach(receiptx, 640, 10)
 else
-	receiptx = Approach(receiptx, 960, 10)
+	receiptx = approach(receiptx, 960, 10)

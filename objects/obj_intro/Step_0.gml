@@ -286,8 +286,8 @@ switch scene
         }
         break
     case 12:
-        peppino.x = Approach(peppino.x, 0, 3)
-        peppino.y = Approach(peppino.y, 0, 5)
+        peppino.x = approach(peppino.x, 0, 3)
+        peppino.y = approach(peppino.y, 0, 5)
         bg.x -= 0.2
         bg.y += 0.1
         if _switch
@@ -525,7 +525,7 @@ switch scene
         }
         break
     case 22:
-        boss.y = Approach(boss.y, 0, 25)
+        boss.y = approach(boss.y, 0, 25)
         if (_switch && boss.y == 0)
         {
             if (array_length(bossarr) > 0)
@@ -580,7 +580,7 @@ switch scene
     case 26:
         title.x = title.xstart
         title.y = title.ystart
-        title.image_alpha = Approach(title.image_alpha, 0, 0.05)
+        title.image_alpha = approach(title.image_alpha, 0, 0.05)
         if (title.image_alpha <= 0)
         {
             scene++

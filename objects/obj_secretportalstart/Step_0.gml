@@ -66,8 +66,8 @@ switch sprite_index
 					hsp = 0
 					movespeed = 0
 					vsp = 10
-					scale_xs = Approach(scale_xs, 1, 0.05)
-					scale_ys = Approach(scale_ys, 1, 0.05)
+					scale_xs = approach(scale_xs, 1, 0.05)
+					scale_ys = approach(scale_ys, 1, 0.05)
 					fallinganimation = 0
 					if (scale_xs == 1)
 						other.drop = 1

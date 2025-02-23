@@ -15,9 +15,9 @@ function scr_player_noisecrusher()
 	hsp = movespeed;
 	move = key_left + key_right;
 	if move != 0
-		movespeed = Approach(movespeed, move * 8, 0.5);
+		movespeed = approach(movespeed, move * 8, 0.5);
 	else
-		movespeed = Approach(movespeed, 0, 0.5);
+		movespeed = approach(movespeed, 0, 0.5);
 	if sprite_index != spr_playerN_noisecrusherstart && sprite_index != spr_playerN_noisecrusherland && sprite_index != spr_playerN_noisecrusherfall
 	{
 		sprite_index = spr_playerN_noisecrusherstart;

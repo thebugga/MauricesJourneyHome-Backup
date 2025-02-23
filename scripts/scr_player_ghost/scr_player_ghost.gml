@@ -20,8 +20,8 @@ function scr_player_ghost()
 			hspaccel = 0.65
 			vspaccel = 0.65
 		}
-		hsp = Approach(hsp, (move_h * maxspeed), hspaccel)
-		vsp = Approach(vsp, (move_v * maxspeed), vspaccel)
+		hsp = approach(hsp, (move_h * maxspeed), hspaccel)
+		vsp = approach(vsp, (move_v * maxspeed), vspaccel)
 		if (hsp != 0)
 			xscale = sign(hsp)
 		if (!key_attack)

@@ -22,12 +22,22 @@ if (room == ObjectnMacroloadinRoom)
 		ds_map_destroy(special_prompts)
 	special_prompts = -4
 }
+tv_bg_index = 0
+switch global.leveltosave
+{
+    case "garbage":
+        tv_bg_index = 0
+        break
+    case "wizard":
+        tv_bg_index = 1
+        break
+}
 if (room == rm_test)
 	global.srank = 5000
 else if (room == wizard_1)
-	global.srank = 10000
+	global.srank = 3000
 else if (room == garbage_1)
-	global.srank = 20000
+	global.srank = 2000
 global.arank = (global.srank / 2)
 global.brank = (global.srank / 4)
 global.crank = (global.srank / 8)

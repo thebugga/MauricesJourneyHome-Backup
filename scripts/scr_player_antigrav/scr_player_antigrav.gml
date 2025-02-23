@@ -2,7 +2,7 @@ function scr_player_antigrav()
 {
 	sprite_index = spr_currentplayer
 	move = (key_right + key_left)
-	hsp = Approach(hsp, (move * 8), 0.5)
+	hsp = approach(hsp, (move * 8), 0.5)
 	movespeed = hsp
 	if (vsp > -14)
 		vsp -= 0.5

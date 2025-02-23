@@ -54,13 +54,13 @@ function scr_pauseicons_update(selected)
 			{
 				shake_x = random_range(-1, 1);
 				shake_y = random_range(-1, 1);
-				image_alpha = Approach(image_alpha, 1, 0.2);
+				image_alpha = lerp(image_alpha, 1, 0.2);
 			}
 			else
 			{
 				shake_x = 0;
 				shake_y = 0;
-				image_alpha = Approach(image_alpha, 0, 0.2);
+				image_alpha = lerp(image_alpha, 0, 0.2);
 			}
 		}
 	}

@@ -3,7 +3,7 @@ function cutscene_medieval_middle()
 	var _finish = 0
 	with (obj_knightplatform)
 	{
-		y = Approach(y, y_to, 5)
+		y = approach(y, y_to, 5)
 		if (y == y_to)
 			_finish = 1
 	}

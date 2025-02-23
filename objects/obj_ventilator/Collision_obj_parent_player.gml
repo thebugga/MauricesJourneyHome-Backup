@@ -1,6 +1,6 @@
 with (other)
 {
-	vsp = Approach(vsp, -5, 5)
+	vsp = approach(vsp, -5, 5)
 	jumpstop = 1
 	if (state == states.machslide)
 	{

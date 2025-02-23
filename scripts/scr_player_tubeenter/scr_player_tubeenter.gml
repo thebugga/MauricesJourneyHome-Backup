@@ -5,8 +5,8 @@ function scr_player_tubeenter()
 	{
 		var _offset_x = (32 * image_xscale)
 		var _offset_y = (14 * image_yscale)
-		other.x = Approach(other.x, (x + _offset_x), other.stored_hsp)
-		other.y = Approach(other.y, (y + _offset_y), other.stored_vsp)
+		other.x = approach(other.x, (x + _offset_x), other.stored_hsp)
+		other.y = approach(other.y, (y + _offset_y), other.stored_vsp)
 		if (floor(other.x) == (x + _offset_x) && floor(other.y) == (y + _offset_y))
 		{
 			switch object_index

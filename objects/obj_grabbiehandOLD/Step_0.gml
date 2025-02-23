@@ -43,8 +43,8 @@ if grabbing
 		}
 		accel = clamp(accel, 0.25, maxaccel)
 		trace(accel)
-		x = Approach(x, dropspotx, accel)
-		y = Approach(y, dropspoty, accel)
+		x = approach(x, dropspotx, accel)
+		y = approach(y, dropspoty, accel)
 	}
 	if (distance_to_pos(x, y, dropspotx, dropspoty, 5, 5) && (!released))
 	{

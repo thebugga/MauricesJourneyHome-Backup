@@ -23,16 +23,16 @@ function scr_player_ratmountjump()
 	if (move != 0)
 	{
 		if (move == xscale)
-			movespeed = Approach(movespeed, (xscale * ratmount_movespeed), 0.5)
+			movespeed = approach(movespeed, (xscale * ratmount_movespeed), 0.5)
 		else if (gustavodash == 51)
-			movespeed = Approach(movespeed, 0, 0.5)
+			movespeed = approach(movespeed, 0, 0.5)
 		else
-			movespeed = Approach(movespeed, 0, 0.5)
+			movespeed = approach(movespeed, 0, 0.5)
 	}
 	else if (gustavodash == 51)
-		movespeed = Approach(movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	else
-		movespeed = Approach(movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	if (move != xscale && move != 0)
 	{
 		ratmount_movespeed = 8

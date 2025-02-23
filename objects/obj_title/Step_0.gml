@@ -35,7 +35,7 @@ if bounce
 }
 else
 {
-	flashalpha = Approach(flashalpha, 0, 0.05)
+	flashalpha = approach(flashalpha, 0, 0.05)
 	if spincounts > 0
 	{
 		

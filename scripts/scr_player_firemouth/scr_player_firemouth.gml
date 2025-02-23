@@ -89,7 +89,7 @@ function scr_player_firemouth()
 				xscale = move
 			}
 			else
-				movespeed = Approach(movespeed, 0, 0.5)
+				movespeed = approach(movespeed, 0, 0.5)
 			if (dir != xscale)
 			{
 				dir = xscale

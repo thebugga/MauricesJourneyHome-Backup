@@ -1,4 +1,4 @@
-y = Approach(y, ystart, 2)
+y = approach(y, ystart, 2)
 x = xstart
 if (y == ystart)
 {

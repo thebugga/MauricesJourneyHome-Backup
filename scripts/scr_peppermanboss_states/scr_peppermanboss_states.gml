@@ -283,7 +283,7 @@ function boss_pepperman_freefallprep()
 	}
 	else
 	{
-		x = Approach(x, target_x, 8)
+		x = approach(x, target_x, 8)
 		if (x > (target_x - 8) && x < (target_x + 8))
 		{
 			if (groundpound_readjust_buffer > 0)
@@ -476,7 +476,7 @@ function boss_pepperman_shoulder()
 
 function boss_pepperman_shoulderturn()
 {
-	hsp = Approach(hsp, 0, 0.5)
+	hsp = approach(hsp, 0, 0.5)
 	if (image_index > (image_number - 1))
 	{
 		image_xscale *= -1
@@ -499,8 +499,8 @@ function boss_pepperman_superattackstart()
 	var _spd = 12
 	var edge = 32
 	tx = (x > (room_width / 2) ? (room_width - edge) : edge)
-	x = Approach(x, tx, 8)
-	y = Approach(y, targetplayer.y, _spd)
+	x = approach(x, tx, 8)
+	y = approach(y, targetplayer.y, _spd)
 	image_xscale = (x > (room_width / 2) ? 1 : -1)
 	if (x == tx)
 	{
@@ -516,7 +516,7 @@ function boss_pepperman_superattackcharge()
 	hsp = 0
 	vsp = 0
 	_spd = 12
-	y = Approach(y, targetplayer.y, _spd)
+	y = approach(y, targetplayer.y, _spd)
 	if (superattack_buffer > 0)
 		superattack_buffer--
 	else

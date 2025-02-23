@@ -17,7 +17,7 @@ function scr_player_boxxedpepspin()
 			movespeed += (move * 0.3)
 	}
 	else
-		movespeed = Approach(movespeed, 0, 0.25)
+		movespeed = approach(movespeed, 0, 0.25)
 	if grounded
 	{
 		vsp = -6

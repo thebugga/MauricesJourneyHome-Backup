@@ -16,7 +16,7 @@ else
 		alarm[1] = 50;
 }
 if (global.combotime > 0 && global.combo > 0)
-	y = Approach(y, ystart + 100, 10)
+	y = approach(y, ystart + 100, 10)
 title_index += 0.35
 if (title_index >= 2)
 	title_index = frac(title_index)

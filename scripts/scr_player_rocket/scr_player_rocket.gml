@@ -13,11 +13,11 @@ function scr_player_rocket()
 		var _spd = 6
 		var _accel = 1
 		if (key_up && (!key_down))
-			rocketvsp = Approach(rocketvsp, (-_spd), _accel)
+			rocketvsp = approach(rocketvsp, (-_spd), _accel)
 		else if (key_down && (!key_up))
-			rocketvsp = Approach(rocketvsp, _spd, _accel)
+			rocketvsp = approach(rocketvsp, _spd, _accel)
 		else
-			rocketvsp = Approach(rocketvsp, 0, _accel)
+			rocketvsp = approach(rocketvsp, 0, _accel)
 		vsp = rocketvsp
 		if (movespeed < 16)
 			movespeed = 16

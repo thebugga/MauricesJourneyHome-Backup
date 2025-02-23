@@ -1,7 +1,7 @@
 var accel = 0.015
 if (!fadeout)
 {
-    fade = Approach(fade, 0, accel)
+    fade = approach(fade, 0, accel)
     if (fade <= 0)
     {
         fadeout = true
@@ -10,7 +10,7 @@ if (!fadeout)
 }
 else if changeroom
 {
-    fade = Approach(fade, 1, accel)
+    fade = approach(fade, 1, accel)
     if (fade >= 1 && (!instance_exists(obj_fadeout)))
     {
         room_goto(rm_logo)

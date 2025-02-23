@@ -15,14 +15,14 @@ function scr_player_barreljump()
 	if (move != 0)
 	{
 		if (move == xscale)
-			movespeed = Approach(movespeed, (xscale * 8), 0.5)
+			movespeed = approach(movespeed, (xscale * 8), 0.5)
 		else
-			movespeed = Approach(movespeed, 0, 0.5)
+			movespeed = approach(movespeed, 0, 0.5)
 		if (movespeed <= 0)
 			xscale = move
 	}
 	else
-		movespeed = Approach(movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	if grounded
 	{
 		state = states.barrel

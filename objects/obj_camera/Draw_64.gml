@@ -23,9 +23,9 @@ else if (global.hp == 0)
 	draw_sprite(spr_pizzahealthbar, 8, 190, 70)
 }
 if (obj_player1.x > (room_width - 250) && obj_player1.y < 180)
-	hud_posY = Approach(hud_posY, -300, 15)
+	hud_posY = approach(hud_posY, -300, 15)
 else
-	hud_posY = Approach(hud_posY, 0, 15)
+	hud_posY = approach(hud_posY, 0, 15)
 pizzascore_index += (0 + (0.25 * global.stylethreshold))
 if (pizzascore_index > (pizzascore_number - 1))
 	pizzascore_index = (0 + frac(pizzascore_index))

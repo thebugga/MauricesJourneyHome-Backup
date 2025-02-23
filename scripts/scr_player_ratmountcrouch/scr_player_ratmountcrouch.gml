@@ -7,10 +7,10 @@ function scr_player_ratmountcrouch()
 	if (move != 0)
 	{
 		if (move == xscale)
-			movespeed = Approach(movespeed, (xscale * 4), 0.5)
+			movespeed = approach(movespeed, (xscale * 4), 0.5)
 		else
 		{
-			movespeed = Approach(movespeed, 0, 0.5)
+			movespeed = approach(movespeed, 0, 0.5)
 			if (movespeed <= 0)
 				xscale = move
 		}
@@ -22,7 +22,7 @@ function scr_player_ratmountcrouch()
 			image_speed = 0.6
 	}
 	else
-		movespeed = Approach(movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	if (!grounded)
 	{
 		state = states.ratmountjump

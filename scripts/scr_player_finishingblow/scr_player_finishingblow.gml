@@ -1,7 +1,7 @@
 function scr_player_finishingblow()
 {
 	hsp = movespeed
-	movespeed = Approach(movespeed, 0, 0.25)
+	movespeed = approach(movespeed, 0, 0.25)
 	if (floor(image_index) == (image_number - 1))
 	{
 		movespeed = abs(movespeed)

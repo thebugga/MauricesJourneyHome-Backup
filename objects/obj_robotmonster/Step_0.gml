@@ -43,7 +43,7 @@ switch state
 				if (abs((x - targetplayer.x)) > 50)
 					hsp = (image_xscale * 8)
 				else
-					hsp = Approach(hsp, 0, 0.5)
+					hsp = approach(hsp, 0, 0.5)
 			}
 			if (hsp == 0)
 				sprite_index = idlespr
@@ -64,7 +64,7 @@ switch state
 					movespeed = -4
 				}
 			}
-			movespeed = Approach(movespeed, 8, 0.1)
+			movespeed = approach(movespeed, 8, 0.1)
 			hsp = (image_xscale * movespeed)
 			if (place_meeting((x + image_xscale), y, obj_monstersolid) && (!(place_meeting((x + image_xscale), y, obj_monsterslope))))
 			{

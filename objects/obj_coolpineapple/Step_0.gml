@@ -153,7 +153,7 @@ switch state
 		}
 		else
 		{
-			breakdance_movespeed = Approach(breakdance_movespeed, 0, 0.25)
+			breakdance_movespeed = approach(breakdance_movespeed, 0, 0.25)
 			hsp = (image_xscale * breakdance_movespeed)
 			if place_meeting((x + sign(hsp)), y, obj_solid)
 			{

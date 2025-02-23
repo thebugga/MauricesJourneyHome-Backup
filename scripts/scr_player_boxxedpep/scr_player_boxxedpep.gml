@@ -67,12 +67,12 @@ function scr_player_boxxedpep()
 			if (boxxeddash == 0)
 				xscale = move
 			else if (move != xscale)
-				movespeed = Approach(movespeed, 0, 0.8)
+				movespeed = approach(movespeed, 0, 0.8)
 		}
 		else if (boxxeddash == 0)
-			movespeed = Approach(movespeed, 0, 0.8)
+			movespeed = approach(movespeed, 0, 0.8)
 		else
-			movespeed = Approach(movespeed, 0, 0.25)
+			movespeed = approach(movespeed, 0, 0.25)
 	}
 	if (sprite_index == spr_boxxedpepintro && floor(image_index) == (image_number - 1))
 		sprite_index = spr_boxxedpepidle

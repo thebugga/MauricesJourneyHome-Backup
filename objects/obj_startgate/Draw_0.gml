@@ -5,7 +5,7 @@ if showingstage >= 6
 {
 	rank_scale = lerp(rank_scale, 1, 0.1)
 	if rank_angle <= 95
-		rank_anglesp = Approach(rank_anglesp, 0, 0.5)
+		rank_anglesp = approach(rank_anglesp, 0, 0.5)
 	rank_angle += rank_anglesp
 	draw_ellipse_color(x - (rank_scale * 50), (y - 175) - (rank_scale * 50), x + (rank_scale * 50), (y - 175) + (rank_scale * 50), ds_map_find_value(rankbg_color, rank), ds_map_find_value(rankbg_color, rank), false)
 	draw_ellipse_color(x - (rank_scale * 50), (y - 175) - (rank_scale * 50), x + (rank_scale * 50), (y - 175) + (rank_scale * 50), c_black, c_black, true)
@@ -46,11 +46,11 @@ for (var i = 0; i < 5; i++)
 	}
 	draw_sprite_ext(goochling_count >= 4 ? spr_goochling : spr_goochling_sad, i, x, y - 88, goochlingscale[i], goochlingscale[i], 0, c_white, 1)
 	if goochlingscale[i] != 0
-		goochlingscale[i] = Approach(goochlingscale[i], 1, 0.1)
+		goochlingscale[i] = approach(goochlingscale[i], 1, 0.1)
 }
 if showingstage >= 4
 {
-	highscore_scale = Approach(highscore_scale, 1, 0.025)
+	highscore_scale = approach(highscore_scale, 1, 0.025)
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
 	draw_set_font(global.collectfont)

@@ -21,8 +21,8 @@ with (other)
 	movespeed = 0
 	tube_vsp = 0
 	state = states.tube
-	x = Approach(x, (other.x + _offset_x), other.approach_spd)
-	y = Approach(y, (other.y + _offset_y), other.approach_spd)
+	x = approach(x, (other.x + _offset_x), other.approach_spd)
+	y = approach(y, (other.y + _offset_y), other.approach_spd)
 }
 if (floor(other.x) == (x + _offset_x) && floor(other.y) == (y + _offset_y))
 {

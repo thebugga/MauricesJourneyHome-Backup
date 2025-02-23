@@ -1,20 +1,3 @@
-function Approach(a, b, amount)
-{
-	//STOOOLEEEEENNN!!!! RRaaaaaaaAAAAAAAAHHHHH https://www.youtube.com/watch?v=2FroAhEsuE8
-	if a < b
-	{
-		a += amount;
-		if a > b
-			return b;
-	}
-	else
-	{
-		a -= amount;
-		if a < b
-			return b;
-	}
-	return a;
-}
 function get_milliseconds()
 {
 	return get_timer() / 1000;

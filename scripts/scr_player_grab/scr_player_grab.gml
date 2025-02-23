@@ -129,7 +129,7 @@ function scr_player_grab()
 	else
 	{
 		if grounded
-			movespeed = Approach(movespeed, 0, 0.25)
+			movespeed = approach(movespeed, 0, 0.25)
 		if (movespeed <= 0)
 			sprite_index = spr_haulingidle
 		swingdingendcooldown++

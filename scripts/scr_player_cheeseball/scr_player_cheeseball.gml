@@ -36,7 +36,7 @@ function scr_player_cheeseball()
 			create_debris((x + random_range(-8, 8)), (y + 43), spr_cheesechunk)
 	}
 	if grounded
-		movespeed = Approach(movespeed, 12, 0.25)
+		movespeed = approach(movespeed, 12, 0.25)
 	sprite_index = spr_cheeseballplayer
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_ratblock))) or place_meeting((x + sign(hsp)), y, obj_rattumble)))
 	{

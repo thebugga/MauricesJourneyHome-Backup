@@ -22,7 +22,7 @@ if logos == 2
 			alarm[1] = 1
 	}
 	if voyage_state > 0
-		tower_x = Approach(tower_x, 220, 4)
+		tower_x = approach(tower_x, 220, 4)
 	if voyage_state > 1
 		text_x = lerp(text_x, 310, 0.05)
 }

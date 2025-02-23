@@ -23,7 +23,7 @@ function scr_player_knightpep()
 		{
 			if (move != xscale)
 			{
-				movespeed = Approach(movespeed, 0, _accel)
+				movespeed = approach(movespeed, 0, _accel)
 				if (movespeed <= 0)
 				{
 					xscale = move
@@ -31,7 +31,7 @@ function scr_player_knightpep()
 				}
 			}
 			else
-				movespeed = Approach(movespeed, 6, _accel)
+				movespeed = approach(movespeed, 6, _accel)
 		}
 	}
 	else if grounded

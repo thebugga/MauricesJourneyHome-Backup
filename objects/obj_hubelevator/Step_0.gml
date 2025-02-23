@@ -32,7 +32,7 @@ switch state
 	case states.backbreaker:
 		if fadein
 		{
-		    fadealpha = Approach(fadealpha, 1, 0.1)
+		    fadealpha = approach(fadealpha, 1, 0.1)
 		    if (fadealpha >= 1 && showinside == false)
 		    {
         
@@ -42,7 +42,7 @@ switch state
 		    }
 		}
 		else
-		    fadealpha = Approach(fadealpha, 0, 0.1)
+		    fadealpha = approach(fadealpha, 0, 0.1)
 		if charvely != 0
 		{
 		chary += charvely

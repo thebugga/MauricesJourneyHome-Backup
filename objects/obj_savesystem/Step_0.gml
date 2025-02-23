@@ -14,7 +14,7 @@ if (state != 0)
 }
 else if showicon
 {
-	icon_alpha = Approach(icon_alpha, 0, 0.05)
+	icon_alpha = approach(icon_alpha, 0, 0.05)
 	if (icon_alpha <= 0)
 		showicon = 0
 }

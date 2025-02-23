@@ -12,14 +12,14 @@ function scr_player_barrel()
 	if (move != 0)
 	{
 		if (move == xscale)
-			movespeed = Approach(movespeed, (xscale * 8), 0.5)
+			movespeed = approach(movespeed, (xscale * 8), 0.5)
 		else
-			movespeed = Approach(movespeed, 0, 0.5)
+			movespeed = approach(movespeed, 0, 0.5)
 		if (movespeed <= 0)
 			xscale = move
 	}
 	else
-		movespeed = Approach(movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	if (sprite_index == spr_player_barrelland && floor(image_index) == (image_number - 1))
 		sprite_index = spr_player_barrelidle
 	if grounded
@@ -36,7 +36,7 @@ function scr_player_barrel()
 			with (instance_place(x, (y + 1), obj_slope))
 			{
 				if (sign(image_xscale) == (-sign(other.xscale)))
-					other.movespeed = Approach(other.movespeed, (other.xscale * 12), 0.5)
+					other.movespeed = approach(other.movespeed, (other.xscale * 12), 0.5)
 			}
 		}
 		if (input_buffer_jump < 8 && (!key_down))

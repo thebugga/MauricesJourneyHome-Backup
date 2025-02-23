@@ -1,6 +1,6 @@
 var spd = 0.02
-image_xscale = Approach(image_xscale, 0, spd)
-image_yscale = Approach(image_yscale, 0, spd)
+image_xscale = approach(image_xscale, 0, spd)
+image_yscale = approach(image_yscale, 0, spd)
 if (image_xscale <= 0)
 	instance_destroy()
 if (randombuffer > 0)

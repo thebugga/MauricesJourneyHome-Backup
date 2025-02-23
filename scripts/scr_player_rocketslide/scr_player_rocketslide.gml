@@ -1,7 +1,7 @@
 function scr_player_rocketslide()
 {
 	hsp = (xscale * movespeed)
-	movespeed = Approach(movespeed, 0, 0.5)
+	movespeed = approach(movespeed, 0, 0.5)
 	vsp = 0
 	if (movespeed <= 0)
 	{

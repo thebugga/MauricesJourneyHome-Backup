@@ -859,7 +859,7 @@ function boss_vigilante_handstandjump()
 function boss_vigilante_superattackstart()
 {
 	tx = (room_width - (room_width / 3))
-	x = Approach(x, tx, movespeed)
+	x = approach(x, tx, movespeed)
 	hsp = 0
 	if (movespeed < 8)
 		movespeed += 0.5
@@ -882,7 +882,7 @@ function boss_vigilante_superattackstart()
 		if (object_index == obj_player1 or global.coop)
 		{
 			var tx2 = (room_width / 3)
-			x = Approach(x, tx2, movespeed)
+			x = approach(x, tx2, movespeed)
 			hsp = 0
 			if (movespeed < 8)
 				movespeed += 0.5

@@ -13,7 +13,7 @@ function scr_player_lungeattack()
 	else
 	{
 		image_speed = 0.35
-		movespeed = Approach(movespeed, 0, 0.1)
+		movespeed = approach(movespeed, 0, 0.1)
 	}
 	if (key_slap2 && (!supercharged))
 		input_attack_buffer = 60

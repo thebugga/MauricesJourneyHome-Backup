@@ -51,5 +51,5 @@ if showrank
 		rankscale = 3
 	}
 	draw_sprite_ext(spr_ranks_hud, rank, receiptx + 150, 110, rankscale, rankscale, 0, c_white, 1)
-	rankscale = Approach(rankscale, 1.5, 0.1)
+	rankscale = approach(rankscale, 1.5, 0.1)
 }

@@ -25,7 +25,7 @@ if (drop && global.panic)
 		case states.grabbed:
 			depth = 80
 			var _ty = (drop_y - 100)
-			y = Approach(y, _ty, 3)
+			y = approach(y, _ty, 3)
 			hand_y = (y - 128)
 			if (y == _ty && distance_to_object(obj_player1) < 200)
 			{

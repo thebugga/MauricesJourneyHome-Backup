@@ -41,8 +41,8 @@ switch state
 		break
 	case states.ejected:
 		var _dir = point_direction(x, y, xstart, ystart)
-		x = Approach(x, xstart, abs(lengthdir_x(8, _dir)))
-		y = Approach(y, ystart, abs(lengthdir_y(8, _dir)))
+		x = approach(x, xstart, abs(lengthdir_x(8, _dir)))
+		y = approach(y, ystart, abs(lengthdir_y(8, _dir)))
 		if (x > (xstart - 8) && x < (xstart + 8) && y > (ystart - 8) && y < (ystart + 8))
 		{
 			state = states.normal

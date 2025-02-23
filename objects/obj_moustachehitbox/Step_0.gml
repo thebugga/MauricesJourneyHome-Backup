@@ -9,12 +9,12 @@ if expand
 {
 	if (expandbuffer > 0)
 	{
-		image_xscale = Approach(image_xscale, (dir * 10), 3)
+		image_xscale = approach(image_xscale, (dir * 10), 3)
 		expandbuffer--
 	}
 	else
 	{
-		image_xscale = Approach(image_xscale, 0, 5)
+		image_xscale = approach(image_xscale, 0, 5)
 		if (image_xscale == 0)
 			instance_destroy()
 	}

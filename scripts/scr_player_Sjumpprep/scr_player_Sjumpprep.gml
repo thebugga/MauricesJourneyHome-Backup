@@ -12,7 +12,7 @@ function scr_player_Sjumpprep()
 				hsp = (move * movespeed) + (_railinst.movespeed * _railinst.dir);
 			}
 			if sprite_index == spr_superjumpprep
-				movespeed = Approach(movespeed, 0, 1);
+				movespeed = approach(movespeed, 0, 1);
 			if (floor(image_index) == image_number - 1 && sprite_index == spr_superjumpprep)
 				sprite_index = spr_superjumppreplight;
 			if sprite_index == spr_superjumppreplight

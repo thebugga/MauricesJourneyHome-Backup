@@ -7,7 +7,7 @@ function scr_player_barrelslide()
 		image_speed = 0.85
 	hsp = movespeed
 	if (abs(movespeed) < 14)
-		movespeed = Approach(movespeed, (xscale * 14), 0.1)
+		movespeed = approach(movespeed, (xscale * 14), 0.1)
 	if (floor(image_index) == (image_number - 1))
 	{
 		if (sprite_index == spr_player_barrelslipnslide)

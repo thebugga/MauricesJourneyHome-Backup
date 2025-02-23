@@ -25,7 +25,7 @@ function scr_player_ratmountbounce()
 	{
 		move = key_left + key_right;
 		hsp = movespeed;
-		movespeed = Approach(movespeed, 0, 1);
+		movespeed = approach(movespeed, 0, 1);
 		if floor(image_index) == image_number - 1
 		{
 			if hsp != 0
@@ -38,9 +38,9 @@ function scr_player_ratmountbounce()
 		hsp = movespeed;
 		move = key_left + key_right;
 		if move != 0
-			movespeed = Approach(movespeed, move * 8, 0.5);
+			movespeed = approach(movespeed, move * 8, 0.5);
 		else
-			movespeed = Approach(movespeed, 0, 0.5);
+			movespeed = approach(movespeed, 0, 0.5);
 		if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
 		{
 			input_buffer_slap = 0;

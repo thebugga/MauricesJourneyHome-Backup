@@ -8,10 +8,10 @@ function scr_player_ratmountpunch()
 	if (move != 0)
 	{
 		dir = move
-		movespeed = Approach(movespeed, (move * ratmount_movespeed), 0.5)
+		movespeed = approach(movespeed, (move * ratmount_movespeed), 0.5)
 	}
 	else
-		movespeed = Approach(movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	ratmountpunchtimer--
 	if (ratmountpunchtimer < 0)
 	{

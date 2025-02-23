@@ -10,7 +10,7 @@ function scr_player_punch()
 		if (move != 0)
 		{
 			dir = move
-			movespeed = Approach(movespeed, (move * 4), 0.5)
+			movespeed = approach(movespeed, (move * 4), 0.5)
 		}
 		if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_breakdanceuppercut)
 			sprite_index = spr_player_breakdanceuppercutend

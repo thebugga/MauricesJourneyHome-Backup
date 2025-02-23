@@ -6,7 +6,7 @@ function scr_player_pistolaim()
 	dir = xscale;
 	image_speed = 0.5
 	if grounded
-		movespeed = Approach(movespeed, 0, 0.25)
+		movespeed = approach(movespeed, 0, 0.25)
 	if (floor(image_index) >= (image_number - 1))
 	{
 		if key_attack

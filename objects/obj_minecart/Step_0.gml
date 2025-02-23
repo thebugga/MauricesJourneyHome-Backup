@@ -5,7 +5,7 @@ switch state
 	case states.normal:
 		if (grounded && vsp > 0)
 		{
-			hsp = Approach(hsp, 0, 0.5)
+			hsp = approach(hsp, 0, 0.5)
 			if (!(place_meeting(x, y, obj_minecart_rail)))
 				_destroy = 1
 		}
@@ -28,10 +28,10 @@ switch state
 				if (move != 0)
 				{
 					if (move == xscale)
-						movespeed = Approach(movespeed, spd, accel)
+						movespeed = approach(movespeed, spd, accel)
 					else
 					{
-						movespeed = Approach(movespeed, 0, accel)
+						movespeed = approach(movespeed, 0, accel)
 						if (movespeed <= 0)
 						{
 							xscale = move
@@ -40,7 +40,7 @@ switch state
 					}
 				}
 				else
-					movespeed = Approach(movespeed, 0, deccel)
+					movespeed = approach(movespeed, 0, deccel)
 				hsp = (xscale * movespeed)
 				if key_jump
 					playerid.input_buffer_jump = 0

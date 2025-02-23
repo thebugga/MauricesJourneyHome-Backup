@@ -1,7 +1,7 @@
 scr_getinput()
 if canchoose
 {
-	bgalpha = Approach(bgalpha, 0, 0.05)
+	bgalpha = approach(bgalpha, 0, 0.05)
 	selected += (key_down2 - key_up2)
 	if (key_down2 || key_up2)
 		//scr_soundeffect(sfx_step)
@@ -24,7 +24,7 @@ if canchoose
 }
 else
 {
-	bgalpha = Approach(bgalpha, 1, 0.1)
+	bgalpha = approach(bgalpha, 1, 0.1)
 	if key_slap2
 	{
 		for (var i = 0; i < array_length(optionarr); i++) 

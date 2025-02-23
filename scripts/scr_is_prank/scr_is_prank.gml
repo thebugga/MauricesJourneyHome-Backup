@@ -1,6 +1,6 @@
 function scr_is_prank()
 {
-	if (global.treasure && global.toppintotal >= 5 && global.secretfound >= 3 && global.collect > global.srank && global.lap && !global.combodropped)
+	if (/*global.treasure && global.toppintotal >= 5 && global.secretfound >= 3 &&*/ global.collect > global.srank && global.lap && !global.combodropped)
 		return true;
 	else
 		return false;

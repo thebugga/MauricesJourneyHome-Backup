@@ -220,7 +220,7 @@ if !start
 var a = 0.1;
 	if fadein
 	{
-		fade = Approach(fade, 1, 0.1);
+		fade = approach(fade, 1, 0.1);
 		border1_x = lerp(border1_x, border1_xstart, a);
 		border1_y = lerp(border1_y, border1_ystart, a);
 		border2_x = lerp(border2_x, border2_xstart, a);
@@ -231,7 +231,7 @@ var a = 0.1;
 	}
 	else
 	{
-		fade = Approach(fade, 0, 0.1);
+		fade = approach(fade, 0, 0.1);
 		border1_x = lerp(border1_x, border1_xend, a);
 		border1_y = lerp(border1_y, border1_yend, a);
 		border2_x = lerp(border2_x, border2_xend, a);

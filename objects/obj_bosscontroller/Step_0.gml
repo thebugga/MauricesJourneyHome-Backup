@@ -78,7 +78,7 @@ switch state
 	
 	case states.arenaround:
 		var round_yto = 437
-		round_y = Approach(round_y, round_yto, 7)
+		round_y = approach(round_y, round_yto, 7)
 		if (round_y != round_yto)
 			round_x = (round_xstart + irandom_range(-1, 1))
 		if (timer_buffer > 0)
@@ -92,7 +92,7 @@ switch state
 			else
 			{
 				bell_sprite = spr_bosstimer_bell
-				round_timer = Approach(round_timer, round_timermax, 60)
+				round_timer = approach(round_timer, round_timermax, 60)
 			}
 			timer_buffer--
 			instance_destroy(obj_noisebossbomb)
@@ -149,7 +149,7 @@ switch state
 	
 	case states.normal:
 		bell_sprite = spr_bosstimer_bell
-		round_y = Approach(round_y, round_ystart, 4)
+		round_y = approach(round_y, round_ystart, 4)
 		if bossID.x != obj_bossplayer.x
 		{
 			bossID.image_xscale = sign(obj_bossplayer.x - bossID.x)
@@ -196,7 +196,7 @@ switch state
 				break
 			case 1:
 				super_portrait_index += 0.35
-				super_portrait_x = Approach(super_portrait_x, super_portrait_xstart, 40)
+				super_portrait_x = approach(super_portrait_x, super_portrait_xstart, 40)
 				if (super_portrait_x == super_portrait_xstart)
 					super_portrait_state = 2
 				break

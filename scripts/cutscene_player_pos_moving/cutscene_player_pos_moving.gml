@@ -30,8 +30,8 @@ function cutscene_player_pos_approach(argument0, argument1, argument2)
 			var dir = point_direction(x, y, argument0, argument1)
 			var lx = lengthdir_x(argument2, dir)
 			var ly = lengthdir_y(argument2, dir)
-			x = Approach(x, argument0, abs(lx))
-			y = Approach(y, argument1, abs(ly))
+			x = approach(x, argument0, abs(lx))
+			y = approach(y, argument1, abs(ly))
 			if (x > (argument0 - argument2) && x < (argument0 + argument2) && y > (argument1 - argument2) && y < (argument1 + argument2))
 				_finish = 1
 		}

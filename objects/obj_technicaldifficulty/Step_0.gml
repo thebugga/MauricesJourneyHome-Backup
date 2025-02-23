@@ -4,9 +4,9 @@ if playerid != -4 && startedx == -4
 	startedy = playerid.y
 }
 if showboard
-	x = Approach(x, 0, 20)
+	x = approach(x, 0, 20)
 else
-	x = Approach(x, -960, 20)
+	x = approach(x, -960, 20)
 if (alarm[2] > 0)
 {
 	with (playerid)

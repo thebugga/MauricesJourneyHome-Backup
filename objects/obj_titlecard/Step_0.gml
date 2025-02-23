@@ -1,25 +1,25 @@
 if (!fadedin || fadeout)
-	fadealpha = Approach(fadealpha, 1, 0.1)
+	fadealpha = approach(fadealpha, 1, 0.1)
 else
-	fadealpha = Approach(fadealpha, 0, 0.1)
+	fadealpha = approach(fadealpha, 0, 0.1)
 if (fadealpha == 1)
 	fadedin = true
 if titlestate == 1
 {
 	if !titlecredit[image_index][3]
-		titlealpha = Approach(titlealpha, 0, 0.1)
-	layoutalpha = Approach(layoutalpha, 1, 0.1)
-	skipalpha = Approach(skipalpha, 1, 0.1)
+		titlealpha = approach(titlealpha, 0, 0.1)
+	layoutalpha = approach(layoutalpha, 1, 0.1)
+	skipalpha = approach(skipalpha, 1, 0.1)
 }
 if titlestate == 2
 {
-	layoutalpha = Approach(layoutalpha, 0, 0.1)
-	artalpha = Approach(artalpha, 1, 0.1)
+	layoutalpha = approach(layoutalpha, 0, 0.1)
+	artalpha = approach(artalpha, 1, 0.1)
 }
 if titlestate == 3
 {
-	artalpha = Approach(artalpha, 0, 0.1)
-	musicalpha = Approach(musicalpha, 1, 0.1)
+	artalpha = approach(artalpha, 0, 0.1)
+	musicalpha = approach(musicalpha, 1, 0.1)
 }
 if titlecredit[image_index][4] & wipshow
 {
@@ -34,7 +34,7 @@ if titlecredit[image_index][4] & wipshow
 		}
 	}
 	else
-		wipshake = Approach(wipshake, 0, 1)
+		wipshake = approach(wipshake, 0, 1)
 }
 if titlestate != 0 && obj_player1.key_jump2 && !instance_exists(obj_fadeout)
 {

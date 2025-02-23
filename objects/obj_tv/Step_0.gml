@@ -51,14 +51,14 @@ if (global.combotime > 0 && global.combo != 0)
 				}
 			}
 			else
-				combo_posY = Approach(combo_posY, 0, 10)
+				combo_posY = approach(combo_posY, 0, 10)
 			break
 	}
 
 }
 else
 {
-	combo_posY = Approach(combo_posY, -500, 5)
+	combo_posY = approach(combo_posY, -500, 5)
 	combo_vsp = 0
 	combo_state = 0
 }
@@ -89,18 +89,14 @@ else if comboend
 	event_perform(2, 4);
 }
 if (prompt != -4 && prompt != "")
-	newsy = Approach(newsy, 470, 5)
+	newsy = approach(newsy, 470, 5)
 else
-	newsy = Approach(newsy, 540, 5)
+	newsy = approach(newsy, 540, 5)
 switch state
 {
 	case states.normal:
 		idlespr = spr_tv_idle
 		cardboardsprite = -4
-		if (global.combo >= 3 && (!obj_parent_player.isgustavo))
-			idlespr = spr_tv_exprcombo
-		if (global.combo >= 50 && (!obj_parent_player.isgustavo))
-			idlespr = spr_tv_exprheat
 		if global.panic
 			idlespr = spr_tv_exprpanic
 		if obj_parent_player.isgustavo
@@ -433,29 +429,29 @@ if cardboardexprsprite != -4
 }
 if cardboardvisual != cardboardsprite
 {
-	cardboardy = Approach(cardboardy, 268, 6)
+	cardboardy = approach(cardboardy, 268, 6)
 	if cardboardy >= 268
 		cardboardvisual = cardboardsprite
 }
 else if cardboardvisual != -4
-	cardboardy = Approach(cardboardy, 134, 6)
+	cardboardy = approach(cardboardy, 134, 6)
 var change_pos = 0
 if (bubblespr == -4 && obj_player1.x < 224 && obj_player1.y < 300)
 	change_pos = 1
 var spd = 15
 if change_pos
-	hud_posY = Approach(hud_posY, -300, spd)
+	hud_posY = approach(hud_posY, -300, spd)
 else
-	hud_posY = Approach(hud_posY, 0, spd)
+	hud_posY = approach(hud_posY, 0, spd)
 pizzaface_index += 0.35
 johnface_index += 0.35
 if (global.panic == true && global.fill > 0)
 {
 	showtime_buffer = 100
 	if (!instance_exists(obj_ghostcollectibles))
-		timer_x = Approach(timer_x, 0, 3)
+		timer_x = approach(timer_x, 0, 3)
 	else
-		timer_x = Approach(timer_x, -sprite_get_width(spr_timer_bar), 3)
+		timer_x = approach(timer_x, -sprite_get_width(spr_timer_bar), 3)
 	if global.playerCharacter == Characters.Maurice
 		johnface_sprite = spr_timer_lysiaface
 	else if global.playerCharacter == Characters.Doise
@@ -479,7 +475,7 @@ else if global.panic
 	else if (showtime_buffer > 0)
 		showtime_buffer--
 	else
-		timer_x = Approach(timer_x, -sprite_get_width(spr_timer_bar), 2)
+		timer_x = approach(timer_x, -sprite_get_width(spr_timer_bar), 2)
 }
 else
 {

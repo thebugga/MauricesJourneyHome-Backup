@@ -5,7 +5,7 @@ function scr_player_ratmounttumble()
 	sprite_index = spr_player_ratmountwalljump
 	image_speed = ((-abs(movespeed)) / 15)
 	if (!key_attack)
-		movespeed = Approach(movespeed, 0, 1)
+		movespeed = approach(movespeed, 0, 1)
 	if (scr_slope() && hsp != 0)
 		scr_player_addslopemomentum(0.25, 0.25)
 	if (abs(hsp) <= 2)

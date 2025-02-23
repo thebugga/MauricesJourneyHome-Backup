@@ -18,8 +18,8 @@ switch state
 			var xto = (trapid.x + trapid.xoffset)
 			var yto = (trapid.y + trapid.yoffset)
 			dir = point_direction(x, y, xto, yto)
-			x = Approach(x, xto, abs(lengthdir_x(32, dir)))
-			y = Approach(y, yto, abs(lengthdir_y(32, dir)))
+			x = approach(x, xto, abs(lengthdir_x(32, dir)))
+			y = approach(y, yto, abs(lengthdir_y(32, dir)))
 			if (x == xto && y == yto)
 				state = states.chase
 		}

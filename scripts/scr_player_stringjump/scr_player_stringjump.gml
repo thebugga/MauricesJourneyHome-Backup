@@ -7,7 +7,7 @@ function scr_player_stringjump()
 		if (xscale != move)
 		{
 			if (movespeed > 0)
-				movespeed = Approach(movespeed, 0, 0.5)
+				movespeed = approach(movespeed, 0, 0.5)
 			else
 			{
 				xscale = move
@@ -15,7 +15,7 @@ function scr_player_stringjump()
 			}
 		}
 		else if (movespeed < 8)
-			movespeed = Approach(movespeed, 8, 0.25)
+			movespeed = approach(movespeed, 8, 0.25)
 	}
 	if place_meeting((x + sign(hsp)), y, obj_solid)
 		movespeed = 0
@@ -36,11 +36,11 @@ function scr_player_stringfall()
 		hsp = movespeed
 		move = (key_left + key_right)
 		if (move == 0)
-			movespeed = Approach(movespeed, 0, 0.1)
+			movespeed = approach(movespeed, 0, 0.1)
 		else
-			movespeed = Approach(movespeed, (move * 4), 0.25)
+			movespeed = approach(movespeed, (move * 4), 0.25)
 		if (abs(movespeed) > 14)
-			movespeed = Approach(movespeed, 0, 0.5)
+			movespeed = approach(movespeed, 0, 0.5)
 	}
 	hsp = movespeed
 }

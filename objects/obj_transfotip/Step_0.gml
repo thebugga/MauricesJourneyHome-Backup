@@ -1,6 +1,6 @@
 if fadeout
-    fade = Approach(fade, 0, 0.01)
+    fade = approach(fade, 0, 0.01)
 else
-    fade = Approach(fade, 1, 0.05)
+    fade = approach(fade, 1, 0.05)
 if (fade <= 0)
     instance_destroy()

@@ -134,7 +134,7 @@ function boss_mrstick_shield()
 
 function boss_mrstick_helicopterhat()
 {
-	x = Approach(x, target_x, movespeed)
+	x = approach(x, target_x, movespeed)
 	switch helicopterstate
 	{
 		case 0:

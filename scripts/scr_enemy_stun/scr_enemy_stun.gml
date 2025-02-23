@@ -112,9 +112,9 @@ function scr_enemy_stun()
 	}
 	else
 	{
-		railmovespeed = Approach(railmovespeed, 0, 0.5)
+		railmovespeed = approach(railmovespeed, 0, 0.5)
 		if grounded
-			hsp = Approach(hsp, 0, 0.3)
+			hsp = approach(hsp, 0, 0.3)
 	}
 	if (!thrown)
 		grav = 0.5

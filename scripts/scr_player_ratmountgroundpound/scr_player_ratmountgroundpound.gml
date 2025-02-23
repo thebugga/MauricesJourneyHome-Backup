@@ -38,12 +38,12 @@ function scr_player_ratmountgroundpound()
 	if (move != 0)
 	{
 		if (sprite_index == spr_lonegustavo_groundpoundland)
-			movespeed = Approach(movespeed, (move * ratmount_movespeed), 0.25)
+			movespeed = approach(movespeed, (move * ratmount_movespeed), 0.25)
 		else
-			movespeed = Approach(movespeed, (move * ratmount_movespeed), 0.5)
+			movespeed = approach(movespeed, (move * ratmount_movespeed), 0.5)
 	}
 	else
-		movespeed = Approach(movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	if (sprite_index == spr_lonegustavo_groundpoundstart && floor(image_index) == (image_number - 1))
 	{
 		image_index = 0

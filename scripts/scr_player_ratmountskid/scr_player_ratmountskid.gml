@@ -1,7 +1,7 @@
 function scr_player_ratmountskid()
 {
 	hsp = (xscale * (-movespeed))
-	movespeed = Approach(movespeed, 0, 0.8)
+	movespeed = approach(movespeed, 0, 0.8)
 	if brick
 		sprite_index = spr_ratmount_skid
 	else

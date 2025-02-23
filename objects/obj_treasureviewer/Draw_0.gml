@@ -25,8 +25,8 @@ if visible
 						var dir = point_direction(treasure_posX, treasure_posY, tx, ty)
 						var lx = lengthdir_x(16, dir)
 						var ly = lengthdir_y(16, dir)
-						treasure_posX = Approach(treasure_posX, tx, abs(lx))
-						treasure_posY = Approach(treasure_posY, ty, abs(ly))
+						treasure_posX = approach(treasure_posX, tx, abs(lx))
+						treasure_posY = approach(treasure_posY, ty, abs(ly))
 						break
 				}
 

@@ -10,14 +10,14 @@ function scr_player_mort()
 	if (move != 0)
 	{
 		if (move == xscale)
-			movespeed = Approach(movespeed, (xscale * 8), 0.8)
+			movespeed = approach(movespeed, (xscale * 8), 0.8)
 		else
-			movespeed = Approach(movespeed, 0, 0.8)
+			movespeed = approach(movespeed, 0, 0.8)
 		if (movespeed <= 0)
 			xscale = move
 	}
 	else
-		movespeed = Approach(movespeed, 0, 0.8)
+		movespeed = approach(movespeed, 0, 0.8)
 	if (movespeed < 3 && move != 0)
 		image_speed = 0.35
 	else if (movespeed > 3 && movespeed < 6)

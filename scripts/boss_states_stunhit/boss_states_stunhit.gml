@@ -3,7 +3,7 @@ function state_boss_stun()
 	image_speed = 0
 	if sprite_index == spr_hit
 	{
-		hsp = Approach(hsp, 0, 0.25)
+		hsp = approach(hsp, 0, 0.25)
 		if hsp == 0
 		{
 			sprite_index = spr_idle
@@ -15,7 +15,7 @@ function state_boss_stun()
 		hsp = movespeed * image_xscale
 		if ((grounded or (grounded && (!(place_meeting(x, y, obj_platform))))) && vsp > 0)
 		{
-			movespeed = Approach(movespeed, 0, 0.25)
+			movespeed = approach(movespeed, 0, 0.25)
 			funnyangle = 0
 			if image_index == 0
 			{

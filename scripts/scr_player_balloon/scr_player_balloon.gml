@@ -6,9 +6,9 @@ function scr_player_balloon()
 	vsp = -5
 	
 	if (move != 0)
-		movespeed = Approach(movespeed, (move * 6), 0.35)
+		movespeed = approach(movespeed, (move * 6), 0.35)
 	else
-		movespeed = Approach(movespeed, 0, 0.35)
+		movespeed = approach(movespeed, 0, 0.35)
 	
 	if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))))
 		movespeed = 0

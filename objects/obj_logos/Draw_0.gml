@@ -20,7 +20,7 @@ switch(logos)
 			{
 				var thing = stickerray[i]
 				draw_sprite_ext(spr_voyagelogo_sticker, thing.index, 410 + (150 * i), 160, thing.scale, thing.scale, 0, c_white, 1)
-				thing.scale = Approach(thing.scale, 1, 0.1)
+				thing.scale = approach(thing.scale, 1, 0.1)
 			}
 		}
 		break

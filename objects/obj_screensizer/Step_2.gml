@@ -18,12 +18,12 @@ if ((device_mouse_x_to_gui(0) != mouse_xprevious || device_mouse_y_to_gui(0) != 
 
 if disappearbuffer > 0
 {
-	captionalpha = Approach(captionalpha, 1, 0.2);
+	captionalpha = approach(captionalpha, 1, 0.2);
 	disappearbuffer--;
 }
 else
 {
-	captionalpha = Approach(captionalpha, 0, 0.1);
+	captionalpha = approach(captionalpha, 0, 0.1);
 	if (window_get_cursor() != -1 && window_has_focus() && room != Mainmenu)
 		cr = cr_none;
 }

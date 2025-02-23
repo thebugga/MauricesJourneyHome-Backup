@@ -8,9 +8,9 @@ if is_bossroom()
 if global.playerCharacter == Characters.Doise
 {
 	if obj_player1.state == states.Sjump
-		jetpack_x = Approach(jetpack_x, 864, 5)
+		jetpack_x = approach(jetpack_x, 864, 5)
 	else
-		jetpack_x = Approach(jetpack_x, 1014, 5)
+		jetpack_x = approach(jetpack_x, 1014, 5)
 	var _width = sprite_get_width(spr_temperature_meterfill)
 	var _height = sprite_get_height(spr_temperature_meterfill)
 	var _tmp = (obj_player1.superjumptimer / 200)
@@ -97,26 +97,26 @@ for (var i = _num; i > 0; i--)
 }
 if abs(rank_state) == 1
 {
-	rank_x = Approach(rank_x, 50 - (25 * sign(rank_state)), 2.5)
-	rank_newx = Approach(rank_newx, 50 + (25 * sign(rank_state)), 7.5)
-	rank_xscale = Approach(rank_xscale, 0.5, 0.05)
-	rank_yscale = Approach(rank_yscale, 1.5, 0.05)
+	rank_x = approach(rank_x, 50 - (25 * sign(rank_state)), 2.5)
+	rank_newx = approach(rank_newx, 50 + (25 * sign(rank_state)), 7.5)
+	rank_xscale = approach(rank_xscale, 0.5, 0.05)
+	rank_yscale = approach(rank_yscale, 1.5, 0.05)
 	if rank_x == 50 - (25 * sign(rank_state))
 		 rank_state += sign(rank_state)
 }
 if abs(rank_state) == 2
 {
-	rank_x = Approach(rank_x, 50, 2.5)
-	rank_newx = Approach(rank_newx, 50 + (100 * sign(rank_state)), 7.5)
-	rank_xscale = Approach(rank_xscale, 1, 0.05)
-	rank_yscale = Approach(rank_yscale, 1, 0.05)
+	rank_x = approach(rank_x, 50, 2.5)
+	rank_newx = approach(rank_newx, 50 + (100 * sign(rank_state)), 7.5)
+	rank_xscale = approach(rank_xscale, 1, 0.05)
+	rank_yscale = approach(rank_yscale, 1, 0.05)
 	if rank_x == 50
 		 rank_state += sign(rank_state)
 }
 if abs(rank_state) == 3
 {
-	rank_x = Approach(rank_x, 50 - (100 * sign(rank_state)), 5)
-	rank_newx = Approach(rank_newx, 50, 5)
+	rank_x = approach(rank_x, 50 - (100 * sign(rank_state)), 5)
+	rank_newx = approach(rank_newx, 50, 5)
 	if rank_newx == 50
 		 {
 			rank_state = 0

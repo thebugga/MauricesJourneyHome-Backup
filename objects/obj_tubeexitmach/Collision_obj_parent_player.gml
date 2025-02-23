@@ -26,8 +26,8 @@ with (other)
 	movespeed = 0
 	vsp = 0
 	tube_vsp = 0
-	x = Approach(x, (other.xstart + _offset_x), other.approach_spd)
-	y = Approach(y, (other.ystart + _offset_y), other.approach_spd)
+	x = approach(x, (other.xstart + _offset_x), other.approach_spd)
+	y = approach(y, (other.ystart + _offset_y), other.approach_spd)
 	if (y > (other.y + _offset_y))
 		tube_vsp = (-other.approach_spd)
 }

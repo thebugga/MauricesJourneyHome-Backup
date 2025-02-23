@@ -2,8 +2,8 @@ with (other)
 {
 	if (fanID != other.id && (!disappear))
 	{
-		x = Approach(x, other.x, spd)
-		y = Approach(y, other.y, spd)
+		x = approach(x, other.x, spd)
+		y = approach(y, other.y, spd)
 		if (x == other.x && y == other.y)
 		{
 			hsp = lengthdir_x(spd, other.image_angle)

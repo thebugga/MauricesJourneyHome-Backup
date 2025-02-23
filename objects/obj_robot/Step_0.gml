@@ -42,7 +42,7 @@ switch state
 		}
 		break
 	case states.mach2:
-		hsp = (Approach(hsp, (image_xscale * machspeed), 0.5) + railmovespeed)
+		hsp = (approach(hsp, (image_xscale * machspeed), 0.5) + railmovespeed)
 		if place_meeting(x, (y + 1), obj_railparent)
 		{
 			_railinst = instance_place(x, (y + 1), obj_railparent)

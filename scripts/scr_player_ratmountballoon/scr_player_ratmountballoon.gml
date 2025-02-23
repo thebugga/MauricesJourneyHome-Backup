@@ -8,9 +8,9 @@ function scr_player_ratmountballoon()
 	else
 		vsp = 2
 	if (move != 0)
-		movespeed = Approach(movespeed, (move * 8), 0.5)
+		movespeed = approach(movespeed, (move * 8), 0.5)
 	else
-		movespeed = Approach(movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	var _jump = 0
 	if (balloonbuffer > 0)
 		balloonbuffer--

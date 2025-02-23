@@ -6,7 +6,7 @@ function scr_player_grind()
 	crouchslideAnim = 1
 	hsp = (xscale * movespeed)
 	if (movespeed < 10)
-		movespeed = Approach(movespeed, 10, 0.5)
+		movespeed = approach(movespeed, 10, 0.5)
 	if ((!(place_meeting(x, (y + 18), obj_grindrail))) && (!(place_meeting(x, (y + 18), obj_grindrailslope))))
 	{
 		if (movespeed < 12 or skateboarding)

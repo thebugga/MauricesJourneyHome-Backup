@@ -17,8 +17,8 @@ switch state
 			ty = (y + lengthdir_y(maxhandlen, _dir))
 			_dir = point_direction(x, y, tx, ty)
 		}
-		handx = Approach(handx, tx, spd)
-		handy = Approach(handy, ty, spd)
+		handx = approach(handx, tx, spd)
+		handy = approach(handy, ty, spd)
 		if (handy < y)
 			handy = y
 		drawhandx = lerp(drawhandx, handx, 0.2)
@@ -146,8 +146,8 @@ switch state
 		hand_xscale = 1
 		spr_hand = spr_mrpinch_hand3
 		sprite_index = spr_mrpinch_face3
-		handx = Approach(handx, (x - 40), 4)
-		handy = Approach(handy, (y + 5), 4)
+		handx = approach(handx, (x - 40), 4)
+		handy = approach(handy, (y + 5), 4)
 		drawhandx = handx
 		drawhandy = handy
 		if (shootbuffer > 0)

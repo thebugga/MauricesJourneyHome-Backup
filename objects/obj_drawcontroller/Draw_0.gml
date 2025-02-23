@@ -13,9 +13,9 @@ if use_dark
 	}
 }
 if (obj_player1.finisher or obj_player2.finisher or (obj_parent_player.state == states.playersuperattack && obj_parent_player.superattackstate == states.transitioncutscene))
-	finisher_alpha = Approach(finisher_alpha, 0.3, 0.1)
+	finisher_alpha = approach(finisher_alpha, 0.3, 0.1)
 else if (finisher_alpha > 0)
-	finisher_alpha = Approach(finisher_alpha, 0, 0.02)
+	finisher_alpha = approach(finisher_alpha, 0, 0.02)
 if (finisher_alpha > 0)
 {
 	draw_set_alpha(finisher_alpha)

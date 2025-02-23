@@ -10,7 +10,7 @@ switch state
 		break
 	case states.transitioncutscene:
 	case states.transition:
-		obj_title.image_alpha = Approach(obj_title.image_alpha, 0.5, 0.01)
+		obj_title.image_alpha = approach(obj_title.image_alpha, 0.5, 0.01)
 		flicker_buffer--
 		if flicker_buffer == 0
 		{
@@ -48,7 +48,7 @@ if (state == states.normal || state == states.transition)
 	var percent = quick_ini_read_real(concat("saveData", saveselect, ".ini"), "Game", "percent", 0)
 	perstatus_icon = floor(percent / 14.285714285714286)
     var a = (floor((abs(percvisual - percent)) / 10)) + 1
-    percvisual = Approach(percvisual, percent, a)
+    percvisual = approach(percvisual, percent, a)
 	if (perstatus_icon > (sprite_get_number(spr_title_collysia) - 1))
 	    perstatus_icon = sprite_get_number(spr_title_collysia) - 1
 	if (percent >= 101)

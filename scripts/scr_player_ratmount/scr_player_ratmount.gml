@@ -32,12 +32,12 @@ function scr_player_ratmount()
 	if (move != 0)
 	{
 		if (move == xscale)
-			movespeed = Approach(movespeed, (xscale * ratmount_movespeed), 0.5)
+			movespeed = approach(movespeed, (xscale * ratmount_movespeed), 0.5)
 		else
-			movespeed = Approach(movespeed, 0, 0.5)
+			movespeed = approach(movespeed, 0, 0.5)
 	}
 	else
-		movespeed = Approach(movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	if (abs(movespeed) < 3 && move != 0)
 		image_speed = 0.35
 	else if (abs(movespeed) > 3 && abs(movespeed) < 6)

@@ -4,9 +4,9 @@ function scr_player_trashjump()
 	hsp = movespeed
 	move = (key_left + key_right)
 	if (move != 0)
-		movespeed = Approach(movespeed, (move * 6), 0.5)
+		movespeed = approach(movespeed, (move * 6), 0.5)
 	else
-		movespeed = Approach(movespeed, 0, 0.25)
+		movespeed = approach(movespeed, 0, 0.25)
 	if (vsp > 0 && sprite_index == spr_player_trashjump)
 	{
 		sprite_index = spr_player_trashjump2

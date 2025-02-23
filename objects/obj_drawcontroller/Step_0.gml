@@ -1,1 +1,1 @@
-flash = Approach(flash, 0, 0.05)
+flash = approach(flash, 0, 0.05)

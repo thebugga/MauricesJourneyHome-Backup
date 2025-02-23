@@ -18,10 +18,10 @@ function scr_vigilante_walk()
 			if (move != 0)
 			{
 				image_xscale = move
-				movespeed = Approach(movespeed, 8, 0.5)
+				movespeed = approach(movespeed, 8, 0.5)
 			}
 			else
-				movespeed = Approach(movespeed, 2, 0.5)
+				movespeed = approach(movespeed, 2, 0.5)
 			if (!grounded)
 				sprite_index = spr_playerV_fall
 			else if (vsp > 0 && sprite_index == spr_playerV_bootsfall)
@@ -41,7 +41,7 @@ function scr_vigilante_walk()
 			if ((sprite_index == spr_playerV_mach1 or sprite_index == spr_playerV_bootsland) && floor(image_index) == (image_number - 1))
 				sprite_index = spr_playerV_bootsmove
 			if (move == 0)
-				movespeed = Approach(movespeed, 5, 0.5)
+				movespeed = approach(movespeed, 5, 0.5)
 			if (!grounded)
 				sprite_index = spr_playerV_bootsfall
 			else if (vsp > 0 && sprite_index == spr_playerV_bootsfall)
@@ -68,7 +68,7 @@ function scr_vigilante_walk()
 	}
 
 	if (x > targetplayer.x)
-		movespeed = Approach(movespeed, 20, 0.5)
+		movespeed = approach(movespeed, 20, 0.5)
 	hsp = (image_xscale * movespeed)
 	if (targetspot != oldtargetspot && grounded && vsp > 0 && distance_to_object(targetspot) < 400)
 	{
@@ -193,7 +193,7 @@ function scr_vigilante_freefall()
 				other.hit = 1
 		}
 	}
-	hsp = Approach(hsp, (move * 3), 0.5)
+	hsp = approach(hsp, (move * 3), 0.5)
 	if (grounded && vsp > 0)
 	{
 		//scr_soundeffect(sfx_groundpound)

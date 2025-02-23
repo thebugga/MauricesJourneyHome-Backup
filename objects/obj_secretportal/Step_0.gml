@@ -15,8 +15,8 @@ if (touched && sprite_index == spr_secretportal_close)
 		y = other.y - 30
 		hsp = 0
 		vsp = 0
-		scale_xs = Approach(scale_xs, 0, 0.05)
-		scale_ys = Approach(scale_ys, 0, 0.05)
+		scale_xs = approach(scale_xs, 0, 0.05)
+		scale_ys = approach(scale_ys, 0, 0.05)
 		fallinganimation = 0
 	}
 	with (obj_heatafterimage)

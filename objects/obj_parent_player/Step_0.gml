@@ -686,7 +686,7 @@ else
 		invhurt_buffer = invhurt_max
 	hurt_buffer = -1
 }
-if (room == ObjectnMacroloadinRoom && instance_exists(obj_mainmenuselect))
+if (room == ObjectnMacroloadinRoom or room == rank_room or room == rm_placeholder && instance_exists(obj_mainmenuselect))
 	state = states.titlescreen
 if (wallclingcooldown < 10)
 	wallclingcooldown++
@@ -1020,7 +1020,7 @@ if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalha
 		hsp = 0
 		vsp = 0
 		//scr_soundeffect(sfx_groundpound)
-		with (instance_create(-960, 0, obj_technicaldifficulty))
+		with (instance_create_unique(-960, 0, obj_technicaldifficulty))
 		{
 			playerid = other.id
 			if global.playerCharacter == Characters.Maurice

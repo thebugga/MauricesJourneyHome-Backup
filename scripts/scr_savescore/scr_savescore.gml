@@ -16,8 +16,6 @@ function scr_savescore(level)
 		global.rank = "c"
 	else
 		global.rank = "d"
-	//audio_stop_sound(mu_pizzatime)
-	//audio_stop_sound(mu_chase)
 	ini_open_from_string(obj_savesystem.ini_str)
 	if (ini_read_real("Highscore", level, 0) < global.collect)
 		ini_write_real("Highscore", level, global.collect)
@@ -54,4 +52,23 @@ function scr_write_rank(level)
 	if (ds_map_find_value(_map, global.rank) >= ds_map_find_value(_map, _rank))
 		ini_write_string("Ranks", level, global.rank)
 	ds_map_destroy(_map)
+}
+
+function scr_play_rank_music()
+{
+	var s = 4.5;
+	if global.rank == "p"
+		s = 5.5;
+	if global.rank == "s"
+		s = 0.5;
+	if global.rank == "a"
+		s = 1.5;
+	if global.rank == "b"
+		s = 2.5;
+	if global.rank == "c"
+		s = 3.5;
+	if global.rank == "d"
+		s = 4.5;
+	fmod_event_instance_play(global.snd_rank);
+	fmod_event_instance_set_parameter(global.snd_rank, "rank", s, true);
 }

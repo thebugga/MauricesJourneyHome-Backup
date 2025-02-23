@@ -1,5 +1,5 @@
 draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
-draw_set_font(lang_get_font("bigfont"));
+draw_set_font(global.bigfont);
 draw_set_halign(fa_left);
 draw_set_color(c_white);
 var _os = audio_select;

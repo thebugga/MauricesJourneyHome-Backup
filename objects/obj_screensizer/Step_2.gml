@@ -1,7 +1,7 @@
 var ww = window_get_width();
 var wh = window_get_height();
 
-if room != Loadiingroom && !instance_exists(obj_langload) && lang_get_value("use_ttf")
+if room != Loadingroom && !instance_exists(obj_langload) && lang_get_value("use_ttf")
 	global.tdp_text_enabled = true;
 else
 	global.tdp_text_enabled = false;

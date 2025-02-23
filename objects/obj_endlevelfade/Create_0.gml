@@ -17,5 +17,9 @@ if global.coop
 slowscore = 0
 showrank = true
 prevrank = 0
+do_rank = 0;
 rank = 0
 rankscale = 2
+bg_alpha = 0;
+bg_x = 0;
+bg_y = 0;

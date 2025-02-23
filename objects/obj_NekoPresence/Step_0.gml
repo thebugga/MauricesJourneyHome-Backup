@@ -4,7 +4,7 @@ np_update();
 
 if ((room == characterselect))
     state = "Pick Your Poision"
-if ((room == Loadiingroom))
+if ((room == Loadingroom))
     state = "Leave and NEVER COME BACK"
 if ((room == ObjectnMacroloadinRoom))
     state = "Boo did i scare you dont be scared im a friend"

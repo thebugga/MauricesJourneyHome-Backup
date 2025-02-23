@@ -10,7 +10,7 @@ if !global.steam_api
 			global.steam_api = true;
 	}
 }
-else if room != Loadiingroom
+else if room != Loadingroom
 {
 	if steam_is_screenshot_requested()
 	{

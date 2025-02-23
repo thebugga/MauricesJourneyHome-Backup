@@ -1,15 +1,15 @@
 {
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
-  "name": "Loadiingroom",
-  "creationCodeFile": "rooms/Loadiingroom/RoomCreationCode.gml",
+  "name": "Loadingroom",
+  "creationCodeFile": "rooms/Loadingroom/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
   "instanceCreationOrder": [
-    {"name":"inst_FDA33010","path":"rooms/Loadiingroom/Loadiingroom.yy",},
-    {"name":"inst_7257BE88","path":"rooms/Loadiingroom/Loadiingroom.yy",},
-    {"name":"inst_7CD66F96","path":"rooms/Loadiingroom/Loadiingroom.yy",},
+    {"name":"inst_FDA33010","path":"rooms/Loadingroom/Loadingroom.yy",},
+    {"name":"inst_7257BE88","path":"rooms/Loadingroom/Loadingroom.yy",},
+    {"name":"inst_7CD66F96","path":"rooms/Loadingroom/Loadingroom.yy",},
   ],
   "isDnd": false,
   "layers": [

@@ -32,6 +32,42 @@ function scr_do_rank(argument0, argument1) //gml_Script_scr_do_rank
         if _lap
             create_transformation_tip(lang_get_value("tutorial_lapunlock"))
     }
+	else
+    {
+        if (!argument1)
+            scr_savescore(global.leveltosave)
+        else
+        {
+            ini_open_from_string(obj_savesystem.ini_str)
+            var _hats = global.hats
+            if (ini_read_real("Hats", global.leveltosave, 0) < _hats)
+                ini_write_real("Hats", global.leveltosave, _hats)
+            var _extrahats = global.extrahats
+            if (ini_read_real("Extrahats", global.leveltosave, 0) < _extrahats)
+                ini_write_real("Extrahats", global.leveltosave, _extrahats)
+            var _rank = "d"
+            var maxhats = 6 + global.srank
+            var currhats = _extrahats + _hats
+            if (currhats >= maxhats && (!global.bossplayerhurt))
+                _rank = "p"
+            else if (currhats >= (maxhats - 2))
+                _rank = "s"
+            else if (currhats >= (maxhats - 4))
+                _rank = "a"
+            else if (currhats >= (maxhats - 6))
+                _rank = "b"
+            else if (currhats >= (maxhats - 8))
+                _rank = "c"
+            global.rank = _rank
+            scr_write_rank(global.leveltosave)
+            scr_play_rank_music()
+            obj_savesystem.ini_str = ini_close()
+            gamesave_async_save()
+        }
+        notification_push((5 << 0), [global.leveltosave, global.secretfound, global.level_minutes, global.level_seconds])
+        with (obj_achievementtracker)
+            event_perform(ev_step, ev_step_normal)
+    }
     if (global.timeattack == true)
         obj_timeattack.stop = true
     targetDoor = "none"

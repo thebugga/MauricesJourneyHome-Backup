@@ -1,4 +1,2 @@
-draw_set_alpha(fadealpha)
-draw_set_color(c_white)
-draw_rectangle(0, 0, (camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])), (camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0])), false)
-draw_set_alpha(1)
+draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
+draw_sprite_tiled_ext(spr_optionsBG, 5, bg_x, bg_y, 1, 1, c_white, bg_alpha);

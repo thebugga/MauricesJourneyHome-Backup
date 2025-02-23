@@ -32,3 +32,13 @@ if receiptonscreen
 	receiptx = approach(receiptx, 640, 10)
 else
 	receiptx = approach(receiptx, 960, 10)
+	
+if receiptonscreen
+{
+	bg_alpha = approach(bg_alpha, 1, 1)
+	with (obj_player1)
+	visible = false
+}
+
+bg_x -= 1;
+bg_y -= 1;

@@ -77,7 +77,7 @@ function get_custom_palette_info()
 	}
 	return 
 	{
-		spr_palette: (other.object_index == obj_swapmodefollow || other.object_index == obj_player ? other.spr_palette : spr_peppalette),
+		spr_palette: (other.object_index == obj_swapmodefollow || other.object_index == obj_parent_player ? other.spr_palette : spr_peppalette),
 		paletteselect: 1,
 		patterntexture: noone
 	};

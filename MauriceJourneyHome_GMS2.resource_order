@@ -69,6 +69,7 @@
     {"name":"scr_menu","order":33,"path":"scripts/scr_menu/scr_menu.yy",},
     {"name":"hub_tutorial2","order":1,"path":"rooms/hub_tutorial2/hub_tutorial2.yy",},
     {"name":"spr_heatmeter_palette","order":3,"path":"sprites/spr_heatmeter_palette/spr_heatmeter_palette.yy",},
+    {"name":"scr_roomnames","order":34,"path":"scripts/scr_roomnames/scr_roomnames.yy",},
     {"name":"obj_bombdelete","order":22,"path":"objects/obj_bombdelete/obj_bombdelete.yy",},
     {"name":"scribble_whitelist_sound","order":9,"path":"scripts/scribble_whitelist_sound/scribble_whitelist_sound.yy",},
     {"name":"obj_characterselect","order":21,"path":"objects/obj_characterselect/obj_characterselect.yy",},

@@ -25,8 +25,6 @@ else
 {
 	global.levelreset = false;
 	scr_playerreset();
-	with (instance_create(0, 0, obj_backtohub_fadeout))
-		fadealpha = 0.9
 	with obj_player1
 		swap_player();
 	global.levelreset = true;
@@ -36,5 +34,7 @@ else
 	global.leveltorestart = noone;
 	global.leveltosave = noone;
 }
+/*
 if (rm == boss_pizzaface || rm == boss_noise || rm == boss_pepperman || rm == boss_fakepep || rm == boss_vigilante)
 	global.bossintro = true;
+*/

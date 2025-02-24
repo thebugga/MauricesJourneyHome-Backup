@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "MauriceJourneyHome_GMS2",
+    "path": "MauriceJourneyHome_GMS2.yyp",
   },
   "preMultiplyAlpha": false,
   "sequence": {

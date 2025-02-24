@@ -285,7 +285,6 @@
     {"id":{"name":"obj_boilingsauce","path":"objects/obj_boilingsauce/obj_boilingsauce.yy",},},
     {"id":{"name":"obj_bomb","path":"objects/obj_bomb/obj_bomb.yy",},},
     {"id":{"name":"obj_bombblock","path":"objects/obj_bombblock/obj_bombblock.yy",},},
-    {"id":{"name":"scr_roomnames","path":"scripts/scr_roomnames/scr_roomnames.yy",},},
     {"id":{"name":"obj_bombdelete","path":"objects/obj_bombdelete/obj_bombdelete.yy",},},
     {"id":{"name":"obj_bombexplosion","path":"objects/obj_bombexplosion/obj_bombexplosion.yy",},},
     {"id":{"name":"obj_boss","path":"objects/obj_boss/obj_boss.yy",},},

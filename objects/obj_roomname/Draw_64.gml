@@ -1,17 +1,14 @@
-var _xx = 195
-if (showtext == true)
-    yi = approach(yi, 500, 5)
-else
-    yi = approach(yi, 600, 1)
-if (msg != "NaN")
-{
-    draw_set_font(global.font_small)
-    draw_set_halign(fa_center)
-    draw_set_valign(fa_top)
-    draw_set_color(c_white)
-    draw_sprite(spr_roomnamebg, 0, _xx, yi)
-    if (string_width(string_upper(msg)) <= maxwidth)
-        draw_text(_xx, yi - 7, string_upper(msg))
-    else
-        draw_text_ext(_xx, (yi - 6 - 7), string_upper(msg), -1, maxwidth)
-}
+if (room == Mainmenu)
+    return;
+if (!global.option_hud)
+    return;
+draw_set_font(lang_get_font(global.font_small))
+draw_set_halign(fa_center)
+draw_set_valign(fa_bottom)
+draw_set_color(c_white)
+draw_sprite(spr_roomnamebg, 0, xi, yi)
+var yp = 17
+if lang_get_value("use_ttf")
+    yp = 22
+tdp_draw_text(xi, (yi + yp), msg)
+tdp_text_commit(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height)

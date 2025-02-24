@@ -24,68 +24,68 @@ var tv_x = 0
 var tv_y = -54
 var _score = global.collect
 if global.coop
-	_score += global.collectN
+    _score += global.collectN
 var hud_xx = 839
 var hud_yy = 90
-var hud_scorex = hud_xx + irandom_range(-collect_shake, collect_shake)
-var hud_scorey = hud_yy + irandom_range(-collect_shake, collect_shake)
-var rx = (hud_scorex - 220)
+var hud_scorex = hud_xx + (irandom_range((-collect_shake), collect_shake))
+var hud_scorey = hud_yy + (irandom_range((-collect_shake), collect_shake))
+var rx = hud_scorex - 220
 var ry = 30
 var rank_ix = 0
-if (scr_is_prank())
-	rank_ix = 5
+if scr_is_prank()
+    rank_ix = 5
 else if (_score >= global.srank)
-	rank_ix = 4
+    rank_ix = 4
 else if (_score >= global.arank)
-	rank_ix = 3
+    rank_ix = 3
 else if (_score >= global.brank)
-	rank_ix = 2
+    rank_ix = 2
 else if (_score >= global.crank)
-	rank_ix = 1
+    rank_ix = 1
 if (previousrank != rank_ix && rank_state == 0)
 {
-	rank_state = sign(rank_ix - previousrank)
-	rank_newx = 50 + (rank_state * 100)
-	previousrank = rank_ix
+    rank_state = sign(rank_ix - previousrank)
+    rank_newx = 50 + rank_state * 100
+    previousrank = rank_ix
 }
 var perc = 0
 switch rank_ix
 {
-	case 5:
-		perc = 1
-	break
-	case 4:
-	perc = ((global.treasure + global.toppintotal + global.secretfound + global.lap + !global.combodropped) / 11)
-	break
-	case 3:
-		perc = ((_score - global.arank) / (global.srank - global.arank))
-	break
-	case 2:
-		perc = ((_score - global.brank) / (global.arank - global.brank))
-	break
-	case 1:
-		perc = ((_score - global.crank) / (global.brank - global.crank))
-	break
-	default:
-		perc = (_score / global.crank)
+    case 5:
+        perc = 1
+        break
+    case 4:
+        perc = (global.treasure + global.toppintotal + global.secretfound + global.lap + (!global.combodropped)) / 11
+        break
+    case 3:
+        perc = (_score - global.arank) / (global.srank - global.arank)
+        break
+    case 2:
+        perc = (_score - global.brank) / (global.arank - global.brank)
+        break
+    case 1:
+        perc = (_score - global.crank) / (global.brank - global.crank)
+        break
+    default:
+        perc = _score / global.crank
 }
-var _cx = tv_x + 340 + combo_posX
-var _cy = tv_y + 120 + hud_posY + combo_posY
-var _perc = (global.combotime / 60)
-var _minX = (_cx - 56)
-var _maxX = (_cx + 59)
-combofill_x = lerp(combofill_x, (_minX + ((_maxX - _minX) * _perc)), 0.5)
+
+var _cx = combo_posX + 130
+var _cy = hud_yy + 125 + combo_posY
+var _perc = global.combotime / 60
+var _minX = _cx - 56
+var _maxX = _cx + 59
+combofill_x = lerp(combofill_x, (_minX + (_maxX - _minX) * _perc), 0.5)
 combofill_y = _cy
-shader_set(global.Pal_Shader)
-pal_swap_set(spr_tv_combofillpalette, (!global.combodropped) ? 2 : 1, false)
+pal_swap_set(spr_tv_combofillpalette, ((!global.combodropped) ? 2 : 1), false)
 draw_sprite(spr_tv_combobubblefill, combofill_index, combofill_x, combofill_y)
 reset_shader_fix()
 draw_sprite(spr_tv_combobubble, -1, _cx, _cy)
 draw_set_font(global.combofont2)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
-var _tx = (_cx - 64)
-var _ty = (_cy - 12)
+var _tx = _cx - 64
+var _ty = _cy - 12
 var _str = string(global.combo)
 var _num = string_length(_str)
 for (var i = _num; i > 0; i--)

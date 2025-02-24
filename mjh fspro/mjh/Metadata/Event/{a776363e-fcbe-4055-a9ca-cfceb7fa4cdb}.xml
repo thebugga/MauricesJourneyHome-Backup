@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{a776363e-fcbe-4055-a9ca-cfceb7fa4cdb}">
 		<property name="name">
-			<value>New Event</value>
+			<value>unnoisy</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -31,6 +31,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{71c0f73b-7b64-4223-9cf4-e7c67bd7ddcf}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{27fc8756-cc14-483a-8b4b-26f6d01846b9}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{be727176-6673-4439-a898-d94800a0a5cb}">
@@ -93,7 +96,10 @@
 	<object class="MixerBusPanner" id="{9a3e5960-9b50-42c1-b765-7519cd70463a}" />
 	<object class="SingleSound" id="{ed2776d6-4df7-4e7e-8b8d-99e16345fad3}">
 		<property name="length">
-			<value>259.44816326530605</value>
+			<value>205.92414364928203</value>
+		</property>
+		<property name="pitch">
+			<value>4</value>
 		</property>
 		<relationship name="fadeOutCurve">
 			<destination>{d528e21a-cf5f-4039-bf94-68537c41795b}</destination>
@@ -135,7 +141,7 @@
 			<value>0.049261083743842526</value>
 		</property>
 		<property name="length">
-			<value>259.39890218156222</value>
+			<value>205.8748825655382</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{71c0f73b-7b64-4223-9cf4-e7c67bd7ddcf}</destination>
@@ -168,7 +174,7 @@
 	<object class="MixerBusFader" id="{cd6f0d5e-81b4-42ed-953a-0ea8ea6d91df}" />
 	<object class="AutomationPoint" id="{5aafa1dc-aaca-470a-a0e4-6d70196d39b6}">
 		<property name="position">
-			<value>240</value>
+			<value>180</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -179,7 +185,7 @@
 	</object>
 	<object class="AutomationPoint" id="{44d703a1-b2fd-4816-ac8a-8db43e5f5e47}">
 		<property name="position">
-			<value>259.44816326530605</value>
+			<value>205.92414364928203</value>
 		</property>
 		<property name="value">
 			<value>0</value>

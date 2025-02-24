@@ -91,6 +91,12 @@ var exit_function = function()
 };
 ds_map_set(pause_menu_map, "pause_exit", [3, exit_function]);
 ds_map_set(pause_menu_map, "pause_exit_title", [3, exit_function]);
+ds_map_set(pause_menu_map, "pause_credits", [1, function()
+{
+	fmod_event_one_shot("event:/sfx/ui/select");
+	with (instance_create(x, y, obj_manual))
+		depth = other.depth - 1;
+}]);
 
 cursor_index = 0;
 cursor_sprite_number = sprite_get_number(spr_angelpriest);

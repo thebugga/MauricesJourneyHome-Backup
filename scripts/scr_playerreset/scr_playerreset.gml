@@ -1,3 +1,19 @@
+function textures_offload(argument0) //gml_Script_textures_offload
+{
+    var b = instance_create(0, 0, obj_loadingscreen)
+    with (b)
+    {
+        group_arr = argument0
+        if (global.offload_tex != -4)
+        {
+            offload_arr = array_create(0)
+            array_copy(offload_arr, 0, global.offload_tex, 0, array_length(global.offload_tex))
+            global.offload_tex = -4
+        }
+    }
+    return b;
+}
+
 function scr_playerreset(argument0)
 {
     if (argument0 == undefined)

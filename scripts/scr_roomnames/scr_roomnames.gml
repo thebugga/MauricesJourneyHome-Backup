@@ -4,7 +4,7 @@ function scr_roomnames(Roomname)
     switch Roomname
     {
         default:
-            a = "NaN"
+            a = "PIZZA TOWER 2 ISLAND"
             break
     }
 

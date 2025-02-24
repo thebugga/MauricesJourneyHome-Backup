@@ -1,2 +1,1 @@
-
-	use_dark = 0
+use_dark = 0

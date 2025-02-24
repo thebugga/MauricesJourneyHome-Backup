@@ -283,7 +283,4 @@ if pause && !instance_exists(obj_option)&& alarm[3] == -1
 	if key_jump
 		array_get(ds_map_find_value(pause_menu_map, array_get(pause_menu, selected)), 1)();
 }
-if pause
-	scr_pauseicons_update(array_get(ds_map_find_value(pause_menu_map, array_get(pause_menu, selected)), 0));
-else
-	scr_pauseicons_update(-1);
+scr_pauseicons_update(-1);

@@ -21,7 +21,7 @@ pause_options = "OPTIONS"
 pause_restart = "RESTART LEVEL"
 pause_exit = "EXIT LEVEL"
 pause_exit_title = "MAIN MENU"
-pause_achievements = "CHEF TASKS"
+pause_credits = "CREDITS"
 
 achievements_level = "CURRENT LEVEL"
 

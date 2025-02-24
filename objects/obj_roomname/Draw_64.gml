@@ -11,7 +11,7 @@ if (msg != "NaN")
     draw_set_color(c_white)
     draw_sprite(spr_roomnamebg, 0, _xx, yi)
     if (string_width(string_upper(msg)) <= maxwidth)
-        draw_text(_xx, yi, string_upper(msg))
+        draw_text(_xx, yi - 7, string_upper(msg))
     else
-        draw_text_ext(_xx, (yi - 6), string_upper(msg), -1, maxwidth)
+        draw_text_ext(_xx, (yi - 6 - 7), string_upper(msg), -1, maxwidth)
 }

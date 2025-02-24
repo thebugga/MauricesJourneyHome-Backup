@@ -1,7 +1,4 @@
-if (global.panic == true && start == 0)
+if (global.panic == true && global.lap == true)
 {
-	alarm[0] = 5
-	start = 1
+create_debris(random(room_width), 10, spr_towerblockdebris)
 }
-if (global.panic == false)
-	alarm[0] = -1

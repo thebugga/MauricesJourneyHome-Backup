@@ -41,6 +41,8 @@ function scr_player_handstandjump()
 		attackdash = spr_suplexdash;
 	if (sprite_index == spr_player_lungestart && floor(image_index) == image_number - 1)
 		sprite_index = spr_player_lunge;
+	if (sprite_index == spr_player_lunge && floor(image_index) == image_number - 1)
+		scr_doplayernormal()
 	var airattackdash = spr_suplexdashjump;
 	var airattackdashstart = spr_suplexdashjumpstart;
 	if global.attackstyle == 2

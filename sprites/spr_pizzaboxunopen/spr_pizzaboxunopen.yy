@@ -40,7 +40,7 @@
   "origin": 4,
   "parent": {
     "name": "Collectible",
-    "path": "folders/Sprites/Collectible.yy",
+    "path": "folders/Sprites/Debug/Collectible.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

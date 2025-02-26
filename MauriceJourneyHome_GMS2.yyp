@@ -111,12 +111,12 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Pizzamancer","folderPath":"folders/Sprites/Boss/Pizzamancer.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Sprites/Boss/Player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Maurice","folderPath":"folders/Sprites/Boss/Player/Maurice.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Debug","folderPath":"folders/Sprites/Debug.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collectible","folderPath":"folders/Sprites/Debug/Collectible.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Toppin","folderPath":"folders/Sprites/Debug/Collectible/Toppin.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Christmas","folderPath":"folders/Sprites/Debug/Collectible/Toppin/Christmas.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Warriors","folderPath":"folders/Sprites/Debug/Collectible/Toppin/Warriors.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Treasure","folderPath":"folders/Sprites/Debug/Collectible/Treasure.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Debug","folderPath":"folders/Sprites/Debug.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Destroyable","folderPath":"folders/Sprites/Destroyable.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dialogue","folderPath":"folders/Sprites/Dialogue.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Effects and particles","folderPath":"folders/Sprites/Effects and particles.yy",},
@@ -192,7 +192,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"fmod_gms","path":"extensions/fmod_gms/fmod_gms.yy",},},

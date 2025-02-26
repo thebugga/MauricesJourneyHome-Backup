@@ -22,7 +22,7 @@ function scr_dograb()
 	        state = states.handstandjump
 	        image_index = 0
 			slaphand = 1
-			sprite_index = spr_player_lungestart
+			sprite_index = choose(spr_player_slap1, spr_player_slap2)
 			movespeed = 10
 		}
 		else if global.playerCharacter == Characters.Doise

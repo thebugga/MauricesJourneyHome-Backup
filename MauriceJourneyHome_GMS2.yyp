@@ -1619,6 +1619,7 @@
     {"id":{"name":"spr_cheeserobot_goop","path":"sprites/spr_cheeserobot_goop/spr_cheeserobot_goop.yy",},},
     {"id":{"name":"spr_cheeserobot_idle","path":"sprites/spr_cheeserobot_idle/spr_cheeserobot_idle.yy",},},
     {"id":{"name":"spr_cheeserobot_stun","path":"sprites/spr_cheeserobot_stun/spr_cheeserobot_stun.yy",},},
+    {"id":{"name":"animation_end","path":"scripts/animation_end/animation_end.yy",},},
     {"id":{"name":"spr_cheeserobot_walk","path":"sprites/spr_cheeserobot_walk/spr_cheeserobot_walk.yy",},},
     {"id":{"name":"spr_cheeseslime_rage","path":"sprites/spr_cheeseslime_rage/spr_cheeseslime_rage.yy",},},
     {"id":{"name":"spr_clockcollectible1","path":"sprites/spr_clockcollectible1/spr_clockcollectible1.yy",},},

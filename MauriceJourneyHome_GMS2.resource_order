@@ -184,6 +184,7 @@
     {"name":"spr_captainbombshoot","order":2,"path":"sprites/spr_captainbombshoot/spr_captainbombshoot.yy",},
     {"name":"spr_check","order":3,"path":"sprites/spr_check/spr_check.yy",},
     {"name":"spr_checkerboard","order":4,"path":"sprites/spr_checkerboard/spr_checkerboard.yy",},
+    {"name":"animation_end","order":34,"path":"scripts/animation_end/animation_end.yy",},
     {"name":"spr_comboend_title1","order":5,"path":"sprites/spr_comboend_title1/spr_comboend_title1.yy",},
     {"name":"spr_comboend","order":6,"path":"sprites/spr_comboend/spr_comboend.yy",},
     {"name":"spr_cursor","order":7,"path":"sprites/spr_cursor/spr_cursor.yy",},

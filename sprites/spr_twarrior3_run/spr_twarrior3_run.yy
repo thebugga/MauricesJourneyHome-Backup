@@ -29,7 +29,7 @@
   "origin": 4,
   "parent": {
     "name": "Warriors",
-    "path": "folders/Sprites/Collectible/Toppin/Warriors.yy",
+    "path": "folders/Sprites/Debug/Collectible/Toppin/Warriors.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -26,7 +26,7 @@
   "origin": 1,
   "parent": {
     "name": "Toppin",
-    "path": "folders/Sprites/Collectible/Toppin.yy",
+    "path": "folders/Sprites/Debug/Collectible/Toppin.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

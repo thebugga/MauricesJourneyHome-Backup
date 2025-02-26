@@ -31,7 +31,7 @@
   "origin": 1,
   "parent": {
     "name": "Christmas",
-    "path": "folders/Sprites/Collectible/Toppin/Christmas.yy",
+    "path": "folders/Sprites/Debug/Collectible/Toppin/Christmas.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

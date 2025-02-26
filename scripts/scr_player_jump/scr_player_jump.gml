@@ -273,27 +273,7 @@ function state_player_jump()
 	}
 	if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol))
     {
-		if global.playerCharacter == Characters.Maurice
-		{
-	        input_buffer_slap = 0
-	        suplexmove = true
-	        fmod_event_instance_play(suplexdashsnd)
-	        state = states.handstandjump
-	        image_index = 0
-			slaphand = 1
-			sprite_index = spr_player_lungestart
-			movespeed = 10
-		}
-		else if global.playerCharacter == Characters.Doise
-		{
-	        input_buffer_slap = 0
-	        suplexmove = true
-	        fmod_event_instance_play(suplexdashsnd)
-	        state = states.handstandjump
-			sprite_index = spr_suplexdashjump
-	        image_index = 0
-			movespeed = 8
-		}
+		scr_dograb()
     }
     else if input_buffer_slap > 0 && key_up && shotgunAnim == 0 && (!global.pistol || global.playerCharacter == Characters.Doise)
 	{

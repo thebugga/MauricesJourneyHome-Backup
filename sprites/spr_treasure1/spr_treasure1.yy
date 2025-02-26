@@ -45,7 +45,7 @@
   "origin": 9,
   "parent": {
     "name": "Treasure",
-    "path": "folders/Sprites/Collectible/Treasure.yy",
+    "path": "folders/Sprites/Debug/Collectible/Treasure.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

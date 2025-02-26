@@ -1619,6 +1619,7 @@
     {"id":{"name":"spr_cheeserobot_goop","path":"sprites/spr_cheeserobot_goop/spr_cheeserobot_goop.yy",},},
     {"id":{"name":"spr_cheeserobot_idle","path":"sprites/spr_cheeserobot_idle/spr_cheeserobot_idle.yy",},},
     {"id":{"name":"spr_cheeserobot_stun","path":"sprites/spr_cheeserobot_stun/spr_cheeserobot_stun.yy",},},
+    {"id":{"name":"animation_end","path":"scripts/animation_end/animation_end.yy",},},
     {"id":{"name":"spr_cheeserobot_walk","path":"sprites/spr_cheeserobot_walk/spr_cheeserobot_walk.yy",},},
     {"id":{"name":"spr_cheeseslime_rage","path":"sprites/spr_cheeseslime_rage/spr_cheeseslime_rage.yy",},},
     {"id":{"name":"spr_clockcollectible1","path":"sprites/spr_clockcollectible1/spr_clockcollectible1.yy",},},
@@ -3139,6 +3140,7 @@
     {"id":{"name":"spr_xmasbigpizza2","path":"sprites/spr_xmasbigpizza2/spr_xmasbigpizza2.yy",},},
     {"id":{"name":"spr_xmasblock","path":"sprites/spr_xmasblock/spr_xmasblock.yy",},},
     {"id":{"name":"spr_xmascheesetoppin_idle","path":"sprites/spr_xmascheesetoppin_idle/spr_xmascheesetoppin_idle.yy",},},
+    {"id":{"name":"garbage_lap","path":"rooms/garbage_lap/garbage_lap.yy",},},
     {"id":{"name":"spr_xmascheesetoppin_intro","path":"sprites/spr_xmascheesetoppin_intro/spr_xmascheesetoppin_intro.yy",},},
     {"id":{"name":"spr_xmascheesetoppin_walk","path":"sprites/spr_xmascheesetoppin_walk/spr_xmascheesetoppin_walk.yy",},},
     {"id":{"name":"spr_xmaspineappletoppin_idle","path":"sprites/spr_xmaspineappletoppin_idle/spr_xmaspineappletoppin_idle.yy",},},
@@ -3246,6 +3248,7 @@
     {"roomId":{"name":"hub_tutorial2","path":"rooms/hub_tutorial2/hub_tutorial2.yy",},},
     {"roomId":{"name":"wizard_7","path":"rooms/wizard_7/wizard_7.yy",},},
     {"roomId":{"name":"wizard_9","path":"rooms/wizard_9/wizard_9.yy",},},
+    {"roomId":{"name":"garbage_lap","path":"rooms/garbage_lap/garbage_lap.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

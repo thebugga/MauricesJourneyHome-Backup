@@ -327,6 +327,7 @@
     {"name":"obj_NekoPresence","order":19,"path":"objects/obj_NekoPresence/obj_NekoPresence.yy",},
     {"name":"spr_uparrow","order":58,"path":"sprites/spr_uparrow/spr_uparrow.yy",},
     {"name":"spr_version","order":59,"path":"sprites/spr_version/spr_version.yy",},
+    {"name":"garbage_lap","order":2,"path":"rooms/garbage_lap/garbage_lap.yy",},
     {"name":"scr_mathFunctions","order":1,"path":"scripts/scr_mathFunctions/scr_mathFunctions.yy",},
     {"name":"sprite1026","order":44,"path":"sprites/sprite1026/sprite1026.yy",},
     {"name":"spr_gabbie","order":58,"path":"sprites/spr_gabbie/spr_gabbie.yy",},

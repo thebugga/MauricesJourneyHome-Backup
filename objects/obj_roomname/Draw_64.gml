@@ -2,7 +2,7 @@ if (room == Mainmenu)
     return;
 if (!global.option_hud)
     return;
-draw_set_font(lang_get_font(global.font_small))
+draw_set_font(global.font_small)
 draw_set_halign(fa_center)
 draw_set_valign(fa_bottom)
 draw_set_color(c_white)

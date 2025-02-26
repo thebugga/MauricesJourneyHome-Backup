@@ -5,7 +5,10 @@ function scr_player_handstandjump()
 	move = key_left + key_right;
 	momemtum = true;
 	dir = xscale;
-	if global.attackstyle != 3
+	var _slpaspr = (sprite_index == spr_player_slap1 or sprite_index == spr_player_slap2)
+	if (_slpaspr && floor(image_index) == (image_number - 1))
+		scr_doplayernormal()
+	if global.playerCharacter != Characters.Maurice
 	{
 		if movespeed < 10
 		{
@@ -41,6 +44,8 @@ function scr_player_handstandjump()
 		attackdash = spr_suplexdash;
 	if (sprite_index == spr_player_lungestart && floor(image_index) == image_number - 1)
 		sprite_index = spr_player_lunge;
+	if (sprite_index == spr_player_lunge && floor(image_index) == image_number - 1)
+		scr_doplayernormal()
 	var airattackdash = spr_suplexdashjump;
 	var airattackdashstart = spr_suplexdashjumpstart;
 	if global.attackstyle == 2
@@ -69,7 +74,7 @@ function scr_player_handstandjump()
 	}
 	if (grounded && sprite_index == airattackdash && (!key_attack || global.playerCharacter == Characters.Doise) && global.attackstyle != 2)
 	{
-		if global.attackstyle != 3
+		if global.playerCharacter != Characters.Maurice
 		{
 			state = states.normal;
 			if move != xscale

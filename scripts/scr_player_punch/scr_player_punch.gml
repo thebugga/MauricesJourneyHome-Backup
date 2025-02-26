@@ -150,17 +150,12 @@ function scr_player_punch()
 		}
 				if (input_buffer_slap > 0 && (!key_up) && sprite_index != spr_suplexbump && shotgunAnim == false && (!global.pistol))
 				{
-					xscale = dir
-					uppercutcancel = true
-					input_buffer_slap = 0
-					particle_set_scale((5 << 0), xscale, 1)
-					create_particle(x, y, (5 << 0), 0)
+					flash = 1
+					fmod_event_one_shot_3d("event:/sfx/pep/grabcancel", x, y)
+					sprite_index = spr_player_kungfuair3
 					image_index = 0
-					sprite_index = spr_suplexdashjumpstart
-					suplexmove = true
-					fmod_event_instance_play(suplexdashsnd)
-					state = (42 << 0)
-					movespeed = 5
+					movespeed = 13
 				}
+				
 }
 

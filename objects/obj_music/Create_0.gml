@@ -18,14 +18,18 @@ panicmusicID = panicmusicP;
 kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
 panicstart = false;
 
-add_music(Mainmenu, "event:/music/title", noone, false);
+add_music(Mainmenu, "event:/music/title", -4, false, function(argument0, argument1)
+{
+    fmod_event_instance_set_parameter(argument1, "state", 0, 1)
+}
+)
 add_music(tower_entrancehallway, "event:/music/hub", noone, false);
 add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
 add_music(hub_lobby, "event:/music/hub", noone, false);
 add_music(hub_theatre, "event:/music/hub", noone, false);
-add_music(wizard_1, "event:/music/w1/wizardry", noone, false);
-add_music(wizard_2, "event:/music/w1/wizardry", noone, false);
-add_music(hub_wizardtower, "event:/music/wizardry", noone, false);
+add_music(wizard_1, "event:/music/w1/wizard", noone, false);
+add_music(wizard_2, "event:/music/w1/wizard", noone, false);
+add_music(hub_wizardtower, "event:/music/wizard", noone, false);
 add_music(garbage_1, "event:/music/w1/garbage", "event:/music/pillarmusic", false)
 add_music(garbage_2, "event:/music/w1/garbage", "event:/music/pillarmusic", false)
 add_music(hub_gravesite, "event:/music/w1/garbage", "event:/music/pillarmusic", false)

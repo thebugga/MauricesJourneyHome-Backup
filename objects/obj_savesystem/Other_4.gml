@@ -1,2 +1,3 @@
-if (room == ObjectnMacroloadinRoom)
-	ini_str = ""
+if room == ObjectnMacroloadinRoom
+	ini_str = "";
+fadeoutcreate = false;

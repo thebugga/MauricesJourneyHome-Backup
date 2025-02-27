@@ -8,12 +8,12 @@ function get_save_folder()
 }
 function get_percentage()
 {
-	var levels = ["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "minigolf", "space", "sewer", "industrial", "street", "freezer", "chateau", "war", "kidsparty", "exit"];
-	var bosses = ["w1stick", "w2stick", "w3stick", "w4stick", "w5stick"];
-	var bossach = ["pepperman", "vigilante", "noise", "fakepep", "pizzaface"];
-	var bossranks = ["b_pepperman", "b_vigilante", "b_noise", "b_fakepep"];
-	var _basemax = ((array_length(bosses) + array_length(levels) + ((array_length(levels) - 1) * 5) + array_length(levels)) - 1) + array_length(levels) + array_length(levels) + array_length(levels) + array_length(levels) + array_length(bossranks) + array_length(bossranks) + array_length(bossranks) + array_length(bossranks) + ((array_length(levels) - 1) * 3);
-	var _extramax = (array_length(bossach) + array_length(levels) + array_length(bossranks) + array_length(levels)) - 1;
+	var levels = ["garbage", "wizard"];
+//	var bosses = ["w1stick", "w2stick", "w3stick", "w4stick", "w5stick"];
+//	var bossach = ["pepperman", "vigilante", "noise", "fakepep", "pizzaface"];
+//	var bossranks = ["b_pepperman", "b_vigilante", "b_noise", "b_fakepep"];
+    var _basemax = ((((((array_length(levels)) + array_length(levels)) + array_length(levels)) + array_length(levels)) + array_length(levels)) +((array_length(levels) - 1) * 3))
+	var _extramax = (array_length(levels) + array_length(levels)) - 1;
 	var count = 0;
 	var extracount = 0;
 	var _rank_map = ds_map_create();
@@ -50,6 +50,7 @@ function get_percentage()
 		if ac >= 3
 			extracount++;
 	}
+	/*
 	for (i = 0; i < array_length(bosses); i++)
 	{
 		var boss = bosses[i];
@@ -69,6 +70,7 @@ function get_percentage()
 		if (ini_read_real("achievements", bossach[i], false))
 			extracount++;
 	}
+	*/
 	var per = floor((count / _basemax) * 100);
 	if per > 100
 		per = 100;

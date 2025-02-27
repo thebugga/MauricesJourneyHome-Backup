@@ -63,11 +63,11 @@ else
 
 if startbuffer > 0
 	startbuffer--;
-if window_has_focus() && (dirty || window_width_current != ww || window_height_current != wh || global.option_scale_mode != last_scale_mode || global.option_fullscreen != gameframe_get_fullscreen())
+if window_has_focus() && (dirty || window_width_current != ww || window_height_current != wh || global.option_scale_mode != last_scale_mode || global.option_fullscreen != gameframe_get_fullscreen()) && global.undertalecam== false
 {
 	if dirty
 		dirty = false;
-	if global.option_scale_mode == 0
+	if global.option_scale_mode == 0 
 	{
 		camera_set_view_size(view_camera[0], CAMERA_WIDTH * camzoom, CAMERA_HEIGHT * camzoom);
 		app_scale = min(ww / CAMERA_WIDTH, wh / CAMERA_HEIGHT);
@@ -118,3 +118,6 @@ if window_has_focus() && (dirty || window_width_current != ww || window_height_c
 	normal_size_fix_x = (SCREEN_WIDTH - 960) / 2;
 	normal_size_fix_y = (SCREEN_HEIGHT - 540) / 2;
 }
+
+if global.undertalecam = true 
+	camera_set_view_size(view_camera[0], 320, 240);

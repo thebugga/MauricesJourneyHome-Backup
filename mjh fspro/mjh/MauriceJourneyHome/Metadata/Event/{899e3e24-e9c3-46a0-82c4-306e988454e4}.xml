@@ -218,6 +218,7 @@
 		<relationship name="effects">
 			<destination>{b06b7736-6b48-4520-a9b3-391a1a46bec4}</destination>
 			<destination>{cf97f9cc-6525-4fe3-bc25-7a7064e6b956}</destination>
+			<destination>{1ebd53dc-d747-4238-9b6c-96d8532d2cfe}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d130b89f-08dc-4356-ae00-8f60b315d631}" />
@@ -241,4 +242,12 @@
 	</object>
 	<object class="MixerBusFader" id="{b06b7736-6b48-4520-a9b3-391a1a46bec4}" />
 	<object class="PitchShifterEffect" id="{cf97f9cc-6525-4fe3-bc25-7a7064e6b956}" />
+	<object class="ProxyEffect" id="{1ebd53dc-d747-4238-9b6c-96d8532d2cfe}">
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="preset">
+			<destination>{2356ba09-7d56-41fd-8657-635a46657dae}</destination>
+		</relationship>
+	</object>
 </objects>

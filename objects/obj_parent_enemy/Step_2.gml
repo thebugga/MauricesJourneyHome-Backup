@@ -1,54 +1,46 @@
 if (state == states.grabbed)
-	scr_enemy_grabbed()
+    scr_enemy_grabbed()
 else if (state == states.lungeattack)
-	scr_enemy_lungeattack()
-else if (state == states.secret)
-	scr_enemy_secret()
+    scr_enemy_lungeattack()
+else if (state == (266 << 0))
+    scr_enemy_secret()
 scr_squash()
 if (state != states.stun && state != states.hit)
-	linethrown = false
+    linethrown = 0
 if (state == states.stun && (!thrown))
-	linethrown = false
-if (object_index != obj_pizzaball && (place_meeting((x + 1), y, obj_spike) or place_meeting((x - 1), y, obj_spike) or place_meeting(x, (y + 1), obj_spike) or place_meeting(x, (y - 1), obj_spike)))
-	instance_destroy()
-if (state != states.grabbed && state != states.pummel && object_index != obj_fakesanta && use_collision)
-	scr_collision()
+    linethrown = 0
+if (object_index != obj_pizzaball && (place_meeting((x + 1), y, obj_spike) || place_meeting((x - 1), y, obj_spike) || place_meeting(x, (y + 1), obj_spike) || place_meeting(x, (y - 1), obj_spike)))
+{
+    if elite
+        elitehit = 0
+    instance_destroy()
+}
+if (state != states.grabbed && state != states.pummel && use_collision)
+    scr_collision()
 if (invtime > 0)
-	invtime--
-if (sprite_index == walkspr && hsp != 0 && floor(image_index) == (image_number - 1))
-	create_particle((x - (image_xscale * 20)), (y + 43), particle.cloudeffect, 0)
-if (state == states.walk)
-	image_speed = (0.35 + (global.baddiespeed * 0.05))
-else if (state != states.charge)
-	image_speed = 0.35
+    invtime--
+if (stompbuffer > 0)
+    stompbuffer--
+if ((!thrown) && killbyenemybuffer > 0)
+    killbyenemybuffer--
+if (sprite_index == walkspr && state != (141 << 0) && floor(image_index) != (image_number - 1))
+    steppy = 0
+if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && floor(image_index) == (image_number - 1) && (!steppy) && state != (141 << 0))
+{
+    steppy = 1
+    var _yy = (y + 43)
+    create_particle((x - (image_xscale * 20)), _yy, (1 << 0), 0)
+}
+if ((object_index != obj_pizzice || state != states.pizzagoblinthrow))
+{
+    if (state == states.walk)
+        image_speed = 0.35
+    else if (state != (128 << 0))
+        image_speed = 0.35
+}
 if (dodgebuffer > 0)
-	dodgebuffer--
-with (instance_nearest(x, y, obj_parent_player))
-{
-	if (state == states.backbreaker)
-	{
-		other.stunned = 0
-		if (other.state != states.pizzagoblinthrow && (!other.provoked) && other.bombreset > 0)
-		{
-			other.bombreset = 0
-			other.provoked = 1
-		}
-		other.scaredbuffer = 0
-	}
-	else if (other.state != states.pizzagoblinthrow)
-		other.provoked = 0
-}
-if (y > (room_height + 100))
-	instance_destroy()
-if (thrown && (x > (room_width + 100) or x < -100 or y < -100))
-	instance_destroy()
-if obj_parent_player.baddiegrabbedID = id
-	persistent = true
-else
-	persistent = false
-if (global.stylethreshold >= 3)
-{
-    elite = 1
-	paletteselect = 1
-	usepalette = 1
-}
+    dodgebuffer--
+if (state != states.hit)
+    player_instakillmove = 0
+if (fmod_event_instance_is_playing(chargesnd) && state != (128 << 0))
+    fmod_event_instance_stop(chargesnd)

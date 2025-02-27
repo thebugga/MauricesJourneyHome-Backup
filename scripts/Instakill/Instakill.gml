@@ -5,10 +5,16 @@ function Instakill()
 		other.baddieID.grabbedby = 1
 		if (object_index == obj_player2)
 			other.baddieID.grabbedby = 2
-		if (state == states.mach3 && sprite_index != spr_mach3hit && (Characters.Maurice or Characters.MrOrange))
+		if (state == states.mach3 && sprite_index != spr_mach3hit && (Characters.Maurice or Characters.Doise))
 		{
 			if (fightball == 0)
 				sprite_index = spr_mach3hit
+			image_index = 0
+		}
+		if (state == states.mach2 && (sprite_index != spr_machpunch1 or sprite_index != spr_machpunch2) && (Characters.Maurice or Characters.Doise))
+		{
+			if (fightball == 0)
+				sprite_index = choose(spr_machpunch1,spr_machpunch2)
 			image_index = 0
 		}
 		if (state == states.chainsawbump && sprite_index != spr_player_chainsawhit)

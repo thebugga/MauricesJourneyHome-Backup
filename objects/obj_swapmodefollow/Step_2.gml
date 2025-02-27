@@ -20,7 +20,7 @@ if obj_player1.state == states.arenaintro
 		is_visible = true;
 		create_particle(x, y, particle.genericpoofeffect);
 	}
-	if floor(image_index) == image_number - 1
+	if animation_end()
 		image_index = image_number - 1;
 	if sprite_index == spr_playerN_levelcomplete
 	{
@@ -102,7 +102,7 @@ else if sprite_index != spr_air && (sprite_index != spr_playerN_doublejumpfall |
 	sprite_index = spr_air;
 	image_index = 0;
 }
-if sprite_index == spr_playerN_doublejump && floor(image_index) == image_number - 1
+if sprite_index == spr_playerN_doublejump && animation_end()
 	sprite_index = spr_playerN_doublejumpfall;
 
 var spr = noone;

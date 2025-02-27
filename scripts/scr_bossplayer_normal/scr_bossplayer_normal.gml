@@ -33,7 +33,7 @@ function scr_bossplayer_normal()
 	}
 	else
 		image_speed = 0.45
-	if floor(image_index) == image_number - 1
+	if animation_end()
 	{
 		if sprite_index == spr_jumpprep
 		{

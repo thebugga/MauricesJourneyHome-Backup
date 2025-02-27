@@ -4,7 +4,7 @@ function scr_playerN_machcancelstart()
 	vsp = 0;
 	movespeed = 0;
 	image_speed = 0.5;
-	if floor(image_index) == image_number - 1
+	if animation_end()
 	{
 		state = states.machcancel;
 		sprite_index = spr_playerN_jetpackboost;

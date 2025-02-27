@@ -84,11 +84,11 @@ function scr_player_mach2()
 			}
 		}
 	}
-	if (floor(image_index) == image_number - 1 && sprite_index == spr_mach1)
+	if (animation_end() && sprite_index == spr_mach1)
 		sprite_index = spr_mach;
-	if (floor(image_index) == image_number - 1 && sprite_index == spr_longjump)
+	if (animation_end() && sprite_index == spr_longjump)
 		sprite_index = spr_longjumpend;
-	if (floor(image_index) == image_number - 1 && sprite_index == spr_playerN_skateboarddoublejump)
+	if (animation_end() && sprite_index == spr_playerN_skateboarddoublejump)
 		image_index = image_number - 3;
 	if sprite_index == spr_playerN_skateboarddoublejump && grounded && vsp > 0
 		sprite_index = spr_mach;
@@ -124,9 +124,9 @@ function scr_player_mach2()
 			other.dashcloudid = id;
 		}
 	}
-	if (grounded && floor(image_index) == image_number - 1 && (sprite_index == spr_rollgetup || sprite_index == spr_player_rampjump))
+	if (grounded && animation_end() && (sprite_index == spr_rollgetup || sprite_index == spr_player_rampjump))
 		sprite_index = spr_mach;
-	if (floor(image_index) == image_number - 1 && sprite_index == spr_suplexdash)
+	if (animation_end() && sprite_index == spr_suplexdash)
 		sprite_index = spr_mach;
 	if !grounded && sprite_index != spr_playerN_skateboarddoublejump && sprite_index != spr_playerN_sidewayspin && sprite_index != spr_playerN_grindcancel && sprite_index != spr_playerN_sidewayspinend && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_longjump && sprite_index != spr_longjumpend && sprite_index != spr_player_jumpdive1 && sprite_index != spr_player_jumpdive2
 	{
@@ -134,15 +134,15 @@ function scr_player_mach2()
 		if skateboarding
 			sprite_index = spr_clownfall;
 	}
-	if (floor(image_index) == image_number - 1 && sprite_index == spr_secondjump1)
+	if (animation_end() && sprite_index == spr_secondjump1)
 		sprite_index = spr_secondjump2;
-	if (floor(image_index) == image_number - 1 && sprite_index == spr_walljumpstart)
+	if (animation_end() && sprite_index == spr_walljumpstart)
 		sprite_index = spr_walljumpend;
-	if (!grounded && sprite_index != spr_clownfall && sprite_index == spr_clownjump && floor(image_index) == image_number - 1)
+	if (!grounded && sprite_index != spr_clownfall && sprite_index == spr_clownjump && animation_end())
 		sprite_index = spr_clownfall;
-	if (sprite_index == spr_playerN_sidewayspin && floor(image_index) == image_number - 1)
+	if (sprite_index == spr_playerN_sidewayspin && animation_end())
 		sprite_index = spr_playerN_sidewayspinend;
-	if (sprite_index == spr_player_jumpdive1 && floor(image_index) == image_number - 1)
+	if (sprite_index == spr_player_jumpdive1 && animation_end())
 		sprite_index = spr_player_jumpdive2;
 	if (grounded && (sprite_index == spr_playerN_sidewayspin || sprite_index == spr_playerN_grindcancel || sprite_index == spr_playerN_sidewayspinend))
 		sprite_index = spr_mach;

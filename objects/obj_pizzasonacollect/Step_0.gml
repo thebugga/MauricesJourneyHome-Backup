@@ -16,7 +16,7 @@ switch state
 		break;
 	
 	case states.throwing:
-		if floor(image_index) == image_number - 1
+		if animation_end()
 			image_index = image_number - 1;
 		if (floor(image_index) >= 3)
 		{
@@ -35,7 +35,7 @@ switch state
 		break;
 	
 	case states.transition:
-		if floor(image_index) == image_number - 1
+		if animation_end()
 		{
 			state = states.jump;
 			sprite_index = idlespr;

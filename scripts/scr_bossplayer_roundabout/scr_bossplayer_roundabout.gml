@@ -11,6 +11,6 @@ function scr_bossplayer_roundabout()
 			lifetime = 5
 		}
 	}
-	if floor(image_index) == image_number - 1
+	if animation_end()
 		state = states.normal
 }

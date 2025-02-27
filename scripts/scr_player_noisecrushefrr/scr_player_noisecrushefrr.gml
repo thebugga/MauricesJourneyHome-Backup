@@ -6,7 +6,7 @@ function scr_player_noisecrusher()
 		hsp = 0;
 		vsp = 0;
 		movespeed = 0;
-		if (floor(image_index) == image_number - 1)
+		if (animation_end())
 			state = 0;
 		exit;
 	}
@@ -23,7 +23,7 @@ function scr_player_noisecrusher()
 		sprite_index = spr_playerN_noisecrusherstart;
 		image_index = 0;
 	}
-	if (sprite_index == spr_playerN_noisecrusherstart && floor(image_index) == image_number - 1)
+	if (sprite_index == spr_playerN_noisecrusherstart && animation_end())
 		sprite_index = spr_playerN_noisecrusherfall;
 	if ((key_attack2 || input_buffer_slap > 0) && !grounded)
 	{

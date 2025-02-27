@@ -98,7 +98,7 @@ function scr_player_mach3()
 			}
 			crouchslideAnim = true;
 			
-			if (floor(image_index) == image_number - 1 && sprite_index == spr_playerN_skateboarddoublejump)
+			if (animation_end() && sprite_index == spr_playerN_skateboarddoublejump)
 				image_index = image_number - 3;
 			if sprite_index == spr_mach2jump && grounded && vsp > 0
 				sprite_index = mach3_spr;
@@ -128,15 +128,15 @@ function scr_player_mach3()
 			}
 			if fightball == 0
 			{
-				if (sprite_index == spr_mach3jump && floor(image_index) == image_number - 1)
+				if (sprite_index == spr_mach3jump && animation_end())
 					sprite_index = mach3_spr;
 				if sprite_index == spr_rockethitwall && grounded
 					sprite_index = mach3_spr;
-				if (floor(image_index) == image_number - 1 && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
+				if (animation_end() && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
 					sprite_index = mach3_spr;
 				if sprite_index == spr_mach2jump && grounded && vsp > 0
 					sprite_index = mach3_spr;
-				if (sprite_index == spr_playerN_sidewayspin && floor(image_index) == image_number - 1)
+				if (sprite_index == spr_playerN_sidewayspin && animation_end())
 					sprite_index = spr_playerN_sidewayspinend;
 				if (grounded && (sprite_index == spr_playerN_sidewayspin || sprite_index == spr_playerN_sidewayspinend))
 					sprite_index = mach3_spr;

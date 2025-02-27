@@ -207,7 +207,7 @@ function state_player_jump()
 			}
 		}
 	}
-	else if (sprite_index == spr_stompprep && floor(image_index) == image_number - 1)
+	else if (sprite_index == spr_stompprep && animation_end())
 		sprite_index = spr_stomp;
 	if (scr_check_groundpound() && !global.kungfu)
 	{
@@ -381,7 +381,7 @@ function state_player_jump()
 	}
 	if (!key_attack || move != xscale)
 		mach2 = 0;
-	if floor(image_index) == image_number - 1
+	if animation_end()
 		jumpAnim = false;
 	scr_dotaunt();
 	if sprite_index == spr_shotgunshoot
@@ -421,9 +421,9 @@ function state_pepperman_jump()
 	if move != 0 && movespeed == 0
 		xscale = move;
 	hsp = xscale * movespeed;
-	if (sprite_index == spr_jump && floor(image_index) == image_number - 1)
+	if (sprite_index == spr_jump && animation_end())
 		sprite_index = spr_fall;
-	if (sprite_index == spr_player_pistoljump1 && floor(image_index) == image_number - 1)
+	if (sprite_index == spr_player_pistoljump1 && animation_end())
 		sprite_index = spr_player_pistoljump2;
 	if !key_jump2 && jumpstop == 0 && vsp < 0.5
 	{
@@ -450,7 +450,7 @@ function state_pepperman_jump()
 		sprite_index = spr_mach1;
 		image_index = 0;
 	}
-	if (sprite_index == spr_mach1 && floor(image_index) == image_number - 1)
+	if (sprite_index == spr_mach1 && animation_end())
 		sprite_index = spr_fall;
 	if ladderbuffer > 0
 		ladderbuffer--;

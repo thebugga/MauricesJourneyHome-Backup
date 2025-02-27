@@ -42,9 +42,9 @@ function scr_player_handstandjump()
 		var attackdash = spr_player_pistolshot;
 	else
 		attackdash = spr_suplexdash;
-	if (sprite_index == spr_player_lungestart && floor(image_index) == image_number - 1)
+	if (sprite_index == spr_player_lungestart && animation_end())
 		sprite_index = spr_player_lunge;
-	if (sprite_index == spr_player_lunge && floor(image_index) == image_number - 1)
+	if (sprite_index == spr_player_lunge && animation_end())
 		scr_doplayernormal()
 	var airattackdash = spr_suplexdashjump;
 	var airattackdashstart = spr_suplexdashjumpstart;
@@ -88,11 +88,11 @@ function scr_player_handstandjump()
 	}
 	if grounded && sprite_index == airattackdash && key_attack && global.playerCharacter != Characters.Doise && global.attackstyle != 2
 		state = states.mach2;
-	if (floor(image_index) == image_number - 1 && sprite_index == attackdash)
+	if (animation_end() && sprite_index == attackdash)
 		state = states.normal;
-	if (floor(image_index) == image_number - 1 && sprite_index == airattackdashstart)
+	if (animation_end() && sprite_index == airattackdashstart)
 		sprite_index = airattackdash;
-	if (floor(image_index) == image_number - 1 && key_attack && sprite_index == attackdash)
+	if (animation_end() && key_attack && sprite_index == attackdash)
 	{
 		image_speed = 0.35;
 		state = states.mach2;

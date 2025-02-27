@@ -16,7 +16,7 @@ function scr_bossplayer_spinkick()
 		}
 	}
 	prevframe = image_index
-	if floor(image_index) == image_number - 1
+	if animation_end()
 	{
 		if sprite_index == spr_player_kungfuair2transition
 			sprite_index = spr_player_kungfuair2

@@ -40,7 +40,7 @@ function scr_pizzagoblin_throw()
 	else if place_meeting(x, y + 1, obj_railh2)
 		hsp = 5
 	
-	if floor(image_index) == image_number - 1
+	if animation_end()
 	{
 		state = states.walk
 		sprite_index = walkspr

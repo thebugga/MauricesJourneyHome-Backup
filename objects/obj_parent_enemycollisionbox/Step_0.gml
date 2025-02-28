@@ -22,8 +22,6 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_parent_player) && obj_p
                 fmod_event_one_shot_3d("event:/sfx/enemies/stomp", x, y)
                 image_index = 0
                 other.baddieID.stompbuffer = 15
-                if (other.baddieID.object_index != obj_tank)
-                {
                     if (x != other.baddieID.x)
                         other.baddieID.image_xscale = (-(sign((other.baddieID.x - x))))
                     other.baddieID.hsp = (xscale * 5)
@@ -32,9 +30,9 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_parent_player) && obj_p
                     other.baddieID.state = states.stun
                     if (other.baddieID.stunned < 100)
                         other.baddieID.stunned = 100
-                    other.baddieID.xscale = 1.4
-                    other.baddieID.yscale = 0.6
-                }
+                    other.baddieID.xscale = 2.5
+                    other.baddieID.yscale = 0.2
+
                 if (other.baddieID.object_index == obj_pizzaball)
                 {
                     with (other.baddieID)
@@ -75,7 +73,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_parent_player) && obj_p
                     image_index = 0
                 }
             }
-			if (instance_exists(other.baddieID) and other.baddieID.invtime == 0 and (instakillmove == 1) && other.baddieID.state != states.grabbed && (!other.baddieID.invincible) && other.baddieID.instantkillable)
+			if (instance_exists(other.baddieID) and (instakillmove == 1) && other.baddieID.state != states.grabbed && (!other.baddieID.invincible) && other.baddieID.instantkillable)
 				Instakill()
             else if (instance_exists(other.baddieID) && state == states.handstandjump && global.attackstyle == 0 && other.baddieID.invtime <= 0 && (!other.baddieID.invincible))
             {

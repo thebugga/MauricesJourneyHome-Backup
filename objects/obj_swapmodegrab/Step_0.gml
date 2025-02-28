@@ -2,7 +2,7 @@ switch state
 {
     case states.normal:
         vsp = 0
-        hsp = image_xscale * Movespeed
+        hsp = image_xscale * movespeed
         if (floor(image_index) == (image_number - 1))
         {
             state++

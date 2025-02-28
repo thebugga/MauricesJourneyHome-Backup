@@ -1,20 +1,20 @@
 function scr_player_shotgunfreefall()
 {
 	image_speed = 0.35
-	Move = (key_left + key_right)
-	hsp = (Move * Movespeed)
+	move = (key_left + key_right)
+	hsp = (move * movespeed)
 	if (dir != Xscale)
 	{
 		dir = Xscale
-		Movespeed = 0
+		movespeed = 0
 	}
-	if (Move != 0)
+	if (move != 0)
 	{
-		if (Movespeed < 8)
-			Movespeed += 0.5
+		if (movespeed < 8)
+			movespeed += 0.5
 	}
 	else
-		Movespeed = 0
+		movespeed = 0
 	if (sprite_index == spr_shotgunjump1)
 	{
 		if (floor(image_index) == (image_number - 1))

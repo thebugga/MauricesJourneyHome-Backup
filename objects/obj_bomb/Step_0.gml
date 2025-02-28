@@ -8,7 +8,7 @@ if place_meeting(x, (y + 1), obj_solid)
 if place_meeting(x, (y + 1), obj_railparent)
 {
 	var _railinst = instance_place(x, (y + 1), obj_railparent)
-	hsp = (_railinst.Movespeed * _railinst.dir)
+	hsp = (_railinst.movespeed * _railinst.dir)
 }
 if (vsp < 12)
 	vsp += grav

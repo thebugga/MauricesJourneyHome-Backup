@@ -8,7 +8,7 @@ function scr_switchgustavo(argument0, argument1) //gml_Script_scr_switchgustavo
     {
         if global.playerCharacter == Characters.Maurice
         {
-            ratmount_Movespeed = 8
+            ratmount_movespeed = 8
             gustavodash = 0
             global.playerCharacter = Characters.Pierre
             if argument0
@@ -39,7 +39,7 @@ function scr_switchpeppino(argument0) //gml_Script_scr_switchpeppino
         if global.playerCharacter == Characters.Maurice
         {
             gustavodash = 0
-            ratmount_Movespeed = 8
+            ratmount_movespeed = 8
             brick = false
             fmod_event_instance_release(snd_voiceok)
             snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok")

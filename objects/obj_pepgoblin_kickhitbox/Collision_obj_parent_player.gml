@@ -7,7 +7,7 @@ with (other)
 			scr_losepoints()
 			state = states.tumble
 			Xscale = other.baddieID.image_xscale
-			Movespeed = 10
+			movespeed = 10
 			vsp = 0
 			sprite_index = spr_tumble
 			if (other.baddieID.object_index == obj_pepbat)

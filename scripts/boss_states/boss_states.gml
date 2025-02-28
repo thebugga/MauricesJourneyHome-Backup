@@ -45,7 +45,7 @@ function state_boss_walk(argument0)
 
 function state_boss_bump()
 {
-	Movespeed = 0
+	movespeed = 0
 	sprite_index = bumpspr
 	image_speed = 0.35
 	if (grounded && vsp > 0)
@@ -131,16 +131,16 @@ function state_boss_taunt()
 function state_boss_parry()
 {
 	image_speed = 0.35
-	hsp = (Movespeed * (-image_xscale))
+	hsp = (movespeed * (-image_xscale))
 	if (image_index > (image_number - 1))
 	{
 		state = taunt_storedstate
 		hsp = taunt_storedhsp
 	}
-	if (Movespeed > 0)
-		Movespeed -= 0.5
+	if (movespeed > 0)
+		movespeed -= 0.5
 	else
-		Movespeed = 0
+		movespeed = 0
 }
 
 function state_player_arenaround()
@@ -157,7 +157,7 @@ function state_player_arenaround()
 	if (hsp != 0 && grounded)
 	{
 		image_speed = 0.6
-		sprite_index = spr_Move
+		sprite_index = spr_move
 		image_xscale = sign(hsp)
 	}
 	else

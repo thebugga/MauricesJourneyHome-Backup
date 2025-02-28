@@ -1,38 +1,38 @@
 function scr_player_freefallprep()
 {
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if (!grounded)
 	{
-		hsp = (Move * Movespeed)
-		if (Move != Xscale && momemtum == 1 && Movespeed != 0)
-			Movespeed -= 0.05
-		if (Movespeed == 0)
+		hsp = (move * movespeed)
+		if (move != Xscale && momemtum == 1 && movespeed != 0)
+			movespeed -= 0.05
+		if (movespeed == 0)
 			momemtum = 0
-		if ((Move == 0 && momemtum == 0) or place_meeting_solid((x + hsp), y))
+		if ((move == 0 && momemtum == 0) or place_meeting_solid((x + hsp), y))
 		{
-			Movespeed = 0
+			movespeed = 0
 			mach2 = 0
 		}
-		if (Move != 0 && Movespeed < 7)
-			Movespeed += 0.25
-		if (Movespeed > 7)
-			Movespeed -= 0.05
-		if ((place_meeting_solid((x + 1), y) && Move == 1) or (place_meeting_solid((x - 1), y) && Move == -1))
-			Movespeed = 0
+		if (move != 0 && movespeed < 7)
+			movespeed += 0.25
+		if (movespeed > 7)
+			movespeed -= 0.05
+		if ((place_meeting_solid((x + 1), y) && move == 1) or (place_meeting_solid((x - 1), y) && move == -1))
+			movespeed = 0
 		if (dir != Xscale)
 		{
 			mach2 = 0
 			dir = Xscale
-			Movespeed = 0
+			movespeed = 0
 		}
-		if (Move == (-Xscale))
+		if (move == (-Xscale))
 		{
 			mach2 = 0
-			Movespeed = 0
+			movespeed = 0
 			momemtum = 0
 		}
-		if (Move != 0)
-			Xscale = Move
+		if (move != 0)
+			Xscale = move
 		if (vsp > 0)
 			vsp = 0
 	}

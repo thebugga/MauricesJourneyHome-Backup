@@ -1,7 +1,7 @@
 scr_initenemy()
 usepalette = true
 is_controllable = true
-possess_Movespeed = 0
+possess_movespeed = 0
 gusrat = false
 grav = 0.5
 hsp = 0
@@ -48,7 +48,7 @@ heavy = false
 depth = 0
 paletteselect = 0
 spr_palette = palette_cheeseslime
-sprite_index = spr_slimeMove
+sprite_index = spr_slimemove
 grabbedby = 0
 stuntouchbuffer = 0
 scaredbuffer = 0

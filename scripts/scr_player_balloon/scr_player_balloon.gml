@@ -1,17 +1,17 @@
 function scr_player_balloon()
 {
 	sprite_index = spr_player_ratballoon
-	hsp = Movespeed
-	Move = (key_left + key_right)
+	hsp = movespeed
+	move = (key_left + key_right)
 	vsp = -5
 	
-	if (Move != 0)
-		Movespeed = approach(Movespeed, (Move * 6), 0.35)
+	if (move != 0)
+		movespeed = approach(movespeed, (move * 6), 0.35)
 	else
-		Movespeed = approach(Movespeed, 0, 0.35)
+		movespeed = approach(movespeed, 0, 0.35)
 	
 	if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))))
-		Movespeed = 0
+		movespeed = 0
 	
 	if (balloonbuffer > 0)
 		balloonbuffer--
@@ -32,7 +32,7 @@ function scr_player_balloon()
 		sprite_index = spr_jump
 		image_index = 0
 		jumpAnim = 1
-		Movespeed = abs(Movespeed)
+		movespeed = abs(movespeed)
 		vsp = -11
 		jumpstop = 0
 	}

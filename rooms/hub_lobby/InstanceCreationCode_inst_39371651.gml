@@ -19,7 +19,7 @@ if global.bombcutscene
 			        {
 			            defused = true
 			            state = states.normal
-			            Movespeed = 6
+			            movespeed = 6
 			            vsp = -6
 			        }
 				}
@@ -38,7 +38,7 @@ if global.bombcutscene
 	    {
 			if (x > 544)
 			{
-		        sprite_index = spr_playerN_Move
+		        sprite_index = spr_playerN_move
 				x -= 4
 				image_xscale = -1
 			}
@@ -51,7 +51,7 @@ if global.bombcutscene
 			}
 	    }
 	}
-	], [cutscene_Move_player, obj_player1.id, 480, 8, 12], [cutscene_player_idleanim], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_480_gml_RoomCC_hub_industrialcomplex_2_Create
+	], [cutscene_move_player, obj_player1.id, 480, 8, 12], [cutscene_player_idleanim], [function() //gml_Script_anon_gml_RoomCC_hub_industrialcomplex_2_Create_480_gml_RoomCC_hub_industrialcomplex_2_Create
 	{
 	    if (!instance_exists(obj_pizzagoblinbomb))
 		{
@@ -69,7 +69,7 @@ if global.bombcutscene
 	{
 	    with (recipient)
 	    {
-	        sprite_index = spr_playerN_Move
+	        sprite_index = spr_playerN_move
 			x += 10
 	        if (x >= room_width + 50)
 	        {

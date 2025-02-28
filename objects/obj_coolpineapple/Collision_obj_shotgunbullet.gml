@@ -11,7 +11,7 @@ with (other)
 if (state != states.parry)
 {
 	sprite_index = parryspr
-	Movespeed = 8
+	movespeed = 8
 	state = states.parry
 	image_index = 0
 }

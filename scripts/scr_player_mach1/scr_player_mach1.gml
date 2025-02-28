@@ -5,34 +5,34 @@ function scr_player_mach1()
 	machhitAnim = 0
 	crouchslideAnim = 1
 	dir = Xscale
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + Xscale), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
 	{
 		mach2 = 0
 		state = states.normal
-		Movespeed = 0
+		movespeed = 0
 	}
 	if (!(place_meeting(x, (y + 1), obj_railparent)))
-		hsp = (Xscale * Movespeed)
+		hsp = (Xscale * movespeed)
 	else
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp = ((Xscale * Movespeed) + (_railinst.Movespeed * _railinst.dir))
+		hsp = ((Xscale * movespeed) + (_railinst.movespeed * _railinst.dir))
 	}
-	if (Xscale != Move && Move != 0)
+	if (Xscale != move && move != 0)
 	{
 		sprite_index = spr_mach1
 		image_index = 0
 		momemtum = 0
 		mach2 = 0
-		Movespeed = 6
-		Xscale = Move
+		movespeed = 6
+		Xscale = move
 	}
 	if grounded
 	{
-		if (Movespeed <= 8)
-			Movespeed += 0.075
-		if (Movespeed >= 8)
+		if (movespeed <= 8)
+			movespeed += 0.075
+		if (movespeed >= 8)
 		{
 			state = states.mach2
 			particle_set_scale(particle.jumpdust, Xscale, 1)
@@ -80,7 +80,7 @@ function scr_player_mach1()
 	}
 	if (place_meeting((x + Xscale), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
-		Movespeed = 0
+		movespeed = 0
 		state = states.normal
 	}
 	switch character
@@ -108,7 +108,7 @@ function scr_player_mach1()
 				with (instance_create(x, y, obj_dynamite))
 				{
 					image_xscale = other.Xscale
-					Movespeed = (other.Movespeed + 4)
+					movespeed = (other.movespeed + 4)
 					vsp = -6
 					other.dynamite_inst = id
 					playerid = other.id

@@ -1,7 +1,7 @@
 prevhsp = hsp
-prevMove = Move
-prevMovespeed = Movespeed
-previceMovespeed = iceMovespeed
+prevmove = move
+prevmovespeed = movespeed
+previcemovespeed = icemovespeed
 prevXscale = Xscale
 
 scr_getinput(player_index)
@@ -567,9 +567,9 @@ if (prevstate != state)
 if (!(place_meeting(x, (y + 1), obj_railparent)))
 {
 	if (state == states.mach3 or state == states.mach2 or state == states.tumble)
-		railMovespeed = approach(railMovespeed, 0, 0.1)
+		railmovespeed = approach(railmovespeed, 0, 0.1)
 	else
-		railMovespeed = approach(railMovespeed, 0, 0.5)
+		railmovespeed = approach(railmovespeed, 0, 0.5)
 }
 if (state != states.handstandjump && state != states.tumble)
 	crouchslipbuffer = 0
@@ -770,7 +770,7 @@ if (state != states.mach3 && state != states.grabbed)
 if (state != states.grabbed && state != states.hurt)
 {
 	if (grounded && state != states.grabbing)
-		suplexMove = 0
+		suplexmove = 0
 }
 if (state != states.freefall && (state != states.chainsaw or tauntstoredstate != states.freefall) && (state != states.backbreaker or tauntstoredstate != states.freefall))
 	freefallsmash = -14
@@ -927,14 +927,14 @@ if (state == states.throwing or state == states.backkick or state == states.shou
 	grabbing = 1
 else
 	grabbing = 0
-if ((state == states.ratmountbounce && vsp >= 0) or sprite_index == spr_player_Sjumpcancel or sprite_index == spr_swingding or sprite_index == spr_tumble or state == states.boxxedpepspin or state == states.trashroll or state == states.trashjump or state == states.shotgundash or (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 or sprite_index == spr_shotgunjump3)) or state == states.Sjump or state == states.rocket or state == states.rocketslide or state == states.chainsawbump or (state == states.punch && ((sprite_index != spr_player_breakdanceuppercut && sprite_index != spr_player_breakdanceuppercutend) || vsp < 0)) or state == states.faceplant or state == states.rideweenie or state == states.mach3 or sprite_index == spr_mach3boost or (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) or state == states.freefall or state == states.fireass or state == states.jetpackjump or state == states.firemouth or state == states.hookshot or state == states.jetpackjump or state == states.skateboard or state == states.mach4 or state == states.Sjump or state == states.machfreefall or state == states.tacklecharge or (state == states.superslam && sprite_index == spr_piledriver) or state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes or state == states.trickjump or state == states.cheesepep or state == states.cheeseball or state == states.ratmounttumble or state == states.ratmountgroundpound or state == states.ratmountpunch or state == states.antigrav or ratmount_Movespeed == 12 or state == states.slipbanan or state == states.shoulderbash or state == states.machcancel)
-	illllMove = 1
+if ((state == states.ratmountbounce && vsp >= 0) or sprite_index == spr_player_Sjumpcancel or sprite_index == spr_swingding or sprite_index == spr_tumble or state == states.boxxedpepspin or state == states.trashroll or state == states.trashjump or state == states.shotgundash or (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 or sprite_index == spr_shotgunjump3)) or state == states.Sjump or state == states.rocket or state == states.rocketslide or state == states.chainsawbump or (state == states.punch && ((sprite_index != spr_player_breakdanceuppercut && sprite_index != spr_player_breakdanceuppercutend) || vsp < 0)) or state == states.faceplant or state == states.rideweenie or state == states.mach3 or sprite_index == spr_mach3boost or (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) or state == states.freefall or state == states.fireass or state == states.jetpackjump or state == states.firemouth or state == states.hookshot or state == states.jetpackjump or state == states.skateboard or state == states.mach4 or state == states.Sjump or state == states.machfreefall or state == states.tacklecharge or (state == states.superslam && sprite_index == spr_piledriver) or state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes or state == states.trickjump or state == states.cheesepep or state == states.cheeseball or state == states.ratmounttumble or state == states.ratmountgroundpound or state == states.ratmountpunch or state == states.antigrav or ratmount_movespeed == 12 or state == states.slipbanan or state == states.shoulderbash or state == states.machcancel)
+	illllmove = 1
 else
-	instakillMove = 0
+	instakillmove = 0
 if (state == states.ratmountbounce && vsp < 0)
-	stunMove = 1
+	stunmove = 1
 else
-	stunMove = 0
+	stunmove = 0
 if (flash == 1 && alarm[0] <= 0)
 	alarm[0] = (0.15 * room_speed)
 if (state != states.ladder)
@@ -964,7 +964,7 @@ if (ladderbuffer > 0)
 	ladderbuffer--
 if (state != states.jump)
 	stompAnim = 0
-if (state == states.mach3 or state == states.mach2 or state == states.Sjump or ratmount_Movespeed == 12)
+if (state == states.mach3 or state == states.mach2 or state == states.Sjump or ratmount_movespeed == 12)
 {
 	if (macheffect == 0)
 	{
@@ -985,12 +985,12 @@ if (state == states.mach3 or state == states.mach2 or state == states.Sjump or r
         }
 	}
 }
-if ((!(state == states.mach3)) && (!(state == states.mach2)) && (!(state == states.Sjump)) && ratmount_Movespeed < 12)
+if ((!(state == states.mach3)) && (!(state == states.mach2)) && (!(state == states.Sjump)) && ratmount_movespeed < 12)
 	macheffect = 0
 if (toomuchalarm1 > 0)
 {
 	toomuchalarm1 -= 1
-	if (toomuchalarm1 <= 0 && (state == states.mach3 or state == states.mach2 or state == states.Sjump or ratmount_Movespeed == 12))
+	if (toomuchalarm1 <= 0 && (state == states.mach3 or state == states.mach2 or state == states.Sjump or ratmount_movespeed == 12))
 	{
 		with (create_mach3effect(x, y, sprite_index, (image_index - 1)))
 		{
@@ -1060,7 +1060,7 @@ if (((place_meeting(x, y, obj_door) && (!(place_meeting(x, y, obj_doorblocked)))
 	with (instance_create(x, y, obj_uparrow))
 		playerid = other.object_index
 }
-if (Movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.slipbanan && !instance_exists(speedlineseffectid) && !cutscene)
+if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.slipbanan && !instance_exists(speedlineseffectid) && !cutscene)
 {
 	with (instance_create(x, y, obj_speedlines))
 	{
@@ -1068,7 +1068,7 @@ if (Movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.
 		other.speedlineseffectid = id
 	}
 }
-if (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_Movespeed >= 12 || gusdashpadbuffer > 0)
+if (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
 {
     if (macheffect == 0)
     {

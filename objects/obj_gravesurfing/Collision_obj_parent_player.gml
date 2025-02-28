@@ -4,9 +4,9 @@ if (buffer <= 0 && other.state != states.ghost && other.grounded)
 	with (other)
 	{
 		vsp = -11
-		Movespeed = abs(Movespeed)
+		movespeed = abs(movespeed)
 		dir = Xscale
-		Movespeed = 13
+		movespeed = 13
 		instance_create(x, y, obj_jumpdust)
 		sprite_index = spr_player_corpsestart
 		image_index = 0

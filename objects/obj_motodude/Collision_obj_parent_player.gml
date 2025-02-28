@@ -1,10 +1,10 @@
-if other.instakillMove
+if other.instakillmove
 	instance_destroy()
 else if (other.state == states.freefall)
 {
 	other.Xscale = sign(image_xscale)
 	other.state = states.motorcycle
-	other.Movespeed = abs(hsp)
+	other.movespeed = abs(hsp)
 	other.sprite_index = spr_player_pizzacar
 	explode = 0
 	instance_destroy()

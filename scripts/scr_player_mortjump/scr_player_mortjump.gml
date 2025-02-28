@@ -1,8 +1,8 @@
 function scr_player_mortjump()
 {
 	image_speed = 0.35
-	Move = (key_left + key_right)
-	hsp = Movespeed
+	move = (key_left + key_right)
+	hsp = movespeed
 	if key_jump
 		input_buffer_jump = 0
 	if ((!key_jump2) && (!jumpstop) && vsp < 0.5)
@@ -10,21 +10,21 @@ function scr_player_mortjump()
 		jumpstop = 1
 		vsp /= 20
 	}
-	if (Move != 0)
+	if (move != 0)
 	{
-		if (Move == Xscale)
-			Movespeed = approach(Movespeed, (Xscale * 8), 0.5)
+		if (move == Xscale)
+			movespeed = approach(movespeed, (Xscale * 8), 0.5)
 		else
-			Movespeed = approach(Movespeed, 0, 0.5)
-		if (Movespeed <= 0)
-			Xscale = Move
+			movespeed = approach(movespeed, 0, 0.5)
+		if (movespeed <= 0)
+			Xscale = move
 	}
 	else
-		Movespeed = approach(Movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
-		Movespeed = 0
-		if (sprite_index == spr_player_barrelMove)
+		movespeed = 0
+		if (sprite_index == spr_player_barrelmove)
 			sprite_index = spr_player_barrelidle
 	}
 	if (floor(image_index) == (image_number - 1))

@@ -107,7 +107,7 @@ switch state
 						y = hitY
 					}
 					state = states.arenaround
-					Movespeed = 0
+					movespeed = 0
 					hsp = 0
 					vsp = 0
 					sprite_index = spr_idle

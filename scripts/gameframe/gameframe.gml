@@ -457,8 +457,8 @@ function gameframe_button_update(_x, _y, _height, _mx, _my) {
 			_over_row = _dmx >= _wx && _dmy >= _wy && _dmx < _wx + window_get_width() && _dmy < _wy + window_get_height();
 		}
 	}
-	if (gameframe_button_wait_for_Movement) {
-		if (_mx != gameframe_button_wait_for_Movement_x || _my != gameframe_button_wait_for_Movement_y) gameframe_button_wait_for_Movement = false; else _over_row = false;
+	if (gameframe_button_wait_for_movement) {
+		if (_mx != gameframe_button_wait_for_movement_x || _my != gameframe_button_wait_for_movement_y) gameframe_button_wait_for_movement = false; else _over_row = false;
 	}
 	var _dpiScale = gameframe_effective_scale;
 	var _pressed = mouse_check_button_pressed(1);
@@ -591,9 +591,9 @@ function gameframe_minimize() {
 	if (gameframe_is_natively_minimized()) exit;
 	gameframe_button_reset();
 	gameframe_delayed_call_impl(function() {
-		gameframe_button_wait_for_Movement = true;
-		gameframe_button_wait_for_Movement_x = window_mouse_get_x();
-		gameframe_button_wait_for_Movement_y = window_mouse_get_y();
+		gameframe_button_wait_for_movement = true;
+		gameframe_button_wait_for_movement_x = window_mouse_get_x();
+		gameframe_button_wait_for_movement_y = window_mouse_get_y();
 		gameframe_syscommand(61472);
 	}, 1, undefined, undefined, undefined, undefined);
 }
@@ -603,9 +603,9 @@ function gameframe_minimise() {
 	if (!gameframe_is_natively_minimized()) {
 		gameframe_button_reset();
 		gameframe_delayed_call_impl(function() {
-			gameframe_button_wait_for_Movement = true;
-			gameframe_button_wait_for_Movement_x = window_mouse_get_x();
-			gameframe_button_wait_for_Movement_y = window_mouse_get_y();
+			gameframe_button_wait_for_movement = true;
+			gameframe_button_wait_for_movement_x = window_mouse_get_x();
+			gameframe_button_wait_for_movement_y = window_mouse_get_y();
 			gameframe_syscommand(61472);
 		}, 1, undefined, undefined, undefined, undefined);
 	}
@@ -1177,12 +1177,12 @@ globalvar gameframe_button_array; /// @is {array<game_frame_button>}
 gameframe_button_array = [];
 globalvar gameframe_button_fade_time; /// @is {number}
 gameframe_button_fade_time = 0.2;
-globalvar gameframe_button_wait_for_Movement; /// @is {bool}
-gameframe_button_wait_for_Movement = false;
-globalvar gameframe_button_wait_for_Movement_x; /// @is {number}
-gameframe_button_wait_for_Movement_x = 0.;
-globalvar gameframe_button_wait_for_Movement_y; /// @is {number}
-gameframe_button_wait_for_Movement_y = 0.;
+globalvar gameframe_button_wait_for_movement; /// @is {bool}
+gameframe_button_wait_for_movement = false;
+globalvar gameframe_button_wait_for_movement_x; /// @is {number}
+gameframe_button_wait_for_movement_x = 0.;
+globalvar gameframe_button_wait_for_movement_y; /// @is {number}
+gameframe_button_wait_for_movement_y = 0.;
 // gameframe:
 globalvar gameframe_debug; /// @is {bool}
 gameframe_debug = false;

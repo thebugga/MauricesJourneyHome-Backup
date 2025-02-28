@@ -16,8 +16,8 @@ switch state
 			instance_destroy(blockinst)
 			blockinst = -4
 		}
-		hsp = (image_xscale * Movespeed)
-		Movespeed = approach(Movespeed, 8, 0.5)
+		hsp = (image_xscale * movespeed)
+		movespeed = approach(movespeed, 8, 0.5)
 		with (instance_place((x + sign(hsp)), y, obj_ratblock))
 		{
 			if (sprite_index != spr_rattumbleblock && sprite_index != spr_rattumbleblock_big)

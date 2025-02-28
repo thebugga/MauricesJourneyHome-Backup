@@ -1,12 +1,12 @@
 function scr_player_trashjump()
 {
 	image_speed = 0.35
-	hsp = Movespeed
-	Move = (key_left + key_right)
-	if (Move != 0)
-		Movespeed = approach(Movespeed, (Move * 6), 0.5)
+	hsp = movespeed
+	move = (key_left + key_right)
+	if (move != 0)
+		movespeed = approach(movespeed, (move * 6), 0.5)
 	else
-		Movespeed = approach(Movespeed, 0, 0.25)
+		movespeed = approach(movespeed, 0, 0.25)
 	if (vsp > 0 && sprite_index == spr_player_trashjump)
 	{
 		sprite_index = spr_player_trashjump2
@@ -23,9 +23,9 @@ function scr_player_trashjump()
 			var slope = instance_place(x, (y + 1), obj_slope)
 			Xscale = (-sign(slope.image_xscale))
 		}
-		Movespeed = abs(Movespeed)
+		movespeed = abs(movespeed)
 		dir = Xscale
-		Movespeed += 3
+		movespeed += 3
 		instance_create(x, y, obj_jumpdust)
 		state = states.trashroll
 	}

@@ -1,6 +1,6 @@
 function scr_player_ratmountladder()
 {
-	Movespeed = 0
+	movespeed = 0
 	hsp = 0
 	if key_up
 	{

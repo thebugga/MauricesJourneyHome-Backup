@@ -8,12 +8,12 @@ switch state
 		switch substate
 		{
 			case states.normal:
-				var MoveH = (playerid.key_left + playerid.key_right)
-				var MoveV = (playerid.key_down - playerid.key_up)
-				if (MoveH != 0 or MoveV != 0)
+				var moveH = (playerid.key_left + playerid.key_right)
+				var moveV = (playerid.key_down - playerid.key_up)
+				if (moveH != 0 or moveV != 0)
 				{
-					MoveX = MoveH
-					MoveY = MoveV
+					moveX = moveH
+					moveY = moveV
 				}
 				hsp = 0
 				vsp = 0
@@ -25,8 +25,8 @@ switch state
 				break
 			case states.jump:
 				var spd = 24
-				hsp = (MoveX * spd)
-				vsp = (MoveY * spd)
+				hsp = (moveX * spd)
+				vsp = (moveY * spd)
 				Rotation += 64
 				with (obj_destructibles)
 				{

@@ -9,8 +9,8 @@ if ((other.y > other.yprevious or (other.Xscale == sign(image_xscale) && other.y
 	}
 	if (!other.global.playerCharacter == Characters.Pierre)
 	{
-		if (other.Movespeed < 10)
-			other.Movespeed = 10
+		if (other.movespeed < 10)
+			other.movespeed = 10
 		other.state = states.grind
 	}
 	else

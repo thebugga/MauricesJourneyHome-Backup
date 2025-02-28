@@ -14,12 +14,12 @@ hitY = y
 hithsp = 0
 hitvsp = 0
 hitstate = states.normal
-tauntstoredMovespeed = 0
+tauntstoredmovespeed = 0
 tauntstoredsprite = sprite_index
 tauntstoredstate = state
 
-Move = 0
-Movespeed = 0
+move = 0
+movespeed = 0
 prevframe = 0
 landAnim = false
 scr_initinput()

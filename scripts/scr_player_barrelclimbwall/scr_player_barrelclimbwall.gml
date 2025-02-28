@@ -1,12 +1,12 @@
 function scr_player_barrelclimbwall()
 {
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	hsp = 0
 	if (sprite_index == spr_player_barrelslipnslide && floor(image_index) == (image_number - 1))
 		sprite_index = spr_player_barrelroll
 	if (!key_attack)
 	{
-		Movespeed = 0
+		movespeed = 0
 		state = states.barreljump
 		sprite_index = spr_player_barrelfall
 	}
@@ -15,7 +15,7 @@ function scr_player_barrelclimbwall()
 		state = states.barrelslide
 		if place_meeting_solid((x + Xscale), y)
 			Xscale *= -1
-		Movespeed = (Xscale * 10)
+		movespeed = (Xscale * 10)
 	}
 	with (instance_place(x, (y + vsp), obj_destructibles))
 		instance_destroy()

@@ -39,15 +39,15 @@ switch state
 		{
 			state = states.jump;
 			sprite_index = idlespr;
-			Movespeed = 4;
+			movespeed = 4;
 			showtext = false;
 			scr_ghostcollectible(true)
 		}
 		break;
 	
 	case states.jump:
-		Movespeed += 0.25;
-		y -= Movespeed;
+		movespeed += 0.25;
+		y -= movespeed;
 		if y < -500
 			instance_destroy();
 		break;

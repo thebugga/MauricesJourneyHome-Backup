@@ -23,7 +23,7 @@ if (other.state == states.mach2 or other.state == states.mach3 or (other.state =
 		y = other.y
 		state = states.barrel
 		sprite_index = spr_barrelroll
-		Movespeed = 12
+		movespeed = 12
 	}
 	instance_destroy()
 }

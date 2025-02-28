@@ -3,25 +3,25 @@ function scr_vigilante_walk()
 	image_speed = 0.35
 	image_xscale = -1
 	if (abs((targetplayer.x - x)) < 400)
-		Move = -1
+		move = -1
 	else if (abs((targetplayer.x - x)) > 550)
-		Move = 0
+		move = 0
 	if (x > targetplayer.x)
-		Move = -1
+		move = -1
 	switch walkstate
 	{
 		case states.walk:
-			if (sprite_index != spr_playerV_fall && sprite_index != spr_playerV_Move)
-				sprite_index = spr_playerV_Move
-			else if (sprite_index == spr_playerV_Move && floor(image_index) == (image_number - 1))
-				sprite_index = spr_playerV_Move
-			if (Move != 0)
+			if (sprite_index != spr_playerV_fall && sprite_index != spr_playerV_move)
+				sprite_index = spr_playerV_move
+			else if (sprite_index == spr_playerV_move && floor(image_index) == (image_number - 1))
+				sprite_index = spr_playerV_move
+			if (move != 0)
 			{
-				image_xscale = Move
-				Movespeed = approach(Movespeed, 8, 0.5)
+				image_xscale = move
+				movespeed = approach(movespeed, 8, 0.5)
 			}
 			else
-				Movespeed = approach(Movespeed, 2, 0.5)
+				movespeed = approach(movespeed, 2, 0.5)
 			if (!grounded)
 				sprite_index = spr_playerV_fall
 			else if (vsp > 0 && sprite_index == spr_playerV_bootsfall)
@@ -29,7 +29,7 @@ function scr_vigilante_walk()
 				sprite_index = spr_playerV_land
 				image_index = 0
 			}
-			if (Movespeed >= 8)
+			if (movespeed >= 8)
 			{
 				walkstate = states.mach2
 				sprite_index = spr_playerV_mach1
@@ -39,9 +39,9 @@ function scr_vigilante_walk()
 		case states.mach2:
 			image_speed = 0.6
 			if ((sprite_index == spr_playerV_mach1 or sprite_index == spr_playerV_bootsland) && floor(image_index) == (image_number - 1))
-				sprite_index = spr_playerV_bootsMove
-			if (Move == 0)
-				Movespeed = approach(Movespeed, 5, 0.5)
+				sprite_index = spr_playerV_bootsmove
+			if (move == 0)
+				movespeed = approach(movespeed, 5, 0.5)
 			if (!grounded)
 				sprite_index = spr_playerV_bootsfall
 			else if (vsp > 0 && sprite_index == spr_playerV_bootsfall)
@@ -49,7 +49,7 @@ function scr_vigilante_walk()
 				sprite_index = spr_playerV_bootsland
 				image_index = 0
 			}
-			if (Movespeed <= 5)
+			if (movespeed <= 5)
 			{
 				walkstate = states.machslide
 				sprite_index = spr_playerV_machslidestart
@@ -68,8 +68,8 @@ function scr_vigilante_walk()
 	}
 
 	if (x > targetplayer.x)
-		Movespeed = approach(Movespeed, 20, 0.5)
-	hsp = (image_xscale * Movespeed)
+		movespeed = approach(movespeed, 20, 0.5)
+	hsp = (image_xscale * movespeed)
 	if (targetspot != oldtargetspot && grounded && vsp > 0 && distance_to_object(targetspot) < 400)
 	{
 		oldtargetspot = targetspot
@@ -87,9 +87,9 @@ function scr_vigilante_walk()
 		{
 			mask_index = spr_player_mask
 			state = states.climbwall
-			WallMovespeed = 0
-			if (WallMovespeed < 8)
-				WallMovespeed = 8
+			Wallmovespeed = 0
+			if (Wallmovespeed < 8)
+				Wallmovespeed = 8
 		}
 	}
 	exit;
@@ -180,9 +180,9 @@ function scr_vigilante_freefall()
 {
 	if (sprite_index == spr_playerV_bodyslamprep && floor(image_index) == (image_number - 1))
 		sprite_index = spr_playerV_bodyslam
-	Move = sign((targetplayer.x - x))
+	move = sign((targetplayer.x - x))
 	if (x > (targetplayer.x - 32) && x < (targetplayer.x + 32))
-		Move = 0
+		move = 0
 	with (obj_parent_player)
 	{
 		if place_meeting(x, y, other)
@@ -193,7 +193,7 @@ function scr_vigilante_freefall()
 				other.hit = 1
 		}
 	}
-	hsp = approach(hsp, (Move * 3), 0.5)
+	hsp = approach(hsp, (move * 3), 0.5)
 	if (grounded && vsp > 0)
 	{
 		//scr_soundeffect(sfx_groundpound)
@@ -259,7 +259,7 @@ function scr_vigilante_throwing()
 			case states.dynamite:
 				with (instance_create((x + (image_xscale * 8)), (y - 16), obj_electricpotato))
 				{
-					Move = 1
+					move = 1
 					distance = 800
 				}
 				break
@@ -357,7 +357,7 @@ function scr_vigilante_dynamite()
 			image_xscale = other.image_xscale
 			playerid = other.id
 			obj_explosion = 376
-			Movespeed = 8
+			movespeed = 8
 			vsp = -6
 		}
 	}
@@ -368,30 +368,30 @@ function scr_vigilante_climbwall()
 {
 	sprite_index = spr_playerV_wallclimb
 	hsp = 0
-	vsp = (-WallMovespeed)
-	if (WallMovespeed < 8)
-		WallMovespeed += 0.5
+	vsp = (-Wallmovespeed)
+	if (Wallmovespeed < 8)
+		Wallmovespeed += 0.5
 	if (!(place_meeting_solid((x + image_xscale), y)))
 	{
 		state = states.walk
 		walkstate = states.mach2
-		Movespeed = 8
+		movespeed = 8
 		vsp = 0
-		hsp = (image_xscale * Movespeed)
-		sprite_index = spr_playerV_bootsMove
+		hsp = (image_xscale * movespeed)
+		sprite_index = spr_playerV_bootsmove
 	}
 	exit;
 }
 
 function scr_vigilante_crouch()
 {
-	sprite_index = spr_playerV_crouchMove
-	hsp = (image_xscale * Movespeed)
+	sprite_index = spr_playerV_crouchmove
+	hsp = (image_xscale * movespeed)
 	mask_index = spr_crouchmask
 	if (!(place_meeting(x, (y - 16), obj_solid)))
 	{
 		state = states.walk
-		Movespeed = 8
+		movespeed = 8
 		sprite_index = spr_playerV_mach1
 		image_index = 0
 	}

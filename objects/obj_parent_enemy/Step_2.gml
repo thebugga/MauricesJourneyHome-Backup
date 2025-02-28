@@ -41,6 +41,6 @@ if ((object_index != obj_pizzice || state != states.pizzagoblinthrow))
 if (dodgebuffer > 0)
     dodgebuffer--
 if (state != states.hit)
-    player_instakillMove = 0
+    player_instakillmove = 0
 if (fmod_event_instance_is_playing(chargesnd) && state != (128 << 0))
     fmod_event_instance_stop(chargesnd)

@@ -1,17 +1,17 @@
 function scr_player_ratmountpunch()
 {
 	image_speed = 0.5
-	hsp = Movespeed
-	Move = (key_left + key_right)
+	hsp = movespeed
+	move = (key_left + key_right)
 	landAnim = 0
 	sprite_index = spr_lonegustavo_punch
-	if (Move != 0)
+	if (move != 0)
 	{
-		dir = Move
-		Movespeed = approach(Movespeed, (Move * ratmount_Movespeed), 0.5)
+		dir = move
+		movespeed = approach(movespeed, (move * ratmount_movespeed), 0.5)
 	}
 	else
-		Movespeed = approach(Movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	ratmountpunchtimer--
 	if (ratmountpunchtimer < 0)
 	{

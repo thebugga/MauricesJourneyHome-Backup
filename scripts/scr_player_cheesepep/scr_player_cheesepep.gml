@@ -5,27 +5,27 @@ function scr_player_cheesepep()
 	momemtum = 0
 	alarm[5] = 2
 	alarm[7] = 60
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if (!(place_meeting(x, (y + 1), obj_railparent)))
-		hsp = (Xscale * Movespeed)
+		hsp = (Xscale * movespeed)
 	else
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp = ((Xscale * Movespeed) + (_railinst.Movespeed * _railinst.dir))
+		hsp = ((Xscale * movespeed) + (_railinst.movespeed * _railinst.dir))
 	}
 	if key_jump
 		input_buffer_jump = 0
-	if (grounded && Move != 0 && sprite_index == spr_cheesepepidle)
+	if (grounded && move != 0 && sprite_index == spr_cheesepepidle)
 		sprite_index = spr_cheesepepwalk
-	else if (grounded && Move == 0 && sprite_index == spr_cheesepepwalk)
+	else if (grounded && move == 0 && sprite_index == spr_cheesepepwalk)
 		sprite_index = spr_cheesepepidle
-	if (Move != 0 && sprite_index != spr_cheesepepjumpstart)
+	if (move != 0 && sprite_index != spr_cheesepepjumpstart)
 	{
-		Xscale = Move
-		Movespeed = approach(Movespeed, 3, 0.5)
+		Xscale = move
+		movespeed = approach(movespeed, 3, 0.5)
 	}
 	else
-		Movespeed = approach(Movespeed, 0, 0.25)
+		movespeed = approach(movespeed, 0, 0.25)
 	image_speed = 0.35
 	if (grounded && (floor(image_index) % 4) == 0 && hsp != 0)
 		create_debris(x, (y + 43), spr_slimedebris)
@@ -34,13 +34,13 @@ function scr_player_cheesepep()
 		state = states.cheesepepjump
 		sprite_index = spr_cheesepepfall
 		jumpstop = 1
-		Movespeed = (Xscale * Movespeed)
+		movespeed = (Xscale * movespeed)
 	}
 	if (floor(image_index) == (image_number - 1))
 	{
 		if (sprite_index == spr_cheesepepland or sprite_index == spr_cheesepepintro)
 		{
-			if (Move != 0)
+			if (move != 0)
 				sprite_index = spr_cheesepepwalk
 			else
 				sprite_index = spr_cheesepepidle

@@ -20,8 +20,8 @@ if (state == states.tube)
 			}
 			machhitAnim = 0
 			state = states.mach3
-			if (Movespeed < 14)
-				Movespeed = 14
+			if (movespeed < 14)
+				movespeed = 14
 			var p = (object_index == obj_player1 ? 0 : 1)
 			GamepadSetVibration(p, 1, 1, 0.9)
 		}

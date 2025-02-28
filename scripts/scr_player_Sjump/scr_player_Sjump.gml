@@ -1,12 +1,12 @@
 function scr_player_Sjump()
 {
-	Move_h = (key_right + key_left)
-	Move_v = (key_down - key_up)
+	move_h = (key_right + key_left)
+	move_v = (key_down - key_up)
 	mach2 = 0;
 	jumpAnim = true;
 	dashAnim = true;
 	landAnim = false;
-	MoveAnim = true;
+	moveAnim = true;
 	stopAnim = true;
 	crouchslideAnim = true;
 	crouchAnim = false;
@@ -69,7 +69,7 @@ function scr_player_Sjump()
 	{
 		if sjumpangle == 270
 			sjumpangle += choose(-5, 5)
-		if Move_h == 0 && Move_v == 0
+		if move_h == 0 && move_v == 0
 		{
 			if sjumpangle > 270 || sjumpangle < 90
 			sjumpangle += 5
@@ -78,9 +78,9 @@ function scr_player_Sjump()
 		}
 		else
 		{
-			var _diff = sign(angle_difference(sjumpangle, point_direction(0, 0, Move_h, Move_v)))
-			Move = clamp(Move + _diff, -5,5)
-			sjumpangle += Move
+			var _diff = sign(angle_difference(sjumpangle, point_direction(0, 0, move_h, move_v)))
+			move = clamp(move + _diff, -5,5)
+			sjumpangle += move
 		}
 		var _dir = point_direction(0, 0, hsp, vsp)
 		var _xscale = sign(lengthdir_x(sjumpvsp, _dir))
@@ -97,11 +97,11 @@ function scr_player_Sjump()
 		if ((place_meeting(x + hsp, y, obj_solid) || place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && sprite_index == spr_playerN_jetpackboost)
 		{
 			sprite_index = spr_slipbanan1
-			Movespeed = abs(lengthdir_x(sjumpvsp, _dir))
-			if (Movespeed > 14)
-				Movespeed = 14
+			movespeed = abs(lengthdir_x(sjumpvsp, _dir))
+			if (movespeed > 14)
+				movespeed = 14
 			Xscale *= -1
-			hsp = (Movespeed * Xscale)
+			hsp = (movespeed * Xscale)
 			image_index = 0
 			state = states.slipbanan
 			instance_create(x, y, obj_playerexplosion)
@@ -113,7 +113,7 @@ function scr_player_Sjump()
 				jumpstop = true;
 				vsp = -6;
 				flash = true;
-				Movespeed = 13;
+				movespeed = 13;
 				image_index = 0;
 				sprite_index = spr_rockethitwall;
 				state = states.mach3;
@@ -123,12 +123,12 @@ function scr_player_Sjump()
 			else if sprite_index == spr_playerN_jetpackboostdown
 			{
 				sprite_index = spr_slipbanan1
-				Movespeed = abs(lengthdir_x(sjumpvsp, _dir))
-				if (Movespeed > 14)
-					Movespeed = 14
+				movespeed = abs(lengthdir_x(sjumpvsp, _dir))
+				if (movespeed > 14)
+					movespeed = 14
 				if _xscale != 0
 				Xscale = _xscale
-				hsp = (Movespeed * Xscale)
+				hsp = (movespeed * Xscale)
 				vsp = -(lengthdir_y(sjumpvsp, _dir) / 2)
 				image_index = 0
 				state = states.slipbanan
@@ -169,9 +169,9 @@ function scr_player_Sjump()
 			input_buffer_slap = 0
 		    sprite_index = spr_player_jumpdive1
 			image_index = 0
-			if Move_h != 0
-				Xscale = Move_h;
-		    Movespeed = 10
+			if move_h != 0
+				Xscale = move_h;
+		    movespeed = 10
 			vsp = -10
 		    state = states.mach2
 			fmod_event_one_shot_3d("event:/sfx/maurice/superjumpcancel", x, y)

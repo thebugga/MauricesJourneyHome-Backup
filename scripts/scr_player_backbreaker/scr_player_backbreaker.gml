@@ -4,11 +4,11 @@ function scr_player_backbreaker()
 	if (sprite_index != spr_player_machfreefall)
 	{
 		hsp = 0
-		Movespeed = 0
+		movespeed = 0
 	}
 	else
-		hsp = (Xscale * Movespeed)
-	Move = (key_right2 + key_left2)
+		hsp = (Xscale * movespeed)
+	move = (key_right2 + key_left2)
 	landAnim = 0
 	if (sprite_index == spr_player_machfreefall && place_meeting(x, (y + 1), obj_solid))
 	{
@@ -94,7 +94,7 @@ function scr_player_backbreaker()
 	}
 	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4))
 	{
-		Movespeed = tauntstoredMovespeed
+		movespeed = tauntstoredmovespeed
 		vsp = tauntstoredvsp
 		sprite_index = tauntstoredsprite
 		state = tauntstoredstate
@@ -110,7 +110,7 @@ function scr_player_backbreaker()
 	}
 	if ((sprite_index == spr_taunt or sprite_index == spr_player_ratmounttaunt) && taunttimer == 0)
 	{
-		Movespeed = tauntstoredMovespeed
+		movespeed = tauntstoredmovespeed
 		vsp = tauntstoredvsp
 		sprite_index = tauntstoredsprite
 		state = tauntstoredstate

@@ -3,14 +3,14 @@ function scr_player_tumble()
 	if place_meeting(x, (y + 1), obj_railparent)
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		railMovespeed = _railinst.Movespeed
+		railmovespeed = _railinst.movespeed
 		raildir = _railinst.dir
 	}
-	hsp = ((Xscale * Movespeed) + (railMovespeed * raildir))
-	Move = (key_right + key_left)
+	hsp = ((Xscale * movespeed) + (railmovespeed * raildir))
+	move = (key_right + key_left)
 	mask_index = spr_crouchmask
 	if (sprite_index == spr_tumblestart)
-		Movespeed = 6
+		movespeed = 6
 	if ((!grounded) && (sprite_index == spr_machroll or sprite_index == spr_playerV_divekick or sprite_index == spr_crouchslip or sprite_index == spr_mach2jump or sprite_index == spr_player_backslide or sprite_index == spr_player_backslideland))
 	{
 		vsp = 10
@@ -30,7 +30,7 @@ function scr_player_tumble()
 		dir = Xscale
 		vsp = -6
 	}
-	if (Movespeed <= 2 && sprite_index != spr_player_breakdance)
+	if (movespeed <= 2 && sprite_index != spr_player_breakdance)
 	{
 		state = states.normal
 	}
@@ -65,18 +65,18 @@ function scr_player_tumble()
 	{
 		particle_set_scale(particle.jumpdust, Xscale, 1)
 		create_particle(x, y, particle.jumpdust, 0)
-		Movespeed = 12
+		movespeed = 12
 		sprite_index = spr_breakdancesuper
 	}
 	if (sprite_index == spr_tumblestart && floor(image_index) == (image_number - 1))
 	{
 		sprite_index = spr_tumble
-		Movespeed = 14
+		movespeed = 14
 	}
 	if (((place_meeting((x + Xscale), y, obj_solid) or place_meeting_slope((x + Xscale), y)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && ((!(place_meeting((x + hsp), y, obj_rattumble))) or sprite_index != spr_tumble) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or place_meeting(x, y, obj_timedgate))
 	{
 		hsp = 0;
-		Movespeed = 0;
+		movespeed = 0;
 		if (sprite_index == spr_tumble or sprite_index == spr_tumblestart)
 		{
 			state = states.bump
@@ -135,7 +135,7 @@ if (sprite_index == spr_crouchslip && global.playerCharacter == Characters.Pierr
 		{
 			with (instance_create(x, y, obj_jumpdust))
 				image_xscale = other.Xscale
-			if (Movespeed >= 12)
+			if (movespeed >= 12)
 				state = states.mach3
 			else
 				state = states.mach2
@@ -148,7 +148,7 @@ if (sprite_index == spr_crouchslip && global.playerCharacter == Characters.Pierr
 	{
 		if (crouchslipbuffer == 0)
 		{
-			if (Movespeed > 6)
+			if (movespeed > 6)
 			{
 				state = states.machslide
 				sprite_index = spr_machslidestart
@@ -159,7 +159,7 @@ if (sprite_index == spr_crouchslip && global.playerCharacter == Characters.Pierr
 		}
 	}
 	if (sprite_index == spr_player_Sjumpcancelslide or sprite_index == spr_breakdancesuper or sprite_index == spr_machroll or sprite_index == spr_tumble or sprite_index == spr_tumblestart or sprite_index == spr_machroll or sprite_index == spr_player_mach2jump)
-		image_speed = (abs(Movespeed) / 15)
+		image_speed = (abs(movespeed) / 15)
 	else if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach2jump)
 		image_speed = 0
 	else if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_Sjumpcancel)

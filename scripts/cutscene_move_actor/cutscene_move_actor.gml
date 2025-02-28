@@ -1,4 +1,4 @@
-function cutscene_Move_actor(argument0, argument1, argument2, argument3)
+function cutscene_move_actor(argument0, argument1, argument2, argument3)
 {
 	var _obj = argument0
 	var xx = argument1

@@ -1,6 +1,6 @@
 function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
 {
-    Move = (key_left + key_right)
+    move = (key_left + key_right)
     if (sprite_index == spr_lonegustavo_dashjump)
         image_speed = 0.6
     else
@@ -10,16 +10,16 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
         vsp /= 10
         jumpstop = 1
     }
-    hsp = Movespeed
-    var r = ratmount_Movespeed
-    if ((place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) || (abs(Movespeed) < 8 && Move != xscale) || abs(Movespeed) <= 6)
+    hsp = movespeed
+    var r = ratmount_movespeed
+    if ((place_meeting((x + Xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) || (abs(movespeed) < 8 && move != Xscale) || abs(movespeed) <= 6)
     {
         gustavodash = 0
-        ratmount_Movespeed = 8
+        ratmount_movespeed = 8
     }
     if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && gustavodash != 51)
     {
-        Movespeed = 0
+        movespeed = 0
         if (r >= 12)
         {
             var _bump = ledge_bump((vsp >= 0 ? 32 : 22))
@@ -32,7 +32,7 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
                 else
                     sprite_index = spr_lonegustavo_bump
                 image_index = 0
-                hsp = ((-xscale) * 4)
+                hsp = ((-Xscale) * 4)
                 vsp = -5
                 with (obj_camera)
                 {
@@ -47,27 +47,27 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
         gusdashpadbuffer--
     if (gusdashpadbuffer <= 0)
     {
-        if (Move != 0)
+        if (move != 0)
         {
-            if (Move == xscale)
-                Movespeed = approach(Movespeed, (xscale * ratmount_Movespeed), 0.5)
+            if (move == Xscale)
+                movespeed = approach(movespeed, (Xscale * ratmount_movespeed), 0.5)
             else if (gustavodash == 51)
-                Movespeed = approach(Movespeed, 0, 0.5)
+                movespeed = approach(movespeed, 0, 0.5)
             else
-                Movespeed = approach(Movespeed, 0, 0.5)
+                movespeed = approach(movespeed, 0, 0.5)
         }
         else if (gustavodash == 51)
-            Movespeed = approach(Movespeed, 0, 0.5)
+            movespeed = approach(movespeed, 0, 0.5)
         else
-            Movespeed = approach(Movespeed, 0, 0.5)
-        if (Move != xscale && Move != 0)
+            movespeed = approach(movespeed, 0, 0.5)
+        if (move != Xscale && move != 0)
         {
-            ratmount_Movespeed = 8
-            xscale = Move
+            ratmount_movespeed = 8
+            Xscale = move
         }
     }
-    if (gusdashpadbuffer > 0 && Movespeed != 0)
-        xscale = sign(Movespeed)
+    if (gusdashpadbuffer > 0 && movespeed != 0)
+        Xscale = sign(movespeed)
     if (jumpAnim && floor(image_index) == (image_number - 1))
     {
         jumpAnim = 0
@@ -118,7 +118,7 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
             }
         }
         brick = 0
-        Movespeed = hsp
+        movespeed = hsp
         state = states.ratmountgroundpound
         image_index = 0
         sprite_index = spr_lonegustavo_groundpoundstart
@@ -130,7 +130,7 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
     }
     if (input_buffer_slap > 0 && (!key_up))
     {
-        particle_set_scale((5 << 0), xscale, 1)
+        particle_set_scale((5 << 0), Xscale, 1)
         create_particle(x, y, (5 << 0), 0)
         input_buffer_slap = 0
         if (brick == 1)
@@ -143,9 +143,9 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
         gustavohitwall = 0
         ratmountpunchtimer = 25
         image_index = 0
-        if (Move != 0)
-            xscale = Move
-        Movespeed = (xscale * 12)
+        if (move != 0)
+            Xscale = move
+        movespeed = (Xscale * 12)
         sprite_index = spr_lonegustavo_punch
     }
     var bounce = 1
@@ -153,17 +153,17 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
     {
         bounce = 0
         input_buffer_jump = 0
-        particle_set_scale((4 << 0), xscale, 1)
+        particle_set_scale((4 << 0), Xscale, 1)
         create_particle(x, y, (4 << 0), 0)
         scr_fmod_soundeffect(jumpsnd, x, y)
         if brick
         {
-            if (ratmount_Movespeed >= 12 && key_attack)
+            if (ratmount_movespeed >= 12 && key_attack)
                 sprite_index = spr_player_ratmountdashjump
             else
                 sprite_index = spr_player_ratmountjump
         }
-        else if (ratmount_Movespeed >= 12 && key_attack)
+        else if (ratmount_movespeed >= 12 && key_attack)
             sprite_index = spr_lonegustavo_dashjump
         else
             sprite_index = spr_player_ratmountgroundpound

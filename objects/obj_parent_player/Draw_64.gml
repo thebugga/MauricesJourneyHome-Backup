@@ -12,7 +12,7 @@ if obj_player1.debugstats && debug
     draw_text(32, 216, ("IMAGE_SPEED: " + string(obj_player1.image_speed)))
     draw_text(32, 192, ("X: " + string(x)))
     draw_text(32, 168, ("Y: " + string(y)))
-    draw_text(32, 144, ("REAL HSP: " + string(obj_player1.Movespeed)))
+    draw_text(32, 144, ("REAL HSP: " + string(obj_player1.movespeed)))
     draw_text(32, 120, ("HSP: " + string(obj_player1.hsp)))
     draw_text(32, 96, ("VSP: " + string(obj_player1.vsp)))
     draw_text(32, 72, ("STATE: " + statename))

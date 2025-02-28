@@ -4,12 +4,12 @@ function scr_player_grind()
 	image_speed = 0.35
 	machhitAnim = 0
 	crouchslideAnim = 1
-	hsp = (Xscale * Movespeed)
-	if (Movespeed < 10)
-		Movespeed = approach(Movespeed, 10, 0.5)
+	hsp = (Xscale * movespeed)
+	if (movespeed < 10)
+		movespeed = approach(movespeed, 10, 0.5)
 	if ((!(place_meeting(x, (y + 18), obj_grindrail))) && (!(place_meeting(x, (y + 18), obj_grindrailslope))))
 	{
-		if (Movespeed < 12 or skateboarding)
+		if (movespeed < 12 or skateboarding)
 		{
 			state = states.mach2
 			sprite_index = spr_mach2jump
@@ -35,7 +35,7 @@ function scr_player_grind()
 			sprite_index = spr_clownjump
 			image_index = 0
 		}
-		if (Movespeed < 12 or skateboarding)
+		if (movespeed < 12 or skateboarding)
 		{
 			state = states.mach2
 			sprite_index = spr_mach2jump

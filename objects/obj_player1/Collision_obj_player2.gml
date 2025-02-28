@@ -29,7 +29,7 @@ if (other.cutscene == 0 && other.state != states.actor && state != states.actor 
 	{
 		if (state == states.handstandjump && other.hurted == 0 && other.state != states.hurt && other.state != states.knightpepslopes && other.state != states.knightpep && other.state != states.tumble && other.state != states.fireass && other.state != states.bombpep && other.cutscene == 0 && other.hurted == 0 && hurted == 0 && (!((other.state == states.handstandjump or other.state == states.punch))))
 		{
-			Movespeed = 0
+			movespeed = 0
 			image_index = 0
 			sprite_index = spr_haulingstart
 			baddiegrabbedID = other.id
@@ -71,7 +71,7 @@ if (other.cutscene == 0 && other.state != states.actor && state != states.actor 
 			y = obj_player1.y
 			alarm[8] = 60
 			alarm[7] = 120
-			Movespeed = 15
+			movespeed = 15
 			vsp = -6
 			sprite_index = spr_hurt
 		}

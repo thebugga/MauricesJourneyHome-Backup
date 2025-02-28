@@ -20,7 +20,7 @@ switch state
 						hitX = x
 						hitY = y
 						hitLag = 10
-						tauntstoredMovespeed = Movespeed
+						tauntstoredmovespeed = movespeed
 						tauntstoredsprite = sprite_index
 						tauntstoredstate = state
 						tauntstoredvsp = vsp

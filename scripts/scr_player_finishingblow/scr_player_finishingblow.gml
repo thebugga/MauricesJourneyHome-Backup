@@ -1,15 +1,15 @@
 function scr_player_finishingblow()
 {
-	hsp = Movespeed
-	Movespeed = approach(Movespeed, 0, 0.25)
+	hsp = movespeed
+	movespeed = approach(movespeed, 0, 0.25)
 	if (floor(image_index) == (image_number - 1))
 	{
-		Movespeed = abs(Movespeed)
+		movespeed = abs(movespeed)
 		state = states.normal
 	}
 	image_speed = 0.4
 	landAnim = 0
-	if ((!instance_exists(obj_dashcloud2)) && grounded && Movespeed > 3)
+	if ((!instance_exists(obj_dashcloud2)) && grounded && movespeed > 3)
 	{
 		with (instance_create(x, y, obj_dashcloud2))
 			image_xscale = other.Xscale

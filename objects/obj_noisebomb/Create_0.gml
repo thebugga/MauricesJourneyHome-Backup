@@ -3,7 +3,7 @@ followQueue = ds_queue_create()
 hsp = 0
 vsp = 0
 grav = 0.23
-Movespeed = 3
+movespeed = 3
 with (obj_parent_player)
 {
 	state = states.backbreaker

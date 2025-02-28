@@ -13,7 +13,7 @@ function scr_enemy_land()
 	if place_meeting(x, (y + 1), obj_railparent)
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp += (_railinst.Movespeed * _railinst.dir)
+		hsp += (_railinst.movespeed * _railinst.dir)
 	}
 	exit;
 }

@@ -6,7 +6,7 @@ function scr_player_actor()
 			image_index = (image_number - 1)
 	}
 	cutscene = 1
-	Movespeed = 0
+	movespeed = 0
 	var _room_x = 0
 	var _room_y = 0
 	var _room_w = room_width

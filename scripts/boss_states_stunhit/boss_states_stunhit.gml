@@ -12,10 +12,10 @@ function state_boss_stun()
 	}
 	else if sprite_index == spr_flung
 	{
-		hsp = Movespeed * image_xscale
+		hsp = movespeed * image_xscale
 		if ((grounded or (grounded && (!(place_meeting(x, y, obj_platform))))) && vsp > 0)
 		{
-			Movespeed = approach(Movespeed, 0, 0.25)
+			movespeed = approach(movespeed, 0, 0.25)
 			funnyangle = 0
 			if image_index == 0
 			{

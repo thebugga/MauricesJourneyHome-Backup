@@ -36,35 +36,35 @@ function scr_player_freefall()
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_bodyslamstart)
 		sprite_index = spr_bodyslamfall
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if (!grounded)
 	{
 		if (sprite_index != spr_rockethitwall)
-			hsp = (Move * Movespeed)
+			hsp = (move * movespeed)
 		else
 			hsp = 0
-		if (Move != Xscale && momemtum == 1 && Movespeed != 0)
-			Movespeed -= 0.05
-		if (Movespeed == 0)
+		if (move != Xscale && momemtum == 1 && movespeed != 0)
+			movespeed -= 0.05
+		if (movespeed == 0)
 			momemtum = 0
-		if (Move != dir && Move != 0)
+		if (move != dir && move != 0)
 		{
-			dir = Move
-			Movespeed = 0
+			dir = move
+			movespeed = 0
 		}
-		if ((Move == 0 && momemtum == 0) or place_meeting_solid((x + hsp), y))
+		if ((move == 0 && momemtum == 0) or place_meeting_solid((x + hsp), y))
 		{
-			Movespeed = 0
+			movespeed = 0
 			mach2 = 0
 		}
-		if (Move != 0 && Movespeed < 7)
-			Movespeed += 0.25
-		if (Movespeed > 7)
-			Movespeed -= 0.05
-		if ((place_meeting_solid((x + 1), y) && Move == 1) or (place_meeting_solid((x - 1), y) && Move == -1))
-			Movespeed = 0
-		if (Move != 0 && sprite_index != spr_player_poundcancel1)
-			Xscale = Move
+		if (move != 0 && movespeed < 7)
+			movespeed += 0.25
+		if (movespeed > 7)
+			movespeed -= 0.05
+		if ((place_meeting_solid((x + 1), y) && move == 1) or (place_meeting_solid((x - 1), y) && move == -1))
+			movespeed = 0
+		if (move != 0 && sprite_index != spr_player_poundcancel1)
+			Xscale = move
 	}
 	if (vsp > 0)
 		freefallsmash++
@@ -88,9 +88,9 @@ function scr_player_freefall()
 				other.state = states.tumble
 				other.sprite_index = other.spr_crouchslip
 				if (other.freefallsmash > 20)
-					other.Movespeed = 12
+					other.movespeed = 12
 				else
-					other.Movespeed = 8
+					other.movespeed = 8
 				with (instance_create(other.x, other.y, obj_jumpdust))
 					image_xscale = (sign(-other.image_xscale))
 			}

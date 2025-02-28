@@ -14,7 +14,7 @@ if (phase == 0 && attacking)
 				image_index = 0
 				image_speed = 0.35
 				taunttimer = 20
-				Movespeed = 8
+				movespeed = 8
 				parry_inst = -4
 				parry_count = parry_max
 				with (instance_create(x, y, obj_parryeffect))

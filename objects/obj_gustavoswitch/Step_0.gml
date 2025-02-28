@@ -4,7 +4,7 @@ if (sprite_index == spr_gustavoswitch2 && floor(image_index) == (image_number - 
 	{
 		visible = true
 		create_particle(x, y, particle.genericpoofeffect)
-		ratmount_Movespeed = 8
+		ratmount_movespeed = 8
 		gustavodash = 0
 		global.playerCharacter = Characters.Pierre
 		state = states.ratmount

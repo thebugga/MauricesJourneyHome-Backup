@@ -1,11 +1,11 @@
 function scr_player_boots()
 {
 	landAnim = 0
-	hsp = (Move * Movespeed)
+	hsp = (move * movespeed)
 	if (dir != Xscale)
 	{
 		dir = Xscale
-		Movespeed = 2
+		movespeed = 2
 		facehurt = 0
 	}
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
@@ -31,16 +31,16 @@ function scr_player_boots()
 		input_buffer_jump = 0
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_bootsjump)
 		sprite_index = spr_playerV_bootsfall
-	Move = (key_left + key_right)
-	if (Move != 0)
-		Xscale = Move
-	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == 1 && Move == 1 && (!(place_meeting((x + 1), y, obj_slope))))
-		Movespeed = 0
-	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == -1 && Move == -1 && (!(place_meeting((x - 1), y, obj_slope))))
-		Movespeed = 0
-	if (grounded && Move != 0 && sprite_index == spr_playerV_bootsidle)
-		sprite_index = spr_playerV_bootsMove
-	else if (grounded && Move == 0 && sprite_index == spr_playerV_bootsMove)
+	move = (key_left + key_right)
+	if (move != 0)
+		Xscale = move
+	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == 1 && move == 1 && (!(place_meeting((x + 1), y, obj_slope))))
+		movespeed = 0
+	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == -1 && move == -1 && (!(place_meeting((x - 1), y, obj_slope))))
+		movespeed = 0
+	if (grounded && move != 0 && sprite_index == spr_playerV_bootsidle)
+		sprite_index = spr_playerV_bootsmove
+	else if (grounded && move == 0 && sprite_index == spr_playerV_bootsmove)
 		sprite_index = spr_playerV_bootsidle
 	if ((!grounded) && sprite_index != spr_playerV_bootsjump && sprite_index != spr_playerV_bootsfall)
 		sprite_index = spr_playerV_bootsfall
@@ -55,24 +55,24 @@ function scr_player_boots()
 		state = states.normal
 	if grounded
 	{
-		if (Move != 0)
+		if (move != 0)
 		{
-			if (Movespeed < 20)
-				Movespeed += 0.35
-			else if (floor(Movespeed) == 20)
-				Movespeed = 14
+			if (movespeed < 20)
+				movespeed += 0.35
+			else if (floor(movespeed) == 20)
+				movespeed = 14
 		}
 		else
-			Movespeed = 0
-		if (Movespeed > 20)
-			Movespeed -= 0.1
+			movespeed = 0
+		if (movespeed > 20)
+			movespeed -= 0.1
 	}
-	if (Move != 0 && grounded)
+	if (move != 0 && grounded)
 	{
-		Xscale = Move
-		if (Movespeed < 6 && Move != 0)
+		Xscale = move
+		if (movespeed < 6 && move != 0)
 			image_speed = 0.35
-		else if (Movespeed > 6 && Movespeed < 8)
+		else if (movespeed > 6 && movespeed < 8)
 			image_speed = 0.45
 		else
 			image_speed = 0.6
@@ -81,7 +81,7 @@ function scr_player_boots()
 		image_speed = 0.35
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_bootsout)
 		sprite_index = spr_playerV_bootsidle
-	if (key_down && Movespeed > 12)
+	if (key_down && movespeed > 12)
 	{
 		image_index = 0
 		grav = 0.5
@@ -97,7 +97,7 @@ function scr_player_boots()
 		with (instance_create(x, y, obj_dynamite))
 		{
 			image_xscale = other.Xscale
-			Movespeed = 6
+			movespeed = 6
 			vsp = -6
 		}
 	}
@@ -108,7 +108,7 @@ function scr_player_boots()
 		sprite_index = spr_playerV_revolverstart
 		vsp = -5
 	}
-	if (Movespeed == 12 && (!instance_exists(speedlineseffectid)))
+	if (movespeed == 12 && (!instance_exists(speedlineseffectid)))
 	{
 		with (instance_create(x, y, obj_speedlines))
 		{
@@ -116,7 +116,7 @@ function scr_player_boots()
 			other.speedlineseffectid = id
 		}
 	}
-	if ((!instance_exists(dashcloudid)) && grounded && Move != 0)
+	if ((!instance_exists(dashcloudid)) && grounded && move != 0)
 	{
 		with (instance_create(x, y, obj_dashcloud))
 		{

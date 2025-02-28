@@ -1,25 +1,25 @@
 function scr_player_Sjumpprep()
 {
 			if (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft)
-				Move = key_left + key_right;
+				move = key_left + key_right;
 			else
-				Move = Xscale;
+				move = Xscale;
 			if (!place_meeting(x, y + 1, obj_railparent))
-				hsp = Move * Movespeed;
+				hsp = move * movespeed;
 			else
 			{
 				var _railinst = instance_place(x, y + 1, obj_railparent);
-				hsp = (Move * Movespeed) + (_railinst.Movespeed * _railinst.dir);
+				hsp = (move * movespeed) + (_railinst.movespeed * _railinst.dir);
 			}
 			if sprite_index == spr_superjumpprep
-				Movespeed = approach(Movespeed, 0, 1);
+				movespeed = approach(movespeed, 0, 1);
 			if (animation_end() && sprite_index == spr_superjumpprep)
 				sprite_index = spr_superjumppreplight;
 			if sprite_index == spr_superjumppreplight
-				Movespeed = 2;
+				movespeed = 2;
 			if sprite_index != spr_superjumpprep
 			{
-				if (Move != 0 && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft))
+				if (move != 0 && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft))
 				{
 					if Xscale == 1
 					{

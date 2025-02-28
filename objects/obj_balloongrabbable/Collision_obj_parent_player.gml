@@ -10,7 +10,7 @@ if active
 	else if (global.playerCharacter != Characters.Pierre)
 	{
 		other.state = states.balloon
-		other.Movespeed = other.hsp
+		other.movespeed = other.hsp
 		active = 0
 		with (other)
 		{

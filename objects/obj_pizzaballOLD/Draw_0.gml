@@ -3,7 +3,7 @@ if (state == states.golf)
 {
 	var _xx = lengthdir_x(128, m_angle)
 	var _yy = lengthdir_y(128, m_angle)
-	draw_sprite(spr_ball_Move, 0, (player.x + _xx), (player.y + _yy))
+	draw_sprite(spr_ball_move, 0, (player.x + _xx), (player.y + _yy))
 	if meter
 	{
 		var _mt = ((m_meter / 1) * 100)

@@ -3,7 +3,7 @@ function scr_player_ridecow()
 	doublejump = 0
 	hsp = 0
 	vsp = 0
-	Movespeed = 0
+	movespeed = 0
 	if (!instance_exists(cowID))
 	{
 		if has_mort

@@ -8,7 +8,7 @@ if place_meeting(x, y, obj_parent_player)
 			sprite_index = spr_player_finishingblow1
 			image_index = 0
 			hsp = 0
-			Movespeed = 0
+			movespeed = 0
 		}
 		if (state == states.mach3)
 		{
@@ -44,7 +44,7 @@ if (grabbed == 1)
 	}
 	with (obj_parent_player)
 	{
-		Move = (key_left2 + key_right2)
+		move = (key_left2 + key_right2)
 		if (!((state == states.grab or state == states.grabbing or state == states.throwing or state == states.slam or state == states.tacklecharge or state == states.punch or state == states.superslam or state == states.backkick or state == states.uppunch or state == states.shoulder)))
 		{
 			other.x = x

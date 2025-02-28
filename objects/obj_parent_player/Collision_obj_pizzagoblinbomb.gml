@@ -11,7 +11,7 @@ if (state != states.boxxedpepspin)
 			sprite_index = spr_haulingstart
 			other.defused = 1
 			bombgrabID = other.id
-			Movespeed = 6
+			movespeed = 6
 			with (other)
 			{
 				state = states.grabbed
@@ -24,7 +24,7 @@ if (state != states.boxxedpepspin)
 else if (other.kickbuffer <= 0)
 {
 	other.vsp = -9
-	other.Movespeed = 7
+	other.movespeed = 7
 	other.image_xscale = Xscale
 	other.kickbuffer = 15
 	other.y--

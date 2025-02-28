@@ -55,7 +55,7 @@ function scr_enemy_rage()
 			}
 			break
 		case obj_minijohn:
-			hsp = (Movespeed * image_xscale)
+			hsp = (movespeed * image_xscale)
 			if (sprite_index == spr_minijohn_rage1 && floor(image_index) == (image_number - 1))
 				sprite_index = spr_minijohn_rage2
 			if (grounded && vsp > 0)
@@ -63,7 +63,7 @@ function scr_enemy_rage()
 				var targetplayer = obj_player1
 				if (obj_player1.spotlight == 0)
 					targetplayer = 323
-				Movespeed = 4
+				movespeed = 4
 				image_xscale = (-(sign((x - targetplayer.x))))
 				state = states.chase
 				sprite_index = spr_minijohn_charge
@@ -81,7 +81,7 @@ function scr_enemy_rage()
 					ID = other.id
 				charging = 1
 				state = states.charge
-				Movespeed = 5
+				movespeed = 5
 				vsp = -7
 				sprite_index = spr_fencer_chargestart
 			}
@@ -116,7 +116,7 @@ function scr_enemy_rage()
 	if place_meeting(x, (y + 1), obj_railparent)
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp += (_railinst.Movespeed * _railinst.dir)
+		hsp += (_railinst.movespeed * _railinst.dir)
 	}
 	exit;
 }

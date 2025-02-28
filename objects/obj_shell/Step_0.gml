@@ -21,11 +21,11 @@ if (!isOpen) {
 	if (metaDeleted && keyboard_check_released(vk_backspace)) {
 		metaDeleted = false;
 	}
-	if (metaMovedLeft && keyboard_check_released(vk_left)) {
-		metaMovedLeft = false;
+	if (metamovedLeft && keyboard_check_released(vk_left)) {
+		metamovedLeft = false;
 	}
-	if (metaMovedRight && keyboard_check_released(vk_right)) {
-		metaMovedRight = false;
+	if (metamovedRight && keyboard_check_released(vk_right)) {
+		metamovedRight = false;
 	}
 	
 	if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_f5)) {
@@ -89,7 +89,7 @@ if (!isOpen) {
 		}
 		cursorPos = precedingSpaceIndex;
 		targetScrollPosition = maxScrollPosition;
-		metaMovedLeft = true;
+		metamovedLeft = true;
 	} else if (self._key_combo_pressed([metaKey], vk_right)) {
 		var nextSpaceIndex = string_length(consoleString) + 1;
 		// jump right to the following word
@@ -101,7 +101,7 @@ if (!isOpen) {
 		}
 		cursorPos = nextSpaceIndex;
 		targetScrollPosition = maxScrollPosition;
-		metaMovedRight = true;
+		metamovedRight = true;
 	} else if (self._keyboard_check_delay(vk_backspace)) {
 		if (!metaDeleted) {
 			consoleString = string_delete(consoleString, cursorPos - 1, 1);
@@ -112,12 +112,12 @@ if (!isOpen) {
 		consoleString = string_delete(consoleString, cursorPos, 1);
 		targetScrollPosition = maxScrollPosition;
 	} else if (self._keyboard_check_delay(vk_left)) { 
-		if (!metaMovedLeft) {
+		if (!metamovedLeft) {
 			cursorPos = max(1, cursorPos - 1);
 			targetScrollPosition = maxScrollPosition;
 		}
 	} else if (self._keyboard_check_delay(vk_right)) {
-		if (!metaMovedRight) {
+		if (!metamovedRight) {
 			if (cursorPos == string_length(consoleString) + 1 &&
 				array_length(filteredSuggestions) != 0) {
 				var suggestion = filteredSuggestions[suggestionIndex];

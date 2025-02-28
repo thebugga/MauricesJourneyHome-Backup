@@ -232,7 +232,7 @@ function scr_playerreset(argument0)
 			shotgunAnim = 0
 			box = 0
 			steppy = 0
-			Movespeedmax = 5
+			movespeedmax = 5
 			jumpstop = 0
 			start_running = 1
 			obj_camera.ded = 0
@@ -242,7 +242,7 @@ function scr_playerreset(argument0)
 			dashAnim = 1
 			landAnim = 0
 			machslideAnim = 0
-			MoveAnim = 1
+			moveAnim = 1
 			stopAnim = 1
 			crouchslideAnim = 1
 			crouchAnim = 1
@@ -272,7 +272,7 @@ function scr_playerreset(argument0)
 			punch = 0
 			machfreefall = 0
 			shoot = 0
-			instakillMove = 0
+			instakillmove = 0
 			windingAnim = 0
 			facestompAnim = 0
 			ladderbuffer = 0
@@ -293,7 +293,7 @@ function scr_playerreset(argument0)
 			bombpeptimer = 100
 			slapbuffer = 0
 			slaphand = 1
-			suplexMove = 0
+			suplexmove = 0
 			suplexhavetomash = 0
 			timeuntilhpback = 300
 			anger = 0
@@ -341,7 +341,7 @@ function scr_playerreset(argument0)
 		shotgunAnim = 0
 		box = 0
 		steppy = 0
-		Movespeedmax = 5
+		movespeedmax = 5
 		jumpstop = 0
 		start_running = 1
 		obj_camera.ded = 0
@@ -352,7 +352,7 @@ function scr_playerreset(argument0)
 		dashAnim = 1
 		landAnim = 0
 		machslideAnim = 0
-		MoveAnim = 1
+		moveAnim = 1
 		stopAnim = 1
 		crouchslideAnim = 1
 		crouchAnim = 1
@@ -403,7 +403,7 @@ function scr_playerreset(argument0)
 		punch = 0
 		machfreefall = 0
 		shoot = 0
-		instakillMove = 0
+		instakillmove = 0
 		windingAnim = 0
 		facestompAnim = 0
 		ladderbuffer = 0
@@ -424,7 +424,7 @@ function scr_playerreset(argument0)
 		bombpeptimer = 100
 		slapbuffer = 0
 		slaphand = 1
-		suplexMove = 0
+		suplexmove = 0
 		suplexhavetomash = 0
 		timeuntilhpback = 300
 		anger = 0

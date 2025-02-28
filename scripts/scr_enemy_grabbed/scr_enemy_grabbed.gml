@@ -24,7 +24,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
         with (_obj_player)
         {
             suplexhavetomash = other.hp - 1
-            Move = key_left2 + key_right2
+            move = key_left2 + key_right2
             if (!((state == (79 << 0) || state == (61 << 0) || state == (154 << 0) || state == (6 << 0) || state == (55 << 0) || state == (74 << 0) || state == (75 << 0) || state == (20 << 0) || state == (80 << 0) || state == (76 << 0) || state == (81 << 0) || state == (82 << 0) || state == (83 << 0))))
             {
                 other.x = x
@@ -150,7 +150,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             hitLag = lag
             hitX = x
             hitY = y
-            _obj_player.Movespeed = 0
+            _obj_player.movespeed = 0
             _obj_player.hitLag = lag
             _obj_player.hitX = _obj_player.x
             _obj_player.hitY = _obj_player.y
@@ -347,7 +347,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             {
                 if (state != (61 << 0))
                 {
-                    tauntstoredMovespeed = Movespeed
+                    tauntstoredmovespeed = movespeed
                     tauntstoredsprite = sprite_index
                     tauntstoredstate = state
                     tauntstoredvsp = vsp

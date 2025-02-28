@@ -35,15 +35,15 @@ with (other)
 			state = states.mach3
 			Xscale = sign(other.image_xscale)
 			dir = Xscale
-			if (Movespeed < 14)
+			if (movespeed < 14)
 			{
-				Movespeed = 14
-				hsp = Xscale * Movespeed
+				movespeed = 14
+				hsp = Xscale * movespeed
 			}
 			else
 			{
-				Movespeed += 0.5
-				hsp = Xscale * Movespeed
+				movespeed += 0.5
+				hsp = Xscale * movespeed
 			}
 			other.buffer = 30
 		}
@@ -61,10 +61,10 @@ with (other)
 				Xscale = sign(other.image_xscale)
 				dir = Xscale
 				boxxeddash = true
-				if (abs(Movespeed) < 14)
-					Movespeed = Xscale * 14
+				if (abs(movespeed) < 14)
+					movespeed = Xscale * 14
 				else
-					Movespeed += (Xscale * 0.5)
+					movespeed += (Xscale * 0.5)
 				sprite_index = spr_boxxedpepwalk
 				boxxeddashbuffer = 40
 				state = states.boxxedpep
@@ -87,11 +87,11 @@ with (other)
 				with (instance_create(x, y, obj_superdashcloud))
 					image_xscale = t.image_xscale
 				other.buffer = 30
-				ratmount_Movespeed = 14
+				ratmount_movespeed = 14
 				gustavodash = 51
 				state = states.ratmount
-				if (abs(Movespeed) < 14)
-					Movespeed = other.image_xscale * 14
+				if (abs(movespeed) < 14)
+					movespeed = other.image_xscale * 14
 				gusdashpadbuffer = 25
 			}
 		}

@@ -5,7 +5,7 @@ function scr_player_shotgun()
 		image_speed = 0.4
 		hsp = 0
 		vsp = 0
-		Movespeed = 0
+		movespeed = 0
 		if (floor(image_index) == (image_number - 1))
 		{
 			sprite_index = spr_shotgunidle
@@ -21,38 +21,38 @@ function scr_player_shotgun()
 	if (dir != Xscale)
 	{
 		dir = Xscale
-		Movespeed = 2
+		movespeed = 2
 	}
-	Move = (key_left + key_right)
-	hsp = (Move * Movespeed)
-	if (Move != 0)
+	move = (key_left + key_right)
+	hsp = (move * movespeed)
+	if (move != 0)
 	{
-		Xscale = Move
-		if (Movespeed < 8)
-			Movespeed += 0.5
-		else if (floor(Movespeed) == 8)
-			Movespeed = 6
-		if (Movespeed < 3)
+		Xscale = move
+		if (movespeed < 8)
+			movespeed += 0.5
+		else if (floor(movespeed) == 8)
+			movespeed = 6
+		if (movespeed < 3)
 			image_speed = 0.35
-		else if (Movespeed > 3 && Movespeed < 6)
+		else if (movespeed > 3 && movespeed < 6)
 			image_speed = 0.45
 		else
 			image_speed = 0.6
 	}
 	else
-		Movespeed = 0
-	if (Movespeed > 8)
-		Movespeed -= 0.1
+		movespeed = 0
+	if (movespeed > 8)
+		movespeed -= 0.1
 	if (!landAnim)
 	{
-		if (grounded && Move != 0)
+		if (grounded && move != 0)
 			sprite_index = spr_shotgunwalk
 		else if grounded
 			sprite_index = spr_shotgunidle
 	}
 	else if (floor(image_index) == (image_number - 1))
 	{
-		if (Move != 0)
+		if (move != 0)
 			sprite_index = spr_shotgunwalk
 		else
 			sprite_index = spr_shotgunidle
@@ -84,7 +84,7 @@ function scr_player_shotgun()
 		state = states.shotgundash
 		sprite_index = spr_shotgunsuplexdash
 		image_index = 0
-		Movespeed = 10
+		movespeed = 10
 	}
 	if key_slap2
 	{

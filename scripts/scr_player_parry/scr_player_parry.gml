@@ -6,10 +6,10 @@ function scr_player_parry()
 		if tauntstoredisgustavo
 			state = states.ratmount
 	}
-	hsp = ((-Xscale) * Movespeed)
+	hsp = ((-Xscale) * movespeed)
 	image_speed = 0.5
-	if (Movespeed > 0)
-		Movespeed -= 0.5
+	if (movespeed > 0)
+		movespeed -= 0.5
 	var _grabbedby = 1
 	if (object_index == obj_player2)
 		_grabbedby = 2

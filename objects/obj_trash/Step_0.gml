@@ -65,7 +65,7 @@ switch state
 					y = other.y
 					sprite_index = spr_player_trashjump
 					image_index = 0
-					Movespeed = 0
+					movespeed = 0
 					state = states.trashjump
 					vsp = -25
 				}

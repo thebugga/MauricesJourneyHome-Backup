@@ -5,12 +5,12 @@ function scr_player_Sjumpland()
 	dashAnim = 1
 	landAnim = 0
 	machslideAnim = 1
-	MoveAnim = 1
+	moveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
 	machhitAnim = 0
-	Movespeed = 0
+	movespeed = 0
 	start_running = 1
 	alarm[4] = 14
 	vsp = 0

@@ -1,15 +1,15 @@
 function scr_player_machslide()
 {
 	if (!(place_meeting(x, (y + 1), obj_railparent)))
-		hsp = (Xscale * Movespeed)
+		hsp = (Xscale * movespeed)
 	else
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp = ((Xscale * Movespeed) + (_railinst.Movespeed * _railinst.dir))
+		hsp = ((Xscale * movespeed) + (_railinst.movespeed * _railinst.dir))
 	}
-	Move = (key_right + key_left)
-	if (Movespeed >= 0)
-		Movespeed -= 0.4
+	move = (key_right + key_left)
+	if (movespeed >= 0)
+		movespeed -= 0.4
 	if (sprite_index == spr_machslidestart && floor(image_index) == (image_number - 1))
 		sprite_index = spr_machslide
 	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_machslideboost || sprite_index == spr_mach3boost))
@@ -27,13 +27,13 @@ function scr_player_machslide()
 	else
 		image_speed = 0.35;
 	landAnim = 0
-	if (floor(Movespeed) <= 0 && (sprite_index == spr_machslide or sprite_index == spr_crouchslide))
+	if (floor(movespeed) <= 0 && (sprite_index == spr_machslide or sprite_index == spr_crouchslide))
 	{
 		state = states.normal
 		image_index = 0
 		if (sprite_index == spr_machslide)
 			machslideAnim = 1
-		Movespeed = 0
+		movespeed = 0
 	}
 	if (place_meeting((x + Xscale), y, obj_solid) && (sprite_index == spr_machslide or sprite_index == spr_machslidestart))
 	{
@@ -47,7 +47,7 @@ function scr_player_machslide()
 		hsp = 0
 		image_index = 0
 		Xscale *= -1
-		Movespeed = 8
+		movespeed = 8
 		state = states.mach2
 	}
 	if (((floor(image_index) == (image_number - 1) && sprite_index == spr_mach3boost) || sprite_index == spr_player_mach3boostfall) && grounded)
@@ -58,7 +58,7 @@ function scr_player_machslide()
 			sprite_index = spr_mach4
 			image_index = 0
 			Xscale *= -1
-			Movespeed = 12
+			movespeed = 12
 			state = states.mach3
 		}
 		else
@@ -67,13 +67,13 @@ function scr_player_machslide()
 			sprite_index = spr_dashpadmach
 			image_index = 0
 			state = states.mach3
-			Movespeed = 14
+			movespeed = 14
 			launched = 1
 			launch = 0
 			launch_buffer = 20
 		}
 	}
-	if (sprite_index == spr_player_crouchslide && Movespeed == 0 && grounded)
+	if (sprite_index == spr_player_crouchslide && movespeed == 0 && grounded)
 	{
 		facehurt = 1
 		state = states.normal

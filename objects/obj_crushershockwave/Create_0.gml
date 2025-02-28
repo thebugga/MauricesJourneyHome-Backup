@@ -1,2 +1,2 @@
 image_speed = 0.5
-Movespeed = 3
+movespeed = 3

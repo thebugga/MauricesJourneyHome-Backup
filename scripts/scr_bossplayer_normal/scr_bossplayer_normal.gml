@@ -1,14 +1,14 @@
 function scr_bossplayer_normal()
 {
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if grounded && sprite_index != spr_jumpprep && sprite_index != spr_land && sprite_index != spr_duck && sprite_index != spr_punch
 	{
 		image_speed = 0.3
-		hsp = Move * 6
+		hsp = move * 6
 		if hsp == 0
 			sprite_index = spr_idle
 		else
-			sprite_index = spr_Move
+			sprite_index = spr_move
 		if key_jump
 		{
 			hsp = 0
@@ -37,7 +37,7 @@ function scr_bossplayer_normal()
 	{
 		if sprite_index == spr_jumpprep
 		{
-			hsp = Move * 7
+			hsp = move * 7
 			vsp = -15
 			sprite_index = spr_jump
 			image_index = 0

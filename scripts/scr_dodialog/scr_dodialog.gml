@@ -18,7 +18,7 @@ function do_dialog(argument0, argument1, argument2) //do_dialog
         state = states.actor
         hsp = 0
         vsp = 0
-        Movespeed = 0
+        movespeed = 0
     }
 }
 

@@ -15,7 +15,7 @@ ds_map_set(boss_hurtstates, states.superslam, 200)
 ds_map_set(boss_hurtstates, states.punch, 30)
 ds_map_set(boss_hurtstates, states.freefall, 70)
 stunfallspr = spr_hurtplayer
-walkspr = spr_Move
+walkspr = spr_move
 idlespr = spr_idle
 spr_dead = spr_timesup
 tauntspr = spr_taunt
@@ -155,7 +155,7 @@ function player_hurt(argument0, argument1)
 			hitstate = states.parry
 			hitvsp = 0
 			hithsp = 0
-			Movespeed = 8
+			movespeed = 8
 		}
 		else
 		{
@@ -184,7 +184,7 @@ function player_hurt(argument0, argument1)
 			hitY = y
 			hsp = 0
 			vsp = 0
-			Movespeed = 0
+			movespeed = 0
 			other.sprite_index = other.idlespr
 			other.state = states.boss_fistmatch
 			other.image_xscale = (-Xscale)

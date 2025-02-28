@@ -2,12 +2,12 @@ function scr_player_tackle()
 {
 	combo = 0
 	mach2 = 0
-	hsp = ((-Xscale) * Movespeed)
+	hsp = ((-Xscale) * movespeed)
 	start_running = 1
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	MoveAnim = 1
+	moveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1

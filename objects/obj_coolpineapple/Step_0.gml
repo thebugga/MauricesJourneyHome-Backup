@@ -80,7 +80,7 @@ if (state == states.walk)
 			index = choose(0, 1, 2)
 			taunt_count = taunt_max
 			taunt_storedstate = state
-			taunt_storedMovespeed = Movespeed
+			taunt_storedmovespeed = movespeed
 			taunt_storedhsp = hsp
 			state = states.backbreaker
 			hsp = 0
@@ -106,7 +106,7 @@ switch state
 			grav = taunt_storedgrav
 			state = states.walk
 			hsp = taunt_storedhsp
-			Movespeed = taunt_storedMovespeed
+			movespeed = taunt_storedmovespeed
 		}
 		break
 	case states.parry:
@@ -124,11 +124,11 @@ switch state
 			instance_destroy(taunteffect_inst)
 			taunteffect_inst = -4
 		}
-		if (Movespeed > 0)
-			Movespeed -= 0.5
+		if (movespeed > 0)
+			movespeed -= 0.5
 		else
-			Movespeed = 0
-		hsp = (Movespeed * (-image_xscale))
+			movespeed = 0
+		hsp = (movespeed * (-image_xscale))
 		if (image_index > (image_number - 1))
 		{
 			sprite_index = walkspr
@@ -136,7 +136,7 @@ switch state
 			state = taunt_storedstate
 			hsp = taunt_storedhsp
 			cooldown_count = cooldown_max
-			Movespeed = taunt_storedMovespeed
+			movespeed = taunt_storedmovespeed
 		}
 		break
 	case states.punch:
@@ -147,20 +147,20 @@ switch state
 			if (floor(image_index) == (image_number - 1))
 			{
 				sprite_index = spr_coolpinea_rage
-				breakdance_Movespeed = 10
-				hsp = (breakdance_Movespeed * image_xscale)
+				breakdance_movespeed = 10
+				hsp = (breakdance_movespeed * image_xscale)
 			}
 		}
 		else
 		{
-			breakdance_Movespeed = approach(breakdance_Movespeed, 0, 0.25)
-			hsp = (image_xscale * breakdance_Movespeed)
+			breakdance_movespeed = approach(breakdance_movespeed, 0, 0.25)
+			hsp = (image_xscale * breakdance_movespeed)
 			if place_meeting((x + sign(hsp)), y, obj_solid)
 			{
 				image_xscale *= -1
-				if (breakdance_Movespeed < 3)
-					breakdance_Movespeed = 5
-				hsp = (breakdance_Movespeed * image_xscale)
+				if (breakdance_movespeed < 3)
+					breakdance_movespeed = 5
+				hsp = (breakdance_movespeed * image_xscale)
 			}
 			if (trail_count > 0)
 				trail_count--

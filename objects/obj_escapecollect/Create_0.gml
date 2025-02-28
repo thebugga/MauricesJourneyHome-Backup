@@ -4,4 +4,4 @@ global.collectsound = 0
 depth = 11
 image_alpha = 0.35
 gotowardsplayer = 0
-Movespeed = 5
+movespeed = 5

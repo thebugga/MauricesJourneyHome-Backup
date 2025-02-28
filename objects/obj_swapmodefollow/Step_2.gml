@@ -63,18 +63,18 @@ if taunttimer > 0
 var old_x = x;
 event_inherited();
 
-var _Movespeed = abs(old_x - x);
-var maxMovespeed = 8;
-if _Movespeed < floor(maxMovespeed) / 2
+var _movespeed = abs(old_x - x);
+var maxmovespeed = 8;
+if _movespeed < floor(maxmovespeed) / 2
 	image_speed = 0.35;
-else if _Movespeed > floor(maxMovespeed) / 2 && _Movespeed < maxMovespeed
+else if _movespeed > floor(maxmovespeed) / 2 && _movespeed < maxmovespeed
 	image_speed = 0.45;
 else
 	image_speed = 0.6;
 
 image_blend = obj_player1.image_blend;
 image_xscale = obj_player1.Xscale * obj_player1.scale_xs;
-image_Yscale = obj_player1.Yscale * obj_player1.scale_ys;
+image_yscale = obj_player1.Yscale * obj_player1.scale_ys;
 following_moonwalk_fix();
 
 usable = true;
@@ -93,7 +93,7 @@ if instance_exists(obj_swapdeatheffect)
 if place_meeting(x, y + 1, obj_solid) || (place_meeting(x, y + 1, obj_platform) && !place_meeting(x, y, obj_platform)) || place_meeting(x, y + 1, obj_slope)
 {
 	if x != xprevious
-		sprite_index = spr_Move;
+		sprite_index = spr_move;
 	else
 		sprite_index = spr_idle;
 }

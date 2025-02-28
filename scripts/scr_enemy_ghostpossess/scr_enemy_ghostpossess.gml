@@ -1,12 +1,12 @@
 function scr_enemy_ghostpossess()
 {
-	var _Move = 0
+	var _move = 0
 	with (playerid)
 	{
 		sprite_index = spr_ghostidle
 		x = other.x
 		y = other.y
-		_Move = (key_left + key_right)
+		_move = (key_left + key_right)
 		if key_up2
 		{
 			state = states.ghost
@@ -20,11 +20,11 @@ function scr_enemy_ghostpossess()
 	if (sprite_index != spr_forknight_ragestart && sprite_index != spr_forknight_rageloop && sprite_index != spr_cheeseslime_rage && sprite_index != spr_indiancheese_howl)
 	{
 		image_speed = 0.35
-		if (_Move != 0)
-			possess_Movespeed = approach(possess_Movespeed, 6, 0.5)
+		if (_move != 0)
+			possess_movespeed = approach(possess_movespeed, 6, 0.5)
 		else
-			possess_Movespeed = 0
-		hsp = (_Move * possess_Movespeed)
+			possess_movespeed = 0
+		hsp = (_move * possess_movespeed)
 		if (hsp != 0)
 		{
 			image_xscale = sign(hsp)
@@ -131,7 +131,7 @@ function scr_enemy_ghostpossess()
 				else
 					hsp = 0
 				if (floor(image_index) == (image_number - 1))
-					sprite_index = spr_slimeMove
+					sprite_index = spr_slimemove
 				break
 			case obj_indiancheese:
 				hsp = 0

@@ -4,7 +4,7 @@ with (other)
 	if (object_index != obj_onewaybigblock)
 	{
 		instance_destroy()
-		Mort_DownMovement()
+		Mort_Downmovement()
 	}
 	else
 	{
@@ -12,7 +12,7 @@ with (other)
 		if (_col == -4)
 		{
 			instance_destroy()
-			Mort_DownMovement()
+			Mort_Downmovement()
 		}
 	}
 }

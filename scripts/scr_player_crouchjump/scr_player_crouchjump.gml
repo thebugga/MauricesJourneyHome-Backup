@@ -1,9 +1,9 @@
 function scr_player_crouchjump()
 {
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	mask_index = spr_crouchmask
-	hsp = (Move * Movespeed)
-	Movespeed = 4
+	hsp = (move * movespeed)
+	movespeed = 4
 	if ((!key_jump2) && jumpstop == 0 && jumpAnim == 1)
 	{
 		vsp /= 2
@@ -39,8 +39,8 @@ function scr_player_crouchjump()
 		else
 			sprite_index = spr_crouchfall
 	}
-	if (Move != 0)
-		Xscale = Move
+	if (move != 0)
+		Xscale = move
 	image_speed = 0.35
 	exit;
 }

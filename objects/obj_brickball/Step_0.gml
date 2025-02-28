@@ -1,4 +1,4 @@
-hsp = (image_xscale * Movespeed)
+hsp = (image_xscale * movespeed)
 instance_destroy(instance_place((x + 16), y, obj_metalblock))
 instance_destroy(instance_place((x + hsp), y, obj_metalblock))
 if (!kicked)

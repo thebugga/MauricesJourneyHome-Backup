@@ -1,7 +1,7 @@
 function scr_player_shoulderbash()
 {
-	Movespeed = (sprite_index == spr_mach1 ? shoulderbash_mspeed_start : approach(Movespeed, shoulderbash_mspeed_loop, 0.5))
-	hsp = (Xscale * Movespeed)
+	movespeed = (sprite_index == spr_mach1 ? shoulderbash_mspeed_start : approach(movespeed, shoulderbash_mspeed_loop, 0.5))
+	hsp = (Xscale * movespeed)
 	if (!instance_exists(chargeeffectid))
 	{
 		with (instance_create((x + 5), (y - 5), obj_chargeeffect))

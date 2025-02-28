@@ -71,7 +71,7 @@ if (sprite_index == spr_ancho_chargestart && floor(image_index) == (image_number
 			ID = other.id
 	}
 	sprite_index = spr_ancho_charge
-	Movespeed = 10
+	movespeed = 10
 }
 var player = instance_nearest(x, y, obj_parent_player)
 if (ragebuffer > 0)
@@ -109,7 +109,7 @@ if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >=
 	}
 }
 if (state == states.stun or state == states.walk)
-	Movespeed = 0
+	movespeed = 0
 if (state != states.stun)
 	thrown = false
 if (boundbox == 0)

@@ -1,8 +1,8 @@
 function scr_player_bombgrab()
 {
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if (sprite_index != spr_uppercutfinishingblow && sprite_index != spr_player_throw)
-		hsp = (Move * Movespeed)
+		hsp = (move * movespeed)
 	else
 		hsp = 0
 	if (hsp != 0)
@@ -10,7 +10,7 @@ function scr_player_bombgrab()
 	if (dir != Xscale)
 	{
 		dir = Xscale
-		Movespeed = 0
+		movespeed = 0
 	}
 	if key_jump
 		input_buffer_jump = 0
@@ -24,17 +24,17 @@ function scr_player_bombgrab()
 	image_speed = 0.35
 	if (sprite_index == spr_haulingstart && floor(image_index) == (image_number - 1))
 		sprite_index = spr_haulingidle
-	if (Move != 0)
+	if (move != 0)
 	{
-		if (Movespeed < 8)
-			Movespeed += 0.5
-		else if (Movespeed == 6)
-			Movespeed = 6
+		if (movespeed < 8)
+			movespeed += 0.5
+		else if (movespeed == 6)
+			movespeed = 6
 		else
-			Movespeed -= 0.5
+			movespeed -= 0.5
 	}
 	else
-		Movespeed = 0
+		movespeed = 0
 	if (!instance_exists(bombgrabID))
 		state = states.normal
 	if (sprite_index != spr_haulingstart && sprite_index != spr_uppercutfinishingblow && sprite_index != spr_player_throw)
@@ -75,7 +75,7 @@ function scr_player_bombgrab()
 				with (bombgrabID)
 				{
 					state = states.normal
-					Movespeed = 9
+					movespeed = 9
 					vsp = -11
 				}
 			}
@@ -121,7 +121,7 @@ function scr_player_bombpepup()
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	MoveAnim = 1
+	moveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
@@ -180,15 +180,15 @@ function scr_player_bombpepup()
 
 function scr_player_bombpepside()
 {
-	hsp = (Xscale * Movespeed)
+	hsp = (Xscale * movespeed)
 	vsp = 0
 	mach2 = 0
-	if (Movespeed < 25)
-		Movespeed += 0.5
+	if (movespeed < 25)
+		movespeed += 0.5
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	MoveAnim = 1
+	moveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
@@ -249,20 +249,20 @@ function scr_player_bombpep()
 		sprite_index = spr_bombpeprun
 	if (sprite_index == spr_bombpeprun or sprite_index == spr_bombpeprunabouttoexplode)
 	{
-		if (Movespeed <= 8)
-			Movespeed += 0.2
-		Move = (key_left + key_right)
+		if (movespeed <= 8)
+			movespeed += 0.2
+		move = (key_left + key_right)
 		if grounded
 		{
-			if (Move != 0 && (!instance_exists(obj_bumpeffect)))
-				Xscale = Move
+			if (move != 0 && (!instance_exists(obj_bumpeffect)))
+				Xscale = move
 		}
-		hsp = floor((Xscale * Movespeed))
+		hsp = floor((Xscale * movespeed))
 	}
 	else
 	{
 		hsp = 0
-		Movespeed = 0
+		movespeed = 0
 	}
 	if (bombpeptimer < 20 && bombpeptimer != 0)
 		sprite_index = spr_bombpeprunabouttoexplode
@@ -300,9 +300,9 @@ function scr_player_bombpep()
 	}
 	if (input_buffer_jump < 8 && grounded && hsp != 0)
 		vsp = -11
-	if (Movespeed < 4)
+	if (movespeed < 4)
 		image_speed = 0.35
-	else if (Movespeed > 4 && Movespeed < 8)
+	else if (movespeed > 4 && movespeed < 8)
 		image_speed = 0.45
 	else
 		image_speed = 0.6
@@ -316,7 +316,7 @@ function scr_player_bombpep()
 		image_index = 0
 		hsp = 0
 		bombpeptimer = 0
-		Movespeed = 0
+		movespeed = 0
 		state = states.backbreaker
 		with (instance_create((x + (Xscale * 50)), y, obj_pizzagoblinbomb))
 		{

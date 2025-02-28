@@ -40,8 +40,8 @@ shellPropertiesHash = "";
 killedString = "";
 // whether we just performed a meta-action, as the keyboard_check_pressed for that key will still register on the next frame...
 metaDeleted = false;
-metaMovedLeft = false;
-metaMovedRight = false;
+metamovedLeft = false;
+metamovedRight = false;
 
 // Set up queue for deferred script calls
 deferredQueue = ds_queue_create();

@@ -73,7 +73,7 @@ function scr_player_playersuperattack()
 						stunned = 10
 						image_xscale = (-other.Xscale)
 						hithsp = ((-image_xscale) * 12)
-						Movespeed = abs(hsp)
+						movespeed = abs(hsp)
 						hitLag = 10
 					}
 					//scr_soundeffect(sfx_killingblow)

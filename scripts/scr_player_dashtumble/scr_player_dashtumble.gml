@@ -3,11 +3,11 @@ function scr_player_dashtumble()
 	landAnim = 0
 	momemtum = 1
 	dir = Xscale
-	hsp = (Xscale * Movespeed)
-	if (Movespeed < 10 && grounded)
-		Movespeed += 0.5
+	hsp = (Xscale * movespeed)
+	if (movespeed < 10 && grounded)
+		movespeed += 0.5
 	else if (!grounded)
-		Movespeed = 10
+		movespeed = 10
 	if (key_jump && grounded && (!key_down))
 	{
 		jumpstop = 0
@@ -31,7 +31,7 @@ function scr_player_dashtumble()
 		sprite_index = spr_suplexbump
 		instance_create((x + (Xscale * 10)), (y + 10), obj_bumpeffect)
 	}
-	if ((!instance_exists(obj_slidecloud)) && grounded && Movespeed > 5)
+	if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 5)
 	{
 		with (instance_create(x, y, obj_slidecloud))
 			image_xscale = other.Xscale

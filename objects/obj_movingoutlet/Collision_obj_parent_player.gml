@@ -79,7 +79,7 @@ with (obj_parent_player)
 			sprite_index = spr_hurtjump
 		else
 			sprite_index = spr_hurt
-		Movespeed = 8
+		movespeed = 8
 		vsp = -5
 		if (global.collect > 100)
 			global.collect -= 100

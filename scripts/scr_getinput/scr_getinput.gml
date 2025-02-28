@@ -312,10 +312,10 @@ function scr_getinput()
 		key_chainsaw2 = tdp_input_get("player_chainsaw").pressed;
 		key_chainsaw3 = tdp_input_get("player_chainsaw").released;
 	}
-	key_left_axis = scr_get_Move_axis("player_leftC");
-	key_right_axis = scr_get_Move_axis("player_rightC");
-	key_up_axis = scr_get_Move_axis("player_upC");
-	key_down_axis = scr_get_Move_axis("player_downC");
+	key_left_axis = scr_get_move_axis("player_leftC");
+	key_right_axis = scr_get_move_axis("player_rightC");
+	key_up_axis = scr_get_move_axis("player_upC");
+	key_down_axis = scr_get_move_axis("player_downC");
 	
 	// single presses with the analog stick
 	if gamepad_axis_value(_dvc, gp_axislh) >= horizpress_dz || gamepad_axis_value(_dvc, gp_axislh) <= -horizpress_dz
@@ -380,7 +380,7 @@ function scr_getinput()
 	}
 }
 
-function scr_get_Move_axis(input_str)
+function scr_get_move_axis(input_str)
 {
 	var in = tdp_input_get(input_str);
 	for (var i = 0; i < array_length(in.actions); i++)

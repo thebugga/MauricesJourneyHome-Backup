@@ -20,7 +20,7 @@ if (global.panic == true)
 	}
 	if (gotowardsplayer == 1)
 	{
-		Move_towards_point(obj_parent_player.x, obj_parent_player.y, Movespeed)
-		Movespeed++
+		move_towards_point(obj_parent_player.x, obj_parent_player.y, movespeed)
+		movespeed++
 	}
 }

@@ -114,18 +114,18 @@ if (instance_exists(player))
 					chargecamera = approach(chargecamera, 0, 10);
 				else
 				{
-					var _targetcharge = target.Xscale * ((target.Movespeed / 4) * 50);
+					var _targetcharge = target.Xscale * ((target.movespeed / 4) * 50);
 					var _tspeed = 0.3;
 					chargecamera = approach(chargecamera, _targetcharge, _tspeed);
 				}
 			}
-			else if (target.ratmount_Movespeed > 2 && target.key_attack && (target.state == states.ratmount || target.state == states.ratmountjump))
+			else if (target.ratmount_movespeed > 2 && target.key_attack && (target.state == states.ratmount || target.state == states.ratmountjump))
 			{
 				_targetcharge = target.Xscale * ((abs(target.hsp) / 4) * 70);
 				_tspeed = 0.3;
 				chargecamera = approach(chargecamera, _targetcharge, _tspeed);
 			}
-			else if ((abs(target.hsp) >= 16 || (target.state == states.chainsaw && target.tauntstoredMovespeed >= 16)) && player.state != states.climbwall && player.state != states.Sjump && player.state != states.ghost)
+			else if ((abs(target.hsp) >= 16 || (target.state == states.chainsaw && target.tauntstoredmovespeed >= 16)) && player.state != states.climbwall && player.state != states.Sjump && player.state != states.ghost)
 			{
 				_targetcharge = target.Xscale * ((abs(target.hsp) / 4) * 50);
 				_tspeed = 2;

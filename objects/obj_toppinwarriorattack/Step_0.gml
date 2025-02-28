@@ -1,1 +1,1 @@
-x += (image_xscale * Movespeed)
+x += (image_xscale * movespeed)

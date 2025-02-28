@@ -3,17 +3,17 @@ function scr_player_lungeattack()
 	if sprite_index != spr_player_backflip
 	{
 		image_speed = 0.35;
-		hsp = Xscale * Movespeed;
+		hsp = Xscale * movespeed;
 		if hit_connected
 		{
-			Movespeed = 6;
+			movespeed = 6;
 			vsp = 0;
 		}
 	}
 	else
 	{
 		image_speed = 0.35;
-		Movespeed = approach(Movespeed, 0, 0.1);
+		movespeed = approach(movespeed, 0, 0.1);
 	}
 	if key_slap2 && !supercharged
 		input_attack_buffer = 60;
@@ -21,10 +21,10 @@ function scr_player_lungeattack()
 		input_attack_buffer = 60;
 	if key_slap2 && supercharged
 	{
-		suplexMove = true;
+		suplexmove = true;
 		fmod_event_instance_play(suplexdashsnd);
 		state = states.handstandjump;
-		Movespeed = 5;
+		movespeed = 5;
 		image_index = 0;
 		flash = true;
 		sprite_index = spr_player_lunge;
@@ -107,18 +107,18 @@ function DoFinisher()
 	if key_up
 	{
 		state = states.punch;
-		Movespeed = 6;
+		movespeed = 6;
 		image_index = 0;
 		sprite_index = spr_breakdanceuppercut;
 		vsp = -16;
-		hsp = Xscale * Movespeed;
+		hsp = Xscale * movespeed;
 	}
 	else if ((key_left + key_right) == Xscale)
 	{
 		state = states.punch;
 		sprite_index = spr_player_lungehit;
 		image_index = 0;
-		Movespeed = 14;
+		movespeed = 14;
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.Xscale;
 	}
@@ -128,7 +128,7 @@ function DoFinisher()
 		image_index = 0;
 		machhitAnim = false;
 		state = states.tumble;
-		Movespeed = 4;
+		movespeed = 4;
 		state = states.tumble;
 		vsp = 10;
 	}
@@ -137,7 +137,7 @@ function DoFinisher()
 		state = states.punch;
 		sprite_index = spr_player_lungehit;
 		image_index = 0;
-		Movespeed = 14;
+		movespeed = 14;
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.Xscale;
 	}

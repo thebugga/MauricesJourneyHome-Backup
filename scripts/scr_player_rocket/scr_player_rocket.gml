@@ -1,7 +1,7 @@
 function scr_player_rocket()
 {
-	hsp = (Xscale * Movespeed)
-	Move = (key_right + key_left)
+	hsp = (Xscale * movespeed)
+	move = (key_right + key_left)
 	with (instance_place((x + hsp), y, obj_asteroid))
 		instance_destroy()
 	alarm[5] = -1
@@ -19,8 +19,8 @@ function scr_player_rocket()
 		else
 			rocketvsp = approach(rocketvsp, 0, _accel)
 		vsp = rocketvsp
-		if (Movespeed < 16)
-			Movespeed = 16
+		if (movespeed < 16)
+			movespeed = 16
 	}
 	else
 	{
@@ -30,7 +30,7 @@ function scr_player_rocket()
 		{
 			sprite_index = spr_rocket
 			image_index = 0
-			Movespeed = 16
+			movespeed = 16
 		}
 	}
 	if key_jump
@@ -59,8 +59,8 @@ function scr_player_rocket()
 	}
 	if grounded
 	{
-		Move = (key_left + key_right)
-		if (Move != 0 && Move != Xscale && sprite_index != spr_rocketstart)
+		move = (key_left + key_right)
+		if (move != 0 && move != Xscale && sprite_index != spr_rocketstart)
 		{
 			state = states.rocketslide
 			//scr_soundeffect(sfx_machslideboost)

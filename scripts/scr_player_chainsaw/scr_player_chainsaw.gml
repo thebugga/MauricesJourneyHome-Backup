@@ -16,7 +16,7 @@ function scr_player_chainsaw()
 	{
 		x = hitX
 		y = hitY
-		Movespeed = tauntstoredMovespeed
+		movespeed = tauntstoredmovespeed
 		sprite_index = tauntstoredsprite
 		state = tauntstoredstate
 		vsp = tauntstoredvsp
@@ -38,7 +38,7 @@ function scr_player_chainsaw()
 		{
 			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_player_suplexgrabjumpstart or tauntstoredsprite == spr_player_suplexgrabjump or tauntstoredsprite == spr_player_airattack or tauntstoredsprite == spr_player_airattackstart)) or sprite_index == spr_piledriverland)
 			{
-				Movespeed = 4
+				movespeed = 4
 				state = states.tackle
 				sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_punch)
 				image_index = 0
@@ -46,7 +46,7 @@ function scr_player_chainsaw()
 			}
 			else if (tauntstoredstate == states.handstandjump or tauntstoredstate == states.finishingblow)
 			{
-				Movespeed = 4
+				movespeed = 4
 				state = states.tackle
 				sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_punch)
 				image_index = 0

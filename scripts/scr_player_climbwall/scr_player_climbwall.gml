@@ -2,15 +2,15 @@ function scr_player_climbwall()
 {
 	if (windingAnim < 200)
 	    windingAnim++
-    vsp = -WallMovespeed
-	    if (WallMovespeed < 20)
-	        WallMovespeed += 0.15
-	    if (WallMovespeed < 0)
+    vsp = -Wallmovespeed
+	    if (Wallmovespeed < 20)
+	        Wallmovespeed += 0.15
+	    if (Wallmovespeed < 0)
 	    {
 	        if (mach4mode == false)
-	            Movespeed += 0.2
+	            movespeed += 0.2
 	        else
-	            Movespeed += 0.4
+	            movespeed += 0.4
 	    }
 	mach2 = 35
 	crouchslideAnim = true
@@ -23,7 +23,7 @@ function scr_player_climbwall()
 	    state = states.jump
 	    sprite_index = spr_player_fall
 	}
-	if (!(place_meeting_solid((x + xscale), y)))
+	if (!(place_meeting_solid((x + Xscale), y)))
 	{
 		if global.playerCharacter == Characters.Doise
 	    {
@@ -31,9 +31,9 @@ function scr_player_climbwall()
 	            sprite_index = spr_noisewalljumpeffect
 	        sprite_index = spr_playerN_wallbounce
 	        state = states.machcancel
-	        savedMove = xscale
+	        savedmove = Xscale
 	        hsp = 0
-	        Movespeed = 0
+	        movespeed = 0
 	        image_index = 0
 	    }
 	    else
@@ -41,7 +41,7 @@ function scr_player_climbwall()
 			instance_create(x, y, obj_jumpdust)
 		    vsp = 0
 		    mach2 = 35
-			Movespeed = WallMovespeed
+			movespeed = Wallmovespeed
 		    state = states.mach2
 		}
 	}
@@ -57,7 +57,7 @@ function scr_player_climbwall()
 			state = states.Sjumpland;
 			machhitAnim = false;
 		}
-	if (WallMovespeed <= 0)
+	if (Wallmovespeed <= 0)
 	{
 	    state = states.jump
 	    sprite_index = spr_machfreefall
@@ -68,10 +68,10 @@ function scr_player_climbwall()
 	if (key_jump && key_attack)
 	{
 	    instance_create(x, y, obj_jumpdust)
-		Movespeed = 10
+		movespeed = 10
 	    mach2 = 35
 	    vsp = -9
 	    state = states.mach2
-	    xscale *= -1
+	    Xscale *= -1
 	}
 }

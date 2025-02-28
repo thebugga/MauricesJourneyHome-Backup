@@ -45,7 +45,7 @@ if (active && sprite_index != spr_secretportal_open && (!instance_exists(obj_jum
 			other.vsp = 0;
 		}
 		other.tauntstoredstate = other.state;
-		other.tauntstoredMovespeed = other.Movespeed;
+		other.tauntstoredmovespeed = other.movespeed;
 		other.tauntstoredhsp = other.hsp;
 		other.tauntstoredvsp = other.vsp;
 		other.tauntstoredsprite = other.sprite_index;

@@ -3,7 +3,7 @@ with (other)
 	if (state == states.handstandjump or state == states.punch)
 	{
 		state = states.rideweenie
-		Movespeed = hsp
+		movespeed = hsp
 		sprite_index = spr_rideweenie
 		Xscale = other.image_xscale
 		jumpstop = 1

@@ -2,12 +2,12 @@ function scr_player_skateboard()
 {
 	machhitAnim = 0
 	crouchslideAnim = 1
-	hsp = (Xscale * Movespeed)
+	hsp = (Xscale * movespeed)
 	if key_jump
 	{
 		state = states.mach2
 		vsp = -6
-		with (instance_create((x + (Xscale * Movespeed)), y, obj_skateboard))
+		with (instance_create((x + (Xscale * movespeed)), y, obj_skateboard))
 		{
 			Xscale = other.Xscale
 			hsp = other.hsp

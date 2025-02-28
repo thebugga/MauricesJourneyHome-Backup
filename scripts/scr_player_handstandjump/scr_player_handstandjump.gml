@@ -1,8 +1,8 @@
 function scr_player_handstandjump()
 {
 	landAnim = false;
-	hsp = Xscale * Movespeed;
-	Move = key_left + key_right;
+	hsp = Xscale * movespeed;
+	move = key_left + key_right;
 	momemtum = true;
 	dir = Xscale;
 	var _slpaspr = (sprite_index == spr_player_slap1 or sprite_index == spr_player_slap2)
@@ -10,24 +10,24 @@ function scr_player_handstandjump()
 		scr_doplayernormal()
 	if global.playerCharacter != Characters.Maurice
 	{
-		if Movespeed < 10
+		if movespeed < 10
 		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && Movespeed < 8)
-				Movespeed += 0.25;
-			else if sprite_index == spr_player_lunge && Movespeed < 12
-				Movespeed += 0.8;
-			else if Movespeed < 10
-				Movespeed += 0.5;
+			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
+				movespeed += 0.25;
+			else if sprite_index == spr_player_lunge && movespeed < 12
+				movespeed += 0.8;
+			else if movespeed < 10
+				movespeed += 0.5;
 		}
 	}
 	else
 	{
-		if Movespeed < 10
+		if movespeed < 10
 		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && Movespeed < 8)
-				Movespeed += 0.25;
-			else if Movespeed < 10
-				Movespeed += 0.5;
+			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
+				movespeed += 0.25;
+			else if movespeed < 10
+				movespeed += 0.5;
 		}
 		if (global.pummeltest && !instance_exists(lungeattackID))
 		{
@@ -77,8 +77,8 @@ function scr_player_handstandjump()
 		if global.playerCharacter != Characters.Maurice
 		{
 			state = states.normal;
-			if Move != Xscale
-				Movespeed = 2;
+			if move != Xscale
+				movespeed = 2;
 		}
 		else
 		{
@@ -102,7 +102,7 @@ function scr_player_handstandjump()
 	{
 		with (instance_create(x, y, obj_jumpdust))
 			image_xscale = other.Xscale;
-		Movespeed = 12;
+		movespeed = 12;
 		crouchslipbuffer = 25;
 		grav = 0.5;
 		sprite_index = spr_crouchslip;
@@ -119,7 +119,7 @@ function scr_player_handstandjump()
 			_climb = ledge_bump(32, abs(hsp) + 1);
 		if _climb
 		{
-			WallMovespeed = 6;
+			Wallmovespeed = 6;
 			grabclimbbuffer = 10;
 			state = states.climbwall;
 		}
@@ -137,13 +137,13 @@ function scr_player_handstandjump()
 			instance_create(x + (Xscale * 10), y + 10, obj_bumpeffect);
 		}
 	}
-	if (!instance_exists(obj_slidecloud) && grounded && Movespeed > 5)
+	if (!instance_exists(obj_slidecloud) && grounded && movespeed > 5)
 	{
 		with (instance_create(x, y, obj_slidecloud))
 			image_xscale = other.Xscale;
 	}
 	image_speed = 0.35;
-	if state != states.bump && Move != Xscale && Move != 0
+	if state != states.bump && move != Xscale && move != 0
 	{
 		image_index = 0;
 		if !grounded
@@ -157,7 +157,7 @@ function scr_player_handstandjump()
 		else
 		{
 			state = states.normal;
-			Movespeed = 2;
+			movespeed = 2;
 			grav = 0.5;
 		}
 	}

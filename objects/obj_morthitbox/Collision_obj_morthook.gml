@@ -5,8 +5,8 @@ with (playerid)
 	{
 		state = states.morthook
 		morthookID = mh_id
-		tauntstoredMovespeed = Movespeed
-		Movespeed = 12
+		tauntstoredmovespeed = movespeed
+		movespeed = 12
 		jumpstop = 0
 		instance_destroy(other)
 	}

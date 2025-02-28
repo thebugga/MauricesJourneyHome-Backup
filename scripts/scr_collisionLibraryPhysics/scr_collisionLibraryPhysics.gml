@@ -66,33 +66,33 @@ function scr_collision() {
 	}	
 	
 	// Horizontal
-	var Move_hsp = clamp(abs(hsp), 0, bbox_width) * sign(hsp); // Calculate max units to Move.
+	var move_hsp = clamp(abs(hsp), 0, bbox_width) * sign(hsp); // Calculate max units to move.
 	repeat ceil((abs(hsp) / bbox_width)) { // Repeat per Bbox Width.
-		if (!place_meeting_collision(x + Move_hsp, y)) && !(place_meeting_collision(x, y + 1) && !place_meeting_collision(x + Move_hsp, y + 1)) {			
-			x += Move_hsp;	
+		if (!place_meeting_collision(x + move_hsp, y)) && !(place_meeting_collision(x, y + 1) && !place_meeting_collision(x + move_hsp, y + 1)) {			
+			x += move_hsp;	
 		} else { // If Collision is detected within Bbox Width.
-			repeat(abs(Move_hsp)) { // Do pixel by pixel check.
+			repeat(abs(move_hsp)) { // Do pixel by pixel check.
 				
 				
-				// Move Up Slopes
-				y -= slope_check_up(x + sign(Move_hsp), y);
-				// Move Down Slopes
-				y += slope_check_down(x + sign(Move_hsp), y);	
+				// move Up Slopes
+				y -= slope_check_up(x + sign(move_hsp), y);
+				// move Down Slopes
+				y += slope_check_down(x + sign(move_hsp), y);	
 	
 	
-				// Move Down Upside Down Slopes
-				y += reverseSlope_check_down(x + sign(Move_hsp), y);
+				// move Down Upside Down Slopes
+				y += reverseSlope_check_down(x + sign(move_hsp), y);
 		
-				// Move Up Upside Down Slopes
+				// move Up Upside Down Slopes
 				if (vsp <= 0 && place_meeting_collision(x, y - 1)) {
-					y -= reverseSlope_check_up(x + sign(Move_hsp), y);
+					y -= reverseSlope_check_up(x + sign(move_hsp), y);
 				}
 				
-				if (!place_meeting_collision(x + sign(Move_hsp), y)) {
-					x += sign(Move_hsp); 
+				if (!place_meeting_collision(x + sign(move_hsp), y)) {
+					x += sign(move_hsp); 
 				} else {
 					true_hsp = 0;
-					Move_hsp = 0;
+					move_hsp = 0;
 					hsp = 0;
 					break;
 				}
@@ -102,25 +102,25 @@ function scr_collision() {
 	}
 
 	// Vertical
-	var Move_vsp = clamp(abs(vsp), 0, bbox_height) * sign(vsp); // Calculate max units to Move.
+	var move_vsp = clamp(abs(vsp), 0, bbox_height) * sign(vsp); // Calculate max units to move.
 	repeat ceil((abs(vsp) / bbox_height)) { // Repeat per Bbox Height.
-		if (!place_meeting_collision(x, y + Move_vsp)) {
-			y += Move_vsp;	
+		if (!place_meeting_collision(x, y + move_vsp)) {
+			y += move_vsp;	
 		} else { // If Collision is detected within Bbox Height.
-			repeat(abs(Move_vsp)) { // Do pixel by pixel check.
+			repeat(abs(move_vsp)) { // Do pixel by pixel check.
 				
 				if (vsp < 0) {
-					// Move Left Slopes
+					// move Left Slopes
 					x -= slope_check_left(x, y + sign(vsp));
-					// Move Right Slopes
+					// move Right Slopes
 					x += slope_check_right(x, y + sign(vsp));
 				}			
 				
-				if (!place_meeting_collision(x, y + sign(Move_vsp))) {
-					y += sign(Move_vsp); 
+				if (!place_meeting_collision(x, y + sign(move_vsp))) {
+					y += sign(move_vsp); 
 				} else {
 					true_vsp = 0;
-					Move_vsp = 0;
+					move_vsp = 0;
 					vsp = 0;
 					break;
 				}
@@ -148,7 +148,7 @@ function scr_collision() {
 	prevVsp = vsp;	
 }
 
-/// @desc Handles Movement of object affected by MOVING PLATFORMS.
+/// @desc Handles movement of object affected by MOVING PLATFORMS.
 /// @param {any*} obj The ID of the object affected.
 /// @param {any*} platform_id The ID of the MOVING platform.
 /// @param {bool} [collisions] Toggles checking of collisions.
@@ -191,7 +191,7 @@ function kinematics_movingPlatforms(obj, platform_id, collisions = true) {
 /// @param {real} [max_units] The max amount of pixels to check.
 /// @returns {real}
 function slope_check_up(x_pos, y_pos, max_units = 3) {
-	// Move up slope
+	// move up slope
 	for (var i = max_units; i > 0; --i) {
 		var _check = true;
 		var _z = (i - 1);
@@ -214,7 +214,7 @@ function slope_check_up(x_pos, y_pos, max_units = 3) {
 /// @param {real} [max_units] The max amount of pixels to check.
 /// @returns {real}
 function slope_check_down(x_pos, y_pos, max_units = 3) {
-	// Move down slope
+	// move down slope
 	for (var i = 1; i < max_units + 1; ++i) {
 		var _check = true;
 		var _z = 1;
@@ -237,7 +237,7 @@ function slope_check_down(x_pos, y_pos, max_units = 3) {
 /// @param {real} [max_units] The max amount of pixels to check.
 /// @returns {real}
 function slope_check_left(x_pos, y_pos, max_units = 3) {
-	// Move to the left
+	// move to the left
 	for (var i = 0; i < max_units; ++i) {
 		if (place_meeting_collision(x_pos, y_pos) && !place_meeting_collision(x_pos - i, y_pos)) {
 			return i;
@@ -252,7 +252,7 @@ function slope_check_left(x_pos, y_pos, max_units = 3) {
 /// @param {real} [max_units] The max amount of pixels to check.
 /// @returns {real}
 function slope_check_right(x_pos, y_pos, max_units = 3) {
-	// Move to the Right
+	// move to the Right
 	for (var i = 0; i < max_units; ++i) {
 		if (place_meeting_collision(x_pos, y_pos) && !place_meeting_collision(x_pos + i, y_pos)) {
 			return i;
@@ -267,7 +267,7 @@ function slope_check_right(x_pos, y_pos, max_units = 3) {
 /// @param {real} [max_units] The max amount of pixels to check.
 /// @returns {real}
 function reverseSlope_check_down(x_pos, y_pos, max_units = 3) {
-	// Move to the Bottom
+	// move to the Bottom
 	for (var i = 0; i < max_units; ++i) {
 		if (place_meeting_collision(x_pos, y_pos) && !place_meeting_collision(x_pos, y_pos + i)) {
 			return i;
@@ -282,7 +282,7 @@ function reverseSlope_check_down(x_pos, y_pos, max_units = 3) {
 /// @param {real} [max_units] The max amount of pixels to check.
 /// @returns {real}
 function reverseSlope_check_up(x_pos, y_pos, max_units = 3) {
-	// Move to the Top
+	// move to the Top
 	for (var i = 0; i < max_units; ++i) {
 		if (!place_meeting_collision(x_pos, y_pos) && !place_meeting_collision(x_pos, y_pos - i) && place_meeting_collision(x_pos, y_pos - (i + 1))) {
 			return i;

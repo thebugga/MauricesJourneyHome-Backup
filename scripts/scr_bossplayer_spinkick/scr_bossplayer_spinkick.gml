@@ -1,7 +1,7 @@
 function scr_bossplayer_spinkick()
 {
-	Move = (key_left + key_right)
-	hsp = approach(hsp, Move * 7, 0.5)
+	move = (key_left + key_right)
+	hsp = approach(hsp, move * 7, 0.5)
 	image_speed = 0.35
 	if floor(image_index) == 1 && sprite_index == spr_player_kungfuair2 && !instance_exists(obj_lungehitbox)
 	{

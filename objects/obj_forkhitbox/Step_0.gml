@@ -52,7 +52,7 @@ with (ID)
 			break
 		
 		case obj_snickexe:
-			if (obj_player1.instakillMove or obj_player1.state == states.handstandjump)
+			if (obj_player1.instakillmove or obj_player1.state == states.handstandjump)
 			{
 				instance_destroy(other)
 				hitboxcreate = 0

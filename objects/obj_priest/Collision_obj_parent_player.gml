@@ -7,7 +7,7 @@ with (other)
 		{
 			if (hsp != 0)
 				Xscale = sign(hsp)
-			Movespeed = abs(hsp)
+			movespeed = abs(hsp)
 		}
 		transformationsnd = false
 		state = states.normal

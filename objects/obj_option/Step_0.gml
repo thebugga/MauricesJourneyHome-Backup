@@ -34,21 +34,21 @@ if backbuffer > 0
 	key_back2 = false;
 }
 
-var Move = key_down2 - key_up2;
-if Move != 0
+var move = key_down2 - key_up2;
+if move != 0
 {
 	slidebuffer = 0;
 	slidecount = 0;
 }
 
 var os = optionselected;
-optionselected += Move;
+optionselected += move;
 optionselected = clamp(optionselected, 0, array_length(m.options) - 1);
 if os != optionselected
 	fmod_event_one_shot("event:/sfx/ui/step");
 
 var option = m.options[optionselected];
-var Move2 = key_left2 + key_right2;
+var move2 = key_left2 + key_right2;
 
 switch option.type
 {
@@ -71,10 +71,10 @@ switch option.type
 		break;
 	
 	case menutype.multiple:
-		if Move2 != 0
+		if move2 != 0
 		{
 			fmod_event_one_shot("event:/sfx/ui/step");
-			option.value += Move2;
+			option.value += move2;
 			if (option.value > array_length(option.values) - 1)
 				option.value = 0;
 			if option.value < 0
@@ -85,17 +85,17 @@ switch option.type
 		break;
 	
 	case menutype.slide:
-		Move2 = key_left + key_right;
-		if Move2 != 0 && slidebuffer <= 0
+		move2 = key_left + key_right;
+		if move2 != 0 && slidebuffer <= 0
 		{
-			option.Moved = true;
-			option.value += Move2;
+			option.moved = true;
+			option.value += move2;
 			option.value = clamp(option.value, 0, 100);
 			slidebuffer = 1;
 		}
-		if Move2 != 0
+		if move2 != 0
 			option.moving = true;
-		if Move2 == 0
+		if move2 == 0
 		{
 			slidecount = 0;
 			option.moving = false;
@@ -107,15 +107,15 @@ for (i = 0; i < array_length(m.options); i++)
 	var b = m.options[i];
 	if b.type == menutype.slide
 	{
-		if (b.Moved && (Move2 == 0 || optionselected != i))
+		if (b.moved && (move2 == 0 || optionselected != i))
 		{
-			b.Moved = false;
+			b.moved = false;
 			b.moving = false;
 			if b.on_changed != -4
 				b.on_changed(b.value);
 		}
-		if b.on_Move != -4 && b.moving
-			b.on_Move(b.value);
+		if b.on_move != -4 && b.moving
+			b.on_move(b.value);
 		if b.sound != -4
 		{
 			if b.moving

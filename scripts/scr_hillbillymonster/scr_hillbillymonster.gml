@@ -15,7 +15,7 @@ function scr_hillbilly_chase()
 		sprite_index = chasespr
 	else
 		sprite_index = chasespr_idle
-	hsp = approach(hsp, (image_xscale * Movespeed), accel)
+	hsp = approach(hsp, (image_xscale * movespeed), accel)
 	if (!(distance_to_pos(x, y, playerinst.x, playerinst.y, threshold_idle_x, threshold_idle_y)))
 		state = states.normal
 	if (playerinst.x > (x - 16) && playerinst.x < (x + 16))
@@ -24,7 +24,7 @@ function scr_hillbilly_chase()
 	if (dir != image_xscale && playerinst.x > (x - slide_threshold_x) && playerinst.x < (x + slide_threshold_x))
 	{
 		state = states.machslide
-		hsp = (image_xscale * Movespeed)
+		hsp = (image_xscale * movespeed)
 	}
 	exit;
 }

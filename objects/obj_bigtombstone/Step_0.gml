@@ -11,7 +11,7 @@ switch state
 		key_left = playerid.key_left
 		key_right = playerid.key_right
 		key_jump = playerid.key_jump
-		Move = (key_left + key_right)
+		move = (key_left + key_right)
 		playerid.x = x
 		playerid.y = y
 		playerid.Xscale = Xscale
@@ -25,8 +25,8 @@ switch state
 				{
 					playerid.input_buffer_jump = 8
 					vsp = -14
-					if (Move != 0)
-						Xscale = sign(Move)
+					if (move != 0)
+						Xscale = sign(move)
 					hsp = (Xscale * 6)
 					substate = states.jump
 				}

@@ -1,6 +1,6 @@
 function scr_player_cheesepeplaunch()
 {
-	hsp = (Xscale * Movespeed)
+	hsp = (Xscale * movespeed)
 	if (floor(image_index) == (image_number - 1))
 	{
 		if (sprite_index == spr_cheesepepjumpstart)
@@ -17,18 +17,18 @@ function scr_player_cheesepeplaunch()
 	if (place_meeting((x + sign(Xscale)), y, obj_solid) && (!(place_meeting(x, (y + 1), obj_slope))))
 	{
 		state = states.cheesepepstick
-		WallMovespeed = Movespeed
+		Wallmovespeed = movespeed
 		if (vsp < 0)
 		{
-			WallMovespeed = (Movespeed - 2)
-			if (WallMovespeed < 2)
-				WallMovespeed = 6
-			if (WallMovespeed > 8)
-				WallMovespeed = 8
+			Wallmovespeed = (movespeed - 2)
+			if (Wallmovespeed < 2)
+				Wallmovespeed = 6
+			if (Wallmovespeed > 8)
+				Wallmovespeed = 8
 		}
 		else
-			WallMovespeed = 0
-		Movespeed = 0
+			Wallmovespeed = 0
+		movespeed = 0
 		sticktime = 10
 	}
 	exit;

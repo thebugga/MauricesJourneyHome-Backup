@@ -1,4 +1,4 @@
-function cutscene_Move_player(argument0, argument1, argument2, argument3)
+function cutscene_move_player(argument0, argument1, argument2, argument3)
 {
 	var player = argument0
 	var x_to = argument1
@@ -7,7 +7,7 @@ function cutscene_Move_player(argument0, argument1, argument2, argument3)
 	var finish = 0
 	with (player)
 	{
-		sprite_index = spr_Move
+		sprite_index = spr_move
 		image_speed = 0.6
 		if (x < (x_to - threshold))
 		{
@@ -37,12 +37,12 @@ function cutscene_Move_player(argument0, argument1, argument2, argument3)
 		cutscene_end_action()
 	with (player)
 	{
-		if (Move != 0 && (floor(image_index) == 3 or floor(image_index) == 8) && steppy == 0 && global.playerCharacter != Characters.MrOrange)
+		if (move != 0 && (floor(image_index) == 3 or floor(image_index) == 8) && steppy == 0 && global.playerCharacter != Characters.MrOrange)
 		{
 			instance_create(x, (y + 43), obj_cloudeffect)
 			steppy = 1
 		}
-		if (Move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
+		if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
 			steppy = 0
 	}
 	exit;

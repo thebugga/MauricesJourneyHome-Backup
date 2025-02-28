@@ -1,7 +1,7 @@
 grav = 0.5
 hsp = 0
 vsp = 0
-Movespeed = 0
+movespeed = 0
 slopespeed = 0
 platformid = -4
 hsp_carry = 0

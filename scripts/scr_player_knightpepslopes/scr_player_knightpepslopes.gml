@@ -7,7 +7,7 @@ function scr_player_knightpepslopes()
 	alarm[5] = 2
 	alarm[7] = 60
 	if (knightmiddairstop == 0)
-		hsp = (Xscale * Movespeed)
+		hsp = (Xscale * movespeed)
 	image_speed = 0.35
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
@@ -38,7 +38,7 @@ function scr_player_knightpepslopes()
 		image_index = (image_number - 1)
 	if (place_meeting_solid((x + sign(hsp)), y) && ((!slopeCheck(x + Xscale, y)) or place_meeting((x + sign(hsp)), (y - 2), obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
-		Movespeed = 0
+		movespeed = 0
 		vsp = -6
 		sprite_index = spr_knightpep_bump
 		image_index = floor((image_number - 1))
@@ -51,8 +51,8 @@ function scr_player_knightpepslopes()
 		{
 			if (other.Xscale == (-sign(image_xscale)))
 			{
-				if (other.Movespeed < 14)
-					other.Movespeed += 0.25
+				if (other.movespeed < 14)
+					other.movespeed += 0.25
 			}
 		}
 	}
@@ -63,7 +63,7 @@ function scr_player_knightpepslopes()
 		sprite_index = spr_knightpep_downtrust
 		vsp = -5
 		hsp = 0
-		Movespeed = 0
+		movespeed = 0
 		state = states.knightpep
 	}
 	exit;

@@ -1,25 +1,25 @@
 function scr_player_barrel()
 {
-	image_speed = (abs(Movespeed) / 4)
+	image_speed = (abs(movespeed) / 4)
 	if (image_speed < 0.35)
 		image_speed = 0.35
 	if (image_speed > 0.85)
 		image_speed = 0.85
-	hsp = Movespeed
-	Move = (key_right + key_left)
+	hsp = movespeed
+	move = (key_right + key_left)
 	if key_jump
 		input_buffer_jump = 0
-	if (Move != 0)
+	if (move != 0)
 	{
-		if (Move == Xscale)
-			Movespeed = approach(Movespeed, (Xscale * 8), 0.5)
+		if (move == Xscale)
+			movespeed = approach(movespeed, (Xscale * 8), 0.5)
 		else
-			Movespeed = approach(Movespeed, 0, 0.5)
-		if (Movespeed <= 0)
-			Xscale = Move
+			movespeed = approach(movespeed, 0, 0.5)
+		if (movespeed <= 0)
+			Xscale = move
 	}
 	else
-		Movespeed = approach(Movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	if (sprite_index == spr_player_barrelland && floor(image_index) == (image_number - 1))
 		sprite_index = spr_player_barrelidle
 	if grounded
@@ -27,7 +27,7 @@ function scr_player_barrel()
 		if (sprite_index != spr_player_barrelland)
 		{
 			if (hsp != 0)
-				sprite_index = spr_player_barrelMove
+				sprite_index = spr_player_barrelmove
 			else
 				sprite_index = spr_player_barrelidle
 		}
@@ -36,7 +36,7 @@ function scr_player_barrel()
 			with (instance_place(x, (y + 1), obj_slope))
 			{
 				if (sign(image_xscale) == (-sign(other.Xscale)))
-					other.Movespeed = approach(other.Movespeed, (other.Xscale * 12), 0.5)
+					other.movespeed = approach(other.movespeed, (other.Xscale * 12), 0.5)
 			}
 		}
 		if (input_buffer_jump < 8 && (!key_down))
@@ -44,10 +44,10 @@ function scr_player_barrel()
 			//scr_soundeffect(sfx_jump)
 			input_buffer_jump = 8
 			vsp = -8.5
-			if (Move != Xscale && Move != 0)
+			if (move != Xscale && move != 0)
 			{
-				if (sign(Movespeed) == 1)
-					Xscale = Move
+				if (sign(movespeed) == 1)
+					Xscale = move
 			}
 			state = states.barreljump
 			sprite_index = spr_player_barreljump
@@ -57,7 +57,7 @@ function scr_player_barrel()
 		}
 		if key_attack
 		{
-			Movespeed = (Xscale * 7)
+			movespeed = (Xscale * 7)
 			instance_create(x, y, obj_jumpdust)
 			state = states.barrelslide
 			sprite_index = spr_player_barrelslipnslide
@@ -74,11 +74,11 @@ function scr_player_barrel()
 	}
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
-		Movespeed = 0
-		if (sprite_index == spr_player_barrelMove)
+		movespeed = 0
+		if (sprite_index == spr_player_barrelmove)
 			sprite_index = spr_player_barrelidle
 	}
-	if (sprite_index == spr_player_barrelMove)
+	if (sprite_index == spr_player_barrelmove)
 	{
 		if ((!steppy) && (floor(image_index == 4) or floor(image_index) == 13))
 		{

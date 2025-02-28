@@ -38,7 +38,7 @@ max_phase = 9
 max_hp = (500 * max_phase)
 hp = max_hp
 stunfallspr = spr_playerN_hurt
-walkspr = spr_playerN_Move
+walkspr = spr_playerN_move
 idlespr = spr_playerN_idle
 spr_dead = spr_playerN_hurt
 tauntspr = spr_playerN_taunt
@@ -46,8 +46,8 @@ fallspr = spr_playerN_fall
 bumpspr = spr_playerN_bump
 parryspr = spr_playerN_spin
 defeatplayerspr = spr_playerN_spin
-Movespeed = 0
-Move = 0
+movespeed = 0
+move = 0
 normal_spd = 6
 changeside_spd = 10
 slide = 0
@@ -147,7 +147,7 @@ function boss_hurt(argument0, argument1)
 	var ps = state
 	SUPER_boss_hurt(argument0, argument1)
 	if (ps == states.pogo)
-		Movespeed = 0
+		movespeed = 0
 	targetXscale = (-argument1.Xscale)
 	exit;
 }
@@ -189,7 +189,7 @@ function player_hurt(argument0, argument1)
 				shake_mag_acc = (3 / room_speed)
 			}
 			hitstate = states.stun
-			Movespeed = 0
+			movespeed = 0
 			hitvsp = -4
 			hithsp = ((-image_xscale) * 8)
 		}

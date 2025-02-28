@@ -3,7 +3,7 @@ if (state == states.golf)
 x = other.x
 kicked = 0
 hsp = 0
-Movespeed = 0
+movespeed = 0
 slopespeed = 0
 vsp = -22
 thrown = true

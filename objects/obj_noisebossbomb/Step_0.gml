@@ -1,11 +1,11 @@
-hsp = (image_xscale * Movespeed)
+hsp = (image_xscale * movespeed)
 if (!kick)
 {
 	mask_index = spr_player_mask
 	if place_meeting((x + image_xscale), y, obj_solid)
 		image_xscale *= -1
 	if (grounded && vsp > 0)
-		Movespeed = 0
+		movespeed = 0
 	if (image_index > (image_number - 1))
 	{
 		if (sprite_index == spr_playerN_noisebombland)
@@ -13,7 +13,7 @@ if (!kick)
 			sprite_index = spr_playerN_noisebomb
 			image_index = 0
 			vsp = -5
-			Movespeed = 6
+			movespeed = 6
 		}
 		else if (sprite_index == spr_playerN_noisebombhitwall)
 		{
@@ -29,7 +29,7 @@ if (!kick)
 		instance_destroy()
 	if (grounded && sprite_index != spr_playerN_noisebombland && vsp > 0)
 	{
-		Movespeed = 0
+		movespeed = 0
 		sprite_index = spr_playerN_noisebombland
 		image_index = 0
 	}

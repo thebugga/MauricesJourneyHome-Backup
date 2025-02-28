@@ -1,8 +1,8 @@
 function scr_player_chainsawpogo()
 {
-	hsp = (Xscale * Movespeed)
+	hsp = (Xscale * movespeed)
 	if ((place_meeting_solid((x + 1), y) && Xscale == 1) or (place_meeting_solid((x - 1), y) && Xscale == -1))
-		Movespeed = 0
+		movespeed = 0
 	landAnim = 1
 	if (ladderbuffer > 0)
 		ladderbuffer--
@@ -44,8 +44,8 @@ function scr_player_chainsawpogo()
 	else if (floor(image_index) == 4)
 		sprite_index = spr_player_chainsawpogo2
 	image_speed = 0.35
-	if (Move != 0)
-		Xscale = Move
+	if (move != 0)
+		Xscale = move
 	image_speed = 0.35
 	exit;
 }

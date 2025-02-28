@@ -3,12 +3,12 @@ function scr_player_keyget()
 	hsp = 0
 	vsp = 0
 	image_speed = 0.35
-	Movespeed = 0
+	movespeed = 0
 	mach2 = 0
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	MoveAnim = 1
+	moveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1

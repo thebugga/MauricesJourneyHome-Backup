@@ -2,7 +2,7 @@ if (state == states.golf)
 	exit;
 hsp = (14 * other.image_xscale)
 image_xscale = other.image_xscale
-Movespeed = 14
+movespeed = 14
 vsp = 0
 kicked = 1
 other.image_index = 0

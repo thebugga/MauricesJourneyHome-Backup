@@ -1,6 +1,6 @@
 scr_initenemy()
 is_controllable = 1
-possess_Movespeed = 0
+possess_movespeed = 0
 grav = 0.5
 hsp = 0
 vsp = 0

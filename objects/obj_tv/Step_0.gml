@@ -99,7 +99,7 @@ switch state
 		cardboardsprite = -4
 		if global.panic
 			idlespr = spr_tv_exprpanic
-		if obj_parent_player.global.playerCharacter == Characters.Pierre
+		if global.playerCharacter == Characters.Pierre
 		{
 			idlespr = spr_tv_idleG
 			if global.panic

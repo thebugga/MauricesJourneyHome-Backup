@@ -1,6 +1,6 @@
 function scr_player_pizzathrow()
 {
-	Movespeed = 0
+	movespeed = 0
 	mach2 = 0
 	hsp = 0
 	Xscale = -1

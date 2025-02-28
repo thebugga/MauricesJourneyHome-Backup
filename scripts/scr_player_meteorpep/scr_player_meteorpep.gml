@@ -7,15 +7,15 @@ function scr_player_meteorpep()
 		sprite_index = spr_meteorpep_flying
 	if (sprite_index == spr_meteorpep_flying)
 	{
-		if (Movespeed <= 20)
-			Movespeed += 1
-		hsp = floor(((-Xscale) * Movespeed))
+		if (movespeed <= 20)
+			movespeed += 1
+		hsp = floor(((-Xscale) * movespeed))
 	}
 	else
 		hsp = 0
 	if (place_meeting_solid((x - 1), y) && Xscale == 1 && hsp != 0)
 	{
-		Movespeed = 0
+		movespeed = 0
 		with (obj_parent_enemy)
 		{
 			if point_in_camera(x, y, view_camera[0])
@@ -34,7 +34,7 @@ function scr_player_meteorpep()
 	}
 	if (place_meeting_solid((x + 1), y) && Xscale == -1 && hsp != 0)
 	{
-		Movespeed = 0
+		movespeed = 0
 		if point_in_camera(x, y, view_camera[0])
 		{
 			vsp = -7

@@ -79,7 +79,7 @@ switch state
 			{
 				with (playerid)
 				{
-					Movespeed = tauntstoredMovespeed
+					movespeed = tauntstoredmovespeed
 					vsp = 0
 					sprite_index = tauntstoredsprite
 					state = tauntstoredstate

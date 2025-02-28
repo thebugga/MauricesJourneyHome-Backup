@@ -2,9 +2,9 @@ function scr_player_dynamite()
 {
 	if grounded
 	{
-		hsp = (Xscale * Movespeed)
-		if (Movespeed > 0)
-			Movespeed -= 0.1
+		hsp = (Xscale * movespeed)
+		if (movespeed > 0)
+			movespeed -= 0.1
 	}
 	if grounded
 		hsp = 0

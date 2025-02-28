@@ -43,7 +43,7 @@ function scr_player_jetpackjump()
 			other.vsp = -11
 		jumpstop = 0
 	}
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	dir = Xscale
 	if (sprite_index != spr_rockethitwall or (!jetpackdash))
 	{
@@ -55,17 +55,17 @@ function scr_player_jetpackjump()
 		}
 		else if (sprite_index == spr_player_jetpackmid && floor(image_index) == (image_number - 1))
 			sprite_index = spr_player_jetpackend
-		if (Move != 0)
+		if (move != 0)
 		{
-			if (Move != Xscale)
+			if (move != Xscale)
 			{
-				if (Movespeed > 0)
-					Movespeed -= 0.75
-				if (Movespeed <= 0)
-					Xscale = Move
+				if (movespeed > 0)
+					movespeed -= 0.75
+				if (movespeed <= 0)
+					Xscale = move
 			}
-			else if (Movespeed < 8)
-				Movespeed += 0.75
+			else if (movespeed < 8)
+				movespeed += 0.75
 		}
 		if ((!doublejump) && key_slap2)
 		{
@@ -75,24 +75,24 @@ function scr_player_jetpackjump()
 			sprite_index = spr_rockethitwall
 			jetpackbounce = 1
 			image_index = 0
-			if (Move != 0)
-				Xscale = Move
+			if (move != 0)
+				Xscale = move
 			dir = Xscale
-			Movespeed = 12
+			movespeed = 12
 			jetpackdash = 1
 		}
-		hsp = (Xscale * Movespeed)
+		hsp = (Xscale * movespeed)
 	}
 	else if jetpackdash
 	{
 		image_speed = 0.35
-		hsp = (Xscale * Movespeed)
+		hsp = (Xscale * movespeed)
 		vsp = 0
 		if (floor(image_index) == (image_number - 1))
 			jetpackdash = 0
 	}
 	if (place_meeting((x + Xscale), y, obj_solid) && (!(place_meeting((x + Xscale), y, obj_destructibles))))
-		Movespeed = 0
+		movespeed = 0
 	if (sprite_index == spr_rockethitwall && jetpackbounce == 1 && place_meeting((x + Xscale), y, obj_solid) && (!(place_meeting((x + Xscale), y, obj_destructibles))))
 	{
 		jetpackdash = 0
@@ -101,7 +101,7 @@ function scr_player_jetpackjump()
 		vsp = -11
 		image_index = 0
 	}
-	hsp = (Xscale * Movespeed)
+	hsp = (Xscale * movespeed)
 	if (firemouth_afterimage > 0)
 		firemouth_afterimage--
 	else

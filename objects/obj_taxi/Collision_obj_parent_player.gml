@@ -12,7 +12,7 @@ with (other)
 			obj_player1.state = states.taxi
 			//scr_soundeffect(sfx_taxi2)
 			playerid = obj_player1
-			sprite_index = spr_taxiMove
+			sprite_index = spr_taximove
 			hsp = 10
 			obj_player1.cutscene = 1
 			if (global.coop == true)
@@ -20,7 +20,7 @@ with (other)
 				obj_player2.sprite_index = obj_player2.spr_idle
 				//scr_soundeffect(sfx_taxi2)
 				playerid = obj_player2
-				sprite_index = spr_taxiMove
+				sprite_index = spr_taximove
 				hsp = 10
 				obj_player2.visible = false
 				obj_player2.hsp = 0

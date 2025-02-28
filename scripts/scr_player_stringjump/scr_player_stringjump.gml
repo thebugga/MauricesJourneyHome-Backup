@@ -1,24 +1,24 @@
 function scr_player_stringjump()
 {
-	hsp = (Xscale * Movespeed)
-	Move = (key_left + key_right)
-	if (Move != 0)
+	hsp = (Xscale * movespeed)
+	move = (key_left + key_right)
+	if (move != 0)
 	{
-		if (Xscale != Move)
+		if (Xscale != move)
 		{
-			if (Movespeed > 0)
-				Movespeed = approach(Movespeed, 0, 0.5)
+			if (movespeed > 0)
+				movespeed = approach(movespeed, 0, 0.5)
 			else
 			{
-				Xscale = Move
-				Movespeed = 0
+				Xscale = move
+				movespeed = 0
 			}
 		}
-		else if (Movespeed < 8)
-			Movespeed = approach(Movespeed, 8, 0.25)
+		else if (movespeed < 8)
+			movespeed = approach(movespeed, 8, 0.25)
 	}
 	if place_meeting((x + sign(hsp)), y, obj_solid)
-		Movespeed = 0
+		movespeed = 0
 	if (grounded && vsp > 0)
 	{
 		state = states.normal
@@ -33,14 +33,14 @@ function scr_player_stringfall()
 	if instance_exists(stringid)
 	{
 		sprite_index = spr_player_mrpinch
-		hsp = Movespeed
-		Move = (key_left + key_right)
-		if (Move == 0)
-			Movespeed = approach(Movespeed, 0, 0.1)
+		hsp = movespeed
+		move = (key_left + key_right)
+		if (move == 0)
+			movespeed = approach(movespeed, 0, 0.1)
 		else
-			Movespeed = approach(Movespeed, (Move * 4), 0.25)
-		if (abs(Movespeed) > 14)
-			Movespeed = approach(Movespeed, 0, 0.5)
+			movespeed = approach(movespeed, (move * 4), 0.25)
+		if (abs(movespeed) > 14)
+			movespeed = approach(movespeed, 0, 0.5)
 	}
-	hsp = Movespeed
+	hsp = movespeed
 }

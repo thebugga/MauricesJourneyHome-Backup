@@ -2,15 +2,15 @@ function scr_player_punch()
 {
 	if (sprite_index == spr_player_breakdanceuppercut or sprite_index == spr_player_breakdanceuppercutend)
 	{
-		Move = (key_left + key_right)
+		move = (key_left + key_right)
 		landAnim = 1
 		jumpstop = 0
 		image_speed = 0.4
-		hsp = Movespeed
-		if (Move != 0)
+		hsp = movespeed
+		if (move != 0)
 		{
-			dir = Move
-			Movespeed = approach(Movespeed, (Move * 4), 0.5)
+			dir = move
+			movespeed = approach(movespeed, (move * 4), 0.5)
 		}
 		if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_breakdanceuppercut)
 			sprite_index = spr_player_breakdanceuppercutend
@@ -21,7 +21,7 @@ function scr_player_punch()
 				dir = sign(hsp)
 				Xscale = dir
 			}
-			Movespeed = abs(Movespeed)
+			movespeed = abs(movespeed)
 			state = states.normal
 		}
 		if (punch_afterimage > 0)
@@ -38,29 +38,29 @@ function scr_player_punch()
 	}
 	else
 	{
-				Move = (key_left + key_right)
+				move = (key_left + key_right)
 				landAnim = 1
 				jumpstop = 0
 				image_speed = 0.4
 				if (breakdance > 0)
 					breakdance--
-				if (Move != 0)
+				if (move != 0)
 				{
-					if (Move != Xscale && Movespeed > -6)
+					if (move != Xscale && movespeed > -6)
 					{
 						if (sprite_index != spr_player_kungfujump)
-							Movespeed -= 1
+							movespeed -= 1
 						else
-							Movespeed -= 0.1
+							movespeed -= 0.1
 					}
-					else if (Move == Xscale && Movespeed < 6 && sprite_index == spr_player_kungfujump)
-						Movespeed += 0.2
+					else if (move == Xscale && movespeed < 6 && sprite_index == spr_player_kungfujump)
+						movespeed += 0.2
 				}
-				hsp = (Xscale * Movespeed)
+				hsp = (Xscale * movespeed)
 				var _kungfuground = (sprite_index == spr_player_kungfu1 or sprite_index == spr_player_kungfu2 or sprite_index == spr_player_kungfu3 or sprite_index == spr_shotgunsuplexdash)
 				var _Sjumpcancel = (sprite_index == spr_player_Sjumpcancel or sprite_index == spr_player_Sjumpcancelland or sprite_index == spr_player_Sjumpcancelslide)
-				if (_kungfuground && image_index > 7 && (!key_attack) && Movespeed > 0)
-					Movespeed -= 0.5
+				if (_kungfuground && image_index > 7 && (!key_attack) && movespeed > 0)
+					movespeed -= 0.5
 				if (floor(image_index) == (image_number - 1))
 				{
 					switch sprite_index
@@ -70,8 +70,8 @@ function scr_player_punch()
 						case spr_player_kungfu3:
 						case spr_shotgunsuplexdash:
 							state = states.normal
-							if (Move != Xscale && Move != 0)
-								Movespeed = 2
+							if (move != Xscale && move != 0)
+								movespeed = 2
 							break
 						case spr_player_kungfuair1transition:
 							sprite_index = spr_player_kungfuair1
@@ -104,14 +104,14 @@ function scr_player_punch()
 						}
 						if key_attack
 						{
-							if (Movespeed >= 12)
+							if (movespeed >= 12)
 								state = states.mach3
 							else
 								state = states.mach2
 							sprite_index = spr_rollgetup
 							image_index = 0
 						}
-						else if (Movespeed > 6)
+						else if (movespeed > 6)
 						{
 							state = states.machslide
 							sprite_index = spr_machslidestart
@@ -121,7 +121,7 @@ function scr_player_punch()
 							state = states.normal
 					}
 					if (sprite_index == spr_player_Sjumpcancelslide)
-						image_speed = (abs(Movespeed) / 15)
+						image_speed = (abs(movespeed) / 15)
 				}
 				if (sprite_index != spr_player_kungfujump && place_meeting((x + Xscale), y, obj_solid) && (!(place_meeting((x + Xscale), y, obj_destructibles))) && (!(place_meeting((x + Xscale), y, obj_slope))))
 				{
@@ -129,7 +129,7 @@ function scr_player_punch()
 					sprite_index = spr_player_kungfujump
 					image_index = 0
 					state = states.punch
-					Movespeed = -6
+					movespeed = -6
 				}
 				if punch_afterimage > 0
 					punch_afterimage--
@@ -142,7 +142,7 @@ function scr_player_punch()
 						playerid = other.id;
 					}
 				}
-				if (!instance_exists(obj_dashcloud2) && grounded && Movespeed > 5)
+				if (!instance_exists(obj_dashcloud2) && grounded && movespeed > 5)
 				{
 					with (instance_create(x, y, obj_dashcloud2))
 						image_xscale = other.Xscale;
@@ -154,7 +154,7 @@ function scr_player_punch()
 					fmod_event_one_shot_3d("event:/sfx/pep/grabcancel", x, y)
 					sprite_index = spr_player_kungfuair3
 					image_index = 0
-					Movespeed = 13
+					movespeed = 13
 				}
 				
 }

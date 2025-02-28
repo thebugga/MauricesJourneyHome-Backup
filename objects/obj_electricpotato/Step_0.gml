@@ -1,5 +1,5 @@
 playerid = instance_nearest(x, y, obj_parent_player)
-if Move
+if move
 {
 	var spd = 1
 	if (distance_to_object(playerid) < distance)

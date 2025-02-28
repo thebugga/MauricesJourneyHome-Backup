@@ -451,8 +451,8 @@ function toggle_debugView(argument0)
         dbg_watch(ref_create(obj_player1, "roomStartX"), "Room X Position");
         dbg_watch(ref_create(obj_player1, "roomStartY"), "Room Y Position");
         dbg_section("Physics Info");
-        dbg_watch(ref_create(obj_player1, "Movespeed"), "Movespeed");
-        dbg_watch(ref_create(obj_player1, "verticalMovespeed"), "verticalMovespeed");
+        dbg_watch(ref_create(obj_player1, "movespeed"), "movespeed");
+        dbg_watch(ref_create(obj_player1, "verticalmovespeed"), "verticalmovespeed");
         dbg_watch(ref_create(obj_player1, "hsp"), "hsp");
         dbg_watch(ref_create(obj_player1, "fracHsp"), "fracHsp");
         dbg_watch(ref_create(obj_player1, "vsp"), "vsp");

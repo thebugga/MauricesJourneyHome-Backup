@@ -5,19 +5,19 @@ function scr_player_noisecrusher()
 	{
 		hsp = 0;
 		vsp = 0;
-		Movespeed = 0;
+		movespeed = 0;
 		if (animation_end())
 			state = 0;
 		exit;
 	}
 	if vsp > 0
 		vsp += 0.5;
-	hsp = Movespeed;
-	Move = key_left + key_right;
-	if Move != 0
-		Movespeed = approach(Movespeed, Move * 8, 0.5);
+	hsp = movespeed;
+	move = key_left + key_right;
+	if move != 0
+		movespeed = approach(movespeed, move * 8, 0.5);
 	else
-		Movespeed = approach(Movespeed, 0, 0.5);
+		movespeed = approach(movespeed, 0, 0.5);
 	if sprite_index != spr_playerN_noisecrusherstart && sprite_index != spr_playerN_noisecrusherland && sprite_index != spr_playerN_noisecrusherfall
 	{
 		sprite_index = spr_playerN_noisecrusherstart;
@@ -29,15 +29,15 @@ function scr_player_noisecrusher()
 	{
 		image_speed = 0.5;
 		input_buffer_shoot = 0;
-		if Move != 0
-			Xscale = Move;
+		if move != 0
+			Xscale = move;
 		input_buffer_slap = 0;
 		key_slap = false;
 		key_slap2 = false;
 		jumpstop = true;
 		vsp = -5;
 		state = states.mach2;
-		Movespeed = 12;
+		movespeed = 12;
 		sprite_index = spr_playerN_sidewayspin;
 		image_index = 0;
 		with (instance_create(x, y, obj_crazyrunothereffect))
@@ -86,7 +86,7 @@ function scr_player_noisecrusher()
 function scr_player_do_noisecrusher()
 {
 	input_buffer_jump = 0;
-	Movespeed = hsp;
+	movespeed = hsp;
 	state = states.ratmountbounce;
 	sprite_index = spr_playerN_noisecrusherstart;
 	image_index = 0;

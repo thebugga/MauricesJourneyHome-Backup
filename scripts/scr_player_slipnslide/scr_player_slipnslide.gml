@@ -4,22 +4,22 @@ function scr_player_slipnslide()
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	MoveAnim = 1
+	moveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
 	machhitAnim = 0
-	hsp = (Xscale * Movespeed)
+	hsp = (Xscale * movespeed)
 	alarm[5] = -1
 	alarm[8] = 60
 	alarm[7] = 120
 	hurted = 1
 	machhitAnim = 0
 	crouchslideAnim = 1
-	if (Movespeed <= 0)
+	if (movespeed <= 0)
 	{
 		state = states.normal
-		Movespeed = 0
+		movespeed = 0
 		mach2 = 0
 		image_index = 0
 	}
@@ -30,15 +30,15 @@ function scr_player_slipnslide()
 		image_index = 0
 		state = states.slipbanan
 	}
-	if (slopeCheck(x + Xscale, y) && Movespeed <= 0)
-		Movespeed = 2
+	if (slopeCheck(x + Xscale, y) && movespeed <= 0)
+		movespeed = 2
 	image_speed = 0.35
-	if ((!instance_exists(obj_slidecloud)) && grounded && Movespeed > 1.5 && sprite_index == spr_slipnslide)
+	if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 1.5 && sprite_index == spr_slipnslide)
 	{
 		with (instance_create(x, y, obj_slidecloud))
 			image_xscale = other.Xscale
 	}
-	if ((!instance_exists(obj_slidecloud)) && grounded && Movespeed > 1.5 && place_meeting(x, (y + 1), obj_current))
+	if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 1.5 && place_meeting(x, (y + 1), obj_current))
 	{
 		with (instance_create(x, y, obj_slidecloud))
 		{
@@ -57,7 +57,7 @@ function scr_player_slipnslide()
 	{
 		if grounded
 		{
-			Movespeed -= 0.1
+			movespeed -= 0.1
 			if (input_buffer_jump > 0 && grounded)
 			{
 				input_buffer_jump = 0;

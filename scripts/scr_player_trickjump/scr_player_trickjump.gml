@@ -1,6 +1,6 @@
 function scr_player_trickjump()
 {
-	hsp = (Movespeed * Xscale)
+	hsp = (movespeed * Xscale)
 	if (sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4)
 	{
 		image_speed = 0.35
@@ -28,7 +28,7 @@ function scr_player_trickjump()
 		if (sprite_index == spr_player_rampjump)
 		{
 			sprite_index = spr_rollgetup
-			if (Movespeed < 12)
+			if (movespeed < 12)
 				state = states.mach2
 			else
 				state = states.mach3

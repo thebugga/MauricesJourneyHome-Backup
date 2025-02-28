@@ -1,6 +1,6 @@
 with (obj_player1)
 {
-	if ((place_meeting((x + hsp), y, other) or place_meeting((x + Xscale), y, other)) && (obj_player1.state == states.mach3 or obj_player1.state == states.rocket or obj_player1.state == states.knightpepslopes or obj_player1.ratmount_Movespeed >= 12 or obj_player1.state == states.shoulderbash))
+	if ((place_meeting((x + hsp), y, other) or place_meeting((x + Xscale), y, other)) && (obj_player1.state == states.mach3 or obj_player1.state == states.rocket or obj_player1.state == states.knightpepslopes or obj_player1.ratmount_movespeed >= 12 or obj_player1.state == states.shoulderbash))
 	{
 		playerindex = 0
 		instance_destroy(other)

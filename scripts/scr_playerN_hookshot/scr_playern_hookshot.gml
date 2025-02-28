@@ -1,9 +1,9 @@
 function scr_playerN_hookshot()
 {
-	Move = (key_left + key_right)
-	hsp = (Movespeed * Move)
-	if (Move != 0)
-		Xscale = Move
+	move = (key_left + key_right)
+	hsp = (movespeed * move)
+	if (move != 0)
+		Xscale = move
 	if key_jump
 	{
 		vsp = -6
@@ -19,7 +19,7 @@ function scr_playerN_hookshot()
 	if (dir != Xscale)
 	{
 		dir = Xscale
-		Movespeed = 0
+		movespeed = 0
 	}
 	if grounded
 	{
@@ -45,15 +45,15 @@ function scr_playerN_hookshot()
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_hookshot1)
 		sprite_index = spr_playerN_hookshot2
-	if (Move != 0)
+	if (move != 0)
 	{
-		if (Movespeed < 8)
-			Movespeed += 0.25
-		else if (Movespeed == 8)
-			Movespeed = 8
+		if (movespeed < 8)
+			movespeed += 0.25
+		else if (movespeed == 8)
+			movespeed = 8
 	}
 	else
-		Movespeed = 0
+		movespeed = 0
 	image_speed = 0.35
 	exit;
 }

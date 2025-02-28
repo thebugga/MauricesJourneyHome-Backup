@@ -26,7 +26,7 @@ function scr_player_grabbed()
 	}
 	with (_obj_parent_player)
 	{
-		Move = (key_left2 + key_right2)
+		move = (key_left2 + key_right2)
 		if (key_slap && sprite_index == spr_grab)
 		{
 			global.hit += 1
@@ -93,15 +93,15 @@ function scr_player_grabbed()
 		other.alarm[7] = 120
 		with (_obj_parent_player)
 		{
-			Move = (key_right + key_left)
+			move = (key_right + key_left)
 			if (sprite_index == spr_uppercutfinishingblow)
 			{
-				other.Movespeed = 0
+				other.movespeed = 0
 				other.vsp = -25
 			}
 			else
 			{
-				other.Movespeed = 15
+				other.movespeed = 15
 				other.vsp = -6
 			}
 		}

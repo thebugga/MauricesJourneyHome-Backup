@@ -20,7 +20,7 @@ function scr_player_hit()
 		}
 		if place_meeting_solid(x, y)
 			y -= 5
-		Movespeed = abs(hithsp)
+		movespeed = abs(hithsp)
 		vsp = hitvsp
 		state = states.thrown
 		stunned = hitstunned

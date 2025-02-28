@@ -4,7 +4,7 @@ function scr_player_comingoutdoor()
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	MoveAnim = 1
+	moveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1
@@ -15,7 +15,7 @@ function scr_player_comingoutdoor()
 	image_blend = make_colour_hsv(0, 0, c)
 	if (floor(image_index) == (image_number - 1))
 	{
-		Movespeed = 0
+		movespeed = 0
 		if global.playerCharacter == Characters.Pierre
 			state = states.ratmount
 		else

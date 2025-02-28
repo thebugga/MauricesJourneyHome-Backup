@@ -16,7 +16,7 @@ if place_meeting(x, (y - s), obj_parent_player)
 		if ((state == states.mach2 or state == states.ratmounttumble or state == states.trashroll or state == states.tumble or state == states.mach3 or state == states.trickjump) && y <= (other.y + by) && Xscale == sign(other.image_xscale) && place_meeting(x, (y + s), other))
 		{
 			vsp = -12
-			Movespeed = 14
+			movespeed = 14
 			sprite_index = spr_player_rampjump
 			image_index = 0
 			if global.playerCharacter == Characters.Pierre

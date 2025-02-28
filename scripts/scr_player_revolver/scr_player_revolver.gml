@@ -1,11 +1,11 @@
 function scr_player_revolver()
 {
-	hsp = (Xscale * Movespeed)
+	hsp = (Xscale * movespeed)
 	landAnim = 0
 	if grounded
 	{
-		if (Movespeed > 0)
-			Movespeed -= 0.1
+		if (movespeed > 0)
+			movespeed -= 0.1
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_revolverstart)
 		sprite_index = spr_playerV_revolverhold
@@ -28,11 +28,11 @@ function scr_player_revolver()
 		image_index = 0
 		state = states.normal
 		sprite_index = spr_playerV_revolverend
-		Movespeed = 2
+		movespeed = 2
 	}
 	if ((sprite_index == spr_playerV_airrevolverend or sprite_index == spr_playerV_airrevolver or sprite_index == spr_playerV_airrevolverstart) && grounded)
 	{
-		if (key_attack && Movespeed >= 6)
+		if (key_attack && movespeed >= 6)
 			state = states.mach2
 		else
 			state = states.normal
@@ -43,7 +43,7 @@ function scr_player_revolver()
 		{
 			with (instance_create(x, y, obj_jumpdust))
 				image_xscale = other.Xscale
-			Movespeed = 12
+			movespeed = 12
 			crouchslipbuffer = 25
 			grav = 0.5
 			sprite_index = spr_crouchslip
@@ -54,7 +54,7 @@ function scr_player_revolver()
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_airrevolver)
 	{
-		if (key_attack && Movespeed >= 6)
+		if (key_attack && movespeed >= 6)
 			state = states.mach2
 		else
 		{

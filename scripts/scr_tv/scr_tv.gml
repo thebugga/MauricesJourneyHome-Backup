@@ -145,7 +145,7 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
                 case spr_tv_exprcollect:
                     expressionbuffer = 150
 					cardboardexprsprite = argument0
-                    if obj_parent_player.global.playerCharacter == Characters.Pierre
+                    if global.playerCharacter == Characters.Pierre
                     {
                         cardboardexprsprite = spr_tv_happyG
                         if (irandom(100) <= 50)

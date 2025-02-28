@@ -2,7 +2,7 @@ if grounded && other.visible && ((global.playerCharacter == Characters.Maurice &
 {
 	//scr_soundeffect(sfx_knightsword)
 	momentum = 0
-	Movespeed = 0
+	movespeed = 0
 	image_index = 0
 	image_speed = 0.35
 	sprite_index = spr_knightpepstart

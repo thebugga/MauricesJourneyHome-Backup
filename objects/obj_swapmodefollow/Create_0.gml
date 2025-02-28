@@ -31,7 +31,7 @@ get_character_spr = function()
 	{
 		spr_palette = spr_peppalette;
 		spr_idle = spr_player_idle;
-		spr_Move = spr_player_Move;
+		spr_move = spr_player_move;
 		spr_taunt = spr_player_taunt;
 		spr_suplexdash = spr_player_kungfu1
 	    spr_breakdance = spr_player_breakdance
@@ -49,7 +49,7 @@ get_character_spr = function()
 	{
 		spr_palette = spr_noisepalette;
 		spr_idle = spr_playerN_idle;
-		spr_Move = spr_playerN_Move;
+		spr_move = spr_playerN_move;
 		spr_taunt = spr_playerN_taunt;
 		spr_suplexdash = spr_playerN_suplexgrab
 		spr_walkfront = spr_playerN_walkfront

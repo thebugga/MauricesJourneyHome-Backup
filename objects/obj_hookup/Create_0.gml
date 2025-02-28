@@ -5,4 +5,4 @@ starty = y
 playerid = -4
 image_speed = 0.35
 blinking = 0
-Movespeed = 10
+movespeed = 10

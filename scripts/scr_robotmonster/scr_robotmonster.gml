@@ -2,7 +2,7 @@ function scr_robot_normal()
 {
 	image_speed = 0.35
 	sprite_index = walkspr
-	hsp = (image_xscale * Movespeed)
+	hsp = (image_xscale * movespeed)
 	if (place_meeting((x + hsp), y, obj_solid) or (place_meeting((x + hsp), y, obj_hallway) && (!(place_meeting(x, y, obj_hallway)))))
 		image_xscale *= -1
 	if (random_buffer <= 0)
@@ -38,7 +38,7 @@ function scr_robot_chase()
 	if ((playerinst.x - x) != 0)
 	{
 		image_xscale = sign((playerinst.x - x))
-		hsp = (image_xscale * Movespeed_chase)
+		hsp = (image_xscale * movespeed_chase)
 	}
 	if (playerinst.x > (x - 16) && playerinst.x < (x + 16))
 		hsp = 0

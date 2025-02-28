@@ -2,7 +2,7 @@ function scr_pizzaball_normal()
 {
 	if thrown
 	{
-		hsp = (image_xscale * (Movespeed + slopespeed))
+		hsp = (image_xscale * (movespeed + slopespeed))
 		with (obj_destructibles)
 		{
 			if place_meeting((x - other.hsp), y, other.id)
@@ -28,13 +28,13 @@ function scr_pizzaball_normal()
 		{
 			Rotation = 0
 			image_xscale *= -1
-			Movespeed /= 1.3
+			movespeed /= 1.3
 			sprite_index = spr_pizzaball_hitwall
 			image_index = 0
 		}
 		if (grounded && (!kicked))
 		{
-			if (Movespeed > 2)
+			if (movespeed > 2)
 			{
 				if (jspd > 1 && sprite_index != spr_pizzaball_hitwall)
 				{
@@ -43,22 +43,22 @@ function scr_pizzaball_normal()
 				}
 				vsp = (-jspd)
 				jspd /= 2
-				Movespeed /= 1.3
+				movespeed /= 1.3
 			}
 		}
 		else if (grounded or kicked)
 		{
-			if (Movespeed > 0)
-				Movespeed -= deccel
+			if (movespeed > 0)
+				movespeed -= deccel
 			else if (slopespeed <= 0)
-				Movespeed = 0
+				movespeed = 0
 		}
 		if place_meeting(x, (y + 1), obj_current)
 		{
 			var _currentinst = instance_place(x, (y + 1), obj_current)
-			Movespeed = 8
+			movespeed = 8
 			image_xscale = sign(_currentinst.image_xscale)
-			hsp = (image_xscale * Movespeed)
+			hsp = (image_xscale * movespeed)
 			vsp = 0
 			kicked = 1
 		}
@@ -66,12 +66,12 @@ function scr_pizzaball_normal()
 	else
 	{
 		kicked = 0
-		hsp = (image_xscale * (Movespeed + slopespeed))
+		hsp = (image_xscale * (movespeed + slopespeed))
 		var _deccel = 0.1
-		if (Movespeed > 0)
-			Movespeed -= _deccel
+		if (movespeed > 0)
+			movespeed -= _deccel
 		else
-			Movespeed = 0
+			movespeed = 0
 	}
 	if (jspd < 0)
 		jspd = 0

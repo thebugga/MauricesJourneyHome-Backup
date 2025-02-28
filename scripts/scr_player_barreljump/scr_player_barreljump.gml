@@ -1,8 +1,8 @@
 function scr_player_barreljump()
 {
 	image_speed = 0.35
-	hsp = Movespeed
-	Move = (key_right + key_left)
+	hsp = movespeed
+	move = (key_right + key_left)
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_barreljump)
 		sprite_index = spr_player_barrelfall
 	if key_jump
@@ -12,17 +12,17 @@ function scr_player_barreljump()
 		jumpstop = 1
 		vsp /= 20
 	}
-	if (Move != 0)
+	if (move != 0)
 	{
-		if (Move == Xscale)
-			Movespeed = approach(Movespeed, (Xscale * 8), 0.5)
+		if (move == Xscale)
+			movespeed = approach(movespeed, (Xscale * 8), 0.5)
 		else
-			Movespeed = approach(Movespeed, 0, 0.5)
-		if (Movespeed <= 0)
-			Xscale = Move
+			movespeed = approach(movespeed, 0, 0.5)
+		if (movespeed <= 0)
+			Xscale = move
 	}
 	else
-		Movespeed = approach(Movespeed, 0, 0.5)
+		movespeed = approach(movespeed, 0, 0.5)
 	if grounded
 	{
 		state = states.barrel
@@ -31,7 +31,7 @@ function scr_player_barreljump()
 		create_particle(x, y, particle.landcloud, 0)
 	}
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
-		Movespeed = 0
+		movespeed = 0
 	exit;
 }
 

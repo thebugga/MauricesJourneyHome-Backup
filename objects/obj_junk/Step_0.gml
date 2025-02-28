@@ -28,7 +28,7 @@ if (grabbed == 1 && (!ratgrabbed))
 	}
 	with (playerid)
 	{
-		Move = (key_left2 + key_right2)
+		move = (key_left2 + key_right2)
 		if (!((state == states.finishingblow or state == states.grab or state == states.grabbing or state == states.throwing or state == states.slam or state == states.tacklecharge or state == states.punch or state == states.superslam or state == states.backkick or state == states.uppunch or state == states.shoulder)))
 		{
 			other.grav = 0.5
@@ -257,7 +257,7 @@ if (place_meeting(x, y, obj_swordhitbox) && thrown == false)
 	other.alarm[7] = 120
 	with (playerid)
 	{
-		Move = (key_right + key_left)
+		move = (key_right + key_left)
 		if (sprite_index == spr_uppercutfinishingblow)
 			other.vsp = -25
 		else

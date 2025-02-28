@@ -1,10 +1,10 @@
 function scr_player_runonball()
 {
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if (!key_attack)
-		hsp = (Move * Movespeed)
+		hsp = (move * movespeed)
 	else
-		hsp = (image_xscale * Movespeed)
+		hsp = (image_xscale * movespeed)
 	jumpstop = 0
 	vsp = obj_parent_player.vsp
 	sprite_index = spr_player_slipnslide
@@ -13,10 +13,10 @@ function scr_player_runonball()
 		if (mach2 < 35)
 		{
 			mach2++
-			Movespeed = 4
+			movespeed = 4
 		}
 		if (mach2 >= 35)
-			Movespeed = 6
+			movespeed = 6
 	}
 	if (!key_attack)
 		mach2 = 0

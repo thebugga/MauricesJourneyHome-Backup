@@ -1,7 +1,7 @@
 function scr_blob_normal()
 {
 	sprite_index = walkspr
-	hsp = (image_xscale * Movespeed)
+	hsp = (image_xscale * movespeed)
 	var _calc = ((32 * obstacle_max) * sign(image_yscale))
 	var _col1 = collision_line(x, y, x, (y - _calc), obj_solid, false, true)
 	if (_col1 != noone)
@@ -43,7 +43,7 @@ function scr_blob_chase()
 	if ((playerinst.x - x) != 0)
 	{
 		image_xscale = sign((playerinst.x - x))
-		hsp = (image_xscale * Movespeed_chase)
+		hsp = (image_xscale * movespeed_chase)
 	}
 	if (playerinst.x > (x - 16) && playerinst.x < (x + 16))
 		hsp = 0

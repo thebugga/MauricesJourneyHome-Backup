@@ -71,7 +71,7 @@ function scr_hurtplayer(argument0)
 			if (!hurted)
 			{
 				state = states.ratmounthurt
-				Movespeed = 6
+				movespeed = 6
 				vsp = -9
 				flash = 1
 				alarm[8] = 100
@@ -195,7 +195,7 @@ function scr_hurtplayer(argument0)
 				sprite_index = spr_hurtjump
 			else
 				sprite_index = spr_hurt
-			Movespeed = 8
+			movespeed = 8
 			vsp = -14
 			timeuntilhpback = 300
 			instance_create(x, y, obj_spikehurteffect)

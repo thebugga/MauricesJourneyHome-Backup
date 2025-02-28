@@ -15,7 +15,7 @@ switch sprite_index
 				roomstarty = y
 				hsp = 0
 				vsp = 0
-				Movespeed = 0
+				movespeed = 0
 				cutscene = 1
 				visible = false
 			}
@@ -64,7 +64,7 @@ switch sprite_index
 					y = (other.y - 10)
 					visible = true
 					hsp = 0
-					Movespeed = 0
+					movespeed = 0
 					vsp = 10
 					scale_xs = approach(scale_xs, 1, 0.05)
 					scale_ys = approach(scale_ys, 1, 0.05)
@@ -76,7 +76,7 @@ switch sprite_index
 						if (global.playerCharacter != Characters.Pierre && (tauntstoredstate == states.knightpep || tauntstoredstate == states.knightpepslopes || tauntstoredstate == states.knightpepbump || tauntstoredstate == states.firemouth))
 						{
 							state = tauntstoredstate;
-							Movespeed = tauntstoredMovespeed;
+							movespeed = tauntstoredmovespeed;
 							hsp = tauntstoredhsp;
 							sprite_index = tauntstoredsprite;
 							if (state == states.actor || state == states.backbreaker || state == states.chainsaw)
@@ -90,11 +90,11 @@ switch sprite_index
 							if state == states.knightpep
 							{
 								hsp = 0;
-								Movespeed = 0;
+								movespeed = 0;
 							}
 							else if state == states.knightpepslopes
 							{
-								Movespeed = 0;
+								movespeed = 0;
 								hsp = 0;
 								state = states.knightpep;
 								sprite_index = spr_knightpepfall;
@@ -104,7 +104,7 @@ switch sprite_index
 								if sprite_index == spr_player_firemouthdash
 								{
 									hsp = 0;
-									Movespeed = 0;
+									movespeed = 0;
 									sprite_index = spr_player_firemouthidle;
 								}
 							}

@@ -22,9 +22,9 @@ function scr_player_ratmountbounce()
 		image_speed = 0.35;
 	if sprite_index == spr_player_ratmountbounce
 	{
-		Move = key_left + key_right;
-		hsp = Movespeed;
-		Movespeed = approach(Movespeed, 0, 1);
+		move = key_left + key_right;
+		hsp = movespeed;
+		movespeed = approach(movespeed, 0, 1);
 		if animation_end()
 		{
 			if hsp != 0
@@ -34,12 +34,12 @@ function scr_player_ratmountbounce()
 	}
 	else
 	{
-		hsp = Movespeed;
-		Move = key_left + key_right;
-		if Move != 0
-			Movespeed = approach(Movespeed, Move * 8, 0.5);
+		hsp = movespeed;
+		move = key_left + key_right;
+		if move != 0
+			movespeed = approach(movespeed, move * 8, 0.5);
 		else
-			Movespeed = approach(Movespeed, 0, 0.5);
+			movespeed = approach(movespeed, 0, 0.5);
 		if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
 		{
 			input_buffer_slap = 0;
@@ -60,15 +60,15 @@ function scr_player_ratmountbounce()
 			gustavohitwall = false;
 			ratmountpunchtimer = 25;
 			image_index = 0;
-			if Move != 0
-				Xscale = Move;
-			Movespeed = Xscale * 12;
+			if move != 0
+				Xscale = move;
+			movespeed = Xscale * 12;
 			sprite_index = spr_lonegustavo_punch;
 		}
 		ratmount_fallingspeed += 0.5;
 		if (brick && place_meeting_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting_slope(x + sign(hsp), y)))
 		{
-			if (Move != 0 && Move == sign(hsp) && key_jump2)
+			if (move != 0 && move == sign(hsp) && key_jump2)
 			{
 				fmod_event_one_shot_3d("event:/sfx/ratmount/walljump1", x, y);
 				state = states.ratmountclimbwall;

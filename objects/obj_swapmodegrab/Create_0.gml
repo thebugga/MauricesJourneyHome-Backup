@@ -1,4 +1,4 @@
-Movespeed = 10
+movespeed = 10
 hsp = 0
 vsp = 0
 grav = 0.5

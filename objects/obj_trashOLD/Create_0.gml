@@ -2,7 +2,7 @@ scr_initenemy()
 grav = 0.5
 hsp = 0
 vsp = 0
-Movespeed = 0
+movespeed = 0
 state = states.walk
 stunned = 0
 alarm[0] = 150

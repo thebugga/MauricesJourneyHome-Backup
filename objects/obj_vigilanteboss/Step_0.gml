@@ -60,7 +60,7 @@ else
 	mask_index = spr_player_mask
 if (state == states.stun)
 {
-	Movespeed = 0
+	movespeed = 0
 	if thrown
 		savedthrown = true
 	if (grounded && vsp > 0 && savedthrown)

@@ -22,7 +22,7 @@ with (other)
             {
                 swingdingthrow = false
                 image_index = 0
-                if (Movespeed <= 10)
+                if (movespeed <= 10)
                     sprite_index = spr_haulingstart
                 else
                     sprite_index = spr_swingding
@@ -54,9 +54,9 @@ with (other)
             with (instance_create(x, y, obj_brickcomeback))
                 wait = true
             sprite_index = spr_lonegustavo_punch
-            Movespeed = other.hsp
-            if (abs(Movespeed) < 10)
-                Movespeed = Xscale * 10
+            movespeed = other.hsp
+            if (abs(movespeed) < 10)
+                movespeed = Xscale * 10
             instance_destroy(baddiegrabbedID)
         }
     }

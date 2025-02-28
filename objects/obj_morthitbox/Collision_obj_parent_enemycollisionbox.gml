@@ -34,5 +34,5 @@ if ((!other.baddieID.invincible) && other.baddieID.destroyable && playerid.state
 			baddieID.hithsp = (other.image_xscale * 10)
 		}
 	}
-	Mort_DownMovement()
+	Mort_Downmovement()
 }

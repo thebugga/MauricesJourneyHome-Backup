@@ -1,8 +1,8 @@
 if (up == 1)
 {
 	vsp = -8
-	Movespeed = 8
+	movespeed = 8
 }
 else
-	Movespeed = 12
+	movespeed = 12
 kicked = 1

@@ -14,14 +14,14 @@ function vigilante_cancel_attack()
 		{
 			case states.revolver:
 				revolver_count = choose(1, 2)
-				Movespeed = 0
+				movespeed = 0
 				sprite_index = spr_playerV_revolverstart
 				image_index = 0
 				break
 			case states.uppunch:
 				normalattack_cooldown = normalattack_max[(phase - 1)]
 				vsp = -14
-				Movespeed = 2
+				movespeed = 2
 				sprite_index = spr_playerV_superjump
 				image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : image_xscale)
 				image_index = 0
@@ -29,7 +29,7 @@ function vigilante_cancel_attack()
 				break
 			case states.handstandjump:
 				normalattack_cooldown = normalattack_max[(phase - 1)]
-				Movespeed = 8
+				movespeed = 8
 				vsp = (grounded ? 0 : -4)
 				sprite_index = spr_playerV_mach3boost
 				image_index = 0
@@ -41,21 +41,21 @@ function vigilante_cancel_attack()
 			case states.charge:
 				sprite_index = spr_playerV_divekickstart
 				image_index = 0
-				Movespeed = 0
+				movespeed = 0
 				break
 			case states.boss_groundpunchstart:
 				vsp = -14
 				image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : (x < (room_width / 2) ? 1 : -1))
 				sprite_index = spr_playerV_jump
 				image_index = 0
-				Movespeed = 0
+				movespeed = 0
 				instance_create(x, y, obj_highjumpcloud2)
 				break
 			case states.boss_millionpunch:
 				sprite_index = spr_playerV_crazyrun
 				image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : (x < (room_width / 2) ? 1 : -1))
 				image_index = 0
-				Movespeed = 4
+				movespeed = 4
 				millionpunch_buffer = millionpunch_max
 				with (instance_create(x, y, obj_millionpunchhitbox))
 					baddieID = other.id
@@ -68,7 +68,7 @@ function vigilante_cancel_attack()
 				{
 					obj_explosion = 85
 					image_xscale = other.image_xscale
-					Movespeed = 6
+					movespeed = 6
 					vsp = -6
 				}
 				break
@@ -113,7 +113,7 @@ function boss_vigilante_decide_attack()
 			{
 				state = states.boss_superattackstart
 				duelintro_buffer = duelintro_max
-				Movespeed = 0
+				movespeed = 0
 				with (obj_bosshitbox)
 					instance_destroy()
 				with (obj_parent_player)
@@ -121,7 +121,7 @@ function boss_vigilante_decide_attack()
 					if (object_index == obj_player1 or global.coop)
 					{
 						state = states.boss_superattackstart
-						Movespeed = 0
+						movespeed = 0
 					}
 				}
 				with (obj_tv)
@@ -203,7 +203,7 @@ function vigilante_decide_attack_phase4()
 		{
 			sprite_index = spr_playerV_divekickstart
 			image_index = 0
-			Movespeed = 0
+			movespeed = 0
 		}
 		else if (state == states.boss_groundpunchstart)
 		{
@@ -211,7 +211,7 @@ function vigilante_decide_attack_phase4()
 			image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : (x < (room_width / 2) ? 1 : -1))
 			sprite_index = spr_playerV_jump
 			image_index = 0
-			Movespeed = 0
+			movespeed = 0
 			instance_create(x, y, obj_highjumpcloud2)
 		}
 		else if (state == states.boss_millionpunch)
@@ -219,7 +219,7 @@ function vigilante_decide_attack_phase4()
 			sprite_index = spr_playerV_crazyrun
 			image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : (x < (room_width / 2) ? 1 : -1))
 			image_index = 0
-			Movespeed = 4
+			movespeed = 4
 			millionpunch_buffer = millionpunch_max
 			with (instance_create(x, y, obj_millionpunchhitbox))
 				baddieID = other.id
@@ -242,7 +242,7 @@ function vigilante_decide_attack_phase3()
 			revolver_count = 2
 			revolver_jumpcount = 0
 			revolver_jump = irandom_range(-1, (revolver_count - 1))
-			Movespeed = 0
+			movespeed = 0
 			sprite_index = spr_playerV_revolverstart
 			image_index = 0
 			if (revolver_jump == revolver_jumpcount && grounded)
@@ -252,7 +252,7 @@ function vigilante_decide_attack_phase3()
 		{
 			superkickattackpursuit = 1
 			superkickattack_jump = irandom(100) > 30
-			Movespeed = 0
+			movespeed = 0
 			sprite_index = spr_playerV_mach1
 			image_index = 0
 		}
@@ -265,7 +265,7 @@ function vigilante_decide_attack_phase3()
 			{
 				obj_explosion = 85
 				image_xscale = other.image_xscale
-				Movespeed = 6
+				movespeed = 6
 				vsp = -6
 			}
 		}
@@ -285,14 +285,14 @@ function vigilante_decide_attack_phase1()
 		if (state == states.revolver)
 		{
 			revolver_count = (phase == 1 ? 1 : 2)
-			Movespeed = 0
+			movespeed = 0
 			sprite_index = spr_playerV_revolverstart
 			image_index = 0
 		}
 		else if (state == states.mach1)
 		{
 			superkickattackpursuit = (!(phase == 1))
-			Movespeed = 0
+			movespeed = 0
 			sprite_index = spr_playerV_mach1
 			image_index = 0
 		}
@@ -300,7 +300,7 @@ function vigilante_decide_attack_phase1()
 		{
 			vsp = -14
 			hsp = 0
-			Movespeed = 0
+			movespeed = 0
 			sprite_index = spr_playerV_jump
 			image_index = 0
 			dynamite_buffer = dynamite_max
@@ -322,7 +322,7 @@ function vigilante_decide_normalattack()
 		{
 			state = states.uppunch
 			vsp = -14
-			Movespeed = 2
+			movespeed = 2
 			sprite_index = spr_playerV_superjump
 			image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : image_xscale)
 			image_index = 0
@@ -331,7 +331,7 @@ function vigilante_decide_normalattack()
 		else
 		{
 			state = states.handstandjump
-			Movespeed = 8
+			movespeed = 8
 			sprite_index = spr_playerV_mach3boost
 			image_index = 0
 			with (instance_create(x, y, obj_superdashcloud))
@@ -347,32 +347,32 @@ function boss_vigilante_normal_phase4()
 {
 	image_speed = 0.35
 	if (targetplayer.hsp != 0 && targetplayer.state != states.thrown && distance_to_object(targetplayer) < 500)
-		Move = sign(targetplayer.hsp)
+		move = sign(targetplayer.hsp)
 	else
-		Move = 0
+		move = 0
 	if (distance_to_object(targetplayer) < 128)
-		Move = (-(sign((targetplayer.x - x))))
-	hsp = (Move * Movespeed)
+		move = (-(sign((targetplayer.x - x))))
+	hsp = (move * movespeed)
 	if (x != targetplayer.x)
 		image_xscale = sign((targetplayer.x - x))
-	var targetspeed = (Move == image_xscale ? normal_spd : (normal_spd - 2))
-	if (Move != 0)
+	var targetspeed = (move == image_xscale ? normal_spd : (normal_spd - 2))
+	if (move != 0)
 	{
-		if (Movespeed < targetspeed)
-			Movespeed += 0.25
-		else if (Movespeed > targetspeed)
-			Movespeed -= 0.5
-		if (Movespeed < 3)
+		if (movespeed < targetspeed)
+			movespeed += 0.25
+		else if (movespeed > targetspeed)
+			movespeed -= 0.5
+		if (movespeed < 3)
 			image_speed = 0.35
-		else if (Movespeed > 3 && Movespeed < 6)
+		else if (movespeed > 3 && movespeed < 6)
 			image_speed = 0.45
 		else
 			image_speed = 0.6
 	}
-	else if (Movespeed > 0)
-		Movespeed -= 0.1
-	else if (Movespeed <= 0)
-		Movespeed = 0
+	else if (movespeed > 0)
+		movespeed -= 0.1
+	else if (movespeed <= 0)
+		movespeed = 0
 	boss_decide_taunt(180)
 	if (state != states.backbreaker)
 	{
@@ -393,34 +393,34 @@ function boss_vigilante_normal()
 {
 	image_speed = 0.35
 	if (targetplayer.hsp != 0 && targetplayer.state != states.thrown && distance_to_object(targetplayer) < 480)
-		Move = sign(targetplayer.hsp)
+		move = sign(targetplayer.hsp)
 	else
-		Move = 0
+		move = 0
 	if (distance_to_object(targetplayer) < 300)
-		Move = (-(sign((targetplayer.x - x))))
+		move = (-(sign((targetplayer.x - x))))
 	if (distance_to_object(targetplayer) > 500)
-		Move = sign((targetplayer.x - x))
-	hsp = (Move * Movespeed)
+		move = sign((targetplayer.x - x))
+	hsp = (move * movespeed)
 	if (x != targetplayer.x)
 		image_xscale = sign((targetplayer.x - x))
-	targetspeed = (Move == image_xscale ? (normal_spd - 2) : normal_spd)
-	if (Move != 0)
+	targetspeed = (move == image_xscale ? (normal_spd - 2) : normal_spd)
+	if (move != 0)
 	{
-		if (Movespeed < targetspeed)
-			Movespeed += 0.25
-		else if (Movespeed > targetspeed)
-			Movespeed -= 0.5
-		if (Movespeed < 3)
+		if (movespeed < targetspeed)
+			movespeed += 0.25
+		else if (movespeed > targetspeed)
+			movespeed -= 0.5
+		if (movespeed < 3)
 			image_speed = 0.35
-		else if (Movespeed > 3 && Movespeed < 6)
+		else if (movespeed > 3 && movespeed < 6)
 			image_speed = 0.45
 		else
 			image_speed = 0.6
 	}
-	else if (Movespeed > 0)
-		Movespeed -= 0.1
-	else if (Movespeed <= 0)
-		Movespeed = 0
+	else if (movespeed > 0)
+		movespeed -= 0.1
+	else if (movespeed <= 0)
+		movespeed = 0
 	boss_decide_taunt(180)
 	if (state != states.backbreaker)
 		boss_vigilante_decide_attack()
@@ -443,13 +443,13 @@ function boss_vigilante_normal()
 function boss_vigilante_float()
 {
 	image_speed = 0.35
-	sprite_index = spr_playerV_crouchMove
+	sprite_index = spr_playerV_crouchmove
 	hsp = (image_xscale * changeside_spd)
-	Movespeed = 0
+	movespeed = 0
 	if (changeside_skid && place_meeting((x + (sign(hsp) * 128)), y, obj_solid))
 	{
 		state = states.machslide
-		Movespeed = 12
+		movespeed = 12
 		sprite_index = spr_playerV_mach2boost
 	}
 	if place_meeting((x + (sign(hsp) * 64)), y, obj_solid)
@@ -516,16 +516,16 @@ function boss_vigilante_revolver()
 function boss_vigilante_mach1()
 {
 	image_speed = 0.6
-	hsp = (image_xscale * Movespeed)
-	if (Movespeed < 12)
-		Movespeed += 0.5
+	hsp = (image_xscale * movespeed)
+	if (movespeed < 12)
+		movespeed += 0.5
 	if (sprite_index == spr_playerV_mach1 && image_index > (image_number - 1))
-		sprite_index = spr_playerV_bootsMove
+		sprite_index = spr_playerV_bootsmove
 	var tx = (phase == 1 ? 224 : 380)
 	if ((!superkickattackpursuit) && (!superkickattack_jump) && distance_to_pos(x, y, targetplayer.x, targetplayer.y, tx, 540) && grounded)
 	{
 		state = states.crouchslide
-		Movespeed = (phase == 1 ? 12 : 15)
+		movespeed = (phase == 1 ? 12 : 15)
 		sprite_index = spr_playerV_divekickstart
 		image_index = 0
 	}
@@ -533,7 +533,7 @@ function boss_vigilante_mach1()
 	{
 		vsp = -11
 		state = states.jump
-		Movespeed = 12
+		movespeed = 12
 		dynamite_count = 0
 		dynamite_buffer = 0
 		sprite_index = spr_playerV_bootsjump
@@ -543,7 +543,7 @@ function boss_vigilante_mach1()
 	if (superkickattackpursuit && place_meeting((x + (sign(hsp) * 116)), y, obj_solid))
 	{
 		state = states.machslide
-		Movespeed = 12
+		movespeed = 12
 		sprite_index = spr_playerV_mach2boost
 		superkickattackpursuit = 0
 	}
@@ -569,18 +569,18 @@ function boss_vigilante_mach1()
 function boss_vigilante_crouchslide()
 {
 	image_speed = (phase != 6 ? 0.35 : 0.5)
-	hsp = (image_xscale * Movespeed)
+	hsp = (image_xscale * movespeed)
 	if (sprite_index == spr_playerV_divekickstart && image_index > (image_number - 1))
 		sprite_index = spr_playerV_divekick
 	if grounded
 	{
 		if (sprite_index == spr_playerV_dive)
 			sprite_index = spr_playerV_divekick
-		if (Movespeed > 0)
-			Movespeed -= 0.2
+		if (movespeed > 0)
+			movespeed -= 0.2
 		else
 		{
-			Movespeed = 0
+			movespeed = 0
 			state = states.normal
 		}
 	}
@@ -597,20 +597,20 @@ function boss_vigilante_crouchslide()
 
 function boss_vigilante_machslide()
 {
-	hsp = (image_xscale * Movespeed)
-	if (Movespeed > 0)
-		Movespeed -= 0.4
+	hsp = (image_xscale * movespeed)
+	if (movespeed > 0)
+		movespeed -= 0.4
 	else
-		Movespeed = 0
+		movespeed = 0
 	image_speed = (phase != 6 ? 0.35 : 0.5)
 	if (image_index > (image_number - 1))
 	{
 		if (sprite_index == spr_playerV_mach2boost)
 		{
-			sprite_index = spr_playerV_bootsMove
+			sprite_index = spr_playerV_bootsmove
 			state = states.mach1
 			superkickattackpursuit = 0
-			Movespeed = 12
+			movespeed = 12
 			image_xscale *= -1
 		}
 	}
@@ -620,7 +620,7 @@ function boss_vigilante_machslide()
 function boss_vigilante_jump()
 {
 	image_speed = (phase != 6 ? 0.35 : 0.5)
-	hsp = (image_xscale * Movespeed)
+	hsp = (image_xscale * movespeed)
 	if (dynamite_buffer > 0)
 		dynamite_buffer--
 	else if (dynamite_count > 0)
@@ -634,9 +634,9 @@ function boss_vigilante_jump()
 			{
 				obj_explosion = 85
 				image_xscale = other.image_xscale
-				Movespeed = 6
+				movespeed = 6
 				vsp = (-((6 + ((other.dynamite_count - 1) * 2))))
-				Movespeed += ((other.dynamite_count - 1) * 4)
+				movespeed += ((other.dynamite_count - 1) * 4)
 			}
 			dynamite_count--
 		}
@@ -678,10 +678,10 @@ function boss_vigilante_dynamite()
 function boss_vigilante_charge()
 {
 	image_speed = (phase != 6 ? 0.35 : 0.4)
-	hsp = (image_xscale * Movespeed)
+	hsp = (image_xscale * movespeed)
 	if (image_index > (image_number - 1))
 	{
-		Movespeed = 17
+		movespeed = 17
 		state = states.punch
 		sprite_index = spr_playerV_divekick
 	}
@@ -691,18 +691,18 @@ function boss_vigilante_charge()
 function boss_vigilante_punch()
 {
 	image_speed = (phase != 6 ? 0.35 : 0.5)
-	hsp = (image_xscale * Movespeed)
+	hsp = (image_xscale * movespeed)
 	if place_meeting((x + sign(hsp)), y, obj_solid)
 	{
 		state = states.bump
 		hsp = ((-image_xscale) * 6)
 		vsp = -4
 	}
-	if (Movespeed > 0)
-		Movespeed -= 0.2
+	if (movespeed > 0)
+		movespeed -= 0.2
 	else
 	{
-		Movespeed = 0
+		movespeed = 0
 		state = states.normal
 	}
 	if (phase > 4)
@@ -714,17 +714,17 @@ function boss_vigilante_groundpunchstart()
 {
 	image_speed = (phase != 6 ? 0.35 : 0.5)
 	if (x > (targetplayer.x - 32) && x < (targetplayer.x + 32))
-		Move = 0
+		move = 0
 	else
 	{
 		image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : image_xscale)
-		Move = image_xscale
+		move = image_xscale
 	}
-	hsp = (Move * Movespeed)
-	if (Movespeed < (normal_spd + 1))
-		Movespeed += 0.5
+	hsp = (move * movespeed)
+	if (movespeed < (normal_spd + 1))
+		movespeed += 0.5
 	else
-		Movespeed = (normal_spd + 1)
+		movespeed = (normal_spd + 1)
 	if (sprite_index == spr_playerV_jump && image_index > (image_number - 1))
 	{
 		sprite_index = spr_playerV_fall
@@ -743,19 +743,19 @@ function boss_vigilante_groundpunchstart()
 function boss_vigilante_freefallprep()
 {
 	if (x > (targetplayer.x - 24) && x < (targetplayer.x + 24))
-		Move = 0
+		move = 0
 	else
 	{
 		image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : image_xscale)
-		Move = image_xscale
+		move = image_xscale
 	}
-	if (Movespeed < 7)
-		Movespeed += 0.2
-	else if (Movespeed > 7)
-		Movespeed -= 0.1
+	if (movespeed < 7)
+		movespeed += 0.2
+	else if (movespeed > 7)
+		movespeed -= 0.1
 	else
-		Movespeed = 7
-	hsp = (Move * Movespeed)
+		movespeed = 7
+	hsp = (move * movespeed)
 	if (image_index > (image_number - 1))
 	{
 		vsp += 14
@@ -770,27 +770,27 @@ function boss_vigilante_freefall()
 {
 	if (x > (targetplayer.x - 24) && x < (targetplayer.x + 24))
 	{
-		Move = 0
-		Movespeed = 0
+		move = 0
+		movespeed = 0
 	}
 	else
 	{
 		image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : image_xscale)
-		Move = image_xscale
+		move = image_xscale
 	}
-	if (Movespeed < 7)
-		Movespeed += 0.2
-	else if (Movespeed > 7)
-		Movespeed -= 0.1
+	if (movespeed < 7)
+		movespeed += 0.2
+	else if (movespeed > 7)
+		movespeed -= 0.1
 	else
-		Movespeed = 7
-	hsp = (Move * Movespeed)
+		movespeed = 7
+	hsp = (move * movespeed)
 	vsp = 20
 	image_speed = (phase != 6 ? 0.35 : 0.5)
 	sprite_index = spr_playerV_bodyslam
 	if grounded
 	{
-		Movespeed = 0
+		movespeed = 0
 		state = states.freefallland
 		sprite_index = spr_playerV_bodyslamland
 		image_index = 0
@@ -800,7 +800,7 @@ function boss_vigilante_freefall()
 
 function boss_vigilante_freefallland()
 {
-	hsp = (image_xscale * Movespeed)
+	hsp = (image_xscale * movespeed)
 	image_speed = (phase != 6 ? 0.35 : 0.5)
 	if (image_index > (image_number - 1))
 		state = states.normal
@@ -813,13 +813,13 @@ function boss_vigilante_millionpunch()
 {
 	image_speed = (phase != 6 ? 0.6 : 0.7)
 	if (x > (targetplayer.x - 24) && x < (targetplayer.x + 24))
-		Move = 0
+		move = 0
 	else
 	{
 		image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : image_xscale)
-		Move = image_xscale
+		move = image_xscale
 	}
-	hsp = (Move * Movespeed)
+	hsp = (move * movespeed)
 	if (millionpunch_buffer > 0)
 		millionpunch_buffer--
 	else
@@ -831,7 +831,7 @@ function boss_vigilante_millionpunch()
 
 function boss_vigilante_uppunch()
 {
-	hsp = (image_xscale * Movespeed)
+	hsp = (image_xscale * movespeed)
 	if (image_index > (image_number - 1))
 		image_index = (image_number - 1)
 	if grounded
@@ -844,11 +844,11 @@ function boss_vigilante_uppunch()
 function boss_vigilante_handstandjump()
 {
 	image_speed = (phase != 6 ? 0.35 : 0.4)
-	hsp = (image_xscale * Movespeed)
-	if (Movespeed < 10)
-		Movespeed += 0.5
+	hsp = (image_xscale * movespeed)
+	if (movespeed < 10)
+		movespeed += 0.5
 	else
-		Movespeed = 10
+		movespeed = 10
 	if (image_index > (image_number - 1))
 		state = states.normal
 	if (phase > 4)
@@ -859,21 +859,21 @@ function boss_vigilante_handstandjump()
 function boss_vigilante_superattackstart()
 {
 	tx = (room_width - (room_width / 3))
-	x = approach(x, tx, Movespeed)
+	x = approach(x, tx, movespeed)
 	hsp = 0
-	if (Movespeed < 8)
-		Movespeed += 0.5
+	if (movespeed < 8)
+		movespeed += 0.5
 	image_xscale = (x > (room_width / 2) ? -1 : 1)
 	if (x != tx)
 		sprite_index = (grounded ? walkspr : fallspr)
 	else
 	{
-		Movespeed = 0
+		movespeed = 0
 		sprite_index = (grounded ? idlespr : fallspr)
 	}
-	if (Movespeed < 3)
+	if (movespeed < 3)
 		image_speed = 0.35
-	else if (Movespeed > 3 && Movespeed < 6)
+	else if (movespeed > 3 && movespeed < 6)
 		image_speed = 0.45
 	else
 		image_speed = 0.6
@@ -882,21 +882,21 @@ function boss_vigilante_superattackstart()
 		if (object_index == obj_player1 or global.coop)
 		{
 			var tx2 = (room_width / 3)
-			x = approach(x, tx2, Movespeed)
+			x = approach(x, tx2, movespeed)
 			hsp = 0
-			if (Movespeed < 8)
-				Movespeed += 0.5
+			if (movespeed < 8)
+				movespeed += 0.5
 			Xscale = (x > (room_width / 2) ? -1 : 1)
 			if (x != tx2)
-				sprite_index = (grounded ? spr_Move : spr_fall)
+				sprite_index = (grounded ? spr_move : spr_fall)
 			else
 			{
-				Movespeed = 0
+				movespeed = 0
 				sprite_index = (grounded ? spr_idle : spr_fall)
 			}
-			if (Movespeed < 3)
+			if (movespeed < 3)
 				image_speed = 0.35
-			else if (Movespeed > 3 && Movespeed < 6)
+			else if (movespeed > 3 && movespeed < 6)
 				image_speed = 0.45
 			else
 				image_speed = 0.6

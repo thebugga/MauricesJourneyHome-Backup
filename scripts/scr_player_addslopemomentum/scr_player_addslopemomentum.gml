@@ -5,9 +5,9 @@ function scr_player_addslopemomentum(argument0, argument1)
 		if (sign(image_xscale) == (-sign(other.Xscale)))
 		{
 			if (abs(image_yscale) < abs(image_xscale))
-				other.Movespeed += argument0
+				other.movespeed += argument0
 			else
-				other.Movespeed += argument1
+				other.movespeed += argument1
 		}
 	}
 	exit;
@@ -33,7 +33,7 @@ function scr_pizzaball_addslopemomentum(argument0, argument1)
 		slopespeed = 0
 	if (slopespeed > 10)
 		slopespeed = 10
-	if (Movespeed < 1)
+	if (movespeed < 1)
 		slopespeed = 0
 	exit;
 }

@@ -16,7 +16,7 @@ if _used
 				state = states.tumble
 				Xscale = sign(other.image_xscale)
 				mask_index = spr_crouchmask
-				Movespeed = 14
+				movespeed = 14
 				vsp = 0
 				sprite_index = spr_tumble
 				other.image_index = 0

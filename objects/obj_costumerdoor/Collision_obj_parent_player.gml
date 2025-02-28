@@ -12,7 +12,7 @@ with (obj_parent_player)
 		image_index = 0
 		costumercutscenetimer = 70
 		sprite_index = spr_player_knock
-		Movespeed = 0
+		movespeed = 0
 		hsp = 0
 	}
 }

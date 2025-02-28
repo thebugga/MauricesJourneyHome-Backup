@@ -1,9 +1,9 @@
 function scr_player_pistol()
 {
-	Move = (key_right + key_left)
-	hsp = (Xscale * Movespeed)
-	if (Movespeed < 10)
-		Movespeed += 0.15
+	move = (key_right + key_left)
+	hsp = (Xscale * movespeed)
+	if (movespeed < 10)
+		movespeed += 0.15
 	if (floor(image_index) == (image_number - 1) && grounded && key_attack)
 		state = states.mach2
 	else if (floor(image_index) == (image_number - 1))
@@ -33,9 +33,9 @@ function scr_player_pistol()
 		sprite_index = spr_crouchslip
 		machhitAnim = 0
 		state = states.crouchslide
-		Movespeed += 3
+		movespeed += 3
 	}
-	if (state != states.bump && Move != Xscale && Move != 0)
+	if (state != states.bump && move != Xscale && move != 0)
 	{
 		image_index = 0
 		if (!grounded)
@@ -52,7 +52,7 @@ function scr_player_pistol()
 		}
 	}
 	image_speed = 0.35
-	if ((!instance_exists(obj_slidecloud)) && grounded && Movespeed > 4)
+	if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 4)
 		instance_create(x, y, obj_slidecloud)
 	exit;
 }

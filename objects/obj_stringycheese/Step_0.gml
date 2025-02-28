@@ -38,7 +38,7 @@ switch state
 				tauntstoredsprite = sprite_index
 				state = states.stringfall
 				stringid = other.id
-				Movespeed = hsp
+				movespeed = hsp
 			}
 			state = states.hook
 		}
@@ -124,9 +124,9 @@ switch state
 			if (y <= other.y)
 			{
 				other.shootbuffer = 0
-				Movespeed = abs(Movespeed)
-				if (Movespeed != 0)
-					Xscale = sign(Movespeed)
+				movespeed = abs(movespeed)
+				if (movespeed != 0)
+					Xscale = sign(movespeed)
 				vsp = other.launch_vsp
 				dir = Xscale
 				jumpAnim = 1

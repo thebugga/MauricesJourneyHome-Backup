@@ -10,18 +10,18 @@ if place_meeting(x, (y - 1), obj_parent_player)
 			{
 				if (state != states.machslide && state != states.tumble && state != states.handstandjump && state != states.mach1 && state != states.mach2 && state != states.mach3)
 				{
-					if (icedir != (-Xscale) && Move != 0)
+					if (icedir != (-Xscale) && move != 0)
 					{
-						if (prevMovespeed != 0)
-							iceMovespeed = prevMovespeed
+						if (prevmovespeed != 0)
+							icemovespeed = prevmovespeed
 						else
-							iceMovespeed = 8
+							icemovespeed = 8
 						icedir = (-Xscale)
 						savedicedir = (-Xscale)
 					}
-					if (prevMove != Move && Move == 0)
+					if (prevmove != move && move == 0)
 					{
-						iceMovespeed = (-((prevMovespeed - previceMovespeed)))
+						icemovespeed = (-((prevmovespeed - previcemovespeed)))
 						icedir = (-Xscale)
 					}
 				}
@@ -30,11 +30,11 @@ if place_meeting(x, (y - 1), obj_parent_player)
 					if (prevstate != state)
 					{
 						icedir = Xscale
-						iceMovespeed = floor((abs(Movespeed) * 0.5))
+						icemovespeed = floor((abs(movespeed) * 0.5))
 					}
 				}
 				else if (state == states.tumble)
-					iceMovespeed = 0
+					icemovespeed = 0
 			}
 		}
 	}

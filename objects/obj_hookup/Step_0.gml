@@ -7,7 +7,7 @@ if hooked
 		blinking = 1
 		alarm[0] = 1
 	}
-	y -= Movespeed
+	y -= movespeed
 	with (obj_parent_player)
 	{
 		if (state == states.ladder && place_meeting(x, y, other))

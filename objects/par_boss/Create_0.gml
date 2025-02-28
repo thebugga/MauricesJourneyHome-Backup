@@ -7,7 +7,7 @@ hsp = 0
 vsp = 0
 grav = 0.5
 grounded = false
-Movespeed = 0
+movespeed = 0
 funnyangle = 0
 state = states.normal
 hitLag = 0
@@ -95,7 +95,7 @@ function SUPER_boss_destroy(argument0)
 		if (state != states.chainsaw)
 		{
 			//scr_soundeffect(sfx_killingblow)
-			tauntstoredMovespeed = Movespeed
+			tauntstoredmovespeed = movespeed
 			tauntstoredsprite = sprite_index
 			tauntstoredstate = state
 		}
@@ -156,7 +156,7 @@ function SUPER_boss_hurt(argument0, argument1)
 		if (state != states.chainsaw)
 		{
 			//scr_soundeffect(sfx_killingblow)
-			tauntstoredMovespeed = Movespeed
+			tauntstoredmovespeed = movespeed
 			tauntstoredsprite = sprite_index
 			tauntstoredstate = state
 		}
@@ -181,13 +181,13 @@ function SUPER_boss_hurt(argument0, argument1)
 		other.hitY = other.y
 		other.jugglecount++
 		other.hitvsp = -9
-		other.Movespeed = (7 + (other.jugglecount * 2))
+		other.movespeed = (7 + (other.jugglecount * 2))
 		if (atstate == states.parry)
 		{
 			other.hitvsp = -14
-			other.Movespeed = 0
+			other.movespeed = 0
 		}
-		other.hithsp = ((-other.image_xscale) * other.Movespeed)
+		other.hithsp = ((-other.image_xscale) * other.movespeed)
 		other.state = states.hit
 		instance_create(other.x, other.y, obj_parryeffect)
 		instance_create(x, y, obj_slapstar)

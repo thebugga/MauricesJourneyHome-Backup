@@ -10,7 +10,7 @@ with (player)
 {
 	visible = true
 	state = other.storedstate
-	Movespeed = other.storedMovespeed
+	movespeed = other.storedmovespeed
 	grav = other.storedgrav
 	image_index = other.storedimageindex
 	sprite_index = other.storedspriteindex

@@ -1,17 +1,17 @@
 function scr_player_ratmountgrind()
 {
-	hsp = Movespeed
+	hsp = movespeed
 	vsp = 0
-	Move = (key_left + key_right)
-	if (Move != 0)
+	move = (key_left + key_right)
+	if (move != 0)
 	{
-		Xscale = Move
-		Movespeed = (Move * 6)
+		Xscale = move
+		movespeed = (move * 6)
 		sprite_index = spr_lonegustavo_hangwalk
 	}
 	else
 	{
-		Movespeed = 0
+		movespeed = 0
 		sprite_index = spr_lonegustavo_hang
 	}
 	image_speed = 0.35
@@ -20,7 +20,7 @@ function scr_player_ratmountgrind()
 		with (instance_place(x, y, obj_grindrail))
 			other.y = y
 	}
-	if (Move != 0)
+	if (move != 0)
 	{
 		var inst = instance_place((x + hsp), (y - 32), obj_grindrailslope)
 		if (inst == noone)

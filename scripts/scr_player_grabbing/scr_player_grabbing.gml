@@ -1,16 +1,16 @@
 function scr_player_grabbing()
 {
 	landAnim = 0
-	hsp = (Xscale * Movespeed)
-	Move = (key_left + key_right)
+	hsp = (Xscale * movespeed)
+	move = (key_left + key_right)
 	momemtum = 1
 	dir = Xscale
 	if (sprite_index != spr_player_Sjump)
 	{
-		if (Movespeed < 12 && grounded)
-			Movespeed += 1
+		if (movespeed < 12 && grounded)
+			movespeed += 1
 		else if (!grounded)
-			Movespeed = 12
+			movespeed = 12
 	}
 	var attackdash = spr_player_suplexdash
 	var airattackdash = spr_player_suplexgrabjump
@@ -28,7 +28,7 @@ function scr_player_grabbing()
 		image_index = 0
 		vsp = 0
 		sprite_index = spr_player_suplexdash
-		Movespeed = 8
+		movespeed = 8
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.Xscale
 		particle_set_scale(particle.crazyrunothereffect, Xscale, 1)
@@ -48,7 +48,7 @@ function scr_player_grabbing()
 	{
 		//scr_soundeffect(sfx_bumpwall)
 		grav = 0.5
-		Movespeed = 0
+		movespeed = 0
 		state = states.bump
 		hsp = -2.5
 		vsp = -3
@@ -62,7 +62,7 @@ function scr_player_grabbing()
 	{
 		//scr_soundeffect(sfx_bumpwall)
 		grav = 0.5
-		Movespeed = 0
+		movespeed = 0
 		state = states.bump
 		hsp = 2.5
 		vsp = -3
@@ -72,13 +72,13 @@ function scr_player_grabbing()
 		machhitAnim = 0
 		instance_create((x - 10), (y + 10), obj_bumpeffect)
 	}
-	if ((!instance_exists(obj_slidecloud)) && grounded && Movespeed > 5)
+	if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 5)
 	{
 		with (instance_create(x, y, obj_slidecloud))
 			image_xscale = other.Xscale
 	}
 	image_speed = 0.35
-	if (Move != Xscale && Move != 0)
+	if (move != Xscale && move != 0)
 	{
 		image_index = 0
 		if (!grounded)

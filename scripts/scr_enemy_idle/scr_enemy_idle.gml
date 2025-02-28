@@ -22,7 +22,7 @@ function scr_enemy_idle() //gml_Script_scr_enemy_idle
     if place_meeting(x, (y + 1), obj_railparent)
     {
         var _railinst = instance_place(x, (y + 1), obj_railparent)
-        hsp += (_railinst.Movespeed * _railinst.dir)
+        hsp += (_railinst.movespeed * _railinst.dir)
     }
     image_speed = 0.35
 }

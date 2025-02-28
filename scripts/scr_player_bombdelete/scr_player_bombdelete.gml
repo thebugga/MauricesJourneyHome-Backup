@@ -1,26 +1,26 @@
 function scr_player_bombdelete()
 {
 	image_speed = 0.35
-	hsp = (Move * Movespeed)
+	hsp = (move * movespeed)
 	sprite_index = spr_bombpeprun
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if (dir != Xscale)
 	{
 		dir = Xscale
-		Movespeed = 2
+		movespeed = 2
 	}
-	if (Move != 0)
+	if (move != 0)
 	{
-		Xscale = Move
-		if (Movespeed < 5)
-			Movespeed += 0.5
-		else if (floor(Movespeed) == 5)
-			Movespeed = 5
+		Xscale = move
+		if (movespeed < 5)
+			movespeed += 0.5
+		else if (floor(movespeed) == 5)
+			movespeed = 5
 	}
 	else
-		Movespeed = 0
-	if (Movespeed > 5)
-		Movespeed -= 0.1
+		movespeed = 0
+	if (movespeed > 5)
+		movespeed -= 0.1
 	if key_slap2
 	{
 		state = states.normal

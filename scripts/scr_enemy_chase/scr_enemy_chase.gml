@@ -7,11 +7,11 @@ function scr_enemy_chase()
 			targetplayer = obj_player2
 		if (x != targetplayer.x && (!(image_xscale == (-(sign((x - targetplayer.x)))))))
 		{
-			Movespeed = 4
+			movespeed = 4
 			image_xscale = (-(sign((x - targetplayer.x))))
-			momentum = ((-image_xscale) * (Movespeed + 4))
+			momentum = ((-image_xscale) * (movespeed + 4))
 		}
-		hsp = ((image_xscale * Movespeed) + momentum)
+		hsp = ((image_xscale * movespeed) + momentum)
 		if (momentum > 0)
 			momentum -= 0.1
 		if (momentum <= 0)
@@ -27,7 +27,7 @@ function scr_enemy_chase()
 	if place_meeting(x, (y + 1), obj_railparent)
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp += (_railinst.Movespeed * _railinst.dir)
+		hsp += (_railinst.movespeed * _railinst.dir)
 	}
 	exit;
 }

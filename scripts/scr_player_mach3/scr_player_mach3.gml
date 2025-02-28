@@ -7,8 +7,8 @@ function scr_player_mach3()
 	}										 
 			var slopeaccel = 0.1;
 			var slopedeccel = 0.2;
-			var mach4Movespeed = 20;
-			var mach3Movespeed = 16;
+			var mach4movespeed = 20;
+			var mach3movespeed = 16;
 			var accel = 0.025;
 			var mach4accel = 0.1;
 			var jumpspeed = -11;
@@ -36,23 +36,23 @@ function scr_player_mach3()
 			if (place_meeting(x, y + 1, obj_railparent))
 			{
 				var _railinst = instance_place(x, y + 1, obj_railparent);
-				railMovespeed = _railinst.Movespeed;
+				railmovespeed = _railinst.movespeed;
 				raildir = _railinst.dir;
 			}
-			hsp = (Xscale * Movespeed) + (railMovespeed * raildir);
+			hsp = (Xscale * movespeed) + (railmovespeed * raildir);
 			if grounded
 			{
-				if ((slopeCheck(x + Xscale, y) && hsp != 0) && Movespeed > 10 && Movespeed < 18)
+				if ((slopeCheck(x + Xscale, y) && hsp != 0) && movespeed > 10 && movespeed < 18)
 					scr_player_addslopemomentum(slopeaccel, slopedeccel);
 			}
-			if Move == Xscale && grounded
+			if move == Xscale && grounded
 			{
-				if Movespeed < mach4Movespeed
+				if movespeed < mach4movespeed
 				{
 					if mach4mode == 0
-						Movespeed += accel;
+						movespeed += accel;
 					else
-						Movespeed += mach4accel;
+						movespeed += mach4accel;
 				}
 			}
 			if grounded && sprite_index == spr_playerN_skateboarddoublejump
@@ -63,8 +63,8 @@ function scr_player_mach3()
 			
 			mach2 = 100;
 			momemtum = true;
-			Move = key_right + key_left;
-			Move2 = key_right2 + key_left2;
+			move = key_right + key_left;
+			move2 = key_right2 + key_left2;
 			if fightball == 1 && global.coop == 1
 			{
 				if object_index == obj_player1
@@ -110,7 +110,7 @@ function scr_player_mach3()
 			}
 			if grounded && vsp > 0
 				jumpstop = false;
-			if (input_buffer_jump > 0 && sprite_index != spr_mach3jump && can_jump && !(Move == 1 && Xscale == -1) && !(Move == -1 && Xscale == 1))
+			if (input_buffer_jump > 0 && sprite_index != spr_mach3jump && can_jump && !(move == 1 && Xscale == -1) && !(move == -1 && Xscale == 1))
 			{
 				input_buffer_jump = 0;
 				scr_fmod_soundeffect(jumpsnd, x, y);
@@ -141,13 +141,13 @@ function scr_player_mach3()
 				if (grounded && (sprite_index == spr_playerN_sidewayspin || sprite_index == spr_playerN_sidewayspinend))
 					sprite_index = mach3_spr;
 				
-				if Movespeed > mach3Movespeed && sprite_index != spr_crazyrun && sprite_index != spr_rockethitwall && sprite_index != spr_taunt
+				if movespeed > mach3movespeed && sprite_index != spr_crazyrun && sprite_index != spr_rockethitwall && sprite_index != spr_taunt
 				{
 					mach4mode = true;
 					flash = true;
 					sprite_index = spr_crazyrun;
 				}
-				else if Movespeed <= mach3Movespeed && sprite_index == spr_crazyrun
+				else if movespeed <= mach3movespeed && sprite_index == spr_crazyrun
 					sprite_index = mach3_spr;
 			}
 			if (sprite_index == spr_crazyrun && !instance_exists(crazyruneffectid))
@@ -176,7 +176,7 @@ function scr_player_mach3()
 				image_index = 0;
 				launched = false;
 			}
-			if (Move == -Xscale && grounded && vsp > 0 && !launched && fightball == 0 && sprite_index != spr_dashpadmach)
+			if (move == -Xscale && grounded && vsp > 0 && !launched && fightball == 0 && sprite_index != spr_dashpadmach)
 			{
 				if global.playerCharacter == Characters.Maurice
 					fmod_event_one_shot_3d("event:/sfx/maurice/machslideboost", x, y);
@@ -214,12 +214,12 @@ function scr_player_mach3()
 				if _climb
 				{
 					machhitAnim = false
-					if Movespeed < 1
-						WallMovespeed = 1; 
+					if movespeed < 1
+						Wallmovespeed = 1; 
 					else
 					{
 						vsp -= 0.5
-						WallMovespeed = Movespeed;
+						Wallmovespeed = movespeed;
 					}
 					state = states.climbwall
 				}
@@ -236,12 +236,12 @@ function scr_player_mach3()
 						state = states.hang
 					}
 					machhitAnim = false
-					if Movespeed < 1
-						WallMovespeed = 1;
+					if movespeed < 1
+						Wallmovespeed = 1;
 					else
 					{
 						vsp -= 0.5
-						WallMovespeed = Movespeed;
+						Wallmovespeed = movespeed;
 					}
 					state = states.climbwall
 				}
@@ -257,7 +257,7 @@ function scr_player_mach3()
 					vsp = -10;
 				else
 					vsp = -21;
-				Movespeed = hsp;
+				movespeed = hsp;
 				particle_set_scale(particle.highjumpcloud2, Xscale, 1);
 				create_particle(x, y, particle.highjumpcloud2, 0);
 			}
@@ -387,12 +387,12 @@ function scr_player_fightball() //gml_Script_scr_player_fightball
     if place_meeting(x, (y + 1), obj_railparent)
     {
         var _railinst = instance_place(x, (y + 1), obj_railparent)
-        railMovespeed = _railinst.Movespeed
+        railmovespeed = _railinst.movespeed
         raildir = _railinst.dir
     }
-    hsp = Xscale * Movespeed + railMovespeed * raildir
-    if (Movespeed <= 20)
-        Movespeed += 0.1
+    hsp = Xscale * movespeed + railmovespeed * raildir
+    if (movespeed <= 20)
+        movespeed += 0.1
     if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))))
     {
         instance_create((x + 10 * Xscale), (y + 10), obj_bumpeffect)
@@ -414,10 +414,10 @@ function scr_player_fightball() //gml_Script_scr_player_fightball
         if global.playerCharacter == Characters.Pierre
         {
             state = states.ratmount
-            ratmount_Movespeed = abs(Movespeed)
-            if (ratmount_Movespeed < 12)
-                ratmount_Movespeed = 12
-            Movespeed = ratmount_Movespeed * Xscale
+            ratmount_movespeed = abs(movespeed)
+            if (ratmount_movespeed < 12)
+                ratmount_movespeed = 12
+            movespeed = ratmount_movespeed * Xscale
         }
         with (obj_tv)
         {

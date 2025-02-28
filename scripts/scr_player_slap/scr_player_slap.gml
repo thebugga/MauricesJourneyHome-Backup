@@ -3,13 +3,13 @@ function scr_player_slap()
 	if place_meeting(x, (y + 1), obj_railparent)
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp = ((Move * Movespeed) + (_railinst.Movespeed * _railinst.dir))
+		hsp = ((move * movespeed) + (_railinst.movespeed * _railinst.dir))
 	}
 	else
 	{
-		if Move == 0 && Movespeed > 0
-			Movespeed -= 0.25
-		hsp = (xscale * Movespeed)
+		if move == 0 && movespeed > 0
+			movespeed -= 0.25
+		hsp = (Xscale * movespeed)
 	}
 	landAnim = 0
 	if (slaphand == 1)
@@ -20,8 +20,8 @@ function scr_player_slap()
 	{
 		if input_buffer_slap == 0
 		{
-			if (Move != 0)
-				dir = Move
+			if (move != 0)
+				dir = move
 			if grounded
 				state = states.normal
 			else
@@ -35,15 +35,15 @@ function scr_player_slap()
 			input_buffer_slap = 0
 			if slaphand >= 2
 			{
-		        suplexMove = true
+		        suplexmove = true
 		        fmod_event_instance_play(suplexdashsnd)
 		        state = states.handstandjump
 				sprite_index = spr_player_lungestart
-				Movespeed = 10
+				movespeed = 10
 			}
 			else
 			{
-				Movespeed = 6
+				movespeed = 6
 				slaphand++
 			}
 			image_index = 0

@@ -2,7 +2,7 @@ with (instance_place((x - 1), y, obj_parent_player))
 {
 	if (state == states.mort && other.eaten == 0)
 	{
-		Movespeed = abs(Movespeed)
+		movespeed = abs(movespeed)
 		other.eaten = 1
 		grav = 0.5
 		state = states.normal
@@ -12,7 +12,7 @@ with (instance_place((x + 1), y, obj_parent_player))
 {
 	if (state == states.mort && other.eaten == 0)
 	{
-		Movespeed = abs(Movespeed)
+		movespeed = abs(movespeed)
 		other.eaten = 1
 		grav = 0.5
 		state = states.normal

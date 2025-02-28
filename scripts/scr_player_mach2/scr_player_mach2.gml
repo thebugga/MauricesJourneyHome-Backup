@@ -1,6 +1,6 @@
 function scr_player_mach2()
 {
-	var maxMovespeed = 12;
+	var maxmovespeed = 12;
 	var jumpspeed = -11;
 	var slopeaccel = 0.1;
 	var slopedeccel = 0.2;
@@ -12,12 +12,12 @@ function scr_player_mach2()
 	if (place_meeting(x, y + 1, obj_railparent))
 	{
 		var _railinst = instance_place(x, y + 1, obj_railparent);vsp -= 1.5
-		railMovespeed = _railinst.Movespeed;
+		railmovespeed = _railinst.movespeed;
 		raildir = _railinst.dir;
 	}
-	hsp = (Xscale * Movespeed) + (railMovespeed * raildir);
-	Move2 = key_right2 + key_left2;
-	Move = key_right + key_left;
+	hsp = (Xscale * movespeed) + (railmovespeed * raildir);
+	move2 = key_right2 + key_left2;
+	move = key_right + key_left;
 	crouchslideAnim = true;
 	if !key_jump2 && jumpstop == 0 && vsp < 0.5
 	{
@@ -26,7 +26,7 @@ function scr_player_mach2()
 	}
 	if grounded && vsp > 0
 		jumpstop = false;
-	if (input_buffer_jump > 0 && can_jump && sprite_index != spr_clownjump && !(Move == 1 && Xscale == -1) && !(Move == -1 && Xscale == 1))
+	if (input_buffer_jump > 0 && can_jump && sprite_index != spr_clownjump && !(move == 1 && Xscale == -1) && !(move == -1 && Xscale == 1))
 	{
 		input_buffer_jump = 0;
 		image_index = 0;
@@ -93,16 +93,16 @@ function scr_player_mach2()
 		machpunchAnim = false;
 	if grounded
 	{
-		if ((slopeCheck(x + Xscale, y) && hsp != 0) && Movespeed > 8)
+		if ((slopeCheck(x + Xscale, y) && hsp != 0) && movespeed > 8)
 			scr_player_addslopemomentum(slopeaccel, slopedeccel);
-		if Movespeed < maxMovespeed
+		if movespeed < maxmovespeed
 		{
 			if mach4mode == false
-				Movespeed += accel;
+				movespeed += accel;
 			else
-				Movespeed += mach4accel;
+				movespeed += mach4accel;
 		}
-		if (abs(hsp) >= maxMovespeed && skateboarding == 0 && sprite_index != spr_suplexdash)
+		if (abs(hsp) >= maxmovespeed && skateboarding == 0 && sprite_index != spr_suplexdash)
 		{
 			machhitAnim = false;
 			state = states.mach3;
@@ -155,12 +155,12 @@ function scr_player_mach2()
 				state = states.hang
 			}
 			machhitAnim = false
-			if Movespeed < 1
-				WallMovespeed = 1;
+			if movespeed < 1
+				Wallmovespeed = 1;
 			else
 			{
 				vsp -= 0.5
-				WallMovespeed = Movespeed;
+				Wallmovespeed = movespeed;
 			}
 			state = states.climbwall
 		}
@@ -172,14 +172,14 @@ function scr_player_mach2()
 			_climb = ledge_bump(32, abs(hsp) + 1);
 		if _climb
 		{
-			WallMovespeed = 10;
+			Wallmovespeed = 10;
 			grabclimbbuffer = 0;
-			if Movespeed < 1
-				WallMovespeed = 1;
+			if movespeed < 1
+				Wallmovespeed = 1;
 			else
 			{
 				vsp -= 0.5
-				WallMovespeed = Movespeed;
+				Wallmovespeed = movespeed;
 			}
 			state = states.climbwall;
 		}
@@ -191,7 +191,7 @@ function scr_player_mach2()
 			_climb = ledge_bump(32);
 		if _climb
 		{
-			WallMovespeed = 10;
+			Wallmovespeed = 10;
 			grabclimbbuffer = 0;
 			vsp -= 0.5
 			state = states.climbwall;
@@ -215,9 +215,9 @@ function scr_player_mach2()
 	if (key_attack && !place_meeting(x + Xscale, y, obj_solid) && global.playerCharacter == Characters.Snick && grounded)
 	{
 		state = states.handstandjump;
-		Movespeed = 0;	
+		movespeed = 0;	
 	}
-	if ((!key_attack && Movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0) || (global.playerCharacter == Characters.Snick && Move == 0 && grounded))
+	if ((!key_attack && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0) || (global.playerCharacter == Characters.Snick && move == 0 && grounded))
 	{
 		image_index = 0;
 		state = states.machslide;
@@ -227,9 +227,9 @@ function scr_player_mach2()
 			fmod_event_one_shot_3d("event:/sfx/playerN/break", x, y);
 		sprite_index = spr_machslidestart;
 	}
-	else if !key_attack && Movespeed < 8 && grounded && vsp > 0 && skateboarding == 0
+	else if !key_attack && movespeed < 8 && grounded && vsp > 0 && skateboarding == 0
 		state = states.normal;
-	if Move == -Xscale && Movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0
+	if move == -Xscale && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0
 	{
 		if global.playerCharacter == Characters.Maurice
 			fmod_event_one_shot_3d("event:/sfx/maurice/machslideboost", x, y);
@@ -239,10 +239,10 @@ function scr_player_mach2()
 		state = states.machslide;
 		sprite_index = spr_machslideboost;
 	}
-	else if Move == -Xscale && Movespeed < 8 && grounded && vsp > 0 && skateboarding == 0
+	else if move == -Xscale && movespeed < 8 && grounded && vsp > 0 && skateboarding == 0
 	{
 		Xscale *= -1;
-		Movespeed = 6;
+		movespeed = 6;
 	}
 	if clowntimer > 0 && skateboarding == 1
 		clowntimer--;
@@ -276,14 +276,14 @@ function scr_player_mach2()
 			image_xscale = other.Xscale;
 			other.dynamite_inst = id;
 			playerid = other.id;
-			Movespeed = other.Movespeed + 4;
+			movespeed = other.movespeed + 4;
 			vsp = -6;
 		}
 	}
 	if (sprite_index == spr_rollgetup || sprite_index == spr_longjumpend || sprite_index == spr_longjump || sprite_index == spr_suplexdash)
 		image_speed = 0.4;
 	else
-		image_speed = abs(Movespeed) / 15;
+		image_speed = abs(movespeed) / 15;
 	scr_dotaunt();
 	if skateboarding && sprite_index != spr_clownjump && grounded
 		sprite_index = spr_clown;
@@ -320,7 +320,7 @@ function scr_player_mach2()
 			vsp = -10;
 		else
 			vsp = -21;
-		Movespeed = hsp;
+		movespeed = hsp;
 		particle_set_scale(particle.highjumpcloud2, Xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
 	}

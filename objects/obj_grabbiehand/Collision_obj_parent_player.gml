@@ -4,7 +4,7 @@ if (state != states.grabbing && x == xstart && y == ystart)
 	{
 		if (state != states.chainsaw)
 		{
-			tauntstoredMovespeed = Movespeed
+			tauntstoredmovespeed = movespeed
 			tauntstoredvsp = vsp
 			tauntstoredsprite = sprite_index
 			tauntstoredstate = state

@@ -14,7 +14,7 @@ if ((other.state == states.handstandjump or other.state == states.lungeattack) &
 				sprite_index = spr_golfidle
 				other.y = y
 				hsp = 0
-				Movespeed = 0
+				movespeed = 0
 				slopespeed = 0
 				state = states.golf
 				_pizzaball.state = states.golf

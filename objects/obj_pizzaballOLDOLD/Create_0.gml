@@ -1,7 +1,7 @@
 grav = 0.5
 hsp = 0
 vsp = 0
-Movespeed = 1
+movespeed = 1
 state = states.walk
 stunned = 0
 alarm[0] = 150

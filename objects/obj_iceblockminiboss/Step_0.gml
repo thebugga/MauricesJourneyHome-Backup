@@ -11,8 +11,8 @@ if (visible == true && obj_parent_player.state != states.ejected)
 				state = states.slipnslide
 				sprite_index = spr_slipnslide
 			}
-			if (Movespeed < 12)
-				Movespeed = 12
+			if (movespeed < 12)
+				movespeed = 12
 		}
 	}
 	if place_meeting(x, (y - 1), obj_player2)
@@ -26,8 +26,8 @@ if (visible == true && obj_parent_player.state != states.ejected)
 				state = states.slipnslide
 				sprite_index = spr_slipnslide
 			}
-			if (Movespeed < 12)
-				Movespeed = 12
+			if (movespeed < 12)
+				movespeed = 12
 		}
 	}
 }

@@ -6,10 +6,10 @@ function scr_player_transitioncutscene()
 	{
 		Xscale *= -1
 		hsp = 5
-		sprite_index = spr_player_Move
+		sprite_index = spr_player_move
 		costumercutscenetimer = 35
 	}
-	if (sprite_index == spr_player_Move && costumercutscenetimer < 0)
+	if (sprite_index == spr_player_move && costumercutscenetimer < 0)
 	{
 		with (obj_costumerdoor)
 		{

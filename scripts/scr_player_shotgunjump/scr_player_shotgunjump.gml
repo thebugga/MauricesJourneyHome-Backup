@@ -1,8 +1,8 @@
 function scr_player_shotgunjump()
 {
 	image_speed = 0.35
-	Move = (key_left + key_right)
-	hsp = (Move * Movespeed)
+	move = (key_left + key_right)
+	hsp = (move * movespeed)
 	if (ladderbuffer > 0)
 		ladderbuffer--
 	if key_jump
@@ -10,18 +10,18 @@ function scr_player_shotgunjump()
 	if (dir != Xscale)
 	{
 		dir = Xscale
-		Movespeed = 0
+		movespeed = 0
 	}
-	if (Move != 0)
+	if (move != 0)
 	{
-		Xscale = Move
-		if (Movespeed < 8)
-			Movespeed += 0.5
-		else if (floor(Movespeed) == 8)
-			Movespeed = 6
+		Xscale = move
+		if (movespeed < 8)
+			movespeed += 0.5
+		else if (floor(movespeed) == 8)
+			movespeed = 6
 	}
 	else
-		Movespeed = 0
+		movespeed = 0
 	if ((!key_jump2) && vsp < 0.5 && (!jumpstop))
 	{
 		vsp /= 20
@@ -53,7 +53,7 @@ function scr_player_shotgunjump()
 		state = states.shotgundash
 		sprite_index = spr_shotgunsuplexdash
 		image_index = 0
-		Movespeed = 10
+		movespeed = 10
 	}
 	if key_slap2
 	{

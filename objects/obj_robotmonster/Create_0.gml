@@ -5,7 +5,7 @@ vsp_carry = 0
 platformid = -4
 grav = 0.5
 grounded = false
-Movespeed = 8
+movespeed = 8
 event_inherited()
 state = states.robotidle
 use_hallway = 1

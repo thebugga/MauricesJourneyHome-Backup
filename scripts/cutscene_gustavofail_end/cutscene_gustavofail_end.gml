@@ -48,7 +48,7 @@ function cutscene_gustavofail_end(argument0)
 		}
 		scr_hurtplayer(obj_player1)
 		obj_player1.hsp = 0
-		obj_player1.Movespeed = 0
+		obj_player1.movespeed = 0
 		obj_player1.Xscale = 1
 		obj_player1.state = states.normal
 		cutscene_end_action()

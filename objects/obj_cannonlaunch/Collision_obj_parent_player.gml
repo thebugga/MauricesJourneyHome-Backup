@@ -17,5 +17,5 @@ with (other)
 	image_index = 0
 	hsp = 0
 	vsp = 0
-	Movespeed = 0
+	movespeed = 0
 }

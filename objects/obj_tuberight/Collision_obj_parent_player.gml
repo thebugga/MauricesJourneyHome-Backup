@@ -10,15 +10,15 @@ with (other)
 {
 	if (other.stored_spd == 0)
 	{
-		if (abs(hsp) < other.Movespeed)
-			hsp = other.Movespeed
-		if (abs(vsp) < other.Movespeed)
-			vsp = other.Movespeed
+		if (abs(hsp) < other.movespeed)
+			hsp = other.movespeed
+		if (abs(vsp) < other.movespeed)
+			vsp = other.movespeed
 		other.stored_spd = max(abs(hsp), abs(vsp))
 	}
 	hsp = 0
 	vsp = 0
-	Movespeed = 0
+	movespeed = 0
 	tube_vsp = 0
 	state = states.tube
 	x = approach(x, (other.x + _offset_x), other.approach_spd)

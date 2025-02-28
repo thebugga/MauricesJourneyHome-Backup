@@ -5,8 +5,8 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
         if (floor(image_index) == (image_number - 1))
             sprite_index = spr_player_ratmountgroundpoundfall
     }
-    Move = (key_left + key_right)
-    hsp = Movespeed
+    move = (key_left + key_right)
+    hsp = movespeed
     if (brick == 1)
     {
         state = states.ratmountjump
@@ -30,15 +30,15 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
         vsp = 0
         hsp = 0
     }
-    if (Move != 0)
+    if (move != 0)
     {
         if (sprite_index == spr_lonegustavo_groundpoundland)
-            Movespeed = approach(Movespeed, (Move * ratmount_Movespeed), 0.25)
+            movespeed = approach(movespeed, (move * ratmount_movespeed), 0.25)
         else
-            Movespeed = approach(Movespeed, (Move * ratmount_Movespeed), 0.5)
+            movespeed = approach(movespeed, (move * ratmount_movespeed), 0.5)
     }
     else
-        Movespeed = approach(Movespeed, 0, 0.5)
+        movespeed = approach(movespeed, 0, 0.5)
     if (sprite_index == spr_lonegustavo_groundpoundstart && floor(image_index) == (image_number - 1))
     {
         image_index = 0
@@ -55,15 +55,15 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
                 {
                     other.Xscale = (-sign(image_xscale))
                     other.state = states.ratmount
-                    other.Movespeed = (other.Xscale * 8)
+                    other.movespeed = (other.Xscale * 8)
                     with (instance_create(other.x, other.y, obj_jumpdust))
                         image_xscale = (-sign(other.image_xscale))
                 }
             }
             else
             {
-                if (Move != 0)
-                    Movespeed = (Xscale * 3)
+                if (move != 0)
+                    movespeed = (Xscale * 3)
                 fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y)
                 sprite_index = spr_lonegustavo_groundpoundland
                 image_index = 0

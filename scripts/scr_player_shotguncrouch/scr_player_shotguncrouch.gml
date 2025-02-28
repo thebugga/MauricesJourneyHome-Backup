@@ -2,16 +2,16 @@ function scr_player_shotguncrouch()
 {
 	image_speed = 0.35
 	mask_index = spr_crouchmask
-	Move = (key_left + key_right)
-	hsp = (Move * Movespeed)
-	Movespeed = 4
-	if (Move != 0)
-		Xscale = Move
+	move = (key_left + key_right)
+	hsp = (move * movespeed)
+	movespeed = 4
+	if (move != 0)
+		Xscale = move
 	if key_jump
 		input_buffer_jump = 0
 	if (sprite_index != spr_shotgungoduck)
 	{
-		if (Move != 0)
+		if (move != 0)
 			sprite_index = spr_shotguncrawl
 		else
 			sprite_index = spr_shotgunduck
@@ -21,7 +21,7 @@ function scr_player_shotguncrouch()
 	if ((!grounded) && input_buffer_jump >= 8)
 	{
 		state = states.shotguncrouchjump
-		Movespeed = 0
+		movespeed = 0
 		sprite_index = spr_crouchfall
 		image_index = 0
 	}

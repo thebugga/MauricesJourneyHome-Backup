@@ -1,7 +1,7 @@
-/// @description Moving Platform Movement.
+/// @description Moving Platform movement.
 // Moving Code
-hsp = lengthdir_x(Movespeed - stopSpeed, targetDirection);
-vsp = lengthdir_y(Movespeed - stopSpeed, targetDirection);
+hsp = lengthdir_x(movespeed - stopSpeed, targetDirection);
+vsp = lengthdir_y(movespeed - stopSpeed, targetDirection);
 trueX += hsp;
 trueY += vsp;
 x = round(trueX);

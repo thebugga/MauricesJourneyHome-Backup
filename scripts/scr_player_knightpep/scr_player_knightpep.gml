@@ -4,34 +4,34 @@ function scr_player_knightpep()
 	alarm[7] = 60
 	if (sprite_index == spr_knightpep_attack)
 	{
-		if Movespeed > 0
-			Movespeed -= 0.05
+		if movespeed > 0
+			movespeed -= 0.05
 		if floor(image_index) == (image_number - 1)
 			sprite_index = spr_knightpepidle
 	}
 	if (sprite_index == spr_knightpepland or sprite_index == spr_knightpepwalk or sprite_index == spr_knightpepidle)
 	{
-		Move = (key_left + key_right)
-		hsp = (Move * Movespeed)
+		move = (key_left + key_right)
+		hsp = (move * movespeed)
 	}
 	else if (sprite_index == spr_knightpep_attack or sprite_index == spr_knightpepjump or sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_doublejump)
 	{
-		hsp = (Xscale * Movespeed)
-		Move = (key_left + key_right)
+		hsp = (Xscale * movespeed)
+		move = (key_left + key_right)
 		var _accel = 0.1
-		if (Move != 0)
+		if (move != 0)
 		{
-			if (Move != Xscale)
+			if (move != Xscale)
 			{
-				Movespeed = approach(Movespeed, 0, _accel)
-				if (Movespeed <= 0)
+				movespeed = approach(movespeed, 0, _accel)
+				if (movespeed <= 0)
 				{
-					Xscale = Move
-					Movespeed = 0
+					Xscale = move
+					movespeed = 0
 				}
 			}
 			else
-				Movespeed = approach(Movespeed, 6, _accel)
+				movespeed = approach(movespeed, 6, _accel)
 		}
 	}
 	else if grounded
@@ -41,11 +41,11 @@ function scr_player_knightpep()
 	if (dir != Xscale && grounded)
 	{
 		dir = Xscale
-		Movespeed = 0
+		movespeed = 0
 	}
-	if (grounded && Move != 0 && sprite_index == spr_knightpepidle)
+	if (grounded && move != 0 && sprite_index == spr_knightpepidle)
 		sprite_index = spr_knightpepwalk
-	else if (grounded && Move == 0 && sprite_index == spr_knightpepwalk)
+	else if (grounded && move == 0 && sprite_index == spr_knightpepwalk)
 		sprite_index = spr_knightpepidle
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
@@ -61,16 +61,16 @@ function scr_player_knightpep()
 		sprite_index = spr_knightpepjumpstart
 		//scr_soundeffect(sfx_jump)
 		vsp = -11
-		if (Move == 0)
-			Movespeed = 0
-		if (Move != 0)
-			Movespeed = 6
+		if (move == 0)
+			movespeed = 0
+		if (move != 0)
+			movespeed = 6
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepjumpstart)
 		sprite_index = spr_knightpepjump
 	if ((floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepjump) or ((!grounded) && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_doublejump && sprite_index != spr_knightpep_attack))
 		sprite_index = spr_knightpepfall
-	if Move != 0 && grounded && vsp > 0
+	if move != 0 && grounded && vsp > 0
 	{
 		if steppybuffer > 0
 			steppybuffer--;
@@ -97,24 +97,24 @@ function scr_player_knightpep()
 		sprite_index = spr_knightpepidle
 		knightmomentum = 0
 	}
-	if (Move != 0 && grounded)
-		Xscale = Move
+	if (move != 0 && grounded)
+		Xscale = move
 	if grounded
 	{
 		doublejump = 0
-		if (Move != 0)
+		if (move != 0)
 		{
-			if (Movespeed < 6)
-				Movespeed += 0.5
-			else if (Movespeed == 6)
-				Movespeed = 6
+			if (movespeed < 6)
+				movespeed += 0.5
+			else if (movespeed == 6)
+				movespeed = 6
 		}
 		else if (sprite_index != spr_knightpepjumpstart)
-			Movespeed = 0
+			movespeed = 0
 	}
 	else if (knightmiddairstop == 0)
 	{
-		hsp = (Xscale * Movespeed)
+		hsp = (Xscale * movespeed)
 		if ((!doublejump) && key_jump)
 		{
 			doublejump = 1
@@ -122,22 +122,22 @@ function scr_player_knightpep()
 			vsp = -11
 			sprite_index = spr_knightpep_doublejump
 			image_index = 0
-			Move = (key_left + key_right)
-			if (Move != 0)
-				Xscale = Move
-			if (Move != 0)
-				Movespeed = 6
-			if (Move == 0)
-				Movespeed = 0
+			move = (key_left + key_right)
+			if (move != 0)
+				Xscale = move
+			if (move != 0)
+				movespeed = 6
+			if (move == 0)
+				movespeed = 0
 		}
 	}
 	if ((!grounded) && place_meeting((x + sign(hsp)), y, obj_solid))
-		Movespeed = 0
-	if (Move != 0 && hsp != 0 && sprite_index != spr_knightpep_doublejump)
+		movespeed = 0
+	if (move != 0 && hsp != 0 && sprite_index != spr_knightpep_doublejump)
 	{
-		if (Movespeed < 1)
+		if (movespeed < 1)
 			image_speed = 0.15
-		else if (Movespeed > 1 && Movespeed < 4)
+		else if (movespeed > 1 && movespeed < 4)
 			image_speed = 0.35
 		else
 			image_speed = 0.6
@@ -155,11 +155,11 @@ function scr_player_knightpep()
 		sprite_index = spr_knightpepidle
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpep_doublejump)
 		image_index = (image_number - 1)
-	if ((!instance_exists(obj_cloudeffect)) && grounded && Move != 0 && (floor(image_index) == 4 or floor(image_index) == 10))
+	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (floor(image_index) == 4 or floor(image_index) == 10))
 		instance_create(x, (y + 43), obj_cloudeffect)
-	if (Move != 0 && (floor(image_index) == 3 or floor(image_index) == 8) && steppy == 0)
+	if (move != 0 && (floor(image_index) == 3 or floor(image_index) == 8) && steppy == 0)
 		steppy = 1
-	if (Move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
+	if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
 		steppy = 0
 	if (sprite_index == spr_knightpepfall)
 	{
@@ -189,7 +189,7 @@ function scr_player_knightpep()
 						starthsp = 12
 						startvsp = -6
 					}
-					Movespeed = starthsp
+					movespeed = starthsp
 					vsp = startvsp
 				}
 			}

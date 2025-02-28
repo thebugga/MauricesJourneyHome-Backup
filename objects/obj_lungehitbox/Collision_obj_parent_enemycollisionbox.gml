@@ -9,7 +9,7 @@ if (_baddieID.state != states.grabbed && (!_baddieID.invincible) && _baddieID.hi
 		{
 			var lag = 5
 			var baddie_id = _baddieID.id
-			Movespeed = 6
+			movespeed = 6
 			if (ds_list_find_index(hitlist, baddie_id) == -1)
 			{
 				ds_list_add(hitlist, baddie_id)
@@ -20,7 +20,7 @@ if (_baddieID.state != states.grabbed && (!_baddieID.invincible) && _baddieID.hi
 					state = states.hit
 					image_xscale = (-other.Xscale)
 					hit_connected = 1
-					hithsp = (((other.x + (((other.Movespeed + 0.5) * 60) * other.Xscale)) - x) / 60)
+					hithsp = (((other.x + (((other.movespeed + 0.5) * 60) * other.Xscale)) - x) / 60)
 					hitvsp = (((other.y - 180) - y) / 60)
 					trace([hithsp, hitvsp])
 					hitLag = lag
@@ -46,7 +46,7 @@ if (_baddieID.state != states.grabbed && (!_baddieID.invincible) && _baddieID.hi
 				}
 				tauntstoredstate = state
 				tauntstoredsprite = sprite_index
-				tauntstoredMovespeed = Movespeed
+				tauntstoredmovespeed = movespeed
 				tauntstoredvsp = 0
 				state = states.chainsaw
 				hitLag = lag

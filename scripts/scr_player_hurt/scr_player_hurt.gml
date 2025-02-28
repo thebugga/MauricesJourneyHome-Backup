@@ -1,9 +1,9 @@
 function scr_player_hurt()
 {
 	if (sprite_index == spr_hurtjump)
-		hsp = (Xscale * Movespeed)
+		hsp = (Xscale * movespeed)
 	if (sprite_index == spr_hurt)
-		hsp = ((-Xscale) * Movespeed)
+		hsp = ((-Xscale) * movespeed)
 	freefallsmash = 0
 	combo = 0
 	mach2 = 0
@@ -15,7 +15,7 @@ function scr_player_hurt()
 	else
 		landAnim = 1
 	jumpstop = 0
-	MoveAnim = 1
+	moveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
@@ -28,11 +28,11 @@ function scr_player_hurt()
 	alarm[7] = 80
 	if (grounded && vsp > 0)
 	{
-		Movespeed = 0
+		movespeed = 0
 		state = states.normal
 	}
 	if place_meeting_solid((x + hsp), y)
-		Movespeed = 0
+		movespeed = 0
 	image_speed = 0.35
 	exit;
 }

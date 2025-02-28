@@ -42,7 +42,7 @@ switch sprite_index
 		break
 	case spr_pizzacar_land:
 		if (floor(image_index) == (image_number - 1))
-			sprite_index = spr_pizzacar_Move
+			sprite_index = spr_pizzacar_move
 		break
 	default:
 		if ((!grounded) && vsp > 0)

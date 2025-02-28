@@ -1,20 +1,20 @@
 function scr_player_highjump()
 {
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if (momemtum == 0)
-		hsp = (Move * Movespeed)
+		hsp = (move * movespeed)
 	else
-		hsp = (Xscale * Movespeed)
-	if (Move == 0 && momemtum == 0)
-		Movespeed = 0
-	if (Move != 0 && Movespeed < 6)
-		Movespeed += 0.5
-	if (((place_meeting_solid((x + 1), y) && Move == 1) or (place_meeting_solid((x - 1), y) && Move == -1)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
-		Movespeed = 0
+		hsp = (Xscale * movespeed)
+	if (move == 0 && momemtum == 0)
+		movespeed = 0
+	if (move != 0 && movespeed < 6)
+		movespeed += 0.5
+	if (((place_meeting_solid((x + 1), y) && move == 1) or (place_meeting_solid((x - 1), y) && move == -1)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
+		movespeed = 0
 	if (dir != Xscale)
 	{
 		dir = Xscale
-		Movespeed = 2
+		movespeed = 2
 	}
 	landAnim = 1
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0)
@@ -61,8 +61,8 @@ function scr_player_highjump()
 	}
 	if (jumpAnim == 0)
 		sprite_index = spr_player_Sjump
-	if (Move != 0)
-		Xscale = Move
+	if (move != 0)
+		Xscale = move
 	image_speed = 0.35
 	if ((!grounded) && key_down)
 	{

@@ -40,10 +40,10 @@ if (obj_parent_player.state != states.playersuperattack)
 					with (lastplayerid)
 					{
 						Xscale = 1
-						suplexMove = 1
+						suplexmove = 1
 						sfx_gain(suplexdashsnd)
 						state = states.handstandjump
-						Movespeed = 10
+						movespeed = 10
 						sprite_index = spr_player_groundedattack
 						image_index = random_range(0, (image_number - 1))
 					}

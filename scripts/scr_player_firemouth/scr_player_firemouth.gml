@@ -2,7 +2,7 @@ function scr_player_firemouth()
 {
 	alarm[5] = 2
 	alarm[7] = 60
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	with (instance_place((x + hsp), y, obj_iceblock_breakable))
 	{
 		instance_destroy()
@@ -26,7 +26,7 @@ function scr_player_firemouth()
 	}
 	with (instance_place(x, (y + vsp), obj_ratblock))
 		instance_destroy()
-	if (slopeCheck(x + Xscale, y) && hsp != 0 && Movespeed > 8)
+	if (slopeCheck(x + Xscale, y) && hsp != 0 && movespeed > 8)
 		scr_player_addslopemomentum(0.1, 0.25)
 	with (instance_place((x + Xscale), y, obj_destructibles))
 	{
@@ -78,24 +78,24 @@ function scr_player_firemouth()
 		vsp += 10
 	if (sprite_index != spr_firemouthintro && sprite_index != spr_firemouthend)
 	{
-		Move = (key_left + key_right)
+		move = (key_left + key_right)
 		if grounded
 		{
 			doublejump = 0
-			if (Move != 0)
+			if (move != 0)
 			{
-				if (Movespeed <= 8)
-					Movespeed += 0.5
-				Xscale = Move
+				if (movespeed <= 8)
+					movespeed += 0.5
+				Xscale = move
 			}
 			else
-				Movespeed = approach(Movespeed, 0, 0.5)
+				movespeed = approach(movespeed, 0, 0.5)
 			if (dir != Xscale)
 			{
 				dir = Xscale
-				Movespeed = 0
+				movespeed = 0
 			}
-			hsp = (Xscale * Movespeed)
+			hsp = (Xscale * movespeed)
 			if (hsp != 0)
 				sprite_index = spr_firemouth
 			else
@@ -105,39 +105,39 @@ function scr_player_firemouth()
 		{
 			dir = Xscale
 			sprite_index = spr_player_firemouthspin
-			if (Move != 0)
+			if (move != 0)
 			{
-				if (Move != Xscale)
+				if (move != Xscale)
 				{
-					if (Movespeed > 0)
-						Movespeed -= 0.5
-					if (Movespeed <= 0)
-						Xscale = Move
+					if (movespeed > 0)
+						movespeed -= 0.5
+					if (movespeed <= 0)
+						Xscale = move
 				}
-				else if (Movespeed < 8)
-					Movespeed += 0.5
+				else if (movespeed < 8)
+					movespeed += 0.5
 			}
 			if ((!doublejump) && key_slap2)
 			{
 				doublejump = 1
 				sprite_index = spr_player_firemouthdash
 				image_index = 0
-				if (Move != 0)
-					Xscale = Move
+				if (move != 0)
+					Xscale = move
 				dir = Xscale
-				Movespeed = 12
+				movespeed = 12
 			}
-			hsp = (Xscale * Movespeed)
+			hsp = (Xscale * movespeed)
 		}
 		else
 		{
-			hsp = (Xscale * Movespeed)
+			hsp = (Xscale * movespeed)
 			vsp = 0
 			if (floor(image_index) == (image_number - 1))
 				sprite_index = spr_player_firemouthspin
 		}
 		if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_tntblock))) && (!(place_meeting((x + hsp), y, obj_iceblock))) && (!(place_meeting((x + hsp), y, obj_ratblock))))
-			Movespeed = 0
+			movespeed = 0
 		if (firemouth_afterimage > 0)
 			firemouth_afterimage--
 		else
@@ -149,7 +149,7 @@ function scr_player_firemouth()
 	else
 	{
 		hsp = 0
-		Movespeed = 0
+		movespeed = 0
 	}
 	if (sprite_index == spr_firemouthend && floor(image_index) == (image_number - 1))
 	{
@@ -167,9 +167,9 @@ function scr_player_firemouth()
 	}
 	if (sprite_index == spr_firemouth)
 	{
-		if (Movespeed < 4)
+		if (movespeed < 4)
 			image_speed = 0.35
-		else if (Movespeed > 4 && Movespeed < 8)
+		else if (movespeed > 4 && movespeed < 8)
 			image_speed = 0.45
 		else
 			image_speed = 0.6

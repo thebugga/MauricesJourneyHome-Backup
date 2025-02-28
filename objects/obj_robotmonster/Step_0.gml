@@ -55,23 +55,23 @@ switch state
 		}
 		else
 		{
-			Move = sign((targetplayer.x - x))
-			if (Move != 0)
+			move = sign((targetplayer.x - x))
+			if (move != 0)
 			{
-				if (Move != image_xscale)
+				if (move != image_xscale)
 				{
-					image_xscale = Move
-					Movespeed = -4
+					image_xscale = move
+					movespeed = -4
 				}
 			}
-			Movespeed = approach(Movespeed, 8, 0.1)
-			hsp = (image_xscale * Movespeed)
+			movespeed = approach(movespeed, 8, 0.1)
+			hsp = (image_xscale * movespeed)
 			if (place_meeting((x + image_xscale), y, obj_monstersolid) && (!(place_meeting((x + image_xscale), y, obj_monsterslope))))
 			{
-				Movespeed = 0
+				movespeed = 0
 				sprite_index = idlespr
 			}
-			if (abs(Movespeed) == 0)
+			if (abs(movespeed) == 0)
 				sprite_index = idlespr
 		}
 		if (object_index == obj_blobmonster)

@@ -1,8 +1,8 @@
 function scr_player_boxxedpepjump()
 {
-	Move = (key_left + key_right)
+	move = (key_left + key_right)
 	if (boxxeddash == 1)
-		image_speed = (abs(Movespeed) / 15)
+		image_speed = (abs(movespeed) / 15)
 	else
 		image_speed = 0.5
 	if (abs(hsp) <= 2)
@@ -10,30 +10,30 @@ function scr_player_boxxedpepjump()
 	if place_meeting(x, (y + 1), obj_railparent)
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		railMovespeed = _railinst.Movespeed
+		railmovespeed = _railinst.movespeed
 		raildir = _railinst.dir
 	}
-	hsp = (Movespeed + (railMovespeed * raildir))
-	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == Move && ((!(place_meeting((x + Xscale), y, obj_slope))) or place_meeting_slope((x + Xscale), y)))
-		Movespeed = 0
+	hsp = (movespeed + (railmovespeed * raildir))
+	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == move && ((!(place_meeting((x + Xscale), y, obj_slope))) or place_meeting_slope((x + Xscale), y)))
+		movespeed = 0
 	if ((!key_jump2) && (!jumpstop) && vsp < 0)
 	{
 		jumpstop = 1
 		vsp /= 5
 	}
-	if (Move != 0)
+	if (move != 0)
 	{
-		if (((Xscale > 0 && Movespeed < 8) or (Xscale < 0 && Movespeed > -8)) && Move == Xscale)
-			Movespeed += (Xscale * 0.8)
+		if (((Xscale > 0 && movespeed < 8) or (Xscale < 0 && movespeed > -8)) && move == Xscale)
+			movespeed += (Xscale * 0.8)
 		if (boxxeddash == 0)
-			Xscale = Move
-		else if (Move != Xscale)
-			Movespeed = approach(Movespeed, 0, 0.8)
+			Xscale = move
+		else if (move != Xscale)
+			movespeed = approach(movespeed, 0, 0.8)
 	}
 	else if (boxxeddash == 0)
-		Movespeed = approach(Movespeed, 0, 0.8)
+		movespeed = approach(movespeed, 0, 0.8)
 	else
-		Movespeed = approach(Movespeed, 0, 0.25)
+		movespeed = approach(movespeed, 0, 0.25)
 	if grounded
 	{
 		state = states.boxxedpep

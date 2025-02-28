@@ -46,7 +46,7 @@ if (state != states.freefall && state != states.freefallland)
 	hit = 0
 if (state == states.stun)
 {
-	Movespeed = 0
+	movespeed = 0
 	if thrown
 	{
 		savedthrown = true

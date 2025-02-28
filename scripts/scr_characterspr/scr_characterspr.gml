@@ -3,7 +3,7 @@ function scr_characterspr()
 	if (global.playerCharacter == Characters.Maurice)
 	{
 		spr_idle = spr_player_idle
-		spr_Move = spr_player_Move
+		spr_move = spr_player_move
 		spr_crawl = spr_player_crawl
 		spr_idle = spr_player_idle
 		spr_hurt = spr_player_hurt
@@ -23,7 +23,7 @@ function scr_characterspr()
 		spr_walkfront = spr_player_walkfront
 		spr_victory = spr_player_victory
 		spr_Ladder = spr_player_ladder
-		spr_ladderMove = spr_player_ladderMove
+		spr_laddermove = spr_player_laddermove
 		spr_ladderdown = spr_player_ladderdown
 		spr_keyget = spr_player_keyget
 		spr_crouchslip = spr_player_crouchslip
@@ -224,7 +224,7 @@ function scr_characterspr()
 		spr_slipbanan1 = spr_player_slipbanan1
 		spr_slipbanan2 = spr_player_slipbanan2
 		spr_rageidle = spr_player_rageidle
-		spr_rageMove = spr_player_rageMove
+		spr_ragemove = spr_player_ragemove
 		spr_parry1 = spr_player_parry1
 		spr_parry2 = spr_player_parry2
 		spr_parry3 = spr_player_parry3
@@ -241,7 +241,7 @@ function scr_characterspr()
 	if (global.playerCharacter == Characters.Doise)
 	{
 		spr_idle = spr_playerN_idle
-		spr_Move = spr_playerN_Move
+		spr_move = spr_playerN_move
 		spr_crawl = spr_playerN_crawl
 		spr_idle = spr_playerN_idle
 		spr_hurt = spr_playerN_hurt
@@ -260,14 +260,14 @@ function scr_characterspr()
 		spr_walkfront = spr_playerN_walkfront
 		spr_victory = spr_playerN_victory
 		spr_Ladder = spr_playerN_ladder
-		spr_ladderMove = spr_playerN_ladderMove
+		spr_laddermove = spr_playerN_laddermove
 		spr_ladderdown = spr_playerN_ladderdown
 		spr_keyget = spr_playerN_keyget
 		spr_crouchslip = spr_playerN_crouchslip
 		spr_pistolshot = spr_playerN_noisebombkick
 		spr_longjump = spr_player_longjump
 		spr_longjumpend = spr_player_longjumpend
-		spr_pistolwalk = spr_playerN_Move
+		spr_pistolwalk = spr_playerN_move
 		spr_mach1 = spr_playerN_mach1
 		spr_mach = spr_playerN_mach
 		spr_secondjump1 = spr_playerN_secondjump1
@@ -332,7 +332,7 @@ function scr_characterspr()
 		spr_superjump = spr_playerN_Sjump
 		spr_machfreefall = spr_playerN_fall
 		spr_mach3hit = spr_playerN_machpunch1
-		spr_knightpepwalk = spr_playerN_knightMove
+		spr_knightpepwalk = spr_playerN_knightmove
 		spr_knightpepjump = spr_playerN_knightjump
 		spr_knightpepfall = spr_playerN_knightfall
 		spr_knightpepidle = spr_playerN_knightidle
@@ -377,13 +377,13 @@ function scr_characterspr()
 		spr_shotgunsuplexdash = spr_playerN_minigundash
 		spr_rollgetup = spr_playerN_rollgetup
 		spr_superjumppreplight = spr_playerN_Sjumpprep
-		spr_superjumpright = spr_playerN_SjumpMoveright
-		spr_superjumpleft = spr_playerN_SjumpMoveleft
+		spr_superjumpright = spr_playerN_Sjumpmoveright
+		spr_superjumpleft = spr_playerN_Sjumpmoveleft
 		spr_swingding = spr_playerN_swingding
 		spr_swingdingend = spr_playerN_swingdingend
 		spr_haulingjump = spr_playerN_haulingjump
 		spr_haulingidle = spr_playerN_haulingidle
-		spr_haulingwalk = spr_playerN_haulingMove
+		spr_haulingwalk = spr_playerN_haulingmove
 		spr_haulingstart = spr_playerN_haulingstart
 		spr_haulingfall = spr_playerN_haulingfall
 		spr_haulingland = spr_playerN_haulingland
@@ -394,7 +394,7 @@ function scr_characterspr()
 		spr_finishingblow4 = spr_playerN_finishingblow4
 		spr_finishingblow5 = spr_playerN_finishingblow5
 		spr_winding = spr_playerN_winding
-		spr_3hpwalk = spr_playerN_angryMove
+		spr_3hpwalk = spr_playerN_angrymove
 		spr_3hpidle = spr_playerN_angryidle
 		spr_panic = spr_playerN_panicidle
 		spr_facestomp = spr_playerN_machfreefall1
@@ -402,7 +402,7 @@ function scr_characterspr()
 		spr_shotgunland = spr_playerN_minigunland
 		spr_shotgunshoot = spr_playerN_minigunshoot
 		spr_shotgunidle = spr_playerN_minigunidle
-		spr_shotgunwalk = spr_playerN_minigunMove
+		spr_shotgunwalk = spr_playerN_minigunmove
 		spr_shotgunfall = spr_playerN_minigunfall
 		spr_shotgunjump = spr_playerN_minigunjump
 		spr_shotgunjump1 = spr_playerN_minigunslamprep
@@ -440,14 +440,14 @@ function scr_characterspr()
 		spr_cheeseballplayer = spr_playerN_cheeseball
 		spr_boxxedpepintro = spr_playerN_boxxedintro
 		spr_boxxedpepidle = spr_playerN_boxxedidle
-		spr_boxxedpepwalk = spr_playerN_boxxedMove
+		spr_boxxedpepwalk = spr_playerN_boxxedmove
 		spr_boxxedpepair = spr_playerN_boxxedfall
 		spr_boxxedpepdashstart = spr_playerN_boxxeddashstart
 		spr_boxxedpepdashend = spr_playerN_boxxeddashend
 		spr_boxxedpepdash = spr_playerN_boxxeddash
 		spr_cheesepepintro = spr_playerN_cheesedland
 		spr_cheesepepidle = spr_playerN_cheesedidle
-		spr_cheesepepwalk = spr_playerN_cheesedMove
+		spr_cheesepepwalk = spr_playerN_cheesedmove
 		spr_cheesepepjump = spr_playerN_cheesedjump
 		spr_cheesepepjumpstart = spr_playerN_cheesedjumpstart
 		spr_cheesepepfall = spr_playerN_cheesedfall
@@ -461,7 +461,7 @@ function scr_characterspr()
 		spr_slipbanan1 = spr_playerN_slipbanan1
 		spr_slipbanan2 = spr_playerN_slipbanan2
 		spr_rageidle = spr_playerN_rageidle
-		spr_rageMove = spr_playerN_rageMove
+		spr_ragemove = spr_playerN_ragemove
 		spr_parry1 = spr_playerN_parry1
 		spr_parry2 = spr_playerN_parry2
 		spr_parry3 = spr_playerN_parry3
@@ -478,8 +478,8 @@ function scr_characterspr()
 	if (global.playerCharacter == Characters.MrOrange)
 	{
 		spr_idle = spr_playerV_idle
-		spr_Move = spr_playerV_Move
-		spr_crawl = spr_playerV_crouchMove
+		spr_move = spr_playerV_move
+		spr_crawl = spr_playerV_crouchmove
 		spr_idle = spr_playerV_idle
 		spr_hurt = spr_playerV_hurt
 		spr_jump = spr_playerV_jump
@@ -497,12 +497,12 @@ function scr_characterspr()
 		spr_walkfront = spr_playerV_walkout
 		spr_victory = spr_player_victory
 		spr_Ladder = spr_playerV_ladderstill
-		spr_ladderMove = spr_playerV_climb
+		spr_laddermove = spr_playerV_climb
 		spr_ladderdown = spr_playerV_downladder
 		spr_keyget = spr_playerV_gotkey
 		spr_crouchslip = spr_playerV_revolverslide
 		spr_mach1 = spr_playerV_mach1
-		spr_mach = spr_playerV_bootsMove
+		spr_mach = spr_playerV_bootsmove
 		spr_secondjump1 = spr_playerV_bootsjump
 		spr_secondjump2 = spr_playerV_bootsfall
 		spr_machslidestart = spr_playerV_machslidestart
@@ -625,7 +625,7 @@ function scr_characterspr()
 		spr_finishingblow4 = spr_player_finishingblow4
 		spr_finishingblow5 = spr_player_finishingblow5
 		spr_winding = spr_playerV_winding
-		spr_3hpwalk = spr_playerV_angryMove
+		spr_3hpwalk = spr_playerV_angrymove
 		spr_3hpidle = spr_playerV_angryidle
 		spr_panic = spr_playerV_panic
 		spr_facestomp = spr_playerV_bigfall1
@@ -692,7 +692,7 @@ function scr_characterspr()
 		spr_slipbanan1 = spr_player_slipbanan1
 		spr_slipbanan2 = spr_player_slipbanan2
 		spr_rageidle = spr_player_rageidle
-		spr_rageMove = spr_player_rageMove
+		spr_ragemove = spr_player_ragemove
 		spr_parry1 = spr_player_parry1
 		spr_parry2 = spr_player_parry2
 		spr_parry3 = spr_player_parry3
@@ -709,7 +709,7 @@ function scr_characterspr()
 	if (global.playerCharacter == Characters.Clownmato)
 	{
 		spr_idle = spr_clownmato_idle
-		spr_Move = spr_clownmato_Move
+		spr_move = spr_clownmato_move
 		spr_crawl = spr_player_crawl
 		spr_idle = spr_clownmato_idle
 		spr_hurt = spr_player_hurt
@@ -729,7 +729,7 @@ function scr_characterspr()
 		spr_walkfront = spr_player_walkfront
 		spr_victory = spr_player_victory
 		spr_Ladder = spr_player_ladder
-		spr_ladderMove = spr_player_ladderMove
+		spr_laddermove = spr_player_laddermove
 		spr_ladderdown = spr_player_ladderdown
 		spr_keyget = spr_player_keyget
 		spr_crouchslip = spr_player_crouchslip
@@ -930,7 +930,7 @@ function scr_characterspr()
 		spr_slipbanan1 = spr_player_slipbanan1
 		spr_slipbanan2 = spr_player_slipbanan2
 		spr_rageidle = spr_player_rageidle
-		spr_rageMove = spr_player_rageMove
+		spr_ragemove = spr_player_ragemove
 		spr_parry1 = spr_player_parry1
 		spr_parry2 = spr_player_parry2
 		spr_parry3 = spr_player_parry3
@@ -953,7 +953,7 @@ function scr_bosscharacterspr()
 	if (global.playerCharacter == Characters.Maurice)
 	{
 		spr_idle = spr_bossmaurice_idle
-		spr_Move = spr_bossmaurice_Move
+		spr_move = spr_bossmaurice_move
 		spr_jumpprep = spr_player_Sjumpprep
 		spr_jump = spr_player_Sjumpstart
 		spr_fall = spr_player_Sjump
@@ -966,7 +966,7 @@ function scr_bosscharacterspr()
 	if (global.playerCharacter == Characters.Doise)
 	{
 		spr_idle = spr_playerN_idle
-		spr_Move = spr_playerN_Move
+		spr_move = spr_playerN_move
 		spr_jumpprep = spr_playerN_Sjumpstart
 		spr_jump = spr_playerN_pogostart
 		spr_fall = spr_playerN_pogofall
@@ -983,7 +983,7 @@ function scr_followcharacterspr()
 	if (global.playerFollowCharacter == Characters.Maurice)
 	{
 		spr_idle = spr_player_idle
-		spr_Move = spr_player_Move
+		spr_move = spr_player_move
 		spr_crawl = spr_player_crawl
 		spr_idle = spr_player_idle
 		spr_hurt = spr_player_hurt
@@ -1003,7 +1003,7 @@ function scr_followcharacterspr()
 		spr_walkfront = spr_player_walkfront
 		spr_victory = spr_player_victory
 		spr_Ladder = spr_player_ladder
-		spr_ladderMove = spr_player_ladderMove
+		spr_laddermove = spr_player_laddermove
 		spr_ladderdown = spr_player_ladderdown
 		spr_keyget = spr_player_keyget
 		spr_crouchslip = spr_player_crouchslip
@@ -1204,7 +1204,7 @@ function scr_followcharacterspr()
 		spr_slipbanan1 = spr_player_slipbanan1
 		spr_slipbanan2 = spr_player_slipbanan2
 		spr_rageidle = spr_player_rageidle
-		spr_rageMove = spr_player_rageMove
+		spr_ragemove = spr_player_ragemove
 		spr_parry1 = spr_player_parry1
 		spr_parry2 = spr_player_parry2
 		spr_parry3 = spr_player_parry3
@@ -1221,7 +1221,7 @@ function scr_followcharacterspr()
 	if (global.playerFollowCharacter == Characters.Doise)
 	{
 		spr_idle = spr_playerN_idle
-		spr_Move = spr_playerN_Move
+		spr_move = spr_playerN_move
 		spr_crawl = spr_playerN_crawl
 		spr_idle = spr_playerN_idle
 		spr_hurt = spr_playerN_hurt
@@ -1240,14 +1240,14 @@ function scr_followcharacterspr()
 		spr_walkfront = spr_playerN_walkfront
 		spr_victory = spr_playerN_victory
 		spr_Ladder = spr_playerN_ladder
-		spr_ladderMove = spr_playerN_ladderMove
+		spr_laddermove = spr_playerN_laddermove
 		spr_ladderdown = spr_playerN_ladderdown
 		spr_keyget = spr_playerN_keyget
 		spr_crouchslip = spr_playerN_crouchslip
 		spr_pistolshot = spr_playerN_noisebombkick
 		spr_longjump = spr_player_longjump
 		spr_longjumpend = spr_player_longjumpend
-		spr_pistolwalk = spr_playerN_Move
+		spr_pistolwalk = spr_playerN_move
 		spr_mach1 = spr_playerN_mach1
 		spr_mach = spr_playerN_mach
 		spr_secondjump1 = spr_playerN_secondjump1
@@ -1312,7 +1312,7 @@ function scr_followcharacterspr()
 		spr_superjump = spr_playerN_Sjump
 		spr_machfreefall = spr_playerN_fall
 		spr_mach3hit = spr_playerN_machpunch1
-		spr_knightpepwalk = spr_playerN_knightMove
+		spr_knightpepwalk = spr_playerN_knightmove
 		spr_knightpepjump = spr_playerN_knightjump
 		spr_knightpepfall = spr_playerN_knightfall
 		spr_knightpepidle = spr_playerN_knightidle
@@ -1357,13 +1357,13 @@ function scr_followcharacterspr()
 		spr_shotgunsuplexdash = spr_playerN_minigundash
 		spr_rollgetup = spr_playerN_rollgetup
 		spr_superjumppreplight = spr_playerN_Sjumpprep
-		spr_superjumpright = spr_playerN_SjumpMoveright
-		spr_superjumpleft = spr_playerN_SjumpMoveleft
+		spr_superjumpright = spr_playerN_Sjumpmoveright
+		spr_superjumpleft = spr_playerN_Sjumpmoveleft
 		spr_swingding = spr_playerN_swingding
 		spr_swingdingend = spr_playerN_swingdingend
 		spr_haulingjump = spr_playerN_haulingjump
 		spr_haulingidle = spr_playerN_haulingidle
-		spr_haulingwalk = spr_playerN_haulingMove
+		spr_haulingwalk = spr_playerN_haulingmove
 		spr_haulingstart = spr_playerN_haulingstart
 		spr_haulingfall = spr_playerN_haulingfall
 		spr_haulingland = spr_playerN_haulingland
@@ -1374,7 +1374,7 @@ function scr_followcharacterspr()
 		spr_finishingblow4 = spr_playerN_finishingblow4
 		spr_finishingblow5 = spr_playerN_finishingblow5
 		spr_winding = spr_playerN_winding
-		spr_3hpwalk = spr_playerN_angryMove
+		spr_3hpwalk = spr_playerN_angrymove
 		spr_3hpidle = spr_playerN_angryidle
 		spr_panic = spr_playerN_panicidle
 		spr_facestomp = spr_playerN_machfreefall1
@@ -1382,7 +1382,7 @@ function scr_followcharacterspr()
 		spr_shotgunland = spr_playerN_minigunland
 		spr_shotgunshoot = spr_playerN_minigunshoot
 		spr_shotgunidle = spr_playerN_minigunidle
-		spr_shotgunwalk = spr_playerN_minigunMove
+		spr_shotgunwalk = spr_playerN_minigunmove
 		spr_shotgunfall = spr_playerN_minigunfall
 		spr_shotgunjump = spr_playerN_minigunjump
 		spr_shotgunjump1 = spr_playerN_minigunslamprep
@@ -1420,14 +1420,14 @@ function scr_followcharacterspr()
 		spr_cheeseballplayer = spr_playerN_cheeseball
 		spr_boxxedpepintro = spr_playerN_boxxedintro
 		spr_boxxedpepidle = spr_playerN_boxxedidle
-		spr_boxxedpepwalk = spr_playerN_boxxedMove
+		spr_boxxedpepwalk = spr_playerN_boxxedmove
 		spr_boxxedpepair = spr_playerN_boxxedfall
 		spr_boxxedpepdashstart = spr_playerN_boxxeddashstart
 		spr_boxxedpepdashend = spr_playerN_boxxeddashend
 		spr_boxxedpepdash = spr_playerN_boxxeddash
 		spr_cheesepepintro = spr_playerN_cheesedland
 		spr_cheesepepidle = spr_playerN_cheesedidle
-		spr_cheesepepwalk = spr_playerN_cheesedMove
+		spr_cheesepepwalk = spr_playerN_cheesedmove
 		spr_cheesepepjump = spr_playerN_cheesedjump
 		spr_cheesepepjumpstart = spr_playerN_cheesedjumpstart
 		spr_cheesepepfall = spr_playerN_cheesedfall
@@ -1441,7 +1441,7 @@ function scr_followcharacterspr()
 		spr_slipbanan1 = spr_playerN_slipbanan1
 		spr_slipbanan2 = spr_playerN_slipbanan2
 		spr_rageidle = spr_playerN_rageidle
-		spr_rageMove = spr_playerN_rageMove
+		spr_ragemove = spr_playerN_ragemove
 		spr_parry1 = spr_playerN_parry1
 		spr_parry2 = spr_playerN_parry2
 		spr_parry3 = spr_playerN_parry3

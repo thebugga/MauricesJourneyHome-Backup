@@ -1,15 +1,15 @@
 function scr_player_machroll()
 {
 	if (!(place_meeting(x, (y + 1), obj_railparent)))
-		hsp = (Xscale * Movespeed)
+		hsp = (Xscale * movespeed)
 	else
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp = ((Xscale * Movespeed) + (_railinst.Movespeed * _railinst.dir))
+		hsp = ((Xscale * movespeed) + (_railinst.movespeed * _railinst.dir))
 	}
 	mach2 = 100
 	machslideAnim = 1
-	Move = (key_right + key_left)
+	move = (key_right + key_left)
 	switch character
 	{
 		case "P":
@@ -50,7 +50,7 @@ function scr_player_machroll()
 				vsp = 10
 			}
 			if slopeCheck(x + Xscale, y)
-				Movespeed += 0.1
+				movespeed += 0.1
 			image_speed = 0.8
 			if ((!key_down) && (!(place_meeting_solid((x + 27), (y - 32)))) && (!(place_meeting_solid((x - 27), (y - 32)))) && (!(place_meeting_solid(x, (y - 32)))) && (!(place_meeting_solid(x, (y - 16)))))
 			{
@@ -60,7 +60,7 @@ function scr_player_machroll()
 					//scr_soundeffect(sfx_rollgetup)
 					sprite_index = spr_rollgetup
 				}
-				if (Movespeed < 12 or skateboarding == 1)
+				if (movespeed < 12 or skateboarding == 1)
 				{
 					if (!grounded)
 						sprite_index = spr_mach
@@ -73,8 +73,8 @@ function scr_player_machroll()
 					state = states.mach3
 				}
 			}
-			if (skateboarding && Movespeed < 12)
-				Movespeed += 0.5
+			if (skateboarding && movespeed < 12)
+				movespeed += 0.5
 			break
 		case "V":
 			if (sprite_index == spr_playerV_divekickstart && floor(image_index) == (image_number - 1))

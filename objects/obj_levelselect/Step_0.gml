@@ -14,7 +14,7 @@ if !instance_exists(obj_option)
 	
 	with obj_parent_player
 	{
-		Movespeed = 0
+		movespeed = 0
 		hsp = 0
 		vsp = 0
 	}
@@ -30,7 +30,7 @@ if !instance_exists(obj_option)
 			global.leveltosave = _levelinfo[2]
 			global.leveltorestart = _levelinfo[1]
 			state = states.comingoutdoor
-			Movespeed = 0
+			movespeed = 0
 			hsp = 0
 			vsp = 0
 			targetRoom = _levelinfo[1]

@@ -12,7 +12,7 @@ with (other)
 			tv_push_prompt_once(tv_create_prompt("This is the firemouth transformation text", tvprompt.transfo, spr_tv_firemouth, 3), "firemouth")
 			is_firing = 0
 			hsp = 0
-			Movespeed = 0
+			movespeed = 0
 			state = states.firemouth
 			image_index = 0
 			sprite_index = spr_firemouthintro

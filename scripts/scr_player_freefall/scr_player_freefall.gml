@@ -19,7 +19,7 @@ function scr_player_freefall()
 				punch_afterimage = 5;
 				with (create_mach3effect(x, y, sprite_index, image_index))
 				{
-					image_xscale = other.xscale
+					image_xscale = other.Xscale
 					playerid = other.id
 				}
 			}
@@ -36,35 +36,35 @@ function scr_player_freefall()
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_bodyslamstart)
 		sprite_index = spr_bodyslamfall
-	move = (key_left + key_right)
+	Move = (key_left + key_right)
 	if (!grounded)
 	{
 		if (sprite_index != spr_rockethitwall)
-			hsp = (move * movespeed)
+			hsp = (Move * Movespeed)
 		else
 			hsp = 0
-		if (move != xscale && momemtum == 1 && movespeed != 0)
-			movespeed -= 0.05
-		if (movespeed == 0)
+		if (Move != Xscale && momemtum == 1 && Movespeed != 0)
+			Movespeed -= 0.05
+		if (Movespeed == 0)
 			momemtum = 0
-		if (move != dir && move != 0)
+		if (Move != dir && Move != 0)
 		{
-			dir = move
-			movespeed = 0
+			dir = Move
+			Movespeed = 0
 		}
-		if ((move == 0 && momemtum == 0) or place_meeting_solid((x + hsp), y))
+		if ((Move == 0 && momemtum == 0) or place_meeting_solid((x + hsp), y))
 		{
-			movespeed = 0
+			Movespeed = 0
 			mach2 = 0
 		}
-		if (move != 0 && movespeed < 7)
-			movespeed += 0.25
-		if (movespeed > 7)
-			movespeed -= 0.05
-		if ((place_meeting_solid((x + 1), y) && move == 1) or (place_meeting_solid((x - 1), y) && move == -1))
-			movespeed = 0
-		if (move != 0 && sprite_index != spr_player_poundcancel1)
-			xscale = move
+		if (Move != 0 && Movespeed < 7)
+			Movespeed += 0.25
+		if (Movespeed > 7)
+			Movespeed -= 0.05
+		if ((place_meeting_solid((x + 1), y) && Move == 1) or (place_meeting_solid((x - 1), y) && Move == -1))
+			Movespeed = 0
+		if (Move != 0 && sprite_index != spr_player_poundcancel1)
+			Xscale = Move
 	}
 	if (vsp > 0)
 		freefallsmash++
@@ -80,17 +80,17 @@ function scr_player_freefall()
 	}
 	if (grounded && (freefallsmash < 10 or (!(place_meeting(x, (y + vsp), obj_metalblock)))) && (!(place_meeting(x, (y + vsp), obj_destructibles))))
 	{
-		if place_meeting_slope(x,y)
+		if slopeCheck(x + Xscale, y)
 		{
 			with (instance_place(x, (y + 1), obj_slope))
 			{
-				other.xscale = (-sign(image_xscale))
+				other.Xscale = (-sign(image_xscale))
 				other.state = states.tumble
 				other.sprite_index = other.spr_crouchslip
 				if (other.freefallsmash > 20)
-					other.movespeed = 12
+					other.Movespeed = 12
 				else
-					other.movespeed = 8
+					other.Movespeed = 8
 				with (instance_create(other.x, other.y, obj_jumpdust))
 					image_xscale = (sign(-other.image_xscale))
 			}

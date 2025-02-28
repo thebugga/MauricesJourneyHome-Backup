@@ -3,12 +3,12 @@ with (other)
 {
 	if (scr_transformationcheck() or state == states.tumble)
 	{
-		if ((state != states.bump or sprite_index != spr_player_catched) && (state != states.tumble or xscale != _obj.image_xscale) && state != states.knightpep && state != states.knightpepslopes && state != states.backbreaker && state != states.gotoplayer)
+		if ((state != states.bump or sprite_index != spr_player_catched) && (state != states.tumble or Xscale != _obj.image_xscale) && state != states.knightpep && state != states.knightpepslopes && state != states.backbreaker && state != states.gotoplayer)
 		{
 			state = states.tumble
-			xscale = sign(other.image_xscale)
+			Xscale = sign(other.image_xscale)
 			mask_index = spr_crouchmask
-			movespeed = 14
+			Movespeed = 14
 			vsp = 0
 			sprite_index = spr_tumble
 			other.image_index = 0
@@ -24,7 +24,7 @@ with (other)
 				{
 					if place_meeting_solid(x, y)
 					{
-						x += xscale
+						x += Xscale
 						i++
 						continue
 					}

@@ -1,7 +1,7 @@
 scr_initenemy()
 usepalette = true
 is_controllable = true
-possess_movespeed = 0
+possess_Movespeed = 0
 gusrat = false
 grav = 0.5
 hsp = 0
@@ -21,7 +21,7 @@ reset = false
 flash = false
 var _hurt = obj_player1.spr_hurt
 var _dead = obj_player1.spr_dead
-if obj_player1.isgustavo
+if global.playerCharacter == Characters.Pierre
 {
     _hurt = spr_player_ratmounthurt
     _dead = spr_player_ratmountgameover
@@ -48,7 +48,7 @@ heavy = false
 depth = 0
 paletteselect = 0
 spr_palette = palette_cheeseslime
-sprite_index = spr_slimemove
+sprite_index = spr_slimeMove
 grabbedby = 0
 stuntouchbuffer = 0
 scaredbuffer = 0

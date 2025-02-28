@@ -4,38 +4,38 @@ function scr_player_mach1()
 	landAnim = 0
 	machhitAnim = 0
 	crouchslideAnim = 1
-	dir = xscale
-	move = (key_left + key_right)
-	if (place_meeting_solid((x + xscale), y) && ((!(place_meeting((x + xscale), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
+	dir = Xscale
+	Move = (key_left + key_right)
+	if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + Xscale), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
 	{
 		mach2 = 0
 		state = states.normal
-		movespeed = 0
+		Movespeed = 0
 	}
 	if (!(place_meeting(x, (y + 1), obj_railparent)))
-		hsp = (xscale * movespeed)
+		hsp = (Xscale * Movespeed)
 	else
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp = ((xscale * movespeed) + (_railinst.movespeed * _railinst.dir))
+		hsp = ((Xscale * Movespeed) + (_railinst.Movespeed * _railinst.dir))
 	}
-	if (xscale != move && move != 0)
+	if (Xscale != Move && Move != 0)
 	{
 		sprite_index = spr_mach1
 		image_index = 0
 		momemtum = 0
 		mach2 = 0
-		movespeed = 6
-		xscale = move
+		Movespeed = 6
+		Xscale = Move
 	}
 	if grounded
 	{
-		if (movespeed <= 8)
-			movespeed += 0.075
-		if (movespeed >= 8)
+		if (Movespeed <= 8)
+			Movespeed += 0.075
+		if (Movespeed >= 8)
 		{
 			state = states.mach2
-			particle_set_scale(particle.jumpdust, xscale, 1)
+			particle_set_scale(particle.jumpdust, Xscale, 1)
 			create_particle(x, y, particle.jumpdust, 0)
 		}
 		if (vsp > 0)
@@ -44,7 +44,7 @@ function scr_player_mach1()
 		{
 			with (instance_create(x, y, obj_dashcloud))
 			{
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 				other.dashcloudid = id
 			}
 		}
@@ -58,7 +58,7 @@ function scr_player_mach1()
 			//scr_soundeffect(sfx_jump)
 			sprite_index = spr_airdash1
 			image_index = 0
-			dir = xscale
+			dir = Xscale
 			momemtum = 1
 			vsp = -11
 			jumpAnim = 1
@@ -78,9 +78,9 @@ function scr_player_mach1()
 		vsp /= 20
 		jumpstop = 1
 	}
-	if (place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
+	if (place_meeting((x + Xscale), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
-		movespeed = 0
+		Movespeed = 0
 		state = states.normal
 	}
 	switch character
@@ -93,10 +93,10 @@ function scr_player_mach1()
 				image_index = 0
 				vsp = -5
 				state = states.revolver
-				with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
+				with (instance_create((x + (Xscale * 20)), (y + 20), obj_shotgunbullet))
 				{
 					is_solid = 0
-					image_xscale = other.xscale
+					image_xscale = other.Xscale
 				}
 			}
 			if (key_shoot2 && (!instance_exists(dynamite_inst)))
@@ -107,8 +107,8 @@ function scr_player_mach1()
 				state = states.dynamite
 				with (instance_create(x, y, obj_dynamite))
 				{
-					image_xscale = other.xscale
-					movespeed = (other.movespeed + 4)
+					image_xscale = other.Xscale
+					Movespeed = (other.Movespeed + 4)
 					vsp = -6
 					other.dynamite_inst = id
 					playerid = other.id
@@ -132,19 +132,19 @@ function scr_player_mach1()
 			image_index = 0
 			state = states.freefallprep
 			vsp = -5
-			with (instance_create((x + (xscale * 30)), (y + 60), obj_shotgunbullet))
+			with (instance_create((x + (Xscale * 30)), (y + 60), obj_shotgunbullet))
 			{
 				sprite_index = sprite10391
 				spdh = -10
 				spd = 0
 			}
-			with (instance_create((x + (xscale * 30)), (y + 60), obj_shotgunbullet))
+			with (instance_create((x + (Xscale * 30)), (y + 60), obj_shotgunbullet))
 			{
 				sprite_index = sprite10391
 				spdh = -10
 				spd = 5
 			}
-			with (instance_create((x + (xscale * 30)), (y + 60), obj_shotgunbullet))
+			with (instance_create((x + (Xscale * 30)), (y + 60), obj_shotgunbullet))
 			{
 				sprite_index = sprite10391
 				spdh = -10

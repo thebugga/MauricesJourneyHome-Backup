@@ -1,5 +1,5 @@
 function scr_squash()
 {
-	xscale = approach(xscale, 1, 0.03)
-	yscale = approach(yscale, 1, 0.03)
+	Xscale = approach(Xscale, 1, 0.03)
+	Yscale = approach(Yscale, 1, 0.03)
 }

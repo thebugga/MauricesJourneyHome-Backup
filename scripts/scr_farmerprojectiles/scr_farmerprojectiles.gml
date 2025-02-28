@@ -44,7 +44,7 @@ function scr_shoot_farmerprojectile()
 			inst = 87
 		with (instance_create(x, y, inst))
 		{
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			hsp = (20 * image_xscale)
 		}
 	}

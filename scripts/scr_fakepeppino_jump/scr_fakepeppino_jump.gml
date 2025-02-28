@@ -1,12 +1,12 @@
 function scr_fakepeppino_jump()
 {
-	hsp = (image_xscale * movespeed)
+	hsp = (image_xscale * Movespeed)
 	if (sprite_index == spr_fakepeppino_jumpstart && floor(image_index) == (image_number - 1))
 	{
 		image_index = 0
 		vsp = -15
 		sprite_index = spr_fakepeppino_jump
-		movespeed = 8
+		Movespeed = 8
 	}
 	if (sprite_index == spr_fakepeppino_jump && floor(image_index) == (image_number - 1))
 	{
@@ -18,7 +18,7 @@ function scr_fakepeppino_jump()
 		image_index = 0
 		sprite_index = spr_fakepeppino_land
 		state = states.idle
-		movespeed = 0
+		Movespeed = 0
 	}
 	exit;
 }

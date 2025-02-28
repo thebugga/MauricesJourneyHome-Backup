@@ -1,9 +1,9 @@
 function scr_player_pizzathrow()
 {
-	movespeed = 0
+	Movespeed = 0
 	mach2 = 0
 	hsp = 0
-	xscale = -1
+	Xscale = -1
 	jumpstop = 0
 	if (global.shroomfollow == 0 && global.cheesefollow == 0 && global.tomatofollow == 0 && global.sausagefollow == 0 && global.pineapplefollow == 0)
 	{

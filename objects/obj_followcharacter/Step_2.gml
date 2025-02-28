@@ -10,15 +10,15 @@ if (playerid.state != states.ladder && playerid.state != states.door && playerid
 }
 else
 	space = approach(space, 0, spaceaccel)
-if (dir != playerid.xscale)
-	dir = playerid.xscale
+if (dir != playerid.Xscale)
+	dir = playerid.Xscale
 if (followid != noone && (!instance_exists(followid)))
 	followid = noone
 var tx = round((xoffset * space))
 var xx = (followid == noone ? playerid.x : followid.x)
 var yy = (followid == noone ? playerid.y : followid.y)
 var msk = (followid == noone ? playerid.mask_index : followid.mask_index)
-var ixs = (followid == noone ? playerid.xscale : followid.image_xscale)
+var ixs = (followid == noone ? playerid.Xscale : followid.image_xscale)
 ds_queue_enqueue(followqueue, (xx + tx))
 ds_queue_enqueue(followqueue, yy)
 ds_queue_enqueue(followqueue, msk)
@@ -43,5 +43,5 @@ if (ds_queue_size(followqueue) > (LAG_STEPS * 2))
 	lastplayerposx = _x
 	lastplayerposy = _y
 }
-image_xscale = playerid.xscale * playerid.scale_xs;
-image_yscale = playerid.yscale * playerid.scale_ys;
+image_xscale = playerid.Xscale * playerid.scale_xs;
+image_yscale = playerid.Yscale * playerid.scale_ys;

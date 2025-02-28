@@ -2,19 +2,19 @@ function scr_player_skateboard()
 {
 	machhitAnim = 0
 	crouchslideAnim = 1
-	hsp = (xscale * movespeed)
+	hsp = (Xscale * Movespeed)
 	if key_jump
 	{
 		state = states.mach2
 		vsp = -6
-		with (instance_create((x + (xscale * movespeed)), y, obj_skateboard))
+		with (instance_create((x + (Xscale * Movespeed)), y, obj_skateboard))
 		{
-			xscale = other.xscale
+			Xscale = other.Xscale
 			hsp = other.hsp
 			vsp = -5
 		}
 	}
-	if (place_meeting_solid((x + 1), y) && xscale == 1)
+	if (place_meeting_solid((x + 1), y) && Xscale == 1)
 	{
 		machhitAnim = 0
 		state = states.bump
@@ -26,7 +26,7 @@ function scr_player_skateboard()
 		instance_create(x, (y + 10), obj_skateboarddebris1)
 		instance_create(x, (y + 10), obj_skateboarddebris2)
 	}
-	else if (place_meeting_solid((x - 1), y) && xscale == -1)
+	else if (place_meeting_solid((x - 1), y) && Xscale == -1)
 	{
 		machhitAnim = 0
 		state = states.bump

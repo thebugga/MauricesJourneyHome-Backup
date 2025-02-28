@@ -4,6 +4,6 @@ if playerid.grounded
 	visible = true
 else
 	visible = false
-image_xscale = playerid.xscale
+image_xscale = playerid.Xscale
 if (!playerid.visible)
 	visible = false

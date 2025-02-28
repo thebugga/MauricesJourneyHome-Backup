@@ -1,10 +1,10 @@
-hsp = (image_xscale * movespeed)
+hsp = (image_xscale * Movespeed)
 mask_index = spr_player_mask
 if (place_meeting_solid(x, (y + 1)) && vsp > 0)
 {
 	vsp = -5
-	if (movespeed > 0)
-		movespeed -= 1
+	if (Movespeed > 0)
+		Movespeed -= 1
 }
 if (obj_explosion != obj_dynamiteexplosion_boss && obj_explosion != obj_canonexplosion && playerid.key_shoot2 && playerid.state != states.dynamite)
 {

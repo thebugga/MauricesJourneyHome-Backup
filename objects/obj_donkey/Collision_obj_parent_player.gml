@@ -10,8 +10,8 @@ if (cooldown == 0)
 		other.cooldown = 100
 		sprite_index = spr_rockethitwall
 		vsp = -11
-		xscale = (-other.image_xscale)
-		movespeed = 10
+		Xscale = (-other.image_xscale)
+		Movespeed = 10
 		image_index = 0
 		state = states.slipbanan
 		instance_create(x, y, obj_bangeffect)

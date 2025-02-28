@@ -25,8 +25,8 @@ spr_dead = spr_mrstick_hurt
 fallspr = spr_mrstick_fall
 bumpspr = spr_mrstick_hurt
 defeatplayerspr = spr_mrstick_idle
-movespeed = 0
-move = 0
+Movespeed = 0
+Move = 0
 normal_spd = 6
 helicopterspeed = 6
 panicjumpspeed = 12
@@ -80,7 +80,7 @@ function boss_hurt(argument0, argument1)
 	else
 		targetstunned = 150
 	SUPER_boss_hurt(argument0, argument1)
-	targetxscale = (-argument1.xscale)
+	targetXscale = (-argument1.Xscale)
 }
 
 function boss_hurt_noplayer(argument0)

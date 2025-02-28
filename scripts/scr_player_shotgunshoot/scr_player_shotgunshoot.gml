@@ -1,30 +1,30 @@
 function scr_player_shotgunshoot()
 {
 	image_speed = 0.4
-	move = (key_left + key_right)
-	hsp = (xscale * movespeed)
+	Move = (key_left + key_right)
+	hsp = (Xscale * Movespeed)
 	if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))))
-		movespeed = 0
-	if (move != 0)
+		Movespeed = 0
+	if (Move != 0)
 	{
-		if (move == xscale)
-			movespeed = approach(movespeed, 4, 0.25)
+		if (Move == Xscale)
+			Movespeed = approach(Movespeed, 4, 0.25)
 		else
-			movespeed = approach(movespeed, -8, 0.2)
+			Movespeed = approach(Movespeed, -8, 0.2)
 	}
 	else
-		movespeed = approach(movespeed, 0, 0.1)
+		Movespeed = approach(Movespeed, 0, 0.1)
 	if (floor(image_index) == (image_number - 1))
 	{
 		if grounded
 			state = states.normal
 		else
 			state = states.jump
-		if (move == (-xscale))
+		if (Move == (-Xscale))
 		{
-			xscale = move
-			dir = xscale
-			movespeed = abs(movespeed)
+			Xscale = Move
+			dir = Xscale
+			Movespeed = abs(Movespeed)
 			momemtum = 1
 		}
 	}

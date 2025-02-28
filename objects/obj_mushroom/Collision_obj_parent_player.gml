@@ -7,7 +7,7 @@ if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state
 		{
 			state = states.jump
 			if (sprite_index == spr_mach3boost or sprite_index == spr_machslideboost)
-				xscale *= -1
+				Xscale *= -1
 		}
 		if (state == states.normal)
 			state = states.jump
@@ -23,7 +23,7 @@ if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state
 	image_index = 0
 	other.vsp = -14
 	other.jumpstop = 1
-	if other.isgustavo
+	if other.global.playerCharacter == Characters.Pierre
 	{
 		other.sprite_index = spr_player_ratmountmushroombounce
 		if (!other.brick)

@@ -25,7 +25,7 @@ function scr_hurtplayer(argument0)
 					image_index = 0
 				}
 				sprite_index = spr_player_airattackstart
-				hsp = ((-xscale) * 2)
+				hsp = ((-Xscale) * 2)
 			}
 			else if (state != states.thrown && state != states.hit && (!hurted))
 			{
@@ -36,7 +36,7 @@ function scr_hurtplayer(argument0)
 						vsp = irandom_range(-6, -11)
 				}
 				hitLag = 3
-				hitxscale = (x != other.x ? sign((other.x - x)) : (-other.image_xscale))
+				hitXscale = (x != other.x ? sign((other.x - x)) : (-other.image_xscale))
 				state = states.hit
 				hitstunned = 50
 				hurted = 1
@@ -66,12 +66,12 @@ function scr_hurtplayer(argument0)
 				}
 			}
 		}
-		else if isgustavo
+		else if global.playerCharacter == Characters.Pierre
 		{
 			if (!hurted)
 			{
 				state = states.ratmounthurt
-				movespeed = 6
+				Movespeed = 6
 				vsp = -9
 				flash = 1
 				alarm[8] = 100
@@ -121,7 +121,7 @@ function scr_hurtplayer(argument0)
 		}
 		else if (state == states.boxxedpep)
 		{
-			hsp = ((-xscale) * 4)
+			hsp = ((-Xscale) * 4)
 			vsp = -5
 			state = states.bump
 			sprite_index = spr_bump
@@ -135,7 +135,7 @@ function scr_hurtplayer(argument0)
 			pizzashield = 0
 			with (instance_create(x, y, obj_deatheffect))
 				sprite_index = spr_pizzashield_collectible
-			hsp = ((-xscale) * 4)
+			hsp = ((-Xscale) * 4)
 			vsp = -5
 			state = states.bump
 			sprite_index = spr_bump
@@ -149,7 +149,7 @@ function scr_hurtplayer(argument0)
 			if (state == states.mort or state == states.morthook or state == states.mortjump or state == states.mortattack)
 			{
 				with (instance_create(x, y, obj_mortflyaway))
-					image_xscale = (-other.xscale)
+					image_xscale = (-other.Xscale)
 			}
 			if instance_exists(obj_hardmode)
 				global.heatmeter_count = ((global.heatmeter_threshold - 1) * global.heatmeter_threshold_count)
@@ -191,11 +191,11 @@ function scr_hurtplayer(argument0)
 			alarm[8] = 100
 			alarm[7] = 50
 			hurted = 1
-			if (xscale == other.image_xscale)
+			if (Xscale == other.image_xscale)
 				sprite_index = spr_hurtjump
 			else
 				sprite_index = spr_hurt
-			movespeed = 8
+			Movespeed = 8
 			vsp = -14
 			timeuntilhpback = 300
 			instance_create(x, y, obj_spikehurteffect)

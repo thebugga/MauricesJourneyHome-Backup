@@ -6,10 +6,10 @@ function scr_player_parry()
 		if tauntstoredisgustavo
 			state = states.ratmount
 	}
-	hsp = ((-xscale) * movespeed)
+	hsp = ((-Xscale) * Movespeed)
 	image_speed = 0.5
-	if (movespeed > 0)
-		movespeed -= 0.5
+	if (Movespeed > 0)
+		Movespeed -= 0.5
 	var _grabbedby = 1
 	if (object_index == obj_player2)
 		_grabbedby = 2
@@ -22,7 +22,7 @@ function scr_player_parry()
 			if (distance_to_object(other) < parry_threshold && state != states.hit && state != states.grabbed && state != states.stun && parryable && (!((state == states.stun && thrown == true))))
 			{
 				notification_push(notification_type.unknown_value1, [id, object_index, room])
-				obj_player1.xscale = (-image_xscale)
+				obj_player1.Xscale = (-image_xscale)
 				grabbedby = _grabbedby
 				var lag = 5
 				hitLag = lag
@@ -40,7 +40,7 @@ function scr_player_parry()
 				instance_create(x, y, obj_parryeffect)
 				alarm[3] = 1
 				state = states.hit
-				image_xscale = (-obj_player1.xscale)
+				image_xscale = (-obj_player1.Xscale)
 				instance_create(x, y, obj_slapstar)
 				instance_create(x, y, obj_slapstar)
 				instance_create(x, y, obj_slapstar)

@@ -5,7 +5,7 @@ function scr_player_hit()
 	x = (hitX + random_range(-4, 4))
 	y = (hitY + random_range(-4, 4))
 	hitLag--
-	xscale = hitxscale
+	Xscale = hitXscale
 	image_speed = 0
 	if (hitLag <= 0)
 	{
@@ -20,7 +20,7 @@ function scr_player_hit()
 		}
 		if place_meeting_solid(x, y)
 			y -= 5
-		movespeed = abs(hithsp)
+		Movespeed = abs(hithsp)
 		vsp = hitvsp
 		state = states.thrown
 		stunned = hitstunned

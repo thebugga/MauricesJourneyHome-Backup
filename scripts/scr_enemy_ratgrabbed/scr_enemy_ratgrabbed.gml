@@ -14,9 +14,9 @@ function scr_enemy_ratgrabbed()
 			ratgrabbed = 1
 		if (ratplayerid.state == states.ratmountspit && ratplayerid.image_index >= 5)
 		{
-			hsp = (ratplayerid.xscale * 22)
+			hsp = (ratplayerid.Xscale * 22)
 			vsp = -2
-			image_xscale = (-ratplayerid.xscale)
+			image_xscale = (-ratplayerid.Xscale)
 			y = (ratplayerid.y - 5)
 			thrown = true
 			visible = true

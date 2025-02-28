@@ -1,16 +1,16 @@
 function scr_enemy_walk()
 {
 	if (object_index != obj_robot && object_index != obj_pizzice && object_index != obj_ancho)
-		hsp = ((image_xscale * movespeed) + railmovespeed)
+		hsp = ((image_xscale * Movespeed) + railMovespeed)
 	else if (object_index == obj_robot)
-		hsp = railmovespeed
+		hsp = railMovespeed
 	if place_meeting(x, (y + 1), obj_railparent)
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		railmovespeed = (_railinst.movespeed * _railinst.dir)
+		railMovespeed = (_railinst.Movespeed * _railinst.dir)
 	}
 	else
-		railmovespeed = 0
+		railMovespeed = 0
 	if ((!grounded) && object_index != obj_pizzaball && object_index != obj_ancho && object_index != obj_miniufo && object_index != obj_kentukybomber)
 		hsp = 0
 	if (turntimer > 0 && turner == 1)
@@ -42,7 +42,7 @@ function scr_enemy_walk()
 	{
 		if (!((place_meeting_solid((x + (image_xscale * 15)), (y + 31)) or place_meeting((x + (image_xscale * 15)), (y + 31), obj_platform))))
 		{
-			if (movespeed > 0 && grounded)
+			if (Movespeed > 0 && grounded)
 			{
 				if (object_index == obj_forknight)
 				{

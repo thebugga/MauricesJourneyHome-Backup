@@ -7,8 +7,8 @@ function scr_player_mach3()
 	}										 
 			var slopeaccel = 0.1;
 			var slopedeccel = 0.2;
-			var mach4movespeed = 20;
-			var mach3movespeed = 16;
+			var mach4Movespeed = 20;
+			var mach3Movespeed = 16;
 			var accel = 0.025;
 			var mach4accel = 0.1;
 			var jumpspeed = -11;
@@ -36,23 +36,23 @@ function scr_player_mach3()
 			if (place_meeting(x, y + 1, obj_railparent))
 			{
 				var _railinst = instance_place(x, y + 1, obj_railparent);
-				railmovespeed = _railinst.movespeed;
+				railMovespeed = _railinst.Movespeed;
 				raildir = _railinst.dir;
 			}
-			hsp = (xscale * movespeed) + (railmovespeed * raildir);
+			hsp = (Xscale * Movespeed) + (railMovespeed * raildir);
 			if grounded
 			{
-				if ((place_meeting_slope(x,y) && hsp != 0) && movespeed > 10 && movespeed < 18)
+				if ((slopeCheck(x + Xscale, y) && hsp != 0) && Movespeed > 10 && Movespeed < 18)
 					scr_player_addslopemomentum(slopeaccel, slopedeccel);
 			}
-			if move == xscale && grounded
+			if Move == Xscale && grounded
 			{
-				if movespeed < mach4movespeed
+				if Movespeed < mach4Movespeed
 				{
 					if mach4mode == 0
-						movespeed += accel;
+						Movespeed += accel;
 					else
-						movespeed += mach4accel;
+						Movespeed += mach4accel;
 				}
 			}
 			if grounded && sprite_index == spr_playerN_skateboarddoublejump
@@ -63,8 +63,8 @@ function scr_player_mach3()
 			
 			mach2 = 100;
 			momemtum = true;
-			move = key_right + key_left;
-			move2 = key_right2 + key_left2;
+			Move = key_right + key_left;
+			Move2 = key_right2 + key_left2;
 			if fightball == 1 && global.coop == 1
 			{
 				if object_index == obj_player1
@@ -91,7 +91,7 @@ function scr_player_mach3()
 					flamecloud_buffer = 10;
 					with (instance_create(x, y, obj_dashcloud))
 					{
-						image_xscale = other.xscale;
+						image_xscale = other.Xscale;
 						sprite_index = spr_flamecloud;
 					}
 				}
@@ -110,11 +110,11 @@ function scr_player_mach3()
 			}
 			if grounded && vsp > 0
 				jumpstop = false;
-			if (input_buffer_jump > 0 && sprite_index != spr_mach3jump && can_jump && !(move == 1 && xscale == -1) && !(move == -1 && xscale == 1))
+			if (input_buffer_jump > 0 && sprite_index != spr_mach3jump && can_jump && !(Move == 1 && Xscale == -1) && !(Move == -1 && Xscale == 1))
 			{
 				input_buffer_jump = 0;
 				scr_fmod_soundeffect(jumpsnd, x, y);
-				particle_set_scale(particle.jumpdust, xscale, 1);
+				particle_set_scale(particle.jumpdust, Xscale, 1);
 				create_particle(x, y, particle.jumpdust, 0);
 				if sprite_index != spr_fightball
 				{
@@ -141,13 +141,13 @@ function scr_player_mach3()
 				if (grounded && (sprite_index == spr_playerN_sidewayspin || sprite_index == spr_playerN_sidewayspinend))
 					sprite_index = mach3_spr;
 				
-				if movespeed > mach3movespeed && sprite_index != spr_crazyrun && sprite_index != spr_rockethitwall && sprite_index != spr_taunt
+				if Movespeed > mach3Movespeed && sprite_index != spr_crazyrun && sprite_index != spr_rockethitwall && sprite_index != spr_taunt
 				{
 					mach4mode = true;
 					flash = true;
 					sprite_index = spr_crazyrun;
 				}
-				else if movespeed <= mach3movespeed && sprite_index == spr_crazyrun
+				else if Movespeed <= mach3Movespeed && sprite_index == spr_crazyrun
 					sprite_index = mach3_spr;
 			}
 			if (sprite_index == spr_crazyrun && !instance_exists(crazyruneffectid))
@@ -176,9 +176,9 @@ function scr_player_mach3()
 				image_index = 0;
 				launched = false;
 			}
-			if (move == -xscale && grounded && vsp > 0 && !launched && fightball == 0 && sprite_index != spr_dashpadmach)
+			if (Move == -Xscale && grounded && vsp > 0 && !launched && fightball == 0 && sprite_index != spr_dashpadmach)
 			{
-				if ispeppino
+				if global.playerCharacter == Characters.Maurice
 					fmod_event_one_shot_3d("event:/sfx/maurice/machslideboost", x, y);
 				else
 					fmod_event_one_shot_3d("event:/sfx/playerN/machslide", x, y);
@@ -193,7 +193,7 @@ function scr_player_mach3()
 			//}
 			if (scr_mach_check_dive() && fightball == 0 && (sprite_index != spr_dashpadmach || dropboost) && sprite_index != spr_rockethitwall)
 			{
-				particle_set_scale(particle.jumpdust, xscale, 1);
+				particle_set_scale(particle.jumpdust, Xscale, 1);
 				create_particle(x, y, particle.jumpdust, 0);
 				flash = false;
 				state = states.tumble;
@@ -206,7 +206,7 @@ function scr_player_mach3()
 				if global.playerCharacter == Characters.MrOrange
 					sprite_index = spr_playerV_divekickstart;
 			}
-			if ((grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || place_meeting_slope(x + sign(hsp), y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
+			if ((grounded && (place_meeting(x + hsp, y, obj_solid) || slopeCheck(x + Xscale, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
 			{
 				var _climb = true;
 				if global.playerCharacter == Characters.Doise
@@ -214,17 +214,17 @@ function scr_player_mach3()
 				if _climb
 				{
 					machhitAnim = false
-					if movespeed < 1
-						wallspeed = 1;
+					if Movespeed < 1
+						WallMovespeed = 1; 
 					else
 					{
 						vsp -= 0.5
-						wallspeed = movespeed;
+						WallMovespeed = Movespeed;
 					}
 					state = states.climbwall
 				}
 			}
-			if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
+			if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || slopeCheck(x + Xscale, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
 			{
 				var _climb = true;
 				if global.playerCharacter == Characters.Doise
@@ -236,12 +236,12 @@ function scr_player_mach3()
 						state = states.hang
 					}
 					machhitAnim = false
-					if movespeed < 1
-						wallspeed = 1;
+					if Movespeed < 1
+						WallMovespeed = 1;
 					else
 					{
 						vsp -= 0.5
-						wallspeed = movespeed;
+						WallMovespeed = Movespeed;
 					}
 					state = states.climbwall
 				}
@@ -257,8 +257,8 @@ function scr_player_mach3()
 					vsp = -10;
 				else
 					vsp = -21;
-				movespeed = hsp;
-				particle_set_scale(particle.highjumpcloud2, xscale, 1);
+				Movespeed = hsp;
+				particle_set_scale(particle.highjumpcloud2, Xscale, 1);
 				create_particle(x, y, particle.highjumpcloud2, 0);
 			}
 			if input_buffer_shoot > 0 && sprite_index != spr_dashpadmach
@@ -268,10 +268,10 @@ function scr_player_mach3()
 				else if global.pistol
 					scr_pistolshoot(states.mach3);
 			}
-			if ((place_meeting_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !place_meeting_slope(x,y) && (place_meeting_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
+			if ((place_meeting_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !slopeCheck(x + Xscale, y) && (place_meeting_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 			{
 				var _bump = true;
-				if (ispeppino || noisemachcancelbuffer <= 0)
+				if (global.playerCharacter == Characters.Maurice || noisemachcancelbuffer <= 0)
 					_bump = ledge_bump((vsp >= 0) ? 32 : 22);
 				if _bump
 				{
@@ -299,11 +299,11 @@ function scr_player_mach3()
 						hsp = 0;
 						flash = false;
 						state = states.bump;
-						hsp = -6 * xscale;
+						hsp = -6 * Xscale;
 						vsp = -6;
 						mach2 = 0;
 						image_index = 0;
-						instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
+						instance_create(x + (Xscale * 15), y + 10, obj_bumpeffect);
 					}
 					else
 					{
@@ -317,7 +317,7 @@ function scr_player_mach3()
 							hsp = 0;
 							flash = false;
 							state = states.bump;
-							hsp = -6 * xscale;
+							hsp = -6 * Xscale;
 							vsp = -6;
 							mach2 = 0;
 							image_index = 0;
@@ -332,7 +332,7 @@ function scr_player_mach3()
 		{
 			if other.fightball == 1
 				instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar);
-			image_xscale = other.xscale;
+			image_xscale = other.Xscale;
 			other.dashcloudid = id;
 		}
 	}
@@ -342,7 +342,7 @@ function scr_player_mach3()
 		{
 			if other.fightball == 1
 				instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar);
-			image_xscale = other.xscale;
+			image_xscale = other.Xscale;
 			sprite_index = spr_watereffect;
 			other.dashcloudid = id;
 		}
@@ -382,22 +382,22 @@ function scr_player_mach3()
 function scr_player_fightball() //gml_Script_scr_player_fightball
 {
     image_speed = 0.4
-    if (noisecrusher || isgustavo)
+    if (noisecrusher || global.playerCharacter == Characters.Pierre)
         instance_create_unique(x, y, obj_swapgusfightball)
     if place_meeting(x, (y + 1), obj_railparent)
     {
         var _railinst = instance_place(x, (y + 1), obj_railparent)
-        railmovespeed = _railinst.movespeed
+        railMovespeed = _railinst.Movespeed
         raildir = _railinst.dir
     }
-    hsp = xscale * movespeed + railmovespeed * raildir
-    if (movespeed <= 20)
-        movespeed += 0.1
+    hsp = Xscale * Movespeed + railMovespeed * raildir
+    if (Movespeed <= 20)
+        Movespeed += 0.1
     if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))))
     {
-        instance_create((x + 10 * xscale), (y + 10), obj_bumpeffect)
+        instance_create((x + 10 * Xscale), (y + 10), obj_bumpeffect)
         //fmod_event_one_shot_3d("event:/sfx/maurice/bumpwall", x, y)
-        xscale *= -1
+        Xscale *= -1
         if (obj_swapmodefollow.key_jump2 || key_jump2)
         {
             scr_fmod_soundeffect(jumpsnd, x, y)
@@ -411,13 +411,13 @@ function scr_player_fightball() //gml_Script_scr_player_fightball
             swap_player(false)
         state = states.mach3
         sprite_index = spr_mach4
-        if isgustavo
+        if global.playerCharacter == Characters.Pierre
         {
             state = states.ratmount
-            ratmount_movespeed = abs(movespeed)
-            if (ratmount_movespeed < 12)
-                ratmount_movespeed = 12
-            movespeed = ratmount_movespeed * xscale
+            ratmount_Movespeed = abs(Movespeed)
+            if (ratmount_Movespeed < 12)
+                ratmount_Movespeed = 12
+            Movespeed = ratmount_Movespeed * Xscale
         }
         with (obj_tv)
         {
@@ -445,7 +445,7 @@ function scr_player_fightball() //gml_Script_scr_player_fightball
         vsp = -11
         jumpstop = false
         scr_fmod_soundeffect(jumpsnd, x, y)
-        particle_set_scale((5 << 0), xscale, 1)
+        particle_set_scale((5 << 0), Xscale, 1)
         create_particle(x, y, (5 << 0), 0)
     }
     if ((!instance_exists(dashcloudid)) && grounded)
@@ -454,7 +454,7 @@ function scr_player_fightball() //gml_Script_scr_player_fightball
         with (instance_create(x, y, obj_superdashcloud))
         {
             instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar)
-            image_xscale = other.xscale
+            image_xscale = other.Xscale
             if water
                 sprite_index = spr_watereffect
             other.dashcloudid = id

@@ -2,7 +2,7 @@ function scr_player_grabbed()
 {
 	var _obj_parent_player = (object_index == obj_player2 ? obj_player1 : obj_player2)
 	if (fightball == 0)
-		xscale = (-_obj_parent_player.xscale)
+		Xscale = (-_obj_parent_player.Xscale)
 	_obj_parent_player.baddiegrabbedID = id
 	if (_obj_parent_player.state == states.mach3 && fightball == 1)
 	{
@@ -22,11 +22,11 @@ function scr_player_grabbed()
 			y = (_obj_parent_player.y - 20)
 		else if (floor(_obj_parent_player.image_index) == 3)
 			y = (_obj_parent_player.y - 30)
-		xscale = (-_obj_parent_player.xscale)
+		Xscale = (-_obj_parent_player.Xscale)
 	}
 	with (_obj_parent_player)
 	{
-		move = (key_left2 + key_right2)
+		Move = (key_left2 + key_right2)
 		if (key_slap && sprite_index == spr_grab)
 		{
 			global.hit += 1
@@ -62,12 +62,12 @@ function scr_player_grabbed()
 	}
 	if (_obj_parent_player.state == states.tacklecharge)
 	{
-		x = (_obj_parent_player.x + (_obj_parent_player.xscale * 20))
+		x = (_obj_parent_player.x + (_obj_parent_player.Xscale * 20))
 		y = _obj_parent_player.y
 	}
 	if (_obj_parent_player.state == states.finishingblow && _obj_parent_player.image_index < 5)
 	{
-		x = (_obj_parent_player.x + (_obj_parent_player.xscale * 60))
+		x = (_obj_parent_player.x + (_obj_parent_player.Xscale * 60))
 		y = (_obj_parent_player.y + 14)
 	}
 	if place_meeting(x, y, obj_swordhitbox)
@@ -93,31 +93,31 @@ function scr_player_grabbed()
 		other.alarm[7] = 120
 		with (_obj_parent_player)
 		{
-			move = (key_right + key_left)
+			Move = (key_right + key_left)
 			if (sprite_index == spr_uppercutfinishingblow)
 			{
-				other.movespeed = 0
+				other.Movespeed = 0
 				other.vsp = -25
 			}
 			else
 			{
-				other.movespeed = 15
+				other.Movespeed = 15
 				other.vsp = -6
 			}
 		}
 	}
 	if (_obj_parent_player.state == states.superslam && _obj_parent_player.sprite_index == _obj_parent_player.spr_piledriver)
 	{
-		if (_obj_parent_player.global.playerCharacter == Characters.Maurice && _obj_parent_player.ispeppino)
+		if global.playerCharacter == Characters.Maurice
 		{
 			if (floor(_obj_parent_player.image_index) == 0)
 			{
-				x = (_obj_parent_player.x + (_obj_parent_player.xscale * 10))
+				x = (_obj_parent_player.x + (_obj_parent_player.Xscale * 10))
 				y = _obj_parent_player.y
 			}
 			if (floor(_obj_parent_player.image_index) == 1)
 			{
-				x = (_obj_parent_player.x + (_obj_parent_player.xscale * 5))
+				x = (_obj_parent_player.x + (_obj_parent_player.Xscale * 5))
 				y = _obj_parent_player.y
 			}
 			if (floor(_obj_parent_player.image_index) == 2)
@@ -127,17 +127,17 @@ function scr_player_grabbed()
 			}
 			if (floor(_obj_parent_player.image_index) == 3)
 			{
-				x = (_obj_parent_player.x + (_obj_parent_player.xscale * -5))
+				x = (_obj_parent_player.x + (_obj_parent_player.Xscale * -5))
 				y = _obj_parent_player.y
 			}
 			if (floor(_obj_parent_player.image_index) == 4)
 			{
-				x = (_obj_parent_player.x + (_obj_parent_player.xscale * -10))
+				x = (_obj_parent_player.x + (_obj_parent_player.Xscale * -10))
 				y = _obj_parent_player.y
 			}
 			if (floor(_obj_parent_player.image_index) == 5)
 			{
-				x = (_obj_parent_player.x + (_obj_parent_player.xscale * -5))
+				x = (_obj_parent_player.x + (_obj_parent_player.Xscale * -5))
 				y = _obj_parent_player.y
 			}
 			if (floor(_obj_parent_player.image_index) == 6)
@@ -147,7 +147,7 @@ function scr_player_grabbed()
 			}
 			if (floor(_obj_parent_player.image_index) == 7)
 			{
-				x = (_obj_parent_player.x + (_obj_parent_player.xscale * 5))
+				x = (_obj_parent_player.x + (_obj_parent_player.Xscale * 5))
 				y = _obj_parent_player.y
 			}
 		}
@@ -161,7 +161,7 @@ function scr_player_grabbed()
 	{
 		if (floor(_obj_parent_player.image_index) == 0)
 		{
-			x = (_obj_parent_player.x + (_obj_parent_player.xscale * 25))
+			x = (_obj_parent_player.x + (_obj_parent_player.Xscale * 25))
 			y = _obj_parent_player.y
 		}
 		if (floor(_obj_parent_player.image_index) == 1)
@@ -171,17 +171,17 @@ function scr_player_grabbed()
 		}
 		if (floor(obj_player1.image_index) == 2)
 		{
-			x = (obj_player1.x + (obj_player1.xscale * -25))
+			x = (obj_player1.x + (obj_player1.Xscale * -25))
 			y = obj_player1.y
 		}
 		if (floor(obj_player1.image_index) == 3)
 		{
-			x = (obj_player1.x + (obj_player1.xscale * -50))
+			x = (obj_player1.x + (obj_player1.Xscale * -50))
 			y = obj_player1.y
 		}
 		if (floor(obj_player1.image_index) == 4)
 		{
-			x = (obj_player1.x + (obj_player1.xscale * -25))
+			x = (obj_player1.x + (obj_player1.Xscale * -25))
 			y = obj_player1.y
 		}
 		if (floor(obj_player1.image_index) == 5)
@@ -191,12 +191,12 @@ function scr_player_grabbed()
 		}
 		if (floor(obj_player1.image_index) == 6)
 		{
-			x = (_obj_parent_player.x + (_obj_parent_player.xscale * 25))
+			x = (_obj_parent_player.x + (_obj_parent_player.Xscale * 25))
 			y = _obj_parent_player.y
 		}
 		if (floor(_obj_parent_player.image_index) == 7)
 		{
-			x = (_obj_parent_player.x + (_obj_parent_player.xscale * 50))
+			x = (_obj_parent_player.x + (_obj_parent_player.Xscale * 50))
 			y = _obj_parent_player.y
 		}
 	}

@@ -2,7 +2,7 @@ function scr_player_bump() //gml_Script_scr_player_bump
 {
     if (sprite_index != spr_wallsplat)
     {
-        movespeed = 0
+        Movespeed = 0
         mach2 = 0
         alarm[4] = 14
         if (grounded && vsp > 0)
@@ -33,14 +33,14 @@ function scr_player_bump() //gml_Script_scr_player_bump
     }
     else
     {
-        movespeed = 0
+        Movespeed = 0
         hsp = 0
         vsp = 0
         if (floor(image_index) == (image_number - 1))
             state = states.normal
         image_speed = 0.35
     }
-    if (state == states.normal && isgustavo)
+    if (state == states.normal && global.playerCharacter == Characters.Pierre)
         state = states.ratmount
 }
 

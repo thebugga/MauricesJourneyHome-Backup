@@ -111,13 +111,13 @@ function window_to_gui_y(y)
 	var _win_pos = y / window_get_height();
 	return display_get_gui_height() * _win_pos;
 }
-function window_to_gui_xscale(xscale)
+function window_to_gui_xscale(Xscale)
 {
-	return (xscale * display_get_gui_width()) / window_get_width();
+	return (Xscale * display_get_gui_width()) / window_get_width();
 }
-function window_to_gui_yscale(yscale)
+function window_to_gui_yscale(Yscale)
 {
-	return (yscale * display_get_gui_height()) / window_get_height();
+	return (Yscale * display_get_gui_height()) / window_get_height();
 }
 function get_resolution_width(resolution, aspect_ratio = aspectratio.normal)
 {

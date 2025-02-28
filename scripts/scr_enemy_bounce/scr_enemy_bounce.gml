@@ -1,7 +1,7 @@
 function scr_enemy_bounce()
 {
 	if (!grounded)
-		hsp = (image_xscale * movespeed)
+		hsp = (image_xscale * Movespeed)
 	else
 		hsp = 0
 	if (sprite_index == jumpprepspr && floor(image_index) == (image_number - 1))
@@ -10,49 +10,49 @@ function scr_enemy_bounce()
 		{
 			attack = 10
 			jumpheight = 14
-			movespeed = 3
+			Movespeed = 3
 		}
 		if (global.bosshealth == 7)
 		{
 			attack = 10
 			jumpheight = 7
-			movespeed = 5
+			Movespeed = 5
 		}
 		if (global.bosshealth == 6)
 		{
 			attack = 10
 			jumpheight = 14
-			movespeed = 6
+			Movespeed = 6
 		}
 		if (global.bosshealth == 5)
 		{
 			attack = 50
 			jumpheight = 16
-			movespeed = 5
+			Movespeed = 5
 		}
 		if (global.bosshealth == 4)
 		{
 			attack = 10
 			jumpheight = 20
-			movespeed = 3
+			Movespeed = 3
 		}
 		if (global.bosshealth == 3)
 		{
 			attack = 250
 			jumpheight = 16
-			movespeed = 3
+			Movespeed = 3
 		}
 		if (global.bosshealth == 2)
 		{
 			attack = 200
 			jumpheight = 12
-			movespeed = 5
+			Movespeed = 5
 		}
 		if (global.bosshealth == 1)
 		{
 			attack = 120
 			jumpheight = 10
-			movespeed = 2
+			Movespeed = 2
 		}
 		sprite_index = jumpspr
 		vsp = (-jumpheight)

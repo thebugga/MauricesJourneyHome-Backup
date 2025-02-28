@@ -7,7 +7,7 @@ function scr_player_knightpepslopes()
 	alarm[5] = 2
 	alarm[7] = 60
 	if (knightmiddairstop == 0)
-		hsp = (xscale * movespeed)
+		hsp = (Xscale * Movespeed)
 	image_speed = 0.35
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
@@ -36,23 +36,23 @@ function scr_player_knightpepslopes()
 	}
 	if ((sprite_index == spr_knightpep_doublejump or sprite_index == spr_knightpep_fly) && floor(image_index) == (image_number - 1))
 		image_index = (image_number - 1)
-	if (place_meeting_solid((x + sign(hsp)), y) && ((!place_meeting_slope(x,y)) or place_meeting((x + sign(hsp)), (y - 2), obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+	if (place_meeting_solid((x + sign(hsp)), y) && ((!slopeCheck(x + Xscale, y)) or place_meeting((x + sign(hsp)), (y - 2), obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
-		movespeed = 0
+		Movespeed = 0
 		vsp = -6
 		sprite_index = spr_knightpep_bump
 		image_index = floor((image_number - 1))
 		state = states.knightpepbump
 		//scr_soundeffect(sfx_groundpound)
 	}
-	if place_meeting_slope(x,y)
+	if slopeCheck(x + Xscale, y)
 	{
 		with (instance_place(x, (y + 1), obj_slope))
 		{
-			if (other.xscale == (-sign(image_xscale)))
+			if (other.Xscale == (-sign(image_xscale)))
 			{
-				if (other.movespeed < 14)
-					other.movespeed += 0.25
+				if (other.Movespeed < 14)
+					other.Movespeed += 0.25
 			}
 		}
 	}
@@ -63,7 +63,7 @@ function scr_player_knightpepslopes()
 		sprite_index = spr_knightpep_downtrust
 		vsp = -5
 		hsp = 0
-		movespeed = 0
+		Movespeed = 0
 		state = states.knightpep
 	}
 	exit;

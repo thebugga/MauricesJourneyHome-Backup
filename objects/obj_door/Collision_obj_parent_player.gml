@@ -26,7 +26,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 			ds_list_add(global.saveroom, id);
 			if object_index == obj_player1
 			{
-				if obj_player1.isgustavo
+				if global.playerCharacter == Characters.Pierre
 					obj_player1.sprite_index = spr_ratmount_enterdoor;
 				else
 					obj_player1.sprite_index = obj_player1.spr_lookdoor;

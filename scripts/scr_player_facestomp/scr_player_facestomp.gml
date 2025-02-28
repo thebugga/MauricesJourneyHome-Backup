@@ -1,18 +1,18 @@
 function scr_player_facestomp()
 {
-	move = (key_left + key_right)
+	Move = (key_left + key_right)
 	jumpAnim = 0
-	hsp = (move * movespeed)
-	if ((place_meeting_solid((x + 1), y) && xscale == 1) or (place_meeting_solid((x - 1), y) && xscale == -1))
-		movespeed = 0
-	if (move == 0)
-		movespeed = 0
-	if (move != 0 && movespeed < 6)
-		movespeed += 0.5
-	if (xscale == 1 && move == -1)
-		movespeed = 0
-	if (xscale == -1 && move == 1)
-		movespeed = 0
+	hsp = (Move * Movespeed)
+	if ((place_meeting_solid((x + 1), y) && Xscale == 1) or (place_meeting_solid((x - 1), y) && Xscale == -1))
+		Movespeed = 0
+	if (Move == 0)
+		Movespeed = 0
+	if (Move != 0 && Movespeed < 6)
+		Movespeed += 0.5
+	if (Xscale == 1 && Move == -1)
+		Movespeed = 0
+	if (Xscale == -1 && Move == 1)
+		Movespeed = 0
 	if (!key_down)
 		state = states.jump
 	landAnim = 1
@@ -42,8 +42,8 @@ function scr_player_facestomp()
 		if (floor(image_index) == 5)
 			facestompAnim = 0
 	}
-	if (move != 0)
-		xscale = move
+	if (Move != 0)
+		Xscale = Move
 	image_speed = 0.35
 	if (grounded && input_buffer_jump < 8 && vsp > 0)
 	{

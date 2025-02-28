@@ -11,7 +11,7 @@ function cutscene_player_clone_create()
 			paletteselect = other.paletteselect
 			depth = other.depth
 			image_speed = 0.35
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			sprite_index = other.spr_idle
 			visible = true
 		}

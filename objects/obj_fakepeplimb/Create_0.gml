@@ -1,6 +1,6 @@
 scr_initenemy()
 hidden = 1
-possess_movespeed = 0
+possess_Movespeed = 0
 cooldown = 0
 hitboxID = -4
 ceiling = 0

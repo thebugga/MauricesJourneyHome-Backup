@@ -11,10 +11,10 @@ switch state
 		key_left = playerid.key_left
 		key_right = playerid.key_right
 		key_jump = playerid.key_jump
-		move = (key_left + key_right)
+		Move = (key_left + key_right)
 		playerid.x = x
 		playerid.y = y
-		playerid.xscale = xscale
+		playerid.Xscale = Xscale
 		switch substate
 		{
 			case states.normal:
@@ -25,9 +25,9 @@ switch state
 				{
 					playerid.input_buffer_jump = 8
 					vsp = -14
-					if (move != 0)
-						xscale = sign(move)
-					hsp = (xscale * 6)
+					if (Move != 0)
+						Xscale = sign(Move)
+					hsp = (Xscale * 6)
 					substate = states.jump
 				}
 				break

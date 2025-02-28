@@ -9,20 +9,20 @@ with (other)
         baddiegrabbedID.spr_palette = spr_palette
         baddiegrabbedID.paletteselect = paletteselect
         baddiegrabbedID.patterntexture = global.palettetexture
-        if (isgustavo && ispeppino)
+        if (global.playerCharacter == Characters.Pierre && global.playerCharacter == Characters.Pierre)
             baddiegrabbedID.spr_palette = spr_ratmountpalette
         swap_player(false)
-        xscale = other.image_xscale
+        Xscale = other.image_xscale
         pistolcharge = 0
         pistolchargeshooting = false
         pistolanim = -4
-        if (!isgustavo)
+        if (global.playerCharacter != Characters.Pierre)
         {
             if (!obj_swapmodefollow.key_up)
             {
                 swingdingthrow = false
                 image_index = 0
-                if (movespeed <= 10)
+                if (Movespeed <= 10)
                     sprite_index = spr_haulingstart
                 else
                     sprite_index = spr_swingding
@@ -54,9 +54,9 @@ with (other)
             with (instance_create(x, y, obj_brickcomeback))
                 wait = true
             sprite_index = spr_lonegustavo_punch
-            movespeed = other.hsp
-            if (abs(movespeed) < 10)
-                movespeed = xscale * 10
+            Movespeed = other.hsp
+            if (abs(Movespeed) < 10)
+                Movespeed = Xscale * 10
             instance_destroy(baddiegrabbedID)
         }
     }

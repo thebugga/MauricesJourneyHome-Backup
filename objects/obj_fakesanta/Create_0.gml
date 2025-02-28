@@ -2,7 +2,7 @@ scr_initenemy()
 content = [obj_snowman]
 random_buffer = 100
 random_max = 100
-possess_movespeed = 0
+possess_Movespeed = 0
 shot = 0
 grav = 0.5
 hsp = 0

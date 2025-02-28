@@ -1,10 +1,10 @@
 function scr_player_motorcycle()
 {
-	hsp = (xscale * movespeed)
+	hsp = (Xscale * Movespeed)
 	if (grounded or (!jumped))
-		movespeed = approach(movespeed, 13, 0.5)
+		Movespeed = approach(Movespeed, 13, 0.5)
 	else
-		movespeed = approach(movespeed, 8, 0.5)
+		Movespeed = approach(Movespeed, 8, 0.5)
 	image_speed = 0.35
 	if grounded
 		jumped = 0

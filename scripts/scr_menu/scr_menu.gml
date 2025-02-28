@@ -83,17 +83,17 @@ function create_option_value(_name, _value, _localization = true)
 		localization: _localization
 	};
 }
-function add_option_slide(_menu, _optionid, _name, _onmove = noone, _onchanged = noone, _sound = noone)
+function add_option_slide(_menu, _optionid, _name, _onMove = noone, _onchanged = noone, _sound = noone)
 {
 	var b = 
 	{
 		option_id: _optionid,
 		type: menutype.slide,
 		value: 100,
-		moved: false,
+		Moved: false,
 		name: _name,
 		on_changed: _onchanged,
-		on_move: _onmove,
+		on_Move: _onMove,
 		slidecount: 0,
 		moving: false,
 		sound: -4

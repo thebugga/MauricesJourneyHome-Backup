@@ -1,32 +1,32 @@
 function scr_player_ratmount() //gml_Script_scr_player_ratmount
 {
-    if (global.swapmode && key_attack && key_fightball && ratmount_movespeed >= 12 && (!instance_exists(obj_swapmodegrab)) && (!instance_exists(obj_swapdeatheffect)) && (!instance_exists(obj_noiseanimatroniceffect)) && obj_swapmodefollow.animatronic <= 0)
+    if (global.swapmode && key_attack && key_fightball && ratmount_Movespeed >= 12 && (!instance_exists(obj_swapmodegrab)) && (!instance_exists(obj_swapdeatheffect)) && (!instance_exists(obj_noiseanimatroniceffect)) && obj_swapmodefollow.animatronic <= 0)
     {
         sprite_index = spr_fightball
         jump_p2 = 0
         instance_create_unique(x, y, obj_swapgusfightball)
         state = states.mach3
-        movespeed = abs(hsp)
-        if (movespeed < 12)
-            movespeed = 12
+        Movespeed = abs(hsp)
+        if (Movespeed < 12)
+            Movespeed = 12
         if (hsp != 0)
-            xscale = sign(hsp)
+            Xscale = sign(hsp)
         return;
     }
-    move = (key_left + key_right)
+    Move = (key_left + key_right)
     doublejump = 0
     if (ratgrabbedID != noone && (!instance_exists(ratgrabbedID)))
         ratgrabbedID = noone
-    hsp = movespeed
-    var r = ratmount_movespeed
-    if ((place_meeting((x + xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) || (abs(movespeed) < 8 && move != xscale) || (!key_attack) || abs(movespeed) <= 6)
+    hsp = Movespeed
+    var r = ratmount_Movespeed
+    if ((place_meeting((x + Xscale), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destructibles)))) || (abs(Movespeed) < 8 && Move != Xscale) || (!key_attack) || abs(Movespeed) <= 6)
     {
         gustavodash = 0
-        ratmount_movespeed = 8
+        ratmount_Movespeed = 8
     }
     if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && gustavodash != 51)
     {
-        movespeed = 0
+        Movespeed = 0
         if (r >= 12)
         {
             var _bump = ledge_bump((vsp >= 0 ? 32 : 22))
@@ -39,8 +39,8 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
                 else
                     sprite_index = spr_lonegustavo_bump
                 image_index = 0
-                instance_create((x + (xscale * 15)), (y + 10), obj_bumpeffect)
-                hsp = ((-xscale) * 4)
+                instance_create((x + (Xscale * 15)), (y + 10), obj_bumpeffect)
+                hsp = ((-Xscale) * 4)
                 vsp = -5
                 with (obj_camera)
                 {
@@ -51,12 +51,12 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
             }
         }
     }
-    if (ratmount_movespeed >= 12 && gustavodash != 51)
+    if (ratmount_Movespeed >= 12 && gustavodash != 51)
     {
         instance_create(x, y, obj_jumpdust)
         gustavodash = 51
     }
-    if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+    if (ratmount_Movespeed >= 12 || gusdashpadbuffer > 0)
     {
         if (!instance_exists(chargeeffectid))
         {
@@ -67,39 +67,39 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
             }
         }
     }
-    if (move != xscale && move != 0 && gusdashpadbuffer <= 0 && sprite_index != spr_lonegustavo_kick)
+    if (Move != Xscale && Move != 0 && gusdashpadbuffer <= 0 && sprite_index != spr_lonegustavo_kick)
     {
-        xscale = move
-        if (abs(movespeed) > 2 && abs(hsp) > 2 && grounded)
+        Xscale = Move
+        if (abs(Movespeed) > 2 && abs(hsp) > 2 && grounded)
         {
             fmod_event_one_shot_3d("event:/sfx/pep/backslide", x, y)
             state = states.ratmountskid
-            movespeed = abs(movespeed)
+            Movespeed = abs(Movespeed)
         }
     }
-    if (gusdashpadbuffer > 0 && movespeed != 0)
-        xscale = sign(movespeed)
+    if (gusdashpadbuffer > 0 && Movespeed != 0)
+        Xscale = sign(Movespeed)
     if (gusdashpadbuffer > 0)
         gusdashpadbuffer--
     if (gusdashpadbuffer <= 0)
     {
-        if (move != 0)
+        if (Move != 0)
         {
-            if (move == xscale)
-                movespeed = approach(movespeed, (xscale * ratmount_movespeed), 0.5)
+            if (Move == Xscale)
+                Movespeed = approach(Movespeed, (Xscale * ratmount_Movespeed), 0.5)
             else
-                movespeed = approach(movespeed, 0, 0.5)
+                Movespeed = approach(Movespeed, 0, 0.5)
         }
         else
-            movespeed = approach(movespeed, 0, 0.5)
+            Movespeed = approach(Movespeed, 0, 0.5)
     }
     else
     {
-        ratmount_movespeed = 12
-        movespeed = (xscale * ratmount_movespeed)
+        ratmount_Movespeed = 12
+        Movespeed = (Xscale * ratmount_Movespeed)
     }
-    if (abs(movespeed) > 2)
-        image_speed = (abs(movespeed) / 12)
+    if (abs(Movespeed) > 2)
+        image_speed = (abs(Movespeed) / 12)
     else
         image_speed = 0.35
     if (sprite_index == spr_player_ratmountmach3 || sprite_index == spr_lonegustavo_mach3)
@@ -111,12 +111,12 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
         {
             if (hsp != 0 && (!front))
             {
-                if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+                if (ratmount_Movespeed >= 12 || gusdashpadbuffer > 0)
                     sprite_index = spr_player_ratmountmach3
                 else if key_attack
                     sprite_index = spr_player_ratmountattack
                 else
-                    sprite_index = spr_player_ratmountmove
+                    sprite_index = spr_player_ratmountMove
             }
             else
             {
@@ -155,7 +155,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
     {
         if (hsp != 0 && (!front))
         {
-            if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+            if (ratmount_Movespeed >= 12 || gusdashpadbuffer > 0)
                 sprite_index = spr_lonegustavo_mach3
             else if key_attack
                 sprite_index = spr_lonegustavo_dash
@@ -181,17 +181,17 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
     if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && state != states.ratmountskid)
     {
         input_buffer_jump = 0
-        particle_set_scale((4 << 0), xscale, 1)
+        particle_set_scale((4 << 0), Xscale, 1)
         create_particle(x, y, (4 << 0), 0)
         scr_fmod_soundeffect(jumpsnd, x, y)
         if brick
         {
-            if ((ratmount_movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
+            if ((ratmount_Movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
                 sprite_index = spr_player_ratmountdashjump
             else
                 sprite_index = spr_player_ratmountjump
         }
-        else if ((ratmount_movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
+        else if ((ratmount_Movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
             sprite_index = spr_lonegustavo_dashjump
         else
             sprite_index = spr_player_ratmountgroundpound
@@ -205,7 +205,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
     {
         state = states.ratmountjump
         jumpAnim = 0
-        if (ratmount_movespeed >= 12)
+        if (ratmount_Movespeed >= 12)
         {
             if brick
                 sprite_index = spr_player_ratmountdashjump
@@ -217,11 +217,11 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
         else
             sprite_index = spr_player_ratmountgroundpoundfall
     }
-    if (key_attack && grounded && (!(place_meeting((x + xscale), y, obj_solid))))
+    if (key_attack && grounded && (!(place_meeting((x + Xscale), y, obj_solid))))
     {
-        move = xscale
-        if (ratmount_movespeed < 12)
-            ratmount_movespeed = approach(ratmount_movespeed, 12, 0.15)
+        Move = Xscale
+        if (ratmount_Movespeed < 12)
+            ratmount_Movespeed = approach(ratmount_Movespeed, 12, 0.15)
     }
     if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && gusdashpadbuffer == 0)
     {
@@ -229,13 +229,13 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
         ratmount_kickbrick()
         if (state == states.ratmountskid)
         {
-            movespeed = (-movespeed)
-            hsp = movespeed
+            Movespeed = (-Movespeed)
+            hsp = Movespeed
         }
     }
     if (input_buffer_slap > 0 && (!key_up) && gusdashpadbuffer == 0)
     {
-        particle_set_scale((5 << 0), xscale, 1)
+        particle_set_scale((5 << 0), Xscale, 1)
         create_particle(x, y, (5 << 0), 0)
         input_buffer_slap = 0
         if (brick == 1)
@@ -248,16 +248,16 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
         gustavohitwall = 0
         state = states.ratmountpunch
         image_index = 0
-        if (move != 0)
-            xscale = move
-        movespeed = (xscale * 12)
+        if (Move != 0)
+            Xscale = Move
+        Movespeed = (Xscale * 12)
         sprite_index = spr_lonegustavo_punch
     }
-    if ((!instance_exists(dashcloudid)) && grounded && ratmount_movespeed >= 12)
+    if ((!instance_exists(dashcloudid)) && grounded && ratmount_Movespeed >= 12)
     {
         with (instance_create(x, y, obj_dashcloud))
         {
-            image_xscale = other.xscale
+            image_xscale = other.Xscale
             other.dashcloudid = id
         }
     }
@@ -284,8 +284,8 @@ function ratmount_dotaunt() //gml_Script_ratmount_dotaunt
         notification_push((55 << 0), [room])
         tauntstoredisgustavo = 1
         taunttimer = 20
-        tauntstoredmovespeed = movespeed
-        tauntstoredratmount_movespeed = ratmount_movespeed
+        tauntstoredMovespeed = Movespeed
+        tauntstoredratmount_Movespeed = ratmount_Movespeed
         tauntstoredsprite = sprite_index
         tauntstoredstate = state
         tauntstoredvsp = vsp
@@ -319,7 +319,7 @@ function ratmount_kickbrick() //gml_Script_ratmount_kickbrick
     {
         if (other.state == states.ratmountjump || other.state == states.ratmountbounce)
             up = 1
-        image_xscale = other.xscale
+        image_xscale = other.Xscale
         xoffset = _pad
     }
     state = states.ratmountgroundpound
@@ -337,21 +337,21 @@ function ratmount_shootpowerup() //gml_Script_ratmount_shootpowerup
         switch ratpowerup
         {
             case 738:
-                with (instance_create((x + (20 * xscale)), y, obj_playernoisearrow))
-                    direction = point_direction(x, y, (x + (other.xscale * 4)), y)
+                with (instance_create((x + (20 * Xscale)), y, obj_playernoisearrow))
+                    direction = point_direction(x, y, (x + (other.Xscale * 4)), y)
                 break
             case 434:
-                with (instance_create((x + (20 * xscale)), (y + 20), obj_playersmokehitbox))
+                with (instance_create((x + (20 * Xscale)), (y + 20), obj_playersmokehitbox))
                 {
-                    spd += (other.movespeed / 2)
-                    image_xscale = other.xscale
+                    spd += (other.Movespeed / 2)
+                    image_xscale = other.Xscale
                 }
                 break
             case 754:
-                with (instance_create((x + (20 * xscale)), y, obj_playerspikecheese))
+                with (instance_create((x + (20 * Xscale)), y, obj_playerspikecheese))
                 {
-                    spd += other.movespeed
-                    image_xscale = other.xscale
+                    spd += other.Movespeed
+                    image_xscale = other.Xscale
                 }
                 break
         }

@@ -1,7 +1,7 @@
 function scr_player_rocket()
 {
-	hsp = (xscale * movespeed)
-	move = (key_right + key_left)
+	hsp = (Xscale * Movespeed)
+	Move = (key_right + key_left)
 	with (instance_place((x + hsp), y, obj_asteroid))
 		instance_destroy()
 	alarm[5] = -1
@@ -19,8 +19,8 @@ function scr_player_rocket()
 		else
 			rocketvsp = approach(rocketvsp, 0, _accel)
 		vsp = rocketvsp
-		if (movespeed < 16)
-			movespeed = 16
+		if (Movespeed < 16)
+			Movespeed = 16
 	}
 	else
 	{
@@ -30,12 +30,12 @@ function scr_player_rocket()
 		{
 			sprite_index = spr_rocket
 			image_index = 0
-			movespeed = 16
+			Movespeed = 16
 		}
 	}
 	if key_jump
 	{
-		dir = xscale
+		dir = Xscale
 		state = states.mach2
 		sprite_index = spr_mach2jump
 		jumpstop = 0
@@ -43,7 +43,7 @@ function scr_player_rocket()
 		instance_create(x, y, obj_jumpdust)
 		with (instance_create(x, (y + 12), obj_rocketdead))
 		{
-			hsp = (other.xscale * 6)
+			hsp = (other.Xscale * 6)
 			vsp = 5
 			image_xscale = sign(hsp)
 		}
@@ -59,8 +59,8 @@ function scr_player_rocket()
 	}
 	if grounded
 	{
-		move = (key_left + key_right)
-		if (move != 0 && move != xscale && sprite_index != spr_rocketstart)
+		Move = (key_left + key_right)
+		if (Move != 0 && Move != Xscale && sprite_index != spr_rocketstart)
 		{
 			state = states.rocketslide
 			//scr_soundeffect(sfx_machslideboost)
@@ -94,7 +94,7 @@ function scr_player_rocket()
 		}
 		flash = 0
 		state = states.bump
-		hsp = (-3.5 * xscale)
+		hsp = (-3.5 * Xscale)
 		vsp = -6
 		mach2 = 0
 		image_index = 0
@@ -107,7 +107,7 @@ function scr_player_rocket()
 		{
 			if (other.fightball == 1)
 				instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar)
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			other.dashcloudid = id
 		}
 	}
@@ -117,7 +117,7 @@ function scr_player_rocket()
 		{
 			if (other.fightball == 1)
 				instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar)
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			sprite_index = spr_watereffect
 			other.dashcloudid = id
 		}

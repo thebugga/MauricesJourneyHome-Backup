@@ -1,38 +1,38 @@
 function scr_player_mort()
 {
-	move = (key_right + key_left)
-	hsp = movespeed
+	Move = (key_right + key_left)
+	hsp = Movespeed
 	mort = 0
 	doublejump = 0
 	jumpstop = 0
 	if key_jump
 		input_buffer_jump = 0
-	if (move != 0)
+	if (Move != 0)
 	{
-		if (move == xscale)
-			movespeed = approach(movespeed, (xscale * 8), 0.8)
+		if (Move == Xscale)
+			Movespeed = approach(Movespeed, (Xscale * 8), 0.8)
 		else
-			movespeed = approach(movespeed, 0, 0.8)
-		if (movespeed <= 0)
-			xscale = move
+			Movespeed = approach(Movespeed, 0, 0.8)
+		if (Movespeed <= 0)
+			Xscale = Move
 	}
 	else
-		movespeed = approach(movespeed, 0, 0.8)
-	if (movespeed < 3 && move != 0)
+		Movespeed = approach(Movespeed, 0, 0.8)
+	if (Movespeed < 3 && Move != 0)
 		image_speed = 0.35
-	else if (movespeed > 3 && movespeed < 6)
+	else if (Movespeed > 3 && Movespeed < 6)
 		image_speed = 0.45
 	else
 		image_speed = 0.6
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
-		movespeed = 0
-		if (sprite_index == spr_player_barrelmove)
+		Movespeed = 0
+		if (sprite_index == spr_player_barrelMove)
 			sprite_index = spr_player_barrelidle
 	}
 	if (!landAnim)
 	{
-		if (move != 0)
+		if (Move != 0)
 			sprite_index = spr_player_mortwalk
 		else
 		{
@@ -43,7 +43,7 @@ function scr_player_mort()
 	else if (floor(image_index) == (image_number - 1))
 	{
 		landAnim = 0
-		if (move != 0)
+		if (Move != 0)
 			sprite_index = spr_player_mortwalk
 		else
 			sprite_index = spr_player_mortidle
@@ -75,8 +75,8 @@ function mort_attack()
 		state = states.mortattack
 		sprite_index = spr_player_mortattackfront
 		image_index = 0
-		if (move != 0)
-			xscale = move
+		if (Move != 0)
+			Xscale = Move
 		var _angle = 0
 		if key_up
 		{
@@ -91,12 +91,12 @@ function mort_attack()
 			sprite_index = spr_player_mortattackdown
 		}
 		else
-			movespeed = (xscale * 12)
+			Movespeed = (Xscale * 12)
 		with (instance_create(x, y, obj_morthitbox))
 		{
 			playerid = other.id
 			if (_angle == 0)
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 			image_angle = _angle
 			alarm[0] = 15
 		}
@@ -108,7 +108,7 @@ function mort_attack()
 		else
 		{
 			punch_afterimage = 5
-			create_mach3effect(x, y, sprite_index, image_index, xscale)
+			create_mach3effect(x, y, sprite_index, image_index, Xscale)
 		}
 	}
 	exit;

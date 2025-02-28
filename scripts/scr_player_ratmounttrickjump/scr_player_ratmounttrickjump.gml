@@ -1,6 +1,6 @@
 function scr_player_ratmounttrickjump()
 {
-	hsp = (movespeed * xscale)
+	hsp = (Movespeed * Xscale)
 	if (sprite_index != spr_supertaunt1)
 		image_speed = 0.35
 	else
@@ -15,7 +15,7 @@ function scr_player_ratmounttrickjump()
 	{
 		if (sprite_index == spr_mach2jump)
 		{
-			if (movespeed > 2)
+			if (Movespeed > 2)
 				state = states.ratmounttumble
 			else
 				state = states.normal

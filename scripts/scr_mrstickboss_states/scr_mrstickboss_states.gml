@@ -8,7 +8,7 @@ function boss_mrstick_decide_attack()
 		switch state
 		{
 			case states.boss_shield:
-				movespeed = 0
+				Movespeed = 0
 				hsp = 0
 				shield_buffer = shield_max
 				image_index = 0
@@ -21,19 +21,19 @@ function boss_mrstick_decide_attack()
 				image_xscale = (x > (room_width / 2) ? -1 : 1)
 				hsp = 0
 				target_x = (x > (room_width / 2) ? (room_width / 7) : (room_width - (room_width / 7)))
-				movespeed = 0
+				Movespeed = 0
 				helicopterstate = 0
 				break
 			case states.boss_panicjump:
 				sprite_index = spr_mrstick_jump
 				vsp = -11
 				image_xscale = (x > (room_width / 2) ? -1 : 1)
-				movespeed = 10
+				Movespeed = 10
 				target_x = (x > (room_width / 2) ? (room_width / 7) : (room_width - (room_width / 7)))
 				break
 			case states.jump:
 				image_xscale = (x > (room_width / 2) ? 1 : -1)
-				movespeed = 12
+				Movespeed = 12
 				vsp = -11
 				warped = 0
 				break
@@ -46,7 +46,7 @@ function boss_mrstick_decide_attack()
 				sprite_index = spr_mrstick_jump
 				vsp = -20
 				image_xscale = (x > (room_width / 2) ? -1 : 1)
-				movespeed = 4
+				Movespeed = 4
 				break
 			case states.boss_cardboard:
 				with (instance_create(x, y, obj_mrstickcardboard))
@@ -71,32 +71,32 @@ function boss_mrstick_normal()
 {
 	image_speed = 0.35
 	var dx = abs((targetplayer.x - x))
-	move = 0
+	Move = 0
 	if (dx < 400)
-		move = (-(sign((targetplayer.x - x))))
+		Move = (-(sign((targetplayer.x - x))))
 	if place_meeting((x + (-((image_xscale * 48)))), y, obj_solid)
-		move = 0
-	hsp = (move * movespeed)
+		Move = 0
+	hsp = (Move * Movespeed)
 	if (x != targetplayer.x)
 		image_xscale = sign((targetplayer.x - x))
-	var targetspeed = (move == image_xscale ? (normal_spd - 2) : normal_spd)
-	if (move != 0)
+	var targetspeed = (Move == image_xscale ? (normal_spd - 2) : normal_spd)
+	if (Move != 0)
 	{
-		if (movespeed < targetspeed)
-			movespeed += 0.25
-		else if (movespeed > targetspeed)
-			movespeed -= 0.5
-		if (movespeed < 3)
+		if (Movespeed < targetspeed)
+			Movespeed += 0.25
+		else if (Movespeed > targetspeed)
+			Movespeed -= 0.5
+		if (Movespeed < 3)
 			image_speed = 0.35
-		else if (movespeed > 3 && movespeed < 6)
+		else if (Movespeed > 3 && Movespeed < 6)
 			image_speed = 0.45
 		else
 			image_speed = 0.6
 	}
-	else if (movespeed > 0)
-		movespeed -= 0.1
-	else if (movespeed <= 0)
-		movespeed = 0
+	else if (Movespeed > 0)
+		Movespeed -= 0.1
+	else if (Movespeed <= 0)
+		Movespeed = 0
 	if (hsp != 0)
 		sprite_index = walkspr
 	else
@@ -134,7 +134,7 @@ function boss_mrstick_shield()
 
 function boss_mrstick_helicopterhat()
 {
-	x = approach(x, target_x, movespeed)
+	x = approach(x, target_x, Movespeed)
 	switch helicopterstate
 	{
 		case 0:
@@ -148,12 +148,12 @@ function boss_mrstick_helicopterhat()
 		case 1:
 			vsp = 0
 			y = Wave((helicoptery - 32), (helicoptery + 32), 1, 0)
-			if (movespeed < helicopterspeed)
-				movespeed += 0.5
+			if (Movespeed < helicopterspeed)
+				Movespeed += 0.5
 			if (floor(x) == floor(target_x))
 			{
 				helicopterstate = 2
-				movespeed = 0
+				Movespeed = 0
 			}
 			break
 		case 2:
@@ -170,7 +170,7 @@ function boss_mrstick_helicopterhat()
 function boss_mrstick_panicjump()
 {
 	image_speed = 0.35
-	hsp = (image_xscale * movespeed)
+	hsp = (image_xscale * Movespeed)
 	if (sprite_index == spr_mrstick_jump && image_index > (image_number - 1))
 	{
 		image_index = 0
@@ -180,8 +180,8 @@ function boss_mrstick_panicjump()
 		state = states.normal
 	if grounded
 	{
-		if (movespeed < panicjumpspeed)
-			movespeed += 0.5
+		if (Movespeed < panicjumpspeed)
+			Movespeed += 0.5
 		sprite_index = spr_mrstick_run
 	}
 	exit;
@@ -189,7 +189,7 @@ function boss_mrstick_panicjump()
 
 function boss_mrstick_jump()
 {
-	hsp = (image_xscale * movespeed)
+	hsp = (image_xscale * Movespeed)
 	if (sprite_index == spr_mrstick_jump && image_index > (image_number - 1))
 	{
 		image_index = 0
@@ -236,7 +236,7 @@ function boss_mrstick_smokebombstart()
 	hsp = 0
 	if (image_index > (image_number - 1))
 	{
-		movespeed = 12
+		Movespeed = 12
 		sprite_index = spr_mrstick_run
 		image_index = 0
 		target_x = (x > (room_width / 2) ? (room_width / 7) : (room_width - (room_width / 7)))
@@ -256,30 +256,30 @@ function boss_mrstick_smokebombstart()
 
 function boss_mrstick_smokebombcrawl()
 {
-	hsp = (image_xscale * movespeed)
+	hsp = (image_xscale * Movespeed)
 	if (x > (target_x - 16) && x < (target_x + 16))
 	{
 		state = states.normal
-		movespeed = 6
+		Movespeed = 6
 	}
 	exit;
 }
 
 function boss_mrstick_springshoes()
 {
-	hsp = (image_xscale * movespeed)
+	hsp = (image_xscale * Movespeed)
 	if (sprite_index == spr_mrstick_jump && image_index > (image_number - 1))
 	{
 		image_index = 0
 		sprite_index = spr_mrstick_fall
 	}
 	var tx = (room_width / 2)
-	if (movespeed > 0 && x > (tx - 16) && x < (tx + 16))
-		movespeed -= 0.5
+	if (Movespeed > 0 && x > (tx - 16) && x < (tx + 16))
+		Movespeed -= 0.5
 	if grounded
 	{
 		hsp = 0
-		movespeed = 0
+		Movespeed = 0
 		state = states.stun
 		stunned = 100
 		sprite_index = spr_mrstick_hurt
@@ -305,7 +305,7 @@ function boss_mrstick_cardboard()
 		instance_destroy(obj_mrstickcardboard)
 		cardboard_buffer = 0
 		state = states.boss_cardboardend
-		movespeed = 8
+		Movespeed = 8
 		x = target_x
 		image_xscale = (x < (room_width / 2) ? 1 : -1)
 		y = (room_height / 3)
@@ -315,7 +315,7 @@ function boss_mrstick_cardboard()
 
 function boss_mrstick_cardboardend()
 {
-	hsp = (image_xscale * movespeed)
+	hsp = (image_xscale * Movespeed)
 	if (place_meeting_solid(x, (y + vsp)) && (!(place_meeting_solid(x, y))))
 	{
 		state = states.normal

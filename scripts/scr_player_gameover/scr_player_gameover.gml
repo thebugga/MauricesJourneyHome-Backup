@@ -31,7 +31,7 @@ function scr_player_gameover()
 	{
 		x = obj_timesup.x + lengthdir_x(timeup_dist * obj_timesup.image_xscale, timeup_angle + obj_timesup.image_angle)
 		y = obj_timesup.y + lengthdir_y(timeup_dist * obj_timesup.image_xscale, timeup_angle + obj_timesup.image_angle)
-		angle = timeup_anglediff + obj_timesup.image_angle
+		Rotation = timeup_anglediff + obj_timesup.image_angle
 	}
 	flash = 0
 	alarm[0] = -1

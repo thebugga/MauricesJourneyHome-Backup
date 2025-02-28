@@ -2,7 +2,7 @@ function scr_player_knightpepbump()
 {
 	alarm[5] = 2
 	alarm[7] = 60
-	hsp = ((-xscale) * movespeed)
+	hsp = ((-Xscale) * Movespeed)
 	if (grounded && vsp > 0)
 	{
 		state = states.knightpep

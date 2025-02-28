@@ -1,4 +1,4 @@
-if (isgustavo && ispeppino)
+if (global.playerCharacter == Characters.Pierre && global.playerCharacter == Characters.Pierre)
     draw_sprite(spr_lonebrick_wait, -1, xstart, ystart)
 shader_set(global.Pal_Shader)
 pal_swap_set(spr_palette, 1, false)

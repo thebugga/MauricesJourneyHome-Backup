@@ -1,7 +1,7 @@
 instance_destroy()
 with (playerid)
 {
-	if (!isgustavo)
+	if (global.playerCharacter != Characters.Pierre)
 		state = states.normal
 	else
 		state = states.ratmount

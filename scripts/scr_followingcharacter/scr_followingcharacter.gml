@@ -5,7 +5,7 @@ function following_character_init() //gml_Script_following_character_init
     LAG_STEPS = 20
     followqueue = ds_queue_create()
     instakilled = false
-    dir = obj_player1.xscale
+    dir = obj_player1.Xscale
     space = 0
     maxspace = 1
     spaceaccel = 0.2

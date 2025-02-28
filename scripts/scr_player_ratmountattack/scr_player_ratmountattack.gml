@@ -1,14 +1,14 @@
 function scr_player_ratmountattack()
 {
 	image_speed = 0.35
-	hsp = (xscale * movespeed)
+	hsp = (xscale * Movespeed)
 	vsp = 0
-	move = (key_left + key_right)
+	Move = (key_left + key_right)
 	landAnim = 0
-	if (movespeed < 10 && grounded)
-		movespeed += 0.5
+	if (Movespeed < 10 && grounded)
+		Movespeed += 0.5
 	else if (!grounded)
-		movespeed = 10
+		Movespeed = 10
 	if (key_jump && (!doublejump))
 	{
 		doublejump = 1

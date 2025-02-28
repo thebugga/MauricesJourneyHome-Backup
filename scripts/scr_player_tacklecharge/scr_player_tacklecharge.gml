@@ -3,18 +3,18 @@ function scr_player_tacklecharge()
 	if (windingAnim < 2000)
 		windingAnim++
 	if (!(place_meeting(x, (y + 1), obj_railparent)))
-		hsp = (xscale * movespeed)
+		hsp = (Xscale * Movespeed)
 	else
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp = ((xscale * movespeed) + (_railinst.movespeed * _railinst.dir))
+		hsp = ((Xscale * Movespeed) + (_railinst.Movespeed * _railinst.dir))
 	}
-	move2 = (key_right2 + key_left2)
-	move = (key_right + key_left)
-	movespeed = 10
+	Move2 = (key_right2 + key_left2)
+	Move = (key_right + key_left)
+	Movespeed = 10
 	crouchslideAnim = 1
-	if (movespeed < 24 && move == xscale)
-		movespeed += 0.05
+	if (Movespeed < 24 && Move == Xscale)
+		Movespeed += 0.05
 	if ((!key_jump2) && jumpstop == 0 && vsp < 0.5)
 	{
 		vsp /= 20
@@ -54,7 +54,7 @@ function scr_player_tacklecharge()
 				}
 			}
 		}
-		movespeed = 0
+		Movespeed = 0
 		state = states.bump
 		hsp = -2.5
 		vsp = -3
@@ -71,25 +71,25 @@ function scr_player_tacklecharge()
 			machhitAnim = 0
 		state = states.crouchslide
 	}
-	if ((!key_attack) && move != xscale && grounded)
+	if ((!key_attack) && Move != Xscale && grounded)
 	{
 		image_index = 0
 		state = states.machslide
 		sprite_index = spr_machslidestart
 	}
-	if (move == (-xscale) && grounded)
+	if (Move == (-Xscale) && grounded)
 	{
 		image_index = 0
 		state = states.machslide
 		sprite_index = spr_machslideboost
 	}
-	if (move == xscale && (!key_attack) && grounded)
+	if (Move == Xscale && (!key_attack) && grounded)
 		state = states.normal
 	if ((!instance_exists(dashcloudid)) && grounded)
 	{
 		with (instance_create(x, y, obj_dashcloud))
 		{
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			other.dashcloudid = id
 		}
 	}

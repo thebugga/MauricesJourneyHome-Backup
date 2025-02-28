@@ -14,7 +14,7 @@ if (sprite_index == spr_grabbiehand_fall && player == -4)
 				{
 					image_index = i
 					vsp = random_range(-10, -5)
-					hsp = ((-p.xscale) * random_range(4, 8))
+					hsp = ((-p.Xscale) * random_range(4, 8))
 				}
 				i++
 			}

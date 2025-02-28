@@ -7,9 +7,9 @@ function scr_player_golf()
 	global.heattime = 60
 	if (sprite_index == spr_golfidle)
 	{
-		move = (key_left + key_right)
-		if (move != 0)
-			xscale = move
+		Move = (key_left + key_right)
+		if (Move != 0)
+			Xscale = Move
 		if key_slap2
 		{
 			sprite_index = spr_golfswing

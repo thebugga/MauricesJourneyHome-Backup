@@ -2,7 +2,7 @@ function scr_pizzaball_normal()
 {
 	if thrown
 	{
-		hsp = (image_xscale * (movespeed + slopespeed))
+		hsp = (image_xscale * (Movespeed + slopespeed))
 		with (obj_destructibles)
 		{
 			if place_meeting((x - other.hsp), y, other.id)
@@ -26,15 +26,15 @@ function scr_pizzaball_normal()
 		ds_list_clear(global.instancelist)
 		if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destroyablegolf))) && ((!(place_meeting((x + hsp), y, obj_slope))) or place_meeting((x + hsp), (y - 4), obj_solid)))
 		{
-			angle = 0
+			Rotation = 0
 			image_xscale *= -1
-			movespeed /= 1.3
+			Movespeed /= 1.3
 			sprite_index = spr_pizzaball_hitwall
 			image_index = 0
 		}
 		if (grounded && (!kicked))
 		{
-			if (movespeed > 2)
+			if (Movespeed > 2)
 			{
 				if (jspd > 1 && sprite_index != spr_pizzaball_hitwall)
 				{
@@ -43,22 +43,22 @@ function scr_pizzaball_normal()
 				}
 				vsp = (-jspd)
 				jspd /= 2
-				movespeed /= 1.3
+				Movespeed /= 1.3
 			}
 		}
 		else if (grounded or kicked)
 		{
-			if (movespeed > 0)
-				movespeed -= deccel
+			if (Movespeed > 0)
+				Movespeed -= deccel
 			else if (slopespeed <= 0)
-				movespeed = 0
+				Movespeed = 0
 		}
 		if place_meeting(x, (y + 1), obj_current)
 		{
 			var _currentinst = instance_place(x, (y + 1), obj_current)
-			movespeed = 8
+			Movespeed = 8
 			image_xscale = sign(_currentinst.image_xscale)
-			hsp = (image_xscale * movespeed)
+			hsp = (image_xscale * Movespeed)
 			vsp = 0
 			kicked = 1
 		}
@@ -66,12 +66,12 @@ function scr_pizzaball_normal()
 	else
 	{
 		kicked = 0
-		hsp = (image_xscale * (movespeed + slopespeed))
+		hsp = (image_xscale * (Movespeed + slopespeed))
 		var _deccel = 0.1
-		if (movespeed > 0)
-			movespeed -= _deccel
+		if (Movespeed > 0)
+			Movespeed -= _deccel
 		else
-			movespeed = 0
+			Movespeed = 0
 	}
 	if (jspd < 0)
 		jspd = 0
@@ -85,7 +85,7 @@ function scr_pizzaball_normal()
 			sprite_index = spr_pizzaball_idle1
 		else if (sprite_index == spr_pizzaball_roll)
 		{
-			if (!place_meeting_slope(x,y))
+			if (!slopeCheck(x + Xscale, y))
 			{
 				if (sprite_index != spr_pizzaball_hitwall2)
 				{

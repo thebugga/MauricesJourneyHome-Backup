@@ -18,6 +18,6 @@ if (steppy == 0)
 if ((xprevious - x) != 0)
 	image_xscale = (-(sign((xprevious - x))))
 else if (playerid.hsp == 0)
-	image_xscale = playerid.xscale
-if (dir != playerid.xscale)
-	dir = playerid.xscale
+	image_xscale = playerid.Xscale
+if (dir != playerid.Xscale)
+	dir = playerid.Xscale

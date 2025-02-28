@@ -4,12 +4,12 @@ function scr_player_freefallland()
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	moveAnim = 1
+	MoveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
 	machhitAnim = 0
-	movespeed = 0
+	Movespeed = 0
 	facehurt = 1
 	start_running = 1
 	alarm[4] = 14

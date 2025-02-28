@@ -106,13 +106,13 @@ function scr_enemy_stun()
 	if place_meeting(x, (y + 1), obj_railparent)
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		railmovespeed = (_railinst.movespeed * _railinst.dir)
+		railMovespeed = (_railinst.Movespeed * _railinst.dir)
 		if (grounded && (!thrown))
-			hsp = railmovespeed
+			hsp = railMovespeed
 	}
 	else
 	{
-		railmovespeed = approach(railmovespeed, 0, 0.5)
+		railMovespeed = approach(railMovespeed, 0, 0.5)
 		if grounded
 			hsp = approach(hsp, 0, 0.3)
 	}

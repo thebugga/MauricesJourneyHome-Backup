@@ -5,7 +5,7 @@ if active
 		with (other)
 		{
 			instance_create(x, y, obj_genericpoofeffect)
-			movespeed = hsp
+			Movespeed = hsp
 			state = states.barrel
 			image_index = 0
 		}

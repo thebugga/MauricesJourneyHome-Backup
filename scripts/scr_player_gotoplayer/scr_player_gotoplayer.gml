@@ -1,7 +1,7 @@
 function scr_player_gotoplayer()
 {
 	pogochargeactive = 0
-	movespeed = 0
+	Movespeed = 0
 	visible = false
 		playerid = (object_index == obj_player2 ? obj_player1 : obj_player2)
 		var _dir = point_direction(x, y, playerid.x, playerid.y)

@@ -1,4 +1,4 @@
 len = 96
-angle = 0
+Rotation = 0
 angle_dir = 1
 angle_spd = 2

@@ -8,8 +8,8 @@ function scr_player_cheesepepfling()
 	{
 		if (fling > 0.5)
 		{
-			movespeed = fling
-			hsp = (movespeed * xscale)
+			Movespeed = fling
+			hsp = (Movespeed * Xscale)
 			vsp = -6
 			state = states.cheesepeplaunch
 			sprite_index = spr_cheesepepjumpstart

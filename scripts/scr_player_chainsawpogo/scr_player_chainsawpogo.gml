@@ -1,8 +1,8 @@
 function scr_player_chainsawpogo()
 {
-	hsp = (xscale * movespeed)
-	if ((place_meeting_solid((x + 1), y) && xscale == 1) or (place_meeting_solid((x - 1), y) && xscale == -1))
-		movespeed = 0
+	hsp = (Xscale * Movespeed)
+	if ((place_meeting_solid((x + 1), y) && Xscale == 1) or (place_meeting_solid((x - 1), y) && Xscale == -1))
+		Movespeed = 0
 	landAnim = 1
 	if (ladderbuffer > 0)
 		ladderbuffer--
@@ -11,7 +11,7 @@ function scr_player_chainsawpogo()
 		vsp = grav
 		jumpstop = 1
 	}
-	if (place_meeting_solid((x + 1), y) && xscale == 1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
+	if (place_meeting_solid((x + 1), y) && Xscale == 1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
 		machhitAnim = 0
 		state = states.chainsawbump
@@ -21,7 +21,7 @@ function scr_player_chainsawpogo()
 		image_index = 0
 		instance_create((x + 10), (y + 10), obj_bumpeffect)
 	}
-	else if (place_meeting_solid((x - 1), y) && xscale == -1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
+	else if (place_meeting_solid((x - 1), y) && Xscale == -1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
 		machhitAnim = 0
 		state = states.chainsawbump
@@ -44,8 +44,8 @@ function scr_player_chainsawpogo()
 	else if (floor(image_index) == 4)
 		sprite_index = spr_player_chainsawpogo2
 	image_speed = 0.35
-	if (move != 0)
-		xscale = move
+	if (Move != 0)
+		Xscale = Move
 	image_speed = 0.35
 	exit;
 }

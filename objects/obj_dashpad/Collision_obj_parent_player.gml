@@ -3,7 +3,7 @@ with (other)
 {
 	if (state != states.gotoplayer && state != states.ghost && state != states.actor)
 	{
-		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0 && other.sprite_index == spr_dashpad)
+		if (boxxed == 0 && global.playerCharacter != Characters.Pierre && other.buffer == 0 && other.sprite_index == spr_dashpad)
 		{
 			if (state == states.trashjump || state == states.trashjumpprep)
 				create_debris(x, y, spr_player_trashlid)
@@ -33,17 +33,17 @@ with (other)
 			//scr_soundeffect(sfx_dashpad)
 			machhitAnim = false
 			state = states.mach3
-			xscale = sign(other.image_xscale)
-			dir = xscale
-			if (movespeed < 14)
+			Xscale = sign(other.image_xscale)
+			dir = Xscale
+			if (Movespeed < 14)
 			{
-				movespeed = 14
-				hsp = xscale * movespeed
+				Movespeed = 14
+				hsp = Xscale * Movespeed
 			}
 			else
 			{
-				movespeed += 0.5
-				hsp = xscale * movespeed
+				Movespeed += 0.5
+				hsp = Xscale * Movespeed
 			}
 			other.buffer = 30
 		}
@@ -58,19 +58,19 @@ with (other)
 					y = other.y - 14
 				vsp = 0
 				create_particle(x, y, particle.jumpdust, 0)
-				xscale = sign(other.image_xscale)
-				dir = xscale
+				Xscale = sign(other.image_xscale)
+				dir = Xscale
 				boxxeddash = true
-				if (abs(movespeed) < 14)
-					movespeed = xscale * 14
+				if (abs(Movespeed) < 14)
+					Movespeed = Xscale * 14
 				else
-					movespeed += (xscale * 0.5)
+					Movespeed += (Xscale * 0.5)
 				sprite_index = spr_boxxedpepwalk
 				boxxeddashbuffer = 40
 				state = states.boxxedpep
 				other.buffer = 30
 			}
-			if (isgustavo && other.buffer == 0 && gusdashpadbuffer == 0)
+			if (global.playerCharacter == Characters.Pierre && other.buffer == 0 && gusdashpadbuffer == 0)
 			{
 				//scr_soundeffect(sfx_dashpad)
 				changecoord = true
@@ -80,18 +80,18 @@ with (other)
 					y = other.y - 14
 				vsp = 0
 				create_particle(x, y, particle.jumpdust, 0)
-				xscale = sign(other.image_xscale)
-				dir = xscale
+				Xscale = sign(other.image_xscale)
+				dir = Xscale
 				with (instance_create(x, y, obj_crazyrunothereffect))
 					image_xscale = t.image_xscale
 				with (instance_create(x, y, obj_superdashcloud))
 					image_xscale = t.image_xscale
 				other.buffer = 30
-				ratmount_movespeed = 14
+				ratmount_Movespeed = 14
 				gustavodash = 51
 				state = states.ratmount
-				if (abs(movespeed) < 14)
-					movespeed = other.image_xscale * 14
+				if (abs(Movespeed) < 14)
+					Movespeed = other.image_xscale * 14
 				gusdashpadbuffer = 25
 			}
 		}

@@ -8,7 +8,7 @@ function cutscene_instance_create(argument0, argument1, argument2, argument3)
 	{
 		depth = other.depth
 		image_xscale = _xscale
-		xscale = _xscale
+		Xscale = _xscale
 	}
 	cutscene_end_action()
 	exit;

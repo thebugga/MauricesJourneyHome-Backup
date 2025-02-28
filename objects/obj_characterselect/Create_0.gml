@@ -24,4 +24,4 @@ mode_scale = 1
 switch_index = 0
 shadowtimer = irandom(1000)
 shadows = ds_list_create()
-charactersprites = [spr_player_move, spr_playerN_move, spr_gabbie, spr_clownmato_move, spr_forknight_walk]
+charactersprites = [spr_player_Move, spr_playerN_Move, spr_gabbie, spr_clownmato_Move, spr_forknight_walk]

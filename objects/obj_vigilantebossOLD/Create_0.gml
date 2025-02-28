@@ -16,7 +16,7 @@ max_phase = 6
 max_hp = (500 * max_phase)
 hp = max_hp
 stunfallspr = spr_playerV_hurt
-walkspr = spr_playerV_move
+walkspr = spr_playerV_Move
 idlespr = spr_playerV_idle
 spr_dead = spr_playerV_dead
 tauntspr = spr_playerV_taunt
@@ -24,8 +24,8 @@ fallspr = spr_playerV_fall
 bumpspr = spr_playerV_bump
 parryspr = spr_playerV_hitwall
 defeatplayerspr = spr_playerV_hitwall
-movespeed = 0
-move = 0
+Movespeed = 0
+Move = 0
 normal_spd = 6
 changeside_spd = 10
 dynamite_buffer = 0
@@ -109,7 +109,7 @@ function boss_hurt(argument0, argument1)
 	else
 		targetstunned = 150
 	SUPER_boss_hurt(argument0, argument1)
-	targetxscale = (-argument1.xscale)
+	targetXscale = (-argument1.Xscale)
 	exit;
 }
 

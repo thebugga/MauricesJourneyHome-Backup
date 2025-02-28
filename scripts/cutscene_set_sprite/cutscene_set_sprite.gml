@@ -10,7 +10,7 @@ function cutscene_set_sprite(argument0, argument1, argument2, argument3)
 		image_speed = _spd
 		image_xscale = _xscale
 		image_index = 0
-		xscale = _xscale
+		Xscale = _xscale
 	}
 	cutscene_end_action()
 	exit;

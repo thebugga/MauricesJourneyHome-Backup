@@ -1,6 +1,6 @@
 function swap_is_player2() //gml_Script_swap_is_player2
 {
-    return (global.swapmode && obj_player1.ispeppino != obj_savesystem.ispeppino);
+    return (global.swapmode && global.playerCharacter == Characters.Maurice);
 }
 
 function swap_player(argument0, argument1) //gml_Script_swap_player
@@ -14,9 +14,9 @@ function swap_player(argument0, argument1) //gml_Script_swap_player
         if argument0
             global.swap_boss_damage = -1
         state = states.normal
-        if ispeppino
+        if global.playerCharacter == Characters.Maurice
         {
-            if isgustavo
+            if global.playerCharacter == Characters.Pierre
             {
                 scr_switchpeppino()
                 noisecrusher = true
@@ -30,7 +30,7 @@ function swap_player(argument0, argument1) //gml_Script_swap_player
 		global.playerCharacter = global.playerFollowCharacter
 		global.playerFollowCharacter = og_player
 		player_index = !player_index
-        if ispeppino
+        if global.playerCharacter == Characters.Maurice
         {
             if noisecrusher
             {
@@ -40,7 +40,7 @@ function swap_player(argument0, argument1) //gml_Script_swap_player
             if (global.noisejetpack && (!noisepizzapepper))
                 global.noisejetpack = false
         }
-        if (!ispeppino)
+        if global.playerCharacter == Characters.Doise
             tauntstoredisgustavo = false
         scr_characterspr()
         pistolcharge = 0
@@ -74,11 +74,9 @@ function swap_player(argument0, argument1) //gml_Script_swap_player
         with (obj_swapmodefollow)
         {
             taunttimer = 0
-            if (ispeppino == obj_player1.ispeppino)
+            if global.playerCharacter == Characters.Maurice
             {
-                ispeppino = (!obj_player1.ispeppino)
-                if ((!obj_player1.ispeppino) && obj_player1.noisecrusher)
-                    isgustavo = true
+                global.playerCharacter = Characters.Doise
             }
             self.get_character_spr()
         }
@@ -89,8 +87,8 @@ function swap_player(argument0, argument1) //gml_Script_swap_player
                 state = states.normal
                 if (idleanim < 60)
                     idleanim = 60
-                sprite_index = (other.ispeppino ? spr_tv_idle : spr_tv_idleN)
-                if (sprite_index == spr_tv_idle && other.isgustavo)
+                sprite_index = (global.playerCharacter == Characters.Maurice ? spr_tv_idle : spr_tv_idleN)
+                if (sprite_index == spr_tv_idle && other.global.playerCharacter == Characters.Pierre)
                     sprite_index = spr_tv_idleG
                 //tv_get_palette()
             }

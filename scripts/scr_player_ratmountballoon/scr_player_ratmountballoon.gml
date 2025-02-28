@@ -1,16 +1,16 @@
 function scr_player_ratmountballoon()
 {
 	sprite_index = spr_player_ratmountballoon
-	hsp = movespeed
-	move = (key_left + key_right)
+	hsp = Movespeed
+	Move = (key_left + key_right)
 	if (vsp < 2)
 		vsp += 0.1
 	else
 		vsp = 2
-	if (move != 0)
-		movespeed = approach(movespeed, (move * 8), 0.5)
+	if (Move != 0)
+		Movespeed = approach(Movespeed, (Move * 8), 0.5)
 	else
-		movespeed = approach(movespeed, 0, 0.5)
+		Movespeed = approach(Movespeed, 0, 0.5)
 	var _jump = 0
 	if (balloonbuffer > 0)
 		balloonbuffer--

@@ -17,7 +17,7 @@ function Instakill()
 			sprite_index = spr_player_chainsawhit
 		}
 		other.baddieID.invtime = 25
-		suplexmove = 1
+		suplexMove = 1
 		if (object_index == obj_player1)
 			other.baddieID.grabbedby = 1
 		else
@@ -39,7 +39,7 @@ function Instakill()
 		global.hit += 1
 		if ((!grounded) && state != states.boxxedpepspin && state != states.freefall && (key_jump2 or input_buffer_jump == 0))
 		{
-			suplexmove = 0
+			suplexMove = 0
 			vsp = -11
 		}
 		if (state == states.boxxedpepspin)
@@ -50,7 +50,7 @@ function Instakill()
 		}
 		if (state != states.chainsaw)
 		{
-			tauntstoredmovespeed = movespeed
+			tauntstoredMovespeed = Movespeed
 			tauntstoredsprite = sprite_index
 			tauntstoredstate = state
 			tauntstoredvsp = vsp
@@ -79,7 +79,7 @@ function Instakill()
 		instance_create(other.baddieID.x, other.baddieID.y, obj_parryeffect)
 		other.baddieID.alarm[3] = 3
 		other.baddieID.state = states.hit
-		other.baddieID.image_xscale = (-xscale)
+		other.baddieID.image_xscale = (-Xscale)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)
 		instance_create(x, y, obj_slapstar)
@@ -96,9 +96,9 @@ function Instakill()
 			with (instance_create(other.baddieID.x, other.baddieID.y, obj_parryeffect))
 				sprite_index = spr_kungfueffect
 		}
-		other.baddieID.hithsp = (xscale * (movespeed + 2))
+		other.baddieID.hithsp = (Xscale * (Movespeed + 2))
 		if (abs(other.baddieID.hithsp) < 10)
-			other.baddieID.hithsp = (xscale * 10)
+			other.baddieID.hithsp = (Xscale * 10)
 		other.baddieID.hitvsp = -5
 		state = states.chainsaw
 	}

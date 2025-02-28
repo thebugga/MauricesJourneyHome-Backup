@@ -1,4 +1,4 @@
-/// @desc Checks the angle of the surface of the collided collision object.
+/// @desc Checks the Rotation of the surface of the collided collision object.
 /// @param {any*} x The x position to check.
 /// @param {any*} y The y position to check.
 /// @param {real} pdist_a Distance of Point A from the center point.

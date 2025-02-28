@@ -70,7 +70,7 @@ function draw_enemy(_kungfu, usepalette)
 				_ys = -1
 			}
 		}
-		draw_sprite_ext(sprite_index, image_index, x, (y + _stun), (xscale * image_xscale), yscale * _ys, angle, b, image_alpha)
+		draw_sprite_ext(sprite_index, image_index, x, (y + _stun), (Xscale * image_xscale), Yscale * _ys, Rotation, b, image_alpha)
 		if _kungfu
 		{
 			if (hp > maxhp)
@@ -97,9 +97,9 @@ function draw_player()
 	var ps = paletteselect;
 	var spr = spr_palette;
 	if object_index == obj_player1
-		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, xscale * scale_xs, yscale * scale_ys, pattern);
+		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, Xscale * scale_xs, Yscale * scale_ys, pattern);
 	pal_swap_set(spr, ps, false);
-	draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	draw_sprite_ext(sprite_index, image_index, x, y, Xscale * scale_xs, Yscale * scale_ys, Rotation, b, image_alpha);
 	draw_superslam_enemy();
 	pattern_reset();
 }

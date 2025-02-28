@@ -1,3 +1,3 @@
 event_inherited()
 substate = states.normal
-movespeed = 0
+Movespeed = 0

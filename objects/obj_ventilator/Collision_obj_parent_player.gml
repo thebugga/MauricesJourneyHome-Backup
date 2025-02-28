@@ -6,7 +6,7 @@ with (other)
 	{
 		state = states.jump
 		if (sprite_index == spr_mach3boost or sprite_index == spr_machslideboost)
-			xscale *= -1
+			Xscale *= -1
 		sprite_index = spr_machfreefall
 	}
 }

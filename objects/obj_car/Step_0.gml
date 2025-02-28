@@ -12,7 +12,7 @@ switch state
 					player_inst = b
 					hsp = sign(player_inst.hsp)
 					if (hsp == 0)
-						hsp = player_inst.xscale
+						hsp = player_inst.Xscale
 					instance_destroy(inst)
 					//scr_soundeffect(sfx_killingblow)
 					with (b)
@@ -20,7 +20,7 @@ switch state
 						hitX = x
 						hitY = y
 						hitLag = 10
-						tauntstoredmovespeed = movespeed
+						tauntstoredMovespeed = Movespeed
 						tauntstoredsprite = sprite_index
 						tauntstoredstate = state
 						tauntstoredvsp = vsp

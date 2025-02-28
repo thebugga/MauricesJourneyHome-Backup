@@ -43,7 +43,7 @@ if (state != states.grabbed)
 				other.image_xscale = (-(sign((other.x - x))))
 			other.vsp = -5
 			other.hsp = ((-other.image_xscale) * 3)
-			hsp = ((-xscale) * 4)
+			hsp = ((-Xscale) * 4)
 			vsp = -4
 			machpunchAnim = 1
 			if (x != other.x)
@@ -57,7 +57,7 @@ if (state != states.grabbed)
 			other.hp = 0
 			instance_create(x, y, obj_bumpeffect)
 			other.vsp = -10
-			other.hsp = xscale
+			other.hsp = Xscale
 			other.image_index = 0
 			other.stunned = 200
 			other.state = states.stun
@@ -80,11 +80,11 @@ if (state != states.grabbed)
 			if (x != other.x)
 			{
 				other.image_xscale = (-(sign((other.x - x))))
-				xscale = (-(sign((x - other.x))))
+				Xscale = (-(sign((x - other.x))))
 			}
-			hsp = ((-xscale) * 4)
+			hsp = ((-Xscale) * 4)
 			vsp = -4
-			other.image_xscale = (-xscale)
+			other.image_xscale = (-Xscale)
 			other.hsp = ((-other.image_xscale) * 4)
 			other.vsp = -4
 			if (other.state == states.walk or other.state == states.turn)

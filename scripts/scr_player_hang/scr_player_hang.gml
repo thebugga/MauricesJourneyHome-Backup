@@ -15,7 +15,7 @@ function scr_player_hang()
 		sprite_index = spr_playerN_noisebombspinjump
 		image_index = 0
 		with (instance_create(x, y, obj_jumpdust))
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 	}
 	image_speed = 0.35
 	exit;

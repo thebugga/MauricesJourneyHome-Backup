@@ -11,7 +11,7 @@ switch state
 				state = states.trashjumpprep
 				sprite_index = spr_player_trashstart
 				image_index = 0
-				xscale = other.image_xscale
+				Xscale = other.image_xscale
 				other.shot = 0
 				other.playerid = id
 				other.state = states.trashjumpprep
@@ -65,7 +65,7 @@ switch state
 					y = other.y
 					sprite_index = spr_player_trashjump
 					image_index = 0
-					movespeed = 0
+					Movespeed = 0
 					state = states.trashjump
 					vsp = -25
 				}

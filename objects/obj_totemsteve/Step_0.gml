@@ -1,7 +1,7 @@
 if (room == rm_editor)
 	exit;
 var player = instance_nearest(x, y, obj_parent_player)
-if (player.x > (x - 400) && player.x < (x + 400) && player.y >= bbox_top && player.y <= bbox_bottom && ((player.xscale > 0 && x >= player.x) or (player.xscale < 0 && x <= player.x)))
+if (player.x > (x - 400) && player.x < (x + 400) && player.y >= bbox_top && player.y <= bbox_bottom && ((player.Xscale > 0 && x >= player.x) or (player.Xscale < 0 && x <= player.x)))
 {
 	if (sprite_index != spr_hungrypillar_angry && (player.state == states.chainsawbump or player.state == states.mach3 or player.state == states.rideweenie or player.state == states.rocket or player.state == states.tacklecharge or player.state == states.knightpepslopes or (player.state == states.grab && player.swingdingdash <= 0 && player.sprite_index == player.spr_swingding)))
 	{

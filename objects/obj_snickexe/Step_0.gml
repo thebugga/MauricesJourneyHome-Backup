@@ -4,7 +4,7 @@ if (x != obj_parent_player.x)
 	image_xscale = (-(sign((x - obj_parent_player.x))))
 if (global.snickchallenge == 0)
 	instance_destroy()
-if (hitboxcreate == 0 && obj_player1.instakillmove == 0 && obj_player1.state != states.handstandjump)
+if (hitboxcreate == 0 && obj_player1.instakillMove == 0 && obj_player1.state != states.handstandjump)
 {
 	hitboxcreate = 1
 	with (instance_create(x, y, obj_forkhitbox))
@@ -13,7 +13,7 @@ if (hitboxcreate == 0 && obj_player1.instakillmove == 0 && obj_player1.state != 
 		ID = other.id
 	}
 }
-if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove == 1 or obj_player1.state == states.handstandjump))
+if (place_meeting(x, y, obj_player1) && (obj_player1.instakillMove == 1 or obj_player1.state == states.handstandjump))
 {
 	repeat (6)
 	{

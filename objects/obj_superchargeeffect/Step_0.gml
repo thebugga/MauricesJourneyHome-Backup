@@ -1,4 +1,4 @@
-image_xscale = playerid.xscale
+image_xscale = playerid.Xscale
 if (playerid.supercharged == 0)
 {
 	playerid.superchargedeffectid = -4

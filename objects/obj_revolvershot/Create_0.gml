@@ -8,8 +8,8 @@ function player_hurt(argument0, argument1)
 	{
 		var prevstate = argument1.state
 		SUPER_player_hurt(argument0, argument1)
-		argument1.xscale = (-image_xscale)
-		argument1.hitxscale = (-image_xscale)
+		argument1.Xscale = (-image_xscale)
+		argument1.hitXscale = (-image_xscale)
 		if (prevstate == states.boss_superattack)
 		{
 			argument1.hithsp = 0

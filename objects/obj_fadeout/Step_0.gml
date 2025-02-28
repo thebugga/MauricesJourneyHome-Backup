@@ -79,8 +79,8 @@ if instance_exists(obj_parent_player)
 		}
 		if (other.fadein == 1 && obj_player1.lastroom == characterselect && obj_player1.state != states.machslide)
 		{
-			xscale = 1
-			movespeed = 12
+			Xscale = 1
+			Movespeed = 12
 			sprite_index = spr_machslidestart;
 			if global.playerCharacter == Characters.Maurice
 				fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);
@@ -91,8 +91,8 @@ if instance_exists(obj_parent_player)
 			launched = false;
 			if (global.coop == true)
 			{
-				obj_player2.xscale = 1
-				obj_player2.movespeed = 12
+				obj_player2.Xscale = 1
+				obj_player2.Movespeed = 12
 				obj_player2.sprite_index = spr_machslidestart;
 				if global.playerCharacter == Characters.Maurice
 					fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);

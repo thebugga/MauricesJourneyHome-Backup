@@ -34,7 +34,7 @@ switch state
 			if place_meeting(x, (y + 1), obj_railparent)
 			{
 				var _railinst = instance_place(x, (y + 1), obj_railparent)
-				hsp += (_railinst.movespeed * _railinst.dir)
+				hsp += (_railinst.Movespeed * _railinst.dir)
 			}
 			sprite_index = spr_robot_mach
 			image_index = 0
@@ -42,14 +42,14 @@ switch state
 		}
 		break
 	case states.mach2:
-		hsp = (approach(hsp, (image_xscale * machspeed), 0.5) + railmovespeed)
+		hsp = (approach(hsp, (image_xscale * machspeed), 0.5) + railMovespeed)
 		if place_meeting(x, (y + 1), obj_railparent)
 		{
 			_railinst = instance_place(x, (y + 1), obj_railparent)
-			railmovespeed = (_railinst.movespeed * _railinst.dir)
+			railMovespeed = (_railinst.Movespeed * _railinst.dir)
 		}
 		else
-			railmovespeed = 0
+			railMovespeed = 0
 		with (instance_place((x + hsp), y, obj_destructibles))
 			instance_destroy()
 		if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting(x, y, obj_destructibles))))
@@ -67,7 +67,7 @@ switch state
 			if place_meeting(x, (y + 1), obj_railparent)
 			{
 				_railinst = instance_place(x, (y + 1), obj_railparent)
-				hsp += (_railinst.movespeed * _railinst.dir)
+				hsp += (_railinst.Movespeed * _railinst.dir)
 			}
 			with (instance_place((x + hsp), y, obj_destructibles))
 				instance_destroy()

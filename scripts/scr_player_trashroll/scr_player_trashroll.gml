@@ -1,9 +1,9 @@
 function scr_player_trashroll()
 {
-	hsp = (xscale * movespeed)
-	if (place_meeting_slope(x,y) && hsp != 0)
+	hsp = (Xscale * Movespeed)
+	if (slopeCheck(x + Xscale, y) && hsp != 0)
 		scr_player_addslopemomentum(0.25, 0.5)
-	movespeed = max(3, movespeed)
+	Movespeed = max(3, Movespeed)
 	if (sprite_index != spr_player_corpsestart && sprite_index != spr_player_corpsesurf)
 	{
 		if (sprite_index != spr_player_trashjump && sprite_index != spr_player_trashjump2 && sprite_index != spr_player_trashfall)
@@ -29,17 +29,17 @@ function scr_player_trashroll()
 	}
 	if key_jump
 	{
-		dir = xscale
+		dir = Xscale
 		state = states.mach2
 		sprite_index = spr_mach2jump
 		jumpstop = 0
 		vsp = -11
 		instance_create(x, y, obj_jumpdust)
 	}
-	if (((place_meeting((x + xscale), y, obj_solid) or place_meeting((x + xscale), y, obj_ghostwall)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && (!(place_meeting((x + hsp), y, obj_rattumble)))) or place_meeting(x, y, obj_timedgate))
+	if (((place_meeting((x + Xscale), y, obj_solid) or place_meeting((x + Xscale), y, obj_ghostwall)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && (!(place_meeting((x + hsp), y, obj_rattumble)))) or place_meeting(x, y, obj_timedgate))
 	{
 		state = states.bump
-		hsp = ((-xscale) * 3)
+		hsp = ((-Xscale) * 3)
 		vsp = -3
 	}
 	exit;

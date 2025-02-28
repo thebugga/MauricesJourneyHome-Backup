@@ -1,7 +1,7 @@
 function scr_player_noisejetpack()
 {
-	hsp = (xscale * movespeed)
-	move = (key_left + key_right)
+	hsp = (xscale * Movespeed)
+	Move = (key_left + key_right)
 	if (key_jump2 && jetpackfuel > 0)
 	{
 		jetpackfuel--
@@ -10,23 +10,23 @@ function scr_player_noisejetpack()
 	}
 	else
 		sprite_index = spr_playerN_doublejumpfall
-	if (move != 0)
+	if (Move != 0)
 	{
-		if (xscale != move)
+		if (xscale != Move)
 		{
-			movespeed = approach(movespeed, 0, 0.5)
-			if (movespeed <= 0)
+			Movespeed = approach(Movespeed, 0, 0.5)
+			if (Movespeed <= 0)
 			{
-				movespeed = 0
-				xscale = move
+				Movespeed = 0
+				xscale = Move
 			}
 		}
-		else if (movespeed < 8)
-			movespeed = approach(movespeed, 8, 0.5)
+		else if (Movespeed < 8)
+			Movespeed = approach(Movespeed, 8, 0.5)
 	}
 	if (place_meeting((x + sign(hsp)), y, obj_solid) or place_meeting_slope((x + sign(hsp)), y))
 	{
-		movespeed = 4
+		Movespeed = 4
 		xscale *= -1
 	}
 	if key_down2
@@ -39,7 +39,7 @@ function scr_player_noisejetpack()
 	if (grounded && vsp > 0)
 	{
 		state = states.normal
-		if (movespeed >= 12)
+		if (Movespeed >= 12)
 		{
 			state = states.mach3
 			sprite_index = spr_dashpadmach

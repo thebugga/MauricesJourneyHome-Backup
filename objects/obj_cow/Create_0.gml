@@ -1,9 +1,9 @@
-move = 0
+Move = 0
 hsp = 0
 vsp = 0
 grav = 0.5
 grounded = false
-movespeed = 0
+Movespeed = 0
 offscreen = 0
 state = states.idle
 blockinst = -4

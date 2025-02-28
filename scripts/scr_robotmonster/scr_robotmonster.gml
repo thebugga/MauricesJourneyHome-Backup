@@ -2,7 +2,7 @@ function scr_robot_normal()
 {
 	image_speed = 0.35
 	sprite_index = walkspr
-	hsp = (image_xscale * movespeed)
+	hsp = (image_xscale * Movespeed)
 	if (place_meeting((x + hsp), y, obj_solid) or (place_meeting((x + hsp), y, obj_hallway) && (!(place_meeting(x, y, obj_hallway)))))
 		image_xscale *= -1
 	if (random_buffer <= 0)
@@ -38,7 +38,7 @@ function scr_robot_chase()
 	if ((playerinst.x - x) != 0)
 	{
 		image_xscale = sign((playerinst.x - x))
-		hsp = (image_xscale * movespeed_chase)
+		hsp = (image_xscale * Movespeed_chase)
 	}
 	if (playerinst.x > (x - 16) && playerinst.x < (x + 16))
 		hsp = 0
@@ -65,7 +65,7 @@ function scr_robot_attack()
 			fake = other.fake
 			targetRoom = other.targetRoom
 			targetDoor = other.targetDoor
-			angle = point_direction(x, y, other.playerinst.x, other.playerinst.y)
+			Rotation = point_direction(x, y, other.playerinst.x, other.playerinst.y)
 			baddieID = other.id
 			monsterid = other.monsterid
 		}

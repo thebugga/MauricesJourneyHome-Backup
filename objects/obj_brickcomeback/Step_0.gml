@@ -1,4 +1,4 @@
-if (obj_parent_player.isgustavo == 0)
+if (global.playerCharacter != Characters.Pierre)
 {
 	instance_create(x, y, obj_genericpoofeffect)
 	instance_destroy()

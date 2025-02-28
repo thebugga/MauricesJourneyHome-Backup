@@ -61,7 +61,7 @@ function scr_puppet_appear(argument0)
 {
 	var _xdir = 96
 	var i = 0
-	while collision_line(argument0.x, argument0.y, (argument0.x + (_xdir * argument0.xscale)), argument0.y, obj_solid, false, true)
+	while collision_line(argument0.x, argument0.y, (argument0.x + (_xdir * argument0.Xscale)), argument0.y, obj_solid, false, true)
 	{
 		_xdir--
 		
@@ -73,7 +73,7 @@ function scr_puppet_appear(argument0)
 		}
 	}
 	
-	x = (argument0.x + (abs(_xdir) * argument0.xscale))
+	x = (argument0.x + (abs(_xdir) * argument0.Xscale))
 	y = argument0.y
 	state = states.robotchase
 	substate = states.fall

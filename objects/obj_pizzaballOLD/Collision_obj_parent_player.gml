@@ -14,12 +14,12 @@ if ((other.state == states.handstandjump or other.state == states.lungeattack) &
 				sprite_index = spr_golfidle
 				other.y = y
 				hsp = 0
-				movespeed = 0
+				Movespeed = 0
 				slopespeed = 0
 				state = states.golf
 				_pizzaball.state = states.golf
 				_pizzaball.player = id
-				if (xscale > 0)
+				if (Xscale > 0)
 					_pizzaball.m_angle = 0
 				else
 					_pizzaball.m_angle = 180

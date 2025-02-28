@@ -8,11 +8,11 @@ if place_meeting(x, y, obj_parent_player)
 			sprite_index = spr_player_finishingblow1
 			image_index = 0
 			hsp = 0
-			movespeed = 0
+			Movespeed = 0
 		}
 		if (state == states.mach3)
 		{
-			hsp = ((-xscale) * 3)
+			hsp = ((-Xscale) * 3)
 			state = states.bump
 			mach2 = 0
 			image_index = 0
@@ -23,7 +23,7 @@ if place_meeting(x, y, obj_parent_player)
 }
 if (grabbed == 1)
 {
-	image_xscale = (-obj_parent_player.xscale)
+	image_xscale = (-obj_parent_player.Xscale)
 	grav = 0
 	obj_parent_player.baddiegrabbedID = id
 	if (obj_parent_player.state == states.grabbing or obj_parent_player.state == states.grab or obj_parent_player.state == states.throwing or obj_parent_player.state == states.slam or obj_parent_player.state == states.tacklecharge)
@@ -40,11 +40,11 @@ if (grabbed == 1)
 			y = (obj_parent_player.y - 20)
 		else if (floor(obj_parent_player.image_index) == 3)
 			y = (obj_parent_player.y - 30)
-		image_xscale = (-obj_parent_player.xscale)
+		image_xscale = (-obj_parent_player.Xscale)
 	}
 	with (obj_parent_player)
 	{
-		move = (key_left2 + key_right2)
+		Move = (key_left2 + key_right2)
 		if (!((state == states.grab or state == states.grabbing or state == states.throwing or state == states.slam or state == states.tacklecharge or state == states.punch or state == states.superslam or state == states.backkick or state == states.uppunch or state == states.shoulder)))
 		{
 			other.x = x
@@ -55,7 +55,7 @@ if (grabbed == 1)
 	hsp = 0
 	if (obj_parent_player.state == states.punch)
 	{
-		instance_create((x + (obj_parent_player.xscale * 30)), y, obj_bumpeffect)
+		instance_create((x + (obj_parent_player.Xscale * 30)), y, obj_bumpeffect)
 		grabbed = 0
 		grav = 0.5
 		x = obj_parent_player.x
@@ -112,7 +112,7 @@ if (grabbed == 1)
 	}
 	if (obj_parent_player.state == states.uppunch)
 	{
-		instance_create((x + ((-obj_parent_player.xscale) * 15)), (y - 50), obj_bumpeffect)
+		instance_create((x + ((-obj_parent_player.Xscale) * 15)), (y - 50), obj_bumpeffect)
 		grav = 0.5
 		thrown = true
 		x = obj_parent_player.x
@@ -131,7 +131,7 @@ if (grabbed == 1)
 	}
 	if (obj_parent_player.state == states.tacklecharge)
 	{
-		x = (obj_parent_player.x + (obj_parent_player.xscale * 15))
+		x = (obj_parent_player.x + (obj_parent_player.Xscale * 15))
 		y = obj_parent_player.y
 	}
 	if (obj_parent_player.state == states.superslam)
@@ -141,13 +141,13 @@ if (grabbed == 1)
 			if (floor(obj_parent_player.image_index) == 0)
 			{
 				depth = 0
-				x = (obj_parent_player.x + (obj_parent_player.xscale * 10))
+				x = (obj_parent_player.x + (obj_parent_player.Xscale * 10))
 				y = obj_parent_player.y
 			}
 			if (floor(obj_parent_player.image_index) == 1)
 			{
 				depth = 0
-				x = (obj_parent_player.x + (obj_parent_player.xscale * 5))
+				x = (obj_parent_player.x + (obj_parent_player.Xscale * 5))
 				y = obj_parent_player.y
 			}
 			if (floor(obj_parent_player.image_index) == 2)
@@ -159,19 +159,19 @@ if (grabbed == 1)
 			if (floor(obj_parent_player.image_index) == 3)
 			{
 				depth = 0
-				x = (obj_parent_player.x + (obj_parent_player.xscale * -5))
+				x = (obj_parent_player.x + (obj_parent_player.Xscale * -5))
 				y = obj_parent_player.y
 			}
 			if (floor(obj_parent_player.image_index) == 4)
 			{
 				depth = 0
-				x = (obj_parent_player.x + (obj_parent_player.xscale * -10))
+				x = (obj_parent_player.x + (obj_parent_player.Xscale * -10))
 				y = obj_parent_player.y
 			}
 			if (floor(obj_parent_player.image_index) == 5)
 			{
 				depth = -8
-				x = (obj_parent_player.x + (obj_parent_player.xscale * -5))
+				x = (obj_parent_player.x + (obj_parent_player.Xscale * -5))
 				y = obj_parent_player.y
 			}
 			if (floor(obj_parent_player.image_index) == 6)
@@ -183,7 +183,7 @@ if (grabbed == 1)
 			if (floor(obj_parent_player.image_index) == 7)
 			{
 				depth = -8
-				x = (obj_parent_player.x + (obj_parent_player.xscale * 5))
+				x = (obj_parent_player.x + (obj_parent_player.Xscale * 5))
 				y = obj_parent_player.y
 			}
 		}

@@ -45,7 +45,7 @@ draw_clear_alpha(c_black, 0)
 for (var i = 0; i < ds_list_size(shadows); i++)
 {
 	var b = ds_list_find_value(shadows, i)
-	b.x += (b.movespeed * b.scale)
+	b.x += (b.Movespeed * b.scale)
 	b.vsp += 0.1
 	b.y += b.vsp
 	if b.vsp >= 2

@@ -7,7 +7,7 @@ hsp = 0
 vsp = 0
 grav = 0.5
 grounded = false
-movespeed = 0
+Movespeed = 0
 funnyangle = 0
 state = states.normal
 hitLag = 0
@@ -61,8 +61,8 @@ function SUPER_player_destroy(argument0)
 		hitY = ((room_height / 2) - 5)
 		x = hitX
 		y = hitY
-		xscale = (-other.image_xscale)
-		hitxscale = (-other.image_xscale)
+		Xscale = (-other.image_xscale)
+		hitXscale = (-other.image_xscale)
 		sprite_index = spr_player_outofpizza1
 		hithsp = 15
 		hitstunned = 10000
@@ -95,14 +95,14 @@ function SUPER_boss_destroy(argument0)
 		if (state != states.chainsaw)
 		{
 			//scr_soundeffect(sfx_killingblow)
-			tauntstoredmovespeed = movespeed
+			tauntstoredMovespeed = Movespeed
 			tauntstoredsprite = sprite_index
 			tauntstoredstate = state
 		}
 		var lag = (room_speed * 3)
-		other.image_xscale = (-xscale)
+		other.image_xscale = (-Xscale)
 		other.hitLag = lag
-		other.hitX = ((room_width / 2) + (xscale * 16))
+		other.hitX = ((room_width / 2) + (Xscale * 16))
 		other.hitY = ((room_height / 2) - 5)
 		other.x = other.hitX
 		other.y = other.hitY
@@ -156,7 +156,7 @@ function SUPER_boss_hurt(argument0, argument1)
 		if (state != states.chainsaw)
 		{
 			//scr_soundeffect(sfx_killingblow)
-			tauntstoredmovespeed = movespeed
+			tauntstoredMovespeed = Movespeed
 			tauntstoredsprite = sprite_index
 			tauntstoredstate = state
 		}
@@ -175,19 +175,19 @@ function SUPER_boss_hurt(argument0, argument1)
 			other.x = other.hitX
 			other.y = other.hitY
 		}
-		other.image_xscale = (-xscale)
+		other.image_xscale = (-Xscale)
 		other.hitLag = lag
 		other.hitX = other.x
 		other.hitY = other.y
 		other.jugglecount++
 		other.hitvsp = -9
-		other.movespeed = (7 + (other.jugglecount * 2))
+		other.Movespeed = (7 + (other.jugglecount * 2))
 		if (atstate == states.parry)
 		{
 			other.hitvsp = -14
-			other.movespeed = 0
+			other.Movespeed = 0
 		}
-		other.hithsp = ((-other.image_xscale) * other.movespeed)
+		other.hithsp = ((-other.image_xscale) * other.Movespeed)
 		other.state = states.hit
 		instance_create(other.x, other.y, obj_parryeffect)
 		instance_create(x, y, obj_slapstar)
@@ -269,8 +269,8 @@ function SUPER_player_hurt(argument0, argument1)
 		hitLag = lag
 		hitX = x
 		hitY = y
-		xscale = (x != other.x ? sign((other.x - x)) : (-other.image_xscale))
-		hitxscale = (x != other.x ? sign((other.x - x)) : (-other.image_xscale))
+		Xscale = (x != other.x ? sign((other.x - x)) : (-other.image_xscale))
+		hitXscale = (x != other.x ? sign((other.x - x)) : (-other.image_xscale))
 		sprite_index = spr_hurt
 		hithsp = 15
 		if (hitstunned > 0)

@@ -15,7 +15,7 @@ function cutscene_gustavo_start()
 			state = states.actor
 			sprite_index = spr_idle
 			image_speed = 0.35
-			xscale = 1
+			Xscale = 1
 			hsp = 0
 			vsp = 0
 		}

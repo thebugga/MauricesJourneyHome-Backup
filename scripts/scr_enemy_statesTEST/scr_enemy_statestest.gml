@@ -2,7 +2,7 @@ function scr_enemy_pummel()
 {
 	var _playerinst = (grabbedby == 1 ? obj_player1.id : obj_player2.id)
 	sprite_index = stunfallspr
-	x = (_playerinst.x + (_playerinst.xscale * 16))
+	x = (_playerinst.x + (_playerinst.Xscale * 16))
 	y = _playerinst.y
 	image_xscale = sign((_playerinst.x - x))
 	with (_playerinst)
@@ -31,7 +31,7 @@ function scr_enemy_pummel()
 				{
 					sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4)
 					state = states.tackle
-					movespeed = 5
+					Movespeed = 5
 					image_index = 0
 					other.state = states.stun
 					other.grav = 0
@@ -56,7 +56,7 @@ function scr_enemy_pummel()
 					sprite_index = spr_player_breakdanceuppercut
 					image_index = 0
 					vsp = -14
-					movespeed = 2
+					Movespeed = 2
 					instance_create(x, y, obj_highjumpcloud2)
 					instance_create(x, y, obj_slapstar)
 					instance_create(x, y, obj_baddiegibs)
@@ -83,7 +83,7 @@ function scr_enemy_pummel()
 				{
 					//scr_soundeffect(sfx_breakdance)
 					vsp = -4
-					movespeed = 9
+					Movespeed = 9
 					state = states.punch
 					sprite_index = spr_player_breakdancestart
 					breakdance = 35
@@ -146,7 +146,7 @@ function scr_enemy_staggered()
 	else if (stagger_buffer == 0)
 	{
 		vsp = (-stagger_jumpspeed)
-		hsp = (stagger_dir * stagger_movespeed)
+		hsp = (stagger_dir * stagger_Movespeed)
 		stagger_buffer = -1
 	}
 	else if (floor(image_index) == (image_number - 1) && grounded)

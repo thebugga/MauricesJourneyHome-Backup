@@ -1,6 +1,6 @@
 x += hsp
 y += vsp
-if ((!ispeppino) && vsp < 20)
+if (global.playerCharacter == Characters.Doise && vsp < 20)
     vsp += 0.5
 if (floor(image_index) == (image_number - 1))
 {

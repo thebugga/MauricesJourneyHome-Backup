@@ -159,7 +159,7 @@ if (state == states.walk or state == states.idle)
 	var targetplayer = obj_player1
 	if (obj_player1.spotlight == 0)
 		targetplayer = obj_player2
-	movespeed = 4
+	Movespeed = 4
 	if (targetplayer.x != x)
 		image_xscale = (-(sign((x - targetplayer.x))))
 	state = states.chase

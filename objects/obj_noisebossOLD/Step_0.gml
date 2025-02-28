@@ -13,7 +13,7 @@ switch state
 	case states.arenaround:
 		grav = 0.5
 		state_boss_arenaround()
-		movespeed = 0
+		Movespeed = 0
 		inv_timer = 2
 		invincible = 1
 		break

@@ -122,7 +122,7 @@ else
 		scale: _scale,
 		x: 480 - (1000 * _scale),
 		y: 370,
-		movespeed: irandom_range(2, 5),
+		Movespeed: irandom_range(2, 5),
 		vsp: 0
 	}
 	ds_list_add(shadows, q)

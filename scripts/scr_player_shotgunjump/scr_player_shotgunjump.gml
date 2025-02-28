@@ -1,27 +1,27 @@
 function scr_player_shotgunjump()
 {
 	image_speed = 0.35
-	move = (key_left + key_right)
-	hsp = (move * movespeed)
+	Move = (key_left + key_right)
+	hsp = (Move * Movespeed)
 	if (ladderbuffer > 0)
 		ladderbuffer--
 	if key_jump
 		input_buffer_jump = 0
-	if (dir != xscale)
+	if (dir != Xscale)
 	{
-		dir = xscale
-		movespeed = 0
+		dir = Xscale
+		Movespeed = 0
 	}
-	if (move != 0)
+	if (Move != 0)
 	{
-		xscale = move
-		if (movespeed < 8)
-			movespeed += 0.5
-		else if (floor(movespeed) == 8)
-			movespeed = 6
+		Xscale = Move
+		if (Movespeed < 8)
+			Movespeed += 0.5
+		else if (floor(Movespeed) == 8)
+			Movespeed = 6
 	}
 	else
-		movespeed = 0
+		Movespeed = 0
 	if ((!key_jump2) && vsp < 0.5 && (!jumpstop))
 	{
 		vsp /= 20
@@ -53,7 +53,7 @@ function scr_player_shotgunjump()
 		state = states.shotgundash
 		sprite_index = spr_shotgunsuplexdash
 		image_index = 0
-		movespeed = 10
+		Movespeed = 10
 	}
 	if key_slap2
 	{
@@ -64,21 +64,21 @@ function scr_player_shotgunjump()
 			image_index = 0
 			state = states.shotgunshoot
 			with (instance_create(x, y, obj_pistoleffect))
-				image_xscale = other.xscale
-			with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
+				image_xscale = other.Xscale
+			with (instance_create((x + (Xscale * 20)), (y + 20), obj_shotgunbullet))
 			{
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 				shotgun = 1
 			}
-			with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
+			with (instance_create((x + (Xscale * 20)), (y + 20), obj_shotgunbullet))
 			{
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 				spdh = 4
 				shotgun = 1
 			}
-			with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
+			with (instance_create((x + (Xscale * 20)), (y + 20), obj_shotgunbullet))
 			{
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 				spdh = -4
 				shotgun = 1
 			}
@@ -89,25 +89,25 @@ function scr_player_shotgunjump()
 			sprite_index = spr_shotgunjump1
 			image_index = 0
 			vsp = -11
-			with (instance_create((x + (xscale * 30)), (y + 60), obj_shotgunbullet))
+			with (instance_create((x + (Xscale * 30)), (y + 60), obj_shotgunbullet))
 			{
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 				sprite_index = sprite10391
 				spdh = -10
 				spd = 0
 				shotgun = 1
 			}
-			with (instance_create((x + (xscale * 30)), (y + 60), obj_shotgunbullet))
+			with (instance_create((x + (Xscale * 30)), (y + 60), obj_shotgunbullet))
 			{
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 				sprite_index = sprite10391
 				spdh = -10
 				spd = 5
 				shotgun = 1
 			}
-			with (instance_create((x + (xscale * 30)), (y + 60), obj_shotgunbullet))
+			with (instance_create((x + (Xscale * 30)), (y + 60), obj_shotgunbullet))
 			{
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 				sprite_index = sprite10391
 				spdh = -10
 				spd = -5

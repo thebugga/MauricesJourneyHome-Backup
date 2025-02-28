@@ -6,11 +6,11 @@ function scr_switchgustavo(argument0, argument1) //gml_Script_scr_switchgustavo
         argument1 = false
     with (obj_player1)
     {
-        if ispeppino
+        if global.playerCharacter == Characters.Maurice
         {
-            ratmount_movespeed = 8
+            ratmount_Movespeed = 8
             gustavodash = 0
-            isgustavo = true
+            global.playerCharacter = Characters.Pierre
             if argument0
             {
                 visible = true
@@ -25,7 +25,7 @@ function scr_switchgustavo(argument0, argument1) //gml_Script_scr_switchgustavo
     }
     with (obj_swapmodefollow)
     {
-        isgustavo = true
+        global.playerCharacter = Characters.Pierre
         self.get_character_spr()
     }
 }
@@ -36,11 +36,10 @@ function scr_switchpeppino(argument0) //gml_Script_scr_switchpeppino
         argument0 = true
     with (obj_player1)
     {
-        if ispeppino
+        if global.playerCharacter == Characters.Maurice
         {
             gustavodash = 0
-            ratmount_movespeed = 8
-            isgustavo = false
+            ratmount_Movespeed = 8
             brick = false
             fmod_event_instance_release(snd_voiceok)
             snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok")
@@ -54,7 +53,6 @@ function scr_switchpeppino(argument0) //gml_Script_scr_switchpeppino
         }
         else
         {
-            isgustavo = false
             noisecrusher = false
             if argument0
             {
@@ -67,7 +65,6 @@ function scr_switchpeppino(argument0) //gml_Script_scr_switchpeppino
     }
     with (obj_swapmodefollow)
     {
-        isgustavo = false
         self.get_character_spr()
     }
 }

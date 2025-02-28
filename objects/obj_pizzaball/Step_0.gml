@@ -87,9 +87,9 @@ if (boundbox == 0)
 }
 if (state == states.thrown)
 {
-	with (instance_place((x + xscale), y, obj_destructibles))
+	with (instance_place((x + Xscale), y, obj_destructibles))
 		instance_destroy()
-	with (instance_place(((x + hsp) + xscale), y, obj_destructibles))
+	with (instance_place(((x + hsp) + Xscale), y, obj_destructibles))
 		instance_destroy()
 	with (instance_place(x, ((y + vsp) + 1), obj_destructibles))
 		instance_destroy()

@@ -1,14 +1,14 @@
 function scr_player_antigrav()
 {
 	sprite_index = spr_currentplayer
-	move = (key_right + key_left)
-	hsp = approach(hsp, (move * 8), 0.5)
-	movespeed = hsp
+	Move = (key_right + key_left)
+	hsp = approach(hsp, (Move * 8), 0.5)
+	Movespeed = hsp
 	if (vsp > -14)
 		vsp -= 0.5
 	if key_jump
 	{
-		movespeed = abs(hsp)
+		Movespeed = abs(hsp)
 		state = states.jump
 		sprite_index = spr_machfreefall
 		//scr_soundeffect(sfx_antigravend)

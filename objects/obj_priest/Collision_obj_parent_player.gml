@@ -6,12 +6,12 @@ with (other)
 		if (state == states.mort or state == states.mortjump or state == states.morthook or state == states.mortjump or state == states.boxxedpep or state == states.boxxedpepjump or state == states.boxxedpepspin)
 		{
 			if (hsp != 0)
-				xscale = sign(hsp)
-			movespeed = abs(hsp)
+				Xscale = sign(hsp)
+			Movespeed = abs(hsp)
 		}
 		transformationsnd = false
 		state = states.normal
-		dir = xscale
+		dir = Xscale
 		_transfo = 1
 		create_particle(x, y, particle.genericpoofeffect)
 	}

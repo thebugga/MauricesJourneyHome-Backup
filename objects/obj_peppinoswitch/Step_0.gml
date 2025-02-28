@@ -6,8 +6,7 @@ if (sprite_index == spr_peppinoswitch2 && floor(image_index) == (image_number - 
 	{
 		visible = true
 		gustavodash = 0
-		ratmount_movespeed = 8
-		isgustavo = 0
+		ratmount_Movespeed = 8
 		state = states.normal
 		brick = 0
 		x = obj_peppinoswitch.x

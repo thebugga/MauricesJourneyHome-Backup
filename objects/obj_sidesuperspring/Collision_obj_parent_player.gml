@@ -6,8 +6,8 @@ with (other)
 		{
 			other.sprite_index = spr_sidespringblock_bounce
 			other.image_index = 0
-			if (xscale != other.image_xscale)
-				xscale = other.image_xscale
+			if (Xscale != other.image_xscale)
+				Xscale = other.image_xscale
 		}
 	}
 }

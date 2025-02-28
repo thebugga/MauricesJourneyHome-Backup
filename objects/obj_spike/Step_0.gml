@@ -17,7 +17,7 @@ with (obj_parent_player)
 					state = states.bump
 					sprite_index = spr_bump
 					image_index = 0
-					hsp = (-6 * xscale)
+					hsp = (-6 * Xscale)
 					vsp = -4
 					//scr_soundeffect(sfx_loseknight)
 					repeat (3)

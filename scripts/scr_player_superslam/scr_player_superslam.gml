@@ -2,17 +2,17 @@ function scr_player_superslam()
 {
 	if (sprite_index == spr_piledriver)
 	{
-		move = (key_left + key_right)
-		hsp = (move * movespeed)
-		if (move != dir && move != 0)
+		Move = (key_left + key_right)
+		hsp = (Move * Movespeed)
+		if (Move != dir && Move != 0)
 		{
-			dir = move
-			movespeed = 0
+			dir = Move
+			Movespeed = 0
 		}
 	}
 	else
 	{
-		move = 0
+		Move = 0
 		hsp = 0
 	}
 	if (sprite_index == spr_piledriver && vsp >= 0)
@@ -31,7 +31,7 @@ function scr_player_superslam()
 		hsp = 0
 		bounce = 0
 		with (instance_create(x, (y + 35), obj_bangeffect))
-			xscale = obj_parent_player.xscale
+			Xscale = obj_parent_player.Xscale
 		create_particle(x, y, particle.landcloud, 0)
 		freefallstart = 0
 	}
@@ -39,7 +39,7 @@ function scr_player_superslam()
 	dashAnim = 1
 	landAnim = 0
 	machslideAnim = 1
-	moveAnim = 1
+	MoveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1
@@ -48,19 +48,19 @@ function scr_player_superslam()
 		vsp = -6
 		state = states.jump
 	}
-	if (move != 0)
+	if (Move != 0)
 	{
-		if (movespeed < 6)
-			movespeed += 0.5
-		else if (floor(movespeed) == 6)
-			movespeed = 6
+		if (Movespeed < 6)
+			Movespeed += 0.5
+		else if (floor(Movespeed) == 6)
+			Movespeed = 6
 	}
 	else
-		movespeed = 0
-	if (movespeed > 6)
-		movespeed -= 0.1
-	if (global.playerCharacter == Characters.Doise && move != 0)
-		xscale = move
+		Movespeed = 0
+	if (Movespeed > 6)
+		Movespeed -= 0.1
+	if (global.playerCharacter == Characters.Doise && Move != 0)
+		Xscale = Move
 	if (vsp < 0)
 		image_speed = 0.35
 	else

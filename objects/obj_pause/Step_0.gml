@@ -18,7 +18,7 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 		_cutscenehandler = true;
 	with obj_taxi
 	{
-		if move
+		if Move
 			_cutscenehandler = true;
 	}
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != ObjectnMacroloadinRoom && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
@@ -263,16 +263,16 @@ if pause && !instance_exists(obj_option)&& alarm[3] == -1
 		backbuffer--;
 		key_back2 = false;
 	}
-	moveselect = -key_up2 + key_down2;
+	Moveselect = -key_up2 + key_down2;
 	var prevselect = selected;
-	selected += moveselect;
+	selected += Moveselect;
 	if selected >= array_length(pause_menu)
 		selected = 0;
 	else if selected < 0
 		selected = array_length(pause_menu) - 1;
 	if prevselect != selected
 	{
-		fmod_event_one_shot("event:/sfx/ui/angelmove");
+		fmod_event_one_shot("event:/sfx/ui/angelMove");
 		update_cursor = true;
 	}
 	if key_back2

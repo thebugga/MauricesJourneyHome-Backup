@@ -38,7 +38,7 @@ switch state
 				tauntstoredsprite = sprite_index
 				state = states.stringfall
 				stringid = other.id
-				movespeed = hsp
+				Movespeed = hsp
 			}
 			state = states.hook
 		}
@@ -69,7 +69,7 @@ switch state
 		{
 			drawhandx = handx
 			drawhandy = handy
-			hand_xscale = playerid.xscale
+			hand_xscale = playerid.Xscale
 			if (playerid.state != states.tube)
 			{
 				with (playerid)
@@ -107,7 +107,7 @@ switch state
 	case states.hookshot:
 		sprite_index = spr_mrpinch_face2
 		hand_index = spr_mrpinch_hand2
-		hand_xscale = playerid.xscale
+		hand_xscale = playerid.Xscale
 		handy = playerid.y
 		handx = playerid.x
 		drawhandx = handx
@@ -124,11 +124,11 @@ switch state
 			if (y <= other.y)
 			{
 				other.shootbuffer = 0
-				movespeed = abs(movespeed)
-				if (movespeed != 0)
-					xscale = sign(movespeed)
+				Movespeed = abs(Movespeed)
+				if (Movespeed != 0)
+					Xscale = sign(Movespeed)
 				vsp = other.launch_vsp
-				dir = xscale
+				dir = Xscale
 				jumpAnim = 1
 				momemtum = 1
 				jumpstop = 1

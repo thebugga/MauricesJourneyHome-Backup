@@ -18,8 +18,8 @@ function scr_initenemy()
 	blur_effect = 0;
 	hsp_carry = 0;
 	vsp_carry = 0;
-	xscale = 1;
-	yscale = 1;
+	Xscale = 1;
+	Yscale = 1;
 	grav = 0.5;
 	hsp = 0;
 	vsp = 0;
@@ -48,7 +48,7 @@ function scr_initenemy()
 	spr_palette = palette_forknight;
 	stuntouchbuffer = 0;
 	scaredbuffer = 0;
-	movespeed = 1;
+	Movespeed = 1;
 	ragebuffer = 0;
 	ragehitbox = false;
 	ragedash = 0;
@@ -72,7 +72,7 @@ function scr_initenemy()
 	stagger_buffer = -1;
 	stagger_max = 45;
 	stagger_jumpspeed = 4;
-	stagger_movespeed = 1;
+	stagger_Movespeed = 1;
 	stagger_dir = 1;
 	hitLag = 25;
 	hitX = x;
@@ -92,16 +92,16 @@ function scr_initenemy()
 	mach3destroy = false;
 	provoked = false;
 	is_controllable = false;
-	possess_movespeed = 0;
+	possess_Movespeed = 0;
 	stuntouch_yoffset = 0;
 	turnmax = 200;
 	turntimer = 0;
 	turnstart = false;
 	timedgate = false;
 	chargeID = -4;
-	angle = image_angle;
+	Rotation = image_angle;
 	is_controllable = false;
-	possess_movespeed = 0;
+	possess_Movespeed = 0;
 	grav = 0.5;
 	hsp = 0;
 	vsp = 0;
@@ -133,7 +133,7 @@ function scr_initenemy()
 	grabbedby = 0;
 	stuntouchbuffer = 0;
 	scaredbuffer = 0;
-	railmovespeed = 0;
+	railMovespeed = 0;
 	use_collision = true;
 	turner = false;
 	elite = false;
@@ -143,7 +143,7 @@ function scr_initenemy()
 	ventilator_vsp = -5;
 	linethrown = false;
 	dashcloudid = obj_null;
-	player_instakillmove = false;
+	player_instakillMove = false;
 	stompbuffer = 0;
 	killbyenemybuffer = 0;
 }

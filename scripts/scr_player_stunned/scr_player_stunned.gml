@@ -11,12 +11,12 @@ function scr_player_stunned()
 	else
 		landAnim = 1
 	jumpstop = 0
-	moveAnim = 1
+	MoveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
 	machhitAnim = 0
-	movespeed = 0
+	Movespeed = 0
 	turning = 0
 	hurted = 1
 	turning = 0

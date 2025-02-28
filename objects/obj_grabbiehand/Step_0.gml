@@ -63,7 +63,7 @@ switch state
 			vsp = 0
 			x = other.x
 			y = other.y
-			xscale = other.image_xscale
+			Xscale = other.image_xscale
 			if (object_index != obj_pizzagoblinbomb)
 			{
 				state = states.bump
@@ -79,7 +79,7 @@ switch state
 			{
 				with (playerid)
 				{
-					movespeed = tauntstoredmovespeed
+					Movespeed = tauntstoredMovespeed
 					vsp = 0
 					sprite_index = tauntstoredsprite
 					state = tauntstoredstate

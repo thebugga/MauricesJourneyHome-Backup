@@ -1,4 +1,4 @@
-if ((other.y > other.yprevious or (other.xscale == sign(image_xscale) && other.y < bbox_bottom)) && other.state != states.backbreaker && other.state != states.bump)
+if ((other.y > other.yprevious or (other.Xscale == sign(image_xscale) && other.y < bbox_bottom)) && other.state != states.backbreaker && other.state != states.bump)
 {
 	with (other)
 	{
@@ -7,10 +7,10 @@ if ((other.y > other.yprevious or (other.xscale == sign(image_xscale) && other.y
 		while place_meeting(x, y, obj_grindrailslope)
 			y--
 	}
-	if (!other.isgustavo)
+	if (!other.global.playerCharacter == Characters.Pierre)
 	{
-		if (other.movespeed < 10)
-			other.movespeed = 10
+		if (other.Movespeed < 10)
+			other.Movespeed = 10
 		other.state = states.grind
 	}
 	else

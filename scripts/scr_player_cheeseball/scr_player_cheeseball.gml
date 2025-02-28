@@ -7,11 +7,11 @@ function scr_player_cheeseball()
 		stop_buffer = 8
 	if (vsp < 0)
 		vsp += 0.25
-	hsp = (xscale * movespeed)
-	if place_meeting_slope(x,y)
+	hsp = (Xscale * Movespeed)
+	if slopeCheck(x + Xscale, y)
 	{
 		var slope = instance_place(x, (y + 1), obj_slope)
-		if (sign(slope.image_xscale) == xscale)
+		if (sign(slope.image_xscale) == Xscale)
 		{
 			slopejump = 1
 			slopejumpx = (slope.x + (slope.image_xscale * 32))
@@ -36,7 +36,7 @@ function scr_player_cheeseball()
 			create_debris((x + random_range(-8, 8)), (y + 43), spr_cheesechunk)
 	}
 	if grounded
-		movespeed = approach(movespeed, 12, 0.25)
+		Movespeed = approach(Movespeed, 12, 0.25)
 	sprite_index = spr_cheeseballplayer
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_ratblock))) or place_meeting((x + sign(hsp)), y, obj_rattumble)))
 	{
@@ -44,7 +44,7 @@ function scr_player_cheeseball()
 		slopejump = 0
 		//scr_soundeffect(sfx_groundpound)
 		image_index = 0
-		movespeed = 0
+		Movespeed = 0
 		cheesepeptimer = 2
 		state = states.cheesepepjump
 		sprite_index = spr_cheesepepfall

@@ -107,9 +107,9 @@ function tv_get_palette() //gml_Script_tv_get_palette
 {
     if (!instance_exists(obj_player1))
         return;
-    var _info = (obj_player1.ispeppino ? get_pep_palette_info() : get_noise_palette_info())
+    var _info = (global.playerCharacter == Characters.Maurice ? get_pep_palette_info() : get_noise_palette_info())
     spr_palette = _info.spr_palette
-    if (obj_player1.isgustavo && obj_player1.ispeppino)
+    if (global.playerCharacter == Characters.Pierre)
         spr_palette = spr_ratmountpalette
     paletteselect = _info.paletteselect
     patterntexture = _info.patterntexture
@@ -145,7 +145,7 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
                 case spr_tv_exprcollect:
                     expressionbuffer = 150
 					cardboardexprsprite = argument0
-                    if obj_parent_player.isgustavo
+                    if obj_parent_player.global.playerCharacter == Characters.Pierre
                     {
                         cardboardexprsprite = spr_tv_happyG
                         if (irandom(100) <= 50)

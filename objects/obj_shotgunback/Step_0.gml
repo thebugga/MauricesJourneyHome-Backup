@@ -7,9 +7,9 @@ with (obj_player1)
 		else
 			other.visible = false
 	}
-	other.x = (x - (20 * xscale))
+	other.x = (x - (20 * Xscale))
 	other.y = y
-	other.image_xscale = (-xscale)
+	other.image_xscale = (-Xscale)
 }
 if (room == rank_room)
 	visible = false

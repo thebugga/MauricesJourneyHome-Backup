@@ -3,7 +3,7 @@ switch state
 	case states.normal:
 		sprite_index = spr_kingghost
 		var dir = point_direction(x, y, obj_player1.x, obj_player1.y)
-		x = lerp(x, (obj_player1.x - (100 * obj_player1.xscale)), 0.05)
+		x = lerp(x, (obj_player1.x - (100 * obj_player1.Xscale)), 0.05)
 		y = lerp(y, (obj_player1.y - 100), 0.05)
 		if (x != obj_player1.x)
 			image_xscale = (-(sign((x - obj_player1.x))))

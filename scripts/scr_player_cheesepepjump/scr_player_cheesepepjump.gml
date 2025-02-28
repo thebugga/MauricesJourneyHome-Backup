@@ -8,8 +8,8 @@ function scr_player_cheesepepjump()
 		else if (sprite_index == spr_cheesepepjump && vsp > 0)
 			sprite_index = spr_cheesepepfall
 	}
-	hsp = movespeed
-	move = (key_left + key_right)
+	hsp = Movespeed
+	Move = (key_left + key_right)
 	if ((!key_jump2) && (!jumpstop) && vsp < 0)
 	{
 		jumpstop = 1
@@ -17,20 +17,20 @@ function scr_player_cheesepepjump()
 	}
 	if key_jump
 		input_buffer_jump = 0
-	if (move != 0)
-		movespeed = approach(movespeed, (move * 3), 0.5)
+	if (Move != 0)
+		Movespeed = approach(Movespeed, (Move * 3), 0.5)
 	else
-		movespeed = approach(movespeed, 0, 0.25)
-	if (place_meeting((x + sign(movespeed)), y, obj_solid) && (!(place_meeting(x, (y + 1), obj_slope))))
+		Movespeed = approach(Movespeed, 0, 0.25)
+	if (place_meeting((x + sign(Movespeed)), y, obj_solid) && (!(place_meeting(x, (y + 1), obj_slope))))
 	{
 		state = states.cheesepepstick
 		sprite_index = spr_cheesepepstickside
 		hsp = 0
 		vsp = 0
-		xscale = sign(movespeed)
+		Xscale = sign(Movespeed)
 		repeat (3)
-			create_debris((x + (xscale * 30)), (y + random_range(-8, 8)), spr_cheesechunk)
-		movespeed = 0
+			create_debris((x + (Xscale * 30)), (y + random_range(-8, 8)), spr_cheesechunk)
+		Movespeed = 0
 	}
 	if grounded
 	{
@@ -39,7 +39,7 @@ function scr_player_cheesepepjump()
 		state = states.cheesepep
 		sprite_index = spr_cheesepepland
 		image_index = 0
-		movespeed = abs(movespeed)
+		Movespeed = abs(Movespeed)
 	}
 	exit;
 }

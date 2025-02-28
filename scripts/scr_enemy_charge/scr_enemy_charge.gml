@@ -22,7 +22,7 @@ function scr_enemy_charge()
 	{
 		if (floor(image_index) == (image_number - 1))
 			image_speed = 0
-		hsp = (image_xscale * movespeed)
+		hsp = (image_xscale * Movespeed)
 		if (grounded && vsp > 0)
 		{
 			if place_meeting((x + image_xscale), y, obj_solid)
@@ -35,7 +35,7 @@ function scr_enemy_charge()
 	}
 	if (object_index == obj_snowman)
 	{
-		hsp = (image_xscale * movespeed)
+		hsp = (image_xscale * Movespeed)
 		image_speed = 0.35
 		if (((place_meeting_solid((x + 1), y) && image_xscale == 1) or (place_meeting_solid((x - 1), y) && image_xscale == -1)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 			image_xscale *= -1
@@ -46,18 +46,18 @@ function scr_enemy_charge()
 		if (object_index == obj_fencer)
 		{
 			if (grounded or (grounded && (!(place_meeting(x, y, obj_platform)))))
-				hsp = (image_xscale * movespeed)
+				hsp = (image_xscale * Movespeed)
 			else
 				hsp = 0
 		}
 		else
-			hsp = (image_xscale * movespeed)
+			hsp = (image_xscale * Movespeed)
 		if (((place_meeting_solid((x + 1), y) && image_xscale == 1) or (place_meeting_solid((x - 1), y) && image_xscale == -1)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 			image_xscale *= -1
 	}
 	if (object_index == obj_ancho)
 	{
-		hsp = (image_xscale * movespeed)
+		hsp = (image_xscale * Movespeed)
 		if place_meeting((x + hsp), y, obj_solid)
 		{
 			state = states.stun
@@ -79,7 +79,7 @@ function scr_enemy_charge()
 	if place_meeting(x, (y + 1), obj_railparent)
 	{
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
-		hsp += (_railinst.movespeed * _railinst.dir)
+		hsp += (_railinst.Movespeed * _railinst.dir)
 	}
 	exit;
 }

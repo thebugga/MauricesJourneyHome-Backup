@@ -11,29 +11,29 @@ function scr_player_fireass()
 	{
 		if (floor(image_index) == (image_number - 1) && sprite_index == spr_fireass)
 			create_particle(x, (y + 25), states.ejected, 0)
-		move = (key_left + key_right)
-		hsp = movespeed
-		if (move != 0)
+		Move = (key_left + key_right)
+		hsp = Movespeed
+		if (Move != 0)
 		{
-			if (move == xscale)
-				movespeed = approach(movespeed, (xscale * 8), 0.5)
+			if (Move == Xscale)
+				Movespeed = approach(Movespeed, (Xscale * 8), 0.5)
 			else
-				movespeed = approach(movespeed, 0, 0.5)
-			if (movespeed <= 0)
-				xscale = move
+				Movespeed = approach(Movespeed, 0, 0.5)
+			if (Movespeed <= 0)
+				Xscale = Move
 		}
 		else
-			movespeed = approach(movespeed, 0, 0.1)
+			Movespeed = approach(Movespeed, 0, 0.1)
 		if place_meeting(x, (y + 1), obj_haystack)
 			vsp = -20
 		else if (grounded && vsp > 0 && (!(place_meeting(x, (y + 1), obj_ratblock))))
 		{
-			movespeed = 6
+			Movespeed = 6
 			if (sprite_index == spr_fireass)
 				sprite_index = spr_fireassground
 			else
 			{
-				movespeed = 0
+				Movespeed = 0
 				landAnim = 0
 				alarm[5] = 2
 				alarm[7] = 60
@@ -49,12 +49,12 @@ function scr_player_fireass()
 		sprite_index = spr_scaredjump2
 	if (sprite_index == spr_fireassground)
 	{
-		hsp = (xscale * movespeed)
-		if (movespeed > 0)
-			movespeed -= 0.25
+		hsp = (Xscale * Movespeed)
+		if (Movespeed > 0)
+			Movespeed -= 0.25
 		if (floor(image_index) == (image_number - 1))
 		{
-			movespeed = 0
+			Movespeed = 0
 			landAnim = 0
 			alarm[5] = 2
 			alarm[7] = 60
@@ -68,7 +68,7 @@ function scr_player_fireass()
 	{
 		if (floor(image_index) == (image_number - 1))
 		{
-			movespeed = 0
+			Movespeed = 0
 			landAnim = 0
 			alarm[5] = 2
 			alarm[7] = 60

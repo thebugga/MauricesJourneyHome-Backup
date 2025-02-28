@@ -13,4 +13,4 @@ with (other)
 }
 depth = 11
 gotowardsplayer = 0
-movespeed = 5
+Movespeed = 5

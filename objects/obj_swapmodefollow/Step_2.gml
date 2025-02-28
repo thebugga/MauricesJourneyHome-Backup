@@ -63,18 +63,18 @@ if taunttimer > 0
 var old_x = x;
 event_inherited();
 
-var _movespeed = abs(old_x - x);
-var maxmovespeed = 8;
-if _movespeed < floor(maxmovespeed) / 2
+var _Movespeed = abs(old_x - x);
+var maxMovespeed = 8;
+if _Movespeed < floor(maxMovespeed) / 2
 	image_speed = 0.35;
-else if _movespeed > floor(maxmovespeed) / 2 && _movespeed < maxmovespeed
+else if _Movespeed > floor(maxMovespeed) / 2 && _Movespeed < maxMovespeed
 	image_speed = 0.45;
 else
 	image_speed = 0.6;
 
 image_blend = obj_player1.image_blend;
-image_xscale = obj_player1.xscale * obj_player1.scale_xs;
-image_yscale = obj_player1.yscale * obj_player1.scale_ys;
+image_xscale = obj_player1.Xscale * obj_player1.scale_xs;
+image_Yscale = obj_player1.Yscale * obj_player1.scale_ys;
 following_moonwalk_fix();
 
 usable = true;
@@ -93,11 +93,11 @@ if instance_exists(obj_swapdeatheffect)
 if place_meeting(x, y + 1, obj_solid) || (place_meeting(x, y + 1, obj_platform) && !place_meeting(x, y, obj_platform)) || place_meeting(x, y + 1, obj_slope)
 {
 	if x != xprevious
-		sprite_index = spr_move;
+		sprite_index = spr_Move;
 	else
 		sprite_index = spr_idle;
 }
-else if sprite_index != spr_air && (sprite_index != spr_playerN_doublejumpfall || ispeppino) && animatronic <= 0
+else if sprite_index != spr_air && (sprite_index != spr_playerN_doublejumpfall || global.playerCharacter == Characters.Maurice ) && animatronic <= 0
 {
 	sprite_index = spr_air;
 	image_index = 0;
@@ -175,8 +175,7 @@ if key_slap2 && sprite_index != spr_fightball && usable && grabbuffer <= 0 && vi
         paletteselect = other.paletteselect
         sprite_index = other.spr_suplexdash
         spr_fall = other.spr_fall
-        ispeppino = other.ispeppino
-        isgustavo = other.isgustavo
+        
         if (x != obj_player1.x)
             image_xscale = sign(obj_player1.x - x)
         else

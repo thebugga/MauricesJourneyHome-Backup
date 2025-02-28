@@ -4,6 +4,6 @@ yoffset = 0
 hsp = 0
 vsp = 0
 grav = 0.23
-movespeed = 3
+Movespeed = 3
 instance_create(x, y, obj_taunteffect)
 playerid = obj_player1

@@ -1,20 +1,20 @@
 function state_player_normal()
 {
-	var maxmovespeed = 8;
-	var maxmovespeed2 = 6;
+	var maxMovespeed = 8;
+	var maxMovespeed2 = 6;
 	var accel = 0.5;
 	var deccel = 0.1;
 	var jumpspeed = -11;
 	
 	mach2 = 0;
-	move = key_left + key_right;
+	Move = key_left + key_right;
 	skateboarding = false;
 	momemtum = false;
 	jumpstop = false;
-	if dir != xscale
+	if dir != Xscale
 	{
-		dir = xscale;
-		movespeed = 2;
+		dir = Xscale;
+		Movespeed = 2;
 		facehurt = false;
 	}
 	if key_taunt2
@@ -25,14 +25,14 @@ function state_player_normal()
 		input_down_buffer = 0;
 	}
 	var idlespr = spr_idle;
-	var movespr = spr_move;
-	if global.pistol && ispeppino
+	var Movespr = spr_Move;
+	if global.pistol && global.playerCharacter == Characters.Maurice
 	{
 		idlespr = spr_player_pistolidle;
-		movespr = spr_player_pistolwalk;
+		Movespr = spr_player_pistolwalk;
 	}
 	var breakdance_max = 10;
-	if (key_taunt && !shotgunAnim && (!global.pistol || !ispeppino))
+	if (key_taunt && !shotgunAnim && (!global.pistol || global.playerCharacter == Characters.Doise))
 		breakdance_pressed++;
 	else
 		breakdance_pressed = 0;
@@ -60,22 +60,22 @@ function state_player_normal()
 	if (place_meeting(x, y + 1, obj_railparent))
 	{
 		var _railinst = instance_place(x, y + 1, obj_railparent);
-		railmovespeed = _railinst.movespeed;
+		railMovespeed = _railinst.Movespeed;
 		raildir = _railinst.dir;
 		railmomentum = true;
 	}
-	hsp = (move * movespeed) + (railmovespeed * raildir);
-	if move != 0
+	hsp = (Move * Movespeed) + (railMovespeed * raildir);
+	if Move != 0
 	{
-        if move != 0
-            xscale = move
-		if movespeed < maxmovespeed
-			movespeed += accel;
-		else if (floor(movespeed) == maxmovespeed)
-			movespeed = maxmovespeed2;
-		if (movespeed < (floor(maxmovespeed2) / 2) && move != 0)
+        if Move != 0
+            Xscale = Move
+		if Movespeed < maxMovespeed
+			Movespeed += accel;
+		else if (floor(Movespeed) == maxMovespeed)
+			Movespeed = maxMovespeed2;
+		if (Movespeed < (floor(maxMovespeed2) / 2) && Move != 0)
 			image_speed = 0.35;
-		else if (movespeed > (floor(maxmovespeed2) / 2) && movespeed < maxmovespeed2)
+		else if (Movespeed > (floor(maxMovespeed2) / 2) && Movespeed < maxMovespeed2)
 			image_speed = 0.45;
 		else
 			image_speed = 0.6;
@@ -96,13 +96,13 @@ function state_player_normal()
 			|| (global.noisejetpack)
 				sprite_index = spr_3hpwalk;
 			else if (global.combo >= 50)
-				sprite_index = spr_ragemove;
+				sprite_index = spr_rageMove;
 			else
-				sprite_index = movespr;
+				sprite_index = Movespr;
 		}
-		if (place_meeting_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope) && xscale == move && !place_meeting(x, y + 1, obj_slope))
-			movespeed = 0;
-		if move != 0 && grounded && vsp > 0
+		if (place_meeting_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope) && Xscale == Move && !place_meeting(x, y + 1, obj_slope))
+			Movespeed = 0;
+		if Move != 0 && grounded && vsp > 0
 		{
 			if steppybuffer > 0
 				steppybuffer--;
@@ -121,7 +121,7 @@ function state_player_normal()
 			image_speed = breakdance_speed;
 		else
 			image_speed = 0.35;
-		movespeed = 0;
+		Movespeed = 0;
 		if !machslideAnim && !landAnim && !shotgunAnim
 		{
 			if idle < 400 && breakdance_pressed < breakdance_max
@@ -133,7 +133,7 @@ function state_player_normal()
 					facehurt = false;
 					idle = 0;
 				}
-				if ((!global.pistol || !ispeppino) && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6)
+				if ((!global.pistol || global.playerCharacter == Characters.Doise) && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6)
 				{
 					idleanim = random_range(0, 5);
 					var idles = 
@@ -156,7 +156,7 @@ function state_player_normal()
 				if (windingAnim < 100 || angry|| shoot)
 				{
 					start_running = true;
-					movespeed = 0;
+					Movespeed = 0;
 					if shoot
 						sprite_index = spr_player_pistolidle;
 					else if breakdance_pressed >= breakdance_max
@@ -166,7 +166,7 @@ function state_player_normal()
 					else if (global.panic && !instance_exists(obj_ghostcollectibles))
 						sprite_index = spr_panic;
 					else if ((global.combo >= 25 && global.combo < 50))
-					|| (global.noisejetpack && (ispeppino || noisepizzapepper))
+					|| (global.noisejetpack && (global.playerCharacter == Characters.Doise || noisepizzapepper))
 						sprite_index = spr_3hpidle;
 					else if (global.combo >= 50)
 						sprite_index = spr_rageidle;
@@ -191,8 +191,8 @@ function state_player_normal()
 			}
 		}
 	}
-	if movespeed > maxmovespeed
-		movespeed -= deccel;
+	if Movespeed > maxMovespeed
+		Movespeed -= deccel;
 	if landAnim
 	{
 		if sprite_index == spr_player_mortland
@@ -207,9 +207,9 @@ function state_player_normal()
 
 		else if !shotgunAnim
 		{
-			if move == 0
+			if Move == 0
 			{
-				movespeed = 0;
+				Movespeed = 0;
 				sprite_index = spr_land;
 				if animation_end()
 					landAnim = false;
@@ -220,7 +220,7 @@ function state_player_normal()
 				if animation_end()
 				{
 					landAnim = false;
-					sprite_index = movespr;
+					sprite_index = Movespr;
 					image_index = 0;
 				}
 			}
@@ -232,14 +232,14 @@ function state_player_normal()
 			{
 				landAnim = false;
 				sprite_index = spr_shotgunidle;
-				if move != 0
+				if Move != 0
 					sprite_index = spr_shotgunwalk;
 				image_index = 0;
 			}
 		}
 	}
 	else if shotgunAnim && sprite_index != spr_shotgunshoot && !machslideAnim
-		sprite_index = (move == 0) ? spr_shotgunidle : spr_shotgunwalk;
+		sprite_index = (Move == 0) ? spr_shotgunidle : spr_shotgunwalk;
 	if machslideAnim
 		sprite_index = spr_machslideend;
 	if animation_end()
@@ -274,11 +274,11 @@ function state_player_normal()
 				sprite_index = spr_jump;
 				if shotgunAnim
 					sprite_index = spr_shotgunjump;
-				else if global.pistol && ispeppino
+				else if global.pistol && global.playerCharacter == Characters.Maurice
 					sprite_index = spr_player_pistoljump1;
 				image_index = 0;
 			}
-			particle_set_scale(particle.highjumpcloud2, xscale, 1);
+			particle_set_scale(particle.highjumpcloud2, Xscale, 1);
 			create_particle(x, y, particle.highjumpcloud2, 0);
 			vsp = jumpspeed;
 			state = states.jump;
@@ -305,7 +305,7 @@ function state_player_normal()
 				sprite_index = spr_fall;
 			else
 				sprite_index = spr_shotgunfall;
-			if global.pistol && ispeppino
+			if global.pistol && global.playerCharacter == Characters.Maurice
 				sprite_index = spr_player_pistoljump2;
 			image_index = 0;
 			jumpAnim = false;
@@ -318,7 +318,7 @@ function state_player_normal()
     {
 		scr_dograb()
     }
-    else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && ((!global.pistol) || (!ispeppino))) && global.playerCharacter != Characters.MrOrange
+    else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && ((!global.pistol)))
     {
         state = states.punch
         input_buffer_slap = 0
@@ -329,24 +329,24 @@ function state_player_normal()
             vsp = -14
         else
             vsp = -20
-        particle_set_scale((4 << 0), xscale, 1)
+        particle_set_scale((4 << 0), Xscale, 1)
         create_particle(x, y, (4 << 0), 0)
     }
-	if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu) && global.playerCharacter != Characters.Clownmato
+	if (key_attack && state != states.handstandjump && !place_meeting(x + Xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (Xscale * 5), y, obj_solid)) && !global.kungfu) && global.playerCharacter != Characters.Clownmato
 	{
 		sprite_index = spr_mach1;
 		image_index = 0;
 		state = states.mach2;
-		if movespeed < 6
-			movespeed = 6;
+		if Movespeed < 6
+			Movespeed = 6;
 	}
-	if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu) && global.playerCharacter == Characters.Clownmato
+	if (key_attack && state != states.handstandjump && !place_meeting(x + Xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (Xscale * 5), y, obj_solid)) && !global.kungfu) && global.playerCharacter == Characters.Clownmato
 	{
 		sprite_index = spr_mach4;
 		image_index = 0;
 		state = states.mach3;
-		if movespeed < 12
-			movespeed = 12;
+		if Movespeed < 12
+			Movespeed = 12;
 	}
 	scr_dotaunt();
 	if sprite_index == spr_shotgunshoot
@@ -362,10 +362,10 @@ function state_player_normal()
 		image_index = 0;
 		sprite_index = spr_playerV_airrevolver;
 		image_index = 0;
-		with (instance_create(x + (xscale * 20), y + 20, obj_shotgunbullet))
+		with (instance_create(x + (Xscale * 20), y + 20, obj_shotgunbullet))
 		{
 			is_solid = false;
-			image_xscale = other.xscale;
+			image_xscale = other.Xscale;
 		}
 		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
 	}
@@ -377,10 +377,10 @@ function state_player_normal()
 		sprite_index = spr_playerV_dynamitethrow;
 		with (instance_create(x, y, obj_dynamite))
 		{
-			image_xscale = other.xscale;
+			image_xscale = other.Xscale;
 			other.dynamite_inst = id;
 			playerid = other.id;
-			movespeed = other.movespeed + 4;
+			Movespeed = other.Movespeed + 4;
 			vsp = -6;
 		}
 	}

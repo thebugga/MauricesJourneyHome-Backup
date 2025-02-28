@@ -17,8 +17,8 @@ if place_meeting(x, (y - 1), obj_parent_player)
 					if (sprite_index != spr_player_barrelslipnslide)
 						sprite_index = spr_player_barrelroll
 				}
-				xscale = sign(other.image_xscale)
-				movespeed = 20
+				Xscale = sign(other.image_xscale)
+				Movespeed = 20
 			}
 		}
 		else

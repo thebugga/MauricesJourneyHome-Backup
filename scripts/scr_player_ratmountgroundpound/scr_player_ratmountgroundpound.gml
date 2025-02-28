@@ -5,8 +5,8 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
         if (floor(image_index) == (image_number - 1))
             sprite_index = spr_player_ratmountgroundpoundfall
     }
-    move = (key_left + key_right)
-    hsp = movespeed
+    Move = (key_left + key_right)
+    hsp = Movespeed
     if (brick == 1)
     {
         state = states.ratmountjump
@@ -22,7 +22,7 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
             instance_create(x, (y - 20), obj_bangeffect)
         }
         else
-            instance_create((x + (xscale * 50)), (y + 20), obj_bangeffect)
+            instance_create((x + (Xscale * 50)), (y + 20), obj_bangeffect)
         gustavokicktimer = -1
     }
     if (sprite_index == spr_lonegustavo_jumpstart && gustavokicktimer > 0)
@@ -30,15 +30,15 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
         vsp = 0
         hsp = 0
     }
-    if (move != 0)
+    if (Move != 0)
     {
         if (sprite_index == spr_lonegustavo_groundpoundland)
-            movespeed = approach(movespeed, (move * ratmount_movespeed), 0.25)
+            Movespeed = approach(Movespeed, (Move * ratmount_Movespeed), 0.25)
         else
-            movespeed = approach(movespeed, (move * ratmount_movespeed), 0.5)
+            Movespeed = approach(Movespeed, (Move * ratmount_Movespeed), 0.5)
     }
     else
-        movespeed = approach(movespeed, 0, 0.5)
+        Movespeed = approach(Movespeed, 0, 0.5)
     if (sprite_index == spr_lonegustavo_groundpoundstart && floor(image_index) == (image_number - 1))
     {
         image_index = 0
@@ -49,21 +49,21 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
         vsp++
         if (grounded && vsp > 0 && (!(place_meeting(x, ((y + vsp) + 2), obj_grindrail))) && (!(place_meeting(x, (y + 10), obj_grindrail))) && (!(place_meeting(x, (y + vsp), obj_destructibles))) && (!(place_meeting(x, ((y + vsp) + 2), obj_destructibles))) && (!(place_meeting(x, (y + 10), obj_destructibles))))
         {
-            if place_meeting_slope(x,y)
+            if slopeCheck(x + Xscale, y)
             {
                 with (instance_place(x, (y + 1), obj_slope))
                 {
-                    other.xscale = (-sign(image_xscale))
+                    other.Xscale = (-sign(image_xscale))
                     other.state = states.ratmount
-                    other.movespeed = (other.xscale * 8)
+                    other.Movespeed = (other.Xscale * 8)
                     with (instance_create(other.x, other.y, obj_jumpdust))
                         image_xscale = (-sign(other.image_xscale))
                 }
             }
             else
             {
-                if (move != 0)
-                    movespeed = (xscale * 3)
+                if (Move != 0)
+                    Movespeed = (Xscale * 3)
                 fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y)
                 sprite_index = spr_lonegustavo_groundpoundland
                 image_index = 0
@@ -104,14 +104,14 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
     if (sprite_index == spr_lonegustavo_groundpoundland && floor(image_index) == (image_number - 1))
     {
         if (sign(hsp) != 0)
-            xscale = sign(hsp)
+            Xscale = sign(hsp)
         sprite_index = spr_lonegustavo_idle
         state = states.ratmount
     }
     if ((sprite_index == spr_lonegustavo_kick || sprite_index == spr_lonegustavo_jumpstart) && floor(image_index) == (image_number - 1))
     {
         if (sign(hsp) != 0)
-            xscale = sign(hsp)
+            Xscale = sign(hsp)
         if (sprite_index == spr_lonegustavo_kick)
             sprite_index = spr_player_ratmountgroundpoundfall
         else
@@ -125,7 +125,7 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
     {
         punch_afterimage = 5
         with (create_mach3effect(x, y, sprite_index, image_index, 1))
-            image_xscale = other.xscale
+            image_xscale = other.Xscale
     }
 }
 

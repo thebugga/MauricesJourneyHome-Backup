@@ -18,7 +18,7 @@ else if (other.state == states.ratmountpunch && baddieID == -4)
 {
 	//scr_soundeffect(sfx_punch)
 	vsp = -6
-	hsp = (other.xscale * 8)
+	hsp = (other.Xscale * 8)
 	trapped = 0
 	wait = 1
 	comeback = 0

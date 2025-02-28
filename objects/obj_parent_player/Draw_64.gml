@@ -12,7 +12,7 @@ if obj_player1.debugstats && debug
     draw_text(32, 216, ("IMAGE_SPEED: " + string(obj_player1.image_speed)))
     draw_text(32, 192, ("X: " + string(x)))
     draw_text(32, 168, ("Y: " + string(y)))
-    draw_text(32, 144, ("REAL HSP: " + string(obj_player1.movespeed)))
+    draw_text(32, 144, ("REAL HSP: " + string(obj_player1.Movespeed)))
     draw_text(32, 120, ("HSP: " + string(obj_player1.hsp)))
     draw_text(32, 96, ("VSP: " + string(obj_player1.vsp)))
     draw_text(32, 72, ("STATE: " + statename))
@@ -20,6 +20,6 @@ if obj_player1.debugstats && debug
     draw_text(32, 24, ("ROOM: " + rm))
     shader_set(shd_pal_swapper)
     pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect)
-    draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, 82, 430, 2, 2, angle, c_white, 1)
+    draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, 82, 430, 2, 2, Rotation, c_white, 1)
     reset_shader_fix()
 }

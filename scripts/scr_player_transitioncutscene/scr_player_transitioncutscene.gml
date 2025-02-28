@@ -4,12 +4,12 @@ function scr_player_transitioncutscene()
 	global.heattime = 60
 	if (sprite_index == spr_player_knock && costumercutscenetimer < 0)
 	{
-		xscale *= -1
+		Xscale *= -1
 		hsp = 5
-		sprite_index = spr_player_move
+		sprite_index = spr_player_Move
 		costumercutscenetimer = 35
 	}
-	if (sprite_index == spr_player_move && costumercutscenetimer < 0)
+	if (sprite_index == spr_player_Move && costumercutscenetimer < 0)
 	{
 		with (obj_costumerdoor)
 		{
@@ -18,7 +18,7 @@ function scr_player_transitioncutscene()
 		}
 		image_index = 0
 		hsp = 0
-		xscale *= -1
+		Xscale *= -1
 		sprite_index = spr_player_givepizza
 	}
 	if (sprite_index == spr_player_levelcomplete && costumercutscenetimer < 0)

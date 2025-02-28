@@ -48,14 +48,14 @@ function ledge_bump(argument0)
 	var old_x = x
 	var old_y = y
 	
-	x += xscale * 4
+	x += Xscale * 4
 	var ty = try_solid(0, -1, obj_solid, argument0)
 	x = old_x
 	
 	if ty != -1
 	{
 		y -= ty
-		x += xscale
+		x += Xscale
 		if place_meeting_solid(x, y)
 		{
 			x = old_x

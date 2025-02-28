@@ -1,3 +1,3 @@
-image_xscale = playerid.xscale
-if (playerid.movespeed <= 12)
+image_xscale = playerid.Xscale
+if (playerid.Movespeed <= 12)
 	instance_destroy()

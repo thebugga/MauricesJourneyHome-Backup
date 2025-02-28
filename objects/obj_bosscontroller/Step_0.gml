@@ -35,7 +35,7 @@ switch state
 		with (obj_bossplayer)
 		{
 			state = states.actor
-			xscale = (x > (room_width / 2) ? -1 : 1)
+			Xscale = (x > (room_width / 2) ? -1 : 1)
 			image_blend = make_colour_hsv(0, 0, 255)
 		}
 		with (par_boss)
@@ -107,7 +107,7 @@ switch state
 						y = hitY
 					}
 					state = states.arenaround
-					movespeed = 0
+					Movespeed = 0
 					hsp = 0
 					vsp = 0
 					sprite_index = spr_idle

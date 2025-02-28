@@ -11,7 +11,7 @@ with (playerid)
 		vsp = -20
 		sprite_index = spr_fireass
 		image_index = 0
-		movespeed = hsp
+		Movespeed = hsp
 		//if (!//audio_is_playing(sfx_scream5))
 			//scr_soundeffect(sfx_scream5)
 	}

@@ -2,7 +2,7 @@ if (obj_player1.spotlight == 1)
 {
 	x = obj_player1.x
 	y = obj_player1.y
-	image_xscale = obj_player1.xscale
+	image_xscale = obj_player1.Xscale
 	if (global.playerCharacter == Characters.Maurice && sprite_index != spr_peppalette)
 	{
 		alarm[1] = -1
@@ -24,7 +24,7 @@ else
 {
 	x = obj_player2.x
 	y = obj_player2.y
-	image_xscale = obj_player2.xscale
+	image_xscale = obj_player2.Xscale
 	if (global.playerCharacter == Characters.Maurice && sprite_index != spr_peppalette)
 	{
 		visible = true

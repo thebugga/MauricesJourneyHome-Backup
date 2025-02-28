@@ -6,7 +6,7 @@ if (!global.dougiecutscene2)
 		{
 			x = 800
 			hsp = 0
-			do_dialog_cutscene([[cutscene_set_player_actor], [cutscene_player_check_ground, id], [cutscene_do_dialog, [dialog_create("HEY!", 3, 0), dialog_create("Stay away from my Big Screen TV, that thing's priceless!", 3, 0)], [0, -4, -4, -4], [3, -4, -4, -4]], [cutscene_waitfor_dialog], [cutscene_set_player_actor], [cutscene_move_player, id, 288, 8, 12], [cutscene_set_player_normal]])
+			do_dialog_cutscene([[cutscene_set_player_actor], [cutscene_player_check_ground, id], [cutscene_do_dialog, [dialog_create("HEY!", 3, 0), dialog_create("Stay away from my Big Screen TV, that thing's priceless!", 3, 0)], [0, -4, -4, -4], [3, -4, -4, -4]], [cutscene_waitfor_dialog], [cutscene_set_player_actor], [cutscene_Move_player, id, 288, 8, 12], [cutscene_set_player_normal]])
 		}
     }
 }

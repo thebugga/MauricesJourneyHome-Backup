@@ -16,7 +16,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
                 if (playerid.state == states.mach2 || playerid.state == states.mach1 || playerid.state == states.mach3)
                 {
                     var p = 4
-                    var m = (playerid.movespeed - p)
+                    var m = (playerid.Movespeed - p)
                     var t = (12 - p)
                     alpha = (m / t)
                     alpha = clamp(alpha, 0, 1)

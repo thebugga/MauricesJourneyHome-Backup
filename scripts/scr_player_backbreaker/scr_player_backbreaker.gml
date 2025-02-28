@@ -4,11 +4,11 @@ function scr_player_backbreaker()
 	if (sprite_index != spr_player_machfreefall)
 	{
 		hsp = 0
-		movespeed = 0
+		Movespeed = 0
 	}
 	else
-		hsp = (xscale * movespeed)
-	move = (key_right2 + key_left2)
+		hsp = (Xscale * Movespeed)
+	Move = (key_right2 + key_left2)
 	landAnim = 0
 	if (sprite_index == spr_player_machfreefall && place_meeting(x, (y + 1), obj_solid))
 	{
@@ -26,7 +26,7 @@ function scr_player_backbreaker()
 			with (parry_inst)
 			{
 				player_id = _playerid
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 			}
 		}
 		if (taunttimer < taunt_to_parry_max)
@@ -94,7 +94,7 @@ function scr_player_backbreaker()
 	}
 	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4))
 	{
-		movespeed = tauntstoredmovespeed
+		Movespeed = tauntstoredMovespeed
 		vsp = tauntstoredvsp
 		sprite_index = tauntstoredsprite
 		state = tauntstoredstate
@@ -110,7 +110,7 @@ function scr_player_backbreaker()
 	}
 	if ((sprite_index == spr_taunt or sprite_index == spr_player_ratmounttaunt) && taunttimer == 0)
 	{
-		movespeed = tauntstoredmovespeed
+		Movespeed = tauntstoredMovespeed
 		vsp = tauntstoredvsp
 		sprite_index = tauntstoredsprite
 		state = tauntstoredstate

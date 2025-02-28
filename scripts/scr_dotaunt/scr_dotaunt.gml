@@ -19,7 +19,7 @@ function scr_dotaunt() //gml_Script_scr_dotaunt
             taunttimer = 20
             if (state != states.backbreaker && sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4)
             {
-                tauntstoredmovespeed = movespeed
+                tauntstoredMovespeed = Movespeed
                 tauntstoredvsp = (vsp + grav)
                 tauntstoredsprite = sprite_index
                 tauntstoredstate = state
@@ -59,7 +59,7 @@ function scr_create_parryhitbox() //gml_Script_scr_create_parryhitbox
     with (parry_inst)
     {
         player_id = _playerid
-        image_xscale = other.xscale
+        image_xscale = other.Xscale
     }
 }
 

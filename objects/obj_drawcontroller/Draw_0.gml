@@ -7,7 +7,7 @@ if use_dark
 			if visible
 			{
 				var b = get_dark(image_blend, other.use_dark)
-				draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, image_alpha)
+				draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_Yscale, image_angle, b, image_alpha)
 			}
 		}
 	}
@@ -32,7 +32,7 @@ with (obj_deatheffect)
 	{
 		pal_swap_set(spr_palette, paletteselect, 0)
 		b = get_dark(image_blend, other.use_dark)
-		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha)
+		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_Yscale, Rotation, b, image_alpha)
 	}
 }
 with (obj_heatafterimage)
@@ -40,7 +40,7 @@ with (obj_heatafterimage)
 	if visible
 	{
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, 0)
-		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, 1, c_white, alpha)
+		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.Xscale, obj_player1.Yscale, 1, c_white, alpha)
 		pattern_reset()
 		reset_shader_fix()
 	}
@@ -62,17 +62,17 @@ var ystretch
 
 
 var image_xscalestretch = 1
-var image_yscalestretch = 0.5
+var image_Yscalestretch = 0.5
 
 
 if image_xscale == 1
     xstretch = (image_xscale + image_xscalestretch)
 else if image_xscale == -1
     xstretch = (image_xscale - image_xscalestretch)
-if image_yscale > 0
-    ystretch = (image_yscale + image_yscalestretch)
-else if image_yscale < 0
-    ystretch = (image_yscale - image_yscalestretch)
+if image_Yscale > 0
+    ystretch = (image_Yscale + image_Yscalestretch)
+else if image_Yscale < 0
+    ystretch = (image_Yscale - image_Yscalestretch)
 	
 	
 if image_xscalestretch > 0
@@ -81,10 +81,10 @@ if image_xscalestretch < 0
     image_xscalestretch += 0.1
 	
 	
-if image_yscalestretch > 0
-    image_yscalestretch -= 0.1
-if image_yscalestretch < 0
-    image_yscalestretch += 0.1
+if image_Yscalestretch > 0
+    image_Yscalestretch -= 0.1
+if image_Yscalestretch < 0
+    image_Yscalestretch += 0.1
 	
 draw_sprite_ext(sprite_index,image_index,x,y,xstretch, ystretch,image_angle,image_blend,image_alpha)
 

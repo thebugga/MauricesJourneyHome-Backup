@@ -11,7 +11,7 @@ if place_meeting(x, (y - 1), obj_parent_player)
 					scr_losepoints()
 					image_index = 0
 					state = states.fireass
-					movespeed = hsp
+					Movespeed = hsp
 					vsp = -14
 					instance_create(x, (y + 20), obj_piranneapplewater)
 					sprite_index = spr_scaredjump1

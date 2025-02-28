@@ -3,9 +3,9 @@ function scr_pizzaball_golf()
 	sprite_index = spr_pizzaball_stun
 	image_speed = 0.35
 	var _i = 9
-	if (!player.ispeppino)
+	if global.playerCharacter == Characters.Doise
 		_i = 7
-	x = (player.x + (23 * player.xscale))
+	x = (player.x + (23 * player.Xscale))
 	y = (player.y + 23)
 	if (player.sprite_index == player.spr_golfswing && floor(player.image_index) == _i)
 	{
@@ -14,17 +14,17 @@ function scr_pizzaball_golf()
 		global.golfhit++
 		//scr_soundeffect(sfx_punch)
 		if player.key_up
-			scr_pizzaball_go_to_thrown((player.xscale * 15), -16, 0)
+			scr_pizzaball_go_to_thrown((player.Xscale * 15), -16, 0)
 		else if player.key_down
-			scr_pizzaball_go_to_thrown((player.xscale * 18), 5, 0)
+			scr_pizzaball_go_to_thrown((player.Xscale * 18), 5, 0)
 		else
-			scr_pizzaball_go_to_thrown((player.xscale * 17), -7, 0)
+			scr_pizzaball_go_to_thrown((player.Xscale * 17), -7, 0)
 		if place_meeting_solid(x, y)
 		{
 			x = player.x
 			y = player.y
 			while place_meeting_solid(x, y)
-				x += player.xscale
+				x += player.Xscale
 		}
 	}
 	exit;

@@ -21,10 +21,10 @@ function scr_player_ratmountclimbwall() //gml_Script_scr_player_ratmountclimbwal
         if (key_jump2 && input_buffer_jump_negative <= 0)
         {
             state = states.ratmountbounce
-            xscale *= -1
+            Xscale *= -1
             vsp = -14
             ratmount_fallingspeed = 0
-            movespeed = (xscale * 10)
+            Movespeed = (Xscale * 10)
             fmod_event_one_shot_3d("event:/sfx/ratmount/walljump2", x, y)
             sprite_index = spr_player_ratmountwalljump
         }

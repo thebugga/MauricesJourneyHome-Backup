@@ -58,5 +58,5 @@ if (global.miniboss == true && sprite_index != spr_noisebomb_intro)
 		x = (ds_queue_dequeue(followQueue) - (image_xscale * 4))
 		y = (ds_queue_dequeue(followQueue) + 2)
 	}
-	image_xscale = playerid.xscale
+	image_xscale = playerid.Xscale
 }

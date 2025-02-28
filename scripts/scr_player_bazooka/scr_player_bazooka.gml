@@ -1,9 +1,9 @@
 function scr_player_bazooka()
 {
-	hsp = movespeed * xscale
+	hsp = Movespeed * Xscale
 	var spd = key_up ? 0.5 : 1
 	vsp = approach(vsp, 0, spd)
-	movespeed = approach(movespeed, 0, 0.2)
+	Movespeed = approach(Movespeed, 0, 0.2)
 	image_speed = 0.35
 	if ((floor(image_index) == 7 or vsp >= 0) && sprite_index != spr_playerV_bazooka)
 	{
@@ -14,11 +14,11 @@ function scr_player_bazooka()
 	{
 		jumpAnim = 1
 		jumpstop = 1
-		hsp = -10 * xscale
-		movespeed = -10
+		hsp = -10 * Xscale
+		Movespeed = -10
 		vsp = -6
-		with (instance_create(x + (xscale * 10), y, obj_vigilantebazooka))
-			image_xscale = other.xscale
+		with (instance_create(x + (Xscale * 10), y, obj_vigilantebazooka))
+			image_xscale = other.Xscale
 		state = states.jump
 	}
 }

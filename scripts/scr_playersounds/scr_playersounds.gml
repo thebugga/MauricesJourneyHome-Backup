@@ -69,7 +69,7 @@ function scr_playersounds()
 		}
 		else
 			fmod_event_instance_stop(freefallsnd, true);
-		if ((ispeppino && (state == states.mach2 || state == states.mach3 || state == states.climbwall)) || (state == states.rocket && sprite_index != spr_rocketstart))
+		if ((global.playerCharacter == Characters.Maurice && (state == states.mach2 || state == states.mach3 || state == states.climbwall)) || (state == states.rocket && sprite_index != spr_rocketstart))
 		{
 			fmod_event_instance_set_paused(machsnd, false);
 			if (!fmod_event_instance_is_playing(machsnd))
@@ -100,7 +100,7 @@ function scr_playersounds()
 			fmod_event_instance_stop(knightslidesnd, true);
 		
 		var sjumpsnd = superjumpsnd;
-		if ispeppino
+		if global.playerCharacter == Characters.Maurice
 		{
 			if state == states.Sjumpprep
 			{
@@ -254,7 +254,7 @@ function scr_playersounds()
 		}
 		else
 			fmod_event_instance_stop(ratmountgroundpoundsnd, true);
-		if state == states.animatronic && ispeppino
+		if state == states.animatronic && global.playerCharacter == Characters.Maurice
 		{
 			if (!fmod_event_instance_is_playing(animatronicsnd))
 				fmod_event_instance_play(animatronicsnd);
@@ -311,7 +311,7 @@ function scr_playersounds()
 			else
 				fmod_event_instance_set_parameter(pizzapeppersnd, "state", 1, true);
 		}
-		if (state == states.ghost && sprite_index != spr_ghostidle && sprite_index != spr_ghostjump && (!ispeppino || ghostdash))
+		if (state == states.ghost && sprite_index != spr_ghostidle && sprite_index != spr_ghostjump && (global.playerCharacter == Characters.Doise || ghostdash))
 		{
 			if (!fmod_event_instance_is_playing(ghostspeedsnd))
 				fmod_event_instance_play(ghostspeedsnd);

@@ -1,13 +1,13 @@
 function scr_player_barrelslide()
 {
-	image_speed = (abs(movespeed) / 8)
+	image_speed = (abs(Movespeed) / 8)
 	if (image_speed < 0.35)
 		image_speed = 0.35
 	if (image_speed > 0.85)
 		image_speed = 0.85
-	hsp = movespeed
-	if (abs(movespeed) < 14)
-		movespeed = approach(movespeed, (xscale * 14), 0.1)
+	hsp = Movespeed
+	if (abs(Movespeed) < 14)
+		Movespeed = approach(Movespeed, (Xscale * 14), 0.1)
 	if (floor(image_index) == (image_number - 1))
 	{
 		if (sprite_index == spr_player_barrelslipnslide)
@@ -51,17 +51,17 @@ function scr_player_barrelslide()
 	}
 	if place_meeting((x + sign(hsp)), y, obj_solid)
 	{
-		if place_meeting_slope(x,y)
+		if slopeCheck(x + Xscale, y)
 		{
 			vsp = -12
 			state = states.barrelclimbwall
-			movespeed = 0
+			Movespeed = 0
 		}
 		else
 		{
-			xscale *= -1
-			movespeed = (xscale * 8)
-			instance_create((x + (xscale * 10)), (y + 10), obj_bumpeffect)
+			Xscale *= -1
+			Movespeed = (Xscale * 8)
+			instance_create((x + (Xscale * 10)), (y + 10), obj_bumpeffect)
 			if place_meeting(x, (y + 1), obj_current)
 			{
 				input_buffer_jump = 8

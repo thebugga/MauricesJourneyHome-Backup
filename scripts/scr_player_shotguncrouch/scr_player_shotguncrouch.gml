@@ -2,16 +2,16 @@ function scr_player_shotguncrouch()
 {
 	image_speed = 0.35
 	mask_index = spr_crouchmask
-	move = (key_left + key_right)
-	hsp = (move * movespeed)
-	movespeed = 4
-	if (move != 0)
-		xscale = move
+	Move = (key_left + key_right)
+	hsp = (Move * Movespeed)
+	Movespeed = 4
+	if (Move != 0)
+		Xscale = Move
 	if key_jump
 		input_buffer_jump = 0
 	if (sprite_index != spr_shotgungoduck)
 	{
-		if (move != 0)
+		if (Move != 0)
 			sprite_index = spr_shotguncrawl
 		else
 			sprite_index = spr_shotgunduck
@@ -21,7 +21,7 @@ function scr_player_shotguncrouch()
 	if ((!grounded) && input_buffer_jump >= 8)
 	{
 		state = states.shotguncrouchjump
-		movespeed = 0
+		Movespeed = 0
 		sprite_index = spr_crouchfall
 		image_index = 0
 	}
@@ -46,21 +46,21 @@ function scr_player_shotguncrouch()
 		sprite_index = spr_shotgunshoot
 		image_index = 0
 		with (instance_create(x, y, obj_pistoleffect))
-			image_xscale = other.xscale
-		with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
+			image_xscale = other.Xscale
+		with (instance_create((x + (Xscale * 20)), (y + 20), obj_shotgunbullet))
 		{
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			shotgun = 1
 		}
-		with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
+		with (instance_create((x + (Xscale * 20)), (y + 20), obj_shotgunbullet))
 		{
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			spdh = 4
 			shotgun = 1
 		}
-		with (instance_create((x + (xscale * 20)), (y + 20), obj_shotgunbullet))
+		with (instance_create((x + (Xscale * 20)), (y + 20), obj_shotgunbullet))
 		{
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			spdh = -4
 			shotgun = 1
 		}

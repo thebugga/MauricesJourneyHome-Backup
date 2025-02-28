@@ -14,16 +14,16 @@ with (other)
 {
 	if (other.object_index == obj_tubeenter && other.stored_spd == 0)
 	{
-		if (abs(hsp) < other.movespeed)
-			hsp = other.movespeed
-		if (abs(vsp) < other.movespeed)
-			vsp = other.movespeed
+		if (abs(hsp) < other.Movespeed)
+			hsp = other.Movespeed
+		if (abs(vsp) < other.Movespeed)
+			vsp = other.Movespeed
 		other.stored_spd = max(abs(hsp), abs(vsp))
 		trace(other.stored_spd)
 	}
 	state = states.tube
 	hsp = 0
-	movespeed = 0
+	Movespeed = 0
 	vsp = 0
 	tube_vsp = 0
 	x = approach(x, (other.xstart + _offset_x), other.approach_spd)

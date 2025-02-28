@@ -1,6 +1,6 @@
 alarm[0] = 1;
-maxmovespeed = 3;
-movespeed = maxmovespeed;
+maxMovespeed = 3;
+Movespeed = maxMovespeed;
 dir = 1;
 depth = 50;
 spr_left = -4;

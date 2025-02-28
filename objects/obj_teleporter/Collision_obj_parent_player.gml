@@ -8,7 +8,7 @@ if (player < obj_hardmode)
 			player.visible = false
 			storedstate = player.state
 			player.tauntstoredstate = player.state
-			storedmovespeed = player.movespeed
+			storedMovespeed = player.Movespeed
 			storedgrav = player.grav
 			storedimageindex = player.image_index
 			storedspriteindex = player.sprite_index

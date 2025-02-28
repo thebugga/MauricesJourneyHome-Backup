@@ -87,17 +87,17 @@ function get_projectile_angle(argument0, argument1, argument2, argument3, argume
 	var xt = floor((argument2 - argument0))
 	var yt = (-(floor((argument3 - argument1))))
 	var root = (power(argument4, 4) - (argument5 * ((argument5 * sqr(xt)) + ((2 * sqr(argument4)) * yt))))
-	var angle = 0
+	var Rotation = 0
 	if (root > 0)
 	{
-		angle = radtodeg(arctan(((sqr(argument4) + sqrt(root)) / (argument5 * xt))))
+		Rotation = radtodeg(arctan(((sqr(argument4) + sqrt(root)) / (argument5 * xt))))
 		if (xt < 0)
-			angle -= 180
+			Rotation -= 180
 	}
 	else if (xt > 0)
-		angle = 45
+		Rotation = 45
 	else
-		angle = 135
-	return angle;
+		Rotation = 135
+	return Rotation;
 }
 

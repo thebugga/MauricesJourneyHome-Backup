@@ -1,33 +1,33 @@
 function scr_player_handstandjump()
 {
 	landAnim = false;
-	hsp = xscale * movespeed;
-	move = key_left + key_right;
+	hsp = Xscale * Movespeed;
+	Move = key_left + key_right;
 	momemtum = true;
-	dir = xscale;
+	dir = Xscale;
 	var _slpaspr = (sprite_index == spr_player_slap1 or sprite_index == spr_player_slap2)
 	if (_slpaspr && floor(image_index) == (image_number - 1))
 		scr_doplayernormal()
 	if global.playerCharacter != Characters.Maurice
 	{
-		if movespeed < 10
+		if Movespeed < 10
 		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
-				movespeed += 0.25;
-			else if sprite_index == spr_player_lunge && movespeed < 12
-				movespeed += 0.8;
-			else if movespeed < 10
-				movespeed += 0.5;
+			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && Movespeed < 8)
+				Movespeed += 0.25;
+			else if sprite_index == spr_player_lunge && Movespeed < 12
+				Movespeed += 0.8;
+			else if Movespeed < 10
+				Movespeed += 0.5;
 		}
 	}
 	else
 	{
-		if movespeed < 10
+		if Movespeed < 10
 		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
-				movespeed += 0.25;
-			else if movespeed < 10
-				movespeed += 0.5;
+			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && Movespeed < 8)
+				Movespeed += 0.25;
+			else if Movespeed < 10
+				Movespeed += 0.5;
 		}
 		if (global.pummeltest && !instance_exists(lungeattackID))
 		{
@@ -59,7 +59,7 @@ function scr_player_handstandjump()
 	{
 		fmod_event_instance_play(rollgetupsnd);
 		input_buffer_jump = 0;
-		particle_set_scale(particle.jumpdust, xscale, 1);
+		particle_set_scale(particle.jumpdust, Xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		jumpstop = false;
 		image_index = 0;
@@ -77,8 +77,8 @@ function scr_player_handstandjump()
 		if global.playerCharacter != Characters.Maurice
 		{
 			state = states.normal;
-			if move != xscale
-				movespeed = 2;
+			if Move != Xscale
+				Movespeed = 2;
 		}
 		else
 		{
@@ -101,8 +101,8 @@ function scr_player_handstandjump()
 	if (scr_mach_check_dive() && grounded && global.attackstyle != 2)
 	{
 		with (instance_create(x, y, obj_jumpdust))
-			image_xscale = other.xscale;
-		movespeed = 12;
+			image_xscale = other.Xscale;
+		Movespeed = 12;
 		crouchslipbuffer = 25;
 		grav = 0.5;
 		sprite_index = spr_crouchslip;
@@ -112,19 +112,19 @@ function scr_player_handstandjump()
 		fmod_event_instance_play(snd_crouchslide);
 	}
 	mask_index = spr_player_mask;
-	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || place_meeting_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting_slope(x,y)))
+	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || place_meeting_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && slopeCheck(x + Xscale, y)))
 	{
 		var _climb = true;
 		if global.playerCharacter == Characters.Doise
 			_climb = ledge_bump(32, abs(hsp) + 1);
 		if _climb
 		{
-			wallspeed = 6;
+			WallMovespeed = 6;
 			grabclimbbuffer = 10;
 			state = states.climbwall;
 		}
 	}
-	if (grounded && place_meeting_solid(x + xscale, y) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting_slope(x + sign(hsp), y)))
+	if (grounded && place_meeting_solid(x + Xscale, y) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting_slope(x + sign(hsp), y)))
 	{
 		var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 		if _bump
@@ -134,16 +134,16 @@ function scr_player_handstandjump()
 			state = states.jump;
 			vsp = -4;
 			sprite_index = spr_suplexbump;
-			instance_create(x + (xscale * 10), y + 10, obj_bumpeffect);
+			instance_create(x + (Xscale * 10), y + 10, obj_bumpeffect);
 		}
 	}
-	if (!instance_exists(obj_slidecloud) && grounded && movespeed > 5)
+	if (!instance_exists(obj_slidecloud) && grounded && Movespeed > 5)
 	{
 		with (instance_create(x, y, obj_slidecloud))
-			image_xscale = other.xscale;
+			image_xscale = other.Xscale;
 	}
 	image_speed = 0.35;
-	if state != states.bump && move != xscale && move != 0
+	if state != states.bump && Move != Xscale && Move != 0
 	{
 		image_index = 0;
 		if !grounded
@@ -157,7 +157,7 @@ function scr_player_handstandjump()
 		else
 		{
 			state = states.normal;
-			movespeed = 2;
+			Movespeed = 2;
 			grav = 0.5;
 		}
 	}

@@ -12,8 +12,8 @@ if (scr_transformationcheck() && state != states.bombpepside && state != states.
 	if (grounded && x > (other.x - 8) && x < (other.x + 8))
 	{
 		state = states.bombpepside
-		xscale = -1
-		movespeed = 14
+		Xscale = -1
+		Movespeed = 14
 		sprite_index = spr_hurt
 	}
 	if (state != states.bombpepside && state != states.bombpepup)
@@ -21,16 +21,16 @@ if (scr_transformationcheck() && state != states.bombpepside && state != states.
 		if (dir >= 135 && dir < 270)
 		{
 			state = states.bombpepside
-			xscale = -1
-			movespeed = 14
+			Xscale = -1
+			Movespeed = 14
 			sprite_index = spr_hurt
 		}
 		else if (dir >= 270 or dir < 45)
 		{
 			state = states.bombpepside
 			sprite_index = spr_hurt
-			movespeed = 14
-			xscale = 1
+			Movespeed = 14
+			Xscale = 1
 		}
 	}
 }

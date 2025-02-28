@@ -2,7 +2,7 @@ with (other)
 {
 	if (global.playerCharacter == Characters.MrOrange)
 		scr_hurtplayer(id)
-	else if ((!isgustavo) && state != states.ghost && state != states.ghostpossess && state != states.actor && state != states.parry && state != states.gotoplayer)
+	else if ((global.playerCharacter != Characters.Pierre) && state != states.ghost && state != states.ghostpossess && state != states.actor && state != states.parry && state != states.gotoplayer)
 	{
 		scr_losepoints()
 		tv_push_prompt_once(tv_create_prompt("This is the ghost transformation text", tvprompt.transfo, spr_tv_ghost, 3), "ghost")

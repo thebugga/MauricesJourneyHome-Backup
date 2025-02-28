@@ -1,9 +1,9 @@
 function state_player_jump()
 {
 	
-	var maxmovespeed = 8;
-	var maxmovespeed2 = 6;
-	var turnmovespeed = 2;
+	var maxMovespeed = 8;
+	var maxMovespeed2 = 6;
+	var turnMovespeed = 2;
 	var accel = 0.5;
 	var deccel = 0.1;
 	var jumpspeed = -11;
@@ -11,10 +11,10 @@ function state_player_jump()
 	
 	landAnim = true;
 	if !momemtum
-		hsp = move * movespeed;
+		hsp = Move * Movespeed;
 	else
-		hsp = xscale * movespeed;
-	hsp += railmovespeed * raildir;
+		hsp = Xscale * Movespeed;
+	hsp += railMovespeed * raildir;
 	if key_taunt2
 	{
 		input_finisher_buffer = 60;
@@ -22,36 +22,36 @@ function state_player_jump()
 		input_up_buffer = 0;
 		input_down_buffefr = 0;
 	}
-	if dir != xscale
+	if dir != Xscale
 	{
-		dir = xscale;
-		movespeed = turnmovespeed;
+		dir = Xscale;
+		Movespeed = turnMovespeed;
 		facehurt = false;
 	}
-	if move != xscale
-		movespeed = turnmovespeed;
-	move = key_left + key_right;
-	if movespeed == 0
+	if Move != Xscale
+		Movespeed = turnMovespeed;
+	Move = key_left + key_right;
+	if Movespeed == 0
 		momemtum = false;
 	if (place_meeting_solid(x + hsp, y))
 	{
-		movespeed = 0;
+		Movespeed = 0;
 		mach2 = 0;
 	}
-	if move != 0
+	if Move != 0
 	{
-		xscale = move;
-		if movespeed < maxmovespeed
-			movespeed += accel;
-		else if (floor(movespeed) == maxmovespeed)
-			movespeed = maxmovespeed2;
-		if (place_meeting_solid(x + xscale, y) && move == xscale)
-			movespeed = 0;
+		Xscale = Move;
+		if Movespeed < maxMovespeed
+			Movespeed += accel;
+		else if (floor(Movespeed) == maxMovespeed)
+			Movespeed = maxMovespeed2;
+		if (place_meeting_solid(x + Xscale, y) && Move == Xscale)
+			Movespeed = 0;
 	}
 	else
-		movespeed = 0;
-	if movespeed > maxmovespeed
-		movespeed -= deccel;
+		Movespeed = 0;
+	if Movespeed > maxMovespeed
+		Movespeed -= deccel;
 	if ladderbuffer > 0
 		ladderbuffer--;
 	if !jumpstop
@@ -286,7 +286,7 @@ function state_player_jump()
 			vsp = -10;
 		else
 			vsp = -21;
-		movespeed = hsp;
+		Movespeed = hsp;
 	}
 	if input_buffer_shoot > 0 && global.playerCharacter == Characters.Maurice
 	{
@@ -294,11 +294,11 @@ function state_player_jump()
 		sprite_index = spr_pistolshot;
 		image_index = 0;
 		state = states.pistolaim
-		with (instance_create(x + (xscale * 20), y, obj_shotgunbullet))
+		with (instance_create(x + (Xscale * 20), y, obj_shotgunbullet))
 		{
 			pistol = true;
 			sprite_index = spr_peppinobullet;
-			image_xscale = other.xscale;
+			image_xscale = other.Xscale;
 		}
 	}
 	if key_slap2 && shoot
@@ -315,14 +315,14 @@ function state_player_jump()
 				with parry_inst
 				{
 					player_id = _playerid;
-					image_xscale = other.xscale;
+					image_xscale = other.Xscale;
 				}
 			}
 			if global.mort
 			{
-				with (instance_create(x + (xscale * 20), y, obj_shotgunbullet))
+				with (instance_create(x + (Xscale * 20), y, obj_shotgunbullet))
 				{
-					image_xscale = other.xscale;
+					image_xscale = other.Xscale;
 					sprite_index = spr_mortprojectile;
 				}
 				sprite_index = spr_mortthrow;
@@ -339,7 +339,7 @@ function state_player_jump()
 			{
 				sprite_index = spr_pistolshot;
 				image_index = 0;
-				movespeed = 5;
+				Movespeed = 5;
 				state = states.handstandjump;
 				shoot = true;
 				with obj_camera
@@ -349,11 +349,11 @@ function state_player_jump()
 				}
 				if global.playerCharacter != Characters.Doise
 				{
-					with (instance_create(x + (xscale * 20), y, obj_shotgunbullet))
+					with (instance_create(x + (Xscale * 20), y, obj_shotgunbullet))
 					{
 						pistol = true;
 						sprite_index = spr_peppinobullet;
-						image_xscale = other.xscale;
+						image_xscale = other.Xscale;
 					}
 				}
 				else
@@ -361,8 +361,8 @@ function state_player_jump()
 					with (instance_create(x, y, obj_playerbomb))
 					{
 						kick = true;
-						movespeed = 15;
-						image_xscale = other.xscale;
+						Movespeed = 15;
+						image_xscale = other.Xscale;
 					}
 				}
 			}
@@ -376,10 +376,10 @@ function state_player_jump()
 		sprite_index = spr_mach1;
 		image_index = 0;
 		state = states.mach2;
-		if movespeed < machspeed
-			movespeed = machspeed;
+		if Movespeed < machspeed
+			Movespeed = machspeed;
 	}
-	if (!key_attack || move != xscale)
+	if (!key_attack || Move != Xscale)
 		mach2 = 0;
 	if animation_end()
 		jumpAnim = false;
@@ -405,22 +405,22 @@ function state_pepperman_jump()
 {
 	
 	pepperman_grab_reset();
-	move = key_left + key_right;
-	if (move != 0 && move == sign(xscale) && movespeed < pepperman_maxhsp_normal)
-		movespeed += pepperman_accel_air;
-	else if (move != 0 && move != sign(xscale) && movespeed > 0)
-		movespeed -= pepperman_deccel_air;
-	else if move == 0
-		movespeed -= pepperman_deccel_air;
-	if (floor(movespeed) == pepperman_maxhsp_normal)
-		movespeed = pepperman_maxhsp_normal;
-	if movespeed > pepperman_maxhsp_normal
-		movespeed -= 0.3;
-	else if movespeed < 0
-		movespeed = 0;
-	if move != 0 && movespeed == 0
-		xscale = move;
-	hsp = xscale * movespeed;
+	Move = key_left + key_right;
+	if (Move != 0 && Move == sign(Xscale) && Movespeed < pepperman_maxhsp_normal)
+		Movespeed += pepperman_accel_air;
+	else if (Move != 0 && Move != sign(Xscale) && Movespeed > 0)
+		Movespeed -= pepperman_deccel_air;
+	else if Move == 0
+		Movespeed -= pepperman_deccel_air;
+	if (floor(Movespeed) == pepperman_maxhsp_normal)
+		Movespeed = pepperman_maxhsp_normal;
+	if Movespeed > pepperman_maxhsp_normal
+		Movespeed -= 0.3;
+	else if Movespeed < 0
+		Movespeed = 0;
+	if Move != 0 && Movespeed == 0
+		Xscale = Move;
+	hsp = Xscale * Movespeed;
 	if (sprite_index == spr_jump && animation_end())
 		sprite_index = spr_fall;
 	if (sprite_index == spr_player_pistoljump1 && animation_end())
@@ -442,10 +442,10 @@ function state_pepperman_jump()
 		vsp = 14;
 		sprite_index = spr_bodyslamfall;
 	}
-	if (key_attack && (!place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == noone && sprite_index != spr_mach1)
+	if (key_attack && (!place_meeting(x + Xscale, y, obj_solid) || place_meeting(x + Xscale, y, obj_destructibles)) && pepperman_grabID == noone && sprite_index != spr_mach1)
 	{
-		if move != 0
-			xscale = move;
+		if Move != 0
+			Xscale = Move;
 		state = states.shoulderbash;
 		sprite_index = spr_mach1;
 		image_index = 0;
@@ -458,7 +458,7 @@ function state_pepperman_jump()
 	{
 		fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
 		taunttimer = 20;
-		tauntstoredmovespeed = movespeed;
+		tauntstoredMovespeed = Movespeed;
 		tauntstoredvsp = vsp;
 		tauntstoredsprite = sprite_index;
 		tauntstoredstate = state;

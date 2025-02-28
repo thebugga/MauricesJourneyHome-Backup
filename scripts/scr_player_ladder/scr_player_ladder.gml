@@ -3,18 +3,18 @@ function scr_player_ladder()
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	moveAnim = 1
+	MoveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
 	machhitAnim = 0
 	turning = 0
 	jumpstop = 0
-	movespeed = 0
+	Movespeed = 0
 	hsp = 0
 	if (key_up && hooked == 0)
 	{
-		sprite_index = spr_laddermove;
+		sprite_index = spr_ladderMove;
 		vsp = -6;
 		if (steppybuffer > 0)
 			steppybuffer--
@@ -41,7 +41,7 @@ function scr_player_ladder()
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	moveAnim = 1
+	MoveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1

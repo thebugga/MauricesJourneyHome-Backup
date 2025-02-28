@@ -1,9 +1,9 @@
-hsp = (image_xscale * movespeed)
+hsp = (image_xscale * Movespeed)
 instance_destroy(instance_place((x + 16), y, obj_metalblock))
 instance_destroy(instance_place((x + hsp), y, obj_metalblock))
 if (!kicked)
 {
-	x = (obj_player1.x + (xoffset * obj_player1.xscale))
+	x = (obj_player1.x + (xoffset * obj_player1.Xscale))
 	y = obj_player1.y
 	if place_meeting_solid(x, y)
 		x = obj_player1.x

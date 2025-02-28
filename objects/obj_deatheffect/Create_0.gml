@@ -1,7 +1,7 @@
 vsp = random_range(-10, -18)
 hsp = (sign((x - obj_parent_player.x)) * random_range(10, 18))
 grav = 0.4
-angle = 0
+Rotation = 0
 randomize()
 spinspeed = choose(0, 0, 0, 10, 20)
 alarm[0] = 5

@@ -1,7 +1,7 @@
 function scr_player_mortattack()
 {
 	image_speed = 0.45
-	hsp = movespeed
+	hsp = Movespeed
 	if (floor(image_index) == (image_number - 1))
 	{
 		if (grounded && vsp > 0)
@@ -21,7 +21,7 @@ function scr_player_mortattack()
 	else
 	{
 		punch_afterimage = 5
-		create_mach3effect(x, y, sprite_index, image_index, xscale)
+		create_mach3effect(x, y, sprite_index, image_index, Xscale)
 	}
 	exit;
 }

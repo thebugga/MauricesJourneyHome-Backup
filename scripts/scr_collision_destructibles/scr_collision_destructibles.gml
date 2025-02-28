@@ -4,7 +4,7 @@ function scr_collision_destructibles()
     {
         if ((state == states.jump && sprite_index == spr_playerN_noisebombspinjump) || (ghostdash && sprite_index != spr_ghostidle) || state == states.machcancel || state == states.slipbanan || state == states.rideweenie || state == states.trickjump || state == states.ratmountbounce || (state == states.pogo && pogochargeactive == 1))
         {
-            var arr = [[xscale, 0], [(hsp + xscale), 0], [0, (vsp + 1)], [0, (vsp - 1)], [0, 1], [0, -1]]
+            var arr = [[Xscale, 0], [(hsp + Xscale), 0], [0, (vsp + 1)], [0, (vsp - 1)], [0, 1], [0, -1]]
             for (var i = 0; i < array_length(arr); i++)
             {
                 var b = arr[i]
@@ -27,7 +27,7 @@ function scr_collision_destructibles()
                 }
             }
         }
-        if (state == states.trashroll || state == (301 << 0) || state == states.boxxedpepspin || ratmount_movespeed >= 12 || state == states.ratmountpunch || state == states.ratmounttumble || state == states.punch || state == states.handstandjump || state == states.ratmountattack || state == states.lungeattack || state == states.cheeseball || state == states.bombpepside || state == states.rocket || state == states.shotgundash || state == states.faceplant || state == states.slipnslide || state == states.tacklecharge|| state == states.chainsawbump || state == states.mach3 || state == states.machcancel || state == states.knightpep || (state == states.boxxedpepjump && boxxeddash) || (state == states.boxxedpep && boxxeddash) || state == states.machroll || state == states.knightpepslopes || state == states.knightpepattack || state == states.tumble || state == states.machcancel || state == states.hookshot || state == states.shoulderbash)
+        if (state == states.trashroll || state == (301 << 0) || state == states.boxxedpepspin || ratmount_Movespeed >= 12 || state == states.ratmountpunch || state == states.ratmounttumble || state == states.punch || state == states.handstandjump || state == states.ratmountattack || state == states.lungeattack || state == states.cheeseball || state == states.bombpepside || state == states.rocket || state == states.shotgundash || state == states.faceplant || state == states.slipnslide || state == states.tacklecharge|| state == states.chainsawbump || state == states.mach3 || state == states.machcancel || state == states.knightpep || (state == states.boxxedpepjump && boxxeddash) || (state == states.boxxedpep && boxxeddash) || state == states.machroll || state == states.knightpepslopes || state == states.knightpepattack || state == states.tumble || state == states.machcancel || state == states.hookshot || state == states.shoulderbash)
         {
             if place_meeting((x + hsp), y, obj_destructibles)
             {
@@ -83,7 +83,7 @@ function scr_collision_destructibles()
         }
         if (state == states.firemouth)
         {
-            with (instance_place((x + xscale), y, obj_tntblock))
+            with (instance_place((x + Xscale), y, obj_tntblock))
             {
                 instance_destroy()
                 if (other.vsp > -11)

@@ -451,7 +451,7 @@ function toggle_debugView(argument0)
         dbg_watch(ref_create(obj_player1, "roomStartX"), "Room X Position");
         dbg_watch(ref_create(obj_player1, "roomStartY"), "Room Y Position");
         dbg_section("Physics Info");
-        dbg_watch(ref_create(obj_player1, "movespeed"), "movespeed");
+        dbg_watch(ref_create(obj_player1, "Movespeed"), "Movespeed");
         dbg_watch(ref_create(obj_player1, "verticalMovespeed"), "verticalMovespeed");
         dbg_watch(ref_create(obj_player1, "hsp"), "hsp");
         dbg_watch(ref_create(obj_player1, "fracHsp"), "fracHsp");
@@ -460,7 +460,7 @@ function toggle_debugView(argument0)
         dbg_watch(ref_create(obj_player1, "grounded"), "grounded");
         dbg_watch(ref_create(obj_player1, "groundedSlope"), "groundedSlope");
         dbg_section("Misc Info");
-        dbg_watch(ref_create(obj_player1, "xscale"), "xscale");
+        dbg_watch(ref_create(obj_player1, "Xscale"), "Xscale");
         dbg_watch(ref_create(obj_player1, "state"), "Player State");
         dbg_watch(ref_create(obj_player1, "stateName"), "Player State Name");
         dbg_watch(ref_create(obj_player1, "baddieGrabbedID"), "baddieGrabbedID");

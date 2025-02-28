@@ -16,7 +16,7 @@ switch state
 		key_left = playerid.key_left
 		key_right = playerid.key_right
 		key_jump = playerid.key_jump
-		move = (key_left + key_right)
+		Move = (key_left + key_right)
 		var spd = 12
 		var accel = 0.1
 		var deccel = 0.2
@@ -24,24 +24,24 @@ switch state
 		{
 			case states.normal:
 				if place_meeting((x + sign(hsp)), y, obj_solid)
-					movespeed = 0
-				if (move != 0)
+					Movespeed = 0
+				if (Move != 0)
 				{
-					if (move == xscale)
-						movespeed = approach(movespeed, spd, accel)
+					if (Move == Xscale)
+						Movespeed = approach(Movespeed, spd, accel)
 					else
 					{
-						movespeed = approach(movespeed, 0, accel)
-						if (movespeed <= 0)
+						Movespeed = approach(Movespeed, 0, accel)
+						if (Movespeed <= 0)
 						{
-							xscale = move
-							movespeed = 0
+							Xscale = Move
+							Movespeed = 0
 						}
 					}
 				}
 				else
-					movespeed = approach(movespeed, 0, deccel)
-				hsp = (xscale * movespeed)
+					Movespeed = approach(Movespeed, 0, deccel)
+				hsp = (Xscale * Movespeed)
 				if key_jump
 					playerid.input_buffer_jump = 0
 				if (playerid.input_buffer_jump < 8)
@@ -56,9 +56,9 @@ switch state
 					_destroy = 1
 				break
 			case states.jump:
-				hsp = (xscale * movespeed)
+				hsp = (Xscale * Movespeed)
 				if place_meeting((x + sign(hsp)), y, obj_solid)
-					movespeed = 0
+					Movespeed = 0
 				if (grounded && vsp > 0)
 					substate = states.normal
 				break
@@ -71,7 +71,7 @@ with (obj_destructibles)
 	if place_meeting((x - other.hsp), y, other)
 		instance_destroy()
 }
-if (movespeed > 10)
+if (Movespeed > 10)
 	instance_destroy(instance_place((x + hsp), y, obj_metalblock))
 if _destroy
 {

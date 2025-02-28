@@ -12,7 +12,7 @@ if (kickbuffer > 0)
 switch state
 {
 	case states.normal:
-		hsp = (movespeed * image_xscale)
+		hsp = (Movespeed * image_xscale)
 		if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_ratblock))))
 			image_xscale *= -1
 		if (place_meeting((x + hsp), y, obj_ratblock) or place_meeting(x, (y + vsp), obj_ratblock))
@@ -21,13 +21,13 @@ switch state
 			drop = 1
 		if grounded
 		{
-			if (movespeed > 0)
-				movespeed -= 0.5
+			if (Movespeed > 0)
+				Movespeed -= 0.5
 		}
 		if place_meeting(x, (y + 1), obj_railparent)
 		{
 			var _railinst = instance_place(x, (y + 1), obj_railparent)
-			hsp = (_railinst.movespeed * _railinst.dir)
+			hsp = (_railinst.Movespeed * _railinst.dir)
 		}
 		if (vsp < 12)
 			vsp += grav
@@ -37,7 +37,7 @@ switch state
 		grounded = false
 		x = playerid.x
 		y = (playerid.y - 40)
-		image_xscale = playerid.xscale
+		image_xscale = playerid.Xscale
 		if (playerid.state != states.bombgrab && playerid.state != states.superslam)
 			state = states.normal
 		if (playerid.state == states.superslam)

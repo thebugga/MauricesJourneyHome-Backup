@@ -1,7 +1,7 @@
 function scr_player_shoulderbash()
 {
-	movespeed = (sprite_index == spr_mach1 ? shoulderbash_mspeed_start : approach(movespeed, shoulderbash_mspeed_loop, 0.5))
-	hsp = (xscale * movespeed)
+	Movespeed = (sprite_index == spr_mach1 ? shoulderbash_mspeed_start : approach(Movespeed, shoulderbash_mspeed_loop, 0.5))
+	hsp = (Xscale * Movespeed)
 	if (!instance_exists(chargeeffectid))
 	{
 		with (instance_create((x + 5), (y - 5), obj_chargeeffect))
@@ -36,11 +36,11 @@ function scr_player_shoulderbash()
 	{
 		with (instance_create(x, (y - 5), obj_dashcloud))
 		{
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			other.dashcloudid = id
 		}
 	}
-	if place_meeting((x + xscale), y, obj_solid)
+	if place_meeting((x + Xscale), y, obj_solid)
 		state = states.normal
 	exit;
 }

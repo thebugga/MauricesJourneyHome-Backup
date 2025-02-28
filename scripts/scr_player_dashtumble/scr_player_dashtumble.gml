@@ -2,12 +2,12 @@ function scr_player_dashtumble()
 {
 	landAnim = 0
 	momemtum = 1
-	dir = xscale
-	hsp = (xscale * movespeed)
-	if (movespeed < 10 && grounded)
-		movespeed += 0.5
+	dir = Xscale
+	hsp = (Xscale * Movespeed)
+	if (Movespeed < 10 && grounded)
+		Movespeed += 0.5
 	else if (!grounded)
-		movespeed = 10
+		Movespeed = 10
 	if (key_jump && grounded && (!key_down))
 	{
 		jumpstop = 0
@@ -23,18 +23,18 @@ function scr_player_dashtumble()
 		state = states.mach2
 		grav = 0.5
 	}
-	if (place_meeting_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + xscale), y, obj_destructibles))))
+	if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + Xscale), y, obj_destructibles))))
 	{
 		jumpstop = 1
 		state = states.jump
 		vsp = -4
 		sprite_index = spr_suplexbump
-		instance_create((x + (xscale * 10)), (y + 10), obj_bumpeffect)
+		instance_create((x + (Xscale * 10)), (y + 10), obj_bumpeffect)
 	}
-	if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 5)
+	if ((!instance_exists(obj_slidecloud)) && grounded && Movespeed > 5)
 	{
 		with (instance_create(x, y, obj_slidecloud))
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 	}
 	image_speed = 0.35
 	exit;

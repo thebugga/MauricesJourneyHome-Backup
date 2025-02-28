@@ -1,12 +1,12 @@
 function scr_player_ratmounttumble()
 {
-	hsp = (xscale * movespeed)
-	move = (key_left + key_right)
+	hsp = (Xscale * Movespeed)
+	Move = (key_left + key_right)
 	sprite_index = spr_player_ratmountwalljump
-	image_speed = ((-abs(movespeed)) / 15)
+	image_speed = ((-abs(Movespeed)) / 15)
 	if (!key_attack)
-		movespeed = approach(movespeed, 0, 1)
-	if (place_meeting_slope(x,y) && hsp != 0)
+		Movespeed = approach(Movespeed, 0, 1)
+	if (slopeCheck(x + Xscale, y) && hsp != 0)
 		scr_player_addslopemomentum(0.25, 0.25)
 	if (abs(hsp) <= 2)
 		state = states.ratmount
@@ -14,7 +14,7 @@ function scr_player_ratmounttumble()
 	{
 		state = states.ratmounthurt
 		vsp = -5
-		movespeed = 3
+		Movespeed = 3
 	}
 	if key_jump
 		input_buffer_jump = 0
@@ -31,16 +31,16 @@ function scr_player_ratmounttumble()
 		image_speed = 0.35
 		gustavokicktimer = 5
 		brick = 0
-		movespeed = hsp
+		Movespeed = hsp
 		with (instance_create(x, (y + 50), obj_ratmountgroundpound))
 		{
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 			image_index = 0
 		}
 	}
 	if (input_buffer_jump < 8 && grounded)
 	{
-		particle_set_scale(particle.highjumpcloud2, xscale, 1)
+		particle_set_scale(particle.highjumpcloud2, Xscale, 1)
 		create_particle(x, y, particle.highjumpcloud2, 0)
 		//scr_soundeffect(sfx_jump)
 		vsp = -11

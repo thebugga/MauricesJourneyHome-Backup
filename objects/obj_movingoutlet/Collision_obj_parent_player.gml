@@ -75,11 +75,11 @@ with (obj_parent_player)
 		alarm[8] = 60
 		alarm[7] = 120
 		hurted = 1
-		if (xscale == other.image_xscale)
+		if (Xscale == other.image_xscale)
 			sprite_index = spr_hurtjump
 		else
 			sprite_index = spr_hurt
-		movespeed = 8
+		Movespeed = 8
 		vsp = -5
 		if (global.collect > 100)
 			global.collect -= 100

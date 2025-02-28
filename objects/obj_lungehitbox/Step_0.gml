@@ -3,5 +3,5 @@ if (playerid.state != states.lungeattack && playerid.state != states.handstandju
 	instance_destroy()
 	exit;
 }
-x = (playerid.x + (24 * playerid.xscale))
+x = (playerid.x + (24 * playerid.Xscale))
 y = playerid.y

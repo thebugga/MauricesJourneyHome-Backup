@@ -1,4 +1,4 @@
-image_xscale = obj_parent_player.xscale
+image_xscale = obj_parent_player.Xscale
 if (obj_parent_player.state == states.chainsaw)
 {
 	x = obj_parent_player.x

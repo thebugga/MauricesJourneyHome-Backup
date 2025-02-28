@@ -167,7 +167,7 @@ function scr_playerreset(argument0)
 		ratpowerup = -4
 		scale_xs = 1
 		scale_ys = 1
-		angle = 0
+		Rotation = 0
 		obj_camera.targetgolf = -4
 		ds_list_clear(global.baddietomb)
 		obj_parent_player.supercharge = 0
@@ -215,8 +215,8 @@ function scr_playerreset(argument0)
 			grav = 0.5
 			hsp = 0
 			vsp = 0
-			xscale = 1
-			yscale = 1
+			Xscale = 1
+			Yscale = 1
 			parry = 0
 			parry_inst = -4
 			parry_count = 0
@@ -232,7 +232,7 @@ function scr_playerreset(argument0)
 			shotgunAnim = 0
 			box = 0
 			steppy = 0
-			movespeedmax = 5
+			Movespeedmax = 5
 			jumpstop = 0
 			start_running = 1
 			obj_camera.ded = 0
@@ -242,7 +242,7 @@ function scr_playerreset(argument0)
 			dashAnim = 1
 			landAnim = 0
 			machslideAnim = 0
-			moveAnim = 1
+			MoveAnim = 1
 			stopAnim = 1
 			crouchslideAnim = 1
 			crouchAnim = 1
@@ -272,7 +272,7 @@ function scr_playerreset(argument0)
 			punch = 0
 			machfreefall = 0
 			shoot = 0
-			instakillmove = 0
+			instakillMove = 0
 			windingAnim = 0
 			facestompAnim = 0
 			ladderbuffer = 0
@@ -286,21 +286,20 @@ function scr_playerreset(argument0)
 			momemtum = 0
 			cutscene = 0
 			grabbing = 0
-			dir = xscale
+			dir = Xscale
 			goingdownslope = 0
 			goingupslope = 0
 			fallinganimation = 0
 			bombpeptimer = 100
 			slapbuffer = 0
 			slaphand = 1
-			suplexmove = 0
+			suplexMove = 0
 			suplexhavetomash = 0
 			timeuntilhpback = 300
 			anger = 0
 			angry = 0
 			skateboarding = 0
-			brick = 0
-			isgustavo = 0
+			brick = 
 			controllableSjump = 0
 		}
 	}
@@ -327,8 +326,8 @@ function scr_playerreset(argument0)
 		grav = 0.5
 		hsp = 0
 		vsp = 0
-		xscale = 1
-		yscale = 1
+		Xscale = 1
+		Yscale = 1
 		pogospeed = 6
 		pogochargeactive = 0
 		pogocharge = 100
@@ -342,7 +341,7 @@ function scr_playerreset(argument0)
 		shotgunAnim = 0
 		box = 0
 		steppy = 0
-		movespeedmax = 5
+		Movespeedmax = 5
 		jumpstop = 0
 		start_running = 1
 		obj_camera.ded = 0
@@ -353,7 +352,7 @@ function scr_playerreset(argument0)
 		dashAnim = 1
 		landAnim = 0
 		machslideAnim = 0
-		moveAnim = 1
+		MoveAnim = 1
 		stopAnim = 1
 		crouchslideAnim = 1
 		crouchAnim = 1
@@ -404,7 +403,7 @@ function scr_playerreset(argument0)
 		punch = 0
 		machfreefall = 0
 		shoot = 0
-		instakillmove = 0
+		instakillMove = 0
 		windingAnim = 0
 		facestompAnim = 0
 		ladderbuffer = 0
@@ -418,14 +417,14 @@ function scr_playerreset(argument0)
 		momemtum = 0
 		cutscene = 0
 		grabbing = 0
-		dir = xscale
+		dir = Xscale
 		goingdownslope = 0
 		goingupslope = 0
 		fallinganimation = 0
 		bombpeptimer = 100
 		slapbuffer = 0
 		slaphand = 1
-		suplexmove = 0
+		suplexMove = 0
 		suplexhavetomash = 0
 		timeuntilhpback = 300
 		anger = 0

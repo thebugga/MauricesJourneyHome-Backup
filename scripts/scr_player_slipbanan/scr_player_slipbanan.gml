@@ -1,8 +1,8 @@
 function scr_player_slipbanan()
 {
-	hsp = (xscale * movespeed)
+	hsp = (Xscale * Movespeed)
 	if grounded
-		movespeed = approach(movespeed, 0, 0.5)
+		Movespeed = approach(Movespeed, 0, 0.5)
 	if (floor(image_index) == (image_number - 1) && sprite_index != spr_rockethitwall)
 		image_speed = 0
 	else
@@ -20,7 +20,7 @@ function scr_player_slipbanan()
 		else
 		{
 			vsp = -6
-			movespeed = approach(movespeed, 0, 3)
+			Movespeed = approach(Movespeed, 0, 3)
 			sprite_index = spr_rockethitwall
 			instance_create(x, (y + 43), obj_bangeffect)
 		}
@@ -30,13 +30,13 @@ function scr_player_slipbanan()
 		if (floor(image_index) == (image_number - 1) && abs(hsp) <= 2)
 			state = states.normal
 	}
-	if (place_meeting_solid((x + xscale), y) && (!place_meeting_slope(x,y)) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+	if (place_meeting_solid((x + Xscale), y) && (!slopeCheck(x + Xscale, y)) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
 		if (sprite_index == spr_slipbanan1)
-			movespeed = approach(movespeed, 0, 3)
+			Movespeed = approach(Movespeed, 0, 3)
 		sprite_index = spr_rockethitwall
 		instance_create((x + 30), y, obj_bangeffect)
-		xscale *= -1
+		Xscale *= -1
 		scr_sleep(1)
 	}
 	exit;

@@ -22,8 +22,8 @@ function SUPER_player_hurt(argument0, argument1)
 			hitLag = lag
 			hitX = x
 			hitY = y
-			xscale = (x != other.x ? sign((other.x - x)) : other.image_xscale)
-			hitxscale = (x != other.x ? sign((other.x - x)) : other.image_xscale)
+			Xscale = (x != other.x ? sign((other.x - x)) : other.image_xscale)
+			hitXscale = (x != other.x ? sign((other.x - x)) : other.image_xscale)
 			sprite_index = spr_hurt
 			hithsp = 15
 			hitstunned = 100

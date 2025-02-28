@@ -49,7 +49,7 @@ function boss_hurt(argument0, argument1)
 		SUPER_boss_hurt(argument0, argument1)
 	else
 	{
-		var _removehp = 1
+		var _reMovehp = 1
 		with (argument1)
 		{
 			if (state != states.lungeattack && state != states.knightpep)
@@ -59,14 +59,14 @@ function boss_hurt(argument0, argument1)
 				sprite_index = spr_knightpep_doublejump
 				image_index = 0
 				vsp = -11
-				movespeed = 6
+				Movespeed = 6
 			}
 			else if (state != states.lungeattack && state != states.parry)
-				_removehp = 0
+				_reMovehp = 0
 			if (state == states.lungeattack)
-				movespeed = 4
+				Movespeed = 4
 		}
-		if _removehp
+		if _reMovehp
 		{
 			hp -= argument0
 			//scr_soundeffect(sfx_killingblow)

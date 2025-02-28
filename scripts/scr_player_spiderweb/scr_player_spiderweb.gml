@@ -2,12 +2,12 @@ function scr_player_spiderweb()
 {
 	hsp = 0
 	vsp = 0
-	movespeed = 0
-	move = (key_left + key_right)
+	Movespeed = 0
+	Move = (key_left + key_right)
 	sprite_index = spr_fall
 	image_speed = 0.35
-	if (move != 0)
-		xscale = move
+	if (Move != 0)
+		Xscale = Move
 	if instance_exists(webID)
 	{
 		x = webID.x

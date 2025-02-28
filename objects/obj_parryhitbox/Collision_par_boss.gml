@@ -10,7 +10,7 @@ with (_boss)
 	{
 		var p = (hb.player_id == 1 ? obj_player1.id : obj_player2.id)
 		var pstate = p.tauntstoredstate
-		var pmovespeed = p.tauntstoredmovespeed
+		var pMovespeed = p.tauntstoredMovespeed
 		var psprite = p.tauntstoredsprite
 		if (object_index == obj_pizzafacebossOLD && phase > 1)
 			SUPER_boss_hurt(30, p)
@@ -18,7 +18,7 @@ with (_boss)
 		{
 			boss_hurt(30, p)
 			hitvsp = -14
-			movespeed = 0
+			Movespeed = 0
 			hithsp = 0
 		}
 		with (hb)
@@ -29,7 +29,7 @@ with (_boss)
 		with (p)
 		{
 			tauntstoredstate = pstate
-			tauntstoredmovespeed = pmovespeed
+			tauntstoredMovespeed = pMovespeed
 			tauntstoredsprite = psprite
 		}
 	}

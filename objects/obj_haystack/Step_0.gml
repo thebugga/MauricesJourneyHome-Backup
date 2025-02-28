@@ -74,7 +74,7 @@ else if (sprite_index == spr_haystackburning)
 }
 if (state == states.transitioncutscene)
 {
-	hsp = (movespeed * dir)
+	hsp = (Movespeed * dir)
 	if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting((x + sign(hsp)), (y - 4), obj_solid)))
 		x_to = x
 	if ((dir > 0 && x >= x_to) or (dir < 0 && x <= x_to))

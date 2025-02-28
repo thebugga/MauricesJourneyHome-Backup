@@ -14,9 +14,9 @@ function declare_particle(part_index, part_sprite, img_speed, part_depth)
 	return p;
 }
 
-function particle_set_scale(part, xscale, yscale)
+function particle_set_scale(part, Xscale, Yscale)
 {
-	part_type_scale(ds_map_find_value(global.part_map, part), xscale, yscale)
+	part_type_scale(ds_map_find_value(global.part_map, part), Xscale, Yscale)
 	exit;
 }
 

@@ -6,7 +6,7 @@ if (ratgrabbed && ratplayerid.ratgrabbedID != id)
 	ratgrabbed = 0
 if (grabbed == 1 && (!ratgrabbed))
 {
-	image_xscale = (-playerid.xscale)
+	image_xscale = (-playerid.Xscale)
 	grav = 0
 	playerid.baddiegrabbedID = id
 	if (playerid.state == states.finishingblow or playerid.state == states.grabbing or playerid.state == states.grab or playerid.state == states.throwing or playerid.state == states.slam or playerid.state == states.tacklecharge)
@@ -24,11 +24,11 @@ if (grabbed == 1 && (!ratgrabbed))
 			y = (playerid.y - 40)
 		else if (floor(playerid.image_index) == 3)
 			y = (playerid.y - 50)
-		image_xscale = (-playerid.xscale)
+		image_xscale = (-playerid.Xscale)
 	}
 	with (playerid)
 	{
-		move = (key_left2 + key_right2)
+		Move = (key_left2 + key_right2)
 		if (!((state == states.finishingblow or state == states.grab or state == states.grabbing or state == states.throwing or state == states.slam or state == states.tacklecharge or state == states.punch or state == states.superslam or state == states.backkick or state == states.uppunch or state == states.shoulder)))
 		{
 			other.grav = 0.5
@@ -40,7 +40,7 @@ if (grabbed == 1 && (!ratgrabbed))
 	hsp = 0
 	if (playerid.state == states.finishingblow)
 	{
-		x = (playerid.x + (playerid.xscale * 50))
+		x = (playerid.x + (playerid.Xscale * 50))
 		y = playerid.y
 	}
 	if (playerid.state == states.grab && playerid.sprite_index == playerid.spr_swingding)
@@ -48,7 +48,7 @@ if (grabbed == 1 && (!ratgrabbed))
 		if (floor(playerid.image_index) == 0)
 		{
 			depth = -8
-			x = (playerid.x + (playerid.xscale * 25))
+			x = (playerid.x + (playerid.Xscale * 25))
 			y = playerid.y
 		}
 		if (floor(playerid.image_index) == 1)
@@ -60,19 +60,19 @@ if (grabbed == 1 && (!ratgrabbed))
 		if (floor(playerid.image_index) == 2)
 		{
 			depth = -8
-			x = (playerid.x + (playerid.xscale * -25))
+			x = (playerid.x + (playerid.Xscale * -25))
 			y = playerid.y
 		}
 		if (floor(playerid.image_index) == 3)
 		{
 			depth = 0
-			x = (playerid.x + (playerid.xscale * -50))
+			x = (playerid.x + (playerid.Xscale * -50))
 			y = playerid.y
 		}
 		if (floor(playerid.image_index) == 4)
 		{
 			depth = 0
-			x = (playerid.x + (playerid.xscale * -25))
+			x = (playerid.x + (playerid.Xscale * -25))
 			y = playerid.y
 		}
 		if (floor(playerid.image_index) == 5)
@@ -84,13 +84,13 @@ if (grabbed == 1 && (!ratgrabbed))
 		if (floor(playerid.image_index) == 6)
 		{
 			depth = 0
-			x = (playerid.x + (playerid.xscale * 25))
+			x = (playerid.x + (playerid.Xscale * 25))
 			y = playerid.y
 		}
 		if (floor(playerid.image_index) == 7)
 		{
 			depth = 0
-			x = (playerid.x + (playerid.xscale * 50))
+			x = (playerid.x + (playerid.Xscale * 50))
 			y = playerid.y
 		}
 	}
@@ -134,7 +134,7 @@ if (grabbed == 1 && (!ratgrabbed))
 	}
 	if (playerid.state == states.uppunch)
 	{
-		instance_create((x + ((-playerid.xscale) * 15)), (y - 50), obj_bumpeffect)
+		instance_create((x + ((-playerid.Xscale) * 15)), (y - 50), obj_bumpeffect)
 		grav = 0.5
 		thrown = true
 		hsp = ((-image_xscale) * 2)
@@ -151,7 +151,7 @@ if (grabbed == 1 && (!ratgrabbed))
 	}
 	if (playerid.state == states.tacklecharge)
 	{
-		x = (playerid.x + (playerid.xscale * 15))
+		x = (playerid.x + (playerid.Xscale * 15))
 		y = playerid.y
 	}
 	if (playerid.state == states.superslam)
@@ -161,13 +161,13 @@ if (grabbed == 1 && (!ratgrabbed))
 			if (floor(playerid.image_index) == 0)
 			{
 				depth = 0
-				x = (playerid.x + (playerid.xscale * 10))
+				x = (playerid.x + (playerid.Xscale * 10))
 				y = playerid.y
 			}
 			if (floor(playerid.image_index) == 1)
 			{
 				depth = 0
-				x = (playerid.x + (playerid.xscale * 5))
+				x = (playerid.x + (playerid.Xscale * 5))
 				y = playerid.y
 			}
 			if (floor(playerid.image_index) == 2)
@@ -179,19 +179,19 @@ if (grabbed == 1 && (!ratgrabbed))
 			if (floor(playerid.image_index) == 3)
 			{
 				depth = 0
-				x = (playerid.x + (playerid.xscale * -5))
+				x = (playerid.x + (playerid.Xscale * -5))
 				y = playerid.y
 			}
 			if (floor(playerid.image_index) == 4)
 			{
 				depth = 0
-				x = (playerid.x + (playerid.xscale * -10))
+				x = (playerid.x + (playerid.Xscale * -10))
 				y = playerid.y
 			}
 			if (floor(playerid.image_index) == 5)
 			{
 				depth = -8
-				x = (playerid.x + (playerid.xscale * -5))
+				x = (playerid.x + (playerid.Xscale * -5))
 				y = playerid.y
 			}
 			if (floor(playerid.image_index) == 6)
@@ -203,7 +203,7 @@ if (grabbed == 1 && (!ratgrabbed))
 			if (floor(playerid.image_index) == 7)
 			{
 				depth = -8
-				x = (playerid.x + (playerid.xscale * 5))
+				x = (playerid.x + (playerid.Xscale * 5))
 				y = playerid.y
 			}
 		}
@@ -257,12 +257,12 @@ if (place_meeting(x, y, obj_swordhitbox) && thrown == false)
 	other.alarm[7] = 120
 	with (playerid)
 	{
-		move = (key_right + key_left)
+		Move = (key_right + key_left)
 		if (sprite_index == spr_uppercutfinishingblow)
 			other.vsp = -25
 		else
 		{
-			other.hsp = (xscale * 15)
+			other.hsp = (Xscale * 15)
 			other.vsp = -6
 		}
 	}

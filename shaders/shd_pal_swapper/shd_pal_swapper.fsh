@@ -15,7 +15,7 @@ uniform vec4 pattern_tex_data; // (x, y) = trimmed l/t offset | (z, w) = texture
 uniform vec4 pattern_UVs;
 uniform vec4 sprite_UVs;
 uniform vec4 sprite_tex_data; // (x, y) = trimmed l/t offset | (z, w) = texture size
-uniform vec2 sprite_scale; // (xscale, yscale)
+uniform vec2 sprite_scale; // (Xscale, yscale)
 
 void main()
 {
@@ -45,7 +45,7 @@ void main()
 						// set the tex coordinate
 						vec2 texcoord = vec2(0, 0);
 		
-						// check sprite xscale
+						// check sprite Xscale
 						if (sprite_scale.x >= 0.0)
 							texcoord.x = pattern_UVs.x + pos.x;
 						else

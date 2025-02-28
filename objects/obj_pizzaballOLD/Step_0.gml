@@ -1,7 +1,7 @@
 if (sprite_index != spr_pizzaball_roll)
 	image_speed = 0.35
 else
-	image_speed = (movespeed / 10)
+	image_speed = (Movespeed / 10)
 if (image_speed < 0.2)
 	image_speed = 0.2
 current = place_meeting(x, (y + 1), obj_current)

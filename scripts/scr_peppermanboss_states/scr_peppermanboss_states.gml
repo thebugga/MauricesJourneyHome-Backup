@@ -85,7 +85,7 @@ function pepperman_decide_attack_phase5()
 			if (hsp != 0)
 				image_xscale = sign(hsp)
 			with (instance_create(x, (y - 5), obj_highjumpcloud2))
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 		}
 	}
 	exit;
@@ -154,7 +154,7 @@ function pepperman_decide_attack_phase1()
 			if (hsp != 0)
 				image_xscale = sign(hsp)
 			with (instance_create(x, (y - 5), obj_highjumpcloud2))
-				image_xscale = other.xscale
+				image_xscale = other.Xscale
 		}
 	}
 	exit;
@@ -396,7 +396,7 @@ function boss_pepperman_shoulderbash()
 	{
 		vsp = -11
 		with (instance_create(x, (y - 5), obj_highjumpcloud2))
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 	}
 	exit;
 }

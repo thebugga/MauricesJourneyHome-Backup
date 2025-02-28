@@ -280,6 +280,7 @@ enum Characters
 {
 	Maurice,
 	Doise,
+	Pierre,
 	MrOrange,
 	Clownmato,
 	Snick

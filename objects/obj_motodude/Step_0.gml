@@ -1,7 +1,7 @@
 image_speed = 0.35
 if (stationned == 0)
 	hsp = (image_xscale * 6)
-xscale = image_xscale
+Xscale = image_xscale
 if (vsp > 0 && grounded)
 {
 	with (instance_place(x, (y + 16), obj_slope))
@@ -42,7 +42,7 @@ switch sprite_index
 		break
 	case spr_pizzacar_land:
 		if (floor(image_index) == (image_number - 1))
-			sprite_index = spr_pizzacar_move
+			sprite_index = spr_pizzacar_Move
 		break
 	default:
 		if ((!grounded) && vsp > 0)

@@ -1,3 +1,3 @@
 playerid = obj_player1
-xscale = playerid.xscale
+Xscale = playerid.Xscale
 bumpeffect = 0

@@ -2,17 +2,17 @@ function scr_player_machfreefall()
 {
 	if (mach2 == 0)
 	{
-		hsp = (move * movespeed)
-		movespeed = 4
+		hsp = (Move * Movespeed)
+		Movespeed = 4
 	}
 	else
 	{
-		hsp = (xscale * movespeed)
-		movespeed = 10
+		hsp = (Xscale * Movespeed)
+		Movespeed = 10
 	}
 	machslideAnim = 1
-	move2 = (key_right2 + key_left2)
-	move = (key_right + key_left)
+	Move2 = (key_right2 + key_left2)
+	Move = (key_right + key_left)
 	crouchslideAnim = 1
 	sprite_index = spr_player_machfreefall
 	if (place_meeting_solid((x + 1), y) && image_xscale == 1)

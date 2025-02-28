@@ -10,7 +10,7 @@ if string_copy(room_get_name(room), 1, 3) == "hub"
 		y -= 25
 		state = states.slipbanan
 		visible = true
-		movespeed = 10
+		Movespeed = 10
 		vsp = -10
 	}
 }

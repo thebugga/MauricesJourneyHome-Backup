@@ -13,7 +13,7 @@ with (other)
 			image_xscale = _dir
 		if (current_hspd == 0)
 		{
-			image_xscale = p.xscale
+			image_xscale = p.Xscale
 			hsp = (image_xscale * 6)
 			vsp = -5
 		}

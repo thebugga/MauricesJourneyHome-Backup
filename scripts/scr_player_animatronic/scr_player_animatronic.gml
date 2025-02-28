@@ -1,8 +1,8 @@
 function scr_player_animatronic()
 {
 	sprite_index = spr_pepanimatronic
-	move = (key_left + key_right)
-	hsp = (move * movespeed)
+	Move = (key_left + key_right)
+	hsp = (Move * Movespeed)
 	if (vsp < 0 && (!key_jump2) && (!jumpstop))
 	{
 		jumpstop = 1
@@ -10,13 +10,13 @@ function scr_player_animatronic()
 	}
 	if key_jump
 		input_buffer_jump = 0
-	if (move != 0)
+	if (Move != 0)
 	{
-		xscale = move
-		movespeed = 4
+		Xscale = Move
+		Movespeed = 4
 	}
 	else
-		movespeed = 0
+		Movespeed = 0
 	if (animatronic_buffer > 0)
 		animatronic_buffer--
 	else

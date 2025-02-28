@@ -1,16 +1,16 @@
 function scr_player_bombgrab()
 {
-	move = (key_left + key_right)
+	Move = (key_left + key_right)
 	if (sprite_index != spr_uppercutfinishingblow && sprite_index != spr_player_throw)
-		hsp = (move * movespeed)
+		hsp = (Move * Movespeed)
 	else
 		hsp = 0
 	if (hsp != 0)
-		xscale = sign(hsp)
-	if (dir != xscale)
+		Xscale = sign(hsp)
+	if (dir != Xscale)
 	{
-		dir = xscale
-		movespeed = 0
+		dir = Xscale
+		Movespeed = 0
 	}
 	if key_jump
 		input_buffer_jump = 0
@@ -24,17 +24,17 @@ function scr_player_bombgrab()
 	image_speed = 0.35
 	if (sprite_index == spr_haulingstart && floor(image_index) == (image_number - 1))
 		sprite_index = spr_haulingidle
-	if (move != 0)
+	if (Move != 0)
 	{
-		if (movespeed < 8)
-			movespeed += 0.5
-		else if (movespeed == 6)
-			movespeed = 6
+		if (Movespeed < 8)
+			Movespeed += 0.5
+		else if (Movespeed == 6)
+			Movespeed = 6
 		else
-			movespeed -= 0.5
+			Movespeed -= 0.5
 	}
 	else
-		movespeed = 0
+		Movespeed = 0
 	if (!instance_exists(bombgrabID))
 		state = states.normal
 	if (sprite_index != spr_haulingstart && sprite_index != spr_uppercutfinishingblow && sprite_index != spr_player_throw)
@@ -75,7 +75,7 @@ function scr_player_bombgrab()
 				with (bombgrabID)
 				{
 					state = states.normal
-					movespeed = 9
+					Movespeed = 9
 					vsp = -11
 				}
 			}
@@ -121,7 +121,7 @@ function scr_player_bombpepup()
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	moveAnim = 1
+	MoveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
@@ -180,22 +180,22 @@ function scr_player_bombpepup()
 
 function scr_player_bombpepside()
 {
-	hsp = (xscale * movespeed)
+	hsp = (Xscale * Movespeed)
 	vsp = 0
 	mach2 = 0
-	if (movespeed < 25)
-		movespeed += 0.5
+	if (Movespeed < 25)
+		Movespeed += 0.5
 	jumpAnim = 1
 	dashAnim = 1
 	landAnim = 0
-	moveAnim = 1
+	MoveAnim = 1
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 0
 	machhitAnim = 0
 	with (instance_place((x + hsp), y, obj_metalblock))
 		instance_destroy()
-	if (place_meeting_solid((x + xscale), y) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+	if (place_meeting_solid((x + Xscale), y) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
 		sprite_index = spr_hitwall
 		//scr_soundeffect(sfx_groundpound)
@@ -249,20 +249,20 @@ function scr_player_bombpep()
 		sprite_index = spr_bombpeprun
 	if (sprite_index == spr_bombpeprun or sprite_index == spr_bombpeprunabouttoexplode)
 	{
-		if (movespeed <= 8)
-			movespeed += 0.2
-		move = (key_left + key_right)
+		if (Movespeed <= 8)
+			Movespeed += 0.2
+		Move = (key_left + key_right)
 		if grounded
 		{
-			if (move != 0 && (!instance_exists(obj_bumpeffect)))
-				xscale = move
+			if (Move != 0 && (!instance_exists(obj_bumpeffect)))
+				Xscale = Move
 		}
-		hsp = floor((xscale * movespeed))
+		hsp = floor((Xscale * Movespeed))
 	}
 	else
 	{
 		hsp = 0
-		movespeed = 0
+		Movespeed = 0
 	}
 	if (bombpeptimer < 20 && bombpeptimer != 0)
 		sprite_index = spr_bombpeprunabouttoexplode
@@ -286,23 +286,23 @@ function scr_player_bombpep()
 	}
 	if (bombpeptimer > 0)
 		bombpeptimer -= 0.5
-	if (place_meeting_solid((x + 1), y) && xscale == 1 && hsp != 0 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
+	if (place_meeting_solid((x + 1), y) && Xscale == 1 && hsp != 0 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
 	{
 		instance_create((x + 10), (y + 10), obj_bumpeffect)
-		xscale *= -1
+		Xscale *= -1
 		GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 0.2, 0.2, 0.4)
 	}
-	if (place_meeting_solid((x - 1), y) && xscale == -1 && hsp != 0 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
+	if (place_meeting_solid((x - 1), y) && Xscale == -1 && hsp != 0 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
 	{
 		instance_create((x - 10), (y + 10), obj_bumpeffect)
-		xscale *= -1
+		Xscale *= -1
 		GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 0.2, 0.2, 0.4)
 	}
 	if (input_buffer_jump < 8 && grounded && hsp != 0)
 		vsp = -11
-	if (movespeed < 4)
+	if (Movespeed < 4)
 		image_speed = 0.35
-	else if (movespeed > 4 && movespeed < 8)
+	else if (Movespeed > 4 && Movespeed < 8)
 		image_speed = 0.45
 	else
 		image_speed = 0.6
@@ -316,15 +316,15 @@ function scr_player_bombpep()
 		image_index = 0
 		hsp = 0
 		bombpeptimer = 0
-		movespeed = 0
+		Movespeed = 0
 		state = states.backbreaker
-		with (instance_create((x + (xscale * 50)), y, obj_pizzagoblinbomb))
+		with (instance_create((x + (Xscale * 50)), y, obj_pizzagoblinbomb))
 		{
-			hsp = (other.xscale * 8)
+			hsp = (other.Xscale * 8)
 			vsp = -11
 			if place_meeting_solid(x, y)
 			{
-				var _dir = (-sign(other.xscale))
+				var _dir = (-sign(other.Xscale))
 				var tx = try_solid(_dir, 0, 312, 78)
 				if (tx != -1)
 					x += (tx * _dir)
@@ -334,7 +334,7 @@ function scr_player_bombpep()
 	if ((!instance_exists(obj_dashcloud)) && grounded && hsp != 0)
 	{
 		with (instance_create(x, y, obj_dashcloud))
-			image_xscale = other.xscale
+			image_xscale = other.Xscale
 	}
 	exit;
 }

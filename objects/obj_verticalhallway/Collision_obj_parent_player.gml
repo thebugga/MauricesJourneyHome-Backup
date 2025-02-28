@@ -41,9 +41,9 @@ with (other)
 		verticalstate = states.climbwall
 		var i = 0
 		x = floor(x)
-		while (!(place_meeting_solid((x + xscale), y)))
+		while (!(place_meeting_solid((x + Xscale), y)))
 		{
-			x += xscale
+			x += Xscale
 			i++
 			if (i > room_width)
 				break

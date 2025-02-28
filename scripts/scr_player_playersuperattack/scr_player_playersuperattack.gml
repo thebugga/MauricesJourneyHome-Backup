@@ -39,13 +39,13 @@ function scr_player_playersuperattack()
 			break
 		case states.punch:
 			vsp = 0
-			hsp = (xscale * 2)
+			hsp = (Xscale * 2)
 			with (bossID)
 			{
 				x = other.x
 				y = other.y
 				hsp = other.hsp
-				image_xscale = (-other.xscale)
+				image_xscale = (-other.Xscale)
 			}
 			if (floor(image_index) == (image_number - 1))
 			{
@@ -71,9 +71,9 @@ function scr_player_playersuperattack()
 						hitY = y
 						hitvsp = -11
 						stunned = 10
-						image_xscale = (-other.xscale)
+						image_xscale = (-other.Xscale)
 						hithsp = ((-image_xscale) * 12)
-						movespeed = abs(hsp)
+						Movespeed = abs(hsp)
 						hitLag = 10
 					}
 					//scr_soundeffect(sfx_killingblow)
@@ -94,7 +94,7 @@ function scr_player_playersuperattack()
 			{
 				finishingblow = 1
 				vsp = -4
-				hsp = ((-xscale) * 4)
+				hsp = ((-Xscale) * 4)
 			}
 			if (floor(image_index) == (image_number - 1))
 				state = states.normal

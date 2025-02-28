@@ -1,4 +1,4 @@
-hsp = (image_xscale * movespeed)
+hsp = (image_xscale * Movespeed)
 if (!kick)
 {
 	mask_index = spr_player_mask

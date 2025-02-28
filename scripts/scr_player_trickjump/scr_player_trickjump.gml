@@ -1,6 +1,6 @@
 function scr_player_trickjump()
 {
-	hsp = (movespeed * xscale)
+	hsp = (Movespeed * Xscale)
 	if (sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4)
 	{
 		image_speed = 0.35
@@ -13,7 +13,7 @@ function scr_player_trickjump()
 		if (floor(image_index) == (image_number - 1))
 			sprite_index = spr_player_rampjump
 	}
-	if (place_meeting_solid((x + xscale), y) && (!place_meeting_slope(x,y)) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+	if (place_meeting_solid((x + Xscale), y) && (!slopeCheck(x + Xscale, y)) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
 		state = states.bump
 		image_index = 0
@@ -28,7 +28,7 @@ function scr_player_trickjump()
 		if (sprite_index == spr_player_rampjump)
 		{
 			sprite_index = spr_rollgetup
-			if (movespeed < 12)
+			if (Movespeed < 12)
 				state = states.mach2
 			else
 				state = states.mach3

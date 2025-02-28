@@ -1,5 +1,5 @@
 image_speed = 0.35
 playerid = obj_player1
-image_xscale = playerid.xscale
+image_xscale = playerid.Xscale
 x = playerid.x
 y = playerid.y

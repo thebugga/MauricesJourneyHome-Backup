@@ -130,9 +130,9 @@ if verticalhallway
 		{
 			x = round(x)
 			var i = 0
-			while (!(place_meeting_solid((x + xscale), y)))
+			while (!(place_meeting_solid((x + Xscale), y)))
 			{
-				x += xscale
+				x += Xscale
 				trace(x)
 				i++
 				if (i > room_width)
@@ -156,7 +156,7 @@ if (state == states.taxi)
 hallway = 0
 verticalhallway = 0
 box = 0
-if isgustavo
+if global.playerCharacter == Characters.Pierre
 	brick = 1
 if place_meeting(x, y, obj_exitgate)
 {

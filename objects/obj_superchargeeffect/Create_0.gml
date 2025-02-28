@@ -1,6 +1,6 @@
 playerid = instance_place(x, y, obj_parent_player).id
 image_speed = 0.5
-image_xscale = playerid.xscale
+image_xscale = playerid.Xscale
 if (instance_exists(playerid) && playerid.supercharged == 0)
 {
 	playerid.superchargedeffectid = -4

@@ -322,13 +322,13 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3, argument4
                             icon = tdp_get_tutorial_icon("player_up")
                         break
                     case (4 << 0):
-                        if (instance_exists(obj_player1) && obj_player1.xscale < 0)
+                        if (instance_exists(obj_player1) && obj_player1.Xscale < 0)
                             icon = tdp_get_tutorial_icon("player_left")
                         else
                             icon = tdp_get_tutorial_icon("player_right")
                         break
                     case (5 << 0):
-                        if (instance_exists(obj_player1) && obj_player1.xscale > 0)
+                        if (instance_exists(obj_player1) && obj_player1.Xscale > 0)
                             icon = tdp_get_tutorial_icon("player_left")
                         else
                             icon = tdp_get_tutorial_icon("player_right")

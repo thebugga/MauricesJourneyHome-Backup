@@ -3,7 +3,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
     if (!pepperman_grab)
     {
         var _obj_player = asset_get_index(concat("obj_player", grabbedby))
-        image_xscale = (-_obj_player.xscale)
+        image_xscale = (-_obj_player.Xscale)
         stunned = 200
         _obj_player.baddiegrabbedID = id
         if (_obj_player.state == (55 << 0) || _obj_player.state == (79 << 0) || _obj_player.state == (74 << 0) || _obj_player.state == (75 << 0) || _obj_player.state == (20 << 0))
@@ -19,12 +19,12 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
                 y = _obj_player.y - 20
             else if (floor(_obj_player.image_index) == 3)
                 y = _obj_player.y - 30
-            image_xscale = (-_obj_player.xscale)
+            image_xscale = (-_obj_player.Xscale)
         }
         with (_obj_player)
         {
             suplexhavetomash = other.hp - 1
-            move = key_left2 + key_right2
+            Move = key_left2 + key_right2
             if (!((state == (79 << 0) || state == (61 << 0) || state == (154 << 0) || state == (6 << 0) || state == (55 << 0) || state == (74 << 0) || state == (75 << 0) || state == (20 << 0) || state == (80 << 0) || state == (76 << 0) || state == (81 << 0) || state == (82 << 0) || state == (83 << 0))))
             {
                 other.x = x
@@ -40,7 +40,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             global.hit += 1
             if (other.object_index == obj_pizzaball)
                 global.golfhit += 1
-            instance_create((x + _obj_player.xscale * 30), y, obj_bumpeffect)
+            instance_create((x + _obj_player.Xscale * 30), y, obj_bumpeffect)
             alarm[1] = 5
             thrown = true
             x = _obj_player.x
@@ -65,12 +65,12 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
         {
             if (floor(_obj_player.image_index) < 1 && _obj_player.sprite_index == _obj_player.spr_swingdingend)
             {
-                x = _obj_player.x + _obj_player.xscale * 60
+                x = _obj_player.x + _obj_player.Xscale * 60
                 y = _obj_player.y
             }
             else if (floor(_obj_player.image_index) < 4)
             {
-                x = _obj_player.x + _obj_player.xscale * 60
+                x = _obj_player.x + _obj_player.Xscale * 60
                 y = _obj_player.y
             }
             check_grabbed_solid(_obj_player)
@@ -82,7 +82,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             if (other.object_index == obj_pizzaball)
                 global.golfhit += 1
             hp -= 1
-            instance_create((x + (-_obj_player.xscale) * 50), y, obj_bumpeffect)
+            instance_create((x + (-_obj_player.Xscale) * 50), y, obj_bumpeffect)
             alarm[1] = 5
             thrown = true
             x = _obj_player.x
@@ -150,7 +150,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             hitLag = lag
             hitX = x
             hitY = y
-            _obj_player.movespeed = 0
+            _obj_player.Movespeed = 0
             _obj_player.hitLag = lag
             _obj_player.hitX = _obj_player.x
             _obj_player.hitY = _obj_player.y
@@ -164,7 +164,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y)
             fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y)
             state = (138 << 0)
-            image_xscale = (-_obj_player.xscale)
+            image_xscale = (-_obj_player.Xscale)
             instance_create(x, y, obj_slapstar)
             instance_create(x, y, obj_slapstar)
             instance_create(x, y, obj_slapstar)
@@ -220,7 +220,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             if (other.object_index == obj_pizzaball)
                 global.golfhit += 1
             hp -= 1
-            instance_create((x + (-_obj_player.xscale) * 15), (y - 50), obj_bumpeffect)
+            instance_create((x + (-_obj_player.Xscale) * 15), (y - 50), obj_bumpeffect)
             alarm[1] = 5
             thrown = true
             x = _obj_player.x
@@ -243,7 +243,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
         }
         if (_obj_player.state == (20 << 0))
         {
-            x = _obj_player.x + _obj_player.xscale * 15
+            x = _obj_player.x + _obj_player.Xscale * 15
             y = _obj_player.y
         }
         if (_obj_player.state == (76 << 0) || (_obj_player.state == (61 << 0) && sprite_index == spr_player_piledriver))
@@ -255,13 +255,13 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
                     if (floor(_obj_player.image_index) == 0)
                     {
                         depth = 0
-                        x = _obj_player.x + _obj_player.xscale * 10
+                        x = _obj_player.x + _obj_player.Xscale * 10
                         y = _obj_player.y
                     }
                     if (floor(_obj_player.image_index) == 1)
                     {
                         depth = 0
-                        x = _obj_player.x + _obj_player.xscale * 5
+                        x = _obj_player.x + _obj_player.Xscale * 5
                         y = _obj_player.y
                     }
                     if (floor(_obj_player.image_index) == 2)
@@ -273,19 +273,19 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
                     if (floor(_obj_player.image_index) == 3)
                     {
                         depth = 0
-                        x = _obj_player.x + _obj_player.xscale * -5
+                        x = _obj_player.x + _obj_player.Xscale * -5
                         y = _obj_player.y
                     }
                     if (floor(_obj_player.image_index) == 4)
                     {
                         depth = 0
-                        x = _obj_player.x + _obj_player.xscale * -10
+                        x = _obj_player.x + _obj_player.Xscale * -10
                         y = _obj_player.y
                     }
                     if (floor(_obj_player.image_index) == 5)
                     {
                         depth = -8
-                        x = _obj_player.x + _obj_player.xscale * -5
+                        x = _obj_player.x + _obj_player.Xscale * -5
                         y = _obj_player.y
                     }
                     if (floor(_obj_player.image_index) == 6)
@@ -297,14 +297,14 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
                     if (floor(_obj_player.image_index) == 7)
                     {
                         depth = -8
-                        x = _obj_player.x + _obj_player.xscale * 5
+                        x = _obj_player.x + _obj_player.Xscale * 5
                         y = _obj_player.y
                     }
                     check_grabbed_solid(_obj_player)
                 }
                 else
                 {
-                    x = _obj_player.x + _obj_player.xscale * 10
+                    x = _obj_player.x + _obj_player.Xscale * 10
                     y = _obj_player.y
                     check_grabbed_solid(_obj_player)
                 }
@@ -331,7 +331,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             if ((!elite) || elitehit <= 0)
                 mach3destroy = true
             state = (137 << 0)
-            image_xscale = (-_obj_player.xscale)
+            image_xscale = (-_obj_player.Xscale)
             instance_create(x, y, obj_slapstar)
             instance_create(x, y, obj_slapstar)
             instance_create(x, y, obj_slapstar)
@@ -347,7 +347,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             {
                 if (state != (61 << 0))
                 {
-                    tauntstoredmovespeed = movespeed
+                    tauntstoredMovespeed = Movespeed
                     tauntstoredsprite = sprite_index
                     tauntstoredstate = state
                     tauntstoredvsp = vsp
@@ -362,7 +362,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             if (floor(_obj_player.image_index) == 0)
             {
                 depth = -8
-                x = _obj_player.x + _obj_player.xscale * 25
+                x = _obj_player.x + _obj_player.Xscale * 25
                 y = _obj_player.y
             }
             if (floor(_obj_player.image_index) == 1)
@@ -374,19 +374,19 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             if (floor(_obj_player.image_index) == 2)
             {
                 depth = -8
-                x = _obj_player.x + _obj_player.xscale * -25
+                x = _obj_player.x + _obj_player.Xscale * -25
                 y = _obj_player.y
             }
             if (floor(_obj_player.image_index) == 3)
             {
                 depth = 0
-                x = _obj_player.x + _obj_player.xscale * -50
+                x = _obj_player.x + _obj_player.Xscale * -50
                 y = _obj_player.y
             }
             if (floor(_obj_player.image_index) == 4)
             {
                 depth = 0
-                x = _obj_player.x + _obj_player.xscale * -25
+                x = _obj_player.x + _obj_player.Xscale * -25
                 y = _obj_player.y
             }
             if (floor(_obj_player.image_index) == 5)
@@ -398,13 +398,13 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
             if (floor(_obj_player.image_index) == 6)
             {
                 depth = 0
-                x = _obj_player.x + _obj_player.xscale * 25
+                x = _obj_player.x + _obj_player.Xscale * 25
                 y = _obj_player.y
             }
             if (floor(_obj_player.image_index) == 7)
             {
                 depth = 0
-                x = _obj_player.x + _obj_player.xscale * 50
+                x = _obj_player.x + _obj_player.Xscale * 50
                 y = _obj_player.y
             }
         }
@@ -421,7 +421,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
     if pepperman_grab
     {
         var _player = (grabbedby == 1 ? obj_player1.id : obj_player2.id)
-        image_xscale = _player.xscale
+        image_xscale = _player.Xscale
         if (!thrown)
         {
             x = _player.x
@@ -474,12 +474,12 @@ function check_grabbed_solid(argument0) //gml_Script_check_grabbed_solid
         var _dist = abs(x - obj_parent_player.x)
         x = argument0.x
         y = argument0.y
-        if (!(place_meeting_solid((x + argument0.xscale), y)))
+        if (!(place_meeting_solid((x + argument0.Xscale), y)))
         {
             var i = 0
-            while (!(place_meeting_solid((x + argument0.xscale), y)))
+            while (!(place_meeting_solid((x + argument0.Xscale), y)))
             {
-                x += argument0.xscale
+                x += argument0.Xscale
                 i++
                 if (i > _dist)
                     break
@@ -491,7 +491,7 @@ function check_grabbed_solid(argument0) //gml_Script_check_grabbed_solid
                 i = 0
                 while place_meeting_solid(x, y)
                 {
-                    x -= argument0.xscale
+                    x -= argument0.Xscale
                     i++
                     if (i > _dist)
                         break

@@ -4,7 +4,7 @@ instance_destroy(instance_place(x, (y + 16), obj_metalblock))
 instance_destroy(instance_place(x, (y + vsp), obj_metalblock))
 if (!kicked)
 {
-	x = (obj_parent_player.x - (obj_parent_player.xscale * 10))
+	x = (obj_parent_player.x - (obj_parent_player.Xscale * 10))
 	y = (obj_parent_player.y + 60)
 }
 if (hitbox == 0)

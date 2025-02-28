@@ -5,19 +5,19 @@ function scr_player_noisecrusher()
 	{
 		hsp = 0;
 		vsp = 0;
-		movespeed = 0;
+		Movespeed = 0;
 		if (animation_end())
 			state = 0;
 		exit;
 	}
 	if vsp > 0
 		vsp += 0.5;
-	hsp = movespeed;
-	move = key_left + key_right;
-	if move != 0
-		movespeed = approach(movespeed, move * 8, 0.5);
+	hsp = Movespeed;
+	Move = key_left + key_right;
+	if Move != 0
+		Movespeed = approach(Movespeed, Move * 8, 0.5);
 	else
-		movespeed = approach(movespeed, 0, 0.5);
+		Movespeed = approach(Movespeed, 0, 0.5);
 	if sprite_index != spr_playerN_noisecrusherstart && sprite_index != spr_playerN_noisecrusherland && sprite_index != spr_playerN_noisecrusherfall
 	{
 		sprite_index = spr_playerN_noisecrusherstart;
@@ -29,20 +29,20 @@ function scr_player_noisecrusher()
 	{
 		image_speed = 0.5;
 		input_buffer_shoot = 0;
-		if move != 0
-			xscale = move;
+		if Move != 0
+			Xscale = Move;
 		input_buffer_slap = 0;
 		key_slap = false;
 		key_slap2 = false;
 		jumpstop = true;
 		vsp = -5;
 		state = states.mach2;
-		movespeed = 12;
+		Movespeed = 12;
 		sprite_index = spr_playerN_sidewayspin;
 		image_index = 0;
 		with (instance_create(x, y, obj_crazyrunothereffect))
-			image_xscale = other.xscale;
-		particle_set_scale(particle.jumpdust, xscale, 1);
+			image_xscale = other.Xscale;
+		particle_set_scale(particle.jumpdust, Xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		return true;
 	}
@@ -86,12 +86,12 @@ function scr_player_noisecrusher()
 function scr_player_do_noisecrusher()
 {
 	input_buffer_jump = 0;
-	movespeed = hsp;
+	Movespeed = hsp;
 	state = states.ratmountbounce;
 	sprite_index = spr_playerN_noisecrusherstart;
 	image_index = 0;
 	vsp = -16;
 	scr_fmod_soundeffect(snd_noisedoublejump, x, y);
-	particle_set_scale(5, xscale, 1);
+	particle_set_scale(5, Xscale, 1);
 	create_particle(x, y, 5, 0);
 }

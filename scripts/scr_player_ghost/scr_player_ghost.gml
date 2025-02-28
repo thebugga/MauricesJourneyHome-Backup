@@ -4,14 +4,14 @@ function scr_player_ghost()
 	image_speed = 0.35
 	if (sprite_index != spr_ghostend)
 	{
-		move_h = (key_right + key_left)
-		move_v = (key_down - key_up)
+		Move_h = (key_right + key_left)
+		Move_v = (key_down - key_up)
 		var maxspeed = 6
 		var hspaccel = 0.5
 		var vspaccel = 0.5
-		if (move_h == 0)
+		if (Move_h == 0)
 			hspaccel = 0.25
-		if (move_v == 0)
+		if (Move_v == 0)
 			vspaccel = 0.25
 		if key_attack
 		{
@@ -20,13 +20,13 @@ function scr_player_ghost()
 			hspaccel = 0.65
 			vspaccel = 0.65
 		}
-		hsp = approach(hsp, (move_h * maxspeed), hspaccel)
-		vsp = approach(vsp, (move_v * maxspeed), vspaccel)
+		hsp = approach(hsp, (Move_h * maxspeed), hspaccel)
+		vsp = approach(vsp, (Move_v * maxspeed), vspaccel)
 		if (hsp != 0)
-			xscale = sign(hsp)
+			Xscale = sign(hsp)
 		if (!key_attack)
 		{
-			if (move_v < 0)
+			if (Move_v < 0)
 				sprite_index = spr_ghostjump
 			else
 				sprite_index = spr_ghostidle
@@ -39,7 +39,7 @@ function scr_player_ghost()
 			vsp = 10
 			hsp = 0
 			grav = 0.5
-			movespeed = 0
+			Movespeed = 0
 			with (instance_place(x, y, obj_tombstone))
 			{
 				other.x = x

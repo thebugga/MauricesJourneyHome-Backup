@@ -1,17 +1,17 @@
 function scr_player_ratmountpunch()
 {
 	image_speed = 0.5
-	hsp = movespeed
-	move = (key_left + key_right)
+	hsp = Movespeed
+	Move = (key_left + key_right)
 	landAnim = 0
 	sprite_index = spr_lonegustavo_punch
-	if (move != 0)
+	if (Move != 0)
 	{
-		dir = move
-		movespeed = approach(movespeed, (move * ratmount_movespeed), 0.5)
+		dir = Move
+		Movespeed = approach(Movespeed, (Move * ratmount_Movespeed), 0.5)
 	}
 	else
-		movespeed = approach(movespeed, 0, 0.5)
+		Movespeed = approach(Movespeed, 0, 0.5)
 	ratmountpunchtimer--
 	if (ratmountpunchtimer < 0)
 	{
@@ -19,7 +19,7 @@ function scr_player_ratmountpunch()
 		if (hsp != 0)
 		{
 			dir = sign(hsp)
-			xscale = dir
+			Xscale = dir
 		}
 	}
 	if (punch_afterimage > 0)
@@ -27,7 +27,7 @@ function scr_player_ratmountpunch()
 	else
 	{
 		punch_afterimage = 5
-		create_mach3effect(x, y, sprite_index, image_index, xscale)
+		create_mach3effect(x, y, sprite_index, image_index, Xscale)
 	}
 	exit;
 }

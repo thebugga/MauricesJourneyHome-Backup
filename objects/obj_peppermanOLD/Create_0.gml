@@ -15,7 +15,7 @@ ds_map_set(boss_hurtstates, states.superslam, 200)
 ds_map_set(boss_hurtstates, states.punch, 30)
 ds_map_set(boss_hurtstates, states.freefall, 70)
 stunfallspr = spr_hurtplayer
-walkspr = spr_move
+walkspr = spr_Move
 idlespr = spr_idle
 spr_dead = spr_timesup
 tauntspr = spr_taunt
@@ -37,12 +37,12 @@ targetstunnedminus[2] = 40
 targetstunnedminus[3] = 40
 targetstunnedminus[4] = 40
 targetstunnedminus[5] = 40
-targetxscale = 1
+targetXscale = 1
 phase = 1
 max_phase = 6
 max_hp = (500 * max_phase)
 hp = max_hp
-xscale = 1
+Xscale = 1
 jumping_pepper = 0
 shoulderbash_fakeout = 0
 groundpound_fakeout = 0
@@ -106,7 +106,7 @@ function boss_hurt(argument0, argument1)
 	else
 		targetstunned = 150
 	SUPER_boss_hurt(argument0, argument1)
-	targetxscale = (-argument1.xscale)
+	targetXscale = (-argument1.Xscale)
 	exit;
 }
 
@@ -155,7 +155,7 @@ function player_hurt(argument0, argument1)
 			hitstate = states.parry
 			hitvsp = 0
 			hithsp = 0
-			movespeed = 8
+			Movespeed = 8
 		}
 		else
 		{
@@ -184,11 +184,11 @@ function player_hurt(argument0, argument1)
 			hitY = y
 			hsp = 0
 			vsp = 0
-			movespeed = 0
+			Movespeed = 0
 			other.sprite_index = other.idlespr
 			other.state = states.boss_fistmatch
-			other.image_xscale = (-xscale)
-			other.hitX = (x + (xscale * 16))
+			other.image_xscale = (-Xscale)
+			other.hitX = (x + (Xscale * 16))
 			other.hitY = y
 			other.hsp = 0
 			other.vsp = 0

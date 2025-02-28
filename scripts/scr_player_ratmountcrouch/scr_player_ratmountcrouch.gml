@@ -1,33 +1,33 @@
 function scr_player_ratmountcrouch() //gml_Script_scr_player_ratmountcrouch
 {
-    move = (key_left + key_right)
-    hsp = movespeed
+    Move = (key_left + key_right)
+    hsp = Movespeed
     if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))))
-        movespeed = 0
-    if (move != 0)
+        Movespeed = 0
+    if (Move != 0)
     {
-        if (move == xscale)
+        if (Move == xscale)
         {
-            if (abs(movespeed) < 4)
-                movespeed = approach(movespeed, (xscale * 4), 0.5)
+            if (abs(Movespeed) < 4)
+                Movespeed = approach(Movespeed, (xscale * 4), 0.5)
             else
-                movespeed = approach(movespeed, (xscale * 4), 0.1)
+                Movespeed = approach(Movespeed, (xscale * 4), 0.1)
         }
         else
         {
-            movespeed = approach(movespeed, 0, 0.5)
-            if (abs(movespeed) <= 0)
-                xscale = move
+            Movespeed = approach(Movespeed, 0, 0.5)
+            if (abs(Movespeed) <= 0)
+                xscale = Move
         }
-        if (abs(movespeed) < 3 && move != 0)
+        if (abs(Movespeed) < 3 && Move != 0)
             image_speed = 0.35
-        else if (abs(movespeed) > 3 && abs(movespeed) < 6)
+        else if (abs(Movespeed) > 3 && abs(Movespeed) < 6)
             image_speed = 0.45
         else
             image_speed = 0.6
     }
     else
-        movespeed = approach(movespeed, 0, 0.5)
+        Movespeed = approach(Movespeed, 0, 0.5)
     if (!grounded)
     {
         state = states.ratmountjump

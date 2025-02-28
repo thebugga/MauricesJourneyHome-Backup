@@ -19,22 +19,22 @@ switch state
 		scr_enemy_turn()
 		break
 	case states.walk:
-		hsp = (image_xscale * b_movespeed)
-		if (b_movespeed < 6)
-			b_movespeed += 0.5
-		if place_meeting_slope(x,y)
+		hsp = (image_xscale * b_Movespeed)
+		if (b_Movespeed < 6)
+			b_Movespeed += 0.5
+		if slopeCheck(x + Xscale, y)
 		{
 			var _inst = instance_place(x, (y + 1), obj_slope)
 			if (sign(_inst.image_xscale) == (-sign(image_xscale)))
 			{
-				b_movespeed += 0.15
-				if (b_movespeed > 26)
-					b_movespeed = 26
+				b_Movespeed += 0.15
+				if (b_Movespeed > 26)
+					b_Movespeed = 26
 			}
 		}
-		else if (b_movespeed > 6)
-			b_movespeed -= 0.05
-		if (place_meeting_solid((x + sign(hsp)), y) && ((!place_meeting_slope(x,y)) or place_meeting_slope((x + sign(hsp)), (y - 2)) or place_meeting_solid((x + sign(hsp)), (y - 2))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+		else if (b_Movespeed > 6)
+			b_Movespeed -= 0.05
+		if (place_meeting_solid((x + sign(hsp)), y) && ((!slopeCheck(x + Xscale, y)) or place_meeting_slope((x + sign(hsp)), (y - 2)) or place_meeting_solid((x + sign(hsp)), (y - 2))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 			image_xscale *= -1
 		with (instance_place((x + sign(hsp)), y, obj_destructibles))
 			instance_destroy()
@@ -109,7 +109,7 @@ switch state
 		if place_meeting(x, (y + 1), obj_railparent)
 		{
 			var _railinst = instance_place(x, (y + 1), obj_railparent)
-			hsp += (_railinst.movespeed * _railinst.dir)
+			hsp += (_railinst.Movespeed * _railinst.dir)
 		}
 		grav = 0.5
 		break
@@ -156,7 +156,7 @@ else
 	stuntouched = 0
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = (0.15 * room_speed)
-angle = 0
+Rotation = 0
 flash = 0
 if (state != states.grabbed)
 	depth = 0

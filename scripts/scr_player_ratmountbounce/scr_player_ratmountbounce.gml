@@ -2,7 +2,6 @@ function scr_player_ratmountbounce()
 {
 	if global.playerCharacter == Characters.Doise
 	{
-		isgustavo = false;
 		scr_player_noisecrusher();
 		exit;
 	}
@@ -23,24 +22,24 @@ function scr_player_ratmountbounce()
 		image_speed = 0.35;
 	if sprite_index == spr_player_ratmountbounce
 	{
-		move = key_left + key_right;
-		hsp = movespeed;
-		movespeed = approach(movespeed, 0, 1);
+		Move = key_left + key_right;
+		hsp = Movespeed;
+		Movespeed = approach(Movespeed, 0, 1);
 		if animation_end()
 		{
 			if hsp != 0
-				xscale = sign(hsp);
+				Xscale = sign(hsp);
 			state = states.ratmount;
 		}
 	}
 	else
 	{
-		hsp = movespeed;
-		move = key_left + key_right;
-		if move != 0
-			movespeed = approach(movespeed, move * 8, 0.5);
+		hsp = Movespeed;
+		Move = key_left + key_right;
+		if Move != 0
+			Movespeed = approach(Movespeed, Move * 8, 0.5);
 		else
-			movespeed = approach(movespeed, 0, 0.5);
+			Movespeed = approach(Movespeed, 0, 0.5);
 		if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
 		{
 			input_buffer_slap = 0;
@@ -48,7 +47,7 @@ function scr_player_ratmountbounce()
 		}
 		if input_buffer_slap > 0 && !key_up
 		{
-			particle_set_scale(particle.jumpdust, xscale, 1);
+			particle_set_scale(particle.jumpdust, Xscale, 1);
 			create_particle(x, y, particle.jumpdust, 0);
 			input_buffer_slap = 0;
 			if brick == 1
@@ -61,20 +60,20 @@ function scr_player_ratmountbounce()
 			gustavohitwall = false;
 			ratmountpunchtimer = 25;
 			image_index = 0;
-			if move != 0
-				xscale = move;
-			movespeed = xscale * 12;
+			if Move != 0
+				Xscale = Move;
+			Movespeed = Xscale * 12;
 			sprite_index = spr_lonegustavo_punch;
 		}
 		ratmount_fallingspeed += 0.5;
 		if (brick && place_meeting_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting_slope(x + sign(hsp), y)))
 		{
-			if (move != 0 && move == sign(hsp) && key_jump2)
+			if (Move != 0 && Move == sign(hsp) && key_jump2)
 			{
 				fmod_event_one_shot_3d("event:/sfx/ratmount/walljump1", x, y);
 				state = states.ratmountclimbwall;
 				sticktime = 15;
-				xscale = sign(hsp);
+				Xscale = sign(hsp);
 				landAnim = false;
 			}
 		}

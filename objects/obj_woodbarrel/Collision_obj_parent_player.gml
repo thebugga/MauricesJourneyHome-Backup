@@ -1,6 +1,6 @@
 if ((other.state == states.handstandjump or other.state == states.punch) && other.grounded == true)
 {
-	instance_create((x + (obj_player1.xscale * 40)), y, obj_punchdust)
+	instance_create((x + (obj_player1.Xscale * 40)), y, obj_punchdust)
 	with (other)
 	{
 		image_index = 0
@@ -23,7 +23,7 @@ if (other.state == states.mach2 or other.state == states.mach3 or (other.state =
 		y = other.y
 		state = states.barrel
 		sprite_index = spr_barrelroll
-		movespeed = 12
+		Movespeed = 12
 	}
 	instance_destroy()
 }

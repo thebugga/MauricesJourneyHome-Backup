@@ -1,4 +1,4 @@
-if (!obj_player1.isgustavo)
+if (global.playerCharacter != Characters.Pierre)
 	sprite_index = spr_gustavosign
 else
 {

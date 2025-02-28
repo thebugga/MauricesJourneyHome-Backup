@@ -1,4 +1,4 @@
-if (sprite_index == spr_taximove)
+if (sprite_index == spr_taxiMove)
 {
 	with (obj_parent_player)
 	{

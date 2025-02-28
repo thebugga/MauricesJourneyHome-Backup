@@ -25,10 +25,10 @@ function cutscene_superpinball_middle()
 	var t = noone
 	with (obj_superpinballmachine)
 	{
-		x -= other.movespeed
+		x -= other.Movespeed
 		t = id
 	}
-	movespeed += 0.25
+	Movespeed += 0.25
 	with (obj_parent_player)
 	{
 		if check_player_coop()

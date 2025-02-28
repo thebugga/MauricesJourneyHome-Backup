@@ -35,7 +35,7 @@ function state_boss_walk(argument0)
 			{
 				//argument0()
 				if (object_index != obj_mrstickboss)
-					image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : targetxscale)
+					image_xscale = (targetplayer.x != x ? sign((targetplayer.x - x)) : targetXscale)
 			}
 			else
 				state = states.normal
@@ -45,7 +45,7 @@ function state_boss_walk(argument0)
 
 function state_boss_bump()
 {
-	movespeed = 0
+	Movespeed = 0
 	sprite_index = bumpspr
 	image_speed = 0.35
 	if (grounded && vsp > 0)
@@ -96,7 +96,7 @@ function state_boss_taunt()
 			if (!is_undefined(s))
 			{
 				attack_cooldown = floor((attack_max[(phase - 1)] / 2))
-				image_xscale = (-playerinst.xscale)
+				image_xscale = (-playerinst.Xscale)
 				sprite_index = parryspr
 				image_index = 0
 				//scr_soundeffect(sfx_parry)
@@ -111,7 +111,7 @@ function state_boss_taunt()
 			{
 				playerinst = playerinst.playerid
 				attack_cooldown = floor((attack_max[(phase - 1)] / 2))
-				image_xscale = (-playerinst.xscale)
+				image_xscale = (-playerinst.Xscale)
 				sprite_index = parryspr
 				image_index = 0
 				//scr_soundeffect(sfx_parry)
@@ -131,16 +131,16 @@ function state_boss_taunt()
 function state_boss_parry()
 {
 	image_speed = 0.35
-	hsp = (movespeed * (-image_xscale))
+	hsp = (Movespeed * (-image_xscale))
 	if (image_index > (image_number - 1))
 	{
 		state = taunt_storedstate
 		hsp = taunt_storedhsp
 	}
-	if (movespeed > 0)
-		movespeed -= 0.5
+	if (Movespeed > 0)
+		Movespeed -= 0.5
 	else
-		movespeed = 0
+		Movespeed = 0
 }
 
 function state_player_arenaround()
@@ -157,7 +157,7 @@ function state_player_arenaround()
 	if (hsp != 0 && grounded)
 	{
 		image_speed = 0.6
-		sprite_index = spr_move
+		sprite_index = spr_Move
 		image_xscale = sign(hsp)
 	}
 	else

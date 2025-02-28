@@ -1,11 +1,11 @@
-hsp = (image_xscale * movespeed)
+hsp = (image_xscale * Movespeed)
 if grounded
 {
 	
-	if movespeed > 0
-		movespeed -= (global.playerCharacter == Characters.Doise ? 0.5 : 1)
+	if Movespeed > 0
+		Movespeed -= (global.playerCharacter == Characters.Doise ? 0.5 : 1)
 	if global.playerCharacter != Characters.Doise
-		vsp = (movespeed / starthsp) * startvsp
+		vsp = (Movespeed / starthsp) * startvsp
 }
 if (place_meeting((x + image_xscale), y, obj_monstersolid) && (!(place_meeting((x + image_xscale), y, obj_destructibles))) && (!(place_meeting((x + image_xscale), y, obj_monsterslope))))
 	image_xscale *= -1

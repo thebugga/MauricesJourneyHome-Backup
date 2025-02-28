@@ -6,6 +6,117 @@ for (i = 0; room_exists(i); i++)
 for (i = 0; object_exists(i); i++)
     global.ObjectNameList[i] = object_get_name(i);
 
+function data_ensure(data, index, value = undefined)
+{
+	if is_array(data)
+	{
+		while (index < 0)
+		{
+			if array_length(data) > 0
+				index = array_length(data) + (index + 1);
+			else
+				index = 0;
+		}
+		if array_length(data) > index
+			return data[index];
+		return value;
+	}
+	if is_struct(data)
+	{
+		if variable_struct_exists(data, index)
+			return variable_struct_get(data, index);
+		return value;
+	}
+	if instance_exists(data)
+	{
+		if variable_instance_exists(data, index)
+			return variable_instance_get(data, index);
+		return value;
+	}
+	if ds_exists(data, ds_type_grid)
+	{
+		if ds_grid_get(data, index[0], index[1]) != undefined
+			return ds_grid_get(data, index[0], index[1]);
+		return value;
+	}
+	if ds_exists(data, ds_type_list)
+	{
+		if ds_list_size(data) >= index
+			return ds_list_find_value(data, index);
+		return value;
+	}
+	if ds_exists(data, ds_type_map)
+	{
+		if ds_map_exists(data, index)
+			return ds_map_find_value(data, index);
+		return value;
+	}
+	if ds_exists(data, ds_type_priority)
+	{
+		if ds_priority_size(data) >= index
+			return ds_priority_find_priority(data, index);
+		return value;
+	}
+	if ds_exists(data, ds_type_queue)
+	{
+		if ds_queue_size(data) >= index
+		{
+			var temp_queue = ds_queue_create();
+			ds_queue_copy(temp_queue, data);
+			while ds_queue_size(data) != index
+				ds_queue_dequeue(temp_queue);
+			return ds_queue_dequeue(temp_queue);
+		}
+		return value;
+	}
+	if ds_exists(data, ds_type_stack)
+	{
+		if ds_stack_size(data) >= index
+		{
+			var temp_queue = ds_stack_create();
+			ds_stack_copy(temp_queue, data);
+			while ds_stack_size(data) != index
+				ds_stack_pop(temp_queue);
+			return ds_stack_pop(temp_queue);
+		}
+		return value;
+	}
+}
+
+
+function get_real(str)
+{
+	var n = str;
+	if is_string(str)
+	{
+		if str == "true"
+		{
+			str = true;
+			return str;
+		}
+		else if str == "false"
+		{
+			str = false;
+			return str;
+		}
+		else
+		{
+			n = real(string_digits(str));
+			if string_char_at(str, 1) == "-"
+				n = -real(string_digits(str));
+		}
+	}
+	return n;
+}
+
+
+function tileset_exists(ind)
+{
+	if tileset_get_name(ind) == undefined
+		return false;
+	return true;
+}
+
 function scr_parseBool(argument0, argument1)
 {
     var true_strings, false_strings;
@@ -29,36 +140,26 @@ function scr_parseBool(argument0, argument1)
     }
 }
 
-function sh_escape(argument0)
+function sh_escape(args)
 {
-    var arg0, arg1, arg2, minutes, seconds;
-    
-    arg0 = scr_parseBool(string(argument0[1]), !global.panic);
-    arg1 = argument0[2];
-    arg2 = argument0[3];
-    global.panic = arg0;
-    minutes = real(string_digits(arg1));
-    seconds = real(string_digits(arg2));
-    global.EscapeTime = ((minutes * 60) + seconds) * 60;
-    
-    with (obj_hudManager.HUDObject_timer)
-        targetEscapeTime = global.EscapeTime;
-    
-    global.MaxEscapeTime = global.EscapeTime;
-    
-    if (!instance_exists(obj_panicchanger))
-        instance_create(x, y, obj_panicchanger);
+	var fill = data_ensure(args, 2, 4000);
+	fill = get_real(fill);
+	global.panic = data_ensure(args, 1, true);
+	global.fill = fill;
+	if global.panic
+		obj_camera.alarm[1] = 60;
+	obj_tv.chunkmax = global.fill;
 }
 
 function meta_escape()
 {
-    return 
-    {
-        description: "Activates escape and sets escape time",
-        arguments: ["<bool>", "<min>", "<sec>", "<isSucroseTimer?>"],
-        suggestions: [["true", "false"], [], [], ["true", "false"]],
-        argumentDescriptions: ["Escape mode", "Minutes left", "Seconds left", "Toggles if Timer is Sucrose mode"]
-    };
+	return 
+	{
+		description: "Toggles backtrack-orama",
+		arguments: ["<true>", "<fill>"],
+		suggestions: [],
+		argumentDescriptions: []
+	};
 }
 
 function sh_game_speed(argument0)
@@ -90,7 +191,7 @@ function sh_character(argument0)
     switch (argument0[1])
     {
         default:
-            show_debug_message(string("SHELL WARNING: [{0}] is not a valid character. Defaulting to Pizzelle.", argument0[1]));
+            show_debug_message(string("SHELL WARNING: [{0}] is not a valid character. Defaulting to Maurice.", argument0[1]));
         
         case "Maurice":
             choosen_character = Characters.Maurice;

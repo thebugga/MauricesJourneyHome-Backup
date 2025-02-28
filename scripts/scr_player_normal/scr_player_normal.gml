@@ -67,6 +67,8 @@ function state_player_normal()
 	hsp = (move * movespeed) + (railmovespeed * raildir);
 	if move != 0
 	{
+        if move != 0
+            xscale = move
 		if movespeed < maxmovespeed
 			movespeed += accel;
 		else if (floor(movespeed) == maxmovespeed)

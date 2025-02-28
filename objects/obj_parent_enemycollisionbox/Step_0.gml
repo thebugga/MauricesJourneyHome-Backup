@@ -75,7 +75,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_parent_player) && obj_p
                     image_index = 0
                 }
             }
-			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 or state != states.tumble && ((state == states.handstandjump && global.attackstyle == 1) or instakillmove == 1) && other.baddieID.state != states.grabbed && (!other.baddieID.invincible) && other.baddieID.instantkillable)
+			if (instance_exists(other.baddieID) and other.baddieID.invtime == 0 and (instakillmove == 1) && other.baddieID.state != states.grabbed && (!other.baddieID.invincible) && other.baddieID.instantkillable)
 				Instakill()
             else if (instance_exists(other.baddieID) && state == states.handstandjump && global.attackstyle == 0 && other.baddieID.invtime <= 0 && (!other.baddieID.invincible))
             {

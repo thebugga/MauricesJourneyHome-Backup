@@ -30,8 +30,8 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_parent_player) && obj_p
                     other.baddieID.state = states.stun
                     if (other.baddieID.stunned < 100)
                         other.baddieID.stunned = 100
-                    other.baddieID.xscale = 2.5
-                    other.baddieID.yscale = 0.2
+                    other.baddieID.xscale = 2.0
+                    other.baddieID.yscale = 0.03
 
                 if (other.baddieID.object_index == obj_pizzaball)
                 {

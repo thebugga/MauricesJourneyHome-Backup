@@ -94,7 +94,7 @@ function scr_player_Sjump()
 			if _xscale != 0
 				xscale = _xscale
 		}
-		if ((place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && sprite_index == spr_playerN_jetpackboost)
+		if ((place_meeting(x + hsp, y, obj_solid) || place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && sprite_index == spr_playerN_jetpackboost)
 		{
 			sprite_index = spr_slipbanan1
 			movespeed = abs(lengthdir_x(sjumpvsp, _dir))
@@ -136,7 +136,7 @@ function scr_player_Sjump()
 			instance_create(x, y, obj_playerexplosion)
 		}
 	}
-	if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
+	if (place_meeting_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 	{
 		pizzapepper = 0;
 		a = 0;

@@ -25,7 +25,7 @@ function scr_player_motorcycle()
 		vsp /= 10
 		jumpstop = 1
 	}
-	if ((place_meeting((x + sign(hsp)), y, obj_solid) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
+	if ((place_meeting((x + sign(hsp)), y, obj_solid) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 	{
 		jumpstop = 0
 		vsp = -11

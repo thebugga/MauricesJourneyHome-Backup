@@ -1,5 +1,5 @@
 scr_collision()
-if scr_solid(x, (y + 1))
+if place_meeting_solid(x, (y + 1))
 	hsp = approach(hsp, 0, 0.5)
 if (banana == 2)
 	instance_destroy()

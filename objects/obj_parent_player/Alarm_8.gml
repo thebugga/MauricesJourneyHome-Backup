@@ -2,7 +2,7 @@ if (state == states.hurt)
 {
 	state = states.normal
 	movespeed = 0
-	if scr_solid(x, y)
+	if place_meeting_solid(x, y)
 	{
 		var ty = try_solid(0, 1, 312, 32)
 		if (ty != -1)

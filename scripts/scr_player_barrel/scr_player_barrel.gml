@@ -31,7 +31,7 @@ function scr_player_barrel()
 			else
 				sprite_index = spr_player_barrelidle
 		}
-		if (scr_slope() && hsp != 0)
+		if (place_meeting_slope(x,y) && hsp != 0)
 		{
 			with (instance_place(x, (y + 1), obj_slope))
 			{

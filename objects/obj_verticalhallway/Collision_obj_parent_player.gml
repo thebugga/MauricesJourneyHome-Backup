@@ -41,7 +41,7 @@ with (other)
 		verticalstate = states.climbwall
 		var i = 0
 		x = floor(x)
-		while (!(scr_solid((x + xscale), y)))
+		while (!(place_meeting_solid((x + xscale), y)))
 		{
 			x += xscale
 			i++

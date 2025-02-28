@@ -30,11 +30,11 @@ function scr_player_boxxedpep()
 		}
 		hsp = (movespeed + (railmovespeed * raildir))
 	}
-	if (scr_solid((x + sign(hsp)), y) && xscale == 1 && move == 1 && ((!(place_meeting((x + 1), y, obj_slope))) or scr_solid_slope((x + 1), y)))
+	if (place_meeting_solid((x + sign(hsp)), y) && xscale == 1 && move == 1 && ((!(place_meeting((x + 1), y, obj_slope))) or place_meeting_slope((x + 1), y)))
 		movespeed = 0
-	if (scr_solid((x + sign(hsp)), y) && xscale == -1 && move == -1 && ((!(place_meeting((x - 1), y, obj_slope))) or scr_solid_slope((x - 1), y)))
+	if (place_meeting_solid((x + sign(hsp)), y) && xscale == -1 && move == -1 && ((!(place_meeting((x - 1), y, obj_slope))) or place_meeting_slope((x - 1), y)))
 		movespeed = 0
-	if (grounded && input_buffer_jump < 8 && vsp > 0 && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
+	if (grounded && input_buffer_jump < 8 && vsp > 0 && (!(place_meeting_solid(x, (y - 16)))) && (!(place_meeting_solid(x, (y - 32)))))
 	{
 		instance_create(x, y, obj_highjumpcloud2)
 		vsp = (-boxxedpepjump)

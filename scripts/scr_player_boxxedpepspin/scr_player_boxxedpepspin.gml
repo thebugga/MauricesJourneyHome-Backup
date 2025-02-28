@@ -23,7 +23,7 @@ function scr_player_boxxedpepspin()
 		vsp = -6
 		instance_create(x, y, obj_stompeffect)
 	}
-	if (scr_solid((x + sign(hsp)), y) && (!(place_meeting((x + hsp), y, obj_destructibles))) && ((!(place_meeting((x + hsp), y, obj_slope))) or scr_solid_slope((x + hsp), y)))
+	if (place_meeting_solid((x + sign(hsp)), y) && (!(place_meeting((x + hsp), y, obj_destructibles))) && ((!(place_meeting((x + hsp), y, obj_slope))) or place_meeting_slope((x + hsp), y)))
 		movespeed = (-((sign(hsp) * 6)))
 	instance_destroy(instance_place((x + hsp), y, obj_destructibles))
 	if (!key_slap)

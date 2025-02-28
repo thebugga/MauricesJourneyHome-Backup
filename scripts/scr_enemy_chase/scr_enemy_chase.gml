@@ -16,7 +16,7 @@ function scr_enemy_chase()
 			momentum -= 0.1
 		if (momentum <= 0)
 			momentum += 0.1
-		if scr_solid(x, (y + 1))
+		if place_meeting_solid(x, (y + 1))
 			steppy--
 		if (steppy == 0)
 		{

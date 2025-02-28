@@ -44,7 +44,7 @@ function scr_player_grabbing()
 	if (floor(image_index) == (image_number - 1) && sprite_index == airattackdashstart)
 		sprite_index = airattackdash
 	grav = 0
-	if (scr_solid((x + 1), y) && xscale == 1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)))
+	if (place_meeting_solid((x + 1), y) && xscale == 1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
 	{
 		//scr_soundeffect(sfx_bumpwall)
 		grav = 0.5
@@ -58,7 +58,7 @@ function scr_player_grabbing()
 		machhitAnim = 0
 		instance_create((x + 10), (y + 10), obj_bumpeffect)
 	}
-	if (scr_solid((x - 1), y) && xscale == -1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)))
+	if (place_meeting_solid((x - 1), y) && xscale == -1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
 	{
 		//scr_soundeffect(sfx_bumpwall)
 		grav = 0.5

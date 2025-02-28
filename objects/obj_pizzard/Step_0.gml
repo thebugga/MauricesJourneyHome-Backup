@@ -59,7 +59,7 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset <= 0 &&
 {
 	if (targetplayer.x > (x - 400) && targetplayer.x < (x + 400) && y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20))
 	{
-		if ((state == states.walk or state == states.idle) && (!scr_solid_line(targetplayer)))
+		if ((state == states.walk or state == states.idle) && (!place_meeting_solid_line(targetplayer)))
 		{
 			sprite_index = spr_pizzard_shoot
 			image_index = 0

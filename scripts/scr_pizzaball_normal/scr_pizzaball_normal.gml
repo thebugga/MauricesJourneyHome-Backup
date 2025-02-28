@@ -85,7 +85,7 @@ function scr_pizzaball_normal()
 			sprite_index = spr_pizzaball_idle1
 		else if (sprite_index == spr_pizzaball_roll)
 		{
-			if (!scr_slope())
+			if (!place_meeting_slope(x,y))
 			{
 				if (sprite_index != spr_pizzaball_hitwall2)
 				{

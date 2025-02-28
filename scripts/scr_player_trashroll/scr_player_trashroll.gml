@@ -1,7 +1,7 @@
 function scr_player_trashroll()
 {
 	hsp = (xscale * movespeed)
-	if (scr_slope() && hsp != 0)
+	if (place_meeting_slope(x,y) && hsp != 0)
 		scr_player_addslopemomentum(0.25, 0.5)
 	movespeed = max(3, movespeed)
 	if (sprite_index != spr_player_corpsestart && sprite_index != spr_player_corpsesurf)

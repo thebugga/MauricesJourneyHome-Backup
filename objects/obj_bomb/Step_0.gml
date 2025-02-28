@@ -1,7 +1,7 @@
 countdown -= 0.5
 if (place_meeting((x + 1), y, obj_ratblock) or place_meeting((x - 1), y, obj_ratblock) or place_meeting(x, (y - 1), obj_ratblock) or place_meeting(x, (y + 1), obj_ratblock))
 	instance_destroy()
-if (scr_solid((x + 1), y) or scr_solid((x - 1), y))
+if (place_meeting_solid((x + 1), y) or place_meeting_solid((x - 1), y))
 	drop = 1
 if place_meeting(x, (y + 1), obj_solid)
 	hsp = 0
@@ -16,18 +16,18 @@ if (countdown < 50)
 	sprite_index = spr_bomblit
 if (countdown == 0)
 	instance_destroy()
-if scr_solid((x + floor(hsp)), y)
+if place_meeting_solid((x + floor(hsp)), y)
 {
 	x = floor(x)
-	while (!(scr_solid((x + sign(hsp)), y)))
+	while (!(place_meeting_solid((x + sign(hsp)), y)))
 		x += sign(hsp)
 	hsp = 0
 }
 x += hsp
-if scr_solid(x, (y + floor(vsp)))
+if place_meeting_solid(x, (y + floor(vsp)))
 {
 	y = floor(y)
-	while (!(scr_solid(x, (y + sign(vsp)))))
+	while (!(place_meeting_solid(x, (y + sign(vsp)))))
 		y += sign(vsp)
 	vsp = 0
 }

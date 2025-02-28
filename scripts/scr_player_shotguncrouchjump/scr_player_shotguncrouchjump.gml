@@ -14,7 +14,7 @@ function scr_player_shotguncrouchjump()
 		vsp /= 2
 		jumpstop = 1
 	}
-	if (scr_solid(x, (y - 1)) && (!jumpstop))
+	if (place_meeting_solid(x, (y - 1)) && (!jumpstop))
 	{
 		vsp = grav
 		jumpstop = 1

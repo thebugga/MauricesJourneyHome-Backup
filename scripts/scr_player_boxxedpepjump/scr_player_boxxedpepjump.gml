@@ -14,7 +14,7 @@ function scr_player_boxxedpepjump()
 		raildir = _railinst.dir
 	}
 	hsp = (movespeed + (railmovespeed * raildir))
-	if (scr_solid((x + sign(hsp)), y) && xscale == move && ((!(place_meeting((x + xscale), y, obj_slope))) or scr_solid_slope((x + xscale), y)))
+	if (place_meeting_solid((x + sign(hsp)), y) && xscale == move && ((!(place_meeting((x + xscale), y, obj_slope))) or place_meeting_slope((x + xscale), y)))
 		movespeed = 0
 	if ((!key_jump2) && (!jumpstop) && vsp < 0)
 	{

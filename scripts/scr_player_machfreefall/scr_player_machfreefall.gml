@@ -15,7 +15,7 @@ function scr_player_machfreefall()
 	move = (key_right + key_left)
 	crouchslideAnim = 1
 	sprite_index = spr_player_machfreefall
-	if (scr_solid((x + 1), y) && image_xscale == 1)
+	if (place_meeting_solid((x + 1), y) && image_xscale == 1)
 	{
 		machhitAnim = 0
 		state = states.bump
@@ -25,7 +25,7 @@ function scr_player_machfreefall()
 		image_index = 0
 		instance_create((x + 10), (y + 10), obj_bumpeffect)
 	}
-	else if (scr_solid((x - 1), y) && image_xscale == -1)
+	else if (place_meeting_solid((x - 1), y) && image_xscale == -1)
 	{
 		machhitAnim = 0
 		state = states.bump

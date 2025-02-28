@@ -52,7 +52,7 @@ switch state
 			railmovespeed = 0
 		with (instance_place((x + hsp), y, obj_destructibles))
 			instance_destroy()
-		if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting(x, y, obj_destructibles))))
+		if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting(x, y, obj_destructibles))))
 		{
 			state = states.stun
 			stunned = 100
@@ -79,7 +79,7 @@ switch state
 			railspeed = 0
 			sprite_index = walkspr
 		}
-		if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting(x, y, obj_destructibles))))
+		if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting(x, y, obj_destructibles))))
 		{
 			state = states.stun
 			stunned = 100

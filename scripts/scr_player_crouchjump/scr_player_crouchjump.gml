@@ -9,7 +9,7 @@ function scr_player_crouchjump()
 		vsp /= 2
 		jumpstop = 1
 	}
-	if (scr_solid(x, (y - 1)) && jumpstop == 0 && jumpAnim == 1)
+	if (place_meeting_solid(x, (y - 1)) && jumpstop == 0 && jumpAnim == 1)
 	{
 		vsp = grav
 		jumpstop = 1

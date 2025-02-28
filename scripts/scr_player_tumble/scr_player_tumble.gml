@@ -34,7 +34,7 @@ function scr_player_tumble()
 	{
 		state = states.normal
 	}
-	if ((!scr_slope()) && sprite_index == spr_tumblestart && floor(image_index) < 11)
+	if ((!place_meeting_slope(x,y)) && sprite_index == spr_tumblestart && floor(image_index) < 11)
 		image_index = 11
 	if (sprite_index == spr_mach2jump && grounded)
 	{
@@ -73,7 +73,7 @@ function scr_player_tumble()
 		sprite_index = spr_tumble
 		movespeed = 14
 	}
-	if (((place_meeting((x + xscale), y, obj_solid) or scr_solid_slope((x + xscale), y)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && ((!(place_meeting((x + hsp), y, obj_rattumble))) or sprite_index != spr_tumble) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or place_meeting(x, y, obj_timedgate))
+	if (((place_meeting((x + xscale), y, obj_solid) or place_meeting_slope((x + xscale), y)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && ((!(place_meeting((x + hsp), y, obj_rattumble))) or sprite_index != spr_tumble) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or place_meeting(x, y, obj_timedgate))
 	{
 		hsp = 0;
 		movespeed = 0;
@@ -129,7 +129,7 @@ if (sprite_index == spr_crouchslip && ispeppino && input_buffer_jump > 0 && glob
 	}
 	if (crouchslipbuffer > 0)
 		crouchslipbuffer--
-	if ((!key_down) && key_attack && grounded && sprite_index != spr_tumble && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))) && sprite_index != spr_player_breakdance)
+	if ((!key_down) && key_attack && grounded && sprite_index != spr_tumble && (!(place_meeting_solid(x, (y - 16)))) && (!(place_meeting_solid(x, (y - 32)))) && sprite_index != spr_player_breakdance)
 	{
 		if (crouchslipbuffer == 0)
 		{
@@ -144,7 +144,7 @@ if (sprite_index == spr_crouchslip && ispeppino && input_buffer_jump > 0 && glob
 			//scr_soundeffect(sfx_rollgetup)
 		}
 	}
-	if (!key_down && !key_attack && grounded && vsp > 0 && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)
+	if (!key_down && !key_attack && grounded && vsp > 0 && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !place_meeting_solid(x, y - 16) && !place_meeting_solid(x, y - 32) && sprite_index != spr_player_breakdance)
 	{
 		if (crouchslipbuffer == 0)
 		{

@@ -13,7 +13,7 @@ function scr_player_meteorpep()
 	}
 	else
 		hsp = 0
-	if (scr_solid((x - 1), y) && xscale == 1 && hsp != 0)
+	if (place_meeting_solid((x - 1), y) && xscale == 1 && hsp != 0)
 	{
 		movespeed = 0
 		with (obj_parent_enemy)
@@ -32,7 +32,7 @@ function scr_player_meteorpep()
 		image_index = 0
 		sprite_index = spr_meteorpep_land
 	}
-	if (scr_solid((x + 1), y) && xscale == -1 && hsp != 0)
+	if (place_meeting_solid((x + 1), y) && xscale == -1 && hsp != 0)
 	{
 		movespeed = 0
 		if point_in_camera(x, y, view_camera[0])

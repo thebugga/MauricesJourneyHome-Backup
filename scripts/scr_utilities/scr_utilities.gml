@@ -31,7 +31,7 @@ function try_solid(xplus, yplus, object, tries)
 		x += xplus
 		y += yplus
 		
-		if !scr_solid(x, y)
+		if !place_meeting_solid(x, y)
 		{
 			n = i + 1
 			break
@@ -56,7 +56,7 @@ function ledge_bump(argument0)
 	{
 		y -= ty
 		x += xscale
-		if scr_solid(x, y)
+		if place_meeting_solid(x, y)
 		{
 			x = old_x
 			y = old_y
@@ -85,7 +85,7 @@ function get_solid_difference(argument0, argument1, argument2)
 	{
 		x += argument0
 		y += argument1
-		if !scr_solid(x, y)
+		if !place_meeting_solid(x, y)
 			n++
 	}
 	

@@ -1,1 +1,0 @@
-scr_monster_collide()

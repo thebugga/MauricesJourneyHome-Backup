@@ -15,7 +15,7 @@ function scr_enemy_walk()
 		hsp = 0
 	if (turntimer > 0 && turner == 1)
 		turntimer--
-	if ((scr_solid((x + 1), y) && image_xscale == 1) or (scr_solid((x - 1), y) && image_xscale == -1) or place_meeting((x + hsp), y, obj_hallway) or turntimer <= 0)
+	if ((place_meeting_solid((x + 1), y) && image_xscale == 1) or (place_meeting_solid((x - 1), y) && image_xscale == -1) or place_meeting((x + hsp), y, obj_hallway) or turntimer <= 0)
 	{
 		if (!(place_meeting((x + sign(hsp)), y, obj_slope)))
 		{
@@ -40,7 +40,7 @@ function scr_enemy_walk()
 	}
 	if object_index != obj_ancho
 	{
-		if (!((scr_solid((x + (image_xscale * 15)), (y + 31)) or place_meeting((x + (image_xscale * 15)), (y + 31), obj_platform))))
+		if (!((place_meeting_solid((x + (image_xscale * 15)), (y + 31)) or place_meeting((x + (image_xscale * 15)), (y + 31), obj_platform))))
 		{
 			if (movespeed > 0 && grounded)
 			{

@@ -104,7 +104,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
         image_speed = 0.35
     if (sprite_index == spr_player_ratmountmach3 || sprite_index == spr_lonegustavo_mach3)
         image_speed = 0.4
-    var front = (scr_solid((x + sign(hsp)), y) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
+    var front = (place_meeting_solid((x + sign(hsp)), y) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
     if brick
     {
         if (!landAnim)
@@ -261,7 +261,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
             other.dashcloudid = id
         }
     }
-    if ((key_down && grounded && vsp > 0 && gusdashpadbuffer <= 0) || scr_solid(x, y))
+    if ((key_down && grounded && vsp > 0 && gusdashpadbuffer <= 0) || place_meeting_solid(x, y))
     {
         state = states.ratmountcrouch
         if (brick == 1)

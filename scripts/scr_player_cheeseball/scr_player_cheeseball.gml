@@ -8,7 +8,7 @@ function scr_player_cheeseball()
 	if (vsp < 0)
 		vsp += 0.25
 	hsp = (xscale * movespeed)
-	if scr_slope()
+	if place_meeting_slope(x,y)
 	{
 		var slope = instance_place(x, (y + 1), obj_slope)
 		if (sign(slope.image_xscale) == xscale)

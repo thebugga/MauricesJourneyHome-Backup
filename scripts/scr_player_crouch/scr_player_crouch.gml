@@ -19,7 +19,7 @@ function scr_player_crouch()
 		crouchAnim = 1
 		image_index = 0
 	}
-	if (grounded && (!key_down) && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))) && (!key_jump))
+	if (grounded && (!key_down) && (!(place_meeting_solid(x, (y - 16)))) && (!(place_meeting_solid(x, (y - 32)))) && (!key_jump))
 	{
 		state = states.normal
 		movespeed = 0
@@ -62,7 +62,7 @@ function scr_player_crouch()
 		xscale = move
 		crouchAnim = 0
 	}
-	if (key_jump && grounded && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
+	if (key_jump && grounded && (!(place_meeting_solid(x, (y - 16)))) && (!(place_meeting_solid(x, (y - 32)))))
 	{
 		//scr_soundeffect(sfx_jump)
 		vsp = -8

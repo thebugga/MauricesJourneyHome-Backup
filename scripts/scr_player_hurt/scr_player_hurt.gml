@@ -31,7 +31,7 @@ function scr_player_hurt()
 		movespeed = 0
 		state = states.normal
 	}
-	if scr_solid((x + hsp), y)
+	if place_meeting_solid((x + hsp), y)
 		movespeed = 0
 	image_speed = 0.35
 	exit;

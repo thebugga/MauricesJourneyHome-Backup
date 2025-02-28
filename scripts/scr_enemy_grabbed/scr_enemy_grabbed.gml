@@ -469,15 +469,15 @@ function check_grabbed_solid(argument0) //gml_Script_check_grabbed_solid
 {
     if instakilled
         return;
-    if ((!(place_meeting(x, y, obj_destructibles))) && (scr_solid(x, y) || collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != -4))
+    if ((!(place_meeting(x, y, obj_destructibles))) && (place_meeting_solid(x, y) || collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != -4))
     {
         var _dist = abs(x - obj_parent_player.x)
         x = argument0.x
         y = argument0.y
-        if (!(scr_solid((x + argument0.xscale), y)))
+        if (!(place_meeting_solid((x + argument0.xscale), y)))
         {
             var i = 0
-            while (!(scr_solid((x + argument0.xscale), y)))
+            while (!(place_meeting_solid((x + argument0.xscale), y)))
             {
                 x += argument0.xscale
                 i++
@@ -486,10 +486,10 @@ function check_grabbed_solid(argument0) //gml_Script_check_grabbed_solid
                 else
                     continue
             }
-            if scr_solid(x, y)
+            if place_meeting_solid(x, y)
             {
                 i = 0
-                while scr_solid(x, y)
+                while place_meeting_solid(x, y)
                 {
                     x -= argument0.xscale
                     i++

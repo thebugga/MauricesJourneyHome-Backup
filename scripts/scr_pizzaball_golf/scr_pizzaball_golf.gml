@@ -19,11 +19,11 @@ function scr_pizzaball_golf()
 			scr_pizzaball_go_to_thrown((player.xscale * 18), 5, 0)
 		else
 			scr_pizzaball_go_to_thrown((player.xscale * 17), -7, 0)
-		if scr_solid(x, y)
+		if place_meeting_solid(x, y)
 		{
 			x = player.x
 			y = player.y
-			while scr_solid(x, y)
+			while place_meeting_solid(x, y)
 				x += player.xscale
 		}
 	}

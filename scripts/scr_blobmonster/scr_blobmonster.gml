@@ -51,7 +51,7 @@ function scr_blob_chase()
 		sprite_index = chasespr
 	else
 		sprite_index = idlespr
-	if (place_meeting((x + hsp), y, obj_solid) && (!scr_slope()) && grounded)
+	if (place_meeting((x + hsp), y, obj_solid) && (!place_meeting_slope(x,y)) && grounded)
 	{
 		image_xscale *= -1
 		state = states.normal

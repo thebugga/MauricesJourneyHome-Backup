@@ -62,7 +62,7 @@ if (state != states.grabbed)
 			other.stunned = 200
 			other.state = states.stun
 			machpunchAnim = 1
-			if ((!(scr_solid(x, (y + 1)))) && state != states.freefall)
+			if ((!(place_meeting_solid(x, (y + 1)))) && state != states.freefall)
 				vsp = -10
 		}
 		if (attacking == 1 && state != states.mach2)
@@ -72,7 +72,7 @@ if (state != states.grabbed)
 			image_index = 0
 			instance_destroy(other)
 			machpunchAnim = 1
-			if ((!(scr_solid(x, (y + 1)))) && state != states.freefall)
+			if ((!(place_meeting_solid(x, (y + 1)))) && state != states.freefall)
 				vsp = -10
 		}
 		if (attacking == 0 && state != states.tackle && state != states.hurt && (!(y < other.y)) && grabbing == 0 && other.state != states.stun)

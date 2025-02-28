@@ -5,12 +5,12 @@ function scr_noise_walk()
 		sprite_index = spr_playerN_idle
 	else if (floor(image_index) == (image_number - 1))
 		sprite_index = spr_playerN_idle
-	if (scr_solid((x + image_xscale), y) or place_meeting((x + hsp), y, obj_hallway))
+	if (place_meeting_solid((x + image_xscale), y) or place_meeting((x + hsp), y, obj_hallway))
 	{
 		if (!(place_meeting((x + sign(hsp)), y, obj_slope)))
 			image_xscale *= -1
 	}
-	if (grounded && vsp > 0 && (!(scr_solid((x + (image_xscale * 15)), (y + 31)))) && (!(place_meeting((x + (image_xscale * 15)), (y + 31), obj_platform))))
+	if (grounded && vsp > 0 && (!(place_meeting_solid((x + (image_xscale * 15)), (y + 31)))) && (!(place_meeting((x + (image_xscale * 15)), (y + 31), obj_platform))))
 		image_xscale *= -1
 	if (jumpbuffer > 0)
 		jumpbuffer--
@@ -146,7 +146,7 @@ function scr_noise_jump()
 		sprite_index = spr_playerN_fall
 	y = clamp(y, -50, (room_height + 100))
 	x = clamp(x, 32, (room_width - 32))
-	if (vsp > 0 && y > 100 && (scr_solid(x, (y + (vsp * 1.5))) or place_meeting(x, (y + (vsp * 1.5)), obj_slope)) && (!(scr_solid(x, y))))
+	if (vsp > 0 && y > 100 && (place_meeting_solid(x, (y + (vsp * 1.5))) or place_meeting(x, (y + (vsp * 1.5)), obj_slope)) && (!(place_meeting_solid(x, y))))
 	{
 		if (jumpcount > 0)
 		{
@@ -193,7 +193,7 @@ function scr_noise_shield()
 				sprite_index = spr_playerN_fall
 			y = clamp(y, -50, (room_height + 100))
 			x = clamp(x, 32, (room_width - 32))
-			if (vsp > 0 && y > 100 && (scr_solid(x, (y + (vsp * 1.5))) or place_meeting(x, (y + (vsp * 1.5)), obj_slope)) && (!(scr_solid(x, y))))
+			if (vsp > 0 && y > 100 && (place_meeting_solid(x, (y + (vsp * 1.5))) or place_meeting(x, (y + (vsp * 1.5)), obj_slope)) && (!(place_meeting_solid(x, y))))
 			{
 				substate = storedsubstate
 				sprite_index = spr_playerN_land

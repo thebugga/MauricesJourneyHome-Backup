@@ -33,7 +33,7 @@ if (!trapped)
 else if (baddieID == noone)
 {
 	vsp = -10
-	if ((y + vsp) < 80 or scr_solid(x, (y - 78)))
+	if ((y + vsp) < 80 or place_meeting_solid(x, (y - 78)))
 		vsp = 0
 	y += vsp
 }

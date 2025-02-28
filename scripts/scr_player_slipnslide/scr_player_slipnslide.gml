@@ -23,14 +23,14 @@ function scr_player_slipnslide()
 		mach2 = 0
 		image_index = 0
 	}
-	if (scr_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+	if (place_meeting_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
 		vsp = -5
 		sprite_index = spr_slipbanan1
 		image_index = 0
 		state = states.slipbanan
 	}
-	if (scr_slope() && movespeed <= 0)
+	if (place_meeting_slope(x,y) && movespeed <= 0)
 		movespeed = 2
 	image_speed = 0.35
 	if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 1.5 && sprite_index == spr_slipnslide)

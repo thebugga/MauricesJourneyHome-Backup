@@ -68,7 +68,7 @@ function scr_player_rocket()
 			image_index = 0
 		}
 	}
-	if (scr_solid((x + sign(hsp)), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && ((!(place_meeting((x + sign(hsp)), y, obj_ratblock))) or place_meeting((x + sign(hsp)), y, obj_rattumble)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_totemsteve))))
+	if (place_meeting_solid((x + sign(hsp)), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && ((!(place_meeting((x + sign(hsp)), y, obj_ratblock))) or place_meeting((x + sign(hsp)), y, obj_rattumble)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_totemsteve))))
 	{
 		pizzapepper = 0
 		sprite_index = spr_rockethitwall

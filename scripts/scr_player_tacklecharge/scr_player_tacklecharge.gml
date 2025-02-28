@@ -31,7 +31,7 @@ function scr_player_tacklecharge()
 	}
 	if key_jump
 		input_buffer_jump = 0
-	if (scr_solid((x + hsp), y) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))))
+	if (place_meeting_solid((x + hsp), y) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))))
 	{
 		if (baddiegrabbedID != obj_null)
 		{

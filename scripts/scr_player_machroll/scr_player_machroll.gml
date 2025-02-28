@@ -13,7 +13,7 @@ function scr_player_machroll()
 	switch character
 	{
 		case "P":
-			if (scr_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+			if (place_meeting_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 			{
 				//scr_soundeffect(sfx_bumpwall)
 				hsp = 0
@@ -27,7 +27,7 @@ function scr_player_machroll()
 				image_index = 0
 				instance_create((x + 10), (y + 10), obj_bumpeffect)
 				mask_index = spr_player_mask
-				if scr_solid(x, y)
+				if place_meeting_solid(x, y)
 				{
 					var ty = try_solid(0, 1, 312, 32)
 					if (ty != -1)
@@ -49,10 +49,10 @@ function scr_player_machroll()
 				sprite_index = spr_dive
 				vsp = 10
 			}
-			if scr_slope()
+			if place_meeting_slope(x,y)
 				movespeed += 0.1
 			image_speed = 0.8
-			if ((!key_down) && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))))
+			if ((!key_down) && (!(place_meeting_solid((x + 27), (y - 32)))) && (!(place_meeting_solid((x - 27), (y - 32)))) && (!(place_meeting_solid(x, (y - 32)))) && (!(place_meeting_solid(x, (y - 16)))))
 			{
 				image_index = 0
 				if grounded
@@ -79,7 +79,7 @@ function scr_player_machroll()
 		case "V":
 			if (sprite_index == spr_playerV_divekickstart && floor(image_index) == (image_number - 1))
 				sprite_index = spr_playerV_divekick
-			if (scr_solid((x + 1), y) && xscale == 1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
+			if (place_meeting_solid((x + 1), y) && xscale == 1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 			{
 				//scr_soundeffect(sfx_bumpwall)
 				hsp = 0
@@ -93,7 +93,7 @@ function scr_player_machroll()
 				image_index = 0
 				instance_create((x + 10), (y + 10), obj_bumpeffect)
 			}
-			if (scr_solid((x - 1), y) && xscale == -1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
+			if (place_meeting_solid((x - 1), y) && xscale == -1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 			{
 				//scr_soundeffect(sfx_bumpwall)
 				hsp = 0
@@ -123,7 +123,7 @@ function scr_player_machroll()
 				vsp = 10
 			}
 			image_speed = 0.8
-			if ((!key_down) && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))))
+			if ((!key_down) && (!(place_meeting_solid((x + 27), (y - 32)))) && (!(place_meeting_solid((x - 27), (y - 32)))) && (!(place_meeting_solid(x, (y - 32)))) && (!(place_meeting_solid(x, (y - 16)))))
 			{
 				image_index = 0
 				//scr_soundeffect(sfx_rollgetup)
@@ -132,7 +132,7 @@ function scr_player_machroll()
 			}
 			break
 		case "N":
-			if (scr_solid((x + 1), y) && xscale == 1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+			if (place_meeting_solid((x + 1), y) && xscale == 1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 			{
 				//scr_soundeffect(sfx_bumpwall)
 				hsp = 0
@@ -146,7 +146,7 @@ function scr_player_machroll()
 				image_index = 0
 				instance_create((x + 10), (y + 10), obj_bumpeffect)
 			}
-			if (scr_solid((x - 1), y) && xscale == -1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+			if (place_meeting_solid((x - 1), y) && xscale == -1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 			{
 				//scr_soundeffect(sfx_bumpwall)
 				hsp = 0
@@ -160,7 +160,7 @@ function scr_player_machroll()
 				image_index = 0
 				instance_create((x - 10), (y + 10), obj_bumpeffect)
 			}
-			if (((!key_down) or (!grounded)) && (!(scr_solid((x + 27), (y - 32)))) && (!(scr_solid((x - 27), (y - 32)))) && (!(scr_solid(x, (y - 32)))) && (!(scr_solid(x, (y - 16)))))
+			if (((!key_down) or (!grounded)) && (!(place_meeting_solid((x + 27), (y - 32)))) && (!(place_meeting_solid((x - 27), (y - 32)))) && (!(place_meeting_solid(x, (y - 32)))) && (!(place_meeting_solid(x, (y - 16)))))
 			{
 				image_index = 0
 				//scr_soundeffect(sfx_rollgetup)

@@ -130,7 +130,7 @@ if verticalhallway
 		{
 			x = round(x)
 			var i = 0
-			while (!(scr_solid((x + xscale), y)))
+			while (!(place_meeting_solid((x + xscale), y)))
 			{
 				x += xscale
 				trace(x)

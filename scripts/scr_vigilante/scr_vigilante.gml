@@ -78,10 +78,10 @@ function scr_vigilante_walk()
 		sprite_index = spr_playerV_jump
 		image_index = 0
 	}
-	else if (place_meeting((x + hsp), y, obj_solid) or scr_solid_slope((x + hsp), y))
+	else if (place_meeting((x + hsp), y, obj_solid) or place_meeting_slope((x + hsp), y))
 	{
 		mask_index = spr_crouchmask
-		if ((!(place_meeting((x + hsp), y, obj_solid))) && (!(scr_solid_slope((x + hsp), y))))
+		if ((!(place_meeting((x + hsp), y, obj_solid))) && (!(place_meeting_slope((x + hsp), y))))
 			state = states.crouch
 		else
 		{
@@ -99,7 +99,7 @@ function scr_vigilante_jump()
 {
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_jump)
 		sprite_index = spr_playerV_fall
-	if (scr_solid(x, (y + vsp)) && (!(scr_solid(x, y))) && vsp > 0)
+	if (place_meeting_solid(x, (y + vsp)) && (!(place_meeting_solid(x, y))) && vsp > 0)
 	{
 		sprite_index = spr_playerV_land
 		image_index = 0
@@ -371,7 +371,7 @@ function scr_vigilante_climbwall()
 	vsp = (-wallspeed)
 	if (wallspeed < 8)
 		wallspeed += 0.5
-	if (!(scr_solid((x + image_xscale), y)))
+	if (!(place_meeting_solid((x + image_xscale), y)))
 	{
 		state = states.walk
 		walkstate = states.mach2

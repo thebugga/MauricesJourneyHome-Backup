@@ -1,6 +1,6 @@
 hsp = (image_xscale * movespeed)
 mask_index = spr_player_mask
-if (scr_solid(x, (y + 1)) && vsp > 0)
+if (place_meeting_solid(x, (y + 1)) && vsp > 0)
 {
 	vsp = -5
 	if (movespeed > 0)

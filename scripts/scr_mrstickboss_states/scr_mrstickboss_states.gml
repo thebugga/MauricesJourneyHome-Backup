@@ -223,7 +223,7 @@ function boss_mrstick_jump()
 	{
 		if (y > (room_height + sprite_height))
 			y = (room_height / 4)
-		if (scr_solid(x, (y + vsp)) && (!(scr_solid(x, y))))
+		if (place_meeting_solid(x, (y + vsp)) && (!(place_meeting_solid(x, y))))
 			state = states.normal
 	}
 	if (vsp < 20)
@@ -316,7 +316,7 @@ function boss_mrstick_cardboard()
 function boss_mrstick_cardboardend()
 {
 	hsp = (image_xscale * movespeed)
-	if (scr_solid(x, (y + vsp)) && (!(scr_solid(x, y))))
+	if (place_meeting_solid(x, (y + vsp)) && (!(place_meeting_solid(x, y))))
 	{
 		state = states.normal
 		instance_destroy(obj_spike)

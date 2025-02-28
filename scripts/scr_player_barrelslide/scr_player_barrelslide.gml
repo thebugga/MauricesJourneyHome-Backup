@@ -28,7 +28,7 @@ function scr_player_barrelslide()
 		jumpstop = 0
 		create_particle(x, y, particle.highjumpcloud1, 0)
 	}
-	if ((!key_attack) && (!(place_meeting(x, (y + 1), obj_current))) && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
+	if ((!key_attack) && (!(place_meeting(x, (y + 1), obj_current))) && (!(place_meeting_solid(x, (y - 16)))) && (!(place_meeting_solid(x, (y - 32)))))
 	{
 		mask_index = spr_player_mask
 		if (!(place_meeting(x, y, obj_solid)))
@@ -51,7 +51,7 @@ function scr_player_barrelslide()
 	}
 	if place_meeting((x + sign(hsp)), y, obj_solid)
 	{
-		if scr_slope()
+		if place_meeting_slope(x,y)
 		{
 			vsp = -12
 			state = states.barrelclimbwall

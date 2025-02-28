@@ -84,7 +84,7 @@ function scr_player_grabbed()
 			shake_mag_acc = (3 / room_speed)
 		}
 		state = states.hurt
-		if (scr_solid(x, y) or collision_line(x, y, _obj_parent_player.x, _obj_parent_player.y, obj_solid, false, true) != -4)
+		if (place_meeting_solid(x, y) or collision_line(x, y, _obj_parent_player.x, _obj_parent_player.y, obj_solid, false, true) != -4)
 		{
 			x = _obj_parent_player.x
 			y = _obj_parent_player.y

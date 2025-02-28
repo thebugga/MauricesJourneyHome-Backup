@@ -18,7 +18,7 @@ function scr_player_knightpepattack()
 		sprite_index = spr_knightpep_idle
 		state = states.knightpep
 	}
-	if (scr_slope() && sprite_index != spr_knightpepthunder)
+	if (place_meeting_slope(x,y) && sprite_index != spr_knightpepthunder)
 	{
 		movespeed = 2
 		knightmomentum = 0

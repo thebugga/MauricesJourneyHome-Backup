@@ -68,10 +68,7 @@ function scr_player_mach2()
 		}
 		if machpunchAnim == 1
 		{
-			if punch == 0
-				sprite_index = spr_machpunch1;
-			if punch == 1
-				sprite_index = spr_machpunch2;
+			sprite_index = choose(spr_machpunch1,spr_machpunch2);
 			if (floor(image_index) == 4 && sprite_index == spr_machpunch1)
 			{
 				punch = true;
@@ -96,7 +93,7 @@ function scr_player_mach2()
 		machpunchAnim = false;
 	if grounded
 	{
-		if ((scr_slope() && hsp != 0) && movespeed > 8)
+		if ((place_meeting_slope(x,y) && hsp != 0) && movespeed > 8)
 			scr_player_addslopemomentum(slopeaccel, slopedeccel);
 		if movespeed < maxmovespeed
 		{
@@ -146,7 +143,7 @@ function scr_player_mach2()
 		sprite_index = spr_player_jumpdive2;
 	if (grounded && (sprite_index == spr_playerN_sidewayspin || sprite_index == spr_playerN_grindcancel || sprite_index == spr_playerN_sidewayspinend))
 		sprite_index = spr_mach;
-	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
+	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
 	{
 		var _climb = true;
 		if global.playerCharacter == Characters.Doise
@@ -168,7 +165,7 @@ function scr_player_mach2()
 			state = states.climbwall
 		}
 	}
-	if ((grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
+	if ((grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || place_meeting_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
 	{
 		var _climb = true;
 		if global.playerCharacter == Characters.Doise
@@ -292,7 +289,7 @@ function scr_player_mach2()
 		sprite_index = spr_clown;
 	if mortjump
 		sprite_index = spr_player_mortjumpstart;
-	if (state != states.machslide && scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
+	if (state != states.machslide && place_meeting_solid(x + xscale, y) && !place_meeting_slope(x,y) && (place_meeting_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 	{
 		if skateboarding
 			xscale *= -1;

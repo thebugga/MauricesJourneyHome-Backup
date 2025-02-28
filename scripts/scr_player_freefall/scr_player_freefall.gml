@@ -52,7 +52,7 @@ function scr_player_freefall()
 			dir = move
 			movespeed = 0
 		}
-		if ((move == 0 && momemtum == 0) or scr_solid((x + hsp), y))
+		if ((move == 0 && momemtum == 0) or place_meeting_solid((x + hsp), y))
 		{
 			movespeed = 0
 			mach2 = 0
@@ -61,7 +61,7 @@ function scr_player_freefall()
 			movespeed += 0.25
 		if (movespeed > 7)
 			movespeed -= 0.05
-		if ((scr_solid((x + 1), y) && move == 1) or (scr_solid((x - 1), y) && move == -1))
+		if ((place_meeting_solid((x + 1), y) && move == 1) or (place_meeting_solid((x - 1), y) && move == -1))
 			movespeed = 0
 		if (move != 0 && sprite_index != spr_player_poundcancel1)
 			xscale = move
@@ -80,7 +80,7 @@ function scr_player_freefall()
 	}
 	if (grounded && (freefallsmash < 10 or (!(place_meeting(x, (y + vsp), obj_metalblock)))) && (!(place_meeting(x, (y + vsp), obj_destructibles))))
 	{
-		if scr_slope()
+		if place_meeting_slope(x,y)
 		{
 			with (instance_place(x, (y + 1), obj_slope))
 			{

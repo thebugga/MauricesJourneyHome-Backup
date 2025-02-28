@@ -39,9 +39,9 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = 0
-if (state == states.walk && y > ystart && (!(scr_solid(x, (y - 1)))))
+if (state == states.walk && y > ystart && (!(place_meeting_solid(x, (y - 1)))))
 	y--
-if (state == states.walk && y < ystart && (!(scr_solid(x, (y + 1)))))
+if (state == states.walk && y < ystart && (!(place_meeting_solid(x, (y + 1)))))
 	y++
 if (state == states.stun)
 	grav = 0.5

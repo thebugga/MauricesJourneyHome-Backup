@@ -36,7 +36,7 @@ function scr_player_knightpepslopes()
 	}
 	if ((sprite_index == spr_knightpep_doublejump or sprite_index == spr_knightpep_fly) && floor(image_index) == (image_number - 1))
 		image_index = (image_number - 1)
-	if (scr_solid((x + sign(hsp)), y) && ((!scr_slope()) or place_meeting((x + sign(hsp)), (y - 2), obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+	if (place_meeting_solid((x + sign(hsp)), y) && ((!place_meeting_slope(x,y)) or place_meeting((x + sign(hsp)), (y - 2), obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
 		movespeed = 0
 		vsp = -6
@@ -45,7 +45,7 @@ function scr_player_knightpepslopes()
 		state = states.knightpepbump
 		//scr_soundeffect(sfx_groundpound)
 	}
-	if scr_slope()
+	if place_meeting_slope(x,y)
 	{
 		with (instance_place(x, (y + 1), obj_slope))
 		{

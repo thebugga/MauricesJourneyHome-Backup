@@ -22,7 +22,7 @@ switch state
 		hsp = (image_xscale * b_movespeed)
 		if (b_movespeed < 6)
 			b_movespeed += 0.5
-		if scr_slope()
+		if place_meeting_slope(x,y)
 		{
 			var _inst = instance_place(x, (y + 1), obj_slope)
 			if (sign(_inst.image_xscale) == (-sign(image_xscale)))
@@ -34,7 +34,7 @@ switch state
 		}
 		else if (b_movespeed > 6)
 			b_movespeed -= 0.05
-		if (scr_solid((x + sign(hsp)), y) && ((!scr_slope()) or scr_solid_slope((x + sign(hsp)), (y - 2)) or scr_solid((x + sign(hsp)), (y - 2))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+		if (place_meeting_solid((x + sign(hsp)), y) && ((!place_meeting_slope(x,y)) or place_meeting_slope((x + sign(hsp)), (y - 2)) or place_meeting_solid((x + sign(hsp)), (y - 2))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 			image_xscale *= -1
 		with (instance_place((x + sign(hsp)), y, obj_destructibles))
 			instance_destroy()

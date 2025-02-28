@@ -247,7 +247,7 @@ if (place_meeting(x, y, obj_swordhitbox) && thrown == false)
 		shake_mag_acc = (3 / room_speed)
 	}
 	state = states.hurt
-	if scr_solid(x, y)
+	if place_meeting_solid(x, y)
 	{
 		x = playerid.x
 		y = playerid.y

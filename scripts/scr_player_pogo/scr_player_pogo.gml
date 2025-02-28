@@ -5,7 +5,7 @@ function scr_player_pogo()
 		hsp = (xscale * movespeed)
 	else
 		hsp = (move * movespeed)
-	if (move != 0 && (!(scr_solid(x, (y + 1)))))
+	if (move != 0 && (!(place_meeting_solid(x, (y + 1)))))
 	{
 		if (movespeed < 6)
 			movespeed += 0.5

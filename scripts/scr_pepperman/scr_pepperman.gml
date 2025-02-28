@@ -164,7 +164,7 @@ function scr_pepperman_shoulderbash()
 	hsp = (image_xscale * (8 + wastedhits))
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach1)
 		sprite_index = spr_mach4
-	if ((place_meeting((x + hsp), y, obj_solid) or scr_solid_slope((x + hsp), y) or place_meeting((x + hsp), y, obj_pepper_marbleblock)) && (!(place_meeting((x + hsp), y, obj_destructibles))))
+	if ((place_meeting((x + hsp), y, obj_solid) or place_meeting_slope((x + hsp), y) or place_meeting((x + hsp), y, obj_pepper_marbleblock)) && (!(place_meeting((x + hsp), y, obj_destructibles))))
 	{
 		with (instance_place((x + hsp), y, obj_pepper_marbleblock))
 		{

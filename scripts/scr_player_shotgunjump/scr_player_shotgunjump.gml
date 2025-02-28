@@ -27,7 +27,7 @@ function scr_player_shotgunjump()
 		vsp /= 20
 		jumpstop = 1
 	}
-	if (scr_solid(x, (y - 1)) && (!jumpstop))
+	if (place_meeting_solid(x, (y - 1)) && (!jumpstop))
 	{
 		vsp = grav
 		jumpstop = 1

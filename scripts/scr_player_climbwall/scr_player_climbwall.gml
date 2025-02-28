@@ -23,7 +23,7 @@ function scr_player_climbwall()
 	    state = states.jump
 	    sprite_index = spr_player_fall
 	}
-	if (!(scr_solid((x + xscale), y)))
+	if (!(place_meeting_solid((x + xscale), y)))
 	{
 		if global.playerCharacter == Characters.Doise
 	    {
@@ -49,7 +49,7 @@ function scr_player_climbwall()
 	{
 	    vsp += 2
 	}
-	if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
+	if (place_meeting_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 		{
 			sprite_index = spr_superjumpland;
 			fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y);

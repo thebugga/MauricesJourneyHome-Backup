@@ -2,7 +2,7 @@ function scr_player_cheeseballclimbwall()
 {
 	hsp = 0
 	vsp = (-wallspeed)
-	if (scr_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x - sign(hsp)), y, obj_slope))))
+	if (place_meeting_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x - sign(hsp)), y, obj_slope))))
 	{
 		//scr_soundeffect(sfx_groundpound)
 		image_index = 0
@@ -14,7 +14,7 @@ function scr_player_cheeseballclimbwall()
 			create_debris((x + random_range(-8, 8)), (y + random_range(-8, 8)), spr_cheesechunk)
 	}
 	wallspeed = approach(wallspeed, 12, 1)
-	if (!(scr_solid((x + xscale), y)))
+	if (!(place_meeting_solid((x + xscale), y)))
 	{
 		if (movespeed > 8)
 			movespeed = 8

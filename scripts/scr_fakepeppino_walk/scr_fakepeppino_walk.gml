@@ -1,7 +1,7 @@
 function scr_fakepeppino_walk()
 {
 	hsp = (image_xscale * movespeed)
-	if (scr_solid(x, (y - 16)) && scr_solid(x, (y - 32)))
+	if (place_meeting_solid(x, (y - 16)) && place_meeting_solid(x, (y - 32)))
 	{
 		sprite_index = spr_fakepeppino_crawl
 		movespeed = 4

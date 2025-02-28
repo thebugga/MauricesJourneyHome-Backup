@@ -25,7 +25,7 @@ function scr_pizzaball_thrown()
 				else
 					substate = states.crouch
 			}
-			if (scr_solid((x + hsp), y) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))))
+			if (place_meeting_solid((x + hsp), y) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))))
 			{
 				sprite_index = spr_pizzaball_hitwall
 				image_index = 0
@@ -37,7 +37,7 @@ function scr_pizzaball_thrown()
 			sprite_index = spr_pizzaball_roll
 			hitspeed = approach(hitspeed, 0, 0.2)
 			hsp = (image_xscale * hitspeed)
-			if (scr_solid((x + hsp), y) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))))
+			if (place_meeting_solid((x + hsp), y) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))))
 				image_xscale *= -1
 			if (hitspeed == 0)
 			{

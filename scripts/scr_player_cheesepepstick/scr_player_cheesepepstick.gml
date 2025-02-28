@@ -67,7 +67,7 @@ function scr_player_cheesepepstickside()
 		xscale = 1
 	else if place_meeting((x + 1), y, obj_solid)
 		xscale = -1
-	if (input_buffer_jump < 8 && (!(scr_solid(x, (y - 16)))))
+	if (input_buffer_jump < 8 && (!(place_meeting_solid(x, (y - 16)))))
 	{
 		sprite_index = spr_cheesepepjump
 		input_buffer_jump = 8
@@ -94,7 +94,7 @@ function scr_player_cheesepepstickside()
 		sprite_index = spr_cheesepepidle
 		hsp = (move * movespeed)
 	}
-	if scr_solid(x, y)
+	if place_meeting_solid(x, y)
 	{
 		var tx = try_solid(xscale, 0, 312, 64)
 		if (tx != -1)
@@ -112,7 +112,7 @@ function scr_player_cheesepepstickside()
 	var stickside = (xscale > 0 ? bbox_left : bbox_right)
 	var bbox_y = (rvsp > 0 ? bbox_bottom : bbox_top)
 	var colside = collision_line(x, (bbox_y + (sign(rvsp) * 2)), (stickside - (8 * xscale)), (bbox_y + (sign(rvsp) * 2)), obj_solid, false, true)
-	if (rvsp != 0 && colside == -4 && scr_solid((x - xscale), y) && (!(place_meeting(x, (y + 1), obj_platform))))
+	if (rvsp != 0 && colside == -4 && place_meeting_solid((x - xscale), y) && (!(place_meeting(x, (y + 1), obj_platform))))
 	{
 		if (cheesepep_buffer <= 0)
 		{
@@ -222,7 +222,7 @@ function scr_player_cheesepepstickup()
 	}
 	var _sideup = (stickdir == -1 ? bbox_top : bbox_bottom)
 	var colup = collision_line((x + (xscale * 2)), y, (x + (xscale * 2)), (_sideup + (8 * stickdir)), obj_solid, false, true)
-	if (colup == -4 && scr_solid(x, (y + stickdir)))
+	if (colup == -4 && place_meeting_solid(x, (y + stickdir)))
 	{
 		if (cheesepep_buffer <= 0)
 		{

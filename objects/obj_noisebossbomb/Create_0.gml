@@ -14,7 +14,7 @@ platformid = -4
 hsp_carry = 0
 vsp_carry = 0
 var i = 0
-while scr_solid(x, y)
+while place_meeting_solid(x, y)
 {
 	x += obj_noiseboss.image_xscale
 	i++

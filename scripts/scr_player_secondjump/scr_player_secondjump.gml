@@ -9,7 +9,7 @@ function scr_player_secondjump()
 		movespeed = 0
 	if (move != 0 && movespeed < 6)
 		movespeed += 0.5
-	if (((scr_solid((x + 1), y) && move == 1) or (scr_solid((x - 1), y) && move == -1)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
+	if (((place_meeting_solid((x + 1), y) && move == 1) or (place_meeting_solid((x - 1), y) && move == -1)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 		movespeed = 0
 	if (dir != xscale)
 	{
@@ -24,7 +24,7 @@ function scr_player_secondjump()
 	}
 	if (ladderbuffer > 0)
 		ladderbuffer--
-	if (scr_solid(x, (y - 1)) && jumpstop == 0 && jumpAnim == 1)
+	if (place_meeting_solid(x, (y - 1)) && jumpstop == 0 && jumpAnim == 1)
 	{
 		vsp = grav
 		jumpstop = 1

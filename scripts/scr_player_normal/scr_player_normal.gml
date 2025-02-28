@@ -100,7 +100,7 @@ function state_player_normal()
 			else
 				sprite_index = movespr;
 		}
-		if (scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope) && xscale == move && !place_meeting(x, y + 1, obj_slope))
+		if (place_meeting_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope) && xscale == move && !place_meeting(x, y + 1, obj_slope))
 			movespeed = 0;
 		if move != 0 && grounded && vsp > 0
 		{
@@ -288,7 +288,7 @@ function state_player_normal()
 				railmomentum = true;
 			freefallstart = 0;
 		}
-		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || place_meeting(x, y, obj_solid))
+		if (key_down || (grounded && vsp > 0 && place_meeting_solid(x, y - 3) && place_meeting_solid(x, y)) || place_meeting(x, y, obj_solid))
 		{
 			state = states.crouch;
 			landAnim = false;

@@ -26,7 +26,7 @@ function scr_player_firemouth()
 	}
 	with (instance_place(x, (y + vsp), obj_ratblock))
 		instance_destroy()
-	if (scr_slope() && hsp != 0 && movespeed > 8)
+	if (place_meeting_slope(x,y) && hsp != 0 && movespeed > 8)
 		scr_player_addslopemomentum(0.1, 0.25)
 	with (instance_place((x + xscale), y, obj_destructibles))
 	{

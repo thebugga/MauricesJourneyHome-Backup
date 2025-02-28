@@ -127,4 +127,3 @@ if (object_index == obj_robotmonster or object_index == obj_hillbillymonster)
 		instance_destroy(instance_place((x + hsp), y, obj_spike))
 	}
 }
-scr_monster_collide()

@@ -6,11 +6,11 @@ function scr_player_ratmounttumble()
 	image_speed = ((-abs(movespeed)) / 15)
 	if (!key_attack)
 		movespeed = approach(movespeed, 0, 1)
-	if (scr_slope() && hsp != 0)
+	if (place_meeting_slope(x,y) && hsp != 0)
 		scr_player_addslopemomentum(0.25, 0.25)
 	if (abs(hsp) <= 2)
 		state = states.ratmount
-	if ((place_meeting((x + hsp), y, obj_solid) && (!(scr_solid_slope((x + hsp), y))) && (!(place_meeting((x + hsp), y, obj_rollblock))) && (!(place_meeting((x + hsp), y, obj_rattumble))) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or place_meeting(x, y, obj_timedgate))
+	if ((place_meeting((x + hsp), y, obj_solid) && (!(place_meeting_slope((x + hsp), y))) && (!(place_meeting((x + hsp), y, obj_rollblock))) && (!(place_meeting((x + hsp), y, obj_rattumble))) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or place_meeting(x, y, obj_timedgate))
 	{
 		state = states.ratmounthurt
 		vsp = -5

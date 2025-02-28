@@ -18,7 +18,7 @@ function scr_player_hit()
 			y--
 			grounded = false
 		}
-		if scr_solid(x, y)
+		if place_meeting_solid(x, y)
 			y -= 5
 		movespeed = abs(hithsp)
 		vsp = hitvsp

@@ -13,7 +13,7 @@ function scr_player_barrelclimbwall()
 	if (grounded && vsp > 0)
 	{
 		state = states.barrelslide
-		if scr_solid((x + xscale), y)
+		if place_meeting_solid((x + xscale), y)
 			xscale *= -1
 		movespeed = (xscale * 10)
 	}

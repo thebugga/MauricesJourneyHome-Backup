@@ -23,7 +23,7 @@ function scr_player_dashtumble()
 		state = states.mach2
 		grav = 0.5
 	}
-	if (scr_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x + xscale), y, obj_destructibles))))
+	if (place_meeting_solid((x + xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + xscale), y, obj_destructibles))))
 	{
 		jumpstop = 1
 		state = states.jump

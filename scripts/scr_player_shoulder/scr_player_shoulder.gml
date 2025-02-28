@@ -51,7 +51,7 @@ function scr_player_shoulder()
 			movespeed -= 0.05
 		if (movespeed == 0)
 			momemtum = 0
-		if ((move == 0 && momemtum == 0) or scr_solid((x + hsp), y))
+		if ((move == 0 && momemtum == 0) or place_meeting_solid((x + hsp), y))
 		{
 			movespeed = 0
 			mach2 = 0
@@ -60,7 +60,7 @@ function scr_player_shoulder()
 			movespeed += 0.25
 		if (movespeed > 7)
 			movespeed -= 0.05
-		if ((scr_solid((x + 1), y) && move == 1) or (scr_solid((x - 1), y) && move == -1))
+		if ((place_meeting_solid((x + 1), y) && move == 1) or (place_meeting_solid((x - 1), y) && move == -1))
 			movespeed = 0
 		if (dir != xscale)
 		{
@@ -82,7 +82,7 @@ function scr_player_shoulder()
 		}
 		if (ladderbuffer > 0)
 			ladderbuffer--
-		if (scr_solid(x, (y - 1)) && jumpstop == 0 && jumpAnim == 1)
+		if (place_meeting_solid(x, (y - 1)) && jumpstop == 0 && jumpAnim == 1)
 		{
 			vsp = grav
 			jumpstop = 1

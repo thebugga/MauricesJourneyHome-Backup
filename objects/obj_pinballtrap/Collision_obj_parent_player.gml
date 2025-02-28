@@ -25,12 +25,12 @@ if _used
 				y = (other.y - _max)
 				if place_meeting(x, y, obj_platform)
 					y--
-				if scr_solid(x, y)
+				if place_meeting_solid(x, y)
 				{
 					var i = 0
 					while (i <= _max)
 					{
-						if scr_solid(x, y)
+						if place_meeting_solid(x, y)
 						{
 							x += xscale
 							i++
@@ -40,12 +40,12 @@ if _used
 							break
 					}
 				}
-				if scr_solid(x, y)
+				if place_meeting_solid(x, y)
 				{
 					i = 0
 					while (i <= _max)
 					{
-						if scr_solid(x, y)
+						if place_meeting_solid(x, y)
 						{
 							y--
 							i++

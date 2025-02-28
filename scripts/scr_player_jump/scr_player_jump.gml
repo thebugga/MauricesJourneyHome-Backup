@@ -33,7 +33,7 @@ function state_player_jump()
 	move = key_left + key_right;
 	if movespeed == 0
 		momemtum = false;
-	if (scr_solid(x + hsp, y))
+	if (place_meeting_solid(x + hsp, y))
 	{
 		movespeed = 0;
 		mach2 = 0;
@@ -45,7 +45,7 @@ function state_player_jump()
 			movespeed += accel;
 		else if (floor(movespeed) == maxmovespeed)
 			movespeed = maxmovespeed2;
-		if (scr_solid(x + xscale, y) && move == xscale)
+		if (place_meeting_solid(x + xscale, y) && move == xscale)
 			movespeed = 0;
 	}
 	else
@@ -61,7 +61,7 @@ function state_player_jump()
 			vsp /= 20;
 			jumpstop = true;
 		}
-		else if (scr_solid(x, y - 1) && !jumpAnim)
+		else if (place_meeting_solid(x, y - 1) && !jumpAnim)
 		{
 			vsp = grav;
 			jumpstop = true;

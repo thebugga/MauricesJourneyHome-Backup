@@ -49,7 +49,7 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
         vsp++
         if (grounded && vsp > 0 && (!(place_meeting(x, ((y + vsp) + 2), obj_grindrail))) && (!(place_meeting(x, (y + 10), obj_grindrail))) && (!(place_meeting(x, (y + vsp), obj_destructibles))) && (!(place_meeting(x, ((y + vsp) + 2), obj_destructibles))) && (!(place_meeting(x, (y + 10), obj_destructibles))))
         {
-            if scr_slope()
+            if place_meeting_slope(x,y)
             {
                 with (instance_place(x, (y + 1), obj_slope))
                 {

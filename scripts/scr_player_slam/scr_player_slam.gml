@@ -5,7 +5,7 @@ function scr_player_slam()
 	move = (key_left + key_right)
 	if (!grounded)
 		hsp = (move * movespeed)
-	if ((scr_solid((x + 1), y) && xscale == 1) or (scr_solid((x - 1), y) && xscale == -1))
+	if ((place_meeting_solid((x + 1), y) && xscale == 1) or (place_meeting_solid((x - 1), y) && xscale == -1))
 		movespeed = 0
 	if (move == 0)
 		movespeed = 0

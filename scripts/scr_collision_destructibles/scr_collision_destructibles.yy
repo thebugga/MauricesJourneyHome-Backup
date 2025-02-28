@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_monster_collide",
+  "name": "scr_collision_destructibles",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

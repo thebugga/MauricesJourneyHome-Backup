@@ -13,7 +13,7 @@ function scr_player_antigrav()
 		sprite_index = spr_machfreefall
 		//scr_soundeffect(sfx_antigravend)
 	}
-	if scr_solid(x, (y - 1))
+	if place_meeting_solid(x, (y - 1))
 	{
 		//audio_stop_sound(sfx_antigrav1)
 		//audio_stop_sound(sfx_antigrav2)

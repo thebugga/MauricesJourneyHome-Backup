@@ -27,7 +27,7 @@ function scr_destroy_tile(argument0, argument1, argument2)
 	tilemap_set_at_pixel(argument2, data, argument0, argument1)
 }
 
-function scr_solid_line(argument0)
+function place_meeting_solid_line(argument0)
 {
 	if (collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != -4)
 		return true;

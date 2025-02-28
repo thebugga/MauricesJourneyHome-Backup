@@ -33,7 +33,7 @@ function scr_player_shotguncrouch()
 		state = states.shotguncrouchjump
 		vsp = -8
 	}
-	if (grounded && vsp > 0 && (!key_down) && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))
+	if (grounded && vsp > 0 && (!key_down) && (!(place_meeting_solid(x, (y - 16)))) && (!(place_meeting_solid(x, (y - 32)))))
 	{
 		state = states.shotgun
 		landAnim = 1

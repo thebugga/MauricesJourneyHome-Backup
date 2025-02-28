@@ -42,7 +42,7 @@ function scr_player_mach3()
 			hsp = (xscale * movespeed) + (railmovespeed * raildir);
 			if grounded
 			{
-				if ((scr_slope() && hsp != 0) && movespeed > 10 && movespeed < 18)
+				if ((place_meeting_slope(x,y) && hsp != 0) && movespeed > 10 && movespeed < 18)
 					scr_player_addslopemomentum(slopeaccel, slopedeccel);
 			}
 			if move == xscale && grounded
@@ -206,17 +206,13 @@ function scr_player_mach3()
 				if global.playerCharacter == Characters.MrOrange
 					sprite_index = spr_playerV_divekickstart;
 			}
-			if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
+			if ((grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || place_meeting_slope(x + sign(hsp), y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
 			{
 				var _climb = true;
 				if global.playerCharacter == Characters.Doise
 					_climb = ledge_bump(40);
 				if _climb
 				{
-					if global.playerCharacter == Characters.Clownmato
-					{
-						state = states.hang
-					}
 					machhitAnim = false
 					if movespeed < 1
 						wallspeed = 1;
@@ -228,13 +224,17 @@ function scr_player_mach3()
 					state = states.climbwall
 				}
 			}
-			if ((grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
+			if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)))
 			{
 				var _climb = true;
 				if global.playerCharacter == Characters.Doise
 					_climb = ledge_bump(40);
 				if _climb
 				{
+					if global.playerCharacter == Characters.Clownmato
+					{
+						state = states.hang
+					}
 					machhitAnim = false
 					if movespeed < 1
 						wallspeed = 1;
@@ -268,7 +268,7 @@ function scr_player_mach3()
 				else if global.pistol
 					scr_pistolshoot(states.mach3);
 			}
-			if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
+			if ((place_meeting_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !place_meeting_slope(x,y) && (place_meeting_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 			{
 				var _bump = true;
 				if (ispeppino || noisemachcancelbuffer <= 0)

@@ -1,6 +1,6 @@
 x += hsp
 y += vsp
-if ((!disappear) && scr_solid(x, y))
+if ((!disappear) && place_meeting_solid(x, y))
 	instance_destroy()
 if disappear
 {

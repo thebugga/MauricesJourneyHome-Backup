@@ -5,7 +5,7 @@ if (!kicked)
 {
 	x = (obj_player1.x + (xoffset * obj_player1.xscale))
 	y = obj_player1.y
-	if scr_solid(x, y)
+	if place_meeting_solid(x, y)
 		x = obj_player1.x
 }
 if (blur_effect > 0)
@@ -28,12 +28,12 @@ if (hitbox == 0)
 		other.hitbox = 1
 	}
 }
-if (scr_solid(x, (y + 1)) && bounce == 0)
+if (place_meeting_solid(x, (y + 1)) && bounce == 0)
 {
 	vsp = -5
 	bounce = 1
 }
-if (scr_solid((x + image_xscale), y) && kicked && (!(place_meeting((x + image_xscale), y, obj_destructibles))) && (!(place_meeting((x + image_xscale), y, obj_slope))))
+if (place_meeting_solid((x + image_xscale), y) && kicked && (!(place_meeting((x + image_xscale), y, obj_destructibles))) && (!(place_meeting((x + image_xscale), y, obj_slope))))
 	instance_destroy()
 with (instance_place((x + image_xscale), y, obj_destructibles))
 {

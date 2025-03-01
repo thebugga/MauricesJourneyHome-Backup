@@ -57,6 +57,12 @@ if keyboard_check_pressed(ord("1"))
     }
     else if ((global.playerCharacter == Characters.Doise))
     {
+        global.playerCharacter = Characters.Pierre
+        with (obj_player1)
+            scr_characterspr()
+    }
+    else if ((global.playerCharacter == Characters.Pierre))
+    {
         global.playerCharacter = Characters.MrOrange
         with (obj_player1)
             scr_characterspr()

@@ -23,7 +23,7 @@ if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state
 	image_index = 0
 	other.vsp = -14
 	other.jumpstop = 1
-	if other.global.playerCharacter == Characters.Pierre
+	if global.playerCharacter == Characters.Pierre
 	{
 		other.sprite_index = spr_player_ratmountmushroombounce
 		if (!other.brick)

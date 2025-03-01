@@ -88,7 +88,7 @@ function swap_player(argument0, argument1) //gml_Script_swap_player
                 if (idleanim < 60)
                     idleanim = 60
                 sprite_index = (global.playerCharacter == Characters.Maurice ? spr_tv_idle : spr_tv_idleN)
-                if (sprite_index == spr_tv_idle && other.global.playerCharacter == Characters.Pierre)
+                if (sprite_index == spr_tv_idle && global.playerCharacter == Characters.Pierre)
                     sprite_index = spr_tv_idleG
                 //tv_get_palette()
             }

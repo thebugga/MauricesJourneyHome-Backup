@@ -31,7 +31,7 @@ if (active && sprite_index != spr_secretportal_open && (!instance_exists(obj_jum
 		other.superchargedeffectid = -4;
 		if other.state != states.knightpep && other.state != states.knightpepslopes && other.state != states.knightpepbump && other.state != states.firemouth
 		{
-			if !other.global.playerCharacter == Characters.Pierre
+			if !global.playerCharacter == Characters.Pierre
 				other.sprite_index = other.spr_hurt;
 			else
 				other.sprite_index = spr_player_ratmounthurt;

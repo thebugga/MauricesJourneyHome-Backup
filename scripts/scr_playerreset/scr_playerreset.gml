@@ -299,8 +299,7 @@ function scr_playerreset(argument0)
 			anger = 0
 			angry = 0
 			skateboarding = 0
-			brick = 
-			controllableSjump = 0
+			brick = 0
 		}
 	}
 	with (obj_player2)

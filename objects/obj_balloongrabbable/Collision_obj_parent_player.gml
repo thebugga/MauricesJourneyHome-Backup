@@ -1,6 +1,6 @@
 if active
 {
-	if (other.global.playerCharacter == Characters.Pierre && other.brick)
+	if (global.playerCharacter == Characters.Pierre && other.brick)
 	{
 		other.state = states.ratmountballoon
 		active = 0

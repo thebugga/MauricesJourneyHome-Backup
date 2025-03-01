@@ -1,6 +1,6 @@
 if (place_meeting(x, y, other) && other.state != states.tumble && other.state != states.backbreaker && other.state != states.bump && other.y > other.yprevious && other.y < y)
 {
-	if (!other.global.playerCharacter == Characters.Pierre)
+	if (!global.playerCharacter == Characters.Pierre)
 	{
 		other.y = (y - 49)
 		other.state = states.grind

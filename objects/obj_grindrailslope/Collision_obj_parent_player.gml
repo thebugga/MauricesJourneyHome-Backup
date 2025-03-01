@@ -7,7 +7,7 @@ if ((other.y > other.yprevious or (other.Xscale == sign(image_xscale) && other.y
 		while place_meeting(x, y, obj_grindrailslope)
 			y--
 	}
-	if (!other.global.playerCharacter == Characters.Pierre)
+	if (!global.playerCharacter == Characters.Pierre)
 	{
 		if (other.movespeed < 10)
 			other.movespeed = 10

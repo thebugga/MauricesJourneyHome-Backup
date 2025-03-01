@@ -1,6 +1,6 @@
 function scr_characterspr()
 {
-	if (global.playerCharacter == Characters.Maurice)
+	if (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.Pierre)
 	{
 		spr_idle = spr_player_idle
 		spr_move = spr_player_move

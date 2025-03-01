@@ -1,4 +1,4 @@
-if (collision && other.brick && other.global.playerCharacter == Characters.Pierre)
+if (collision && other.brick && global.playerCharacter == Characters.Pierre)
 {
 	instance_destroy()
 	other.brick = 0

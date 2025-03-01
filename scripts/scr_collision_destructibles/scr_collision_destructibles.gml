@@ -125,7 +125,7 @@ function scr_collision_destructibles()
             }
         }
         ds_list_clear(global.instancelist)
-        if (vsp <= 0.5 && (state == states.jump || state == states.machcancel || state == (300 << 0) || state == states.ratmountjump || state == (301 << 0) || state == states.mach3 || state == states.machcancel || state == states.mach2 || state == states.antigrav || state == states.pogo || (state == states.bombpepup && bombup_dir == -1) || state == states.punch || state == states.climbwall || state == states.fireass || state == states.Sjump || state == (302 << 0) || state == states.cheeseballclimbwall || state == states.mach3 || state == states.machcancel || (state == states.punch && (sprite_index == spr_breakdanceuppercut || sprite_index == spr_breakdanceuppercutend))))
+        if (vsp <= 0.5 && (state == states.jump || state == states.machcancel || state == (300 << 0) || state == states.ratmountjump || state == (301 << 0) || state == states.mach3 || state == states.machcancel || state == states.mach2 || state == states.antigrav || state == states.pogo || (state == states.bombpepup && bombup_dir == -1) || state == states.punch || state == states.climbwall || state == states.fireass || state == states.Sjump || state == (302 << 0) || state == states.cheeseballclimbwall || state == states.mach3 || state == states.machcancel || (state == states.punch && (sprite_index == spr_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend))))
         {
             vy = -1
             if (state == states.punch)

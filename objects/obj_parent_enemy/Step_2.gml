@@ -1,4 +1,4 @@
-if (state == states.grabbed)
+if (state == states.grabbed && object_index != obj_pepperman && object_index != obj_pizzafaceboss && object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 && object_index != obj_noiseboss && object_index != obj_pf_fakepep)
     scr_enemy_grabbed()
 else if (state == states.lungeattack)
     scr_enemy_lungeattack()
@@ -9,13 +9,13 @@ if (state != states.stun && state != states.hit)
     linethrown = 0
 if (state == states.stun && (!thrown))
     linethrown = 0
-if (object_index != obj_pizzaball && (place_meeting((x + 1), y, obj_spike) || place_meeting((x - 1), y, obj_spike) || place_meeting(x, (y + 1), obj_spike) || place_meeting(x, (y - 1), obj_spike)))
+if (place_meeting((x - 1), y, obj_spike) || place_meeting(x, (y + 1), obj_spike) || place_meeting(x, (y - 1), obj_spike))
 {
     if elite
         elitehit = 0
     instance_destroy()
 }
-if (state != states.grabbed && state != states.pummel && use_collision)
+if (state != states.grabbed && state != states.pummel && object_index != obj_fakesanta && use_collision)
     scr_collision()
 if (invtime > 0)
     invtime--
@@ -31,7 +31,7 @@ if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && gr
     var _yy = (y + 43)
     create_particle((x - (image_xscale * 20)), _yy, (1 << 0), 0)
 }
-if ((object_index != obj_pizzice || state != states.pizzagoblinthrow))
+if ((object_index != obj_pizzice || state != states.pizzagoblinthrow)) 
 {
     if (state == states.walk)
         image_speed = 0.35

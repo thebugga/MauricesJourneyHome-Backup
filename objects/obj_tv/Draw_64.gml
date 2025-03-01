@@ -95,6 +95,7 @@ for (var i = _num; i > 0; i--)
 	_tx -= 22
 	_ty -= 8
 }
+/*
 if abs(rank_state) == 1
 {
 	rank_x = approach(rank_x, 50 - (25 * sign(rank_state)), 2.5)
@@ -127,7 +128,6 @@ if abs(rank_state) == 3
 			rank_yscale = 1
 		 }
 }
-/*
 if (!surface_exists(rank_surf))
     rank_surf = surface_create(100, 100)
 if (!surface_exists(rank_clip))

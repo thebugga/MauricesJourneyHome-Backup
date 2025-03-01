@@ -12,7 +12,7 @@ if ((room == hub_outside))
     state = "Here We Go Again"
 if ((room == hub_loadingscreen))
     state = "Loadingaling"
-if ((room == wizard_1))
+if ((room == wizard_1OLD))
     state = "Just Like The Retro Classic"
 if ((room == garbage_1))
     state = "Picking Out The Trash"

@@ -27,7 +27,7 @@ add_music(tower_entrancehallway, "event:/music/hub", noone, false);
 add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
 add_music(hub_lobby, "event:/music/hub", noone, false);
 add_music(hub_theatre, "event:/music/hub", noone, false);
-add_music(wizard_1, "event:/music/w1/wizard", noone, false);
+add_music(wizard_1OLD, "event:/music/w1/wizard", noone, false);
 add_music(wizard_2, "event:/music/w1/wizard", noone, false);
 add_music(hub_wizardtower, "event:/music/wizard", noone, false);
 add_music(garbage_1, "event:/music/w1/garbage", "event:/music/pillarmusic", false)

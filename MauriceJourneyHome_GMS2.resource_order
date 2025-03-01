@@ -264,6 +264,7 @@
     {"name":"spr_lonegustavo_mach3","order":3,"path":"sprites/spr_lonegustavo_mach3/spr_lonegustavo_mach3.yy",},
     {"name":"obj_platform","order":2,"path":"objects/obj_platform/obj_platform.yy",},
     {"name":"spr_player_swanson","order":1,"path":"sprites/spr_player_swanson/spr_player_swanson.yy",},
+    {"name":"wizard_23","order":10,"path":"rooms/wizard_23/wizard_23.yy",},
     {"name":"spr_destroyable3","order":5,"path":"sprites/spr_destroyable3/spr_destroyable3.yy",},
     {"name":"spr_controlseggplant","order":61,"path":"sprites/spr_controlseggplant/spr_controlseggplant.yy",},
     {"name":"spr_controlicons","order":36,"path":"sprites/spr_controlicons/spr_controlicons.yy",},

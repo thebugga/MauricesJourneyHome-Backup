@@ -2140,6 +2140,7 @@
     {"id":{"name":"spr_player_jetpackend","path":"sprites/spr_player_jetpackend/spr_player_jetpackend.yy",},},
     {"id":{"name":"spr_player_jetpackmid","path":"sprites/spr_player_jetpackmid/spr_player_jetpackmid.yy",},},
     {"id":{"name":"spr_player_jetpackstart","path":"sprites/spr_player_jetpackstart/spr_player_jetpackstart.yy",},},
+    {"id":{"name":"wizard_23","path":"rooms/wizard_23/wizard_23.yy",},},
     {"id":{"name":"spr_player_jump","path":"sprites/spr_player_jump/spr_player_jump.yy",},},
     {"id":{"name":"spr_player_jump2","path":"sprites/spr_player_jump2/spr_player_jump2.yy",},},
     {"id":{"name":"spr_player_jumpdive1","path":"sprites/spr_player_jumpdive1/spr_player_jumpdive1.yy",},},
@@ -3254,6 +3255,7 @@
     {"roomId":{"name":"wizard_7","path":"rooms/wizard_7/wizard_7.yy",},},
     {"roomId":{"name":"wizard_9","path":"rooms/wizard_9/wizard_9.yy",},},
     {"roomId":{"name":"garbage_lap","path":"rooms/garbage_lap/garbage_lap.yy",},},
+    {"roomId":{"name":"wizard_23","path":"rooms/wizard_23/wizard_23.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

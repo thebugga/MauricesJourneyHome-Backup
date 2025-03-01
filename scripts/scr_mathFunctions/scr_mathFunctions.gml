@@ -1,4 +1,4 @@
-/// @description approach the value towards target provided.
+/// @description Approach the value towards target provided.
 /// @param value The value to be changed.
 /// @param target The value targetted.
 /// @param amount The amount to change.

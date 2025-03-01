@@ -29,7 +29,7 @@ switch scene
             {
                 sprite_index = spr_intro_fmod
                 image_xscale = 0.5
-                image_Yscale = image_xscale
+                image_yscale = image_xscale
             }
         }
         break
@@ -564,7 +564,7 @@ switch scene
             bg = instance_create(0, 0, obj_introprop)
             bg.sprite_index = spr_intro_white
             bg.image_xscale = 15
-            bg.image_Yscale = 8.4375
+            bg.image_yscale = 8.4375
             scene++
             scenebuffer = 100
         }

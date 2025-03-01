@@ -112,6 +112,8 @@ function scr_characterspr()
 		spr_bodyslamland = spr_player_bodyslamland
 		spr_crazyrun = spr_player_crazyrun
 		spr_bombpeprun = spr_bombpep_run
+        spr_machslideboostfall = spr_player_machslideboostfall
+        spr_mach3boostfall = spr_player_machslideboost3fall
 		spr_bombpepintro = spr_bombpep_intro
 		spr_bombpeprunabouttoexplode = spr_bombpep_runabouttoexplode
 		spr_bombpepend = spr_bombpep_end
@@ -276,6 +278,8 @@ function scr_characterspr()
 		spr_machslide = spr_playerN_machslide
 		spr_machslideend = spr_playerN_machslideend
 		spr_machslideboost = spr_playerN_machslideboost
+        spr_machslideboostfall = spr_playerN_machslideboostfall
+        spr_mach3boostfall = spr_playerN_mach3boostfall
 		spr_land2 = spr_playerN_land2
 		spr_punch = spr_playerN_punch
 		spr_backkick = spr_playerN_backkick

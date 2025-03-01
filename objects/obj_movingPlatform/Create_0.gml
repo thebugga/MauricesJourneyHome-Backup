@@ -10,7 +10,7 @@ stopid = noone;
 
 //Smooth in and Out
 stopSpeed = 0;
-stopSpeedMax = min(4, movespeed);
+stopSpeedMax = min(4, moveSpeed);
 stopSpeedAcc = 0.5;
 stopSpeedDecc = 0.5;
 platformDirection = targetDirection;

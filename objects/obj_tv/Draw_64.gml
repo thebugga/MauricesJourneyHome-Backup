@@ -100,7 +100,7 @@ if abs(rank_state) == 1
 	rank_x = approach(rank_x, 50 - (25 * sign(rank_state)), 2.5)
 	rank_newx = approach(rank_newx, 50 + (25 * sign(rank_state)), 7.5)
 	rank_xscale = approach(rank_xscale, 0.5, 0.05)
-	rank_Yscale = approach(rank_Yscale, 1.5, 0.05)
+	rank_yscale = approach(rank_yscale, 1.5, 0.05)
 	if rank_x == 50 - (25 * sign(rank_state))
 		 rank_state += sign(rank_state)
 }
@@ -109,7 +109,7 @@ if abs(rank_state) == 2
 	rank_x = approach(rank_x, 50, 2.5)
 	rank_newx = approach(rank_newx, 50 + (100 * sign(rank_state)), 7.5)
 	rank_xscale = approach(rank_xscale, 1, 0.05)
-	rank_Yscale = approach(rank_Yscale, 1, 0.05)
+	rank_yscale = approach(rank_yscale, 1, 0.05)
 	if rank_x == 50
 		 rank_state += sign(rank_state)
 }
@@ -124,9 +124,10 @@ if abs(rank_state) == 3
 			rank_x = 50
 			rank_newx = -50
 			rank_xscale = 1
-			rank_Yscale = 1
+			rank_yscale = 1
 		 }
 }
+/*
 if (!surface_exists(rank_surf))
     rank_surf = surface_create(100, 100)
 if (!surface_exists(rank_clip))
@@ -143,13 +144,14 @@ surface_set_target(rank_surf)
 	draw_clear(ds_map_find_value(rankbg_color, rank_ix))
 	draw_rectangle_color(0, 100 - (perc * 100), 100, 100, ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), false)
 	draw_sprite(spr_ranks_hud, previousrank, rank_newx, 50)
-	draw_sprite_ext(spr_ranks_hud, rank_visual, rank_x, 50, rank_xscale, rank_Yscale, 0, c_white, 1)
+	draw_sprite_ext(spr_ranks_hud, rank_visual, rank_x, 50, rank_xscale, rank_yscale, 0, c_white, 1)
 	gpu_set_blendmode(bm_subtract)
 	draw_surface(rank_clip, 0, 0)
 	gpu_set_blendmode(bm_normal) 
 surface_reset_target()
 draw_set_alpha(1)
 draw_surface(rank_surf, rx, ry)
+	*/
 if (!surface_exists(tvsurface))
 	tvsurface = surface_create(278, 268)
 gpu_set_blendmode(bm_normal)
@@ -164,7 +166,7 @@ surface_reset_target()
 shader_set(global.Pal_Shader)
 	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
     draw_sprite_ext(spr_tv_bgfinal, tv_bg_index,((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY),  1, 1, 0, c_white, alpha)
-    //pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_Yscale, patterntexture)
+    //pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, patterntexture)
 	draw_sprite_ext(sprite_index, image_index, ((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
 	if state == states.normal && sprite_index != spr_tv_open
 		draw_surface(tvsurface, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY))

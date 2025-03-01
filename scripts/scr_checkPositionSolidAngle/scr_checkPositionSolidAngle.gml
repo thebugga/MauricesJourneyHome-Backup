@@ -1,4 +1,4 @@
-/// @desc Checks the Rotation of the surface of the collided collision object.
+/// @desc Checks the angle of the surface of the collided collision object.
 /// @param {any*} x The x position to check.
 /// @param {any*} y The y position to check.
 /// @param {real} pdist_a Distance of Point A from the center point.
@@ -35,7 +35,7 @@ function scr_checkPositionSolidAngle(x, y, pdist_a, pdist_b, len, dir, exclude =
 	point_b.targetX = point_b.x + lengthdir_x(len, dir);
 	point_b.targetY = point_b.y + lengthdir_y(len, dir);
 	
-	// approach Target Position.
+	// Approach Target Position.
 	while (point_distance(point_a.x, point_a.y, point_a.targetX, point_a.targetY) > 0) {
 		if (position_meeting_collision(point_a.x, point_a.y, exclude)) {
 			break;

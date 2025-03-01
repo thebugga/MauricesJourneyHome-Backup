@@ -45,6 +45,7 @@ fightball_buffer1 = 0;
 fightball_buffer2 = 0;
 fightball_snd_buffer = 0;
 jump_p2 = 0;
+input_taunt_p2 = 0;
 debugstats = false
 scr_init_input();
 supernoisefademax = 4;
@@ -137,7 +138,7 @@ facehurt = false;
 steppy = false;
 steppybuffer = 0;
 depth = -7;
-movespeed = 19;
+movespeed = 12;
 jumpstop = false;
 ramp = false;
 ramp_points = 0;

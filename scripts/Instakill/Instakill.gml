@@ -1,6 +1,6 @@
 function Instakill()
 {
-	if (other.baddieID.elitegrab == 0)
+	if (other.baddieID.elitegrab == 0) && instance_exists(other.baddieID)
 	{
 		other.baddieID.grabbedby = 1
 		if (object_index == obj_player2)
@@ -33,8 +33,11 @@ function Instakill()
 			other.baddieID.instakilled = 1
 		if (!other.baddieID.important)
 		{
-			global.combotime = 60
-			global.heattime = 60
+			if (!other.baddieID.important)
+			{
+				global.combotime = 60
+				global.heattime = 60
+			}
 		}
 		global.hit += 1
 		if ((!grounded) && state != states.boxxedpepspin && state != states.freefall && (key_jump2 or input_buffer_jump == 0))
@@ -109,5 +112,6 @@ function Instakill()
 		other.baddieID.stunned = 40
 		scr_hurtplayer(id)
 	}
+	instance_destroy(other.baddieID)
 	exit;
 }

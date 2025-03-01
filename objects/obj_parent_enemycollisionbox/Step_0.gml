@@ -216,7 +216,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_parent_player) && obj_p
                 other.baddieID.stuntouchbuffer = 15
                 with (other.baddieID)
                 {
-                    fmod_event_one_shot_3d("event:/sfx/pep/mach2bump", x, y)
+                    fmod_event_one_shot_3d("event:/sfx/maurice/mach2bump", x, y)
                     Xscale = 0.8
                     Yscale = 1.3
                     instance_create(x, y, obj_bangeffect)

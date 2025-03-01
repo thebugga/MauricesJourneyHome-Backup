@@ -59,7 +59,7 @@ function scr_dograb()
         {
             tate = (80 << 0)
             flash = 1
-            fmod_event_one_shot_3d("event:/sfx/pep/grabcancel", x, y)
+            fmod_event_one_shot_3d("event:/sfx/maurice/grabcancel", x, y)
             sprite_index = choose(spr_player_kungfuair1, spr_player_kungfuair2, spr_player_kungfuair3)
             image_index = 0
             movespeed = 13
@@ -68,7 +68,7 @@ function scr_dograb()
         {
             state = states.punch
             flash = 1
-            fmod_event_one_shot_3d("event:/sfx/pep/grabcancel", x, y)
+            fmod_event_one_shot_3d("event:/sfx/maurice/grabcancel", x, y)
             sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3)
             image_index = 0
             movespeed = 13

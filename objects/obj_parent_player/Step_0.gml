@@ -798,7 +798,7 @@ if supercharge > 9 && state != states.backbreaker
 		if (ini_read_real("Game", "supertaunt", false) == 0)
 			create_transformation_tip(lang_get_value("supertaunttip"));
 		ini_close();
-		fmod_event_one_shot("event:/sfx/pep/gotsupertaunt");
+		fmod_event_one_shot("event:/sfx/maurice/gotsupertaunt");
 	}
 	supercharged = true;
 }

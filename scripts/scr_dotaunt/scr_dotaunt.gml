@@ -30,14 +30,14 @@ function scr_dotaunt() //gml_Script_scr_dotaunt
                 ini_open_from_string(obj_savesystem.ini_str)
                 ini_write_real("Game", "supertaunt", 1)
                 obj_savesystem.ini_str = ini_close()
-                fmod_event_one_shot_3d("event:/sfx/pep/supertaunt", x, y)
+                fmod_event_one_shot_3d("event:/sfx/maurice/supertaunt", x, y)
                 image_index = 0
                 sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4)
             }
             else
             {
                 scr_create_parryhitbox()
-                fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y)
+                fmod_event_one_shot_3d("event:/sfx/maurice/taunt", x, y)
                 taunttimer = 20
                 sprite_index = spr_taunt
                 image_index = random_range(0, 11)

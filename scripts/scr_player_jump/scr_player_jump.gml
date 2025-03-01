@@ -125,7 +125,7 @@ function state_player_jump()
 	{
 		if vsp > 0 && (!key_attack || sprite_index == spr_suplexbump)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+			fmod_event_one_shot_3d("event:/sfx/maurice/step", x, y);
 			if (key_attack || sprite_index == spr_shotgunshoot)
 				landAnim = false;
 			if (sprite_index == spr_mortdoublejump || sprite_index == spr_mortdoublejumpstart)
@@ -253,7 +253,7 @@ function state_player_jump()
 		image_speed = 0.35;
 	if (grounded && (sprite_index == spr_facestomp || sprite_index == spr_freefall))
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+		fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y);
 		image_index = 0;
 		sprite_index = spr_bodyslamland;
 		state = states.freefallland;
@@ -456,7 +456,7 @@ function state_pepperman_jump()
 		ladderbuffer--;
 	if key_taunt2
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
+		fmod_event_one_shot_3d("event:/sfx/maurice/taunt", x, y);
 		taunttimer = 20;
 		tauntstoredmovespeed = movespeed;
 		tauntstoredvsp = vsp;

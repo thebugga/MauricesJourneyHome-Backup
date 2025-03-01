@@ -162,7 +162,7 @@ function scr_enemy_grabbed() //gml_Script_scr_enemy_grabbed
                 global.style += (5 + global.combo)
             GamepadSetVibration((_obj_player.object_index == obj_player1 ? 0 : 1), 0.8, 0.8, 0.65)
             fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y)
-            fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y)
+            fmod_event_one_shot_3d("event:/sfx/maurice/punch", x, y)
             state = (138 << 0)
             image_xscale = (-_obj_player.Xscale)
             instance_create(x, y, obj_slapstar)

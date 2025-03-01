@@ -16,7 +16,7 @@ if key_taunt2 && taunttimer <= 0 && usable
 	image_speed = 0;
 	tauntID = instance_create(x, y, obj_baddietaunteffect);
 	tauntID.depth = 0;
-	fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
+	fmod_event_one_shot_3d("event:/sfx/maurice/taunt", x, y);
 	image_index = irandom(sprite_get_number(spr_taunt) - 1);
 }
 if global.playerCharacter != Characters.Pierre && key_taunt

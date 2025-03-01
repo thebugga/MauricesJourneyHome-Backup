@@ -13,6 +13,10 @@ scr_getinput(player_index)
 if keyboard_check_pressed(vk_f6)
 	debugstats = !debugstats
 
+if global.playerCharacter == Characters.Pierre
+{
+	instance_create_unique(x,y,obj_pierrefriendfollow)
+}
 
 // input buffers and coyote time
 if key_slap2

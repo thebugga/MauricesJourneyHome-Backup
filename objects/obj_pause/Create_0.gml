@@ -1,22 +1,32 @@
-pause = false;
-i = false;
-color = make_color_rgb(121, 103, 151);
-scr_init_input();
-player1 = -4;
-player2 = -4;
-selected = 0;
-stickpressed = false;
-image_speed = 0;
-depth = -500;
-backbuffer = 2;
-savedmusicmuffle = 0;
-
-pause_menu = ["pause_resume", "pause_options", "pause_restart", "pause_exit"];
+pause = 0
+i = 0
+color = make_color_rgb(121, 103, 151)
+player1 = -4
+player2 = -4
+selected = 0
+stickpressed = 0
+image_speed = 0
+depth = -998
+savedmusicmuffle = 0
+pause_menu = ["pause_resume", "pause_options", "pause_restart", "pause_exit"]
+cursor_index = 0
+cursor_sprite_number = sprite_get_number(spr_angelpriest)
+cursor_sprite_height = sprite_get_height(spr_angelpriest)
+cursor_x = -1000
+cursor_y = -1000
+fade = 0
+fadein = 0
+screensprite = -4
+screensize = 0
+guisprite = -4
+instance_list = ds_list_create()
+priest_list = ds_list_create()
+start = 0
+alarm[1] = 1
 pause_menu_map = ds_map_create();
 ds_map_set(pause_menu_map, "pause_resume", [0, function()
 {
 	scr_pause_activate_objects();
-	pause_unpause_music();
 	instance_destroy(obj_option);
 	instance_destroy(obj_keyconfig);
 }]);
@@ -35,10 +45,7 @@ ds_map_set(pause_menu_map, "pause_restart", [2, function()
 		{
 			alarm[5] = 1;
 			roomtorestart = rm;
-			pause_unpause_music();
-			stop_music();
 			scr_pause_activate_objects();
-			scr_pause_stop_sounds();
 			instance_destroy(obj_option);
 			instance_destroy(obj_keyconfig);
 			pause = false;
@@ -49,14 +56,11 @@ ds_map_set(pause_menu_map, "pause_restart", [2, function()
 }]);
 var exit_function = function()
 {
-	pause_unpause_music();
-	stop_music();
-	scr_pause_stop_sounds();
 	instance_destroy(obj_option);
 	instance_destroy(obj_keyconfig);
 	fmod_event_instance_stop(global.snd_bossbeaten, true);
-	fmod_event_instance_stop(pausemusicID, true);
-	obj_music.music = -4;
+	savedmusicmuffle = fmod_get_parameter("musicmuffle")
+	fmod_set_parameter("musicmuffle", 0, 0)
 	var sl = ds_list_create();
 	var il = ds_list_create();
 	var arr = -4;
@@ -114,10 +118,6 @@ secretalpha = 0;
 transfotext = -4;
 transfotext_size = 0;
 roomtorestart = -4;
-pausemusicID = -4;
-pausemusic_original = fmod_event_create_instance("event:/music/pause");
-pausemusic_halloween = fmod_event_create_instance("event:/music/halloweenpause");
-pausemusicID = pausemusic_original;
 savedsecretpause = false;
 savedmusicpause = false;
 savedpillarpause = false;

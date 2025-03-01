@@ -96,6 +96,8 @@ function draw_player()
 	var pattern = global.palettetexture;
 	var ps = paletteselect;
 	var spr = spr_palette;
+    if global.playerCharacter == Characters.Pierre
+        spr = spr_pierrepalette
 	if object_index == obj_player1
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, Xscale * scale_xs, Yscale * scale_ys, pattern);
 	pal_swap_set(spr, ps, false);

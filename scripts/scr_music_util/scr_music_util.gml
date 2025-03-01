@@ -33,16 +33,8 @@ function stop_music()
 	{
 		if music != noone
 		{
-			if obj_pause.pause
-			{
-				fmod_event_instance_stop(music.event, true);
-				fmod_event_instance_stop(music.event_secret, true);
-			}
-			else
-			{
-				fmod_event_instance_stop(music.event, false);
-				fmod_event_instance_stop(music.event_secret, false);
-			}
+			fmod_event_instance_stop(music.event, false);
+			fmod_event_instance_stop(music.event_secret, false);
 		}
 		fmod_event_instance_stop(pillarmusicID, true);
 		fmod_event_instance_stop(panicmusicID, true);

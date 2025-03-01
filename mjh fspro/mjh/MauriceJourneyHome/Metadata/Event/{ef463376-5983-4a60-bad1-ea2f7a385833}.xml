@@ -96,6 +96,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{3118ab28-5d04-4c1f-b1e3-889a10d4f402}">
+		<property name="start">
+			<value>1</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{16f89057-4aed-4b29-8318-92ba7c57ecb2}</destination>
 		</relationship>

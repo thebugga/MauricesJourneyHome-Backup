@@ -28,10 +28,6 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 		pause = true;
 
 		fade = 0;
-		var oldpause = pausemusicID;
-		pausemusicID = pausemusic_original;
-		if oldpause != pausemusicID
-			fmod_event_instance_stop(oldpause, true);
 		
 		pause_menu = ["pause_resume", "pause_options"];
 		if global.leveltorestart != noone
@@ -44,22 +40,9 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 		else
 			array_push(pause_menu, "pause_exit_title");
 		
-		with obj_music
-		{
-			if music != noone
-			{
-				other.savedmusicpause = fmod_event_instance_get_paused(music.event);
-				other.savedsecretpause = fmod_event_instance_get_paused(music.event_secret);
-				fmod_event_instance_set_paused(music.event, true);
-				fmod_event_instance_set_paused(music.event_secret, true);
-			}
-			other.savedpillarpause = fmod_event_instance_get_paused(pillarmusicID);
-			other.savedkidspartypause = fmod_event_instance_get_paused(kidspartychaseID);
-			other.savedpanicpause = fmod_event_instance_get_paused(panicmusicID);
-			fmod_event_instance_set_paused(pillarmusicID, true);
-			fmod_event_instance_set_paused(panicmusicID, true);
-			fmod_event_instance_set_paused(kidspartychaseID, true);
-		}
+        savedmusicmuffle = fmod_get_parameter("musicmuffle")
+        fmod_set_parameter("musicmuffle", 1, 0)
+		
 		if global.leveltosave != -4
 		{
 			ini_open_from_string(obj_savesystem.ini_str);
@@ -187,8 +170,6 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 		else
 			transfotext = noone;
 		scr_pause_deactivate_objects();
-		fmod_event_instance_play(pausemusicID);
-		fmod_event_instance_set_paused(pausemusicID, false);
 	}
 }
 with obj_player1
@@ -284,3 +265,5 @@ if pause && !instance_exists(obj_option)&& alarm[3] == -1
 		array_get(ds_map_find_value(pause_menu_map, array_get(pause_menu, selected)), 1)();
 }
 scr_pauseicons_update(-1);
+if (prevpause && (!pause))
+	fmod_set_parameter("musicmuffle", savedmusicmuffle, 0)

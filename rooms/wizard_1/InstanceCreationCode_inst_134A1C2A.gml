@@ -1,1 +1,1 @@
-targetRoom = wizard_23
+targetRoom = wizard_3

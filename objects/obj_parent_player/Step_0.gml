@@ -39,7 +39,7 @@ if state != states.grab
 	swingdingthrow = false;
 
 // reset noise walljumps
-if global.playerCharacter == Characters.Doise && !isgustavo
+if global.playerCharacter == Characters.Doise
 {
 	if can_jump && vsp > 0
 	{
@@ -695,7 +695,6 @@ if grounded && vsp > 0 && state != states.noisejetpack
 	jetpackfuel = jetpackmax;
 if tauntstoredisgustavo
 {
-	isgustavo = true;
 	if state != states.backbreaker && state != states.parry && state != states.graffiti
 		tauntstoredisgustavo = false;
 }

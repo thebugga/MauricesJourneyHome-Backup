@@ -1,4 +1,4 @@
-if (state == states.grabbed && object_index != obj_pepperman && object_index != obj_pizzafaceboss && object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 && object_index != obj_noiseboss && object_index != obj_pf_fakepep)
+if (state == states.grabbed)
     scr_enemy_grabbed()
 else if (state == states.lungeattack)
     scr_enemy_lungeattack()

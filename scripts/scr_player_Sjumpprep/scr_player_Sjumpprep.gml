@@ -39,7 +39,7 @@ function scr_player_Sjumpprep()
 				else
 					sprite_index = spr_superjumppreplight;
 			}
-			if (((global.playerCharacter == Characters.Maurice && !scr_check_superjump()) || global.playerCharacter == Characters.Doise) && grounded && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright) && !place_meeting_solid(x, y - 16) && !place_meeting_solid(x, y - 32))
+			if (((global.playerCharacter == Characters.Maurice && !scr_check_superjump()) || global.playerCharacter == Characters.Doise || global.playerCharacter == Characters.Pierre) && grounded && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright) && !place_meeting_solid(x, y - 16) && !place_meeting_solid(x, y - 32))
 			{
 				instance_create(x, y, obj_explosioneffect);
 				sprite_index = spr_superjump;

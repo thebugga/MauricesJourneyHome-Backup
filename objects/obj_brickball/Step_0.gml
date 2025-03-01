@@ -8,14 +8,6 @@ if (!kicked)
 	if place_meeting_solid(x, y)
 		x = obj_player1.x
 }
-if (blur_effect > 0)
-	blur_effect--
-else
-{
-	blur_effect = 2
-	with (create_blur_afterimage(x, y, sprite_index, (image_index - 1), image_xscale))
-		playerid = other.id
-}
 if (hitbox == 0)
 {
 	with (instance_create(x, y, obj_shotgunbullet))

@@ -42,7 +42,7 @@ function scr_player_Sjump()
 				piledrivereffect = 15;
 			}
 		}
-		else if global.playerCharacter != Characters.Doise
+		else if global.playerCharacter != Characters.Doise or global.playerCharacter != Characters.Pierre
 		{
 			sprite_index = spr_machfreefall;
 			if grounded

@@ -24,10 +24,7 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != ObjectnMacroloadinRoom && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
 		selected = 0;
-		fadein = true;
 		pause = true;
-
-		fade = 0;
 		
 		pause_menu = ["pause_resume", "pause_options"];
 		if global.leveltorestart != noone
@@ -52,21 +49,21 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 			if !treasurefound
 			{
 				treasurefound = global.treasure;
-				treasurealpha = 0;
+				treasurealpha = 1;
 			}
 			else if !global.treasure
 				treasurealpha = 0.5;
 			else
-				treasurealpha = 0;
+				treasurealpha = 1;
 			if global.secretfound > secretcount
 			{
 				secretcount = global.secretfound;
-				secretalpha = 0;
+				secretalpha = 1;
 			}
 			else if global.secretfound < secretcount
 				secretalpha = 0.5;
 			else
-				secretalpha = 0;
+				secretalpha = 1;
 			if secretcount > 3
 				secretcount = 3;
 		}
@@ -178,49 +175,7 @@ with obj_player1
 	other.spr_palette = spr_palette;
 }
 
-border1_xstart = 0;
-border1_ystart = SCREEN_HEIGHT;
-border1_xend = -96;
-border1_yend = SCREEN_HEIGHT + 100;
-border2_xstart = SCREEN_WIDTH;
-border2_ystart = SCREEN_HEIGHT;
-border2_xend = SCREEN_WIDTH + 96;
-border2_yend = SCREEN_HEIGHT + 100;
-
-vine_ystart = 0;
-vine_yend = -117;
-if !start
-{
-	start = true;
-	border2_x = border2_xend;
-	border2_y = border2_yend;
-	border1_x = border1_xend;
-	border1_y = border1_yend;
-	vine_y = vine_yend;
-}
 var a = 0.1;
-	if fadein
-	{
-		fade = approach(fade, 1, 0.1);
-		border1_x = lerp(border1_x, border1_xstart, a);
-		border1_y = lerp(border1_y, border1_ystart, a);
-		border2_x = lerp(border2_x, border2_xstart, a);
-		border2_y = lerp(border2_y, border2_ystart, a);
-		vine_y = lerp(vine_y, vine_ystart, a);
-		cursor_x = lerp(cursor_x, 0, 0.05);
-		cursor_y = lerp(cursor_y, 0, a);
-	}
-	else
-	{
-		fade = approach(fade, 0, 0.1);
-		border1_x = lerp(border1_x, border1_xend, a);
-		border1_y = lerp(border1_y, border1_yend, a);
-		border2_x = lerp(border2_x, border2_xend, a);
-		border2_y = lerp(border2_y, border2_yend, a);
-		vine_y = lerp(vine_y, vine_yend, a);
-		cursor_x = lerp(cursor_x, 20, 0.05);
-		cursor_y = lerp(cursor_y, -100, a);
-	}
 cursor_index += 0.35;
 pause_update_priests();
 

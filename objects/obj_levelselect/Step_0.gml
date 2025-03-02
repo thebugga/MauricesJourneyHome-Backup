@@ -49,42 +49,12 @@ if !instance_exists(obj_option)
 }
 if keyboard_check_pressed(ord("1"))
 {
-    if ((global.playerCharacter == Characters.Maurice))
-    {
-        global.playerCharacter = Characters.Doise
-        with (obj_player1)
-            scr_characterspr()
-    }
-    else if ((global.playerCharacter == Characters.Doise))
-    {
-        global.playerCharacter = Characters.Pierre
-        with (obj_player1)
-            scr_characterspr()
-    }
-    else if ((global.playerCharacter == Characters.Pierre))
-    {
-        global.playerCharacter = Characters.MrOrange
-        with (obj_player1)
-            scr_characterspr()
-    }
-    else if ((global.playerCharacter == Characters.MrOrange))
-    {
-        global.playerCharacter = Characters.Clownmato
-        with (obj_player1)
-            scr_characterspr()
-    }
-    else if ((global.playerCharacter == Characters.Clownmato))
-    {
-        global.playerCharacter = Characters.Snick
-        with (obj_player1)
-            scr_characterspr()
-    }
-    else if ((global.playerCharacter == Characters.Snick))
-    {
-        global.playerCharacter = Characters.Maurice
-        with (obj_player1)
-            scr_characterspr()
-    }
+    selected_character++
+	if selected_character > array_length(character_array) - 1
+		selected_character = 0
+    global.playerCharacter = character_array[selected_character][0]
+    with (obj_player1)
+        scr_characterspr()
 }
 
 if obj_player1.key_up2

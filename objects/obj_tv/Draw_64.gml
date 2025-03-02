@@ -95,7 +95,7 @@ for (var i = _num; i > 0; i--)
 	_tx -= 22
 	_ty -= 8
 }
-/*
+
 if abs(rank_state) == 1
 {
 	rank_x = approach(rank_x, 50 - (25 * sign(rank_state)), 2.5)
@@ -151,7 +151,7 @@ surface_set_target(rank_surf)
 surface_reset_target()
 draw_set_alpha(1)
 draw_surface(rank_surf, rx, ry)
-	*/
+
 if (!surface_exists(tvsurface))
 	tvsurface = surface_create(278, 268)
 gpu_set_blendmode(bm_normal)

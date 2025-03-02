@@ -14,9 +14,7 @@ if keyboard_check_pressed(vk_f6)
 	debugstats = !debugstats
 
 if global.playerCharacter == Characters.Pierre
-{
-	instance_create_unique(x,y,obj_pierrefriendfollow)
-}
+	instance_create_unique(x, y, obj_pierrefriendfollow)
 
 // input buffers and coyote time
 if key_slap2
@@ -875,7 +873,7 @@ if state != states.grabbed && state != states.hurt
 if state != states.freefall && state != states.superslam && (state != states.chainsaw || (tauntstoredstate != states.freefall && tauntstoredstate != states.superslam)) && (state != states.backbreaker || (tauntstoredstate != states.freefall && tauntstoredstate != states.superslam))
 && !instance_exists(obj_secretportalstart)
 	freefallsmash = -14;
-if (state == states.gameover && y > (room_height * 2) && !instance_exists(obj_backtohub_fadeout))
+if (state == states.gameover && y > (room_height * 2) && !instance_exists(obj_backtohub))
 {
 	targetDoor = "HUB";
 	scr_playerreset();

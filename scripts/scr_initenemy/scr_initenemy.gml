@@ -13,6 +13,7 @@ function scr_initenemy()
 	steppy = false;
 	santaID = -4;
 	rattime = 0;
+	ratplayerid = -4;
 	platformid = -4;
 	usepalette = false;
 	blur_effect = 0;

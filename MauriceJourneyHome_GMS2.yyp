@@ -2241,6 +2241,7 @@
     {"id":{"name":"spr_player_pizzacarland","path":"sprites/spr_player_pizzacarland/spr_player_pizzacarland.yy",},},
     {"id":{"name":"spr_player_pizzathrow","path":"sprites/spr_player_pizzathrow/spr_player_pizzathrow.yy",},},
     {"id":{"name":"spr_player_pizzathrow2","path":"sprites/spr_player_pizzathrow2/spr_player_pizzathrow2.yy",},},
+    {"id":{"name":"spr_peetzy","path":"sprites/spr_peetzy/spr_peetzy.yy",},},
     {"id":{"name":"spr_player_pizzathrow3","path":"sprites/spr_player_pizzathrow3/spr_player_pizzathrow3.yy",},},
     {"id":{"name":"spr_player_poundcancel1","path":"sprites/spr_player_poundcancel1/spr_player_poundcancel1.yy",},},
     {"id":{"name":"spr_player_poundcancel2","path":"sprites/spr_player_poundcancel2/spr_player_poundcancel2.yy",},},

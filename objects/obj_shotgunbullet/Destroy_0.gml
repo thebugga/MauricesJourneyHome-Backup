@@ -1,4 +1,4 @@
-if pistol
+if pistol && !brick
 {
 	with (instance_create(x, y, obj_deatheffect))
 	{

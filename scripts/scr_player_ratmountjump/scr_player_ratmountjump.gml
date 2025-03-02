@@ -123,30 +123,53 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
         image_index = 0
         sprite_index = spr_lonegustavo_groundpoundstart
     }
-    if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
+    if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && !(riderispeetzy && ratgrabbedID != noone))
     {
         input_buffer_slap = 0
         ratmount_kickbrick()
     }
     if (input_buffer_slap > 0 && (!key_up))
     {
-        particle_set_scale((5 << 0), Xscale, 1)
-        create_particle(x, y, (5 << 0), 0)
         input_buffer_slap = 0
-        if (brick == 1)
-        {
-            with (instance_create(x, y, obj_brickcomeback))
-                wait = 1
-        }
-        brick = 0
-        state = states.ratmountpunch
-        gustavohitwall = 0
-        ratmountpunchtimer = 25
-        image_index = 0
-        if (move != 0)
-            Xscale = move
-        movespeed = (Xscale * 12)
-        sprite_index = spr_lonegustavo_punch
+		if !brick
+		{
+			particle_set_scale((5 << 0), Xscale, 1)
+	        create_particle(x, y, (5 << 0), 0)
+	        input_buffer_slap = 0
+	        if (brick == 1)
+	        {
+	            with (instance_create(x, y, obj_brickcomeback))
+	                wait = 1
+	        }
+	        brick = 0
+	        state = states.ratmountpunch
+	        gustavohitwall = 0
+	        ratmountpunchtimer = 25
+	        image_index = 0
+	        if (move != 0)
+	            Xscale = move
+	        movespeed = (Xscale * 12)
+	        sprite_index = spr_lonegustavo_punch
+		}
+		else
+		{
+			if riderispeetzy
+			{
+				if (ratgrabbedID != noone)
+		        {
+		            state = states.ratmountspit
+		            sprite_index = spr_player_ratmountspit
+		            image_index = 0
+		        }
+		        else
+		        {
+		            state = states.ratmountattack
+		            movespeed = 10
+		            sprite_index = spr_player_ratmountattack
+		            image_index = 0
+		        }
+			}
+		}
     }
     var bounce = 1
     if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && (!(place_meeting(x, (y + 5), obj_grindrail))))
@@ -160,6 +183,8 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
         {
             if (ratmount_movespeed >= 12 && key_attack)
                 sprite_index = spr_player_ratmountdashjump
+            else if riderispeetzy && ratgrabbedID != noone
+				sprite_index = spr_player_ratmountjump2
             else
                 sprite_index = spr_player_ratmountjump
         }
@@ -175,12 +200,29 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
     }
     if (key_jump && brick && bounce)
     {
-        GamepadSetVibration(0, 0.8, 0.8, 0.65)
-        state = states.ratmountbounce
-        instance_create(x, y, obj_highjumpcloud2)
-        sprite_index = spr_player_ratmountwalljump
-        image_index = 0
-        vsp = -16
+		if riderispeetzy && ratgrabbedID == noone
+		{
+			state = states.ratmountgroundpound
+	        sprite_index = spr_lonegustavo_jumpstart
+	        image_index = 0
+	        image_speed = 0.35
+	        gustavokicktimer = 2
+	        brick = false
+	        with (instance_create((x - Xscale * 10), (y + 60), obj_ratmountgroundpound))
+	        {
+	            image_xscale = other.Xscale
+	            image_index = 0
+	        }
+		}
+		else
+		{
+	        GamepadSetVibration(0, 0.8, 0.8, 0.65)
+	        state = states.ratmountbounce
+	        instance_create(x, y, obj_highjumpcloud2)
+	        sprite_index = spr_player_ratmountwalljump
+	        image_index = 0
+	        vsp = -16
+		}
     }
     if (grounded && vsp > 0 && sprite_index != spr_lonegustavo_kick)
     {
@@ -189,7 +231,7 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
         state = states.ratmount
         landAnim = 1
         jumpstop = 0
-        if (brick && (!key_attack))
+        if (brick && (!key_attack) && ratgrabbedID == noone)
             sprite_index = spr_player_ratmountland
         else
             landAnim = 0

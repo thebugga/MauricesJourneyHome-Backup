@@ -270,6 +270,7 @@
     {"name":"spr_controlseggplant","order":61,"path":"sprites/spr_controlseggplant/spr_controlseggplant.yy",},
     {"name":"spr_controlicons","order":36,"path":"sprites/spr_controlicons/spr_controlicons.yy",},
     {"name":"scr_playerinit","order":12,"path":"scripts/scr_playerinit/scr_playerinit.yy",},
+    {"name":"spr_peetzy","order":9,"path":"sprites/spr_peetzy/spr_peetzy.yy",},
     {"name":"spr_palettedresser","order":60,"path":"sprites/spr_palettedresser/spr_palettedresser.yy",},
     {"name":"spr_hamofcheese","order":88,"path":"sprites/spr_hamofcheese/spr_hamofcheese.yy",},
     {"name":"bg_tower","order":59,"path":"sprites/bg_tower/bg_tower.yy",},

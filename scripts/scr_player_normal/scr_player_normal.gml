@@ -493,67 +493,79 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
     if (sprite_index == spr_player_ratmountmach3 || sprite_index == spr_lonegustavo_mach3)
         image_speed = 0.4
     var front = (place_meeting_solid((x + sign(hsp)), y) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
-    if brick
-    {
-        if (!landAnim)
-        {
-            if (hsp != 0 && (!front))
-            {
-                if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
-                    sprite_index = spr_player_ratmountmach3
-                else if key_attack
-                    sprite_index = spr_player_ratmountattack
-                else
-                    sprite_index = spr_player_ratmountmove
-            }
-            else
-            {
-                image_speed = 0.35
-                if (sprite_index != spr_player_ratmountidleanim)
-                {
-                    sprite_index = spr_player_ratmountidle
-                    if (ratgrabbedID == noone)
-                    {
-                        if (idle < 400)
-                            idle++
-                        if (idle >= 150)
-                        {
-                            sprite_index = spr_player_ratmountidleanim
-                            image_index = 0
-                        }
-                    }
-                }
-                else if (floor(image_index) == (image_number - 1))
-                {
-                    idle = 0
-                    sprite_index = spr_player_ratmountidle
-                }
-            }
-        }
-        if (floor(image_index) == (image_number - 1))
-        {
-            landAnim = 0
-            if (sprite_index == spr_player_ratmountland)
-                sprite_index = spr_player_ratmountidle
-        }
-        if (sprite_index == spr_player_ratmountland)
-            image_speed = 0.35
-    }
-    else
-    {
-        if (hsp != 0 && (!front))
-        {
-            if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
-                sprite_index = spr_lonegustavo_mach3
-            else if key_attack
-                sprite_index = spr_lonegustavo_dash
-            else
-                sprite_index = spr_lonegustavo_walk
-        }
-        else
-            sprite_index = spr_lonegustavo_idle
-        image_speed = 0.35
-    }
+	if sprite_index != spr_player_haulingstart
+	{
+	    if brick
+	    {
+	        if (!landAnim)
+	        {
+	            if (hsp != 0 && (!front))
+	            {
+	                if riderispeetzy && ratgrabbedID != noone
+						sprite_index = spr_player_ratmountmove2
+					else
+					{
+						if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+		                    sprite_index = spr_player_ratmountmach3
+		                else if key_attack
+		                    sprite_index = spr_player_ratmountattack
+		                else
+		                    sprite_index = spr_player_ratmountmove
+					}
+	            }
+	            else
+	            {
+	                image_speed = 0.35
+	                if (sprite_index != spr_player_ratmountidleanim)
+	                {
+	                    if riderispeetzy && ratgrabbedID != noone
+							sprite_index = spr_player_ratmountidle2
+						else
+	                    {
+							sprite_index = spr_player_ratmountidle
+	                        if (idle < 400)
+	                            idle++
+	                        if (idle >= 150)
+	                        {
+	                            sprite_index = spr_player_ratmountidleanim
+	                            image_index = 0
+	                        }
+	                    }
+	                }
+	                else if (floor(image_index) == (image_number - 1))
+	                {
+	                    idle = 0
+	                    sprite_index = spr_player_ratmountidle
+	                }
+	            }
+	        }
+	        if (floor(image_index) == (image_number - 1))
+	        {
+	            landAnim = 0
+	            if (sprite_index == spr_player_ratmountland)
+	                sprite_index = spr_player_ratmountidle
+	        }
+	        if (sprite_index == spr_player_ratmountland)
+	            image_speed = 0.35
+	    }
+	    else
+	    {
+	        if (hsp != 0 && (!front))
+	        {
+	            if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+	                sprite_index = spr_lonegustavo_mach3
+	            else if key_attack
+	                sprite_index = spr_lonegustavo_dash
+	            else
+	                sprite_index = spr_lonegustavo_walk
+	        }
+	        else
+	            sprite_index = spr_lonegustavo_idle
+	        image_speed = 0.35
+	    }
+	}
+	else if (floor(image_index) == (image_number - 1))
+	    sprite_index = spr_player_ratmountidle2
     if (hsp != 0 && grounded && vsp > 0 && (!front))
     {
         if (steppybuffer > 0)
@@ -566,7 +578,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
                 fmod_event_one_shot_3d("event:/sfx/maurice/step", x, y)
         }
     }
-    if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && state != states.ratmountskid)
+    if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && state != states.ratmountskid && sprite_index != spr_player_haulingstart)
     {
         input_buffer_jump = 0
         particle_set_scale((4 << 0), Xscale, 1)
@@ -576,7 +588,9 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
         {
             if ((ratmount_movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
                 sprite_index = spr_player_ratmountdashjump
-            else
+            else if riderispeetzy && ratgrabbedID != noone
+				sprite_index = spr_player_ratmountjump2
+			else
                 sprite_index = spr_player_ratmountjump
         }
         else if ((ratmount_movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
@@ -589,27 +603,33 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
         vsp = -11
         jumpstop = 0
     }
-    if ((!grounded) && sprite_index != spr_player_ratmountswallow)
+    if ((!grounded) && sprite_index != spr_player_ratmountswallow && sprite_index != spr_player_haulingstart)
     {
         state = states.ratmountjump
         jumpAnim = 0
         if (ratmount_movespeed >= 12)
         {
             if brick
-                sprite_index = spr_player_ratmountdashjump
+	             sprite_index = spr_player_ratmountdashjump
             else
                 sprite_index = spr_lonegustavo_dashjump
         }
         else if brick
-            sprite_index = spr_player_ratmountfall
+		{
+			if riderispeetzy && ratgrabbedID != noone
+				sprite_index = spr_player_ratmountfall2
+			else
+	            sprite_index = spr_player_ratmountfall
+		}
         else
             sprite_index = spr_player_ratmountgroundpoundfall
     }
-    if (key_attack && grounded && (!(place_meeting((x + Xscale), y, obj_solid))))
+    if (key_attack && grounded && (!(place_meeting((x + Xscale), y, obj_solid))) && !(riderispeetzy && ratgrabbedID != noone))
     {
         move = Xscale
-        if (ratmount_movespeed < 12)
-            ratmount_movespeed = approach(ratmount_movespeed, 12, 0.15)
+		var truespeed = brick ? (riderispeetzy ? 12 : 10) : 11
+        if (ratmount_movespeed < truespeed)
+            ratmount_movespeed = approach(ratmount_movespeed, truespeed, 0.15)
     }
 	if (scr_check_superjump() && fightball == 0 && ratmount_movespeed >= 12 && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
 	{
@@ -618,7 +638,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
 		hsp = 0;
 		image_index = 0;
 	}
-    if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && gusdashpadbuffer == 0)
+    if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && !(riderispeetzy && ratgrabbedID != noone) && gusdashpadbuffer == 0)
     {
         input_buffer_slap = 0
         ratmount_kickbrick()
@@ -630,23 +650,46 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
     }
     if (input_buffer_slap > 0 && (!key_up) && gusdashpadbuffer == 0)
     {
-        particle_set_scale((5 << 0), Xscale, 1)
-        create_particle(x, y, (5 << 0), 0)
         input_buffer_slap = 0
-        if (brick == 1)
-        {
-            with (instance_create(x, y, obj_brickcomeback))
-                wait = 1
-        }
-        brick = 0
-        ratmountpunchtimer = 25
-        gustavohitwall = 0
-        state = states.ratmountpunch
-        image_index = 0
-        if (move != 0)
-            Xscale = move
-        movespeed = (Xscale * 12)
-        sprite_index = spr_lonegustavo_punch
+		if !brick
+		{
+			particle_set_scale((5 << 0), Xscale, 1)
+	        create_particle(x, y, (5 << 0), 0)
+	        input_buffer_slap = 0
+	        if (brick == 1)
+	        {
+	            with (instance_create(x, y, obj_brickcomeback))
+	                wait = 1
+	        }
+	        brick = 0
+	        ratmountpunchtimer = 25
+	        gustavohitwall = 0
+	        state = states.ratmountpunch
+	        image_index = 0
+	        if (move != 0)
+	            Xscale = move
+	        movespeed = (Xscale * 12)
+	        sprite_index = spr_lonegustavo_punch
+		}
+		else
+		{
+			if riderispeetzy
+			{
+				if (ratgrabbedID != noone)
+		        {
+		            state = states.ratmountspit
+		            sprite_index = spr_player_ratmountspit
+		            image_index = 0
+		        }
+		        else
+		        {
+		            state = states.ratmountattack
+		            movespeed = 10
+		            sprite_index = spr_player_ratmountattack
+		            image_index = 0
+		        }
+			}
+		}
     }
     if ((!instance_exists(dashcloudid)) && grounded && ratmount_movespeed >= 12)
     {
@@ -684,35 +727,40 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
 
 function ratmount_dotaunt() //gml_Script_ratmount_dotaunt
 {
-    if (key_taunt2 && state != states.backbreaker && brick && gusdashpadbuffer == 0)
+    if (key_taunt2 && state != states.backbreaker && gusdashpadbuffer == 0)
     {
-        notification_push((55 << 0), [room])
-        tauntstoredisgustavo = 1
-        taunttimer = 20
-        tauntstoredmovespeed = movespeed
-        tauntstoredratmount_movespeed = ratmount_movespeed
-        tauntstoredsprite = sprite_index
-        tauntstoredstate = state
-        tauntstoredvsp = vsp
-        state = states.backbreaker
-        if ((!supercharged) || (!key_up))
-        {
-            scr_create_parryhitbox()
-            fmod_event_one_shot_3d("event:/sfx/maurice/taunt", x, y)
-            sprite_index = spr_player_ratmounttaunt
-            image_index = irandom((sprite_get_number(sprite_index) - 1))
-            with (instance_create(x, y, obj_taunteffect))
-                player = other.id
-        }
-        else if (supercharged && key_up)
-        {
-            ini_open_from_string(obj_savesystem.ini_str)
-            ini_write_real("Game", "supertaunt", 1)
-            obj_savesystem.ini_str = ini_close()
-            fmod_event_one_shot_3d("event:/sfx/maurice/supertaunt", x, y)
-            sprite_index = spr_player_ratmountsupertaunt
-            image_index = 0
-        }
+        if brick
+		{
+			notification_push((55 << 0), [room])
+	        tauntstoredisgustavo = 1
+	        taunttimer = 20
+	        tauntstoredmovespeed = movespeed
+	        tauntstoredratmount_movespeed = ratmount_movespeed
+	        tauntstoredsprite = sprite_index
+	        tauntstoredstate = state
+	        tauntstoredvsp = vsp
+	        state = states.backbreaker
+	        if ((!supercharged) || (!key_up))
+	        {
+	            scr_create_parryhitbox()
+	            fmod_event_one_shot_3d("event:/sfx/maurice/taunt", x, y)
+	            sprite_index = spr_player_ratmounttaunt
+	            image_index = irandom((sprite_get_number(sprite_index) - 1))
+	            with (instance_create(x, y, obj_taunteffect))
+	                player = other.id
+	        }
+	        else if (supercharged && key_up)
+	        {
+	            ini_open_from_string(obj_savesystem.ini_str)
+	            ini_write_real("Game", "supertaunt", 1)
+	            obj_savesystem.ini_str = ini_close()
+	            fmod_event_one_shot_3d("event:/sfx/maurice/supertaunt", x, y)
+	            sprite_index = spr_player_ratmountsupertaunt
+	            image_index = 0
+	        }
+		}
+		else
+			riderispeetzy = !riderispeetzy
     }
 }
 

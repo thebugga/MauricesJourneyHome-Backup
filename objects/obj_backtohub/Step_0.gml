@@ -8,9 +8,10 @@ if fadein
         else
         {
             fadein = false
-            obj_player1.targetRoom = obj_player1.backtohubroom
-            obj_player2.targetRoom = obj_player1.backtohubroom
-            room_goto(obj_player1.backtohubroom)
+            //obj_player1.targetRoom = obj_player1.backtohubroom
+            //obj_player2.targetRoom = obj_player1.backtohubroom
+            //room_goto(obj_player1.backtohubroom)
+			room_goto(rm_levelselect)
         }
     }
 }

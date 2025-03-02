@@ -9,16 +9,25 @@ function scr_player_ratmountattack()
 		movespeed += 0.5
 	else if (!grounded)
 		movespeed = 10
-	if (key_jump && (!doublejump))
+	if (key_jump)
 	{
-		doublejump = 1
-		vsp = -11
-		state = states.ratmountjump
-		jumpstop = 0
-		sprite_index = spr_player_ratmountwalljump
+		state = states.ratmountgroundpound
+	    sprite_index = spr_lonegustavo_jumpstart
+	    image_index = 0
+	    image_speed = 0.35
+	    gustavokicktimer = 2
+	    brick = false
+	    with (instance_create((x - Xscale * 10), (y + 60), obj_ratmountgroundpound))
+	    {
+	        image_xscale = other.Xscale
+	        image_index = 0
+	    }
 	}
 	if (floor(image_index) == (image_number - 1))
+	{
 		state = states.ratmount
+		movespeed *= Xscale
+	}
 	if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + Xscale), y, obj_destructibles))))
 		ledge_bump((vsp >= 0 ? 32 : 22))
 	exit;

@@ -12,9 +12,10 @@ function scr_player_ratmountskid()
 	if (movespeed <= 0)
 		state = states.ratmount
 	if (key_jump && (!key_up))
-		input_buffer_jump = 0
-	if (input_buffer_jump < 8 && grounded && sprite_index != spr_player_ratmountswallow)
+		input_buffer_jump = 8
+	if (input_buffer_jump > 0 && grounded && sprite_index != spr_player_ratmountswallow)
 	{
+		input_buffer_jump = 0
 		particle_set_scale(particle.highjumpcloud2, Xscale, 1)
 		create_particle(x, y, particle.highjumpcloud2, 0)
 		//scr_soundeffect(sfx_jump)

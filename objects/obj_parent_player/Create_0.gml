@@ -178,6 +178,7 @@ ratpowerup = -4;
 ratshootbuffer = 0;
 rateaten = false;
 gustavodash = 0;
+riderispeetzy = true;
 brick = false;
 ratmountpunchtimer = 25;
 gustavokicktimer = 5;

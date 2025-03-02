@@ -31,6 +31,11 @@ function scr_player_bump() //gml_Script_scr_player_bump
         if (sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && sprite_index != spr_rockethitwall && sprite_index != spr_tumbleend && sprite_index != spr_hitwall && sprite_index != spr_mach && sprite_index != spr_mach4)
             sprite_index = ((!skateboarding) ? spr_bump : spr_clownbump)
     }
+    else if global.playerCharacter == Characters.Pierre
+	{
+        if grounded
+			state = states.ratmount
+	}
     else
     {
         movespeed = 0
@@ -40,7 +45,5 @@ function scr_player_bump() //gml_Script_scr_player_bump
             state = states.normal
         image_speed = 0.35
     }
-    if (state == states.normal && global.playerCharacter == Characters.Pierre)
-        state = states.ratmount
 }
 

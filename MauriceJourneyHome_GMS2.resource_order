@@ -254,6 +254,7 @@
     {"name":"spr_pizzaHUDcomplete","order":29,"path":"sprites/spr_pizzaHUDcomplete/spr_pizzaHUDcomplete.yy",},
     {"name":"spr_hungrypillar11","order":2,"path":"sprites/spr_hungrypillar11/spr_hungrypillar11.yy",},
     {"name":"spr_minipillarwokeface","order":76,"path":"sprites/spr_minipillarwokeface/spr_minipillarwokeface.yy",},
+    {"name":"Sprite1728","order":45,"path":"sprites/Sprite1728/Sprite1728.yy",},
     {"name":"spr_pizzasona_thankyou","order":28,"path":"sprites/spr_pizzasona_thankyou/spr_pizzasona_thankyou.yy",},
     {"name":"spr_pizzasona1","order":29,"path":"sprites/spr_pizzasona1/spr_pizzasona1.yy",},
     {"name":"spr_pizzasona1throw","order":30,"path":"sprites/spr_pizzasona1throw/spr_pizzasona1throw.yy",},

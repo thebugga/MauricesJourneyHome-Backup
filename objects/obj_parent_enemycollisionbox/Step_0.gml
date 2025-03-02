@@ -11,13 +11,13 @@ if instance_exists(baddieID)
 }
 if (instance_exists(baddieID) && place_meeting(x, y, obj_parent_player) && obj_parent_player.cutscene == 0)
 {
-    if (baddieID.state != states.grabbed && (!baddieID.invincible) && baddieID.state != states.ghostpossess)
+    if (baddieID.state != states.grabbed  && baddieID.state != states.ratgrabbed && (!baddieID.invincible) && baddieID.state != states.ghostpossess)
     {
         with (obj_parent_player)
         {
             var _obj_player = id
             var _playerindex = (object_index == obj_player1 ? 1 : 2)
-            if (instance_exists(other.baddieID) && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == 0 && (!global.kungfu) && sprite_index != spr_player_mach2jump && ((state == states.boots && vsp > 0) || state == states.jump || (global.playerCharacter == Characters.Pierre && ratmount_movespeed < 12 && state == states.ratmountjump) || state == states.mach1 || state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && (!other.baddieID.invincible) && other.baddieID.stompable && other.baddieID != ratgrabbedID)
+            if (instance_exists(other.baddieID) && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == 0 && (!global.kungfu) && sprite_index != spr_player_mach2jump && ((state == states.boots && vsp > 0) || state == states.jump || (global.playerCharacter == Characters.Pierre && ratmount_movespeed < 12 && state == states.ratmountjump) || state == states.mach1 || state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && (!other.baddieID.invincible) && other.baddieID.stompable)
             {
                 fmod_event_one_shot_3d("event:/sfx/enemies/stomp", x, y)
                 image_index = 0

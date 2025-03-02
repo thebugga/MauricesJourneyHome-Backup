@@ -1,5 +1,7 @@
 with (instance_create(x, y, obj_brickcomeback))
 {
+	playerid = other.playerid
+	ispeetzy = false
 	vsp = -5
 	hsp = ((-sign(other.hsp)) * 4)
 }

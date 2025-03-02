@@ -32,7 +32,7 @@ function scr_player_ratmountskid()
 		vsp = -11
 		jumpstop = 0
 	}
-	if (key_slap2 && brick)
+	if (key_slap2 && brick && !riderispeetzy)
 		ratmount_kickbrick()
 	else if (key_slap2 && (!brick))
 	{

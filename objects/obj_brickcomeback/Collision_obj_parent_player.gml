@@ -1,6 +1,6 @@
 if (!trapped)
 {
-	if (comeback == 1)
+	if (comeback == 1 && other.id == playerid && playerid.riderispeetzy == ispeetzy)
 	{
 		other.brick = 1
 		if (other.state != states.ratmountcrouch && other.state != states.backbreaker)

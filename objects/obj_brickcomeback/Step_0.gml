@@ -5,7 +5,7 @@ if (global.playerCharacter != Characters.Pierre)
 }
 if (!trapped)
 {
-	if (obj_player1.sprite_index == spr_lonegustavo_hurt or obj_player1.state == states.ratmountpunch or obj_player1.state == states.ratmountgroundpound or obj_player1.state == states.ratmountgrind or obj_player1.state == states.ratmountladder or obj_player1.state == states.ratmountcrouch)
+	if (playerid.sprite_index == spr_lonegustavo_hurt or playerid.state == states.ratmountpunch or playerid.state == states.ratmountgroundpound or playerid.state == states.ratmountgrind or playerid.state == states.ratmountladder or playerid.state == states.ratmountcrouch or playerid.state == states.ratmounttumble)
 	{
 		wait = 1
 		sprite_index = spr_lonebrick_wait
@@ -15,9 +15,10 @@ if (!trapped)
 	}
 	if (comeback == 1)
 	{
+		var follower = (playerid.riderispeetzy != ispeetzy) ? obj_pierrefriendfollow : playerid
 		depth = -99
-		x = approach(x, obj_player1.x, cbspeed)
-		y = approach(y, obj_player1.y, cbspeed)
+		x = approach(x, follower.x, cbspeed)
+		y = approach(y, follower.y, cbspeed)
 		cbspeed = approach(cbspeed, 20, 1)
 	}
 	else if (wait == 0)

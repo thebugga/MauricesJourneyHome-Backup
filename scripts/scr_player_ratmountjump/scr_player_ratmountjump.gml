@@ -113,7 +113,9 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
         {
             with (instance_create(x, y, obj_brickcomeback))
             {
-                wait = 1
+                playerid = other.id
+				ispeetzy = other.riderispeetzy
+				wait = 1
                 instance_create(x, y, obj_genericpoofeffect)
             }
         }
@@ -123,7 +125,7 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
         image_index = 0
         sprite_index = spr_lonegustavo_groundpoundstart
     }
-    if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && !(riderispeetzy && ratgrabbedID != noone))
+    if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && !riderispeetzy)
     {
         input_buffer_slap = 0
         ratmount_kickbrick()
@@ -139,7 +141,11 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
 	        if (brick == 1)
 	        {
 	            with (instance_create(x, y, obj_brickcomeback))
+				{
+					playerid = other.id
+					ispeetzy = other.riderispeetzy
 	                wait = 1
+				}
 	        }
 	        brick = 0
 	        state = states.ratmountpunch
@@ -210,11 +216,12 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
 	        brick = false
 	        with (instance_create((x - Xscale * 10), (y + 60), obj_ratmountgroundpound))
 	        {
-	            image_xscale = other.Xscale
+	            playerid = other.id
+				image_xscale = other.Xscale
 	            image_index = 0
 	        }
 		}
-		else
+		else if !riderispeetzy
 		{
 	        GamepadSetVibration(0, 0.8, 0.8, 0.65)
 	        state = states.ratmountbounce

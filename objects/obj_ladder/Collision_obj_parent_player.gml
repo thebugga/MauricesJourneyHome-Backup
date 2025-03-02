@@ -15,6 +15,9 @@ with (other)
 		{
 			with (instance_create(x, y, obj_brickcomeback))
 			{
+				
+				playerid = other.id
+				ispeetzy = other.riderispeetzy
 				wait = 1
 				instance_create(x, y, obj_genericpoofeffect)
 			}

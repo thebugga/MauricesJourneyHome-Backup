@@ -73,7 +73,7 @@ function scr_player_tumble()
 		sprite_index = spr_tumble
 		movespeed = 14
 	}
-	if (((place_meeting((x + Xscale), y, obj_solid) or place_meeting_slope((x + Xscale), y)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && ((!(place_meeting((x + hsp), y, obj_rattumble))) or sprite_index != spr_tumble) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or place_meeting(x, y, obj_timedgate))
+	if (((place_meeting((x + Xscale), y, obj_solid) or slopeCheck(x + Xscale, y)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && ((!(place_meeting((x + hsp), y, obj_rattumble))) or sprite_index != spr_tumble) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or place_meeting(x, y, obj_timedgate))
 	{
 		hsp = 0;
 		movespeed = 0;

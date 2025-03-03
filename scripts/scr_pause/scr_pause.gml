@@ -145,6 +145,7 @@ function pause_update_priests()
 		}
 	}
 }
+
 function pause_draw_priests()
 {
 	for (var i = 0; i < ds_list_size(priest_list); i++)

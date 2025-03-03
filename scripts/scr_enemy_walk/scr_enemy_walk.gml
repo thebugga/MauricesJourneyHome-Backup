@@ -13,11 +13,17 @@ function scr_enemy_walk()
 		railmovespeed = 0
 	if ((!grounded) && object_index != obj_pizzaball && object_index != obj_ancho && object_index != obj_miniufo && object_index != obj_kentukybomber)
 		hsp = 0
+	scr_enemyturn()
+	exit;
+}
+
+function scr_enemyturn()
+{
 	if (turntimer > 0 && turner == 1)
 		turntimer--
-	if ((place_meeting_solid((x + 1), y) && image_xscale == 1) or (place_meeting_solid((x - 1), y) && image_xscale == -1) or place_meeting((x + hsp), y, obj_hallway) or turntimer <= 0)
+	if (!((place_meeting_solid((x + (image_xscale * 15)), (y + 31)) or place_meeting_slope((x + (image_xscale * 15)), (y + 31)) or place_meeting((x + (image_xscale * 15)), (y + 31), obj_platform)))) or ((place_meeting_solid((x + 1), y) && image_xscale == 1) or (place_meeting_solid((x - 1), y) && image_xscale == -1) or place_meeting((x + hsp), y, obj_hallway) or turntimer <= 0)
 	{
-		if (!(place_meeting((x + sign(hsp)), y, obj_slope)))
+		if !place_meeting_slope(x + image_xscale, y)
 		{
 			if (object_index == obj_forknight)
 			{
@@ -38,27 +44,6 @@ function scr_enemy_walk()
 			turntimer = turnmax
 		}
 	}
-	if object_index != obj_ancho
-	{
-		if (!((place_meeting_solid((x + (image_xscale * 15)), (y + 31)) or place_meeting((x + (image_xscale * 15)), (y + 31), obj_platform))))
-		{
-			if (movespeed > 0 && grounded)
-			{
-				if (object_index == obj_forknight)
-				{
-					image_xscale *= -1
-					image_index = 0
-					sprite_index = spr_forknight_turn
-					state = states.idle
-				}
-				else
-				{
-					image_xscale *= -1
-				}
-				turntimer = turnmax
-			}
-		}
-	}
-	exit;
 }
+
 

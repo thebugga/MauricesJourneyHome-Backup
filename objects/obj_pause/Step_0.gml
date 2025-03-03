@@ -231,7 +231,6 @@ if pause && alarm[3] == -1
 	{
 		fmod_event_instance_set_paused(pillarmusicID, true);
 		fmod_event_instance_set_paused(panicmusicID, true);
-		fmod_event_instance_set_paused(kidspartychaseID, true);
 	}
 }
 if pause && !instance_exists(obj_option)&& alarm[3] == -1

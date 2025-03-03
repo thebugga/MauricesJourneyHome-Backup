@@ -102,10 +102,20 @@ function scr_collision() {
 	}
 
 	// Vertical
+	var target_y = round(y + vsp);
+	var bbox_size_y = bbox_bottom - bbox_top;
+	var t = abs(target_y - y) / bbox_size_y;
+	var sv = sign(vsp);
 	var move_vsp = clamp(abs(vsp), 0, bbox_height) * sign(vsp); // Calculate max units to move.
 	repeat ceil((abs(vsp) / bbox_height)) { // Repeat per Bbox Height.
 		if (!place_meeting_collision(x, y + move_vsp)) {
+
 			y += move_vsp;	
+			if ((move_vsp > 0 && y >= move_vsp) || (vsp < 0 && y <= target_y))
+			{
+				y = target_y;
+				break;
+			}
 		} else { // If Collision is detected within Bbox Height.
 			repeat(abs(move_vsp)) { // Do pixel by pixel check.
 				
@@ -134,9 +144,8 @@ function scr_collision() {
 	vsp = true_vsp;	
 	
 	// Gravity
-	if (vsp < terminalVelocity) {
+	if vsp < 20
 		vsp += grav;
-	}
 
 	
 	// Grounded Check

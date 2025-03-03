@@ -11,13 +11,13 @@ if (active && sprite_index != spr_secretportal_open && (!instance_exists(obj_jum
 		//scr_soundeffect(sfx_secretenter)
 		if (!obj_music.secret)
 		{
-			obj_music.secret = 1
-			obj_music.secretend = 0
+			obj_music.secret = true
+			obj_music.secretend = false
 		}
 		else
 		{
-			obj_music.secretend = 1
-			obj_music.secret = 0
+			obj_music.secretend = true
+			obj_music.secret = false
 		}
 	}
 	playerid = other.id

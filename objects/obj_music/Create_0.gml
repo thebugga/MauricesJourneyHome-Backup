@@ -12,26 +12,23 @@ savedpanicpos = 0;
 savedmusicpos = 0;
 exitmusic = false;
 pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
-panicmusicP = fmod_event_create_instance("event:/music/pizzatime");
-panicmusicN = fmod_event_create_instance("event:/music/pizzatimenoise");
-panicmusicID = panicmusicP;
-kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
+panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
 panicstart = false;
 
 add_music(Mainmenu, "event:/music/title", -4, false, function(argument0, argument1)
 {
-    fmod_event_instance_set_parameter(argument1, "state", 0, 1)
+    fmod_event_instance_set_parameter(argument1, "state", 0, false);
 }
 )
 add_music(tower_entrancehallway, "event:/music/hub", noone, false);
 add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
 add_music(hub_lobby, "event:/music/hub", noone, false);
 add_music(hub_theatre, "event:/music/hub", noone, false);
-add_music(wizard_1OLD, "event:/music/w1/wizard", noone, false);
-add_music(wizard_2, "event:/music/w1/wizard", noone, false);
+add_music(wizard_1, "event:/music/w1/wizard", "event:/music/w1/wizardsecret", false);
+add_music(wizard_2, "event:/music/w1/wizard", "event:/music/w1/wizardsecret", false);
 add_music(hub_wizardtower, "event:/music/wizard", noone, false);
-add_music(garbage_1, "event:/music/w1/garbage", "event:/music/pillarmusic", false)
-add_music(garbage_2, "event:/music/w1/garbage", "event:/music/pillarmusic", false)
-add_music(hub_gravesite, "event:/music/w1/garbage", "event:/music/pillarmusic", false)
-add_music(characterselect, "event:/music/characterselect", "event:/music/pillarmusic", false)
+add_music(garbage_1, "event:/music/w1/garbage", "event:/music/garbagesecret", false)
+add_music(garbage_2, "event:/music/w1/garbage", "event:/music/garbagesecret", false)
+add_music(hub_gravesite, "event:/music/w1/garbage", -4, false)
+add_music(characterselect, "event:/music/characterselect",-4, false)
 

@@ -1,7 +1,7 @@
 if !global.panic
 {
 	var mu = ds_map_find_value(music_map, room);
-	if (!is_undefined(mu))
+	if !is_undefined(mu)
 	{
 		var prevmusic = music;
 		if (prevmusic == noone || mu.event_name != prevmusic.event_name)
@@ -14,32 +14,36 @@ if !global.panic
 				pos = music_get_pos_wrap(pos, fmod_event_get_length(mu.event_name));
 				fmod_event_instance_set_timeline_pos(mu.event, pos);
 			}
-			if prevmusic != -4
+			if prevmusic != noone
 			{
 				if room == Mainmenu
 					fmod_event_instance_stop(prevmusic.event, false);
 				else
 					fmod_event_instance_stop(prevmusic.event, true);
-				if prevmusic.event_secret != -4
+				if prevmusic.event_secret != noone
 					fmod_event_instance_stop(prevmusic.event_secret, true);
 			}
 			music = mu;
 			savedmusicpos = 0;
+			/*
+			if room == war_1 || room == tower_finalhallway
+				fmod_event_instance_stop(music.event, true);
+			*/
 		}
 	}
-	if (instance_exists(obj_totemsteve))
+	if instance_exists(obj_totemsteve)
 	{
 		fmod_event_instance_play(pillarmusicID);
 		fmod_set_parameter("pillarfade", 0, true);
 	}
 	else
 		fmod_event_instance_stop(pillarmusicID, true);
-	if music != -4 && music.on_room_start != -4
+	if music != noone && music.on_room_start != noone
 		music.on_room_start(room, music.event, music.event_secret);
 }
 	if secret
 	{
-		if music != -4 && music.event_secret != -4
+		if music != noone && music.event_secret != noone
 		{
 			fmod_event_instance_play(music.event_secret);
 			fmod_event_instance_set_paused(music.event_secret, false);
@@ -72,11 +76,14 @@ if !global.panic
 			trace("Resuming panic music: room_start");
 		}
 	}
-if (room == rank_room)
+
+/*
+if room == rank_room || room == boss_pizzaface || room == boss_noise || room == boss_vigilante || room == boss_fakepep || room == boss_pepperman
 {
-	if music != -4
+	if music != noone
 	{
 		fmod_event_instance_stop(music.event, true);
 		fmod_event_instance_stop(music.event_secret, true);
 	}
 }
+*/

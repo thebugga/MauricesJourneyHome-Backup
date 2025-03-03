@@ -7,48 +7,48 @@ if pause
 {
 	draw_set_color(c_white);
 	draw_set_alpha(1);
-	scr_draw_pause_image();
 	draw_set_alpha(0.5);
-	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_red, c_red, c_red, c_red, false);
+	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, #ff0000, #ff0000, #800000, #800000, false);
 	draw_set_alpha(1);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
-	draw_set_font(global.bigfont);
+	draw_set_font(global.creditsfont);
 		
-	draw_sprite_ext(spr_title, ui_index, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 4, 0.5, 0.5, 0, c_white, 1);
-	var h = string_height(lang_get_value("default_letter"));
-	var pad = 16;
-	var len = array_length(pause_menu);
-	var wh = (h * len) + (pad * (len - 1));
-	var yy = (SCREEN_HEIGHT / 2) - (wh / 2);
-	var iconspr = spr_pizzaangel;
-	for (var i = 0; i < len; i++)
-	{
-		var b = pause_menu[i];
-		var c = c_gray;
-		var t = lang_get_value(b);
-		if selected == i
+		var h = string_height("A");
+		var pad = 16;
+		var len = array_length(pause_menu);
+		var wh = (h * len) + (pad * (len - 1));
+		var yy = (SCREEN_HEIGHT / 2) - (wh / 2) + 120;
+		var iconspr = spr_rubmybellay;
+		for (var i = 0; i < len; i++)
 		{
-			var cx = (SCREEN_WIDTH / 2) - (string_width(t) / 2) - 60;
-			if update_cursor
+			var b = pause_menu[i];
+			var c = c_gray;
+			var t = lang_get_value(b);
+			if selected == i
 			{
-				cursor_x = (cursor_actualx + cursor_x) - cx;
-				cursor_y = (cursor_actualy + cursor_y) - yy;
-				update_cursor = false;
+				var cx = (SCREEN_WIDTH / 2) - (string_width(t) / 2) - 60;
+				if update_cursor
+				{
+					cursor_x = (cursor_actualx + cursor_x) - cx;
+					cursor_y = (cursor_actualy + cursor_y) - yy;
+					update_cursor = false;
+				}
+				cursor_actualx = cx;
+				cursor_actualy = yy;
+				draw_sprite(iconspr, cursor_index, cx + cursor_x, yy + cursor_y);
+				c = c_white;
 			}
-			cursor_actualx = cx;
-			cursor_actualy = yy;
-			draw_sprite(iconspr, cursor_index, cx + cursor_x, yy + cursor_y);
-			c = c_white;
+			tdp_draw_text_color(SCREEN_WIDTH / 2, yy, t, c, c, c, c, fade);
+			yy += (h + pad);
 		}
-		tdp_draw_text_color(SCREEN_WIDTH / 2, yy, t, c, c, c, c, fade);
-		yy += (h + pad);
-	}
+
 	tdp_text_commit(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	draw_sprite_ext(spr_pause_border, ui_index, 0, SCREEN_HEIGHT, -1, 1, 0, c_white, 1);
 	draw_sprite_ext(spr_pause_border, ui_index, SCREEN_WIDTH, SCREEN_HEIGHT, 1, 1, 0, c_white, 1);
 	draw_sprite_ext(spr_pause_vine, ui_index, SCREEN_WIDTH / 2, 0, 1, 1, 0, c_white, 1);
-
+	draw_sprite_ext(spr_title, ui_index, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 4, 1, 1, 0, c_white, 1);
+	
 	var lvlsave = global.leveltosave;
 	if fade > 0 && lvlsave != -4 && lvlsave != "tutorial"
 	{
@@ -80,5 +80,5 @@ if pause
 		tdp_text_commit(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 		draw_set_alpha(1);
 	}
-	pause_draw_priests(); 
+	pause_draw_priests();
 }

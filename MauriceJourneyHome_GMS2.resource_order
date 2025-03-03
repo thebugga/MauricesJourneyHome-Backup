@@ -161,6 +161,7 @@
     {"name":"spr_grabicon","order":73,"path":"sprites/spr_grabicon/spr_grabicon.yy",},
     {"name":"obj_slopePlatform","order":5,"path":"objects/obj_slopePlatform/obj_slopePlatform.yy",},
     {"name":"spr_minipillarsleepface","order":77,"path":"sprites/spr_minipillarsleepface/spr_minipillarsleepface.yy",},
+    {"name":"spr_rubmybellay","order":66,"path":"sprites/spr_rubmybellay/spr_rubmybellay.yy",},
     {"name":"spr_superspring_activate","order":69,"path":"sprites/spr_superspring_activate/spr_superspring_activate.yy",},
     {"name":"spr_clownmato_move","order":1,"path":"sprites/spr_clownmato_move/spr_clownmato_move.yy",},
     {"name":"wizard_8","order":7,"path":"rooms/wizard_8/wizard_8.yy",},

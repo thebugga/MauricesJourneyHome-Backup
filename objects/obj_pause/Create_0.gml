@@ -8,7 +8,7 @@ stickpressed = 0
 image_speed = 0
 depth = -998
 savedmusicmuffle = 0
-pause_menu = ["pause_resume", "pause_options", "pause_restart", "pause_exit"]
+pause_menu = ["pause_resume", "pause_options", "pause_restart", "pause_exit", "pause_credits"]
 cursor_index = 0
 cursor_sprite_number = sprite_get_number(spr_angelpriest)
 cursor_sprite_height = sprite_get_height(spr_angelpriest)
@@ -95,7 +95,7 @@ var exit_function = function()
 };
 ds_map_set(pause_menu_map, "pause_exit", [3, exit_function]);
 ds_map_set(pause_menu_map, "pause_exit_title", [3, exit_function]);
-ds_map_set(pause_menu_map, "pause_credits", [1, function()
+ds_map_set(pause_menu_map, "pause_credits", [4, function()
 {
 	fmod_event_one_shot("event:/sfx/ui/select");
 	with (instance_create(x, y, obj_manual))

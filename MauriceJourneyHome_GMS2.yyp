@@ -1323,6 +1323,7 @@
     {"id":{"name":"scr_player_grab","path":"scripts/scr_player_grab/scr_player_grab.yy",},},
     {"id":{"name":"scr_player_grabbed","path":"scripts/scr_player_grabbed/scr_player_grabbed.yy",},},
     {"id":{"name":"scr_player_grabbing","path":"scripts/scr_player_grabbing/scr_player_grabbing.yy",},},
+    {"id":{"name":"spr_rubmybellay","path":"sprites/spr_rubmybellay/spr_rubmybellay.yy",},},
     {"id":{"name":"spr_superspring_activate","path":"sprites/spr_superspring_activate/spr_superspring_activate.yy",},},
     {"id":{"name":"scr_player_graffiti","path":"scripts/scr_player_graffiti/scr_player_graffiti.yy",},},
     {"id":{"name":"scr_player_grind","path":"scripts/scr_player_grind/scr_player_grind.yy",},},

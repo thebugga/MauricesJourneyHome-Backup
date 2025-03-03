@@ -4,7 +4,7 @@
   "name": "spr_angelpriest2",
   "bbox_bottom": 88,
   "bbox_left": 17,
-  "bbox_right": 83,
+  "bbox_right": 82,
   "bbox_top": 7,
   "bboxMode": 0,
   "collisionKind": 1,

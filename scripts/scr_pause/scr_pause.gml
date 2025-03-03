@@ -93,56 +93,65 @@ function scr_pause_deactivate_objects() //gml_Script_scr_pause_deactivate_object
     instance_activate_object(obj_fmod)
 }
 
-function pause_spawn_priests() //gml_Script_pause_spawn_priests
+function pause_spawn_priests()
 {
-    var p = 
-    {
-        x: 0,
-        y: (obj_screensizer.actual_height + 200),
-        speed: random_range(0.8, 1.4),
-        image_index: 0,
-        image_speed: 0.35,
-        image_xscale: choose(-1, 1)
-    }
-
-    var q = irandom(100)
-    if (q >= 50)
-        p.x = irandom_range((obj_screensizer.actual_width * 0.78), (obj_screensizer.actual_width * 0.65))
-    else
-        p.x = irandom_range((obj_screensizer.actual_width * 0.2), 0.42)
-    ds_list_add(priest_list, p)
+	var p = 
+	{
+		x: 0,
+		y: SCREEN_HEIGHT + 200,
+		speed: random_range(0.8, 1.4),
+		image_index: 0,
+		image_speed: 0.35,
+		image_xscale: choose(-1, 1),
+		image_alpha: 0,
+		sprite_index: choose(spr_angelpriest, spr_angelpriest2, spr_angelpriest3)
+	};
+	
+	var q = irandom(100);
+	if q >= 50
+		p.x = irandom_range(SCREEN_WIDTH * 0.78, SCREEN_WIDTH * 0.65);
+	else
+		p.x = irandom_range(SCREEN_WIDTH * 0.2, 0.42);
+	ds_list_add(priest_list, p);
 }
 
-function pause_update_priests() //gml_Script_pause_update_priests
+function pause_update_priests()
 {
-    for (var i = 0; i < ds_list_size(priest_list); i++)
-    {
-        var b = ds_list_find_value(priest_list, i)
-        var destroy = 0
-        with (b)
-        {
-            y -= speed
-            image_index += image_speed
-            if (!other.pause)
-                x += (x > (obj_screensizer.actual_width / 2) ? 10 : -10)
-            if (y < -200)
-                destroy = 1
-        }
-        if destroy
-        {
-            b = undefined
-            ds_list_delete(priest_list, i--)
-        }
-    }
+	for (var i = 0; i < ds_list_size(priest_list); i++)
+	{
+		var b = ds_list_find_value(priest_list, i);
+		var destroy = false;
+		with b
+		{
+			y -= speed;
+			image_index += image_speed;
+			if !other.pause
+				x += (x > (SCREEN_WIDTH / 2)) ? 10 : -10;
+			if y < -200
+				destroy = true;
+			var a = 0.02;
+			if y > 250
+			{
+				if (y < (SCREEN_HEIGHT - 100))
+					image_alpha += a;
+			}
+			else
+				image_alpha -= a;
+		}
+		if destroy
+		{
+			delete b;
+			ds_list_delete(priest_list, i--);
+		}
+	}
 }
-
-function pause_draw_priests() //gml_Script_pause_draw_priests
+function pause_draw_priests()
 {
-    for (var i = 0; i < ds_list_size(priest_list); i++)
-    {
-        var b = ds_list_find_value(priest_list, i)
-        with (b)
-            draw_sprite_ext(spr_angelpriest, image_index, x, y, image_xscale, 1, 0, c_white, 1)
-    }
+	for (var i = 0; i < ds_list_size(priest_list); i++)
+	{
+		var b = ds_list_find_value(priest_list, i);
+		with b
+			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, 1, 0, c_white, image_alpha);
+	}
 }
 

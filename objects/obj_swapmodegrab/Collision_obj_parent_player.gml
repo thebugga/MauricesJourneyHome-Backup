@@ -52,7 +52,11 @@ with (other)
             state = states.ratmountpunch
             brick = false
             with (instance_create(x, y, obj_brickcomeback))
+			{
+				playerid = other.id
+				ispeetzy = other.riderispeetzy
                 wait = true
+			}
             sprite_index = spr_lonegustavo_punch
             movespeed = other.hsp
             if (abs(movespeed) < 10)

@@ -12,7 +12,11 @@ if (place_meeting(x, y, other) && other.state != states.tumble && other.state !=
 			if (brick == 1)
 			{
 				with (instance_create(x, y, obj_brickcomeback))
+				{
+					playerid = other.id
+					ispeetzy = other.riderispeetzy
 					wait = 1
+				}
 			}
 			brick = 0
 		}

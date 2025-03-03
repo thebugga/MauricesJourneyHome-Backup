@@ -1,49 +1,27 @@
 function scr_player_ratmounttumble()
 {
-	hsp = (Xscale * movespeed)
+	hsp = movespeed
 	move = (key_left + key_right)
-	sprite_index = spr_player_ratmountwalljump
-	image_speed = ((-abs(movespeed)) / 15)
+	sprite_index = spr_lonegustavo_dashjump
+	image_speed = (abs(movespeed) / 15)
 	if (!key_attack)
 		movespeed = approach(movespeed, 0, 1)
-	if (slopeCheck(x + Xscale, y) && hsp != 0)
-		scr_player_addslopemomentum(0.25, 0.25)
-	if (abs(hsp) <= 2)
+	if abs(hsp) <= 4 || (place_meeting((x + hsp), y, obj_solid) && !place_meeting_slope((x + hsp), y) && !place_meeting((x + hsp), y, obj_destructibles))
+		state = states.ratmountcrouch
+	if ((grounded && !key_down) || brick) && !place_meeting_solid(x, (y - 16)) && !place_meeting_solid(x, (y - 32))
 		state = states.ratmount
-	if ((place_meeting((x + hsp), y, obj_solid) && (!(place_meeting_slope((x + hsp), y))) && (!(place_meeting((x + hsp), y, obj_rollblock))) && (!(place_meeting((x + hsp), y, obj_rattumble))) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or place_meeting(x, y, obj_timedgate))
+	if (input_buffer_jump > 0 && grounded)
 	{
-		state = states.ratmounthurt
-		vsp = -5
-		movespeed = 3
-	}
-	if key_jump
 		input_buffer_jump = 0
-	if ((!jumpstop) && vsp < 0.5 && (!key_jump2))
-	{
-		vsp /= 10
-		jumpstop = 1
-	}
-	if (key_jump && brick && key_up)
-	{
-		state = states.ratmountgroundpound
-		sprite_index = spr_lonegustavo_jumpstart
-		image_index = 0
-		image_speed = 0.35
-		gustavokicktimer = 5
-		brick = 0
-		movespeed = hsp
-		with (instance_create(x, (y + 50), obj_ratmountgroundpound))
-		{
-			image_xscale = other.Xscale
-			image_index = 0
-		}
-	}
-	if (input_buffer_jump < 8 && grounded)
-	{
 		particle_set_scale(particle.highjumpcloud2, Xscale, 1)
 		create_particle(x, y, particle.highjumpcloud2, 0)
 		//scr_soundeffect(sfx_jump)
 		vsp = -11
 		jumpstop = 0
+	}
+	if ((!jumpstop) && vsp < 0.5 && (!key_jump2))
+	{
+		vsp /= 10
+		jumpstop = 1
 	}
 }

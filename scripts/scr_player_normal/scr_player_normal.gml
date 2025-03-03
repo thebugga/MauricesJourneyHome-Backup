@@ -638,7 +638,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
 		hsp = 0;
 		image_index = 0;
 	}
-    if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && !(riderispeetzy && ratgrabbedID != noone) && gusdashpadbuffer == 0)
+    if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && !riderispeetzy && gusdashpadbuffer == 0)
     {
         input_buffer_slap = 0
         ratmount_kickbrick()
@@ -659,7 +659,11 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
 	        if (brick == 1)
 	        {
 	            with (instance_create(x, y, obj_brickcomeback))
+				{
+					playerid = other.id
+					ispeetzy = other.riderispeetzy
 	                wait = 1
+				}
 	        }
 	        brick = 0
 	        ratmountpunchtimer = 25
@@ -701,11 +705,18 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
     }
     if ((key_down && grounded && vsp > 0 && gusdashpadbuffer <= 0) || place_meeting_solid(x, y))
     {
-        state = states.ratmountcrouch
+		if key_attack
+			state = states.ratmounttumble
+		else
+			state = states.ratmountcrouch
         if (brick == 1)
         {
             with (instance_create(x, y, obj_brickcomeback))
+			{
+				playerid = other.id
+				ispeetzy = other.riderispeetzy
                 wait = 1
+			}
         }
         brick = 0
     }
@@ -713,16 +724,6 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
         scr_enemy_ratgrabbed()
     ratmount_shootpowerup()
     ratmount_dotaunt()
-			if (scr_mach_check_dive() && fightball == 0 && (sprite_index != spr_dashpadmach || dropboost) && sprite_index != spr_rockethitwall)
-			{
-				particle_set_scale(particle.jumpdust, Xscale, 1);
-				create_particle(x, y, particle.jumpdust, 0);
-				flash = false;
-				state = states.tumble;
-				sprite_index = spr_machroll;
-				image_index = 0;
-				movespeed = 10;
-			}
 }
 
 function ratmount_dotaunt() //gml_Script_ratmount_dotaunt
@@ -760,7 +761,16 @@ function ratmount_dotaunt() //gml_Script_ratmount_dotaunt
 	        }
 		}
 		else
+		{
 			riderispeetzy = !riderispeetzy
+			obj_pierrefriendfollow.visible = false
+			with (instance_create(obj_pierrefriendfollow.x, obj_pierrefriendfollow.y, obj_brickcomeback))
+			{
+				playerid = other.id
+				ispeetzy = other.riderispeetzy
+	            comeback = 1
+			}
+		}
     }
 }
 
@@ -770,7 +780,8 @@ function ratmount_kickbrick() //gml_Script_ratmount_kickbrick
     fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", (x + (image_xscale * _pad)), y)
     with (instance_create((x + (image_xscale * _pad)), y, obj_brickball))
     {
-        if (other.state == states.ratmountjump || other.state == states.ratmountbounce)
+        playerid = other.id
+		if (other.state == states.ratmountjump || other.state == states.ratmountbounce)
             up = 1
         image_xscale = other.Xscale
         xoffset = _pad

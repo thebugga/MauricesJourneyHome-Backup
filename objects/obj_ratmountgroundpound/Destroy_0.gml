@@ -1,5 +1,7 @@
 with (instance_create(x, y, obj_brickcomeback))
 {
+	playerid = other.playerid
+	ispeetzy = true
 	vsp = -4
 	sprite_index = spr_ratmountgroundpound_dead
 }

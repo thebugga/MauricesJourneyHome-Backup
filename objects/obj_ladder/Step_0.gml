@@ -18,6 +18,8 @@ if place_meeting(x, (y - 1), obj_player1)
 			{
 				with (instance_create(x, y, obj_brickcomeback))
 				{
+					playerid = other.id
+					ispeetzy = other.riderispeetzy
 					wait = 1
 					instance_create(x, y, obj_genericpoofeffect)
 				}

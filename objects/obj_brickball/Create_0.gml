@@ -19,3 +19,4 @@ kicked = 0
 depth = -99
 up = 0
 hitbox = 0
+playerid = -4

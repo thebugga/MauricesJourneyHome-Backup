@@ -40,7 +40,7 @@ function scr_player_ratmountbounce()
 			movespeed = approach(movespeed, move * 8, 0.5);
 		else
 			movespeed = approach(movespeed, 0, 0.5);
-		if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
+		if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && !riderispeetzy)
 		{
 			input_buffer_slap = 0;
 			ratmount_kickbrick();
@@ -53,7 +53,11 @@ function scr_player_ratmountbounce()
 			if brick == 1
 			{
 				with (instance_create(x, y, obj_brickcomeback))
+				{
+					playerid = other.id
+					ispeetzy = other.riderispeetzy
 					wait = true;
+				}
 			}
 			brick = false;
 			state = states.ratmountpunch;

@@ -97,7 +97,7 @@ function state_player_normal()
     if key_down
     {
         state = states.crouch
-        sprite_index = spr_crouchstart
+        sprite_index = spr_couchstart
     }
 	if global.playerCharacter != Characters.Gabbie
 	{

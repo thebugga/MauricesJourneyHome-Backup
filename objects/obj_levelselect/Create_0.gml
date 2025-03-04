@@ -22,6 +22,7 @@ key_jump2 = false
 character_array[0] = [Characters.Maurice, "Maurice"]
 character_array[1] = [Characters.Pierre, "Pierre, Peetzy and Ham"]
 character_array[2] = [Characters.Doise, "the UnDoised"]
+character_array[4] = [Characters.Gabbie, "Gabbie !UNFINISHED!"]
 character_array[3] = [Characters.Clownmato, "Clownmato !UNFINISHED!"]
 character_array[4] = [Characters.MrOrange, "Mr. Orange !UNFINISHED!"]
 character_array[5] = [Characters.Snick, "Snick !BROKEN !and we aint fixing him!!"]

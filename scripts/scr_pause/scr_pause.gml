@@ -12,9 +12,12 @@ function scr_create_pause_image()
 }
 function scr_draw_pause_image()
 {
-	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
+	draw_set_alpha(1);
 	draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
-	draw_sprite_ext(guisprite, 0, 0, 0, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(guisprite, 0, 0, 0, 1, 1, 0, c_white, 0);
+	draw_set_alpha(0.5);
+	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, #ff0000, #ff0000, #800000, #800000, false);
+	draw_set_alpha(1);
 }
 function scr_pause_stop_sounds()
 {

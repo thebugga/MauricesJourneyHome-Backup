@@ -926,6 +926,8 @@ else if boxxed
 	grav = 0.3;
 else if state == states.boxxedpepspin
 	grav = 0.6;
+else if state == states.handstandjump
+	grav = 0;
 else
 	grav = 0.5;
 if state == states.barrel && key_jump2 && !jumpstop

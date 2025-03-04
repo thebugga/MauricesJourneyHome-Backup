@@ -6,10 +6,7 @@ var ui_index = 0;
 if pause
 {
 	draw_set_color(c_white);
-	draw_set_alpha(1);
 	scr_draw_pause_image();
-	draw_set_alpha(0.5);
-	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, #ff0000, #ff0000, #800000, #800000, false);
 	draw_set_alpha(1);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);

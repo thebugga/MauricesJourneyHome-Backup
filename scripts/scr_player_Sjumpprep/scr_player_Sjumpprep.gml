@@ -1,5 +1,7 @@
 function scr_player_Sjumpprep()
 {
+	if global.playerCharacter != Characters.Gabbie
+	{
 			if (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft)
 				move = key_left + key_right;
 			else
@@ -51,4 +53,44 @@ function scr_player_Sjumpprep()
 				image_index = 0;
 			}
 			image_speed = 0.35;
+	}
+	else
+	{		
+            hsp = 0
+            vsp = 0
+            pogochargeactive = 0
+            pogocharge = 50
+            if (floor(image_index) == (image_number - 1))
+            {
+                if (sprite_index == spr_playerN_jetpackstart)
+                {
+                    if (pizzapepper == 0)
+                    {
+                        state = states.rocket
+                        sprite_index = spr_playerN_jetpackboost
+                        instance_create(x, y, obj_jumpdust)
+                        movespeed = 15
+                    }
+                    else
+                    {
+                        state = states.rocket
+                        sprite_index = spr_crazyrun
+                        instance_create(x, y, obj_jumpdust)
+                        movespeed = 21
+                    }
+                }
+                else if (sprite_index == spr_superjumpprep)
+                {
+                    fmod_event_instance_set_parameter(superjumpsnd, "state", 2, 1)
+                    instance_create(x, y, obj_explosioneffect)
+                    sprite_index = spr_superjump
+                    state = states.Sjump
+                    vsp = -15
+                }
+            }
+            if (sprite_index == spr_playerN_jetpackstart)
+                image_speed = 0.5
+            else
+                image_speed = 0.3
+	}
 }

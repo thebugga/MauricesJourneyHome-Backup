@@ -67,27 +67,7 @@ function scr_player_pogo()
 	if (!key_attack)
 		state = states.normal
 	image_speed = 0.35
-	if (key_taunt2 && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach)
-	{
-		//scr_soundeffect(sfx_taunt)
-		taunttimer = 20
-		tauntstoredmovespeed = movespeed
-		tauntstoredsprite = sprite_index
-		tauntstoredstate = state
-		state = states.backbreaker
-		if (supercharged == 1)
-		{
-			image_index = 0
-			sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4)
-		}
-		else
-		{
-			taunttimer = 20
-			image_index = random_range(0, 11)
-			sprite_index = spr_taunt
-		}
-		instance_create(x, y, obj_taunteffect)
-	}
+	scr_dotaunt()
 	exit;
 }
 

@@ -19,26 +19,19 @@ if (fadealpha > 1)
 {
 	fadein = 1
 	if (room != rank_room)
-	{
 		room = rank_room
-		//scr_soundeffect(asset_get_index(concat("mu_rank", global.rank)))
-	}
 }
 if (fadein == 0)
 	fadealpha += 0.1
 else if (fadein == 1)
 	fadealpha -= 0.1
 if receiptonscreen
+{
+	bg_alpha = approach(bg_alpha, 1, 0.02)
 	receiptx = approach(receiptx, 640, 10)
+}
 else
 	receiptx = approach(receiptx, 960, 10)
-	
-if receiptonscreen
-{
-	bg_alpha = approach(bg_alpha, 1, 1)
-	with (obj_player1)
-	visible = false
-}
 
 bg_x -= 1;
 bg_y -= 1;

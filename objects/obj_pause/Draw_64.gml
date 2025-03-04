@@ -7,6 +7,7 @@ if pause
 {
 	draw_set_color(c_white);
 	draw_set_alpha(1);
+	scr_draw_pause_image();
 	draw_set_alpha(0.5);
 	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, #ff0000, #ff0000, #800000, #800000, false);
 	draw_set_alpha(1);
@@ -81,4 +82,29 @@ if pause
 		draw_set_alpha(1);
 	}
 	pause_draw_priests();
+}
+
+if wiping
+{
+	if !surface_exists(wipe_surface)
+	{
+		wiping = false
+		wipe_surface = surface_create(SCREEN_WIDTH, SCREEN_HEIGHT)
+	}
+	var donewiping = true
+	for (var i = 0; i < SCREEN_WIDTH; i++)
+	{
+		if wipe_array[i][0] <= SCREEN_HEIGHT
+			donewiping = false
+		if wipe_array[i][2] > 0
+			wipe_array[i][2]--
+		else
+		{
+			wipe_array[i][1] += 0.5
+			wipe_array[i][0] += wipe_array[i][1]
+		}
+		draw_surface_part(wipe_surface, i, 0, 1, SCREEN_HEIGHT, i, wipe_array[i][0])
+	}
+	if donewiping
+		wiping = false
 }

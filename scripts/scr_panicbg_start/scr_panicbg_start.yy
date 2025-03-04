@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Panic Background",
-    "path": "folders/Scripts/Player/Utilities/Panic Background.yy",
+    "path": "folders/Scripts/Utilities/Panic Background.yy",
   },
 }

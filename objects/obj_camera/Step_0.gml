@@ -47,6 +47,30 @@ if shoving == 1 && image_index >= 3 && bang == 0
 }
 if shoving == 0
 	bang = false;
+	
+if global.combo > 0
+{
+	comboend = true;
+	var ct = global.combotime;
+	if ct <= 40
+	{
+		if alarm[5] == -1
+		{
+			if ct >= 20
+				alarm[5] = 12;
+			else
+				alarm[5] = 5;
+		}
+	}
+	else
+		combobubblevisible = true;
+}
+else if comboend
+{
+	comboend = false;
+	event_perform(2, 4);
+}
+
 if global.seconds <= 0 && global.minutes <= 0 && ded == 0
 {
 	alarm[1] = -1;

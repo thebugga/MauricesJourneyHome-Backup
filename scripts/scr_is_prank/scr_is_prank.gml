@@ -74,9 +74,9 @@ function scr_do_rank(argument0, argument1) //gml_Script_scr_do_rank
     obj_camera.alarm[2] = -1
     var roomname = room_get_name(room)
     var namestring = string_letters(roomname)
-    scr_savescore(global.leveltosave)
     if (global.combo > 0)
     {
+        obj_camera.comboend = false
         global.combotime = 0
         global.combo = 0
         obj_camera.alarm[4] = -1

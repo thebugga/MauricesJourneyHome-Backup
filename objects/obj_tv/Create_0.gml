@@ -5,8 +5,6 @@ enum tvprompt
 	transfo
 }
 
-combobubblevisible = true;
-comboend = false;
 combo_state = 0
 combo_posX = 0
 combo_vsp = 0

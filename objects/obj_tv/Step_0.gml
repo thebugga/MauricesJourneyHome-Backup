@@ -66,28 +66,6 @@ combofill_index += 0.35
 if (combofill_index > (sprite_get_number(spr_tv_combobubblefill) - 1))
 	combofill_index = frac(combofill_index)
 
-if global.combo > 0
-{
-	comboend = true;
-	var ct = global.combotime;
-	if ct <= 40
-	{
-		if alarm[5] == -1
-		{
-			if ct >= 20
-				alarm[5] = 12;
-			else
-				alarm[5] = 5;
-		}
-	}
-	else
-		combobubblevisible = true;
-}
-else if comboend
-{
-	comboend = false;
-	event_perform(2, 4);
-}
 if (prompt != -4 && prompt != "")
 	newsy = approach(newsy, 470, 5)
 else

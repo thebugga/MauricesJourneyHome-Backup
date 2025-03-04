@@ -71,3 +71,5 @@ camera_angle = 0
 target_angle = 0
 global.inclination_speed = 0.008
 pause_tilt = 0
+combobubblevisible = true;
+comboend = false;

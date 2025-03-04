@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Saving",
-    "path": "folders/Scripts/Player/Utilities/Saving.yy",
+    "path": "folders/Scripts/Utilities/Saving.yy",
   },
 }

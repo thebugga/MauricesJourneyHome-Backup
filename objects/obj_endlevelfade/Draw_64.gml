@@ -28,14 +28,16 @@ if showrank
 	if (slowscore >= global.srank)
 	{
 		rank = 4
-		if (scr_is_prank())
+		if global.rank == "p"
 		{
 			showrank = false
-			with instance_create(receiptx + 170, 110, obj_fallingHUDface)
+			with instance_create_depth(receiptx + 170, 110, depth - 2, obj_fallingHUDface)
 			{
 				sprite_index = spr_ranks_hud
 				image_index = 4
 				image_speed = 0
+				image_xscale = 1.5
+				image_yscale = 1.5
 			}
 		}
 	}

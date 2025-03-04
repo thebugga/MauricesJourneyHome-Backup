@@ -1,3 +1,4 @@
+obj_pause.start_wiping()
 global.levelcomplete = 1
 global.levelcompletename = global.leveltosave
 scr_playerreset()

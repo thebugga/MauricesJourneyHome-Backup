@@ -34,7 +34,7 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 		{
 			array_push(pause_menu, "pause_restart");
 			if global.leveltorestart != tower_tutorial_1 
-				array_push(pause_menu, "pause_achievements");
+				array_push(pause_menu, "pause_credits");
 			array_push(pause_menu, "pause_exit");
 		}
 		else
@@ -52,21 +52,21 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 			if !treasurefound
 			{
 				treasurefound = global.treasure;
-				treasurealpha = 0;
+				treasurealpha = 1;
 			}
 			else if !global.treasure
 				treasurealpha = 0.5;
 			else
-				treasurealpha = 0;
+				treasurealpha = 1;
 			if global.secretfound > secretcount
 			{
 				secretcount = global.secretfound;
-				secretalpha = 0;
+				secretalpha = 1;
 			}
 			else if global.secretfound < secretcount
 				secretalpha = 0.5;
 			else
-				secretalpha = 0;
+				secretalpha = 1;
 			if secretcount > 3
 				secretcount = 3;
 		}

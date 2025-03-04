@@ -1,6 +1,6 @@
 fadealpha = 0
 fadein = 0
-obj_endlevelfade.alarm[1] = 200
+alarm[1] = 200
 receiptonscreen = false
 receiptx = 960
 text = [

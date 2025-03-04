@@ -23,6 +23,34 @@ instance_list = ds_list_create()
 priest_list = ds_list_create()
 start = 0
 alarm[1] = 1
+
+wiping = false
+wipe_surface = surface_create(SCREEN_WIDTH, SCREEN_HEIGHT)
+wipe_array = []
+for (var i = 0; i < SCREEN_WIDTH; i++)
+{
+	array_push(wipe_array, [0, 0, irandom(20)])
+}
+
+start_wiping = function()
+{
+	scr_delete_pause_image()
+	scr_create_pause_image()
+	surface_set_target(wipe_surface)
+	scr_draw_pause_image()
+	surface_reset_target()
+	var mixer = 3
+	for (var i = 0; i < SCREEN_WIDTH; i++)
+	{
+		var val = irandom_range(-2, 2)
+		mixer += val
+		if mixer < 0 || mixer > 20
+			mixer -= val
+		wipe_array[i] = [0, 0, mixer]
+	}
+	wiping = true
+}
+
 pause_menu_map = ds_map_create();
 ds_map_set(pause_menu_map, "pause_resume", [0, function()
 {
@@ -38,6 +66,7 @@ ds_map_set(pause_menu_map, "pause_options", [1, function()
 }]);
 ds_map_set(pause_menu_map, "pause_restart", [2, function()
 {
+	start_wiping()
 	if !global.snickchallenge
 	{
 		var rm = global.leveltorestart;
@@ -56,6 +85,7 @@ ds_map_set(pause_menu_map, "pause_restart", [2, function()
 }]);
 var exit_function = function()
 {
+	start_wiping()
 	instance_destroy(obj_option);
 	instance_destroy(obj_keyconfig);
 	fmod_event_instance_stop(global.snd_bossbeaten, true);
@@ -140,3 +170,4 @@ scr_pauseicon_add(spr_pauseicons, 3, -10);
 scr_pauseicon_add(spr_pauseicons, 4, -10);
 scr_pauseicon_add(spr_pauseicons, 8, 0, -12);
 alarm[1] = 1;
+

@@ -10,14 +10,13 @@ function scr_create_pause_image()
 	guisprite = sprite_create_from_surface(obj_screensizer.gui_surf, 0, 0, surface_get_width(obj_screensizer.gui_surf), surface_get_height(obj_screensizer.gui_surf), false, false, 0, 0);
 	screenscale = min(SCREEN_WIDTH / surface_get_width(application_surface), SCREEN_HEIGHT / surface_get_height(application_surface));
 }
-function scr_draw_pause_image()
+function scr_draw_pause_image(showgui)
 {
-	draw_set_alpha(1);
+	if showgui == undefined
+		showgui = 1
+	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
 	draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
-	draw_sprite_ext(guisprite, 0, 0, 0, 1, 1, 0, c_white, 0);
-	draw_set_alpha(0.5);
-	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, #ff0000, #ff0000, #800000, #800000, false);
-	draw_set_alpha(1);
+	draw_sprite_ext(guisprite, 0, 0, 0, 1, 1, 0, c_white, showgui);
 }
 function scr_pause_stop_sounds()
 {

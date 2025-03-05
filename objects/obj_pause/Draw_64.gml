@@ -6,14 +6,17 @@ var ui_index = 0;
 if pause
 {
 	draw_set_color(c_white);
-	scr_draw_pause_image();
+	draw_set_alpha(1);
+	scr_draw_pause_image(0);
+	draw_set_alpha(0.5);
+	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, #ff0000, #ff0000, #800000, #800000, false);
 	draw_set_alpha(1);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	draw_set_font(global.creditsfont);
 		
 		var h = string_height("A");
-		var pad = 16;
+		var pad = 8;
 		var len = array_length(pause_menu);
 		var wh = (h * len) + (pad * (len - 1));
 		var yy = (SCREEN_HEIGHT / 2) - (wh / 2) + 120;

@@ -6,7 +6,7 @@ function scr_player_knightpep()
 	{
 		if movespeed > 0
 			movespeed -= 0.05
-		if floor(image_index) == (image_number - 1)
+		if animation_end()
 			sprite_index = spr_knightpepidle
 	}
 	if (sprite_index == spr_knightpepland or sprite_index == spr_knightpepwalk or sprite_index == spr_knightpepidle)
@@ -66,9 +66,9 @@ function scr_player_knightpep()
 		if (move != 0)
 			movespeed = 6
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepjumpstart)
+	if (animation_end() && sprite_index == spr_knightpepjumpstart)
 		sprite_index = spr_knightpepjump
-	if ((floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepjump) or ((!grounded) && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_doublejump && sprite_index != spr_knightpep_attack))
+	if ((animation_end() && sprite_index == spr_knightpepjump) or ((!grounded) && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_doublejump && sprite_index != spr_knightpep_attack))
 		sprite_index = spr_knightpepfall
 	if move != 0 && grounded && vsp > 0
 	{
@@ -92,7 +92,7 @@ function scr_player_knightpep()
 		fmod_event_one_shot_3d("event:/sfx/maurice/step", x, y);
 		sprite_index = spr_knightpepland
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepland)
+	if (animation_end() && sprite_index == spr_knightpepland)
 	{
 		sprite_index = spr_knightpepidle
 		knightmomentum = 0
@@ -144,16 +144,16 @@ function scr_player_knightpep()
 	}
 	else
 		image_speed = 0.35
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepstart)
+	if (animation_end() && sprite_index == spr_knightpepstart)
 	{
 		sprite_index = spr_knightpepthunder
 		GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 1, 1, 0.9)
 		//scr_soundeffect(sfx_becomeknight)
 		image_index = 0
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpepthunder)
+	if (animation_end() && sprite_index == spr_knightpepthunder)
 		sprite_index = spr_knightpepidle
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_knightpep_doublejump)
+	if (animation_end() && sprite_index == spr_knightpep_doublejump)
 		image_index = (image_number - 1)
 	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (floor(image_index) == 4 or floor(image_index) == 10))
 		instance_create(x, (y + 43), obj_cloudeffect)

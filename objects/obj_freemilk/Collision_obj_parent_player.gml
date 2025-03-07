@@ -8,5 +8,5 @@ with (other)
 		other.image_index = 0
 	}
 }
-if (sprite_index == spr_freemilksuprised && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_freemilksuprised && animation_end())
 	sprite_index = spr_freemilk

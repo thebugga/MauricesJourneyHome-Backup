@@ -20,7 +20,7 @@ function scr_player_barrel()
 	}
 	else
 		movespeed = approach(movespeed, 0, 0.5)
-	if (sprite_index == spr_player_barrelland && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_player_barrelland && animation_end())
 		sprite_index = spr_player_barrelidle
 	if grounded
 	{

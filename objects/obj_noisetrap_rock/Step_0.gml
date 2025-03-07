@@ -18,7 +18,7 @@ if ((obj_noiserock.falling == 1 or obj_noiserock.hit == 1) && jumpaway == 0)
 	vsp = -5
 	jumpaway = 1
 }
-if (sprite_index == spr_playerN_jump && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_playerN_jump && animation_end())
 	sprite_index = spr_playerN_fall
 if (sprite_index != spr_playerN_jump && sprite_index != spr_playerN_fall)
 	scr_collision()

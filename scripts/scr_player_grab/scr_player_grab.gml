@@ -172,13 +172,13 @@ function scr_player_grab()
 		sprite_index = spr_haulingwalk
 	else if (grounded && move == 0 && sprite_index == spr_haulingwalk)
 		sprite_index = spr_haulingidle
-	if (sprite_index == spr_haulingstart && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_haulingstart && animation_end())
 		sprite_index = spr_haulingidle
-	if ((sprite_index == spr_haulingjump && floor(image_index) == (image_number - 1)) or ((!grounded) && (sprite_index == spr_haulingwalk or sprite_index == spr_haulingidle)))
+	if ((sprite_index == spr_haulingjump && animation_end()) or ((!grounded) && (sprite_index == spr_haulingwalk or sprite_index == spr_haulingidle)))
 		sprite_index = spr_haulingfall
 	if (grounded && vsp > 0 && (sprite_index == spr_haulingfall or sprite_index == spr_haulingjump))
 		sprite_index = spr_haulingland
-	if (sprite_index == spr_haulingland && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_haulingland && animation_end())
 		sprite_index = spr_haulingidle
 	if (key_slap2 && sprite_index != spr_swingding)
 	{

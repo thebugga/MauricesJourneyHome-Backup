@@ -5,7 +5,7 @@ if (sprite_index == spr_arenadoor_open)
 		instance_create(x, y, objectlist[wave][count])
 		shot = 1
 	}
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		count++
 		alarm[0] = 10

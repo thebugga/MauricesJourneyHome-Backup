@@ -4,13 +4,13 @@ function scr_player_trickjump()
 	if (sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4)
 	{
 		image_speed = 0.35
-		if (sprite_index == spr_player_rampjump && floor(image_index) == (image_number - 1))
+		if (sprite_index == spr_player_rampjump && animation_end())
 			image_index = (image_number - 1)
 	}
 	else
 	{
 		image_speed = 0.5
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			sprite_index = spr_player_rampjump
 	}
 	if (place_meeting_solid((x + Xscale), y) && (!slopeCheck(x + Xscale, y)) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))

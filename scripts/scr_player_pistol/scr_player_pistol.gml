@@ -4,9 +4,9 @@ function scr_player_pistol()
 	hsp = (Xscale * movespeed)
 	if (movespeed < 10)
 		movespeed += 0.15
-	if (floor(image_index) == (image_number - 1) && grounded && key_attack)
+	if (animation_end() && grounded && key_attack)
 		state = states.mach2
-	else if (floor(image_index) == (image_number - 1))
+	else if (animation_end())
 		state = states.normal
 	if (key_jump && grounded && (!key_down))
 	{

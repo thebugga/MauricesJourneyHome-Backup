@@ -43,7 +43,7 @@ function scr_playerN_hookshot()
 			}
 		}
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_hookshot1)
+	if (animation_end() && sprite_index == spr_playerN_hookshot1)
 		sprite_index = spr_playerN_hookshot2
 	if (move != 0)
 	{

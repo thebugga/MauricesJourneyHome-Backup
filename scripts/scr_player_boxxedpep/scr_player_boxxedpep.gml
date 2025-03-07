@@ -56,7 +56,7 @@ function scr_player_boxxedpep()
 		sprite_index = spr_boxxedpepdashend
 		image_index = 0
 	}
-	if (sprite_index == spr_boxxedpepdashend && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_boxxedpepdashend && animation_end())
 		sprite_index = (move != 0 ? spr_boxxedpepwalk : spr_boxxedpepidle)
 	if (sprite_index != spr_boxxedpepintro)
 	{
@@ -74,7 +74,7 @@ function scr_player_boxxedpep()
 		else
 			movespeed = approach(movespeed, 0, 0.25)
 	}
-	if (sprite_index == spr_boxxedpepintro && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_boxxedpepintro && animation_end())
 		sprite_index = spr_boxxedpepidle
 	if (sprite_index != spr_boxxedpepintro)
 	{

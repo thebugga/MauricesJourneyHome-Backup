@@ -95,7 +95,7 @@ function scr_player_shoulder()
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 		state = states.normal
 	image_speed = 0.35
 	exit;

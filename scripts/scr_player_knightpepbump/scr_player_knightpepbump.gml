@@ -13,7 +13,7 @@ function scr_player_knightpepbump()
 		if hurted
 			hurted = 0
 	}
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 		image_index = (image_number - 1)
 	exit;
 }

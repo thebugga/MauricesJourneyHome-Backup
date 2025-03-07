@@ -21,7 +21,7 @@ if (active && (!found_active))
 	image_index = 0
 	image_speed = 0.35
 }
-if (sprite_index == spr_totemcloud_spawn && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_totemcloud_spawn && animation_end())
 {
 	sprite_index = spr_totemcloud_idle
 	alarm[0] = 40
@@ -29,7 +29,7 @@ if (sprite_index == spr_totemcloud_spawn && floor(image_index) == (image_number 
 }
 if (sprite_index == spr_totemcloud_attack)
 {
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		sprite_index = spr_totemcloud_idle
 		shot = 0
@@ -47,7 +47,7 @@ if (sprite_index == spr_totemcloud_attack)
 }
 if (sprite_index != spr_totemcloud_end)
 	image_speed = 0.35
-else if (floor(image_index) == (image_number - 1))
+else if (animation_end())
 {
 	image_index = (image_number - 1)
 	image_speed = 0

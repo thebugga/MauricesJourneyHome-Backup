@@ -77,7 +77,7 @@ function scr_player_machroll()
 				movespeed += 0.5
 			break
 		case "V":
-			if (sprite_index == spr_playerV_divekickstart && floor(image_index) == (image_number - 1))
+			if (sprite_index == spr_playerV_divekickstart && animation_end())
 				sprite_index = spr_playerV_divekick
 			if (place_meeting_solid((x + 1), y) && Xscale == 1 && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 			{

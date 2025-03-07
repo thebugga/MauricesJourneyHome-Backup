@@ -1,4 +1,4 @@
-if (sprite_index == spr_grabbiehand_hifive && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_grabbiehand_hifive && animation_end())
 {
 	sprite_index = spr_grabbiehand_idle
 	thumbingup = 0
@@ -56,7 +56,7 @@ if grabbing
 		sprite_index = spr_grabbiehand_release
 		released = 1
 	}
-	if (sprite_index == spr_grabbiehand_release && floor(image_index) == (image_number - 1) && released)
+	if (sprite_index == spr_grabbiehand_release && animation_end() && released)
 		sprite_index = spr_grabbiehand_idle
 	if (sprite_index == spr_grabbiehand_idle)
 	{

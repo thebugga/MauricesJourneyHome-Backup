@@ -13,7 +13,7 @@ function scr_enemy_idle() //gml_Script_scr_enemy_idle
     }
     if (scaredbuffer > 0)
         scaredbuffer -= 1
-    if (sprite_index == spr_forknight_turn && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_forknight_turn && animation_end())
     {
         sprite_index = walkspr
         state = states.walk

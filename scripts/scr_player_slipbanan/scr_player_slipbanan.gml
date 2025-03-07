@@ -3,7 +3,7 @@ function scr_player_slipbanan()
 	hsp = (Xscale * movespeed)
 	if grounded
 		movespeed = approach(movespeed, 0, 0.5)
-	if (floor(image_index) == (image_number - 1) && sprite_index != spr_rockethitwall)
+	if (animation_end() && sprite_index != spr_rockethitwall)
 		image_speed = 0
 	else
 		image_speed = 0.35
@@ -27,7 +27,7 @@ function scr_player_slipbanan()
 	}
 	if (sprite_index == spr_slipbanan2)
 	{
-		if (floor(image_index) == (image_number - 1) && abs(hsp) <= 2)
+		if (animation_end() && abs(hsp) <= 2)
 			state = states.normal
 	}
 	if (place_meeting_solid((x + Xscale), y) && (!slopeCheck(x + Xscale, y)) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))

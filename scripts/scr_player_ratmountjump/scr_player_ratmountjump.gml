@@ -68,7 +68,7 @@ function scr_player_ratmountjump() //gml_Script_scr_player_ratmountjump
     }
     if (gusdashpadbuffer > 0 && movespeed != 0)
         Xscale = sign(movespeed)
-    if (jumpAnim && floor(image_index) == (image_number - 1))
+    if (jumpAnim && animation_end())
     {
         jumpAnim = 0
         switch sprite_index

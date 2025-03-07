@@ -1,6 +1,6 @@
 if (image_speed != 0)
 {
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		image_speed = 0
 		image_index = 0

@@ -4,7 +4,7 @@ if (obj_parent_player.state == states.pizzathrow)
 playerid = (obj_player1.spotlight ? obj_player1 : obj_player2)
 if (state != states.backbreaker)
 {
-	if (sprite_index == spr_intro && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_intro && animation_end())
 		sprite_index = spr_idle
 	if (sprite_index != spr_intro)
 	{
@@ -28,7 +28,7 @@ else
 			image_index = 0
 		}
 	}
-	if (obj_player1.state != states.backbreaker or (sprite_index == spr_intro && floor(image_index) == (image_number - 1)))
+	if (obj_player1.state != states.backbreaker or (sprite_index == spr_intro && animation_end()))
 	{
 		instance_destroy(obj_tinytaunt)
 		interp = 0

@@ -71,7 +71,7 @@ function scr_pepperman_jump()
 		hsp = 0
 		grounded = false
 	}
-	if (sprite_index == spr_jump && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_jump && animation_end())
 		sprite_index = spr_fall
 	exit;
 }
@@ -162,7 +162,7 @@ function scr_pepperman_freefall()
 function scr_pepperman_shoulderbash()
 {
 	hsp = (image_xscale * (8 + wastedhits))
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach1)
+	if (animation_end() && sprite_index == spr_mach1)
 		sprite_index = spr_mach4
 	if ((place_meeting((x + hsp), y, obj_solid) or place_meeting_slope((x + hsp), y) or place_meeting((x + hsp), y, obj_pepper_marbleblock)) && (!(place_meeting((x + hsp), y, obj_destructibles))))
 	{

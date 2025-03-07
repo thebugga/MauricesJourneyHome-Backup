@@ -22,7 +22,7 @@ switch sprite_index
 		}
 		waitbuffer = 80
 		drop = 0
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			//scr_soundeffect(sfx_secretexit)
 			sprite_index = spr_secretportal_spawnidle
@@ -125,7 +125,7 @@ switch sprite_index
 		}
 		break
 	case spr_secretportal_spawnclose:
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			image_index = (image_number - 1)
 			instance_destroy()

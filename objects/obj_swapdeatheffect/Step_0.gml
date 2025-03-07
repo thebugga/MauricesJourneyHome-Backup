@@ -2,7 +2,7 @@ x += hsp
 y += vsp
 if (global.playerCharacter == Characters.Doise && vsp < 20)
     vsp += 0.5
-if (floor(image_index) == (image_number - 1))
+if (animation_end())
 {
     switch sprite_index
     {

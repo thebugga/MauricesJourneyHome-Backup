@@ -12,7 +12,7 @@ switch state
 			sprite_index = spr_intro
 			image_index = 0
 		}
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			state = states.robotchase
 		break
 	case states.robotroaming:

@@ -33,7 +33,7 @@ function scr_player_crouchslide()
 		sprite_index = spr_crouchslip
 		jumpstop = 0
 	}
-	if (sprite_index == spr_player_jumpdive1 && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_player_jumpdive1 && animation_end())
 		sprite_index = spr_player_jumpdive2
 	mask_index = spr_crouchmask
 	if (grounded && key_attack && (!(place_meeting_solid((x + 27), (y - 32)))) && (!(place_meeting_solid((x - 27), (y - 32)))) && (!(place_meeting_solid(x, (y - 32)))) && (!(place_meeting_solid(x, (y - 16)))))

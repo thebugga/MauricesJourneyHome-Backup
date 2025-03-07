@@ -7,7 +7,7 @@ function scr_player_revolver()
 		if (movespeed > 0)
 			movespeed -= 0.1
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_revolverstart)
+	if (animation_end() && sprite_index == spr_playerV_revolverstart)
 		sprite_index = spr_playerV_revolverhold
 	if ((sprite_index == spr_playerV_revolverhold or sprite_index == spr_playerV_airrevolverstart or sprite_index == spr_playerV_revolverstart) && (!key_slap))
 	{
@@ -23,7 +23,7 @@ function scr_player_revolver()
 		}
 		//scr_soundeffect(sfx_killingblow)
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_revolvershoot)
+	if (animation_end() && sprite_index == spr_playerV_revolvershoot)
 	{
 		image_index = 0
 		state = states.normal
@@ -52,7 +52,7 @@ function scr_player_revolver()
 			state = states.tumble
 		}
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_airrevolver)
+	if (animation_end() && sprite_index == spr_playerV_airrevolver)
 	{
 		if (key_attack && movespeed >= 6)
 			state = states.mach2

@@ -22,7 +22,7 @@ function scr_player_bombgrab()
 		jumpstop = 1
 	}
 	image_speed = 0.35
-	if (sprite_index == spr_haulingstart && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_haulingstart && animation_end())
 		sprite_index = spr_haulingidle
 	if (move != 0)
 	{
@@ -53,7 +53,7 @@ function scr_player_bombgrab()
 			sprite_index = spr_haulingjump
 			image_index = 0
 		}
-		if (sprite_index == spr_haulingjump && floor(image_index) == (image_number - 1))
+		if (sprite_index == spr_haulingjump && animation_end())
 			sprite_index = spr_haulingfall
 		if key_slap2
 		{
@@ -106,7 +106,7 @@ function scr_player_bombgrab()
 	}
 	else if (sprite_index != spr_haulingstart)
 	{
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			state = states.normal
 	}
 	exit;
@@ -245,7 +245,7 @@ function scr_player_bombpep()
 	mach2 = 0
 	landAnim = 0
 	alarm[5] = 2
-	if (sprite_index == spr_bombpepintro && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_bombpepintro && animation_end())
 		sprite_index = spr_bombpeprun
 	if (sprite_index == spr_bombpeprun or sprite_index == spr_bombpeprunabouttoexplode)
 	{
@@ -266,7 +266,7 @@ function scr_player_bombpep()
 	}
 	if (bombpeptimer < 20 && bombpeptimer != 0)
 		sprite_index = spr_bombpeprunabouttoexplode
-	if (sprite_index == spr_bombpepend && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_bombpepend && animation_end())
 	{
 		alarm[5] = 2
 		alarm[7] = 60

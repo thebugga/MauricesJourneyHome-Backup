@@ -1,2 +1,2 @@
-if (sprite_index == spr_peppinoselected && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_peppinoselected && animation_end())
 	image_speed = 0

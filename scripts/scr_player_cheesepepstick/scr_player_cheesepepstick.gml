@@ -23,7 +23,7 @@ function scr_player_cheesepepstick()
 		image_index = 0
 		sprite_index = spr_cheesepepjumpstart
 	}
-	if (sprite_index == spr_cheesepepjumpstart && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_cheesepepjumpstart && animation_end())
 	{
 		//scr_soundeffect(sfx_jump)
 		Xscale *= -1

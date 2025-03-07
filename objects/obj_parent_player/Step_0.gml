@@ -8,6 +8,10 @@ prevmovespeed = movespeed;
 previcemovespeed = icemovespeed;
 prevXscale = Xscale;
 
+
+if instance_exists(obj_rank)
+	visible = false
+
 scr_getinput(player_index)
 
 if keyboard_check_pressed(vk_f6)

@@ -1,2 +1,2 @@
-if (sprite_index == spr_bigmushroom_bounce && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_bigmushroom_bounce && animation_end())
 	sprite_index = spr_bigmushroom

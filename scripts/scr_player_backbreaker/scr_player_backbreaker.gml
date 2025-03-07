@@ -92,7 +92,7 @@ function scr_player_backbreaker()
 		taunttimer--
 		vsp = 0
 	}
-	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4))
+	if (animation_end() && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4))
 	{
 		movespeed = tauntstoredmovespeed
 		vsp = tauntstoredvsp
@@ -122,13 +122,13 @@ function scr_player_backbreaker()
 		if (is_array(global.hasfarmer) && global.hasfarmer[farmerpos])
 			scr_change_farmers()
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_eatspaghetti)
+	if (animation_end() && sprite_index == spr_player_eatspaghetti)
 		state = states.normal
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_throw)
+	if (animation_end() && sprite_index == spr_player_throw)
 		state = states.normal
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
+	if (animation_end() && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
 		state = states.normal
-	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_player_levelcomplete or sprite_index == spr_playerN_victory))
+	if (animation_end() && (sprite_index == spr_player_levelcomplete or sprite_index == spr_playerN_victory))
 		state = states.normal
 	if (key_jump && sprite_index == spr_player_phoneidle)
 	{
@@ -141,7 +141,7 @@ function scr_player_backbreaker()
 			sprite_index = spr_phonedebris
 		}
 	}
-	if (global.miniboss == true && sprite_index == spr_bossintro && floor(image_index) == (image_number - 1))
+	if (global.miniboss == true && sprite_index == spr_bossintro && animation_end())
 		state = states.normal
 	image_speed = 0.4
 	if (supercharged && key_up)

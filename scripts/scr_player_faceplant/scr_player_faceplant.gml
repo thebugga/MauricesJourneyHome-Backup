@@ -37,13 +37,13 @@ function scr_player_faceplant()
 		image_index = 0
 		instance_create((x + 10), (y + 10), obj_bumpeffect)
 	}
-	if (floor(image_index) == (image_number - 1) && (!key_attack))
+	if (animation_end() && (!key_attack))
 	{
 		image_speed = 0.35
 		state = states.normal
 		grav = 0.5
 	}
-	if (floor(image_index) == (image_number - 1) && key_attack)
+	if (animation_end() && key_attack)
 	{
 		image_speed = 0.35
 		state = states.mach2

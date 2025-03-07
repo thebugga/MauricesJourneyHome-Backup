@@ -1,11 +1,11 @@
 function scr_player_hang()
 {
 	hsp = 0
-	if (sprite_index == spr_playerN_wallclingstart && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_playerN_wallclingstart && animation_end())
 		sprite_index = spr_playerN_wallcling
 	vsp = 0
 	wallclingcooldown = 0
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		//scr_soundeffect(sfx_jump)
 		//scr_soundeffect(sfx_woosh)

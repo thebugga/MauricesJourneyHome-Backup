@@ -16,7 +16,7 @@ function scr_player_tackle()
 		if (grounded && vsp > 0.5)
 			state = states.normal
 	}
-	else if (floor(image_index) == (image_number - 1))
+	else if (animation_end())
 		state = states.normal
 	if (floor(image_index) != (image_number - 1))
 		image_speed = 0.35

@@ -68,7 +68,7 @@ function scr_player_firemouth()
 	mach2 = 0
 	landAnim = 0
 	alarm[5] = 2
-	if (sprite_index == spr_firemouthintro && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_firemouthintro && animation_end())
 	{
 		scr_losepoints()
 		sprite_index = spr_firemouth
@@ -133,7 +133,7 @@ function scr_player_firemouth()
 		{
 			hsp = (Xscale * movespeed)
 			vsp = 0
-			if (floor(image_index) == (image_number - 1))
+			if (animation_end())
 				sprite_index = spr_player_firemouthspin
 		}
 		if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_slope))) && (!(place_meeting((x + hsp), y, obj_destructibles))) && (!(place_meeting((x + hsp), y, obj_tntblock))) && (!(place_meeting((x + hsp), y, obj_iceblock))) && (!(place_meeting((x + hsp), y, obj_ratblock))))
@@ -151,7 +151,7 @@ function scr_player_firemouth()
 		hsp = 0
 		movespeed = 0
 	}
-	if (sprite_index == spr_firemouthend && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_firemouthend && animation_end())
 	{
 		alarm[5] = 2
 		alarm[7] = 60

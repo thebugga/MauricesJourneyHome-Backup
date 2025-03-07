@@ -9,7 +9,7 @@ function scr_player_fireass()
 		image_xscale *= -1
 	if (sprite_index == spr_fireass or sprite_index == spr_scaredjump1 or sprite_index == spr_scaredjump2)
 	{
-		if (floor(image_index) == (image_number - 1) && sprite_index == spr_fireass)
+		if (animation_end() && sprite_index == spr_fireass)
 			create_particle(x, (y + 25), states.ejected, 0)
 		move = (key_left + key_right)
 		hsp = movespeed
@@ -45,14 +45,14 @@ function scr_player_fireass()
 			image_index = 0
 		}
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_scaredjump1)
+	if (animation_end() && sprite_index == spr_scaredjump1)
 		sprite_index = spr_scaredjump2
 	if (sprite_index == spr_fireassground)
 	{
 		hsp = (Xscale * movespeed)
 		if (movespeed > 0)
 			movespeed -= 0.25
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			movespeed = 0
 			landAnim = 0
@@ -66,7 +66,7 @@ function scr_player_fireass()
 	}
 	if (sprite_index == spr_fireassend)
 	{
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			movespeed = 0
 			landAnim = 0

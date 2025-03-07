@@ -19,7 +19,7 @@ function scr_player_keyget()
 		keysound = true
 		//scr_soundeffectpitched(choose(sfx_pepvoice6, sfx_pepvoice3, sfx_pepvoice5), 0.9, 1.1)
 	}
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		instance_create(x, y, obj_keyfollow)
 		global.keyget = 0

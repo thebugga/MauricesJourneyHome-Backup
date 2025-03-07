@@ -23,7 +23,7 @@ function scr_player_ratmountattack()
 	        image_index = 0
 	    }
 	}
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		state = states.ratmount
 		movespeed *= Xscale

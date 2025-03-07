@@ -20,7 +20,7 @@ function scr_enemy_charge()
 	}
 	if (object_index == obj_indiancheese)
 	{
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			image_speed = 0
 		hsp = (image_xscale * movespeed)
 		if (grounded && vsp > 0)

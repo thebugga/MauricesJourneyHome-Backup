@@ -6,7 +6,7 @@ function scr_player_handstandjump()
 	momemtum = true;
 	dir = Xscale;
 	var _slpaspr = (sprite_index == spr_player_slap1 or sprite_index == spr_player_slap2)
-	if (_slpaspr && floor(image_index) == (image_number - 1))
+	if (_slpaspr && animation_end())
 		scr_doplayernormal()
 	if global.playerCharacter != Characters.Maurice
 	{

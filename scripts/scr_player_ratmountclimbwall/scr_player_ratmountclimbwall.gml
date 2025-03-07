@@ -8,7 +8,7 @@ function scr_player_ratmountclimbwall() //gml_Script_scr_player_ratmountclimbwal
         sprite_index = spr_player_ratmountbounceside
         image_index = 0
     }
-    else if (floor(image_index) == (image_number - 1))
+    else if (animation_end())
         image_index = (image_number - 1)
     if ((!grounded) && (!(place_meeting((x + 1), y, obj_solid))) && (!(place_meeting((x - 1), y, obj_solid))))
     {
@@ -16,7 +16,7 @@ function scr_player_ratmountclimbwall() //gml_Script_scr_player_ratmountclimbwal
         jumpAnim = 0
         sprite_index = spr_player_ratmountfall
     }
-    if (floor(image_index) == (image_number - 1))
+    if (animation_end())
     {
         if (key_jump2 && input_buffer_jump_negative <= 0)
         {

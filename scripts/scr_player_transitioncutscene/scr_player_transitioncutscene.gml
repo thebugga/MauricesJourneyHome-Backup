@@ -25,16 +25,22 @@ function scr_player_transitioncutscene()
 	{
 		if (grounded && x > (other.x + 32) && x < (other.x + 160) && key_up && (state == states.normal or state == states.mach1 or state == states.mach2 or state == states.mach3))
 		{
-			if (global.collect >= global.srank)
-				global.rank = "s"
-			else if (global.collect > global.arank)
-				global.rank = "a"
-			else if (global.collect > global.brank)
-				global.rank = "b"
-			else if (global.collect > global.crank)
-				global.rank = "c"
-			else
-				global.rank = "d"
+				if ((global.collect + global.collectN) >= global.srank)
+	{
+		global.rank = "s"
+		if (scr_is_prank())
+			global.rank = "p"
+		if (global.snickchallenge == 1)
+			global.SAGEsnicksrank = 1
+	}
+	else if ((global.collect + global.collectN) > global.arank)
+		global.rank = "a"
+	else if ((global.collect + global.collectN) > global.brank)
+		global.rank = "b"
+	else if ((global.collect + global.collectN) > global.crank)
+		global.rank = "c"
+	else
+		global.rank = "d"
 			ini_open("saveData.ini")
 			if (!instance_exists(obj_endlevelfade))
 				instance_create(x, y, obj_endlevelfade)
@@ -47,9 +53,9 @@ function scr_player_transitioncutscene()
 			}
 		}
 	}
-	if (sprite_index == spr_player_givepizza && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_player_givepizza && animation_end())
 		image_speed = 0
-	if (sprite_index == spr_player_levelcomplete && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_player_levelcomplete && animation_end())
 		image_speed = 0
 	exit;
 }

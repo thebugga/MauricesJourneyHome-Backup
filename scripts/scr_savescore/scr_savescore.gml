@@ -3,7 +3,7 @@ function scr_savescore(level)
 	if ((global.collect + global.collectN) >= global.srank)
 	{
 		global.rank = "s"
-		if scr_is_prank()
+		if (scr_is_prank())
 			global.rank = "p"
 		if (global.snickchallenge == 1)
 			global.SAGEsnicksrank = 1

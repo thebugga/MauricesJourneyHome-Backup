@@ -95,7 +95,7 @@ function scr_player_uppunch()
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1
-	if (floor(image_index) == (image_number - 1) or move == (-Xscale))
+	if (animation_end() or move == (-Xscale))
 		state = states.normal
 	sprite_index = spr_uppunch
 	image_speed = 0.35

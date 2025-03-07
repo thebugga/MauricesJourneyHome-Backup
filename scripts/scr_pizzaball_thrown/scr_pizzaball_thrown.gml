@@ -8,7 +8,7 @@ function scr_pizzaball_thrown()
 			image_speed = 0.5
 			if (sprite_index != spr_pizzaball_hitwall && sprite_index != spr_pizzaball_hitwall2)
 				sprite_index = spr_pizzaball_roll
-			else if (floor(image_index) == (image_number - 1))
+			else if (animation_end())
 				sprite_index = spr_pizzaball_roll
 			hsp = (image_xscale * hitspeed)
 			if (grounded && vsp > 0)

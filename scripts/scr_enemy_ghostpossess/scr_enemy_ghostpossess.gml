@@ -68,7 +68,7 @@ function scr_enemy_ghostpossess()
 				}
 				if (sprite_index == spr_indiancheese_jump)
 				{
-					if (floor(image_index) == (image_number - 1))
+					if (animation_end())
 						image_index = (image_number - 1)
 					if (grounded && vsp > 0)
 						sprite_index = idlespr
@@ -99,7 +99,7 @@ function scr_enemy_ghostpossess()
 				{
 					hsp = 0
 					vsp = 0
-					if (floor(image_index) == (image_number - 1))
+					if (animation_end())
 						sprite_index = spr_forknight_rageloop
 				}
 				if (sprite_index == spr_forknight_rageloop)
@@ -130,7 +130,7 @@ function scr_enemy_ghostpossess()
 				}
 				else
 					hsp = 0
-				if (floor(image_index) == (image_number - 1))
+				if (animation_end())
 					sprite_index = spr_slimemove
 				break
 			case obj_indiancheese:

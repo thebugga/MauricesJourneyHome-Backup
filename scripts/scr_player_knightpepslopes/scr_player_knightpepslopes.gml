@@ -34,7 +34,7 @@ function scr_player_knightpepslopes()
 			}
 		}
 	}
-	if ((sprite_index == spr_knightpep_doublejump or sprite_index == spr_knightpep_fly) && floor(image_index) == (image_number - 1))
+	if ((sprite_index == spr_knightpep_doublejump or sprite_index == spr_knightpep_fly) && animation_end())
 		image_index = (image_number - 1)
 	if (place_meeting_solid((x + sign(hsp)), y) && ((!slopeCheck(x + Xscale, y)) or place_meeting((x + sign(hsp)), (y - 2), obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{

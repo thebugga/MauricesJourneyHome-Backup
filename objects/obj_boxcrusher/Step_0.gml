@@ -14,7 +14,7 @@ if (sprite_index == spr_boxcrusher_fall && grounded)
 	image_index = 0
 	sprite_index = spr_boxcrusher_land
 }
-if (sprite_index == spr_boxcrusher_land && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_boxcrusher_land && animation_end())
 {
 	sprite_index = spr_boxcrusher_idle
 	gobackup = 1

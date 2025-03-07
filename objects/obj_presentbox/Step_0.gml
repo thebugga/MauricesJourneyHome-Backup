@@ -262,7 +262,7 @@ if (getout == 0 && sprite_index == spr_present && (character == 0 or global.boxh
 	image_index = 0
 	sprite_index = upspr
 }
-if (floor(image_index) == (image_number - 1) && sprite_index == upspr)
+if (animation_end() && sprite_index == upspr)
 {
 	if (character == 0 && global.boxhp < 3 && global.boxhp != 1)
 	{
@@ -284,7 +284,7 @@ if (outtime == 0 && sprite_index == spr)
 	image_index = 0
 	sprite_index = downspr
 }
-if (sprite_index == downspr && floor(image_index) == (image_number - 1))
+if (sprite_index == downspr && animation_end())
 {
 	ds_list_shuffle(global.boxlist)
 	with (obj_presentbox)

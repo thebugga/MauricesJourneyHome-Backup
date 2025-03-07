@@ -6,14 +6,14 @@ function scr_player_chainsawbump()
 		movespeed--
 	if (sprite_index == spr_player_chainsawidle && move != 0)
 		Xscale = move
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_chainsawrev)
+	if (animation_end() && sprite_index == spr_player_chainsawrev)
 		sprite_index = spr_player_chainsawidle
 	if ((!key_chainsaw) && sprite_index == spr_player_chainsawidle)
 	{
 		vsp = -5
 		sprite_index = spr_player_chainsawdashstart
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_chainsawdashstart)
+	if (animation_end() && sprite_index == spr_player_chainsawdashstart)
 	{
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.Xscale
@@ -50,14 +50,14 @@ function scr_player_chainsawbump()
 	}
 	if (!instance_exists(obj_chainsawpuff))
 		instance_create(x, y, obj_chainsawpuff)
-	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_player_chainsawhit or sprite_index == spr_player_chainsawdash))
+	if (animation_end() && (sprite_index == spr_player_chainsawhit or sprite_index == spr_player_chainsawdash))
 	{
 		if key_attack
 			state = states.mach2
 		else
 			state = states.normal
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_chainsawhitwall)
+	if (animation_end() && sprite_index == spr_player_chainsawhitwall)
 		state = states.normal
 	if (sprite_index == spr_player_chainsawdash)
 		image_speed = (0.4 + (movespeed * 0.01))

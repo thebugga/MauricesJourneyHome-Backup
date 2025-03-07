@@ -13,7 +13,7 @@ function scr_vigilante_walk()
 		case states.walk:
 			if (sprite_index != spr_playerV_fall && sprite_index != spr_playerV_move)
 				sprite_index = spr_playerV_move
-			else if (sprite_index == spr_playerV_move && floor(image_index) == (image_number - 1))
+			else if (sprite_index == spr_playerV_move && animation_end())
 				sprite_index = spr_playerV_move
 			if (move != 0)
 			{
@@ -38,7 +38,7 @@ function scr_vigilante_walk()
 			break
 		case states.mach2:
 			image_speed = 0.6
-			if ((sprite_index == spr_playerV_mach1 or sprite_index == spr_playerV_bootsland) && floor(image_index) == (image_number - 1))
+			if ((sprite_index == spr_playerV_mach1 or sprite_index == spr_playerV_bootsland) && animation_end())
 				sprite_index = spr_playerV_bootsmove
 			if (move == 0)
 				movespeed = approach(movespeed, 5, 0.5)
@@ -57,7 +57,7 @@ function scr_vigilante_walk()
 			}
 			break
 		case states.machslide:
-			if (floor(image_index) == (image_number - 1))
+			if (animation_end())
 			{
 				if (sprite_index == spr_playerV_machslidestart)
 					sprite_index = spr_playerV_machslideend
@@ -97,7 +97,7 @@ function scr_vigilante_walk()
 
 function scr_vigilante_jump()
 {
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_jump)
+	if (animation_end() && sprite_index == spr_playerV_jump)
 		sprite_index = spr_playerV_fall
 	if (place_meeting_solid(x, (y + vsp)) && (!(place_meeting_solid(x, y))) && vsp > 0)
 	{
@@ -157,7 +157,7 @@ function scr_vigilante_freefallprep()
 {
 	if (sprite_index != spr_playerV_bodyslamprep)
 	{
-		if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_jump)
+		if (animation_end() && sprite_index == spr_playerV_jump)
 			sprite_index = spr_playerV_fall
 		if (vsp >= 0)
 		{
@@ -168,7 +168,7 @@ function scr_vigilante_freefallprep()
 			state = states.freefall
 		}
 	}
-	else if (floor(image_index) == (image_number - 1))
+	else if (animation_end())
 	{
 		sprite_index = spr_playerV_bodyslam
 		state = states.freefall
@@ -178,7 +178,7 @@ function scr_vigilante_freefallprep()
 
 function scr_vigilante_freefall()
 {
-	if (sprite_index == spr_playerV_bodyslamprep && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_playerV_bodyslamprep && animation_end())
 		sprite_index = spr_playerV_bodyslam
 	move = sign((targetplayer.x - x))
 	if (x > (targetplayer.x - 32) && x < (targetplayer.x + 32))
@@ -208,7 +208,7 @@ function scr_vigilante_freefall()
 
 function scr_vigilante_freefallland()
 {
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		state = states.walk
 		sprite_index = spr_playerV_idle
@@ -222,7 +222,7 @@ function scr_vigilante_freefallland()
 function scr_vigilante_throwing()
 {
 	image_speed = 0.35
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		s = sprite_index
 		switch sprite_index
@@ -277,7 +277,7 @@ function scr_vigilante_throwing()
 function scr_vigilante_revolver()
 {
 	image_speed = 0.35
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		s = sprite_index
 		switch sprite_index
@@ -329,7 +329,7 @@ function scr_vigilante_revolver()
 function scr_vigilante_dynamite()
 {
 	image_speed = 0.35
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		s = sprite_index
 		switch sprite_index

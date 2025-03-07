@@ -8,7 +8,7 @@ function scr_player_pummel()
 	hsp = (Xscale * movespeed)
 	if (sprite_index != spr_grab)
 	{
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			sprite_index = spr_grab
 			image_index = 0

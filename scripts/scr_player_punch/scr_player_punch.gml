@@ -12,7 +12,7 @@ function scr_player_punch()
 			dir = move
 			movespeed = approach(movespeed, (move * 4), 0.5)
 		}
-		if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_breakdanceuppercut)
+		if (animation_end() && sprite_index == spr_player_breakdanceuppercut)
 			sprite_index = spr_player_breakdanceuppercutend
 		if (grounded && vsp > 0 && (sprite_index == spr_player_breakdanceuppercut or sprite_index == spr_player_breakdanceuppercutend))
 		{
@@ -61,7 +61,7 @@ function scr_player_punch()
 				var _Sjumpcancel = (sprite_index == spr_player_Sjumpcancel or sprite_index == spr_player_Sjumpcancelland or sprite_index == spr_player_Sjumpcancelslide)
 				if (_kungfuground && image_index > 7 && (!key_attack) && movespeed > 0)
 					movespeed -= 0.5
-				if (floor(image_index) == (image_number - 1))
+				if (animation_end())
 				{
 					switch sprite_index
 					{

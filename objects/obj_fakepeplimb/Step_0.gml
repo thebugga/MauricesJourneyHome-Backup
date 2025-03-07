@@ -60,7 +60,7 @@ switch state
 				ID = other.id
 			}
 		}
-		else if (floor(image_index) == (image_number - 1))
+		else if (animation_end())
 		{
 			image_speed = 0.35
 			state = states.crouch

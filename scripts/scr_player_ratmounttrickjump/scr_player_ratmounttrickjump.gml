@@ -6,7 +6,7 @@ function scr_player_ratmounttrickjump()
 	else
 	{
 		image_speed = 0.5
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			sprite_index = spr_player_ratmountwalljump
 	}
 	if (ramp_buffer > 0)

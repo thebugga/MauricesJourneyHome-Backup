@@ -15,7 +15,7 @@ function scr_player_lungegrab()
 			instance_create((x + (Xscale * 10)), (y + 10), obj_bumpeffect)
 		}
 	}
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 		state = states.normal
 	exit;
 }

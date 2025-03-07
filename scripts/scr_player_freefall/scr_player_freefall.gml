@@ -34,7 +34,7 @@ function scr_player_freefall()
 		}
 		vsp += 0.5
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_bodyslamstart)
+	if (animation_end() && sprite_index == spr_bodyslamstart)
 		sprite_index = spr_bodyslamfall
 	move = (key_left + key_right)
 	if (!grounded)

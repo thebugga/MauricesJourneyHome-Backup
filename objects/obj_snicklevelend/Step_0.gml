@@ -1,4 +1,4 @@
-if (floor(image_index) == (image_number - 1) && obj_parent_player.state != states.door)
+if (animation_end() && obj_parent_player.state != states.door)
 {
 	with (obj_parent_player)
 	{
@@ -7,5 +7,5 @@ if (floor(image_index) == (image_number - 1) && obj_parent_player.state != state
 	}
 	alarm[0] = 200
 }
-if (floor(image_index) == (image_number - 1))
+if (animation_end())
 	image_speed = 0

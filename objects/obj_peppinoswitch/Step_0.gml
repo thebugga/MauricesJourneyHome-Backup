@@ -1,6 +1,6 @@
 if (global.switchbuffer > 0)
 	global.switchbuffer--
-if (sprite_index == spr_peppinoswitch2 && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_peppinoswitch2 && animation_end())
 {
 	with (obj_player1)
 	{

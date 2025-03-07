@@ -37,7 +37,7 @@ function scr_player_freefallprep()
 			vsp = 0
 	}
 	image_speed = 0.5
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		state = states.freefall
 		if (shotgunAnim == 0)

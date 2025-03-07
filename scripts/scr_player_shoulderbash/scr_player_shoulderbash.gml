@@ -11,7 +11,7 @@ function scr_player_shoulderbash()
 			depth = (other.depth - 1)
 		}
 	}
-	if (sprite_index == spr_mach1 && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_mach1 && animation_end())
 		sprite_index = spr_mach4
 	if (sprite_index == spr_mach4 && (!key_attack))
 	{

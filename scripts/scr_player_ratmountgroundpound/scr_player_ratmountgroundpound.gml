@@ -2,7 +2,7 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
 {
     if (sprite_index == spr_player_ratmountgroundpound)
     {
-        if (floor(image_index) == (image_number - 1))
+        if (animation_end())
             sprite_index = spr_player_ratmountgroundpoundfall
     }
     move = (key_left + key_right)
@@ -39,7 +39,7 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
     }
     else
         movespeed = approach(movespeed, 0, 0.5)
-    if (sprite_index == spr_lonegustavo_groundpoundstart && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_lonegustavo_groundpoundstart && animation_end())
     {
         image_index = 0
         sprite_index = spr_lonegustavo_groundpound
@@ -101,14 +101,14 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
             }
         }
     }
-    if (sprite_index == spr_lonegustavo_groundpoundland && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_lonegustavo_groundpoundland && animation_end())
     {
         if (sign(hsp) != 0)
             Xscale = sign(hsp)
         sprite_index = spr_lonegustavo_idle
         state = states.ratmount
     }
-    if ((sprite_index == spr_lonegustavo_kick || sprite_index == spr_lonegustavo_jumpstart) && floor(image_index) == (image_number - 1))
+    if ((sprite_index == spr_lonegustavo_kick || sprite_index == spr_lonegustavo_jumpstart) && animation_end())
     {
         if (sign(hsp) != 0)
             Xscale = sign(hsp)

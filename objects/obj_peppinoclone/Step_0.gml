@@ -40,7 +40,7 @@ switch state
 				}
 				else if (sprite_index != spr_player_jump && sprite_index != spr_player_fall)
 					sprite_index = spr_player_fall
-				else if (sprite_index == spr_player_jump && floor(image_index) == (image_number - 1))
+				else if (sprite_index == spr_player_jump && animation_end())
 					sprite_index = spr_player_fall
 				var inst_front = collision_line(x, (y + 25), (x + (sign(hsp) * 78)), (y + 25), obj_solid, false, true)
 				var inst_down = collision_line((x + (sign(hsp) * 16)), y, (x + (sign(hsp) * 16)), (y + 64), obj_solid, false, true)
@@ -69,7 +69,7 @@ switch state
 		}
 		if (floor(image_index) > 23)
 			instance_destroy(hitboxID)
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			state = states.walk
 			instance_destroy(hitboxID)

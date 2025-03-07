@@ -1,4 +1,4 @@
-if (sprite_index == spr_gustavoswitch2 && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_gustavoswitch2 && animation_end())
 {
 	with (obj_player1)
 	{

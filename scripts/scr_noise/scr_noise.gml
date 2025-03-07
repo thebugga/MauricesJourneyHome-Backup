@@ -3,7 +3,7 @@ function scr_noise_walk()
 	hsp = 0
 	if (sprite_index != spr_playerN_land)
 		sprite_index = spr_playerN_idle
-	else if (floor(image_index) == (image_number - 1))
+	else if (animation_end())
 		sprite_index = spr_playerN_idle
 	if (place_meeting_solid((x + image_xscale), y) or place_meeting((x + hsp), y, obj_hallway))
 	{
@@ -81,7 +81,7 @@ function scr_noise_walk()
 
 function scr_noise_punch()
 {
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 		state = states.walk
 	hsp = 0
 	if (afterimage_buffer > 0)
@@ -142,7 +142,7 @@ function scr_noise_do_jump(argument0)
 
 function scr_noise_jump()
 {
-	if (sprite_index == spr_playerN_jump && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_playerN_jump && animation_end())
 		sprite_index = spr_playerN_fall
 	y = clamp(y, -50, (room_height + 100))
 	x = clamp(x, 32, (room_width - 32))
@@ -174,7 +174,7 @@ function scr_noise_shield()
 	{
 		case states.boss_shield:
 			hsp = 0
-			if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_land)
+			if (animation_end() && sprite_index == spr_playerN_land)
 				sprite_index = spr_playerN_idle
 			if (shield_buffer > 0)
 				shield_buffer--
@@ -189,7 +189,7 @@ function scr_noise_shield()
 			}
 			break
 		case states.jump:
-			if (sprite_index == spr_playerN_jump && floor(image_index) == (image_number - 1))
+			if (sprite_index == spr_playerN_jump && animation_end())
 				sprite_index = spr_playerN_fall
 			y = clamp(y, -50, (room_height + 100))
 			x = clamp(x, 32, (room_width - 32))
@@ -202,7 +202,7 @@ function scr_noise_shield()
 			break
 		case states.idle:
 			hsp = 0
-			if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_land)
+			if (animation_end() && sprite_index == spr_playerN_land)
 				sprite_index = spr_playerN_idle
 			if (shield_buffer > 0)
 				shield_buffer--
@@ -226,7 +226,7 @@ function scr_noise_pistol()
 	switch substate
 	{
 		case states.shotgun:
-			if (floor(image_index) == (image_number - 1))
+			if (animation_end())
 			{
 				sprite_index = spr_playerN_minigunidle
 				substate = states.idle

@@ -60,7 +60,7 @@ function scr_player_Sjumpprep()
             vsp = 0
             pogochargeactive = 0
             pogocharge = 50
-            if (floor(image_index) == (image_number - 1))
+            if (animation_end())
             {
                 if (sprite_index == spr_playerN_jetpackstart)
                 {

@@ -34,14 +34,14 @@ function scr_player_grabbing()
 		particle_set_scale(particle.crazyrunothereffect, Xscale, 1)
 		create_particle(x, y, particle.crazyrunothereffect, 0)
 	}
-	if (sprite_index == airattackdash && floor(image_index) == (image_number - 1))
+	if (sprite_index == airattackdash && animation_end())
 	{
 		sprite_index = spr_fall
 		state = states.jump
 	}
-	if (floor(image_index) == (image_number - 1) && (sprite_index == attackdash or sprite_index == spr_player_Sjump))
+	if (animation_end() && (sprite_index == attackdash or sprite_index == spr_player_Sjump))
 		state = states.normal
-	if (floor(image_index) == (image_number - 1) && sprite_index == airattackdashstart)
+	if (animation_end() && sprite_index == airattackdashstart)
 		sprite_index = airattackdash
 	grav = 0
 	if (place_meeting_solid((x + 1), y) && Xscale == 1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))

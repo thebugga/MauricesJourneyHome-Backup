@@ -304,47 +304,15 @@ global.smallnumber_fnt = font_add_sprite_ext(spr_smallnumber, "1234567890-", tru
 global.levelcomplete = 0
 global.levelcompletename = -4
 global.option_sfx_volume = 4
-with (obj_parent_player)
-	state = states.normal
-global.loadeditor = 0
-room_goto(rm_logo)
-instance_destroy(obj_cutscene_handler)
-gamesave_async_load()
-globalvar c_rainbow;
-c_rainbow = make_color_hsv((room_speed/50) mod 255,255,255);
-
-#region debug helper stuff
-	// detect possibly-common unsupported runtime version
-    // but like we dont need that !
-	var v = "2022.0.3.99";
-	//if (GM_runtime_version != v)
-	//	throw string_concat("It appears you aren't using ", v, "\nPlease switch to ", v, "for this decomp to fully work.\nIf this is the latest version of PT-ex and ", v, " isn't the latest version of GameMaker, please DM wilmer2607 at discord.");
-		
-	var required_files = [
-		"credits.txt",
-		"fmod.dll",
-		"fmodstudio.dll",
-		"lang/english.txt",
-		"sound/Desktop/Master.bank",
-		"sound/Desktop/Master.strings.bank",
-		"sound/Desktop/music.bank",
-		"sound/Desktop/sfx.bank",
-	];
-	var missing_files = "";
-	for (var i = 0; i < array_length(required_files); i++)
-	{
-		if !file_exists(required_files[i])
-			missing_files += required_files[i] + "\n";
-	}
-	if string_length(missing_files) > 0
-	{
-		show_message(concat(
-			"Decomp warning: The following files could not be found:\n",
-			missing_files,
-			"\nPlease copy them from your Pizza Tower installation",
-			"\ninto the datafiles folder in the project folder"
-		));
-	}
-
-
-#endregion debug helper stuff
+pal_swap_init_system(shd_pal_swapper);
+with obj_player1
+	state = states.normal;
+global.loadeditor = false;
+if global.longintro
+{
+	global.longintro = false;
+	room_goto(Longintro);
+}
+else
+	room_goto(rm_logo)
+instance_destroy(obj_cutscene_handler);

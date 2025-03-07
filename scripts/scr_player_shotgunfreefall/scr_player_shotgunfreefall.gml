@@ -17,7 +17,7 @@ function scr_player_shotgunfreefall()
 		movespeed = 0
 	if (sprite_index == spr_shotgunjump1)
 	{
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			sprite_index = spr_shotgunjump3
 			image_index = 0
@@ -41,7 +41,7 @@ function scr_player_shotgunfreefall()
 	if (sprite_index == spr_shotgunjump2)
 	{
 		hsp = 0
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			state = states.shotgun
 			sprite_index = spr_shotgunland

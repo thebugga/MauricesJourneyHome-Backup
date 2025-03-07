@@ -53,7 +53,7 @@ function scr_player_jetpackjump()
 			sprite_index = spr_player_jetpackmid
 			image_index = 0
 		}
-		else if (sprite_index == spr_player_jetpackmid && floor(image_index) == (image_number - 1))
+		else if (sprite_index == spr_player_jetpackmid && animation_end())
 			sprite_index = spr_player_jetpackend
 		if (move != 0)
 		{
@@ -88,7 +88,7 @@ function scr_player_jetpackjump()
 		image_speed = 0.35
 		hsp = (Xscale * movespeed)
 		vsp = 0
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			jetpackdash = 0
 	}
 	if (place_meeting((x + Xscale), y, obj_solid) && (!(place_meeting((x + Xscale), y, obj_destructibles))))

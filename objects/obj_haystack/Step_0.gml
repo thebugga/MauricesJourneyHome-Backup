@@ -14,7 +14,7 @@ if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup
 }
 else if (sprite_index == spr_haystackburningup)
 {
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 		sprite_index = spr_haystackburning
 }
 else if (sprite_index == spr_haystackburning)

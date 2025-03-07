@@ -29,7 +29,7 @@ function scr_player_boots()
 	}
 	if key_jump
 		input_buffer_jump = 0
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_bootsjump)
+	if (animation_end() && sprite_index == spr_playerV_bootsjump)
 		sprite_index = spr_playerV_bootsfall
 	move = (key_left + key_right)
 	if (move != 0)
@@ -49,7 +49,7 @@ function scr_player_boots()
 		sprite_index = spr_playerV_bootsland
 		image_index = 0
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_bootsland)
+	if (animation_end() && sprite_index == spr_playerV_bootsland)
 		sprite_index = spr_playerV_bootsidle
 	if (!key_attack)
 		state = states.normal
@@ -79,7 +79,7 @@ function scr_player_boots()
 	}
 	else
 		image_speed = 0.35
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_bootsout)
+	if (animation_end() && sprite_index == spr_playerV_bootsout)
 		sprite_index = spr_playerV_bootsidle
 	if (key_down && movespeed > 12)
 	{

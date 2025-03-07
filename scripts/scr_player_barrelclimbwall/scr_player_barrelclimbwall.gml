@@ -2,7 +2,7 @@ function scr_player_barrelclimbwall()
 {
 	move = (key_left + key_right)
 	hsp = 0
-	if (sprite_index == spr_player_barrelslipnslide && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_player_barrelslipnslide && animation_end())
 		sprite_index = spr_player_barrelroll
 	if (!key_attack)
 	{

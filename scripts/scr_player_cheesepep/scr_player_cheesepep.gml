@@ -36,7 +36,7 @@ function scr_player_cheesepep()
 		jumpstop = 1
 		movespeed = (Xscale * movespeed)
 	}
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		if (sprite_index == spr_cheesepepland or sprite_index == spr_cheesepepintro)
 		{
@@ -51,7 +51,7 @@ function scr_player_cheesepep()
 		image_index = 0
 		sprite_index = spr_cheesepepjumpstart
 	}
-	if (sprite_index == spr_cheesepepjumpstart && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_cheesepepjumpstart && animation_end())
 	{
 		vsp = -11
 		image_index = 0

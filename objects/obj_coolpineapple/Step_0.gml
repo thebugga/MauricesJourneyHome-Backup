@@ -144,7 +144,7 @@ switch state
 		{
 			hsp = 0
 			inv_timer = 0
-			if (floor(image_index) == (image_number - 1))
+			if (animation_end())
 			{
 				sprite_index = spr_coolpinea_rage
 				breakdance_movespeed = 10

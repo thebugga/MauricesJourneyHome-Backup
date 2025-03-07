@@ -329,14 +329,14 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
 	                        }
 	                    }
 	                }
-	                else if (floor(image_index) == (image_number - 1))
+	                else if (animation_end())
 	                {
 	                    idle = 0
 	                    sprite_index = spr_player_ratmountidle
 	                }
 	            }
 	        }
-	        if (floor(image_index) == (image_number - 1))
+	        if (animation_end())
 	        {
 	            landAnim = 0
 	            if (sprite_index == spr_player_ratmountland)
@@ -361,7 +361,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
 	        image_speed = 0.35
 	    }
 	}
-	else if (floor(image_index) == (image_number - 1))
+	else if (animation_end())
 	    sprite_index = spr_player_ratmountidle2
     if (hsp != 0 && grounded && vsp > 0 && (!front))
     {

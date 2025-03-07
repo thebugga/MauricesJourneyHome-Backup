@@ -3,7 +3,7 @@ switch state
     case states.normal:
         vsp = 0
         hsp = image_xscale * movespeed
-        if (floor(image_index) == (image_number - 1))
+        if (animation_end())
         {
             state++
             sprite_index = spr_fall

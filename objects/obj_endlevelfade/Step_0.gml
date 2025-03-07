@@ -15,6 +15,8 @@ with (obj_parent_player)
 	}
 }
 obj_camera.visible = false
+if instance_exists(obj_rank)
+	visible = false
 if (fadealpha > 1)
 {
 	fadein = 1
@@ -27,11 +29,7 @@ else if (fadein == 1)
 	fadealpha -= 0.1
 if receiptonscreen
 {
-	bg_alpha = approach(bg_alpha, 1, 0.02)
 	receiptx = approach(receiptx, 640, 10)
 }
 else
 	receiptx = approach(receiptx, 960, 10)
-
-bg_x -= 1;
-bg_y -= 1;

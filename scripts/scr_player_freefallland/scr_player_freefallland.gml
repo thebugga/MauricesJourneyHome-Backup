@@ -21,7 +21,7 @@ function scr_player_freefallland()
         state = (92 << 0)
         sprite_index = spr_player_groundpoundjump
     }
-    if (floor(image_index) == (image_number - 1))
+    if (animation_end())
 	{
 		facehurt = 1
 		if (sprite_index != spr_player_poundcancel2)

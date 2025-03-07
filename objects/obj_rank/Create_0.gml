@@ -17,3 +17,6 @@ minitext = [
 	[false, concat("TIME: ", mins, ":", secs, ".", floor(frac(global.level_seconds) * 100))]
 ]
 minitext_pos = 0
+bg_x = 0
+bg_y = 0
+bg_alpha = 0

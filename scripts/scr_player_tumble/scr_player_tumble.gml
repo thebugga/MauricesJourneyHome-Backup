@@ -46,29 +46,29 @@ function scr_player_tumble()
 		image_index = 0
 		sprite_index = spr_machroll
 	}
-	if (sprite_index == spr_player_Sjumpcancelland && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_player_Sjumpcancelland && animation_end())
 		sprite_index = spr_player_Sjumpcancelslide
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_machroll)
+	if (animation_end() && sprite_index == spr_player_machroll)
 	{
 		sprite_index = spr_player_backslideland
 		image_index = 0
 	}
 	if (sprite_index == spr_machroll && (!grounded))
 		sprite_index = spr_player_mach2jump
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_backslideland)
+	if (animation_end() && sprite_index == spr_player_backslideland)
 		sprite_index = spr_player_backslide
 	if (sprite_index == spr_player_Sjumpcancel && grounded)
 		sprite_index = spr_player_Sjumpcancelland
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_Sjumpcancelland)
+	if (animation_end() && sprite_index == spr_player_Sjumpcancelland)
 		sprite_index = spr_player_Sjumpcancelslide
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_breakdance)
+	if (animation_end() && sprite_index == spr_player_breakdance)
 	{
 		particle_set_scale(particle.jumpdust, Xscale, 1)
 		create_particle(x, y, particle.jumpdust, 0)
 		movespeed = 12
 		sprite_index = spr_breakdancesuper
 	}
-	if (sprite_index == spr_tumblestart && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_tumblestart && animation_end())
 	{
 		sprite_index = spr_tumble
 		movespeed = 14
@@ -103,7 +103,7 @@ if (sprite_index == spr_crouchslip && global.playerCharacter == Characters.Pierr
         sprite_index = spr_player_jumpdive1
         vsp = -9
     }
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_jumpdive1)
+    if (animation_end() && sprite_index == spr_player_jumpdive1)
         sprite_index = spr_player_jumpdive2
     if (sprite_index == spr_player_jumpdive2 && key_attack && grounded) && global.playerCharacter != Characters.Pierre
     {
@@ -172,13 +172,13 @@ if (sprite_index == spr_crouchslip && global.playerCharacter == Characters.Pierr
 	}
 	if (sprite_index == spr_player_Sjumpcancelslide or sprite_index == spr_breakdancesuper or sprite_index == spr_machroll or sprite_index == spr_tumble or sprite_index == spr_tumblestart or sprite_index == spr_machroll or sprite_index == spr_player_mach2jump)
 		image_speed = (abs(movespeed) / 15)
-	else if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach2jump)
+	else if (animation_end() && sprite_index == spr_mach2jump)
 		image_speed = 0
-	else if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_Sjumpcancel)
+	else if (animation_end() && sprite_index == spr_player_Sjumpcancel)
 		image_speed = 0
 	else
 		image_speed = 0.35
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_divekickstart)
+	if (animation_end() && sprite_index == spr_playerV_divekickstart)
 		sprite_index = spr_playerV_divekick
 	if ((!instance_exists(dashcloudid)) && grounded)
 	{

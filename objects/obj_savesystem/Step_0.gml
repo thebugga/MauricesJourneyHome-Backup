@@ -1,6 +1,6 @@
 if room == hub_loadingscreen && state != 2
 {
-	with obj_player
+	with obj_parent_player
 	{
 		state = states.comingoutdoor;
 		sprite_index = spr_walkfront;
@@ -14,30 +14,17 @@ if room == hub_loadingscreen && state != 2
 		{
 			ini_open_from_string(obj_savesystem.ini_str);
 			var _intro = ini_read_real("Tutorial", "finished", false);
+			var _texture = ini_read_string("Game", "palettetexture", "none");
+			var _texture2 = ini_read_string("Game", "palettetexture_player2", "none");
 			ini_close();
-			scr_characterspr();
-			if _intro
-			{
-				targetRoom = tower_entrancehallway;
-				targetDoor = "A";
-				state = states.victory;
-			}
-			/*
-			else
-			{
-				targetRoom = Finalintro;
-				targetDoor = "A";
-				state = states.titlescreen;
-			}
-			*/
 		}
-		with instance_create(x, y, obj_fadeout)
+		with (instance_create(x, y, obj_fadeout))
 		{
 			gamestart = true;
 			restarttimer = true;
 		}
 		icon_alpha = 0;
-		with instance_create(0, 0, obj_loadingscreen)
+		with (instance_create(0, 0, obj_loadingscreen))
 		{
 			dark = true;
 			group_arr = grouparr;
@@ -59,7 +46,7 @@ else if showicon
 if showicon
 {
 	icon_index += 0.35;
-	if icon_index > icon_max - 1
+	if (icon_index > (icon_max - 1))
 	{
 		var t = frac(icon_index);
 		icon_index = t;

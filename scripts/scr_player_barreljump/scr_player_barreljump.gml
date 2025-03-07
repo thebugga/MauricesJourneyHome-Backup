@@ -3,7 +3,7 @@ function scr_player_barreljump()
 	image_speed = 0.35
 	hsp = movespeed
 	move = (key_right + key_left)
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_barreljump)
+	if (animation_end() && sprite_index == spr_player_barreljump)
 		sprite_index = spr_player_barrelfall
 	if key_jump
 		input_buffer_jump = 0

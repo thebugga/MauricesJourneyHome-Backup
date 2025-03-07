@@ -33,7 +33,7 @@ function scr_enemy_rage()
 				shoot = 1
 				instance_create(x, y, obj_warplaserhoming)
 			}
-			if (floor(image_index) == (image_number - 1))
+			if (animation_end())
 				state = states.walk
 			break
 		case obj_cheeseslime:
@@ -48,7 +48,7 @@ function scr_enemy_rage()
 			}
 			else
 				hsp = 0
-			if (floor(image_index) == (image_number - 1))
+			if (animation_end())
 			{
 				state = states.walk
 				sprite_index = walkspr
@@ -56,7 +56,7 @@ function scr_enemy_rage()
 			break
 		case obj_minijohn:
 			hsp = (movespeed * image_xscale)
-			if (sprite_index == spr_minijohn_rage1 && floor(image_index) == (image_number - 1))
+			if (sprite_index == spr_minijohn_rage1 && animation_end())
 				sprite_index = spr_minijohn_rage2
 			if (grounded && vsp > 0)
 			{
@@ -75,7 +75,7 @@ function scr_enemy_rage()
 			if (image_index > 7)
 				thespeed = 12
 			hsp = (image_xscale * thespeed)
-			if (floor(image_index) == (image_number - 1))
+			if (animation_end())
 			{
 				with (instance_create(x, y, obj_forkhitbox))
 					ID = other.id
@@ -93,7 +93,7 @@ function scr_enemy_rage()
 				vsp = 0
 			if (sprite_index == spr_ancho_rage2)
 				vsp = 10
-			if (floor(image_index) == (image_number - 1) && sprite_index == spr_ancho_rage1)
+			if (animation_end() && sprite_index == spr_ancho_rage1)
 				sprite_index = spr_ancho_rage2
 			if (grounded && sprite_index == spr_ancho_rage2)
 			{
@@ -105,7 +105,7 @@ function scr_enemy_rage()
 				image_index = 0
 				sprite_index = spr_ancho_rage3
 			}
-			if (floor(image_index) == (image_number - 1) && sprite_index == spr_ancho_rage3)
+			if (animation_end() && sprite_index == spr_ancho_rage3)
 			{
 				state = states.walk
 				sprite_index = spr_ancho

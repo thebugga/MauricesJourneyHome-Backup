@@ -1,6 +1,6 @@
 if (state == states.flushtransition)
 {
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		switch sprite_index
 		{

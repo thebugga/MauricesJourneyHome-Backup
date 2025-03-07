@@ -10,7 +10,7 @@ function scr_player_trashroll()
 			sprite_index = spr_player_trashslide
 		else
 		{
-			if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_trashjump2)
+			if (animation_end() && sprite_index == spr_player_trashjump2)
 				sprite_index = spr_player_trashfall
 			if (vsp > 0 && sprite_index == spr_player_trashjump)
 			{
@@ -24,7 +24,7 @@ function scr_player_trashroll()
 	else
 	{
 		image_speed = 0.35
-		if (sprite_index == spr_player_corpsestart && floor(image_index) == (image_number - 1))
+		if (sprite_index == spr_player_corpsestart && animation_end())
 			sprite_index = spr_player_corpsesurf
 	}
 	if key_jump

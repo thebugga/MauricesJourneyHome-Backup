@@ -20,7 +20,7 @@ function scr_player_morthook()
 			sprite_index = spr_player_morthook
 			image_index = 0
 		}
-		else if (floor(image_index) == (image_number - 1))
+		else if (animation_end())
 		{
 			state = states.mortjump
 			sprite_index = spr_mortdoublejumpstart

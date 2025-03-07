@@ -60,7 +60,7 @@ function scr_player_secondjump()
 	if (jumpAnim == 1)
 	{
 		sprite_index = spr_player_secondjump1
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			jumpAnim = 0
 	}
 	if (jumpAnim == 0)

@@ -12,7 +12,7 @@ switch state
 			sprite_index = spr_intro
 			image_index = 0
 		}
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			state = states.robotchase
 			sprite_index = chasespr
@@ -97,7 +97,7 @@ switch state
 		break
 	case states.fall:
 		image_speed = 0.5
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			image_index = (image_number - 1)
 		if scr_monster_solid(x, (y + (grav * 2)))
 		{

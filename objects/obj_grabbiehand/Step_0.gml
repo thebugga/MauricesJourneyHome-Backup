@@ -3,7 +3,7 @@ switch state
 	case states.normal:
 		break
 	case states.transitioncutscene:
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 		{
 			state = states.fall
 			sprite_index = spr_grabbiehand_fall

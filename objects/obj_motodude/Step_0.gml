@@ -30,7 +30,7 @@ instance_destroy(instance_place((x + hsp), y, obj_destructibles))
 switch sprite_index
 {
 	case spr_pizzacar_jump:
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			sprite_index = spr_pizzacar_fall
 		break
 	case spr_pizzacar_fall:
@@ -41,7 +41,7 @@ switch sprite_index
 		}
 		break
 	case spr_pizzacar_land:
-		if (floor(image_index) == (image_number - 1))
+		if (animation_end())
 			sprite_index = spr_pizzacar_move
 		break
 	default:

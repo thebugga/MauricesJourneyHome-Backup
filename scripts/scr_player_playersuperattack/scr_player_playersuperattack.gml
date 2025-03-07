@@ -47,7 +47,7 @@ function scr_player_playersuperattack()
 				hsp = other.hsp
 				image_xscale = (-other.Xscale)
 			}
-			if (floor(image_index) == (image_number - 1))
+			if (animation_end())
 			{
 				if (punchcount > 0)
 				{
@@ -96,7 +96,7 @@ function scr_player_playersuperattack()
 				vsp = -4
 				hsp = ((-Xscale) * 4)
 			}
-			if (floor(image_index) == (image_number - 1))
+			if (animation_end())
 				state = states.normal
 			break
 	}

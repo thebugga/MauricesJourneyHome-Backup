@@ -5,7 +5,7 @@ if (obj_parent_player.x > (x - 200) && obj_parent_player.x < (x + 200) && sprite
 }
 if (sprite_index == spr_noisehotairthrow && floor(image_index) == 4 && (!instance_exists(obj_noisematch)))
 	instance_create((x - (image_xscale * 10)), y, obj_noisematch)
-if (sprite_index == spr_noisehotairthrow && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_noisehotairthrow && animation_end())
 {
 	sprite_index = spr_noisehotair
 	goingup = 1

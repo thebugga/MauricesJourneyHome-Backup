@@ -215,7 +215,7 @@ switch state
 				}
 				break
 			case spr_tv_open:
-				if (floor(image_index) == (image_number - 1))
+				if (animation_end())
 					sprite_index = idlespr
 				break
 			case spr_tv_idle:
@@ -224,7 +224,7 @@ switch state
 					idleanim--
 				if (sprite_index != idlespr)
 					sprite_index = idlespr
-				if (idleanim <= 0 && floor(image_index) == (image_number - 1))
+				if (idleanim <= 0 && animation_end())
 				{
 					sprite_index = choose(spr_tv_idleanim1, spr_tv_idleanim2)
 					if global.playerCharacter != Characters.Maurice
@@ -241,7 +241,7 @@ switch state
 			case spr_tv_idleanim2:
 			case spr_tv_idleanim1N:
 			case spr_tv_idleanim2N:
-				if (floor(image_index) == (image_number - 1))
+				if (animation_end())
 				{
 					sprite_index = idlespr
 					idleanim = (240 + (60 * irandom_range(-1, 2)))
@@ -285,7 +285,7 @@ switch state
 		}
 		break
 	case states.transitioncutscene:
-		if (sprite_index == spr_tv_open && floor(image_index) == (image_number - 1)) || (sprite_index != spr_tv_open && sprite_index != tvsprite)
+		if (sprite_index == spr_tv_open && animation_end()) || (sprite_index != spr_tv_open && sprite_index != tvsprite)
 		{
 			sprite_index = tvsprite
 					image_index = 0

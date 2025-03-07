@@ -1,10 +1,11 @@
+draw_sprite_tiled_ext(spr_optionsBG, 5, bg_x, bg_y, 1, 1, c_white, bg_alpha);
 shader_set(global.Pal_Shader)
 if (global.collect >= global.collectN)
 	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
 if (global.collectN > global.collect)
 	pal_swap_set(obj_player2.spr_palette, obj_player2.paletteselect, false)
 //pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
-draw_self()
+draw_sprite(sprite_index,image_index,x,y)
 pattern_reset()
 shader_reset()
 draw_set_font(global.smallfont)

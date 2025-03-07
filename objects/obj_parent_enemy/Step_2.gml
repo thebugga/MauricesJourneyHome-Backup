@@ -25,7 +25,7 @@ if ((!thrown) && killbyenemybuffer > 0)
     killbyenemybuffer--
 if (sprite_index == walkspr && state != (141 << 0) && floor(image_index) != (image_number - 1))
     steppy = 0
-if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && floor(image_index) == (image_number - 1) && (!steppy) && state != (141 << 0))
+if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && animation_end() && (!steppy) && state != (141 << 0))
 {
     steppy = 1
     var _yy = (y + 43)

@@ -18,7 +18,7 @@ function scr_player_bump() //gml_Script_scr_player_bump
             image_index = 3
         if (sprite_index == spr_rockethitwall && grounded && vsp > 0)
             image_index = (image_number - 1)
-        if (floor(image_index) == (image_number - 1) && sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air)
+        if (animation_end() && sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air)
         {
             if (!skateboarding)
             {
@@ -41,7 +41,7 @@ function scr_player_bump() //gml_Script_scr_player_bump
         movespeed = 0
         hsp = 0
         vsp = 0
-        if (floor(image_index) == (image_number - 1))
+        if (animation_end())
             state = states.normal
         image_speed = 0.35
     }

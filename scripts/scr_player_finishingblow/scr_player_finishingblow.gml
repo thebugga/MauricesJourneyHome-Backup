@@ -2,7 +2,7 @@ function scr_player_finishingblow()
 {
 	hsp = movespeed
 	movespeed = approach(movespeed, 0, 0.25)
-	if (floor(image_index) == (image_number - 1))
+	if (animation_end())
 	{
 		movespeed = abs(movespeed)
 		state = states.normal

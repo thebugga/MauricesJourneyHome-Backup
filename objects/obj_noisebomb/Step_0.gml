@@ -8,7 +8,7 @@ else
 	playerid = obj_player2
 if (global.miniboss == false)
 	instance_destroy()
-if (sprite_index == spr_noisebomb_intro && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_noisebomb_intro && animation_end())
 {
 	sprite_index = spr_noisebomb_idle
 	x = playerid.x

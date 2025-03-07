@@ -1,5 +1,5 @@
 depth = -600;
-if instance_number(object_index) > 1
+if (instance_number(object_index) > 1)
 {
 	instance_destroy();
 	exit;
@@ -12,7 +12,6 @@ showicon = false;
 ini_str = "";
 state = 0;
 icon_index = 0;
-character = true;
 icon_max = sprite_get_number(spr_maurice_speen);
 ini_open("saveData.ini");
 ini_str_options = ini_close();

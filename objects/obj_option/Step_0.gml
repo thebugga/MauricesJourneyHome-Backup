@@ -45,7 +45,7 @@ var os = optionselected;
 optionselected += move;
 optionselected = clamp(optionselected, 0, array_length(m.options) - 1);
 if os != optionselected
-	fmod_event_one_shot("event:/sfx/ui/step");
+	event_play_oneshot("event:/sfx/ui/step");
 
 var option = m.options[optionselected];
 var move2 = key_left2 + key_right2;
@@ -55,7 +55,7 @@ switch option.type
 	case menutype.press:
 		if key_jump && option.func != -4
 		{
-			fmod_event_one_shot("event:/sfx/ui/select");
+			event_play_oneshot("event:/sfx/ui/select");
 			option.func();
 		}
 		break;
@@ -63,7 +63,7 @@ switch option.type
 	case menutype.toggle:
 		if (key_jump || -key_left2 || key_right2)
 		{
-			fmod_event_one_shot("event:/sfx/ui/select");
+			event_play_oneshot("event:/sfx/ui/select");
 			option.value = !option.value;
 			if option.on_changed != -4
 				option.on_changed(option.value);
@@ -73,7 +73,7 @@ switch option.type
 	case menutype.multiple:
 		if move2 != 0
 		{
-			fmod_event_one_shot("event:/sfx/ui/step");
+			event_play_oneshot("event:/sfx/ui/step");
 			option.value += move2;
 			if (option.value > array_length(option.values) - 1)
 				option.value = 0;
@@ -120,11 +120,11 @@ for (i = 0; i < array_length(m.options); i++)
 		{
 			if b.moving
 			{
-				if (!fmod_event_instance_is_playing(b.sound))
-					fmod_event_instance_play(b.sound);
+				if (!event_instance_isplaying(b.sound))
+					fmod_studio_event_instance_start(b.sound);
 			}
 			else
-				fmod_event_instance_stop(b.sound, true);
+				fmod_studio_event_instance_stop(b.sound, true);
 		}
 	}
 }
@@ -139,7 +139,7 @@ if slidebuffer > 0
 
 if ((key_back2 || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
 {
-	fmod_event_one_shot("event:/sfx/ui/back");
+	event_play_oneshot("event:/sfx/ui/back");
 	if menu == menus.options
 	{
 		if instance_exists(obj_mainmenuselect)
@@ -156,7 +156,7 @@ if ((key_back2 || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_e
 			if b.type == menutype.slide
 			{
 				if b.sound != -4
-					fmod_event_instance_stop(b.sound, true);
+					fmod_studio_event_instance_stop(b.sound, true);
 			}
 		}
 		menu_goto(m.backmenu);

@@ -60,7 +60,7 @@ ds_map_set(pause_menu_map, "pause_resume", [0, function()
 }]);
 ds_map_set(pause_menu_map, "pause_options", [1, function()
 {
-	fmod_event_one_shot("event:/sfx/ui/select");
+	event_play_oneshot("event:/sfx/ui/select");
 	with (instance_create(x, y, obj_option))
 		depth = other.depth - 1;
 }]);
@@ -80,7 +80,7 @@ ds_map_set(pause_menu_map, "pause_restart", [2, function()
 			pause = false;
 		}
 		else
-			fmod_event_one_shot("event:/sfx/ui/select");
+			event_play_oneshot("event:/sfx/ui/select");
 	}
 }]);
 var exit_function = function()
@@ -88,9 +88,9 @@ var exit_function = function()
 	start_wiping()
 	instance_destroy(obj_option);
 	instance_destroy(obj_keyconfig);
-	fmod_event_instance_stop(global.snd_bossbeaten, true);
+	fmod_studio_event_instance_stop(global.snd_bossbeaten, true);
 	savedmusicmuffle = fmod_get_parameter("musicmuffle")
-	fmod_set_parameter("musicmuffle", 0, 0)
+	fmod_studio_system_set_parameter_by_name("musicmuffle", 0, 0)
 	var sl = ds_list_create();
 	var il = ds_list_create();
 	var arr = -4;
@@ -127,7 +127,7 @@ ds_map_set(pause_menu_map, "pause_exit", [3, exit_function]);
 ds_map_set(pause_menu_map, "pause_exit_title", [3, exit_function]);
 ds_map_set(pause_menu_map, "pause_credits", [4, function()
 {
-	fmod_event_one_shot("event:/sfx/ui/select");
+	event_play_oneshot("event:/sfx/ui/select");
 	with (instance_create(x, y, obj_manual))
 		depth = other.depth - 1;
 }]);

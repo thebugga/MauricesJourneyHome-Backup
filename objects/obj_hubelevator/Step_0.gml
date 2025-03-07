@@ -13,7 +13,7 @@ switch state
 				if (hub_array[selected][0] != room)
 				{
 			        stop_music()
-					fmod_event_one_shot("event:/music/levator")
+					event_play_oneshot("event:/music/levator")
 					fadein = 1
 					state = states.backbreaker
 				}

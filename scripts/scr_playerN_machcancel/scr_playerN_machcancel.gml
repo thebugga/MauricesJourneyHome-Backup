@@ -68,7 +68,7 @@ function scr_playerN_machcancel()
 	}
 	if grounded && key_attack && vsp >= 0
 	{
-		fmod_event_one_shot_3d("event:/sfx/playerN/wallbounceland", x, y);
+		event_play_oneshot_3d("event:/sfx/playerN/wallbounceland", x, y);
 		input_buffer_slap = 0;
 		if move != 0
 			Xscale = move;
@@ -97,7 +97,7 @@ function scr_playerN_machcancel()
         input_buffer_slap = 0
         image_index = 0
         sprite_index = spr_breakdanceuppercut
-        fmod_event_instance_play(snd_uppercut)
+        fmod_studio_event_instance_start(snd_uppercut)
         vsp = -20
         particle_set_scale((4 << 0), Xscale, 1)
         create_particle(x, y, (4 << 0), 0)

@@ -8,8 +8,8 @@ for (var j = 0; j < array_length(menus); j++)
 		{
 			if b.sound != -4
 			{
-				fmod_event_instance_stop(b.sound, true);
-				fmod_event_instance_release(b.sound);
+				fmod_studio_event_instance_stop(b.sound, true);
+				fmod_studio_event_instance_release(b.sound);
 			}
 		}
 	}

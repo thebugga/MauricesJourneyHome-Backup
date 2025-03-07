@@ -52,7 +52,7 @@ function scr_player_climbwall()
 	if (place_meeting_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 		{
 			sprite_index = spr_superjumpland;
-			fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y);
+			event_play_oneshot_3d("event:/sfx/maurice/groundpound", x, y);
 			image_index = 0;
 			state = states.Sjumpland;
 			machhitAnim = false;

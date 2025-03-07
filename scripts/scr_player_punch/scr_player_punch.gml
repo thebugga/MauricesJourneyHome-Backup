@@ -151,7 +151,7 @@ function scr_player_punch()
 				if (input_buffer_slap > 0 && (!key_up) && sprite_index != spr_suplexbump && shotgunAnim == false && (!global.pistol))
 				{
 					flash = 1
-					fmod_event_one_shot_3d("event:/sfx/maurice/grabcancel", x, y)
+					event_play_oneshot_3d("event:/sfx/maurice/grabcancel", x, y)
 					sprite_index = spr_player_kungfuair3
 					image_index = 0
 					movespeed = 13

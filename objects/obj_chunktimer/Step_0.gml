@@ -3,7 +3,7 @@ if (global.panic == true && global.fill > 0 && (!instance_exists(obj_ghostcollec
 if (global.fill <= 0 && global.panic && (!global.tutorial_room) && (!instance_exists(obj_pizzamancer)))
 {
 	instance_create(obj_player1.x, obj_player1.y, obj_pizzamancer)
-    fmod_event_one_shot("event:/sfx/pizzamancer/laugh")
+    event_play_oneshot("event:/sfx/pizzamancer/laugh")
 }
 if (global.fill <= 0)
     global.fill = 0

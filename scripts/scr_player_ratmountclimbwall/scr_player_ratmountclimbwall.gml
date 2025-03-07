@@ -25,7 +25,7 @@ function scr_player_ratmountclimbwall() //gml_Script_scr_player_ratmountclimbwal
             vsp = -14
             ratmount_fallingspeed = 0
             movespeed = (Xscale * 10)
-            fmod_event_one_shot_3d("event:/sfx/ratmount/walljump2", x, y)
+            event_play_oneshot_3d("event:/sfx/ratmount/walljump2", x, y)
             sprite_index = spr_player_ratmountwalljump
         }
         else

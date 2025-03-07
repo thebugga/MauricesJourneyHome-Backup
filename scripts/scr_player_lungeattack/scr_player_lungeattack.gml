@@ -22,7 +22,7 @@ function scr_player_lungeattack()
 	if key_slap2 && supercharged
 	{
 		suplexmove = true;
-		fmod_event_instance_play(suplexdashsnd);
+		fmod_studio_event_instance_start(suplexdashsnd);
 		state = states.handstandjump;
 		movespeed = 5;
 		image_index = 0;

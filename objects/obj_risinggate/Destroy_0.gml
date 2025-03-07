@@ -1,2 +1,2 @@
-fmod_event_instance_stop(snd, true)
-fmod_event_instance_release(snd)
+fmod_studio_event_instance_stop(snd, true)
+fmod_studio_event_instance_release(snd)

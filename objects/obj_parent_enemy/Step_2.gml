@@ -42,5 +42,5 @@ if (dodgebuffer > 0)
     dodgebuffer--
 if (state != states.hit)
     player_instakillmove = 0
-if (fmod_event_instance_is_playing(chargesnd) && state != (128 << 0))
-    fmod_event_instance_stop(chargesnd)
+if (event_instance_isplaying(chargesnd) && state != (128 << 0))
+    fmod_studio_event_instance_stop(chargesnd)

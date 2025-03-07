@@ -22,7 +22,7 @@ function Instakill()
 			other.baddieID.grabbedby = 1
 		else
 			other.baddieID.grabbedby = 2
-		fmod_event_one_shot_3d("event:/sfx/maurice/punch", x, y);
+		event_play_oneshot_3d("event:/sfx/maurice/punch", x, y);
 		if (other.baddieID.elite && other.baddieID.object_index != obj_robot)
 			other.baddieID.elitehit = 0
 		if (!other.baddieID.important)

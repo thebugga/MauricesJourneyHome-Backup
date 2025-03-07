@@ -78,7 +78,7 @@ function scr_player_knightpep()
 		{
 			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 12;
-			fmod_event_one_shot_3d("event:/sfx/maurice/step", x, y);
+			event_play_oneshot_3d("event:/sfx/maurice/step", x, y);
 		}
 	}
 	if ((sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_doublejump) && grounded && vsp > 0)
@@ -89,7 +89,7 @@ function scr_player_knightpep()
 		freefallstart = 0
 		momemtum = 0
 		create_particle(x, y, particle.landcloud, 0)
-		fmod_event_one_shot_3d("event:/sfx/maurice/step", x, y);
+		event_play_oneshot_3d("event:/sfx/maurice/step", x, y);
 		sprite_index = spr_knightpepland
 	}
 	if (animation_end() && sprite_index == spr_knightpepland)

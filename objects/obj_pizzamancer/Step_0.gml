@@ -24,6 +24,6 @@ vsp = Wave(highest_y + 78, highest_y + 152, 1, 0);
 x = obj_player1.x + hsp;
 y = obj_player1.y + obj_player1.vsp + vsp;
 
-fmod_event_instance_set_3d_attributes(snd, x, y);
-if (!fmod_event_instance_is_playing(snd))
-	fmod_event_instance_play(snd);
+fmod_event_set3DPosition(snd, x, y);
+if (!event_instance_isplaying(snd))
+	fmod_studio_event_instance_start(snd);

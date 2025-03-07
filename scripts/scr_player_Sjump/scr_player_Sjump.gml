@@ -158,7 +158,7 @@ function scr_player_Sjump()
 					vsp = -7;
 			}
 		}
-		fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y);
+		event_play_oneshot_3d("event:/sfx/maurice/groundpound", x, y);
 		image_index = 0;
 		state = states.Sjumpland;
 		machhitAnim = false;
@@ -174,7 +174,7 @@ function scr_player_Sjump()
 		    movespeed = 10
 			vsp = -10
 		    state = states.mach2
-			fmod_event_one_shot_3d("event:/sfx/maurice/superjumpcancel", x, y)
+			event_play_oneshot_3d("event:/sfx/maurice/superjumpcancel", x, y)
 	}
 	image_speed = 0.5;
 	scr_collision();

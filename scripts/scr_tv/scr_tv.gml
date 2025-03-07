@@ -149,7 +149,7 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
                     {
                         cardboardexprsprite = spr_tv_happyG
                         if (irandom(100) <= 50)
-                            fmod_event_one_shot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y)
+                            event_play_oneshot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y)
                     }
                     if (irandom(100) <= 50)
                         scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y)

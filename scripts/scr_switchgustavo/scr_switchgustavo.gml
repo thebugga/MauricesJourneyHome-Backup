@@ -19,8 +19,8 @@ function scr_switchgustavo(argument0, argument1) //gml_Script_scr_switchgustavo
                 jumpAnim = false
             }
             brick = true
-            fmod_event_instance_release(snd_voiceok)
-            snd_voiceok = fmod_event_create_instance("event:/sfx/voice/gusok")
+            fmod_studio_event_instance_release(snd_voiceok)
+            snd_voiceok = fmod_createEventInstance("event:/sfx/voice/gusok")
         }
     }
     with (obj_swapmodefollow)
@@ -41,8 +41,8 @@ function scr_switchpeppino(argument0) //gml_Script_scr_switchpeppino
             gustavodash = 0
             ratmount_movespeed = 8
             brick = false
-            fmod_event_instance_release(snd_voiceok)
-            snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok")
+            fmod_studio_event_instance_release(snd_voiceok)
+            snd_voiceok = fmod_createEventInstance("event:/sfx/voice/ok")
             if argument0
             {
                 visible = true

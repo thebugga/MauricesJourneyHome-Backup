@@ -77,7 +77,7 @@ function scr_player_noisecrusher()
 			shake_mag = 10;
 			shake_mag_acc = 30 / room_speed;
 		}
-		fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y);
+		event_play_oneshot_3d("event:/sfx/maurice/groundpound", x, y);
 		sprite_index = spr_playerN_noisecrusherland;
 		image_index = 0;
 	}

@@ -84,7 +84,7 @@ if (input_buffer_slap > 0 && grounded && global.attackstyle != 2)
         image_index = 0
         machhitAnim = false
         state = states.tumble
-        fmod_event_instance_play(snd_crouchslide)
+        fmod_studio_event_instance_start(snd_crouchslide)
 }
 
 	if (key_shoot2 && global.playerCharacter == Characters.MrOrange && (!instance_exists(dynamite_inst)))

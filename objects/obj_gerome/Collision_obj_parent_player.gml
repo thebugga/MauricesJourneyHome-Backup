@@ -2,7 +2,7 @@ if global.panic
 {
    ds_list_add(global.saveroom, id)
    global.gerome = true
-   fmod_event_one_shot_3d("event:/sfx/voice/geromegot", x, y)
+   event_play_oneshot_3d("event:/sfx/voice/geromegot", x, y)
    global.combotime = 60
    instance_create(x, y, obj_geromefollow)
    instance_create_unique(0, 0, obj_lap2visual);

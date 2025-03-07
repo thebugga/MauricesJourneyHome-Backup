@@ -33,12 +33,12 @@ if !selecting
 {
 	if key_up2
 	{
-		fmod_event_one_shot("event:/sfx/ui/step");
+		event_play_oneshot("event:/sfx/ui/step");
 		key_select--;
 	}
 	if key_down2
 	{
-		fmod_event_one_shot("event:/sfx/ui/step");
+		event_play_oneshot("event:/sfx/ui/step");
 		key_select++;
 	}
 	if key_select != -1 && key_left2
@@ -69,7 +69,7 @@ if !selecting
 		}
 		if !_found
 		{
-			fmod_event_one_shot("event:/sfx/ui/select");
+			event_play_oneshot("event:/sfx/ui/select");
 			ini_open("saveData.ini")
 			for (i = 0; i < array_length(input); i++)
 			{
@@ -84,7 +84,7 @@ if !selecting
 			instance_destroy();
 		}
 		else
-			fmod_event_one_shot("event:/sfx/ui/select");
+			event_play_oneshot("event:/sfx/ui/select");
 	}
 	else if key_select > -1
 	{

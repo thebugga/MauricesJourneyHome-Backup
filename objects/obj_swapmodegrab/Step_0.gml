@@ -29,4 +29,4 @@ switch state
 
 x += hsp
 y += vsp
-fmod_event_instance_set_3d_attributes(grab_snd, x, y)
+fmod_event_set3DPosition(grab_snd, x, y)

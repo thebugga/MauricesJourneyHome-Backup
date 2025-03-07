@@ -11,13 +11,13 @@ savedsecretpause = false;
 savedpanicpos = 0;
 savedmusicpos = 0;
 exitmusic = false;
-pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
-panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
+pillarmusicID = fmod_createEventInstance("event:/music/pillarmusic");
+panicmusicID = fmod_createEventInstance("event:/music/pizzatime");
 panicstart = false;
 
 add_music(Mainmenu, "event:/music/title", -4, false, function(argument0, argument1)
 {
-    fmod_event_instance_set_parameter(argument1, "state", 0, false);
+    fmod_studio_event_instance_set_parameter_by_name_multiplatform(argument1, "state", 0, false);
 }
 )
 add_music(tower_entrancehallway, "event:/music/hub", noone, false);

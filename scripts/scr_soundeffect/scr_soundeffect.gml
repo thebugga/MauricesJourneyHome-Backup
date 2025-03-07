@@ -8,8 +8,8 @@ function scr_soundeffect() // unused
 
 function scr_fmod_soundeffect(sound_instance, x, y)
 {
-	fmod_event_instance_set_3d_attributes(sound_instance, x, y);
-	fmod_event_instance_play(sound_instance);
+	fmod_event_set3DPosition(sound_instance, x, y);
+	fmod_studio_event_instance_start(sound_instance);
 }
 
 function sfx_gain(snd)
@@ -17,19 +17,12 @@ function sfx_gain(snd)
 	audio_sound_gain(snd, audio_sound_get_gain(snd) * global.option_sfx_volume, 0);
 }
 
-function set_audio_config(save = true)
+
+function set_audio_config(argument0 = global.option_master_volume, argument1 = global.option_master_volume, argument2 = global.option_sfx_volume)
 {
-	if save
-	{
-		ini_open_from_string(obj_savesystem.ini_str_options);
-		ini_write_real("Option", "sfx_volume", global.option_sfx_volume);
-		ini_write_real("Option", "master_volume", global.option_master_volume);
-		ini_write_real("Option", "music_volume", global.option_music_volume);
-		obj_savesystem.ini_str_options = ini_close();
-	}
-	fmod_set_parameter("masterVolume", global.option_master_volume, true);
-	fmod_set_parameter("musicVolume", global.option_music_volume, true);
-	fmod_set_parameter("sfxVolume", global.option_sfx_volume, true);
+    fmod_studio_system_set_parameter_by_name("masterVolume", argument0, true);
+    fmod_studio_system_set_parameter_by_name("musicVolume", argument1, true);
+    fmod_studio_system_set_parameter_by_name("sfxVolume", argument2, true);
 }
 
 function set_controller_config()

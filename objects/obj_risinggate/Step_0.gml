@@ -19,4 +19,4 @@ with (obj_camera)
     shake_mag = 3
     shake_mag_acc = 5 / room_speed
 }
-fmod_event_instance_set_3d_attributes(snd, x, y)
+fmod_event_set3DPosition(snd, x, y)

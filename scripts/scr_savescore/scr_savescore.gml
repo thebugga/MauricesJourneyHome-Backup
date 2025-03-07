@@ -69,6 +69,6 @@ function scr_play_rank_music()
 		s = 3.5;
 	if global.rank == "d"
 		s = 4.5;
-	fmod_event_instance_play(global.snd_rank);
-	fmod_event_instance_set_parameter(global.snd_rank, "rank", s, true);
+	fmod_studio_event_instance_start(global.snd_rank);
+	fmod_studio_event_instance_set_parameter_by_name_multiplatform(global.snd_rank, "rank", s, true);
 }

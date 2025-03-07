@@ -36,7 +36,7 @@ function scr_player_slap()
 			if slaphand >= 2
 			{
 		        suplexmove = true
-		        fmod_event_instance_play(suplexdashsnd)
+		        fmod_studio_event_instance_start(suplexdashsnd)
 		        state = states.handstandjump
 				sprite_index = spr_player_lungestart
 				movespeed = 10

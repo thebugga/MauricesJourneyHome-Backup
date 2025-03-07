@@ -41,7 +41,7 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 			array_push(pause_menu, "pause_exit_title");
 		
         savedmusicmuffle = fmod_get_parameter("musicmuffle")
-        fmod_set_parameter("musicmuffle", 1, 0)
+        fmod_studio_system_set_parameter_by_name("musicmuffle", 1, 0)
 		
 		if global.leveltosave != -4
 		{
@@ -229,8 +229,8 @@ if pause && alarm[3] == -1
 {
 	with obj_music
 	{
-		fmod_event_instance_set_paused(pillarmusicID, true);
-		fmod_event_instance_set_paused(panicmusicID, true);
+		fmod_studio_event_instance_set_paused(pillarmusicID, true);
+		fmod_studio_event_instance_set_paused(panicmusicID, true);
 	}
 }
 if pause && !instance_exists(obj_option)&& alarm[3] == -1
@@ -252,7 +252,7 @@ if pause && !instance_exists(obj_option)&& alarm[3] == -1
 		selected = array_length(pause_menu) - 1;
 	if prevselect != selected
 	{
-		fmod_event_one_shot("event:/sfx/ui/angelmove");
+		event_play_oneshot("event:/sfx/ui/angelmove");
 		update_cursor = true;
 	}
 	if key_back2
@@ -265,4 +265,4 @@ if pause && !instance_exists(obj_option)&& alarm[3] == -1
 }
 scr_pauseicons_update(-1);
 if (prevpause && (!pause))
-	fmod_set_parameter("musicmuffle", savedmusicmuffle, 0)
+	fmod_studio_system_set_parameter_by_name("musicmuffle", savedmusicmuffle, 0)

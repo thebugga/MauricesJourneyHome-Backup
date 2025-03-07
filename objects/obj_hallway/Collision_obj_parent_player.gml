@@ -28,7 +28,7 @@ with other
 			obj_player2.hallwaydirection = other.image_xscale;
 		}
 		other.visited = true;
-		fmod_event_one_shot("event:/sfx/misc/door");
+		event_play_oneshot("event:/sfx/misc/door");
 		instance_create(x, y, obj_fadeout)
 	}
 }

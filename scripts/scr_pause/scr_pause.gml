@@ -20,11 +20,11 @@ function scr_draw_pause_image(showgui)
 }
 function scr_pause_stop_sounds()
 {
-	fmod_event_instance_stop(global.snd_alarm, true);
-	fmod_event_instance_stop(global.snd_bossbeaten, true);
-	fmod_event_instance_stop(global.snd_spaceship, true);
-	fmod_event_instance_stop(global.snd_escaperumble, true);
-	fmod_event_instance_stop(global.snd_johndead, true);
+	fmod_studio_event_instance_stop(global.snd_alarm, true);
+	fmod_studio_event_instance_stop(global.snd_bossbeaten, true);
+	fmod_studio_event_instance_stop(global.snd_spaceship, true);
+	fmod_studio_event_instance_stop(global.snd_escaperumble, true);
+	fmod_studio_event_instance_stop(global.snd_johndead, true);
 }
 function scr_delete_pause_image()
 {

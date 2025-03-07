@@ -59,7 +59,7 @@ function scr_player_mach2()
 		if sprite_index == spr_playerN_skateboarddoublejump
 		{
 			sprite_index = spr_mach;
-			fmod_event_one_shot_3d("event:/sfx/playerN/wallbounceland", x, y);
+			event_play_oneshot_3d("event:/sfx/playerN/wallbounceland", x, y);
 		}
 		if machpunchAnim == 0 && sprite_index != spr_mach && sprite_index != spr_mach1 && sprite_index != spr_mach4 && sprite_index != spr_player_machhit
 		{
@@ -222,9 +222,9 @@ function scr_player_mach2()
 		image_index = 0;
 		state = states.machslide;
 		if global.playerCharacter == Characters.Maurice
-			fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);
+			event_play_oneshot_3d("event:/sfx/maurice/break", x, y);
 		else
-			fmod_event_one_shot_3d("event:/sfx/playerN/break", x, y);
+			event_play_oneshot_3d("event:/sfx/playerN/break", x, y);
 		sprite_index = spr_machslidestart;
 	}
 	else if !key_attack && movespeed < 8 && grounded && vsp > 0 && skateboarding == 0
@@ -232,9 +232,9 @@ function scr_player_mach2()
 	if move == -Xscale && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0
 	{
 		if global.playerCharacter == Characters.Maurice
-			fmod_event_one_shot_3d("event:/sfx/maurice/machslideboost", x, y);
+			event_play_oneshot_3d("event:/sfx/maurice/machslideboost", x, y);
 		else
-			fmod_event_one_shot_3d("event:/sfx/playerN/machslide", x, y);
+			event_play_oneshot_3d("event:/sfx/playerN/machslide", x, y);
 		image_index = 0;
 		state = states.machslide;
 		sprite_index = spr_machslideboost;
@@ -263,7 +263,7 @@ function scr_player_mach2()
 			is_solid = false;
 			image_xscale = other.Xscale;
 		}
-		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+		event_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 	}
 	if (key_shoot2 && global.playerCharacter == Characters.MrOrange && !instance_exists(dynamite_inst))
 	{
@@ -298,7 +298,7 @@ function scr_player_mach2()
 			var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 			if _bump
 			{
-				fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
+				event_play_oneshot_3d("event:/sfx/maurice/splat", x, y);
 				state = states.bump;
 				image_index = 0;
 				sprite_index = spr_wallsplat;
@@ -315,7 +315,7 @@ function scr_player_mach2()
 		state = states.punch;
 		image_index = 0;
 		sprite_index = spr_breakdanceuppercut;
-		fmod_event_instance_play(snd_uppercut);
+		fmod_studio_event_instance_start(snd_uppercut);
 		if global.playerCharacter == Characters.Maurice
 			vsp = -10;
 		else
@@ -337,6 +337,6 @@ function scr_player_mach2()
 		image_index = 0;
 		state = states.lungeattack;
 	}
-	if (state != states.mach2 && fmod_event_instance_is_playing(rollgetupsnd))
-		fmod_event_instance_stop(rollgetupsnd, true);
+	if (state != states.mach2 && event_instance_isplaying(rollgetupsnd))
+		fmod_studio_event_instance_stop(rollgetupsnd, true);
 }

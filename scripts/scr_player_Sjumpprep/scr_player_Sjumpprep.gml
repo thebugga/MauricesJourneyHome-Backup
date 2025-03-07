@@ -81,7 +81,7 @@ function scr_player_Sjumpprep()
                 }
                 else if (sprite_index == spr_superjumpprep)
                 {
-                    fmod_event_instance_set_parameter(superjumpsnd, "state", 2, 1)
+                    fmod_studio_event_instance_set_parameter_by_name_multiplatform(superjumpsnd, "state", 2, 1)
                     instance_create(x, y, obj_explosioneffect)
                     sprite_index = spr_superjump
                     state = states.Sjump

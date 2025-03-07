@@ -64,7 +64,7 @@ function scr_player_ratmountgroundpound() //gml_Script_scr_player_ratmountground
             {
                 if (move != 0)
                     movespeed = (Xscale * 3)
-                fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y)
+                event_play_oneshot_3d("event:/sfx/maurice/groundpound", x, y)
                 sprite_index = spr_lonegustavo_groundpoundland
                 image_index = 0
                 jumpAnim = 1

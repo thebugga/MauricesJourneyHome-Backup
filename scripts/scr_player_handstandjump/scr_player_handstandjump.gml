@@ -57,7 +57,7 @@ function scr_player_handstandjump()
 	}
 	if input_buffer_jump > 0 && can_jump && !key_down && global.attackstyle != 2
 	{
-		fmod_event_instance_play(rollgetupsnd);
+		fmod_studio_event_instance_start(rollgetupsnd);
 		input_buffer_jump = 0;
 		particle_set_scale(particle.jumpdust, Xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
@@ -109,7 +109,7 @@ function scr_player_handstandjump()
 		image_index = 0;
 		machhitAnim = false;
 		state = states.tumble;
-		fmod_event_instance_play(snd_crouchslide);
+		fmod_studio_event_instance_start(snd_crouchslide);
 	}
 	mask_index = spr_player_mask;
 	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || place_meeting_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && slopeCheck(x + Xscale, y)))
@@ -129,7 +129,7 @@ function scr_player_handstandjump()
 		var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 		if _bump
 		{
-			fmod_event_one_shot_3d("event:/sfx/maurice/splat", x, y);
+			event_play_oneshot_3d("event:/sfx/maurice/splat", x, y);
 			jumpstop = true;
 			state = states.jump;
 			vsp = -4;
@@ -148,7 +148,7 @@ function scr_player_handstandjump()
 		image_index = 0;
 		if !grounded
 		{
-			fmod_event_one_shot_3d("event:/sfx/maurice/grabcancel", x, y);
+			event_play_oneshot_3d("event:/sfx/maurice/grabcancel", x, y);
 			sprite_index = spr_suplexcancel;
 			jumpAnim = true;
 			grav = 0.5;

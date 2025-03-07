@@ -667,9 +667,9 @@ if ((state == states.jump || state == states.normal || state == states.machcance
 {
 	if ((!can_jump && key_jump) || (grounded && key_jump && key_up))
 	{
-		fmod_event_instance_play(pizzapeppersnd);
+		fmod_studio_event_instance_start(pizzapeppersnd);
 		scr_fmod_soundeffect(jumpsnd, x, y);
-		fmod_event_instance_set_parameter(pizzapeppersnd, "state", 0, true);
+		fmod_studio_event_instance_set_parameter_by_name_multiplatform(pizzapeppersnd, "state", 0, true);
 		if key_down
 			vsp = 0;
 		else
@@ -800,7 +800,7 @@ if supercharge > 9 && state != states.backbreaker
 		if (ini_read_real("Game", "supertaunt", false) == 0)
 			create_transformation_tip(lang_get_value("supertaunttip"));
 		ini_close();
-		fmod_event_one_shot("event:/sfx/maurice/gotsupertaunt");
+		event_play_oneshot("event:/sfx/maurice/gotsupertaunt");
 	}
 	supercharged = true;
 }
@@ -975,7 +975,7 @@ if object_index == obj_player1
 	if global.combotime <= 0 && global.combo >= 1
 	{
 		if global.combo >= 1
-			fmod_event_one_shot("event:/sfx/misc/kashingcombo");
+			event_play_oneshot("event:/sfx/misc/kashingcombo");
 		global.savedcombo = global.combo;
 		global.combotime = 0;
 		global.combo = 0;
@@ -1232,7 +1232,7 @@ if (distance_to_object(obj_spike) < 500)
 				if fake
 					instance_destroy();
 				if h != other.hurted && other.hurted
-					fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y);
+					event_play_oneshot_3d("event:/sfx/enemies/pizzardelectricity", x, y);
 				break;
 			}
 			with other
@@ -1242,7 +1242,7 @@ if (distance_to_object(obj_spike) < 500)
 				image_index = 0;
 				hsp = -6 * Xscale;
 				vsp = -4;
-				fmod_event_one_shot_3d("event:/sfx/knight/lose", x, y);
+				event_play_oneshot_3d("event:/sfx/knight/lose", x, y);
 				repeat 3
 					create_debris(x, y, spr_wooddebris);
 			}

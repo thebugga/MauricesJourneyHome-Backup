@@ -62,7 +62,7 @@ switch scene
             with (obj_music)
             {
                 if (music != noone)
-                    fmod_event_instance_set_parameter(music.event, "state", 1, true)
+                    fmod_studio_event_instance_set_parameter_by_name_multiplatform(music.event, "state", 1, true)
             }
         }
         break

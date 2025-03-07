@@ -60,7 +60,7 @@ function state_player_normal()
 						spr_idle6
 					]
 					if (irandom(4) <= 25)
-						fmod_event_one_shot_3d("event:/sfx/maurice/ok", x, y);
+						event_play_oneshot_3d("event:/sfx/maurice/ok", x, y);
 					image_index = 0;
 					sprite_index = idles[idleanim]
 				}
@@ -160,7 +160,7 @@ function state_player_normal()
 			is_solid = false;
 			image_xscale = other.Xscale;
 		}
-		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+		event_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 	}
 	if (key_shoot2 && global.playerCharacter == Characters.MrOrange && !instance_exists(dynamite_inst))
 	{
@@ -217,7 +217,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
             var _bump = ledge_bump((vsp >= 0 ? 32 : 22))
             if _bump
             {
-                fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y)
+                event_play_oneshot_3d("event:/sfx/maurice/groundpound", x, y)
                 state = states.bump
                 if brick
                     sprite_index = spr_player_ratmountbump
@@ -257,7 +257,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
         Xscale = move
         if (abs(movespeed) > 2 && abs(hsp) > 2 && grounded)
         {
-            fmod_event_one_shot_3d("event:/sfx/maurice/backslide", x, y)
+            event_play_oneshot_3d("event:/sfx/maurice/backslide", x, y)
             state = states.ratmountskid
             movespeed = abs(movespeed)
         }
@@ -372,7 +372,7 @@ function scr_player_ratmount() //gml_Script_scr_player_ratmount
             create_particle(x, (y + 43), (1 << 0), 0)
             steppybuffer = 18
             if (sprite_index != spr_player_ratmountattack)
-                fmod_event_one_shot_3d("event:/sfx/maurice/step", x, y)
+                event_play_oneshot_3d("event:/sfx/maurice/step", x, y)
         }
     }
     if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && state != states.ratmountskid && sprite_index != spr_player_haulingstart)
@@ -541,7 +541,7 @@ function ratmount_dotaunt() //gml_Script_ratmount_dotaunt
 	        if ((!supercharged) || (!key_up))
 	        {
 	            scr_create_parryhitbox()
-	            fmod_event_one_shot_3d("event:/sfx/maurice/taunt", x, y)
+	            event_play_oneshot_3d("event:/sfx/maurice/taunt", x, y)
 	            sprite_index = spr_player_ratmounttaunt
 	            image_index = irandom((sprite_get_number(sprite_index) - 1))
 	            with (instance_create(x, y, obj_taunteffect))
@@ -552,7 +552,7 @@ function ratmount_dotaunt() //gml_Script_ratmount_dotaunt
 	            ini_open_from_string(obj_savesystem.ini_str)
 	            ini_write_real("Game", "supertaunt", 1)
 	            obj_savesystem.ini_str = ini_close()
-	            fmod_event_one_shot_3d("event:/sfx/maurice/supertaunt", x, y)
+	            event_play_oneshot_3d("event:/sfx/maurice/supertaunt", x, y)
 	            sprite_index = spr_player_ratmountsupertaunt
 	            image_index = 0
 	        }
@@ -574,7 +574,7 @@ function ratmount_dotaunt() //gml_Script_ratmount_dotaunt
 function ratmount_kickbrick() //gml_Script_ratmount_kickbrick
 {
     var _pad = 32
-    fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", (x + (image_xscale * _pad)), y)
+    event_play_oneshot_3d("event:/sfx/enemies/killingblow", (x + (image_xscale * _pad)), y)
     with (instance_create((x + (image_xscale * _pad)), y, obj_brickball))
     {
         playerid = other.id

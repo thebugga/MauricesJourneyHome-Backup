@@ -7,7 +7,7 @@ switch state
 		state = states.normal
 		flicker = 1
         with (obj_music)
-			fmod_event_instance_set_parameter(music.event, "state", 1, 1)
+			fmod_studio_event_instance_set_parameter_by_name_multiplatform(music.event, "state", 1, 1)
 		break
 	case states.transition:
 		with (obj_parent_player)

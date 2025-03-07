@@ -58,7 +58,7 @@ function scr_player_mach3()
 			if grounded && sprite_index == spr_playerN_skateboarddoublejump
 			{
 				sprite_index = mach3_spr;
-				fmod_event_one_shot_3d("event:/sfx/playerN/wallbounceland", x, y);
+				event_play_oneshot_3d("event:/sfx/playerN/wallbounceland", x, y);
 			}
 			
 			mach2 = 100;
@@ -169,9 +169,9 @@ function scr_player_mach3()
 			{
 				sprite_index = spr_machslidestart;
 				if global.playerCharacter == Characters.Maurice
-					fmod_event_one_shot_3d("event:/sfx/maurice/break", x, y);
+					event_play_oneshot_3d("event:/sfx/maurice/break", x, y);
 				else
-					fmod_event_one_shot_3d("event:/sfx/playerN/break", x, y);
+					event_play_oneshot_3d("event:/sfx/playerN/break", x, y);
 				state = states.machslide;
 				image_index = 0;
 				launched = false;
@@ -179,9 +179,9 @@ function scr_player_mach3()
 			if (move == -Xscale && grounded && vsp > 0 && !launched && fightball == 0 && sprite_index != spr_dashpadmach)
 			{
 				if global.playerCharacter == Characters.Maurice
-					fmod_event_one_shot_3d("event:/sfx/maurice/machslideboost", x, y);
+					event_play_oneshot_3d("event:/sfx/maurice/machslideboost", x, y);
 				else
-					fmod_event_one_shot_3d("event:/sfx/playerN/machslide", x, y);
+					event_play_oneshot_3d("event:/sfx/playerN/machslide", x, y);
 				sprite_index = spr_mach3boost;
 				state = states.machslide;
 				image_index = 0;
@@ -252,7 +252,7 @@ function scr_player_mach3()
 				state = states.punch;
 				image_index = 0;
 				sprite_index = spr_breakdanceuppercut;
-				fmod_event_instance_play(snd_uppercut);
+				fmod_studio_event_instance_start(snd_uppercut);
 				if global.playerCharacter == Characters.Maurice
 					vsp = -10;
 				else
@@ -294,8 +294,8 @@ function scr_player_mach3()
 					if !fightball
 					{
 						sprite_index = spr_hitwall;
-						fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y);
-						fmod_event_one_shot_3d("event:/sfx/maurice/bumpwall", x, y);
+						event_play_oneshot_3d("event:/sfx/maurice/groundpound", x, y);
+						event_play_oneshot_3d("event:/sfx/maurice/bumpwall", x, y);
 						hsp = 0;
 						flash = false;
 						state = states.bump;
@@ -312,8 +312,8 @@ function scr_player_mach3()
 						{
 							sprite_index = spr_hitwall;
 							instance_create(x + 10, y + 10, obj_bumpeffect);
-							fmod_event_one_shot_3d("event:/sfx/maurice/groundpound", x, y);
-							fmod_event_one_shot_3d("event:/sfx/maurice/bumpwall", x, y);
+							event_play_oneshot_3d("event:/sfx/maurice/groundpound", x, y);
+							event_play_oneshot_3d("event:/sfx/maurice/bumpwall", x, y);
 							hsp = 0;
 							flash = false;
 							state = states.bump;
@@ -396,7 +396,7 @@ function scr_player_fightball() //gml_Script_scr_player_fightball
     if (place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))))
     {
         instance_create((x + 10 * Xscale), (y + 10), obj_bumpeffect)
-        //fmod_event_one_shot_3d("event:/sfx/maurice/bumpwall", x, y)
+        //event_play_oneshot_3d("event:/sfx/maurice/bumpwall", x, y)
         Xscale *= -1
         if (obj_swapmodefollow.key_jump2 || key_jump2)
         {
@@ -473,7 +473,7 @@ function scr_player_fightball() //gml_Script_scr_player_fightball
     else
     {
         fightball_snd_buffer = 15
-        //fmod_event_one_shot_3d("event:/sfx/playerN/fightball", x, y)
+        //event_play_oneshot_3d("event:/sfx/playerN/fightball", x, y)
     }
     if (fightball_buffer1 > 0)
         fightball_buffer1--

@@ -1,7 +1,7 @@
 function scr_initenemy()
 {
 	scr_collision_init()
-	chargesnd = fmod_event_create_instance("event:/sfx/enemies/charge");
+	chargesnd = fmod_createEventInstance("event:/sfx/enemies/charge");
 	pizzaheadKO = -4;
 	pizzaheadKO_ID = -4;
 	pizzaheadKO_buffer = 0;

@@ -71,16 +71,16 @@ var audio_menu = create_menu_fixed(menus.audio, anchor.left, 150, 40);
 add_option_press(audio_menu, 0, "option_back", function()
 {
 	menu_goto(menus.options);
-	fmod_event_instance_stop(global.snd_slidermaster, true);
-	fmod_event_instance_stop(global.snd_slidermusic, true);
-	fmod_event_instance_stop(global.snd_slidersfx, true);
+	fmod_studio_event_instance_stop(global.snd_slidermaster, true);
+	fmod_studio_event_instance_stop(global.snd_slidermusic, true);
+	fmod_studio_event_instance_stop(global.snd_slidersfx, true);
 	set_audio_config();
 });
 
 add_option_slide(audio_menu, 1, "option_master", function(val)
 {
 	global.option_master_volume = val / 100;
-	set_audio_config(false);
+	set_audio_config();
 }, function(val)
 {
 	global.option_master_volume = val / 100;
@@ -90,7 +90,7 @@ add_option_slide(audio_menu, 1, "option_master", function(val)
 add_option_slide(audio_menu, 2, "option_music", function(val)
 {
 	global.option_music_volume = val / 100;
-	set_audio_config(false);
+	set_audio_config();
 }, function(val)
 {
 	global.option_music_volume = val / 100;
@@ -100,7 +100,7 @@ add_option_slide(audio_menu, 2, "option_music", function(val)
 add_option_slide(audio_menu, 3, "option_sfx", function(val)
 {
 	global.option_sfx_volume = val / 100;
-	set_audio_config(false);
+	set_audio_config();
 }, function(val)
 {
 	global.option_sfx_volume = val / 100;

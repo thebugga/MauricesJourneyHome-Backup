@@ -11,14 +11,14 @@ function scr_dograb()
 {
     input_buffer_slap = 0
     suplexmove = 1
-    fmod_event_instance_play(suplexdashsnd)
+    fmod_studio_event_instance_start(suplexdashsnd)
     if (global.attackstyle == 0)
     {
 		if global.playerCharacter == Characters.Maurice
 		{
 	        input_buffer_slap = 0
 	        suplexmove = true
-	        fmod_event_instance_play(suplexdashsnd)
+	        fmod_studio_event_instance_start(suplexdashsnd)
 	        state = states.handstandjump
 	        image_index = 0
 			slaphand = 1
@@ -29,7 +29,7 @@ function scr_dograb()
 		{
 	        input_buffer_slap = 0
 	        suplexmove = true
-	        fmod_event_instance_play(suplexdashsnd)
+	        fmod_studio_event_instance_start(suplexdashsnd)
 	        state = states.handstandjump
 			sprite_index = spr_suplexdashjump
 	        image_index = 0
@@ -59,7 +59,7 @@ function scr_dograb()
         {
             tate = (80 << 0)
             flash = 1
-            fmod_event_one_shot_3d("event:/sfx/maurice/grabcancel", x, y)
+            event_play_oneshot_3d("event:/sfx/maurice/grabcancel", x, y)
             sprite_index = choose(spr_player_kungfuair1, spr_player_kungfuair2, spr_player_kungfuair3)
             image_index = 0
             movespeed = 13
@@ -68,7 +68,7 @@ function scr_dograb()
         {
             state = states.punch
             flash = 1
-            fmod_event_one_shot_3d("event:/sfx/maurice/grabcancel", x, y)
+            event_play_oneshot_3d("event:/sfx/maurice/grabcancel", x, y)
             sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3)
             image_index = 0
             movespeed = 13

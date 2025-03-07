@@ -17,4 +17,4 @@ content[7] = obj_swedishmonkey;
 content[8] = obj_coolpineapple;
 content[9] = obj_ancho;
 
-snd = fmod_event_create_instance("event:/sfx/pizzaface/moving");
+snd = fmod_createEventInstance("event:/sfx/pizzaface/moving");

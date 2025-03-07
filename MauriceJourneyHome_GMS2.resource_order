@@ -1,6 +1,8 @@
 {
   "FolderOrderSettings": [
     {"name":"Extensions","order":21,"path":"folders/Extensions.yy",},
+    {"name":"Fmod","order":46,"path":"folders/Fmod.yy",},
+    {"name":"Extensions","order":1,"path":"folders/Fmod/Extensions.yy",},
     {"name":"Fonts","order":22,"path":"folders/Fonts.yy",},
     {"name":"Objects","order":23,"path":"folders/Objects.yy",},
     {"name":"Baddie","order":11,"path":"folders/Objects/Baddie.yy",},
@@ -66,8 +68,6 @@
     {"name":"Warps","order":12,"path":"folders/Sprites/Warps.yy",},
     {"name":"Tilesets","order":30,"path":"folders/Tilesets.yy",},
     {"name":"Timelines","order":31,"path":"folders/Timelines.yy",},
-    {"name":"Fmod","order":46,"path":"folders/Fmod.yy",},
-    {"name":"Extensions","order":1,"path":"folders/Fmod/Extensions.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_playerN_machslideboostfall","order":2,"path":"sprites/spr_playerN_machslideboostfall/spr_playerN_machslideboostfall.yy",},

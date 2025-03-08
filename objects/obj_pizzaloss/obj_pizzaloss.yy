@@ -30,7 +30,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_baconcollect",
+    "path": "sprites/spr_baconcollect/spr_baconcollect.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

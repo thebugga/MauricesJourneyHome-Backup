@@ -571,7 +571,7 @@ function sh_give_all(argument0)
     
     global.Treasure = true;
     global.secretfound = 3;
-    global.Collect = global.srank;
+    global.collect = global.srank;
 }
 
 function meta_give_all()
@@ -599,7 +599,7 @@ function sh_give_prank(argument0)
     global.ComboLost = 0;
     global.Treasure = true;
     global.secretfound = 3;
-    global.Collect = global.srank * 1.8;
+    global.collect = global.srank * 1.8;
     global.SecretsFound[0] = true;
     global.SecretsFound[1] = true;
     global.SecretsFound[2] = true;
@@ -646,16 +646,16 @@ function sh_give_stat(argument0)
     switch (arg1)
     {
         case "combo":
-            global.Combo += add;
-            global.ComboTime = 60;
+            global.combo += add;
+            global.comboTime = 60;
             break;
         
         case "score":
-            global.Collect += add;
+            global.collect += add;
             break;
         
         case "lap":
-            global.lapcount += add;
+            global.laps += add;
             break;
     }
 }

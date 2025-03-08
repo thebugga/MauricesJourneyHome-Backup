@@ -505,7 +505,7 @@ function sh_room_goto(argument0)
     {
         obj_parent_player.targetRoom = arg1;
         obj_parent_player.targetDoor = arg2;
-        instance_create(0, 0, obj_fadeoutTransition);
+        instance_create(0, 0, obj_fadeout);
     }
 }
 
@@ -515,7 +515,7 @@ function meta_room_goto()
     {
         description: "Changes current room.",
         arguments: ["<room_id>", "<door>"],
-        suggestions: [global.RoomNameList, ["N/A", "A", "B", "C", "D", "E", "P", "S"]],
+        suggestions: [global.RoomNameList, ["N/A", "A", "B", "C", "D", "E", "S"]],
         argumentDescriptions: ["targetRoom", "targetDoor"]
     };
 }

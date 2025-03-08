@@ -114,7 +114,7 @@ function scr_playersounds()
 				fmod_studio_event_instance_set_parameter_by_name_multiplatform(sjumpsnd, "state", 1, true);
 			else if state != states.Sjump
 			{
-				if (event_instance_isplaying(sjumpsnd) && fmod_event_instance_get_parameter(sjumpsnd, "state") < 1)
+				if (event_instance_isplaying(sjumpsnd) && fmod_event_getParameter(sjumpsnd, "state") < 1)
 					fmod_studio_event_instance_stop(sjumpsnd, true);
 				else if (!event_instance_isplaying(sjumpsnd))
 					fmod_studio_event_instance_set_parameter_by_name_multiplatform(sjumpsnd, "state", 0, true);

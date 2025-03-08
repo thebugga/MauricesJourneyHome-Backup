@@ -43,7 +43,7 @@ if global.panic
 		if !global.lap
 		{
 			var secs = 56;
-			if (fmod_get_parameter("character") >= 1)
+			if (fmod_event_getParameter("character") >= 1)
 				secs = 65;
 			if global.fill <= secs * 12
 				fmod_studio_event_instance_set_parameter_by_name_multiplatform(panicmusicID, "state", 1, true);

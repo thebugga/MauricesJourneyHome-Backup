@@ -147,8 +147,8 @@ function scr_player_punch()
 					with (instance_create(x, y, obj_dashcloud2))
 						image_xscale = other.Xscale;
 				}
-		}
-				if (input_buffer_slap > 0 && (!key_up) && sprite_index != spr_suplexbump && shotgunAnim == false && (!global.pistol))
+			}
+				if (input_buffer_slap > 0 && (!key_up) && sprite_index != spr_suplexbump && shotgunAnim == false && (!global.pistol) && (sprite_index == spr_player_breakdanceuppercut or sprite_index == spr_player_breakdanceuppercutend))
 				{
 					flash = 1
 					event_play_oneshot_3d("event:/sfx/maurice/grabcancel", x, y)

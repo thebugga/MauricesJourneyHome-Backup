@@ -1,6 +1,5 @@
-function state_player_jump()
+function scr_player_jump()
 {
-	
 	var maxmovespeed = 8;
 	var maxmovespeed2 = 6;
 	var turnmovespeed = 2;
@@ -317,89 +316,4 @@ function state_player_jump()
 		image_index = 0;
 		idle = 0;
 	}
-}
-function state_pepperman_jump()
-{
-	
-	pepperman_grab_reset();
-	move = key_left + key_right;
-	if (move != 0 && move == sign(Xscale) && movespeed < pepperman_maxhsp_normal)
-		movespeed += pepperman_accel_air;
-	else if (move != 0 && move != sign(Xscale) && movespeed > 0)
-		movespeed -= pepperman_deccel_air;
-	else if move == 0
-		movespeed -= pepperman_deccel_air;
-	if (floor(movespeed) == pepperman_maxhsp_normal)
-		movespeed = pepperman_maxhsp_normal;
-	if movespeed > pepperman_maxhsp_normal
-		movespeed -= 0.3;
-	else if movespeed < 0
-		movespeed = 0;
-	if move != 0 && movespeed == 0
-		Xscale = move;
-	hsp = Xscale * movespeed;
-	if (sprite_index == spr_jump && animation_end())
-		sprite_index = spr_fall;
-	if (sprite_index == spr_player_pistoljump1 && animation_end())
-		sprite_index = spr_player_pistoljump2;
-	if !key_jump2 && jumpstop == 0 && vsp < 0.5
-	{
-		vsp /= 20;
-		jumpstop = true;
-	}
-	if grounded && vsp > 0
-	{
-		state = states.normal;
-		instance_create(x, y - 5, obj_landcloud);
-	}
-	if (scr_check_groundpound() && !grounded)
-	{
-		state = states.freefall;
-		freefallsmash = 12;
-		vsp = 14;
-		sprite_index = spr_bodyslamfall;
-	}
-	if (key_attack && (!place_meeting(x + Xscale, y, obj_solid) || place_meeting(x + Xscale, y, obj_destructibles)) && pepperman_grabID == noone && sprite_index != spr_mach1)
-	{
-		if move != 0
-			Xscale = move;
-		state = states.shoulderbash;
-		sprite_index = spr_mach1;
-		image_index = 0;
-	}
-	if (sprite_index == spr_mach1 && animation_end())
-		sprite_index = spr_fall;
-	if ladderbuffer > 0
-		ladderbuffer--;
-	if key_taunt2
-	{
-		event_play_oneshot_3d("event:/sfx/maurice/taunt", x, y);
-		taunttimer = 20;
-		tauntstoredmovespeed = movespeed;
-		tauntstoredvsp = vsp;
-		tauntstoredsprite = sprite_index;
-		tauntstoredstate = state;
-		state = states.backbreaker;
-		if supercharged == 1
-		{
-			image_index = 0;
-			sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4);
-		}
-		else
-		{
-			taunttimer = 20;
-			image_index = random_range(0, 11);
-			sprite_index = spr_taunt;
-		}
-		with (instance_create(x, y, obj_taunteffect))
-			player = other.id;
-	}
-}
-function scr_player_jump()
-{
-	
-	if global.playerCharacter != Characters.Clownmato
-		state_player_jump();
-	else
-		state_pepperman_jump();
 }

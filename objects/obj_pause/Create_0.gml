@@ -89,7 +89,7 @@ var exit_function = function()
 	instance_destroy(obj_option);
 	instance_destroy(obj_keyconfig);
 	fmod_studio_event_instance_stop(global.snd_bossbeaten, true);
-	savedmusicmuffle = fmod_get_parameter("musicmuffle")
+	savedmusicmuffle = fmod_event_getParameter("musicmuffle")
 	fmod_studio_system_set_parameter_by_name("musicmuffle", 0, 0)
 	var sl = ds_list_create();
 	var il = ds_list_create();
@@ -124,7 +124,7 @@ var exit_function = function()
 	ds_list_destroy(il);
 };
 ds_map_set(pause_menu_map, "pause_exit", [3, exit_function]);
-ds_map_set(pause_menu_map, "pause_exit_title", [3, exit_function]);
+ds_map_set(pause_menu_map, "pause_exit_title", [5, exit_function]);
 ds_map_set(pause_menu_map, "pause_credits", [4, function()
 {
 	event_play_oneshot("event:/sfx/ui/select");

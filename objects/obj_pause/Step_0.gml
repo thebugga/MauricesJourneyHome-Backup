@@ -40,7 +40,7 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 		else
 			array_push(pause_menu, "pause_exit_title");
 		
-        savedmusicmuffle = fmod_get_parameter("musicmuffle")
+        savedmusicmuffle = fmod_event_getParameter("musicmuffle")
         fmod_studio_system_set_parameter_by_name("musicmuffle", 1, 0)
 		
 		if global.leveltosave != -4

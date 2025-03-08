@@ -10,9 +10,9 @@ if !global.panic
 			fmod_studio_event_instance_set_paused(mu.event, false);
 			if mu.continuous && prevmusic != -4
 			{
-				var pos = fmod_event_instance_get_timeline_pos(prevmusic.event);
+				var pos = fmod_studio_event_instance_get_timeline_position(prevmusic.event);
 				pos = music_get_pos_wrap(pos, fmod_event_get_length(mu.event_name));
-				fmod_event_instance_set_timeline_pos(mu.event, pos);
+				fmod_studio_event_instance_set_timeline_position(mu.event, pos);
 			}
 			if prevmusic != noone
 			{
@@ -50,7 +50,7 @@ if !global.panic
 			pos = fmod_event_instance_get_timeline_pos(music.event);
 			savedmusicpos = pos;
 			pos = music_get_pos_wrap(pos, fmod_event_get_length(music.event_secret_name));
-			fmod_event_instance_set_timeline_pos(music.event_secret, pos);
+			fmod_studio_event_instance_set_timeline_position(music.event_secret, pos);
 			fmod_studio_event_instance_set_paused(music.event, true);
 		}
 		if global.panic
@@ -67,11 +67,11 @@ if !global.panic
 		{
 			fmod_studio_event_instance_stop(music.event_secret, true);
 			fmod_studio_event_instance_set_paused(music.event, false);
-			fmod_event_instance_set_timeline_pos(music.event, savedmusicpos);
+			fmod_studio_event_instance_set_timeline_position(music.event, savedmusicpos);
 		}
 		if global.panic
 		{
-			fmod_event_instance_set_timeline_pos(panicmusicID, savedpanicpos);
+			fmod_studio_event_instance_set_timeline_position(panicmusicID, savedpanicpos);
 			fmod_studio_event_instance_set_paused(panicmusicID, false);
 			trace("Resuming panic music: room_start");
 		}

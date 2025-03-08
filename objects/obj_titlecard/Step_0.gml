@@ -30,7 +30,7 @@ if titlecredit[image_index][4] & wipshow
 		if wipscale == 1
 		{
 			wipshake = 20
-			audio_play_sound(sfx_breakmetal, 1, false, (audio_sound_get_gain(titlecardmu) * 0.8) * global.option_sfx_volume)
+			event_play_oneshot("event:/sfx/misc/breakmetal")
 		}
 	}
 	else

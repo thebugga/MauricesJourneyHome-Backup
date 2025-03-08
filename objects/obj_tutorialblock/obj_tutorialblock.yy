@@ -3,8 +3,6 @@
   "resourceVersion": "1.0",
   "name": "obj_tutorialblock",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
   ],
@@ -14,7 +12,10 @@
     "name": "Room structure",
     "path": "folders/Objects/Game settings/Room structure.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_onewaybigblock",
+    "path": "objects/obj_onewaybigblock/obj_onewaybigblock.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -31,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bigbreakable",
-    "path": "sprites/spr_bigbreakable/spr_bigbreakable.yy",
+    "name": "spr_onewaybigblock",
+    "path": "sprites/spr_onewaybigblock/spr_onewaybigblock.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -1,28 +1,5 @@
-ini_open_from_string(obj_savesystem.ini_str)
-var _destroyed = ini_read_real("Tutorial", "finished", 0)
-ini_close()
+ini_open_from_string(obj_savesystem.ini_str_options);
+var _destroyed = ini_read_real("General", "tutorblockbroken", 0);
+obj_savesystem.ini_str_options = ini_close();
 if _destroyed
-{
-    ini_open_from_string(obj_savesystem.ini_str)
-    if global.swapmode
-    {
-        ini_write_real("Tutorial", "finished", 1)
-        ini_write_real("Tutorial", "lapunlocked", 1)
-    }
-    _destroyed = ini_read_real("Tutorial", "tutorialcutscene", 0)
-    if (!_destroyed)
-    {
-        ini_write_real("Tutorial", "tutorialcutscene", 1)
-        with (obj_tutorialblock)
-        {
-            with (obj_parent_player)
-            {
-                if place_meeting(x, y, obj_startgate)
-                    other.alarm[0] = 100
-            }
-        }
-    }
-    if (alarm[0] == -1)
-        instance_destroy()
-    obj_savesystem.ini_str = ini_close()
-}
+    instance_destroy()

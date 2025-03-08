@@ -1,0 +1,1 @@
+targetRoom = garbage_5

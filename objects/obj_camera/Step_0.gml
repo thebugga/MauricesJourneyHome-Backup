@@ -24,8 +24,11 @@ else
 	p2pdistancex = 0;
 if (floor(image_index) == 10)
 	shoving = false;
-if (room == rm_levelselect || room == rank_room || room == timesuproom || room == ObjectnMacroloadinRoom || room == rm_eggplantdisclaimer || room == rm_logo || room == Mainmenu || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 3) == "hub" && !global.panic))
+if (room == rm_levelselect || room == rank_room || room == timesuproom || room == ObjectnMacroloadinRoom || room == rm_eggplantdisclaimer || room == rm_logo || room == Mainmenu || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 3) == "hub" && !global.panic) || instance_exists(obj_titlecard))
+{
 	visible = false;
+	hud_posY = -300
+}
 else
 	visible = true;
 if shoving == 1 && image_index >= 3 && bang == 0

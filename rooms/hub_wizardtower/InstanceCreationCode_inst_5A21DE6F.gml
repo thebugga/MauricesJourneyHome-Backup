@@ -1,3 +1,3 @@
-targetRoom = wizard_1OLD
+targetRoom = wizard_1
 level = "wizard"
 titlecardi = 2

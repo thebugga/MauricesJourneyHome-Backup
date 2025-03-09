@@ -1,48 +1,30 @@
-if (!fadedin || fadeout)
-	fadealpha = approach(fadealpha, 1, 0.1)
-else
-	fadealpha = approach(fadealpha, 0, 0.1)
-if (fadealpha == 1)
-	fadedin = true
-if titlestate == 1
+fracturescale = approach(fracturescale, showing, 0.05)
+fractureangle += fracturescale == 1 ? 0.25 : 10
+if fracturescale != 0
+	cardx += fracturescale == 1 ? 1 : 50
+creditalpha = approach(creditalpha, creditshow, 0.1)
+if showing
 {
-	if !titlecredit[image_index][3]
-		titlealpha = approach(titlealpha, 0, 0.1)
-	layoutalpha = approach(layoutalpha, 1, 0.1)
-	skipalpha = approach(skipalpha, 1, 0.1)
-}
-if titlestate == 2
-{
-	layoutalpha = approach(layoutalpha, 0, 0.1)
-	artalpha = approach(artalpha, 1, 0.1)
-}
-if titlestate == 3
-{
-	artalpha = approach(artalpha, 0, 0.1)
-	musicalpha = approach(musicalpha, 1, 0.1)
-}
-if titlecredit[image_index][4] & wipshow
-{
-	if wipscale > 1
+	if fracturescale == 1 && alarm[2] <= 0
+		alarm[2] = 100
+	playeroff = lerp(playeroff, 10, 0.1)
+	if /*image_index == 0 &&*/ wipshow
 	{
-		wipscale -= 0.2
-		wipangle += 5
-		if wipscale == 1
+		if wipscale > 1
 		{
-			wipshake = 20
-			event_play_oneshot("event:/sfx/misc/breakmetal")
+			wipscale -= 0.2
+			wipangle += 5
+			if wipscale == 1
+			{
+				wipshake = 20
+				event_play_oneshot("event:/sfx/misc/breakmetal")
+			}
 		}
+		else
+			wipshake = approach(wipshake, 0, 1)
 	}
-	else
-		wipshake = approach(wipshake, 0, 1)
 }
-if titlestate != 0 && obj_player1.key_jump2 && !instance_exists(obj_fadeout)
-{
-	with obj_parent_player
-	{
-		input_buffer_jump = 0
-		with (instance_create_unique(0, 0, obj_fadeout))
-			restarttimer = true;
-	}
-	fadeout = true
-}
+else
+playeroff = lerp(playeroff, 0, 0.1)
+if fracturescale == 0 && cardx > 0
+	instance_destroy()

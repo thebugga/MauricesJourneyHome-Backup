@@ -8,8 +8,8 @@ rank_index = 0
 world_array[0] = "SUNNY CHECKERS"
 world_array[1] = "MISCELLANEOUS"
 
-level_array[0][0] = ["GARGBAGE GRAVEYARD", garbage_1, "garbage"]
-level_array[0][1] = ["PIZZARDRY", wizard_1, "wizard"]
+level_array[0][0] = ["GARGBAGE GRAVEYARD", garbage_1, "garbage", 1]
+level_array[0][1] = ["PIZZARDRY", wizard_1, "wizard", 2]
 level_array[1][0] = ["NEW HUB", tower_entrancehallway, "hub"]
 level_array[1][1] = ["OLD HUB", hub_outside, "hub"]
 

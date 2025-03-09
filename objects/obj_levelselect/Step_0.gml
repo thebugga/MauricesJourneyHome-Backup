@@ -38,7 +38,13 @@ if !instance_exists(obj_option)
 			global.level_seconds = 0
 			global.level_minutes = 0
 			global.tauntcount = 0
-			instance_create(x, y, obj_fadeout)
+			with (instance_create_unique(0, 0, obj_fadeout))
+				restarttimer = true;
+		}
+		if array_length(_levelinfo) >= 4
+		{
+			with instance_create(0, 0, obj_titlecard)
+				image_index = _levelinfo[3]
 		}
 	}
 	if instance_exists(obj_fadeout)

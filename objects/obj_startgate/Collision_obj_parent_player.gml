@@ -43,11 +43,8 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 		obj_music.fadeoff = 0;
 		targetDoor = "A";
 		targetRoom = other.targetRoom;
-		if other.titlecardi == -4
-		{
-			with (instance_create_unique(0, 0, obj_fadeout))
-				restarttimer = true;
-		}
+		with (instance_create_unique(0, 0, obj_fadeout))
+			restarttimer = true;
 	}
 	if titlecardi != -4
 	{

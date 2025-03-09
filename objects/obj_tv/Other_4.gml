@@ -34,7 +34,7 @@ switch global.leveltosave
 }
 if (room == rm_test)
 	global.srank = 5000
-else if (room == wizard_1OLD)
+else if (room == wizard_1)
 	global.srank = 3000
 else if (room == garbage_1)
 	global.srank = 2000

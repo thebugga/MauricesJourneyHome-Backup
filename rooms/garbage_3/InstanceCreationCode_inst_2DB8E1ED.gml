@@ -1,1 +1,0 @@
-targetRoom = garbage_4

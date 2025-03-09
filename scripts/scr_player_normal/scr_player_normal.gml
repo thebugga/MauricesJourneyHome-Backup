@@ -113,12 +113,6 @@ function state_player_normal()
             {
                 scr_dograb()
             }
-            if key_chainsaw
-            {
-                state = states.shoulder
-                sprite_index = spr_charge
-                image_index = 0
-            }
             if (key_slap2 && key_up2)
             {
                 state = states.punch

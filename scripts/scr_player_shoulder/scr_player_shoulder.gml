@@ -1,6 +1,8 @@
 function scr_player_shoulder()
 {
 	move = (key_left + key_right)
+    if move != 0
+       Xscale = move
 	if grounded
 	{
 		if (dir != Xscale)
@@ -18,15 +20,10 @@ function scr_player_shoulder()
 			var _railinst = instance_place(x, (y + 1), obj_railparent)
 			hsp = ((move * movespeed) + (_railinst.movespeed * _railinst.dir))
 		}
-		if (move != 0)
-		{
-			if (movespeed < 7)
-				movespeed += 0.5
-			else if (floor(movespeed) == 7)
-				movespeed = 7
-		}
-		else
-			movespeed = 0
+		if (movespeed < 12)
+			movespeed += 0.5
+		else if (floor(movespeed) == 12)
+			movespeed = 12
 		if (movespeed > 7)
 			movespeed -= 0.1
 		if (move != 0)
@@ -95,7 +92,7 @@ function scr_player_shoulder()
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1
-	if (animation_end())
+	if !key_attack
 		state = states.normal
 	image_speed = 0.35
 	exit;

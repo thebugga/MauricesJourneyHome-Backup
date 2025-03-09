@@ -1,19 +1,3 @@
-layer_depth("Tiles_BG", 200)
-layer_depth("Tiles_BG2", 199)
-layer_depth("Tiles_BG3", 198)
-layer_depth("Tiles_1", 100)
-layer_depth("Tiles_2", 98)
-layer_depth("Tiles_3", 97)
-layer_depth("Tiles_4", 96)
-layer_depth("Tiles_Foreground1", 99)
-layer_depth("Tiles_Foreground2", 98)
-layer_depth("Tiles_Foreground3", 97)
-layer_depth("Assets_BG", 201)
-layer_depth("Assets_BG1", 201)
-layer_depth("Assets_BG2", 202)
-layer_depth("Assets_FG", -350)
-layer_depth("Assets_FG1", -350)
-layer_depth("Assets_FG2", -351)
 
 var asset_layers = ["Assets_BG", "Assets_BG1", "Assets_BG2", "Assets_stillBG1", "Assets_FG", "Assets_FG1", "Assets_FG2"]
 var asset_parallax = [[0.1, 0.1], [0.05, 0.05], [0.1, 0.1], [0.05, 0], [-0.1, -0.1], [-0.05, -0.05], [-0.1, -0.1]]

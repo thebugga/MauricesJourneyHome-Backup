@@ -1,4 +1,3 @@
-
 var asset_layers = ["Assets_BG", "Assets_BG1", "Assets_BG2", "Assets_stillBG1", "Assets_FG", "Assets_FG1", "Assets_FG2"]
 var asset_parallax = [[0.1, 0.1], [0.05, 0.05], [0.1, 0.1], [0.05, 0], [-0.1, -0.1], [-0.05, -0.05], [-0.1, -0.1]]
 
@@ -101,7 +100,3 @@ fg_1yoffset = layer_get_y("Foreground_1")
 fg_2xoffset = layer_get_x("Foreground_2")
 fg_2yoffset = layer_get_y("Foreground_2")
 fg_speed = layer_get_vspeed("Foreground_1")
-
-layer_depth("Foreground_1", -400)
-layer_depth("Foreground_Ground1", -401)
-layer_depth("Backgrounds_Ground1", 250)

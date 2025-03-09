@@ -28,7 +28,7 @@ if showrank
 	if (slowscore >= global.srank)
 	{
 		rank = 4
-		if global.rank == "p"
+		if scr_is_prank()
 		{
 			showrank = false
 			with instance_create_depth(receiptx + 170, 110, depth - 2, obj_fallingHUDface)
@@ -47,6 +47,7 @@ if showrank
 		rank = 2
 	else if (slowscore >= global.crank)
 		rank = 1
+	if prevrank != rank
 	if prevrank != rank
 	{
 		prevrank = rank

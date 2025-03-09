@@ -1,5 +1,5 @@
 image_speed = 0
-image_index = 0
+image_index = 1
 if (room != rm_editor)
 	depth = 50
 roomname = room_get_name(room)

@@ -15,14 +15,22 @@ function scr_player_comingoutdoor()
 	image_blend = make_colour_hsv(0, 0, c)
 	if (animation_end())
 	{
-		movespeed = 0
-		if global.playerCharacter == Characters.Pierre
-			state = states.ratmount
+		if sprite_index == spr_Timesup && instance_exists(obj_titlecard)
+		{
+			sprite_index = spr_player_introlook
+			image_index = 0
+		}
 		else
-			state = states.normal
-		image_alpha = 1
-		c = 0
-		image_blend = make_colour_hsv(0, 0, 255)
+		{
+			movespeed = 0
+			if global.playerCharacter == Characters.Pierre
+				state = states.ratmount
+			else
+				state = states.normal
+			image_alpha = 1
+			c = 0
+			image_blend = make_colour_hsv(0, 0, 255)
+		}
 	}
 	if (sprite_index != spr_Timesup)
 	{
@@ -34,7 +42,7 @@ function scr_player_comingoutdoor()
 			//scr_soundeffectpitched(sfx_step)
 		}
 	}
-	if (sprite_index != spr_Timesup)
+	if (sprite_index != spr_Timesup && sprite_index != spr_player_introlook)
 	{
 		if global.playerCharacter == Characters.Pierre
 			sprite_index = spr_ratmount_exitdoor

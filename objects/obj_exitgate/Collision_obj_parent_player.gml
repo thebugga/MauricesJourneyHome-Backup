@@ -1,4 +1,4 @@
-if image_index == 1 && global.panic == true
+if image_index == 1 && global.panic == false
 {
 	with obj_parent_player
 	{
@@ -33,6 +33,12 @@ if image_index == 1 && global.panic == true
 			}
 			other.image_index = 0;
 			ds_list_add(global.saveroom, other.id);
+			if instance_exists(obj_titlecard)
+			{
+				obj_titlecard.x = x
+				obj_titlecard.y = y
+				obj_titlecard.alarm[0] = 20
+			}
 		}
 	}
 }

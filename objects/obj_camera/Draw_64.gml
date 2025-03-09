@@ -92,6 +92,104 @@ switch (floor(pizzascore_index))
 	break
 }
 
+
+var rx = hud_scorex - 220
+var ry = hud_yy - 60
+var rank_ix = 0
+if scr_is_prank()
+    rank_ix = 5
+else if (_score >= global.srank)
+    rank_ix = 4
+else if (_score >= global.arank)
+    rank_ix = 3
+else if (_score >= global.brank)
+    rank_ix = 2
+else if (_score >= global.crank)
+    rank_ix = 1
+if (previousrank != rank_ix && rank_state == 0)
+{
+    rank_state = sign(rank_ix - previousrank)
+    rank_newx = 50 + rank_state * 100
+    previousrank = rank_ix
+}
+var perc = 0
+switch rank_ix
+{
+    case 5:
+        perc = 1
+        break
+    case 4:
+        perc = (global.treasure + global.toppintotal + global.secretfound + global.lap + (!global.combodropped)) / 11
+        break
+    case 3:
+        perc = (_score - global.arank) / (global.srank - global.arank)
+        break
+    case 2:
+        perc = (_score - global.brank) / (global.arank - global.brank)
+        break
+    case 1:
+        perc = (_score - global.crank) / (global.brank - global.crank)
+        break
+    default:
+        perc = _score / global.crank
+}
+
+if abs(rank_state) == 1
+{
+	rank_x = approach(rank_x, 50 - (25 * sign(rank_state)), 2.5)
+	rank_newx = approach(rank_newx, 50 + (25 * sign(rank_state)), 7.5)
+	rank_xscale = approach(rank_xscale, 0.5, 0.05)
+	rank_yscale = approach(rank_yscale, 1.5, 0.05)
+	if rank_x == 50 - (25 * sign(rank_state))
+		 rank_state += sign(rank_state)
+}
+if abs(rank_state) == 2
+{
+	rank_x = approach(rank_x, 50, 2.5)
+	rank_newx = approach(rank_newx, 50 + (100 * sign(rank_state)), 7.5)
+	rank_xscale = approach(rank_xscale, 1, 0.05)
+	rank_yscale = approach(rank_yscale, 1, 0.05)
+	if rank_x == 50
+		 rank_state += sign(rank_state)
+}
+if abs(rank_state) == 3
+{
+	rank_x = approach(rank_x, 50 - (100 * sign(rank_state)), 5)
+	rank_newx = approach(rank_newx, 50, 5)
+	if rank_newx == 50
+		 {
+			rank_state = 0
+			rank_visual = previousrank
+			rank_x = 50
+			rank_newx = -50
+			rank_xscale = 1
+			rank_yscale = 1
+		 }
+}
+if (!surface_exists(rank_surf))
+    rank_surf = surface_create(100, 100)
+if (!surface_exists(rank_clip))
+    rank_clip = surface_create(100, 100)
+gpu_set_blendmode(bm_normal) 
+surface_set_target(rank_clip)
+	draw_set_alpha(1)
+	draw_clear(c_white)
+	gpu_set_blendmode(bm_subtract)
+	draw_sprite(spr_ranks_clip, 0, 50, 50)
+surface_reset_target()
+gpu_set_blendmode(bm_normal)
+surface_set_target(rank_surf)
+	draw_clear(ds_map_find_value(rankbg_color, rank_ix))
+	draw_rectangle_color(0, 100 - (perc * 100), 100, 100, ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), false)
+	draw_sprite(spr_ranks_hud, previousrank, rank_newx, 50)
+	draw_sprite_ext(spr_ranks_hud, rank_visual, rank_x, 50, rank_xscale, rank_yscale, 0, c_white, 1)
+	gpu_set_blendmode(bm_subtract)
+	draw_surface(rank_clip, 0, 0)
+	gpu_set_blendmode(bm_normal) 
+surface_reset_target()
+draw_set_alpha(1)
+draw_surface(rank_surf, rx, ry)
+
 var cs = 0
 with (obj_comboend)
 	cs += comboscore

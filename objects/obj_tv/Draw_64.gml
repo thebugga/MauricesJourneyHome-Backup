@@ -18,57 +18,10 @@ if global.playerCharacter == Characters.Doise
 	draw_sprite_part_ext(spr_temperature_meterfill, 0, 0, 0, _width, _height2, jetpack_x, (192 + _height), 1, -1, c_white, 1)
 	draw_sprite(spr_temperature_meter, 0, jetpack_x, 192)
 }
-var collect_x = irandom_range((-collect_shake), collect_shake)
-var collect_y = irandom_range((-collect_shake), collect_shake)
 var tv_x = 0
 var tv_y = -54
-var _score = global.collect
-if global.coop
-    _score += global.collectN
 var hud_xx = 839
 var hud_yy = 90
-var hud_scorex = hud_xx + (irandom_range((-collect_shake), collect_shake))
-var hud_scorey = hud_yy + (irandom_range((-collect_shake), collect_shake))
-var rx = hud_scorex - 220
-var ry = 30
-var rank_ix = 0
-if scr_is_prank()
-    rank_ix = 5
-else if (_score >= global.srank)
-    rank_ix = 4
-else if (_score >= global.arank)
-    rank_ix = 3
-else if (_score >= global.brank)
-    rank_ix = 2
-else if (_score >= global.crank)
-    rank_ix = 1
-if (previousrank != rank_ix && rank_state == 0)
-{
-    rank_state = sign(rank_ix - previousrank)
-    rank_newx = 50 + rank_state * 100
-    previousrank = rank_ix
-}
-var perc = 0
-switch rank_ix
-{
-    case 5:
-        perc = 1
-        break
-    case 4:
-        perc = (global.treasure + global.toppintotal + global.secretfound + global.lap + (!global.combodropped)) / 11
-        break
-    case 3:
-        perc = (_score - global.arank) / (global.srank - global.arank)
-        break
-    case 2:
-        perc = (_score - global.brank) / (global.arank - global.brank)
-        break
-    case 1:
-        perc = (_score - global.crank) / (global.brank - global.crank)
-        break
-    default:
-        perc = _score / global.crank
-}
 
 var _cx = combo_posX + 130
 var _cy = hud_yy + 125 + combo_posY
@@ -96,62 +49,6 @@ for (var i = _num; i > 0; i--)
 	_ty -= 8
 }
 
-if abs(rank_state) == 1
-{
-	rank_x = approach(rank_x, 50 - (25 * sign(rank_state)), 2.5)
-	rank_newx = approach(rank_newx, 50 + (25 * sign(rank_state)), 7.5)
-	rank_xscale = approach(rank_xscale, 0.5, 0.05)
-	rank_yscale = approach(rank_yscale, 1.5, 0.05)
-	if rank_x == 50 - (25 * sign(rank_state))
-		 rank_state += sign(rank_state)
-}
-if abs(rank_state) == 2
-{
-	rank_x = approach(rank_x, 50, 2.5)
-	rank_newx = approach(rank_newx, 50 + (100 * sign(rank_state)), 7.5)
-	rank_xscale = approach(rank_xscale, 1, 0.05)
-	rank_yscale = approach(rank_yscale, 1, 0.05)
-	if rank_x == 50
-		 rank_state += sign(rank_state)
-}
-if abs(rank_state) == 3
-{
-	rank_x = approach(rank_x, 50 - (100 * sign(rank_state)), 5)
-	rank_newx = approach(rank_newx, 50, 5)
-	if rank_newx == 50
-		 {
-			rank_state = 0
-			rank_visual = previousrank
-			rank_x = 50
-			rank_newx = -50
-			rank_xscale = 1
-			rank_yscale = 1
-		 }
-}
-if (!surface_exists(rank_surf))
-    rank_surf = surface_create(100, 100)
-if (!surface_exists(rank_clip))
-    rank_clip = surface_create(100, 100)
-gpu_set_blendmode(bm_normal) 
-surface_set_target(rank_clip)
-	draw_set_alpha(1)
-	draw_clear(c_white)
-	gpu_set_blendmode(bm_subtract)
-	draw_sprite(spr_ranks_clip, 0, 50, 50)
-surface_reset_target()
-gpu_set_blendmode(bm_normal)
-surface_set_target(rank_surf)
-	draw_clear(ds_map_find_value(rankbg_color, rank_ix))
-	draw_rectangle_color(0, 100 - (perc * 100), 100, 100, ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), ds_map_find_value(rankbg_color, rank_ix + 1), false)
-	draw_sprite(spr_ranks_hud, previousrank, rank_newx, 50)
-	draw_sprite_ext(spr_ranks_hud, rank_visual, rank_x, 50, rank_xscale, rank_yscale, 0, c_white, 1)
-	gpu_set_blendmode(bm_subtract)
-	draw_surface(rank_clip, 0, 0)
-	gpu_set_blendmode(bm_normal) 
-surface_reset_target()
-draw_set_alpha(1)
-draw_surface(rank_surf, rx, ry)
-
 if (!surface_exists(tvsurface))
 	tvsurface = surface_create(278, 268)
 gpu_set_blendmode(bm_normal)
@@ -164,15 +61,15 @@ surface_set_target(tvsurface)
 	gpu_set_blendmode(bm_normal)
 surface_reset_target()
 shader_set(global.Pal_Shader)
-	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
-    draw_sprite_ext(spr_tv_bgfinal, tv_bg_index,((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY),  1, 1, 0, c_white, alpha)
-    //pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, patterntexture)
-	draw_sprite_ext(sprite_index, image_index, ((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
-	if state == states.normal && sprite_index != spr_tv_open
-		draw_surface(tvsurface, (tv_x + collect_x), ((tv_y + collect_y) + hud_posY))
-	//pattern_reset()
-	if (state = states.tv_whitenoise)
-		draw_sprite_ext(spr_tv_whitenoise, floor(noiseindex), ((tv_x + 139) + collect_x), (((tv_y + 134) + collect_y) + hud_posY), 1, 1, 0, c_white, alpha)
+pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
+draw_sprite_ext(spr_tv_bgfinal, tv_bg_index,(tv_x + 139), ((tv_y + 134) + hud_posY),  1, 1, 0, c_white, alpha)
+pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.patterntexture)
+draw_sprite_ext(sprite_index, image_index, (tv_x + 139), ((tv_y + 134) + hud_posY), 1, 1, 0, c_white, alpha)
+if state == states.normal && sprite_index != spr_tv_open
+	draw_surface(tvsurface, (tv_x), ((tv_y) + hud_posY))
+pattern_reset()
+if (state = states.tv_whitenoise)
+	draw_sprite_ext(spr_tv_whitenoise, floor(noiseindex), (tv_x + 139), ((tv_y + 134) + hud_posY), 1, 1, 0, c_white, alpha)
 reset_shader_fix()
 draw_rectangle_color(0, newsy, 960, newsy + 50, c_red, c_red, c_red, c_red, false)
 draw_rectangle_color(0, newsy + 50, 960, newsy + 70, c_white, c_white, c_white, c_white, false)

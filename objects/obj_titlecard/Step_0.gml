@@ -5,8 +5,9 @@ if fracturescale != 0
 creditalpha = approach(creditalpha, creditshow, 0.1)
 if showing
 {
+	pinholescale = lerp(pinholescale, 1, 0.075)
 	if fracturescale == 1 && alarm[2] <= 0
-		alarm[2] = 100
+		alarm[2] = 150
 	playeroff = lerp(playeroff, 10, 0.1)
 	if /*image_index == 0 &&*/ wipshow
 	{
@@ -25,6 +26,13 @@ if showing
 	}
 }
 else
-playeroff = lerp(playeroff, 0, 0.1)
-if fracturescale == 0 && cardx > 0
-	instance_destroy()
+{
+	playeroff = lerp(playeroff, 0, 0.1)
+	if cardx > 0
+	{
+		pinholescale += 0.05
+		pinholealpha -= 0.05
+		if fracturescale == 0
+			instance_destroy()
+	}
+}

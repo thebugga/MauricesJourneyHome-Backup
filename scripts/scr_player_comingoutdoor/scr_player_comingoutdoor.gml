@@ -15,9 +15,12 @@ function scr_player_comingoutdoor()
 	image_blend = make_colour_hsv(0, 0, c)
 	if (animation_end())
 	{
-		if sprite_index == spr_Timesup && instance_exists(obj_titlecard)
+		if instance_exists(obj_titlecard)
 		{
-			sprite_index = spr_player_introlook
+			if sprite_index == spr_Timesup
+				sprite_index = spr_player_introlook
+			else if sprite_index == spr_player_introlook
+				sprite_index = spr_player_idlefrown
 			image_index = 0
 		}
 		else
@@ -42,7 +45,7 @@ function scr_player_comingoutdoor()
 			//scr_soundeffectpitched(sfx_step)
 		}
 	}
-	if (sprite_index != spr_Timesup && sprite_index != spr_player_introlook)
+	if (sprite_index != spr_Timesup && sprite_index != spr_player_introlook && sprite_index != spr_player_idlefrown)
 	{
 		if global.playerCharacter == Characters.Pierre
 			sprite_index = spr_ratmount_exitdoor

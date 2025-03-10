@@ -3088,6 +3088,7 @@
     {"id":{"name":"spr_tv_knightN","path":"sprites/spr_tv_knightN/spr_tv_knightN.yy",},},
     {"id":{"name":"spr_tv_mort","path":"sprites/spr_tv_mort/spr_tv_mort.yy",},},
     {"id":{"name":"spr_towerduds","path":"sprites/spr_towerduds/spr_towerduds.yy",},},
+    {"id":{"name":"bg_mist","path":"sprites/bg_mist/bg_mist.yy",},},
     {"id":{"name":"spr_tv_mortN","path":"sprites/spr_tv_mortN/spr_tv_mortN.yy",},},
     {"id":{"name":"spr_tv_off","path":"sprites/spr_tv_off/spr_tv_off.yy",},},
     {"id":{"name":"spr_tv_open","path":"sprites/spr_tv_open/spr_tv_open.yy",},},

@@ -27,4 +27,3 @@ y = obj_player1.y + obj_player1.vsp + vsp;
 fmod_event_set3DPosition(snd, x, y);
 if (!event_instance_isplaying(snd))
 	fmod_studio_event_instance_start(snd);
-bonehurtingjuice()

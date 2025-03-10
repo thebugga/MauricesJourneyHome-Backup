@@ -441,6 +441,7 @@
     {"name":"obj_loadingscreen","order":26,"path":"objects/obj_loadingscreen/obj_loadingscreen.yy",},
     {"name":"spr_hallwaybottom","order":49,"path":"sprites/spr_hallwaybottom/spr_hallwaybottom.yy",},
     {"name":"spr_towerduds","order":42,"path":"sprites/spr_towerduds/spr_towerduds.yy",},
+    {"name":"bg_mist","order":96,"path":"sprites/bg_mist/bg_mist.yy",},
     {"name":"tilespr_garbage","order":93,"path":"sprites/tilespr_garbage/tilespr_garbage.yy",},
     {"name":"obj_NekoPresence","order":19,"path":"objects/obj_NekoPresence/obj_NekoPresence.yy",},
     {"name":"spr_uparrow","order":58,"path":"sprites/spr_uparrow/spr_uparrow.yy",},

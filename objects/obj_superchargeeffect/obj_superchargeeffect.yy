@@ -4,14 +4,14 @@
   "name": "obj_superchargeeffect",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Effects",
-    "path": "folders/Objects/Visuals/Effects.yy",
+    "name": "Visuals",
+    "path": "folders/Objects/Visuals.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_supercharge",
-    "path": "sprites/spr_supercharge/spr_supercharge.yy",
+    "name": "spr_supertaunteffect1",
+    "path": "sprites/spr_supertaunteffect1/spr_supertaunteffect1.yy",
   },
   "spriteMaskId": null,
   "visible": true,

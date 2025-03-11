@@ -19,7 +19,7 @@ function scr_dograb()
 	        input_buffer_slap = 0
 	        suplexmove = true
 	        fmod_studio_event_instance_start(suplexdashsnd)
-	        state = states.handstandjump
+	        state = states.slap
 	        image_index = 0
 			slaphand = 1
 			sprite_index = choose(spr_player_slap1, spr_player_slap2)

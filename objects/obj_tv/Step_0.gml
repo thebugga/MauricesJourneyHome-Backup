@@ -63,10 +63,33 @@ else
 	combo_vsp = 0
 	combo_state = 0
 }
-combofill_index += 0.35
+combofill_index += 0.356
 if (combofill_index > (sprite_get_number(spr_tv_combobubblefill) - 1))
 	combofill_index = frac(combofill_index)
 
+	
+if global.combo > 0
+{
+	comboend = true;
+	var ct = global.combotime;
+	if ct <= 40
+	{
+		if alarm[2] == -1
+		{
+			if ct >= 20
+				alarm[2] = 12;
+			else
+				alarm[2] = 5;
+		}
+	}
+	else
+		combobubblevisible = true;
+}
+else if comboend
+{
+	comboend = false;
+	event_perform(2, 3);
+}
 if (prompt != -4 && prompt != "")
 	newsy = approach(newsy, 470, 5)
 else

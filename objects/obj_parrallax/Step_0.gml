@@ -74,6 +74,7 @@ for (var i = 0; i < array_length(lay_arr); i++)
 			layer_y(lay, (yof + _cam_y) - bg_y);
 			break;
 		case "Backgrounds_stillscroll":
+		case "Backgrounds_stillscroll2":
 			layer_x(lay, (bg_still1xoffset + bg_scrollx + _cam_x) - calculate_parrallax_still_x(lay, 0.25));
 			layer_y(lay, (bg_still1xoffset + bg_scrolly + _cam_y) - calculate_parrallax_still_y(lay, 0.25));
 			bg_scrollx += layer_get_hspeed(lay);

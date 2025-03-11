@@ -33,5 +33,5 @@
     "path": "sprites/spr_unownSlopePlatform/spr_unownSlopePlatform.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

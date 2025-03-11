@@ -42,5 +42,5 @@
     "name": "spr_unownMovingPlatform",
     "path": "sprites/spr_unownMovingPlatform/spr_unownMovingPlatform.yy",
   },
-  "visible": true,
+  "visible": false,
 }

@@ -32,5 +32,5 @@
     "path": "sprites/spr_unownMovingPlatformTrigger/spr_unownMovingPlatformTrigger.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

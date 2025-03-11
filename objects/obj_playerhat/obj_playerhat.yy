@@ -28,10 +28,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_gabbie",
-    "path": "sprites/spr_gabbie/spr_gabbie.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

@@ -71,8 +71,6 @@ camera_angle = 0
 target_angle = 0
 global.inclination_speed = 0.008
 pause_tilt = 0
-combobubblevisible = true;
-comboend = false;
 rank_state = 0
 rank_visual = 0
 previousrank = 0;
@@ -90,3 +88,12 @@ ds_map_set(rankbg_color, 3, #800000)
 ds_map_set(rankbg_color, 4, #D07800)
 ds_map_set(rankbg_color, 5, #882858)
 ds_map_set(rankbg_color, 6, #882858)
+combo_state = 0;
+combo_posX = 0;
+combo_vsp = 0;
+combo_posY = 0;
+combofill_x = 0;
+combofill_y = 0;
+combofill_index = 0;
+comboend = false;
+combobubblevisible = true;

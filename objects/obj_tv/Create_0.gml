@@ -5,13 +5,15 @@ enum tvprompt
 	transfo
 }
 
-combo_state = 0
-combo_posX = 0
-combo_vsp = 0
-combo_posY = 0
-combofill_x = 0
-combofill_y = 0
-combofill_index = 0
+combo_state = 0;
+combo_posX = 0;
+combo_vsp = 0;
+combo_posY = 0;
+combofill_x = 0;
+combofill_y = 0;
+combofill_index = 0;
+combobubblevisible = true;
+comboend = false;
 image_speed = 0.1
 chose = 0
 messagelist = ds_list_create()

@@ -7,8 +7,6 @@ function scr_player_slap()
 	}
 	else
 	{
-		if move == 0 && movespeed > 0
-			movespeed -= 0.25
 		hsp = (Xscale * movespeed)
 	}
 	landAnim = 0
@@ -23,7 +21,12 @@ function scr_player_slap()
 			if (move != 0)
 				dir = move
 			if grounded
-				state = states.normal
+			{
+				if key_attack
+					state = states.mach2
+				if !key_attack
+					state = states.normal
+			}
 			else
 			{
 				sprite_index = spr_player_fall
@@ -48,6 +51,19 @@ function scr_player_slap()
 			}
 			image_index = 0
 		}
+	}
+	if (scr_mach_check_dive() && grounded)
+	{
+		with (instance_create(x, y, obj_jumpdust))
+			image_xscale = other.Xscale;
+		movespeed = 12;
+		crouchslipbuffer = 25;
+		grav = 0.5;
+		sprite_index = spr_crouchslip;
+		image_index = 0;
+		machhitAnim = false;
+		state = states.tumble;
+		fmod_studio_event_instance_start(snd_crouchslide);
 	}
 	image_speed = 0.35
 	exit;

@@ -27,8 +27,9 @@ function state_player_normal()
             notecreate = 10
         }
     }
-   dir = lerp(dir, move, 0.3)
-    movespeed = 6
+    dir = lerp(dir, move, 0.3)
+    if move == 1
+        movespeed = 6
     hsp = movespeed * dir
     if (sign(hsp) != 0)
         xscale = sign(hsp)
@@ -109,7 +110,7 @@ function state_player_normal()
                 if (movespeed < 6)
                     movespeed = 6
             }
-            if key_slap2
+            if key_slap2 && !key_up2
             {
                 scr_dograb()
             }

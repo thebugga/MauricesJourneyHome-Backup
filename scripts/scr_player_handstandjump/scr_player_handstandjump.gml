@@ -5,10 +5,7 @@ function scr_player_handstandjump()
 	move = key_left + key_right;
 	momemtum = true;
 	dir = Xscale;
-	var _slpaspr = (sprite_index == spr_player_slap1 or sprite_index == spr_player_slap2)
-	if (_slpaspr && animation_end())
-		scr_doplayernormal()
-	if global.playerCharacter != Characters.Maurice
+	if global.attackstyle != 3
 	{
 		if movespeed < 10
 		{

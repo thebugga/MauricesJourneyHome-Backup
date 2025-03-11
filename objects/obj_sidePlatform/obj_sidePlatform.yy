@@ -33,5 +33,5 @@
     "path": "sprites/spr_unownSidePlatform/spr_unownSidePlatform.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

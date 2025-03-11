@@ -1,3 +1,5 @@
+scr_collision_init()
+scr_init_input()
 state = states.normal
 platformid = -4
 hsp_carry = 0
@@ -22,7 +24,6 @@ move = 0
 movespeed = 0
 prevframe = 0
 landAnim = false
-scr_initinput()
 character = global.playerCharacter;
 scr_bosscharacterspr();
 paletteselect = 1;

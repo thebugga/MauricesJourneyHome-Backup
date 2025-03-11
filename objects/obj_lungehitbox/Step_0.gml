@@ -1,7 +1,10 @@
-if (playerid.state != states.lungeattack && playerid.state != states.handstandjump)
+if instance_exists(playerid)
 {
-	instance_destroy()
-	exit;
+	if (playerid.state != states.lungeattack && playerid.state != states.handstandjump)
+	{
+		instance_destroy()
+		exit;
+	}
+	x = (playerid.x + (24 * playerid.Xscale))
+	y = playerid.y
 }
-x = (playerid.x + (24 * playerid.Xscale))
-y = playerid.y

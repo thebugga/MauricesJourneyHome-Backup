@@ -1,3 +1,4 @@
+scr_collision_init()
 platformid = -4
 hsp_carry = 0
 vsp_carry = 0

@@ -13,20 +13,20 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6ee4d4e8-8661-4ada-b962-2f32690b1645",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"97fabefd-7bad-4b12-8613-340c0c1c4b44",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 168,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4aaa9d76-7212-4137-ac22-edcb8224d5ff","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9f025342-ca28-439b-9bdc-85fbb92ca6b2","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Spider",
-    "path": "folders/Sprites/Level structure/John/Custom Faces/Spider.yy",
+    "name": "PurpleRed",
+    "path": "folders/Sprites/Level structure/John/Custom Faces/PurpleRed.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6ee4d4e8-8661-4ada-b962-2f32690b1645","path":"sprites/spr_hungrypillar_dead11/spr_hungrypillar_dead11.yy",},},},"Disabled":false,"id":"1e1df23f-54be-482c-a685-f6a75f444858","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"97fabefd-7bad-4b12-8613-340c0c1c4b44","path":"sprites/spr_hungrypillar_dead11/spr_hungrypillar_dead11.yy",},},},"Disabled":false,"id":"42152425-bc20-4df9-97a2-a258a9d1140b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

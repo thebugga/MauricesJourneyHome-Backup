@@ -2,7 +2,7 @@ instance_create(x, y, obj_slapstar)
 instance_create(x, y, obj_slapstar)
 instance_create(x, y, obj_slapstar)
 instance_create(x, y, obj_bossdefeatflash)
-obj_tv.message = "VICTORY!!!"
+obj_tv.message = "VICTorY!!!"
 obj_tv.showtext = 1
 obj_tv.alarm[0] = 260
 obj_tv.tvsprite = spr_tvclap

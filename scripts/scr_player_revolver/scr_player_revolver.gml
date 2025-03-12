@@ -9,7 +9,7 @@ function scr_player_revolver()
 	}
 	if (animation_end() && sprite_index == spr_playerV_revolverstart)
 		sprite_index = spr_playerV_revolverhold
-	if ((sprite_index == spr_playerV_revolverhold or sprite_index == spr_playerV_airrevolverstart or sprite_index == spr_playerV_revolverstart) && (!key_slap))
+	if ((sprite_index == spr_playerV_revolverhold || sprite_index == spr_playerV_airrevolverstart || sprite_index == spr_playerV_revolverstart) && (!key_slap))
 	{
 		if grounded
 			sprite_index = spr_playerV_revolvershoot
@@ -30,14 +30,14 @@ function scr_player_revolver()
 		sprite_index = spr_playerV_revolverend
 		movespeed = 2
 	}
-	if ((sprite_index == spr_playerV_airrevolverend or sprite_index == spr_playerV_airrevolver or sprite_index == spr_playerV_airrevolverstart) && grounded)
+	if ((sprite_index == spr_playerV_airrevolverend || sprite_index == spr_playerV_airrevolver || sprite_index == spr_playerV_airrevolverstart) && grounded)
 	{
 		if (key_attack && movespeed >= 6)
 			state = states.mach2
 		else
 			state = states.normal
 	}
-	if (sprite_index == spr_playerV_revolverhold or sprite_index == spr_playerV_revolverstart)
+	if (sprite_index == spr_playerV_revolverhold || sprite_index == spr_playerV_revolverstart)
 	{
 		if (key_down && grounded && global.attackstyle != 2)
 		{

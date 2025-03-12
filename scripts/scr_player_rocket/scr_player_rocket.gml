@@ -68,7 +68,7 @@ function scr_player_rocket()
 			image_index = 0
 		}
 	}
-	if (place_meeting_solid((x + sign(hsp)), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && ((!(place_meeting((x + sign(hsp)), y, obj_ratblock))) or place_meeting((x + sign(hsp)), y, obj_rattumble)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_totemsteve))))
+	if (place_meeting_solid((x + sign(hsp)), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_metalblock))) && ((!(place_meeting((x + sign(hsp)), y, obj_ratblock))) || place_meeting((x + sign(hsp)), y, obj_rattumble)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + sign(hsp)), y, obj_totemsteve))))
 	{
 		pizzapepper = 0
 		sprite_index = spr_rockethitwall
@@ -130,11 +130,11 @@ function scr_player_rocket()
 			other.chargeeffectid = id
 		}
 	}
-	if (sprite_index == spr_mach4 or sprite_index == spr_fightball)
+	if (sprite_index == spr_mach4 || sprite_index == spr_fightball)
 		image_speed = 0.4
 	if (sprite_index == spr_crazyrun)
 		image_speed = 0.75
-	if (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit)
+	if (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit)
 		image_speed = 0.4
 	else
 		image_speed = 0.4

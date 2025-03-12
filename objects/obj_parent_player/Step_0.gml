@@ -1130,7 +1130,7 @@ if toomuchalarm1 > 0
 }
 if restartbuffer > 0
 	restartbuffer--;
-if ((y > (room_height + 300) or y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && room != timesuproom && room != hub_tutorial1)
+if ((y > (room_height + 300) || y < -800) && !place_meeting(x, y, obj_verticalhallway) && !verticalhallway && state != states.gotoplayer && !global.levelreset && room != rm_test && room != timesuproom && room != hub_tutorial1)
 {
 	if (room != ObjectnMacroloadinRoom && room != rank_room && room != rm_placeholder)
 	{

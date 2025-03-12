@@ -1,6 +1,6 @@
 with (obj_parent_player)
 {
-	if ((state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes) && cutscene == 0)
+	if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes) && cutscene == 0)
 	{
 		with (instance_create(x, y, obj_knightdebris))
 			image_index = 0
@@ -48,7 +48,7 @@ with (obj_parent_player)
 		obj_parent_player.flash = 1
 		state = states.bump
 	}
-	else if (state == states.cheesepep or state == states.cheesepepstick)
+	else if (state == states.cheesepep || state == states.cheesepepstick)
 	{
 		obj_parent_player.grav = 0.5
 		repeat (8)

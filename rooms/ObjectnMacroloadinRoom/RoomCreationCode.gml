@@ -281,7 +281,7 @@ enum Characters
 	Maurice,
 	Doise,
 	Pierre,
-	MrOrange,
+	Mrorange,
 	Clownmato,
 	Gabbie,
 	Snick

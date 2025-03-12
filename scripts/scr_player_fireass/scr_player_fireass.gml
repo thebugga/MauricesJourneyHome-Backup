@@ -7,7 +7,7 @@ function scr_player_fireass()
 		instance_destroy()
 	if place_meeting((x + hsp), y, obj_solid)
 		image_xscale *= -1
-	if (sprite_index == spr_fireass or sprite_index == spr_scaredjump1 or sprite_index == spr_scaredjump2)
+	if (sprite_index == spr_fireass || sprite_index == spr_scaredjump1 || sprite_index == spr_scaredjump2)
 	{
 		if (animation_end() && sprite_index == spr_fireass)
 			create_particle(x, (y + 25), states.ejected, 0)

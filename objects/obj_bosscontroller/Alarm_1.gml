@@ -3,7 +3,7 @@ if (!fakedeath)
 	scr_playerreset()
 	with (obj_parent_player)
 	{
-		if (object_index == obj_player1 or global.coop)
+		if (object_index == obj_player1 || global.coop)
 		{
 			state = states.normal
 			targetDoor = "A"

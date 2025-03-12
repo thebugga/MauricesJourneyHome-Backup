@@ -1,5 +1,5 @@
 //playerid.x = x WHY
-//playerid.y = y IN WHAT WORLD IS THIS A GOOD GAME DESIGN DECISION
+//playerid.y = y IN WHAT WorLD IS THIS A GOOD GAME DESIGN DECISION
 repeat (3)
 {
 	with (create_debris(x, y, spr_slapstar))

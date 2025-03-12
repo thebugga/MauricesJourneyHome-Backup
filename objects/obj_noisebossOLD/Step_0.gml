@@ -6,7 +6,7 @@ if (hp <= 0 && state != states.arenaround)
 }
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--
-if ((state == states.handstandjump or state == states.crouchslide or state == states.boss_skateboardturn or state == states.boss_jetpack or state == states.boss_jetpackspin or (state == states.pogo && pogochargeactive) or state == states.skateboard) && alarm[0] <= 0)
+if ((state == states.handstandjump || state == states.crouchslide || state == states.boss_skateboardturn || state == states.boss_jetpack || state == states.boss_jetpackspin || (state == states.pogo && pogochargeactive) || state == states.skateboard) && alarm[0] <= 0)
 	alarm[0] = 6
 switch state
 {
@@ -99,4 +99,4 @@ switch state
 }
 
 angry = phase > 6
-attacking = (state == states.handstandjump or state == states.crouchslide or state == states.skateboard or state == states.boss_skateboardturn or state == states.pogo or state == states.boss_jetpackstart or state == states.boss_jetpack or state == states.boss_jetpackspin or state == states.throwing)
+attacking = (state == states.handstandjump || state == states.crouchslide || state == states.skateboard || state == states.boss_skateboardturn || state == states.pogo || state == states.boss_jetpackstart || state == states.boss_jetpack || state == states.boss_jetpackspin || state == states.throwing)

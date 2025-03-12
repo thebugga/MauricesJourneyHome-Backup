@@ -13,7 +13,7 @@ function scr_enemy_hit()
 			_player = obj_player1
 		else
 			_player = 323
-		if (obj_parent_player.tauntstoredstate == states.mach2 or obj_parent_player.tauntstoredstate == states.tumble or obj_parent_player.state == states.mach2 or obj_parent_player.state == states.tumble)
+		if (obj_parent_player.tauntstoredstate == states.mach2 || obj_parent_player.tauntstoredstate == states.tumble || obj_parent_player.state == states.mach2 || obj_parent_player.state == states.tumble)
 			thrown = false
 		else
 			thrown = true
@@ -27,9 +27,9 @@ function scr_enemy_hit()
 		global.heattime = 60
 		alarm[1] = 5
 		var _hp = 0
-		if ((global.attackstyle == 3 or global.attackstyle == 0) && (!global.kungfu))
+		if ((global.attackstyle == 3 || global.attackstyle == 0) && (!global.kungfu))
 			_hp = -1
-		if ((((!elite) && (hp <= _hp or mach3destroy)) or (elite && elitehit <= 0 && mach3destroy)) && object_get_parent(object_index) != 16 && destroyable)
+		if ((((!elite) && (hp <= _hp || mach3destroy)) || (elite && elitehit <= 0 && mach3destroy)) && object_get_parent(object_index) != 16 && destroyable)
 		{
 			instance_destroy()
 			instance_create(x, y, obj_genericpoofeffect)

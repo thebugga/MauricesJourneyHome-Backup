@@ -30,7 +30,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_banana2",
+    "path": "sprites/spr_banana2/spr_banana2.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

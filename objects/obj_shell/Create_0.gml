@@ -5,8 +5,8 @@ isAutocompleteOpen = false;
 
 shellSurface = noone;
 scrollSurface = noone;
-shellOriginX = 0;
-shellOriginY = 0;
+shelloriginX = 0;
+shelloriginY = 0;
 visibleWidth = 0;
 visibleHeight = 0;
 
@@ -18,6 +18,7 @@ maxScrollPosition = 0;
 targetScrollPosition = 0;
 commandSubmitted = false; // Need to update scroll position one frame after a command is submitted
 insertMode = true;
+saveHistory = true;
 
 historyPos = 0;
 history = [];
@@ -29,8 +30,8 @@ inputArray = [];
 suggestionIndex = 0;
 autocompleteMaxWidth = 0;
 autocompleteScrollPosition = 0;
-autocompleteOriginX = 0;
-autocompleteOriginY = 0;
+autocompleteoriginX = 0;
+autocompleteoriginY = 0;
 mousePreviousX = device_mouse_x_to_gui(0);
 mousePreviousY = device_mouse_y_to_gui(0);
 
@@ -156,7 +157,7 @@ function _update_filtered_suggestions() {
 	inputArray = self._input_string_split(inputString);
 	
 	// Return if we have nothing to parse
-	if (string_length(inputString) == 0 || array_length(inputArray) == 0) { return; }
+	if (string_length(inputString) == 0 or array_length(inputArray) == 0) { return; }
 	
 	// Set font for string_width calculation
 	draw_set_font(consoleFont);
@@ -194,7 +195,7 @@ function _update_filtered_suggestions() {
 				var currentArgument = inputArray[array_length(inputArray) - 1];
 				for (var i = 0; i < array_length(argumentSuggestions); i++) {
 					var prefixMatch = string_pos(string_lower(currentArgument), string_lower(argumentSuggestions[i])) == 1;
-					if (string_last_pos(" ", inputString) == string_length(inputString) || prefixMatch) {
+					if (string_last_pos(" ", inputString) == string_length(inputString) or prefixMatch) {
 						array_push(filteredSuggestions, argumentSuggestions[i]);
 						autocompleteMaxWidth = max(autocompleteMaxWidth, string_width(argumentSuggestions[i]));
 					}
@@ -244,7 +245,7 @@ function _key_combo_pressed(modifier_array, key) {
 
 	if (keyboard_check_pressed(key)) {
 		if (array_length(modifier_array) == 0) {
-			if (keyboard_check(vk_shift) || keyboard_check(vk_control) || keyboard_check(vk_alt)) {
+			if (keyboard_check(vk_shift) or keyboard_check(vk_control) or keyboard_check(vk_alt)) {
 				return false;
 			}
 		}
@@ -304,25 +305,25 @@ function _recalculate_shell_properties() {
 	var halfHeight = height / 2;
 	switch (screenAnchorPointH) {
 		case "left":
-			shellOriginX = anchorMargin - 1;
+			shelloriginX = anchorMargin - 1;
 			break;
 		case "center":
-			shellOriginX = screenCenterX - halfWidth - 1;
+			shelloriginX = screenCenterX - halfWidth - 1;
 			break;
 		case "right":
-			shellOriginX = display_get_gui_width() - width - anchorMargin - 1;
+			shelloriginX = display_get_gui_width() - width - anchorMargin - 1;
 			break;
 	}
 	
 	switch (screenAnchorPointV) {
 		case "top":
-			shellOriginY = anchorMargin - 1;
+			shelloriginY = anchorMargin - 1;
 			break;
 		case "middle":
-			shellOriginY = screenCenterY - halfHeight - 1;
+			shelloriginY = screenCenterY - halfHeight - 1;
 			break;
 		case "bottom":
-			shellOriginY = display_get_gui_height() - height - anchorMargin - 1;
+			shelloriginY = display_get_gui_height() - height - anchorMargin - 1;
 			break;
 	}
 	
@@ -371,8 +372,8 @@ function _execute_script(args, deferred = false) {
 		try {
 			response = script_execute(asset_get_index(script_get_name(script)), args);
 		} catch (_exception) {
-			response = "-- ERROR: see debug output for details --";
-			show_debug_message("---- ERROR executing rt-shell command [" + args[0] + "] ----");
+			response = "-- ERRor: see debug output for details --";
+			show_debug_message("---- ERRor executing rt-shell command [" + args[0] + "] ----");
 			show_debug_message(_exception.message);
 			show_debug_message(_exception.longMessage);
 			show_debug_message(_exception.script);
@@ -474,7 +475,7 @@ function _input_string_split(_input) {
 	}
 	// If we ended on our delimiter character, include an empty string as the final split
 	// If we ended without closing a quote, include what's been written in quotes so far as a complete argument
-	if (str2 == "" || inQuotes) {
+	if (str2 == "" or inQuotes) {
 		splits[slot] = str2;
 	}
 

@@ -1,17 +1,17 @@
 if (!instance_exists(obj_keyconfig))
 {
-	if (((-obj_parent_player.key_left2) or keyboard_check_pressed(vk_left)) && optionselected > 0)
+	if (((-obj_parent_player.key_left2) || keyboard_check_pressed(vk_left)) && optionselected > 0)
 	{
 		optionselected -= 1
 		//scr_soundeffect(sfx_step)
 	}
-	if ((obj_parent_player.key_right2 or keyboard_check_pressed(vk_right)) && optionselected < 1)
+	if ((obj_parent_player.key_right2 || keyboard_check_pressed(vk_right)) && optionselected < 1)
 	{
 		optionselected += 1
 		//scr_soundeffect(sfx_step)
 	}
 }
-if (optionselected == 1 && (obj_parent_player.key_jump or keyboard_check_pressed(vk_return)))
+if (optionselected == 1 && (obj_parent_player.key_jump || keyboard_check_pressed(vk_return)))
 {
 	file_delete("saveData.ini")
 	scr_initinput()
@@ -56,7 +56,7 @@ if (optionselected == 1 && (obj_parent_player.key_jump or keyboard_check_pressed
 	obj_mainmenuselect.selected = 0
 	instance_destroy()
 }
-if (obj_parent_player.key_slap2 or keyboard_check_pressed(vk_escape) or (optionselected == 0 && (obj_parent_player.key_jump or keyboard_check_pressed(vk_return))))
+if (obj_parent_player.key_slap2 || keyboard_check_pressed(vk_escape) || (optionselected == 0 && (obj_parent_player.key_jump || keyboard_check_pressed(vk_return))))
 {
 	//scr_soundeffect(sfx_enemyprojectile)
 	obj_mainmenuselect.selected = 0

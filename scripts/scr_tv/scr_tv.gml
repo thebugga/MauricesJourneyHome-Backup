@@ -123,7 +123,7 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
         argument2 = false
     with (obj_tv)
     {
-        if ((expressionsprite != argument0 || cardboardexprsprite != argument0) && bubblespr == -4)
+        if ((expressionsprite != argument0 or cardboardexprsprite != argument0) && bubblespr == -4)
         {
             var _card = 1
 			switch argument0
@@ -182,7 +182,7 @@ function tv_do_expression(argument0, argument1, argument2) //gml_Script_tv_do_ex
 function scr_tv_get_transfo_sprite() //gml_Script_scr_tv_get_transfo_sprite
 {
     var _state = obj_player1.state
-    if (_state == states.backbreaker || _state == states.chainsaw)
+    if (_state == states.backbreaker or _state == states.chainsaw)
         _state = obj_player1.tauntstoredstate
     var _spr = -4
     if instance_exists(obj_bucketfollower)
@@ -201,11 +201,11 @@ function scr_tv_get_transfo_sprite() //gml_Script_scr_tv_get_transfo_sprite
             break
         case states.fireass:
             _spr = spr_tv_fireass
-            if (obj_player1.sprite_index == obj_player1.spr_scaredjump1 || obj_player1.sprite_index == obj_player1.spr_scaredjump2)
+            if (obj_player1.sprite_index == obj_player1.spr_scaredjump1 or obj_player1.sprite_index == obj_player1.spr_scaredjump2)
                 _spr = spr_tv_scaredjump
             break
         case states.tumble:
-            if (obj_player1.sprite_index == obj_player1.spr_tumble || obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend)
+            if (obj_player1.sprite_index == obj_player1.spr_tumble or obj_player1.sprite_index == obj_player1.spr_tumblestart or obj_player1.sprite_index == obj_player1.spr_tumbleend)
                 _spr = spr_tv_tumble
             else if obj_player1.shotgunAnim
                 _spr = spr_tv_shotgun

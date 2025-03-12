@@ -73,7 +73,7 @@ switch state
 					sprite_index = spr_boxxedpep_air
 			}
 		}
-		if (place_meeting_solid(x, (y - 1)) or (reverse && place_meeting_solid(x, (y + 1))) or place_meeting(x, y, obj_verticalhallway) or place_meeting(x, y, obj_hallway))
+		if (place_meeting_solid(x, (y - 1)) || (reverse && place_meeting_solid(x, (y + 1))) || place_meeting(x, y, obj_verticalhallway) || place_meeting(x, y, obj_hallway))
 		{
 			if (playerid == obj_player1.id)
 			{

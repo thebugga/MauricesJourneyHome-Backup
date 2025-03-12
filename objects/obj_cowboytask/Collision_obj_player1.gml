@@ -38,7 +38,7 @@ with (obj_tv)
 	}
 	if (other.sprite_index == bg_SAGEknight)
 	{
-		message = "FINISH PIZZASCAPE WITHOUT KNIGHT FORM"
+		message = "FINISH PIZZASCAPE WITHOUT KNIGHT ForM"
 		showtext = 1
 		alarm[0] = 2
 	}

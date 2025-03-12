@@ -1,7 +1,7 @@
 var _found = 0
 with (obj_parent_player)
 {
-	if (state == states.mort or state == states.mortjump or state == states.mortattack or state == states.morthook)
+	if (state == states.mort || state == states.mortjump || state == states.mortattack || state == states.morthook)
 		_found = 1
 }
 if _found

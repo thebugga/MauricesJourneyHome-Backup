@@ -157,7 +157,7 @@ function scr_collision() {
 	prevVsp = vsp;	
 }
 
-/// @desc Handles movement of object affected by MOVING PLATFORMS.
+/// @desc Handles movement of object affected by MOVING PLATForMS.
 /// @param {any*} obj The ID of the object affected.
 /// @param {any*} platform_id The ID of the MOVING platform.
 /// @param {bool} [collisions] Toggles checking of collisions.

@@ -6,7 +6,7 @@ function scr_editor_init_buttons()
 		spr_icon = spr_menuicon
 		OnSelect = function()
 		{
-			var a = [["SAVE", -4, -4], ["LOAD LEVEL", -4, -4], ["EXIT EDITOR", -4, -4]]
+			var a = [["SAVE", -4, -4], ["LOAD LEVEL", -4, -4], ["EXIT EDITor", -4, -4]]
 			create_buttons_array(0, 64, 32, 24, a)
 		}
 

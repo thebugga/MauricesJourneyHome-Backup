@@ -15,7 +15,7 @@ function scr_player_Sjump()
 	{
 		if superjumptimer > 0
 		{
-			if global.playerCharacter == Characters.Doise or global.playerCharacter == Characters.Gabbie
+			if global.playerCharacter == Characters.Doise || global.playerCharacter == Characters.Gabbie
 			{
 				hsp = -lengthdir_x(sjumpvsp, sjumpangle)
 				vsp = -lengthdir_y(sjumpvsp, sjumpangle)
@@ -42,7 +42,7 @@ function scr_player_Sjump()
 				piledrivereffect = 15;
 			}
 		}
-		else if global.playerCharacter != Characters.Doise or global.playerCharacter != Characters.Pierre
+		else if global.playerCharacter != Characters.Doise || global.playerCharacter != Characters.Pierre
 		{
 			sprite_index = spr_machfreefall;
 			if grounded
@@ -54,9 +54,9 @@ function scr_player_Sjump()
 		hsp = 0
 		vsp = -10
 	}
-	if global.playerCharacter != Characters.Doise or global.playerCharacter == Characters.Gabbie
+	if global.playerCharacter != Characters.Doise || global.playerCharacter == Characters.Gabbie
 		sjumpvsp -= 0.1;
-	if global.playerCharacter == Characters.MrOrange && image_index > 3
+	if global.playerCharacter == Characters.Mrorange && image_index > 3
 		vsp = -11;
 	if sprite_index == spr_player_supersidejump
 	{
@@ -65,7 +65,7 @@ function scr_player_Sjump()
 		hsp = Xscale * a;
 		vsp = 0;
 	}
-	if global.playerCharacter == Characters.Doise or global.playerCharacter == Characters.Gabbie  && (sprite_index == spr_superjump || sprite_index == spr_playerN_jetpackboost || sprite_index == spr_playerN_jetpackboostdown) 
+	if global.playerCharacter == Characters.Doise || global.playerCharacter == Characters.Gabbie  && (sprite_index == spr_superjump || sprite_index == spr_playerN_jetpackboost || sprite_index == spr_playerN_jetpackboostdown) 
 	{
 		if sjumpangle == 270
 			sjumpangle += choose(-5, 5)

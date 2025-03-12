@@ -24,7 +24,7 @@ function scr_pizzaball_normal()
 			instance_destroy(b)
 		}
 		ds_list_clear(global.instancelist)
-		if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destroyablegolf))) && ((!(place_meeting((x + hsp), y, obj_slope))) or place_meeting((x + hsp), (y - 4), obj_solid)))
+		if (place_meeting((x + hsp), y, obj_solid) && (!(place_meeting((x + hsp), y, obj_destroyablegolf))) && ((!(place_meeting((x + hsp), y, obj_slope))) || place_meeting((x + hsp), (y - 4), obj_solid)))
 		{
 			Rotation = 0
 			image_xscale *= -1
@@ -46,7 +46,7 @@ function scr_pizzaball_normal()
 				movespeed /= 1.3
 			}
 		}
-		else if (grounded or kicked)
+		else if (grounded || kicked)
 		{
 			if (movespeed > 0)
 				movespeed -= deccel
@@ -75,11 +75,11 @@ function scr_pizzaball_normal()
 	}
 	if (jspd < 0)
 		jspd = 0
-	if (animation_end() && (sprite_index == spr_pizzaball_hitwall or sprite_index == spr_pizzaball_hitwall2))
+	if (animation_end() && (sprite_index == spr_pizzaball_hitwall || sprite_index == spr_pizzaball_hitwall2))
 		sprite_index = spr_pizzaball_idle2
 	if (sprite_index != spr_pizzaball_hitwall && sprite_index != spr_pizzaball_hitwall2)
 	{
-		if (thrown or kicked)
+		if (thrown || kicked)
 			sprite_index = spr_pizzaball_roll
 		else if chair
 			sprite_index = spr_pizzaball_idle1

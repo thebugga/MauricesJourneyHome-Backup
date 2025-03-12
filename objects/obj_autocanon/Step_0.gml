@@ -1,4 +1,4 @@
-if (cooldown <= 0 && (escape == false or global.panic == true))
+if (cooldown <= 0 && (escape == false || global.panic == true))
 {
 	with (instance_create((x + (image_xscale * 15)), y, obj_canongoblinbomb))
 	{

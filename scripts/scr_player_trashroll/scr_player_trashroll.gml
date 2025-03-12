@@ -36,7 +36,7 @@ function scr_player_trashroll()
 		vsp = -11
 		instance_create(x, y, obj_jumpdust)
 	}
-	if (((place_meeting((x + Xscale), y, obj_solid) or place_meeting((x + Xscale), y, obj_ghostwall)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && (!(place_meeting((x + hsp), y, obj_rattumble)))) or place_meeting(x, y, obj_timedgate))
+	if (((place_meeting((x + Xscale), y, obj_solid) || place_meeting((x + Xscale), y, obj_ghostwall)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && (!(place_meeting((x + hsp), y, obj_rattumble)))) || place_meeting(x, y, obj_timedgate))
 	{
 		state = states.bump
 		hsp = ((-Xscale) * 3)

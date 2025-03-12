@@ -1,50 +1,51 @@
+if (state == 0 || state == 1)
+	instance_deactivate_object(baddieID);
+
 switch state
 {
 	case 0:
-		if (!global.panic)
-		{
-			visible = false
-			instance_deactivate_object(baddieID)
-			with (obj_parent_enemycollisionbox)
-			{
-				if (baddieID == other.baddieID)
-					instance_destroy()
-			}
-		}
+		if !global.panic
+			visible = false;
 		else
-			state = 1
-		break
+			state = 1;
+		break;
+	
 	case 1:
-		var p = instance_nearest(x, y, obj_parent_player)
-		visible = false
-		image_index = 0
-		if distance_to_pos(x, y, p.x, p.y, 500, 100)
+		visible = false;
+		image_index = 0;
+		var p = obj_player1.id;
+		if (distance_to_pos(x, y, p.x, p.y, 500, 100))
 		{
-			state = 2
-			visible = true
+			state = 2;
+			visible = true;
 		}
-		break
+		break;
 	case 2:
 		if (floor(image_index) > 5)
 		{
-			instance_activate_object(baddieID)
-			with (baddieID)
+			instance_activate_object(baddieID);
+			event_play_oneshot_3d("event:/sfx/enemies/escapespawn", x, y);
+			with baddieID
 			{
-				x = other.x
-				y = other.y
-				state = states.stun
-				sprite_index = stunfallspr
-				stunned = 20
-				boundbox = 0
+				x = other.x;
+				y = other.y;
+				if escapestun
+				{
+					state = states.stun;
+					sprite_index = stunfallspr;
+					stunned = 20;
+					if elite
+						stunned *= 6;
+				}
+				boundbox = false;
 				instance_create(x, y, obj_genericpoofeffect)
-				//scr_soundeffectpitched(sfx_escapespawn)
 			}
-			state = 3
+			state = 3;
 		}
-		break
+		break;
+	
 	case 3:
-		if (animation_end())
-			visible = false
-		break
+		if floor(image_index) == image_number - 1
+			visible = false;
+		break;
 }
-

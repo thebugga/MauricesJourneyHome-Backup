@@ -5,7 +5,7 @@ function scr_player_bazooka()
 	vsp = approach(vsp, 0, spd)
 	movespeed = approach(movespeed, 0, 0.2)
 	image_speed = 0.35
-	if ((floor(image_index) == 7 or vsp >= 0) && sprite_index != spr_playerV_bazooka)
+	if ((floor(image_index) == 7 || vsp >= 0) && sprite_index != spr_playerV_bazooka)
 	{
 		image_index = 0
 		sprite_index = spr_playerV_bazooka

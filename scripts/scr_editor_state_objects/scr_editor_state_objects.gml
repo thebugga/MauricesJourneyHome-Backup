@@ -29,7 +29,7 @@ function scr_editor_get_object_mouse(argument0, argument1)
 		b = ds_list_find_value(global.instancelist, i)
 		with (b)
 		{
-			if (layerdepth == other.layerdepth && (o == noone or depth < o.depth))
+			if (layerdepth == other.layerdepth && (o == noone || depth < o.depth))
 				o = b
 		}
 	}

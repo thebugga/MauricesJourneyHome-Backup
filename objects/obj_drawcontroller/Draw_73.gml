@@ -1,4 +1,4 @@
-if (kidsparty_lightning or dark_lightning)
+if (kidsparty_lightning || dark_lightning)
 {
 	var cw = (camera_get_view_width(view_camera[0]) + 32)
 	var ch = (camera_get_view_height(view_camera[0]) + 32)
@@ -62,7 +62,7 @@ if (kidsparty_lightning or dark_lightning)
 			{
 				if (instance_exists(baddieID) && baddieID.state != states.stun && baddieID.state != states.grabbed && baddieID.state != states.hit && baddieID.state != states.punch)
 				{
-					if (collision or (instance_exists(baddieID) && baddieID.alarm[5] != -1))
+					if (collision || (instance_exists(baddieID) && baddieID.alarm[5] != -1))
 					{
 						points = get_triangle_points(x, y, image_angle, len, size)
 						c = 255

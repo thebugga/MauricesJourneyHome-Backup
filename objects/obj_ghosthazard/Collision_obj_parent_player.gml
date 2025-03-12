@@ -1,6 +1,6 @@
 with (other)
 {
-	if (global.playerCharacter == Characters.MrOrange)
+	if (global.playerCharacter == Characters.Mrorange)
 		scr_hurtplayer(id)
 	else if ((global.playerCharacter != Characters.Pierre) && state != states.ghost && state != states.ghostpossess && state != states.actor && state != states.parry && state != states.gotoplayer)
 	{

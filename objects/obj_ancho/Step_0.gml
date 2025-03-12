@@ -78,7 +78,7 @@ if (ragebuffer > 0)
 	ragebuffer--
 if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60) && important == 0)
 {
-	if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk or state == states.charge))
+	if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk || state == states.charge))
 	{
 		state = states.rage
 		sprite_index = spr_ancho_rage1
@@ -108,7 +108,7 @@ if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >=
 		}
 	}
 }
-if (state == states.stun or state == states.walk)
+if (state == states.stun || state == states.walk)
 	movespeed = 0
 if (state != states.stun)
 	thrown = false

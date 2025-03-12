@@ -21,7 +21,7 @@ if key_taunt2 && taunttimer <= 0 && usable
 }
 if global.playerCharacter != Characters.Pierre && key_taunt
 	breakdance_pressed++;
-//if room == hub_lobby or room == hub_theatre
+//if room == hub_lobby || room == hub_theatre
 //	visible = false
 //else
 //	visible = true

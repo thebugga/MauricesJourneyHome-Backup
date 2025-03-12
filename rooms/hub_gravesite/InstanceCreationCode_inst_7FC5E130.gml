@@ -1,6 +1,6 @@
 got_func = function()
 {
-	if (global.bombcutscene == -4 or (!global.bombcutscene))
+	if (global.bombcutscene == -4 || (!global.bombcutscene))
 	{
 		global.bombcutscene = 1
 		quick_ini_write_real(get_savefile_ini(), "Cutscene", "bomb", true)

@@ -14,7 +14,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	data = tilemap_get_at_pixel(map_id, x, y)
 	data = tile_set_empty(data)
 	tilemap_set_at_pixel(map_id, data, x, y)
-	//if (//audio_is_playing(sfx_breakblock1) or //audio_is_playing(sfx_breakblock2))
+	//if (//audio_is_playing(sfx_breakblock1) || //audio_is_playing(sfx_breakblock2))
 	{
 		//audio_stop_sound(sfx_breakblock1)
 		//audio_stop_sound(sfx_breakblock2)

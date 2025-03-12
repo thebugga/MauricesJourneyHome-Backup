@@ -1,5 +1,5 @@
 scr_collision()
 if place_meeting_solid(x, (y + 1))
 	hsp = 0
-if (banana == 2 or (!instance_exists(baddieID)))
+if (banana == 2 || (!instance_exists(baddieID)))
 	instance_destroy()

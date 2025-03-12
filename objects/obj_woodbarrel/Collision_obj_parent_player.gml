@@ -1,4 +1,4 @@
-if ((other.state == states.handstandjump or other.state == states.punch) && other.grounded == true)
+if ((other.state == states.handstandjump || other.state == states.punch) && other.grounded == true)
 {
 	instance_create((x + (obj_player1.Xscale * 40)), y, obj_punchdust)
 	with (other)
@@ -12,7 +12,7 @@ if ((other.state == states.handstandjump or other.state == states.punch) && othe
 	playerid = other.object_index
 	grabbed = 1
 }
-if (other.state == states.mach2 or other.state == states.mach3 or (other.state == states.machroll && grounded))
+if (other.state == states.mach2 || other.state == states.mach3 || (other.state == states.machroll && grounded))
 {
 	create_particle(x, y, particle.genericpoofeffect, 0)
 	with (other)

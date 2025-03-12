@@ -9,7 +9,7 @@ function scr_player_grind()
 		movespeed = approach(movespeed, 10, 0.5)
 	if ((!(place_meeting(x, (y + 18), obj_grindrail))) && (!(place_meeting(x, (y + 18), obj_grindrailslope))))
 	{
-		if (movespeed < 12 or skateboarding)
+		if (movespeed < 12 || skateboarding)
 		{
 			state = states.mach2
 			sprite_index = spr_mach2jump
@@ -35,7 +35,7 @@ function scr_player_grind()
 			sprite_index = spr_clownjump
 			image_index = 0
 		}
-		if (movespeed < 12 or skateboarding)
+		if (movespeed < 12 || skateboarding)
 		{
 			state = states.mach2
 			sprite_index = spr_mach2jump

@@ -1,6 +1,6 @@
 function scr_characterspr()
 {
-	if (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.Pierre)
+	if (global.playerCharacter == Characters.Maurice || global.playerCharacter == Characters.Pierre)
 	{
 		spr_idle = spr_player_idle
 		spr_move = spr_player_move
@@ -479,7 +479,7 @@ function scr_characterspr()
 		spr_palette = spr_noisepalette
 		paletteselect = 1
 	}
-	if (global.playerCharacter == Characters.MrOrange)
+	if (global.playerCharacter == Characters.Mrorange)
 	{
 		spr_idle = spr_playerV_idle
 		spr_move = spr_playerV_move

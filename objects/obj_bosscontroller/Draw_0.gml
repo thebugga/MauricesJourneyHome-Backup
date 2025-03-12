@@ -1,4 +1,4 @@
-if (state == states.transitioncutscene or state == states.victory or state == states.gameover)
+if (state == states.transitioncutscene || state == states.victory || state == states.gameover)
 {
 	draw_set_alpha(fade)
 	var cx = camera_get_view_x(view_camera[0])

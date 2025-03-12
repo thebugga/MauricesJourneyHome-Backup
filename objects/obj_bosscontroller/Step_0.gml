@@ -203,7 +203,7 @@ switch state
 			case 2:
 				super_portrait_index += 0.35
 				super_portrait_x += 1
-				if (obj_parent_player.state != states.playersuperattack or obj_parent_player.superattackstate != states.transitioncutscene)
+				if (obj_parent_player.state != states.playersuperattack || obj_parent_player.superattackstate != states.transitioncutscene)
 					super_portrait_state = 0
 				break
 		}
@@ -214,7 +214,7 @@ switch state
 		instance_destroy(obj_parent_enemy)
 		if (player_hp > 0)
 		{
-			if ((!instance_exists(bossID)) or bossID.state != states.hit)
+			if ((!instance_exists(bossID)) || bossID.state != states.hit)
 			{
 				fade -= 0.05
 				fade = clamp(fade, 0, 1)

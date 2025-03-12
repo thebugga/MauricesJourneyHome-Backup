@@ -38,7 +38,7 @@ function scr_player_cheeseball()
 	if grounded
 		movespeed = approach(movespeed, 12, 0.25)
 	sprite_index = spr_cheeseballplayer
-	if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_ratblock))) or place_meeting((x + sign(hsp)), y, obj_rattumble)))
+	if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_ratblock))) || place_meeting((x + sign(hsp)), y, obj_rattumble)))
 	{
 		cheeseballbounce = 0
 		slopejump = 0

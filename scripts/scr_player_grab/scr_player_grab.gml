@@ -96,7 +96,7 @@ function scr_player_grab()
 				movespeed += 0.5
 			if (movespeed > 6)
 				movespeed -= 0.5
-			if ((place_meeting_solid((x + 1), y) && move == 1) or (place_meeting_solid((x - 1), y) && move == -1))
+			if ((place_meeting_solid((x + 1), y) && move == 1) || (place_meeting_solid((x - 1), y) && move == -1))
 				movespeed = 0
 		}
 		if (dir != Xscale)
@@ -141,7 +141,7 @@ function scr_player_grab()
 		}
 		else if spinsndbuffer > 0
 			spinsndbuffer--
-		if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+		if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 		{
 			if (move != 0)
 				move = Xscale
@@ -174,9 +174,9 @@ function scr_player_grab()
 		sprite_index = spr_haulingidle
 	if (sprite_index == spr_haulingstart && animation_end())
 		sprite_index = spr_haulingidle
-	if ((sprite_index == spr_haulingjump && animation_end()) or ((!grounded) && (sprite_index == spr_haulingwalk or sprite_index == spr_haulingidle)))
+	if ((sprite_index == spr_haulingjump && animation_end()) || ((!grounded) && (sprite_index == spr_haulingwalk || sprite_index == spr_haulingidle)))
 		sprite_index = spr_haulingfall
-	if (grounded && vsp > 0 && (sprite_index == spr_haulingfall or sprite_index == spr_haulingjump))
+	if (grounded && vsp > 0 && (sprite_index == spr_haulingfall || sprite_index == spr_haulingjump))
 		sprite_index = spr_haulingland
 	if (sprite_index == spr_haulingland && animation_end())
 		sprite_index = spr_haulingidle
@@ -213,7 +213,7 @@ function scr_player_grab()
 		image_index = 0
 		image_speed = 0.35
 	}
-	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (floor(image_index) == 4 or floor(image_index) == 10))
+	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (floor(image_index) == 4 || floor(image_index) == 10))
 		instance_create(x, (y + 43), obj_cloudeffect)
 	if (key_down && grounded && sprite_index != spr_swingding && sprite_index != spr_swingdingend)
 	{
@@ -223,7 +223,7 @@ function scr_player_grab()
 		image_index = 0
 		idle = 0
 	}
-	if (move != 0 && (floor(image_index) == 3 or floor(image_index) == 8) && steppy == 0)
+	if (move != 0 && (floor(image_index) == 3 || floor(image_index) == 8) && steppy == 0)
 		steppy = 1
 	if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
 		steppy = 0

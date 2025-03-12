@@ -270,6 +270,14 @@ function scr_player_jump()
 			shake_mag_acc = 30 / room_speed;
 		}
 	}
+	if !can_jump && global.playerCharacter == Characters.Doise && key_up && noisedoublejump && input_buffer_jump > 0 && !key_down && !key_attack
+	{
+		freefallstart = 0;
+		railmomentum = false;
+		if (place_meeting(x, y + 1, obj_railparent))
+			railmomentum = true;
+		scr_player_do_noisecrusher();
+	}
 	if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == false && (!global.pistol))
     {
 		scr_dograb()

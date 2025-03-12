@@ -44,7 +44,7 @@ function scr_player_boots()
 		sprite_index = spr_playerV_bootsidle
 	if ((!grounded) && sprite_index != spr_playerV_bootsjump && sprite_index != spr_playerV_bootsfall)
 		sprite_index = spr_playerV_bootsfall
-	if (grounded && (sprite_index == spr_playerV_bootsfall or sprite_index == spr_playerV_bootsjump) && vsp > 0)
+	if (grounded && (sprite_index == spr_playerV_bootsfall || sprite_index == spr_playerV_bootsjump) && vsp > 0)
 	{
 		sprite_index = spr_playerV_bootsland
 		image_index = 0
@@ -89,7 +89,7 @@ function scr_player_boots()
 		machhitAnim = 0
 		state = states.crouchslide
 	}
-	if (key_shoot2 && global.playerCharacter == Characters.MrOrange)
+	if (key_shoot2 && global.playerCharacter == Characters.Mrorange)
 	{
 		state = states.dynamite
 		image_index = 0
@@ -101,7 +101,7 @@ function scr_player_boots()
 			vsp = -6
 		}
 	}
-	if (key_slap2 && global.playerCharacter == Characters.MrOrange)
+	if (key_slap2 && global.playerCharacter == Characters.Mrorange)
 	{
 		state = states.revolver
 		image_index = 0

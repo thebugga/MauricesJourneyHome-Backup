@@ -24,7 +24,7 @@ else
 	p2pdistancex = 0;
 if (floor(image_index) == 10)
 	shoving = false;
-if (room == rm_levelselect || room == rank_room || room == timesuproom || room == ObjectnMacroloadinRoom || room == rm_eggplantdisclaimer || room == rm_logo || room == Mainmenu || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 3) == "hub" && !global.panic) || instance_exists(obj_titlecard))
+if (room == rm_levelselect || room == Longintro || room == rank_room || room == timesuproom || room == ObjectnMacroloadinRoom || room == rm_eggplantdisclaimer || room == rm_logo || room == Mainmenu || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 3) == "hub" && !global.panic) || instance_exists(obj_titlecard))
 {
 	visible = false;
 	hud_posY = -300
@@ -210,55 +210,3 @@ if (instance_exists(player))
 	offset_x = approach(offset_x, 0, offset_speed);
 	offset_y = approach(offset_y, 0, offset_speed);
 }
-/*
-if (global.panic && global.panicbg != 0)
-{
-    global.panicshadetimer++
-    var a = layer_get_all()
-    var b = []
-    global.paniclayercount = 0
-    for (var i = 0; i < array_length(a); i++)
-    {
-        if (string_copy(layer_get_name(a[i]), 1, 12) == "Backgrounds_" || string_copy(layer_get_name(a[i]), 1, 7) == "Assets_" || string_copy(layer_get_name(a[i]), 1, 11) == "Foreground_")
-        {
-            b[global.paniclayercount] = a[i]
-            global.paniclayercount++
-        }
-    }
-    for (var j = 0; j < array_length(b); j++)
-    {
-        layer_script_begin(b[j], scr_panicbg_start)
-        layer_script_end(b[j], scr_panicbg_end)
-    }
-    global.maxwave = (instance_exists(obj_tv) ? obj_tv.chunkmax : 4000)
-    global.wave = (global.fill > 0 ? (global.maxwave - global.fill) : (global.maxwave + (global.panicshadetimer / 1000)))
-}
-else if (global.panicshadetimer != 0)
-    global.panicshadetimer = 0
-if global.panic
-{
-    var _wave = 0
-    var _maxwave = 0
-    _maxwave = obj_tv.chunkmax
-    _wave = _maxwave - global.fill
-    var wave_ratio = _wave / _maxwave
-    angle_phase += global.inclination_speed
-    if (angle_phase > (2 * pi))
-        angle_phase -= (2 * pi)
-    var max_inclination = 20
-    target_angle = sin(angle_phase) * 3.5 * (clamp(wave_ratio, 0, 1))
-    target_angle = clamp(target_angle, (-max_inclination), max_inclination)
-    if (abs(target_angle) == max_inclination && pause_tilt == 0)
-        pause_timer = room_speed * 3
-    if (pause_tilt > 0)
-    {
-        pause_tilt--
-        camera_angle = lerp(camera_angle, (sign(target_angle) * max_inclination), 0.1)
-    }
-    else
-        camera_angle = lerp(camera_angle, target_angle, 0.05)
-}
-else
-    camera_angle = lerp(camera_angle, 0, 0.05)
-camera_set_view_angle(view_camera[0], camera_angle)
-*/

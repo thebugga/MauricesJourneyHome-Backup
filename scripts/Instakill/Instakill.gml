@@ -27,9 +27,9 @@ function Instakill()
 			other.baddieID.elitehit = 0
 		if (!other.baddieID.important)
 			global.style += (2 + global.combo)
-		if ((!other.baddieID.elite) or other.baddieID.elitehit <= 0)
+		if ((!other.baddieID.elite) || other.baddieID.elitehit <= 0)
 			other.baddieID.mach3destroy = 1
-		if ((!other.baddieID.killprotection) && (!global.kungfu) && ((!other.baddieID.elite) or other.baddieID.elitehit <= 0))
+		if ((!other.baddieID.killprotection) && (!global.kungfu) && ((!other.baddieID.elite) || other.baddieID.elitehit <= 0))
 			other.baddieID.instakilled = 1
 		if (!other.baddieID.important)
 		{
@@ -40,7 +40,7 @@ function Instakill()
 			}
 		}
 		global.hit += 1
-		if ((!grounded) && state != states.boxxedpepspin && state != states.freefall && (key_jump2 or input_buffer_jump == 0))
+		if ((!grounded) && state != states.boxxedpepspin && state != states.freefall && (key_jump2 || input_buffer_jump == 0))
 		{
 			suplexmove = 0
 			vsp = -11

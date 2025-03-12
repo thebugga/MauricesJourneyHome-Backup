@@ -209,7 +209,7 @@ function scr_player_mach2()
 			sprite_index = spr_mach2jump;
 		else
 			sprite_index = spr_machroll;
-		if global.playerCharacter == Characters.MrOrange
+		if global.playerCharacter == Characters.Mrorange
 			sprite_index = spr_playerV_divekickstart;
 	}
 	if (key_attack && !place_meeting(x + Xscale, y, obj_solid) && global.playerCharacter == Characters.Snick && grounded)
@@ -229,6 +229,8 @@ function scr_player_mach2()
 	}
 	else if !key_attack && movespeed < 8 && grounded && vsp > 0 && skateboarding == 0
 		state = states.normal;
+	if input_buffer_jump > 0 && !can_jump && key_up && global.playerCharacter == Characters.Doise && noisedoublejump && !skateboarding && sprite_index != spr_clownjump
+		scr_player_do_noisecrusher();
 	if move == -Xscale && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0
 	{
 		if global.playerCharacter == Characters.Maurice
@@ -251,7 +253,7 @@ function scr_player_mach2()
 		state = states.normal;
 		instance_create(x, y, obj_genericpoofeffect);
 	}
-	if key_slap2 && global.playerCharacter == Characters.MrOrange
+	if key_slap2 && global.playerCharacter == Characters.Mrorange
 	{
 		vsp = -5;
 		state = states.revolver
@@ -265,7 +267,7 @@ function scr_player_mach2()
 		}
 		event_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 	}
-	if (key_shoot2 && global.playerCharacter == Characters.MrOrange && !instance_exists(dynamite_inst))
+	if (key_shoot2 && global.playerCharacter == Characters.Mrorange && !instance_exists(dynamite_inst))
 	{
 		vsp = -5;
 		state = states.dynamite;

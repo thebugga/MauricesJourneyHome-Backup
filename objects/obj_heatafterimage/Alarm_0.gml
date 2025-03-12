@@ -10,7 +10,7 @@ else
 	visible = obj_player1.visible
 	is_visible = 1
 }
-if (place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))
+if (place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretportalstart))
 	visible = false
 if (room == rank_room)
 	visible = false

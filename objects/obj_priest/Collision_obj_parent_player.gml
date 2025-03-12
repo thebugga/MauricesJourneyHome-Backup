@@ -3,7 +3,7 @@ with (other)
 {
 	if (!scr_transformationcheck())
 	{
-		if (state == states.mort or state == states.mortjump or state == states.morthook or state == states.mortjump or state == states.boxxedpep or state == states.boxxedpepjump or state == states.boxxedpepspin)
+		if (state == states.mort || state == states.mortjump || state == states.morthook || state == states.mortjump || state == states.boxxedpep || state == states.boxxedpepjump || state == states.boxxedpepspin)
 		{
 			if (hsp != 0)
 				Xscale = sign(hsp)

@@ -20,7 +20,7 @@ function scr_player_knightpepslopes()
 		sprite_index = spr_knightpepcharge
 	if (input_buffer_jump > 0)
 	{
-		if (grounded or (!doublejump))
+		if (grounded || (!doublejump))
 		{
 			input_buffer_jump = 0
 			vsp = -11
@@ -34,9 +34,9 @@ function scr_player_knightpepslopes()
 			}
 		}
 	}
-	if ((sprite_index == spr_knightpep_doublejump or sprite_index == spr_knightpep_fly) && animation_end())
+	if ((sprite_index == spr_knightpep_doublejump || sprite_index == spr_knightpep_fly) && animation_end())
 		image_index = (image_number - 1)
-	if (place_meeting_solid((x + sign(hsp)), y) && ((!slopeCheck(x + Xscale, y)) or place_meeting((x + sign(hsp)), (y - 2), obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+	if (place_meeting_solid((x + sign(hsp)), y) && ((!slopeCheck(x + Xscale, y)) || place_meeting((x + sign(hsp)), (y - 2), obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_slope))) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
 		movespeed = 0
 		vsp = -6

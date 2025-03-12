@@ -87,7 +87,7 @@ if (state == states.jump)
 }
 else
 	use_collision = 1
-if (state == states.stun or state == states.shoulderbash or state == states.walk or state == states.crouch or state == states.climbwall or (!use_collision))
+if (state == states.stun || state == states.shoulderbash || state == states.walk || state == states.crouch || state == states.climbwall || (!use_collision))
 	invincible = 1
 else
 	invincible = 0

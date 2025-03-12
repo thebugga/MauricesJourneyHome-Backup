@@ -15,7 +15,7 @@ function scr_player_backbreaker()
 		state = states.machslide
 		sprite_index = spr_player_crouchslide
 	}
-	if (sprite_index == spr_taunt or sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_ratmounttaunt)
+	if (sprite_index == spr_taunt || sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmounttaunt)
 	{
 		if ((!instance_exists(parry_inst)) && taunttimer > parry_max)
 		{
@@ -37,7 +37,7 @@ function scr_player_backbreaker()
 				parry_inst = noone
 			}
 		}
-		if (supercharged == 1 && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4) && (!instance_exists(obj_tauntaftereffectspawner)))
+		if (supercharged == 1 && (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4) && (!instance_exists(obj_tauntaftereffectspawner)))
 		{
 			instance_create(x, y, obj_tauntaftereffectspawner)
 			var c = 0
@@ -92,7 +92,7 @@ function scr_player_backbreaker()
 		taunttimer--
 		vsp = 0
 	}
-	if (animation_end() && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4))
+	if (animation_end() && (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4))
 	{
 		movespeed = tauntstoredmovespeed
 		vsp = tauntstoredvsp
@@ -108,7 +108,7 @@ function scr_player_backbreaker()
 		if (is_array(global.hasfarmer) && global.hasfarmer[farmerpos])
 			scr_change_farmers()
 	}
-	if ((sprite_index == spr_taunt or sprite_index == spr_player_ratmounttaunt) && taunttimer == 0)
+	if ((sprite_index == spr_taunt || sprite_index == spr_player_ratmounttaunt) && taunttimer == 0)
 	{
 		movespeed = tauntstoredmovespeed
 		vsp = tauntstoredvsp
@@ -128,7 +128,7 @@ function scr_player_backbreaker()
 		state = states.normal
 	if (animation_end() && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
 		state = states.normal
-	if (animation_end() && (sprite_index == spr_player_levelcomplete or sprite_index == spr_playerN_victory))
+	if (animation_end() && (sprite_index == spr_player_levelcomplete || sprite_index == spr_playerN_victory))
 		state = states.normal
 	if (key_jump && sprite_index == spr_player_phoneidle)
 	{

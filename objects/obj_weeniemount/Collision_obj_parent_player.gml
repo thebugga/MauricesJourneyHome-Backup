@@ -1,6 +1,6 @@
 with (other)
 {
-	if (state == states.handstandjump or state == states.punch)
+	if (state == states.handstandjump || state == states.punch)
 	{
 		state = states.rideweenie
 		movespeed = hsp

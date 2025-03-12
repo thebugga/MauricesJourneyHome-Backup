@@ -1,4 +1,4 @@
-if (room == ObjectnMacroloadinRoom or room == rm_eggplantdisclaimer or room == rm_logo or room == Mainmenu or room == rank_room or !global.option_timer or (instance_exists(obj_pause) && obj_pause.pause))
+if (room == ObjectnMacroloadinRoom || room == rm_eggplantdisclaimer || room == rm_logo || room == Mainmenu || room == rank_room || !global.option_timer || (instance_exists(obj_pause) && obj_pause.pause))
 	exit;
 draw_set_color(c_white)
 var seconds = 0

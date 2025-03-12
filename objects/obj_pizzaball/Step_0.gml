@@ -48,7 +48,7 @@ switch state
 		break
 }
 
-if ((state == states.walk or state == states.idle) && sit)
+if ((state == states.walk || state == states.idle) && sit)
 {
 	hsp = 0
 	sprite_index = spr_pizzaball_idle1

@@ -14,7 +14,7 @@ function SUPER_player_hurt(argument0, argument1)
 		{
 			//scr_soundeffect(sfx_killingblow)
 			var lag = 8
-			if (state == states.chainsaw or state == states.hit)
+			if (state == states.chainsaw || state == states.hit)
 			{
 				x = hitX
 				y = hitY

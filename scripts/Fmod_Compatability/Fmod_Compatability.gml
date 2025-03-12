@@ -1,9 +1,9 @@
-function fmod_init(argument0, argument1 = FMOD_INIT.NORMAL, argument2 = FMOD_STUDIO_INIT.NORMAL)
+function fmod_init(argument0, argument1 = FMOD_INIT.NorMAL, argument2 = FMOD_STUDIO_INIT.NorMAL)
 {
     return fmod_studio_system_init(argument0, argument1, argument2);
 }
 
-function fmod_loadBank(argument0, argument1 = FMOD_STUDIO_LOAD_BANK.NORMAL)
+function fmod_loadBank(argument0, argument1 = FMOD_STUDIO_LOAD_BANK.NorMAL)
 {
     return fmod_studio_system_load_bank_file(argument0, argument1);
 }

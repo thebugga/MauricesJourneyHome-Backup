@@ -7,7 +7,7 @@ switch sprite_index
 			visible = false
 		with (obj_parent_player)
 		{
-			if (object_index != obj_player2 or global.coop)
+			if (object_index != obj_player2 || global.coop)
 			{
 				x = other.x
 				y = other.y
@@ -28,7 +28,7 @@ switch sprite_index
 			sprite_index = spr_secretportal_spawnidle
 			with (obj_parent_player)
 			{
-				if (object_index != obj_player2 or global.coop)
+				if (object_index != obj_player2 || global.coop)
 				{
 					if ((global.playerCharacter != Characters.Pierre) && tauntstoredstate != states.knightpep && tauntstoredstate != states.knightpepslopes && tauntstoredstate != states.knightpepbump && tauntstoredstate != states.firemouth)
 					{

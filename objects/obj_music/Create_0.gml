@@ -20,6 +20,11 @@ add_music(Mainmenu, "event:/music/title", -4, false, function(argument0, argumen
     fmod_studio_event_instance_set_parameter_by_name_multiplatform(argument1, "state", 0, false);
 }
 )
+add_music(Longintro, "event:/music/intro", -4, false, function(argument0, argument1)
+{
+    fmod_studio_event_instance_set_parameter_by_name_multiplatform(argument1, "state", 0, true)
+}
+)
 add_music(tower_entrancehallway, "event:/music/hub", noone, false);
 add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
 add_music(hub_lobby, "event:/music/hub", noone, false);

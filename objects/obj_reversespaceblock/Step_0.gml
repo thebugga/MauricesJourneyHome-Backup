@@ -1,6 +1,6 @@
 if (global.spaceblockswitch == 1)
 {
-	if ((x != xstart or sprite_index != spr_spaceblock_closed) && (!(place_meeting(xstart, ystart, obj_parent_player))) && (!(place_meeting(xstart, ystart, obj_parent_enemy))) && (!(place_meeting(xstart, ystart, obj_clownmato))))
+	if ((x != xstart || sprite_index != spr_spaceblock_closed) && (!(place_meeting(xstart, ystart, obj_parent_player))) && (!(place_meeting(xstart, ystart, obj_parent_enemy))) && (!(place_meeting(xstart, ystart, obj_clownmato))))
 	{
 		x = xstart
 		y = ystart

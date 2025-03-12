@@ -9,10 +9,10 @@
 enum FMOD_DEBUG_FLAGS 
 {
 	LEVEL_NONE          = 0x00000000,
-	LEVEL_ERROR         = 0x00000001,
+	LEVEL_ERRor         = 0x00000001,
 	LEVEL_WARNING       = 0x00000002,
 	LEVEL_LOG           = 0x00000004,
-	TYPE_MEMORY         = 0x00000100,
+	TYPE_MEMorY         = 0x00000100,
 	TYPE_FILE           = 0x00000200,
 	TYPE_CODEC          = 0x00000400,
 	TYPE_TRACE          = 0x00000800,
@@ -21,9 +21,9 @@ enum FMOD_DEBUG_FLAGS
 	DISPLAY_THREAD      = 0x00040000,
 }
 
-enum FMOD_MEMORY_TYPE 
+enum FMOD_MEMorY_TYPE 
 {
-	NORMAL			= 0x00000000,
+	NorMAL			= 0x00000000,
 	STREAM_FILE		= 0x00000001,
 	STREAM_DECODE	= 0x00000002,
 	SAMPLEDATA		= 0x00000004,
@@ -35,7 +35,7 @@ enum FMOD_MEMORY_TYPE
 
 enum FMOD_INIT 
 {
-	NORMAL					= 0x00000000,
+	NorMAL					= 0x00000000,
 	STREAM_FROM_UPDATE		= 0x00000001,
 	MIX_FROM_UPDATE			= 0x00000002,
 	RIGHTHANDED_3D			= 0x00000004,
@@ -48,7 +48,7 @@ enum FMOD_INIT
 	PREFER_DOLBY_DOWNMIX	= 0x00080000,
 	THREAD_UNSAFE			= 0x00100000,
 	PROFILE_METER_ALL		= 0x00200000,
-	MEMORY_TRACKING			= 0x00400000
+	MEMorY_TRACKING			= 0x00400000
 }
 
 enum FMOD_DRIVER_STATE 
@@ -64,7 +64,7 @@ enum FMOD_TIMEUNIT
 	PCMBYTES = 0x00000004,
 	RAWBYTES = 0x00000008,
 	PCMFRACTION = 0x00000010,
-	MODORDER = 0x00000100,
+	MODorDER = 0x00000100,
 	MODROW = 0x00000200,
 	MODPATTERN = 0x00000400
 }
@@ -73,21 +73,21 @@ enum FMOD_SYSTEM_CALLBACK
 {
 	DEVICELISTCHANGED      = 0x00000001,
 	DEVICELOST             = 0x00000002,
-	MEMORYALLOCATIONFAILED = 0x00000004,
+	MEMorYALLOCATIONFAILED = 0x00000004,
 	THREADCREATED          = 0x00000008,
 	BADDSPCONNECTION       = 0x00000010,
 	PREMIX                 = 0x00000020,
 	POSTMIX                = 0x00000040,
-	ERROR                  = 0x00000080,
+	ERRor                  = 0x00000080,
 	MIDMIX                 = 0x00000100,
 	THREADDESTROYED        = 0x00000200,
 	PREUPDATE              = 0x00000400,
 	POSTUPDATE             = 0x00000800,
-	RECORDLISTCHANGED      = 0x00001000,
+	RECorDLISTCHANGED      = 0x00001000,
 	BUFFEREDNOMIX          = 0x00002000,
 	DEVICEREINITIALIZE     = 0x00004000,
 	OUTPUTUNDERRUN         = 0x00008000,
-	RECORDPOSITIONCHANGED  = 0x00010000,
+	RECorDPOSITIONCHANGED  = 0x00010000,
 	ALL                    = 0xFFFFFFFF
 }
 
@@ -95,7 +95,7 @@ enum FMOD_MODE
 {
 	DEFAULT							= 0x00000000,
 	LOOP_OFF						= 0x00000001,
-	LOOP_NORMAL						= 0x00000002,
+	LOOP_NorMAL						= 0x00000002,
 	LOOP_BIDI						= 0x00000004,
 	AS_2D							= 0x00000008,
 	AS_3D							= 0x00000010,
@@ -103,8 +103,8 @@ enum FMOD_MODE
 	CREATESAMPLE					= 0x00000100,
 	CREATECOMPRESSEDSAMPLE			= 0x00000200,
 	OPENUSER						= 0x00000400,
-	OPENMEMORY						= 0x00000800,
-	OPENMEMORY_POINT				= 0x10000000,
+	OPENMEMorY						= 0x00000800,
+	OPENMEMorY_POINT				= 0x10000000,
 	OPENRAW							= 0x00001000,
 	OPENONLY						= 0x00002000,
 	ACCURATETIME					= 0x00004000,
@@ -112,14 +112,14 @@ enum FMOD_MODE
 	NONBLOCKING						= 0x00010000,
 	UNIQUE							= 0x00020000,
 	AS_3D_HEADRELATIVE				= 0x00040000,
-	AS_3D_WORLDRELATIVE				= 0x00080000,
+	AS_3D_WorLDRELATIVE				= 0x00080000,
 	AS_3D_INVERSEROLLOFF			= 0x00100000,
 	AS_3D_LINEARROLLOFF				= 0x00200000,
 	AS_3D_LINEARSQUAREROLLOFF		= 0x00400000,
 	AS_3D_INVERSETAPEREDROLLOFF		= 0x00800000,
 	AS_3D_CUSTOMROLLOFF				= 0x04000000,
-	AS_3D_IGNOREGEOMETRY			= 0x40000000,
-	IGNORETAGS						= 0x02000000,
+	AS_3D_IGNorEGEOMETRY			= 0x40000000,
+	IGNorETAGS						= 0x02000000,
 	LOWMEM							= 0x08000000,
 	MODEVIRTUAL_PLAYFROMSTART		= 0x80000000,
 }
@@ -146,39 +146,39 @@ enum FMOD_CHANNELMASK
 	SURROUND_7POINT1		= (FMOD_CHANNELMASK.SURROUND_7POINT0 | FMOD_CHANNELMASK.LOW_FREQUENCY ),
 }
 
-enum FMOD_PORT_INDEX
+enum FMOD_PorT_INDEX
 {
 	NONE                        = 0xFFFFFFFFFFFFFFFF,
 	FLAG_VR_CONTROLLER          = 0x1000000000000000,
 }
 
-enum FMOD_THREAD_PRIORITY
+enum FMOD_THREAD_PRIorITY
 {
 	/* Platform specific priority range */
-	PLATFORM_MIN           = (-32 * 1024),
-	PLATFORM_MAX           = ( 32 * 1024),
+	PLATForM_MIN           = (-32 * 1024),
+	PLATForM_MAX           = ( 32 * 1024),
 	/* Platform agnostic priorities, maps internally to platform specific value */
-	DEFAULT                = (FMOD_THREAD_PRIORITY.PLATFORM_MIN - 1),
-	LOW                    = (FMOD_THREAD_PRIORITY.PLATFORM_MIN - 2),
-	MEDIUM                 = (FMOD_THREAD_PRIORITY.PLATFORM_MIN - 3),
-	HIGH                   = (FMOD_THREAD_PRIORITY.PLATFORM_MIN - 4),
-	VERY_HIGH              = (FMOD_THREAD_PRIORITY.PLATFORM_MIN - 5),
-	EXTREME                = (FMOD_THREAD_PRIORITY.PLATFORM_MIN - 6),
-	CRITICAL               = (FMOD_THREAD_PRIORITY.PLATFORM_MIN - 7),
+	DEFAULT                = (FMOD_THREAD_PRIorITY.PLATForM_MIN - 1),
+	LOW                    = (FMOD_THREAD_PRIorITY.PLATForM_MIN - 2),
+	MEDIUM                 = (FMOD_THREAD_PRIorITY.PLATForM_MIN - 3),
+	HIGH                   = (FMOD_THREAD_PRIorITY.PLATForM_MIN - 4),
+	VERY_HIGH              = (FMOD_THREAD_PRIorITY.PLATForM_MIN - 5),
+	EXTREME                = (FMOD_THREAD_PRIorITY.PLATForM_MIN - 6),
+	CRITICAL               = (FMOD_THREAD_PRIorITY.PLATForM_MIN - 7),
 	/* Thread defaults */
-	MIXER                  = FMOD_THREAD_PRIORITY.EXTREME,
-	FEEDER                 = FMOD_THREAD_PRIORITY.CRITICAL,
-	STREAM                 = FMOD_THREAD_PRIORITY.VERY_HIGH,
-	FILE                   = FMOD_THREAD_PRIORITY.HIGH,
-	NONBLOCKING            = FMOD_THREAD_PRIORITY.HIGH,
-	RECORD                 = FMOD_THREAD_PRIORITY.HIGH,
-	GEOMETRY               = FMOD_THREAD_PRIORITY.LOW,
-	PROFILER               = FMOD_THREAD_PRIORITY.MEDIUM,
-	STUDIO_UPDATE          = FMOD_THREAD_PRIORITY.MEDIUM,
-	STUDIO_LOAD_BANK       = FMOD_THREAD_PRIORITY.MEDIUM,
-	STUDIO_LOAD_SAMPLE     = FMOD_THREAD_PRIORITY.MEDIUM,
-	CONVOLUTION1           = FMOD_THREAD_PRIORITY.VERY_HIGH,
-	CONVOLUTION2           = FMOD_THREAD_PRIORITY.VERY_HIGH
+	MIXER                  = FMOD_THREAD_PRIorITY.EXTREME,
+	FEEDER                 = FMOD_THREAD_PRIorITY.CRITICAL,
+	STREAM                 = FMOD_THREAD_PRIorITY.VERY_HIGH,
+	FILE                   = FMOD_THREAD_PRIorITY.HIGH,
+	NONBLOCKING            = FMOD_THREAD_PRIorITY.HIGH,
+	RECorD                 = FMOD_THREAD_PRIorITY.HIGH,
+	GEOMETRY               = FMOD_THREAD_PRIorITY.LOW,
+	PROFILER               = FMOD_THREAD_PRIorITY.MEDIUM,
+	STUDIO_UPDATE          = FMOD_THREAD_PRIorITY.MEDIUM,
+	STUDIO_LOAD_BANK       = FMOD_THREAD_PRIorITY.MEDIUM,
+	STUDIO_LOAD_SAMPLE     = FMOD_THREAD_PRIorITY.MEDIUM,
+	CONVOLUTION1           = FMOD_THREAD_PRIorITY.VERY_HIGH,
+	CONVOLUTION2           = FMOD_THREAD_PRIorITY.VERY_HIGH
 }
 
 enum FMOD_THREAD_STACK_SIZE
@@ -189,7 +189,7 @@ enum FMOD_THREAD_STACK_SIZE
 	STREAM               = (96  * 1024),
 	FILE                 = (64  * 1024),
 	NONBLOCKING          = (112 * 1024),
-	RECORD               = (16  * 1024),
+	RECorD               = (16  * 1024),
 	GEOMETRY             = (48  * 1024),
 	PROFILER             = (128 * 1024),
 	STUDIO_UPDATE        = (96  * 1024),
@@ -212,7 +212,7 @@ enum FMOD_THREAD_AFFINITY
 	STREAM                 = FMOD_THREAD_AFFINITY.GROUP_C,
 	FILE                   = FMOD_THREAD_AFFINITY.GROUP_C,
 	NONBLOCKING            = FMOD_THREAD_AFFINITY.GROUP_C,
-	RECORD                 = FMOD_THREAD_AFFINITY.GROUP_C,
+	RECorD                 = FMOD_THREAD_AFFINITY.GROUP_C,
 	GEOMETRY               = FMOD_THREAD_AFFINITY.GROUP_C,
 	PROFILER               = FMOD_THREAD_AFFINITY.GROUP_C,
 	STUDIO_UPDATE          = FMOD_THREAD_AFFINITY.GROUP_B,
@@ -221,23 +221,23 @@ enum FMOD_THREAD_AFFINITY
 	CONVOLUTION1           = FMOD_THREAD_AFFINITY.GROUP_C,
 	CONVOLUTION2           = FMOD_THREAD_AFFINITY.GROUP_C,
 	/* Core mask, valid up to 1 << 62 */
-	CORE_ALL               = 0,
-	CORE_0                 = (1 << 0),
-	CORE_1                 = (1 << 1),
-	CORE_2                 = (1 << 2),
-	CORE_3                 = (1 << 3),
-	CORE_4                 = (1 << 4),
-	CORE_5                 = (1 << 5),
-	CORE_6                 = (1 << 6),
-	CORE_7                 = (1 << 7),
-	CORE_8                 = (1 << 8),
-	CORE_9                 = (1 << 9),
-	CORE_10                = (1 << 10),
-	CORE_11                = (1 << 11),
-	CORE_12                = (1 << 12),
-	CORE_13                = (1 << 13),
-	CORE_14                = (1 << 14),
-	CORE_15                = (1 << 15),
+	CorE_ALL               = 0,
+	CorE_0                 = (1 << 0),
+	CorE_1                 = (1 << 1),
+	CorE_2                 = (1 << 2),
+	CorE_3                 = (1 << 3),
+	CorE_4                 = (1 << 4),
+	CorE_5                 = (1 << 5),
+	CorE_6                 = (1 << 6),
+	CorE_7                 = (1 << 7),
+	CorE_8                 = (1 << 8),
+	CorE_9                 = (1 << 9),
+	CorE_10                = (1 << 10),
+	CorE_11                = (1 << 11),
+	CorE_12                = (1 << 12),
+	CorE_13                = (1 << 13),
+	CorE_14                = (1 << 14),
+	CorE_15                = (1 << 15),
 }
 
 /* Preset for struct.FmodReverbProperties */
@@ -249,16 +249,16 @@ enum FMOD_THREAD_AFFINITY
 #macro FMOD_PRESET_BATHROOM                        { decay_time:  1500, early_delay:   7, late_delay:  11, hf_reference: 5000, hf_decay_ratio:  54, diffusion: 100, density:  60, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  2900, early_late_mix:  83, wet_level:   0.5 }
 #macro FMOD_PRESET_LIVINGROOM                      { decay_time:   500, early_delay:   3, late_delay:   4, hf_reference: 5000, hf_decay_ratio:  10, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:   160, early_late_mix:  58, wet_level: -19.0 }
 #macro FMOD_PRESET_STONEROOM                       { decay_time:  2300, early_delay:  12, late_delay:  17, hf_reference: 5000, hf_decay_ratio:  64, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  7800, early_late_mix:  71, wet_level:  -8.5 }
-#macro FMOD_PRESET_AUDITORIUM                      { decay_time:  4300, early_delay:  20, late_delay:  30, hf_reference: 5000, hf_decay_ratio:  59, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  5850, early_late_mix:  64, wet_level: -11.7 }
+#macro FMOD_PRESET_AUDITorIUM                      { decay_time:  4300, early_delay:  20, late_delay:  30, hf_reference: 5000, hf_decay_ratio:  59, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  5850, early_late_mix:  64, wet_level: -11.7 }
 #macro FMOD_PRESET_CONCERTHALL                     { decay_time:  3900, early_delay:  20, late_delay:  29, hf_reference: 5000, hf_decay_ratio:  70, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  5650, early_late_mix:  80, wet_level:  -9.8 }
 #macro FMOD_PRESET_CAVE                            { decay_time:  2900, early_delay:  15, late_delay:  22, hf_reference: 5000, hf_decay_ratio: 100, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut: 20000, early_late_mix:  59, wet_level: -11.3 }
 #macro FMOD_PRESET_ARENA                           { decay_time:  7200, early_delay:  20, late_delay:  30, hf_reference: 5000, hf_decay_ratio:  33, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  4500, early_late_mix:  80, wet_level:  -9.6 }
 #macro FMOD_PRESET_HANGAR                          { decay_time: 10000, early_delay:  20, late_delay:  30, hf_reference: 5000, hf_decay_ratio:  23, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  3400, early_late_mix:  72, wet_level:  -7.4 }
 #macro FMOD_PRESET_CARPETTEDHALLWAY                { decay_time:   300, early_delay:   2, late_delay:  30, hf_reference: 5000, hf_decay_ratio:  10, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:   500, early_late_mix:  56, wet_level: -24.0 }
 #macro FMOD_PRESET_HALLWAY                         { decay_time:  1500, early_delay:   7, late_delay:  11, hf_reference: 5000, hf_decay_ratio:  59, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  7800, early_late_mix:  87, wet_level:  -5.5 }
-#macro FMOD_PRESET_STONECORRIDOR                   { decay_time:   270, early_delay:  13, late_delay:  20, hf_reference: 5000, hf_decay_ratio:  79, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  9000, early_late_mix:  86, wet_level:  -6.0 }
+#macro FMOD_PRESET_STONECorRIDor                   { decay_time:   270, early_delay:  13, late_delay:  20, hf_reference: 5000, hf_decay_ratio:  79, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  9000, early_late_mix:  86, wet_level:  -6.0 }
 #macro FMOD_PRESET_ALLEY                           { decay_time:  1500, early_delay:   7, late_delay:  11, hf_reference: 5000, hf_decay_ratio:  86, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  8300, early_late_mix:  80, wet_level:  -9.8 }
-#macro FMOD_PRESET_FOREST                          { decay_time:  1500, early_delay: 162, late_delay:  88, hf_reference: 5000, hf_decay_ratio:  54, diffusion:  79, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:   760, early_late_mix:  94, wet_level: -12.3 }
+#macro FMOD_PRESET_ForEST                          { decay_time:  1500, early_delay: 162, late_delay:  88, hf_reference: 5000, hf_decay_ratio:  54, diffusion:  79, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:   760, early_late_mix:  94, wet_level: -12.3 }
 #macro FMOD_PRESET_CITY                            { decay_time:  1500, early_delay:   7, late_delay:  11, hf_reference: 5000, hf_decay_ratio:  67, diffusion:  50, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  4050, early_late_mix:  66, wet_level: -26.0 }
 #macro FMOD_PRESET_MOUNTAINS                       { decay_time:  1500, early_delay: 300, late_delay: 100, hf_reference: 5000, hf_decay_ratio:  21, diffusion:  27, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  1220, early_late_mix:  82, wet_level: -24.0 }
 #macro FMOD_PRESET_QUARRY                          { decay_time:  1500, early_delay:  61, late_delay:  25, hf_reference: 5000, hf_decay_ratio:  83, diffusion: 100, density: 100, low_shelf_frequency: 250, low_shelf_gain: 0, high_cut:  3400, early_late_mix: 100, wet_level:  -5.0 }
@@ -279,7 +279,7 @@ enum FMOD_THREAD_TYPE
     STREAM,
     FILE,
     NONBLOCKING,
-    RECORD,
+    RECorD,
     GEOMETRY,
     PROFILER,
     STUDIO_UPDATE,
@@ -300,7 +300,7 @@ enum FMOD_RESULT
     ERR_DMA,
     ERR_DSP_CONNECTION,
     ERR_DSP_DONTPROCESS,
-    ERR_DSP_FORMAT,
+    ERR_DSP_ForMAT,
     ERR_DSP_INUSE,
     ERR_DSP_NOTFOUND,
     ERR_DSP_RESERVED,
@@ -312,12 +312,12 @@ enum FMOD_RESULT
     ERR_FILE_EOF,
     ERR_FILE_ENDOFDATA,
     ERR_FILE_NOTFOUND,
-    ERR_FORMAT,
+    ERR_ForMAT,
     ERR_HEADER_MISMATCH,
     ERR_HTTP,
     ERR_HTTP_ACCESS,
     ERR_HTTP_PROXY_AUTH,
-    ERR_HTTP_SERVER_ERROR,
+    ERR_HTTP_SERVER_ERRor,
     ERR_HTTP_TIMEOUT,
     ERR_INITIALIZATION,
     ERR_INITIALIZED,
@@ -329,28 +329,28 @@ enum FMOD_RESULT
     ERR_INVALID_SPEAKER,
     ERR_INVALID_SYNCPOINT,
     ERR_INVALID_THREAD,
-    ERR_INVALID_VECTOR,
+    ERR_INVALID_VECTor,
     ERR_MAXAUDIBLE,
-    ERR_MEMORY,
-    ERR_MEMORY_CANTPOINT,
+    ERR_MEMorY,
+    ERR_MEMorY_CANTPOINT,
     ERR_NEEDS3D,
     ERR_NEEDSHARDWARE,
     ERR_NET_CONNECT,
-    ERR_NET_SOCKET_ERROR,
+    ERR_NET_SOCKET_ERRor,
     ERR_NET_URL,
     ERR_NET_WOULD_BLOCK,
     ERR_NOTREADY,
     ERR_OUTPUT_ALLOCATED,
     ERR_OUTPUT_CREATEBUFFER,
     ERR_OUTPUT_DRIVERCALL,
-    ERR_OUTPUT_FORMAT,
+    ERR_OUTPUT_ForMAT,
     ERR_OUTPUT_INIT,
     ERR_OUTPUT_NODRIVERS,
     ERR_PLUGIN,
     ERR_PLUGIN_MISSING,
     ERR_PLUGIN_RESOURCE,
     ERR_PLUGIN_VERSION,
-    ERR_RECORD,
+    ERR_RECorD,
     ERR_REVERB_CHANNELGROUP,
     ERR_REVERB_INSTANCE,
     ERR_SUBSOUNDS,
@@ -361,7 +361,7 @@ enum FMOD_RESULT
     ERR_TRUNCATED,
     ERR_UNIMPLEMENTED,
     ERR_UNINITIALIZED,
-    ERR_UNSUPPORTED,
+    ERR_UNSUPPorTED,
     ERR_VERSION,
     ERR_EVENT_ALREADY_LOADED,
     ERR_EVENT_LIVEUPDATE_BUSY,
@@ -373,7 +373,7 @@ enum FMOD_RESULT
     ERR_INVALID_STRING,
     ERR_ALREADY_LOCKED,
     ERR_NOT_LOCKED,
-    ERR_RECORD_DISCONNECTED,
+    ERR_RECorD_DISCONNECTED,
     ERR_TOOMANYSAMPLES,
 };
 
@@ -397,7 +397,7 @@ enum FMOD_OUTPUTTYPE
     ASIO,
     PULSEAUDIO,
     ALSA,
-    COREAUDIO,
+    CorEAUDIO,
     AUDIOTRACK,
     OPENSL,
     AUDIOOUT,
@@ -406,7 +406,7 @@ enum FMOD_OUTPUTTYPE
     NNAUDIO,
     WINSONIC,
     AAUDIO,
-    AUDIOWORKLET,
+    AUDIOWorKLET,
     PHASE,
 
     MAX,
@@ -453,10 +453,10 @@ enum FMOD_SPEAKER
     MAX,
 };
 
-enum FMOD_CHANNELORDER
+enum FMOD_CHANNELorDER
 {
     DEFAULT,
-    WAVEFORMAT,
+    WAVEForMAT,
     PROTOOLS,
     ALLMONO,
     ALLSTEREO,
@@ -486,7 +486,7 @@ enum FMOD_SOUND_TYPE
     MIDI,
     MOD,
     MPEG,
-    OGGVORBIS,
+    OGGVorBIS,
     PLAYLIST,
     RAW,
     S3M,
@@ -496,7 +496,7 @@ enum FMOD_SOUND_TYPE
     XMA,
     AUDIOQUEUE,
     AT9,
-    VORBIS,
+    VorBIS,
     MEDIA_FOUNDATION,
     MEDIACODEC,
     FADPCM,
@@ -505,7 +505,7 @@ enum FMOD_SOUND_TYPE
     MAX,
 };
 
-enum FMOD_SOUND_FORMAT
+enum FMOD_SOUND_ForMAT
 {
     NONE,
     PCM8,
@@ -522,7 +522,7 @@ enum FMOD_OPENSTATE
 {
     READY,
     LOADING,
-    ERROR,
+    ERRor,
     CONNECTING,
     BUFFERING,
     SEEKING,
@@ -532,7 +532,7 @@ enum FMOD_OPENSTATE
     MAX,
 };
 
-enum FMOD_SOUNDGROUP_BEHAVIOR
+enum FMOD_SOUNDGROUP_BEHAVIor
 {
     FAIL,
     MUTE,
@@ -559,7 +559,7 @@ enum FMOD_CHANNELCONTROL_DSP_INDEX
 
 };
 
-enum FMOD_ERRORCALLBACK_INSTANCETYPE
+enum FMOD_ERRorCALLBACK_INSTANCETYPE
 {
     NONE,
     SYSTEM,
@@ -615,7 +615,7 @@ enum FMOD_TAGTYPE
     UNKNOWN,
     ID3V1,
     ID3V2,
-    VORBISCOMMENT,
+    VorBISCOMMENT,
     SHOUTCAST,
     ICECAST,
     ASF,
@@ -640,7 +640,7 @@ enum FMOD_TAGDATATYPE
     MAX,
 };
 
-enum FMOD_PORT_TYPE
+enum FMOD_PorT_TYPE
 {
     MUSIC,
     COPYRIGHT_MUSIC,
@@ -673,23 +673,23 @@ enum FMOD_DSP_TYPE
 {
     UNKNOWN,
     MIXER,
-    OSCILLATOR,
+    OSCILLATor,
     LOWPASS,
     ITLOWPASS,
     HIGHPASS,
     ECHO,
     FADER,
     FLANGE,
-    DISTORTION,
-    NORMALIZE,
+    DISTorTION,
+    NorMALIZE,
     LIMITER,
     PARAMEQ,
     PITCHSHIFT,
-    CHORUS,
+    CHorUS,
     VSTPLUGIN,
     WINAMPPLUGIN,
     ITECHO,
-    COMPRESSOR,
+    COMPRESSor,
     SFXREVERB,
     LOWPASS_SIMPLE,
     DELAY,
@@ -712,7 +712,7 @@ enum FMOD_DSP_TYPE
     MAX,
 };
 
-enum FMOD_DSP_OSCILLATOR
+enum FMOD_DSP_OSCILLATor
 {
     TYPE,
     RATE
@@ -757,12 +757,12 @@ enum FMOD_DSP_FLANGE
     RATE
 } ;
 
-enum FMOD_DSP_DISTORTION
+enum FMOD_DSP_DISTorTION
 {
     LEVEL
 };
 
-enum FMOD_DSP_NORMALIZE
+enum FMOD_DSP_NorMALIZE
 {
     FADETIME,
     THRESHOLD,
@@ -833,7 +833,7 @@ enum FMOD_DSP_PITCHSHIFT
     MAXCHANNELS
 } ;
 
-enum FMOD_DSP_CHORUS
+enum FMOD_DSP_CHorUS
 {
     MIX,
     RATE,
@@ -849,7 +849,7 @@ enum FMOD_DSP_ITECHO
     PANDELAY
 } ;
 
-enum FMOD_DSP_COMPRESSOR
+enum FMOD_DSP_COMPRESSor
 {
     THRESHOLD, 
     RATIO, 
@@ -1184,17 +1184,17 @@ enum FMOD_OUTPUT_METHOD
 
 #region Studio Definitions
 
-#macro FMOD_STUDIO_LOAD_MEMORY_ALIGNMENT                   32
+#macro FMOD_STUDIO_LOAD_MEMorY_ALIGNMENT                   32
 
 enum FMOD_STUDIO_INIT 
 {
-	NORMAL                  = 0x00000000,
+	NorMAL                  = 0x00000000,
 	LIVEUPDATE              = 0x00000001,
 	ALLOW_MISSING_PLUGINS   = 0x00000002,
 	SYNCHRONOUS_UPDATE      = 0x00000004,
 	DEFERRED_CALLBACKS      = 0x00000008,
 	LOAD_FROM_UPDATE        = 0x00000010,
-	MEMORY_TRACKING         = 0x00000020,
+	MEMorY_TRACKING         = 0x00000020,
 }
 
 enum FMOD_STUDIO_PARAMETER_FLAGS 
@@ -1242,7 +1242,7 @@ enum FMOD_STUDIO_EVENT_CALLBACK
 
 enum FMOD_STUDIO_LOAD_BANK 
 {
-	NORMAL              = 0x00000000,
+	NorMAL              = 0x00000000,
 	NONBLOCKING         = 0x00000001,
 	DECOMPRESS_SAMPLES  = 0x00000002,
 	UNENCRYPTED         = 0x00000004,
@@ -1250,16 +1250,16 @@ enum FMOD_STUDIO_LOAD_BANK
 
 enum FMOD_STUDIO_COMMANDCAPTURE 
 {
-	NORMAL              = 0x00000000,
+	NorMAL              = 0x00000000,
 	FILEFLUSH           = 0x00000001,
 	SKIP_INITIAL_STATE  = 0x00000002,
 }
 
 enum FMOD_STUDIO_COMMANDREPLAY
 {
-	NORMAL              = 0x00000000,
+	NorMAL              = 0x00000000,
 	SKIP_CLEANUP        = 0x00000001,
-	FAST_FORWARD        = 0x00000002,
+	FAST_ForWARD        = 0x00000002,
 	SKIP_BANK_LOAD      = 0x00000004,
 }
 
@@ -1269,13 +1269,13 @@ enum FMOD_STUDIO_LOADING_STATE
     UNLOADED,
     LOADING,
     LOADED,
-    ERROR,
+    ERRor,
 };
 
-enum FMOD_STUDIO_LOAD_MEMORY_MODE
+enum FMOD_STUDIO_LOAD_MEMorY_MODE
 {
-    MEMORY,
-    MEMORY_POINT,
+    MEMorY,
+    MEMorY_POINT,
 };
 
 enum FMOD_STUDIO_PARAMETER_TYPE
@@ -1283,13 +1283,13 @@ enum FMOD_STUDIO_PARAMETER_TYPE
     GAME_CONTROLLED,
     AUTOMATIC_DISTANCE,
     AUTOMATIC_EVENT_CONE_ANGLE,
-    AUTOMATIC_EVENT_ORIENTATION,
+    AUTOMATIC_EVENT_orIENTATION,
     AUTOMATIC_DIRECTION,
     AUTOMATIC_ELEVATION,
-    AUTOMATIC_LISTENER_ORIENTATION,
+    AUTOMATIC_LISTENER_orIENTATION,
     AUTOMATIC_SPEED,
     AUTOMATIC_SPEED_ABSOLUTE,
-    AUTOMATIC_DISTANCE_NORMALIZED,
+    AUTOMATIC_DISTANCE_NorMALIZED,
 
     MAX,
 };
@@ -1304,7 +1304,7 @@ enum FMOD_STUDIO_USER_PROPERTY_TYPE
 
 enum FMOD_STUDIO_EVENT_PROPERTY
 {
-    CHANNELPRIORITY,
+    CHANNELPRIorITY,
     SCHEDULE_DELAY,
     SCHEDULE_LOOKAHEAD,
     MINIMUM_DISTANCE,

@@ -54,7 +54,7 @@ if (ragebuffer > 0)
 	ragebuffer--
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = (0.15 * room_speed)
-if (state == states.pizzagoblinthrow or state == states.rage)
+if (state == states.pizzagoblinthrow || state == states.rage)
 {
 	hsp = 0
 	vsp = 0

@@ -6,7 +6,7 @@ function __background_get_element(__bind)
 	__result[2] = -1;
 
 
-	// Look at the existing layers in the room to see if we have any foregrounds or backgrounds
+	// Look at the existing layers in the room to see if we have any foregrounds || backgrounds
 	var __fgstring = "Compatibility_Foreground_";
 	var __bgstring = "Compatibility_Background_";
 	var __fglen = string_length(__fgstring);

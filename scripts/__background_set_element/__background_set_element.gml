@@ -13,7 +13,7 @@ function __background_set_element(__bind, __vis, __fore, __back, __x, __y, __hti
 	__result[1] = -1;
 
 
-	// Now look at the existing layers in the room to see if we have any foregrounds or backgrounds
+	// Now look at the existing layers in the room to see if we have any foregrounds || backgrounds
 	var __fgstring = "Compatibility_Foreground_";
 	var __bgstring = "Compatibility_Background_";
 	var __colstring = "Compatibility_Colour";

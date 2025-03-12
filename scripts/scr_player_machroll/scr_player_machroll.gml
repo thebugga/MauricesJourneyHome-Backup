@@ -13,7 +13,7 @@ function scr_player_machroll()
 	switch character
 	{
 		case "P":
-			if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+			if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 			{
 				//scr_soundeffect(sfx_bumpwall)
 				hsp = 0
@@ -60,7 +60,7 @@ function scr_player_machroll()
 					//scr_soundeffect(sfx_rollgetup)
 					sprite_index = spr_rollgetup
 				}
-				if (movespeed < 12 or skateboarding == 1)
+				if (movespeed < 12 || skateboarding == 1)
 				{
 					if (!grounded)
 						sprite_index = spr_mach
@@ -160,7 +160,7 @@ function scr_player_machroll()
 				image_index = 0
 				instance_create((x - 10), (y + 10), obj_bumpeffect)
 			}
-			if (((!key_down) or (!grounded)) && (!(place_meeting_solid((x + 27), (y - 32)))) && (!(place_meeting_solid((x - 27), (y - 32)))) && (!(place_meeting_solid(x, (y - 32)))) && (!(place_meeting_solid(x, (y - 16)))))
+			if (((!key_down) || (!grounded)) && (!(place_meeting_solid((x + 27), (y - 32)))) && (!(place_meeting_solid((x - 27), (y - 32)))) && (!(place_meeting_solid(x, (y - 32)))) && (!(place_meeting_solid(x, (y - 16)))))
 			{
 				image_index = 0
 				//scr_soundeffect(sfx_rollgetup)

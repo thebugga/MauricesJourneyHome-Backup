@@ -13,7 +13,7 @@ function scr_player_trickjump()
 		if (animation_end())
 			sprite_index = spr_player_rampjump
 	}
-	if (place_meeting_solid((x + Xscale), y) && (!slopeCheck(x + Xscale, y)) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+	if (place_meeting_solid((x + Xscale), y) && (!slopeCheck(x + Xscale, y)) && (place_meeting_slope((x + sign(hsp)), y) || place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
 		state = states.bump
 		image_index = 0

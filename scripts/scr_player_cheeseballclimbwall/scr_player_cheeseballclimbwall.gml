@@ -2,7 +2,7 @@ function scr_player_cheeseballclimbwall()
 {
 	hsp = 0
 	vsp = (-Wallmovespeed)
-	if (place_meeting_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x - sign(hsp)), y, obj_slope))))
+	if (place_meeting_solid(x, (y - 1)) && (!(place_meeting(x, (y - 1), obj_destructibles))) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x - sign(hsp)), y, obj_slope))))
 	{
 		//scr_soundeffect(sfx_groundpound)
 		image_index = 0

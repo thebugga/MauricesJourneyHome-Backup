@@ -87,5 +87,5 @@ switch state
 		break
 }
 
-colliding = (!((state == states.jump or state == states.boss_cardboard or state == states.boss_cardboardend)))
-attacking = (state == states.boss_shield or state == states.jump or state == states.boss_cardboard or state == states.boss_cardboardend or state == states.boss_smokebombstart)
+colliding = (!((state == states.jump || state == states.boss_cardboard || state == states.boss_cardboardend)))
+attacking = (state == states.boss_shield || state == states.jump || state == states.boss_cardboard || state == states.boss_cardboardend || state == states.boss_smokebombstart)

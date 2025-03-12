@@ -1,4 +1,4 @@
-if (room == rm_eggplantdisclaimer or room == rm_logo or room == Mainmenu or room == rank_room or room == rm_levelselect or room == timesuproom or room == characterselect or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 3) == "hub" && !global.panic) || instance_exists(obj_titlecard))
+if (room == rm_eggplantdisclaimer || room == rm_logo || room == Longintro || room == Mainmenu || room == rank_room || room == rm_levelselect || room == timesuproom || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 3) == "hub" && !global.panic) || instance_exists(obj_titlecard))
 {
 	visible = false
 	sprite_index = spr_tv_off
@@ -109,7 +109,7 @@ switch state
 		}
 		
 		var _state = obj_player1.state
-		if (_state == states.backbreaker or _state == states.chainsaw)
+		if (_state == states.backbreaker || _state == states.chainsaw)
 			_state = obj_player1.tauntstoredstate
 		
 		var _transfo = 1
@@ -125,11 +125,11 @@ switch state
 				break
 			case states.fireass:
 				cardboardsprite = spr_tv_fireass
-				if (obj_player1.sprite_index == obj_player1.spr_scaredjump1 or obj_player1.sprite_index == obj_player1.spr_scaredjump2)
+				if (obj_player1.sprite_index == obj_player1.spr_scaredjump1 || obj_player1.sprite_index == obj_player1.spr_scaredjump2)
 					cardboardsprite = spr_tv_scaredjump
 				break
 			case states.tumble:
-				if (obj_player1.sprite_index == obj_player1.spr_tumble or obj_player1.sprite_index == obj_player1.spr_tumblestart or obj_player1.sprite_index == obj_player1.spr_tumbleend)
+				if (obj_player1.sprite_index == obj_player1.spr_tumble || obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend)
 					cardboardsprite = spr_tv_tumble
 				break
 			case states.firemouth:
@@ -221,7 +221,7 @@ switch state
 			{
 				if (mach4mode == 1)
 					tv_do_expression(spr_tv_exprmach4)
-				else if (state == states.mach3 or sprite_index == spr_mach3boost)
+				else if (state == states.mach3 || sprite_index == spr_mach3boost)
 					tv_do_expression(spr_tv_exprmach3)
 				if (state == states.hurt)
 					tv_do_expression(spr_tv_exprhurt)
@@ -413,7 +413,7 @@ if cardboardexprsprite != -4
 		case spr_tv_exprmach3N:
 			with (obj_player1)
 			{
-				if (state != states.mach3 && (state != states.chainsaw or tauntstoredstate != states.mach3) && sprite_index != spr_mach3boost && mach4mode == 0)
+				if (state != states.mach3 && (state != states.chainsaw || tauntstoredstate != states.mach3) && sprite_index != spr_mach3boost && mach4mode == 0)
 					other.cardboardexprsprite = -4
 				if (mach4mode)
 					tv_do_expression(spr_tv_exprmach4)

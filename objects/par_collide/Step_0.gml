@@ -1,2 +1,2 @@
-if (object_index == obj_solid or object_index == obj_secretblock or object_index == obj_secretbigblock or object_index == obj_secretmetalblock or object_index == obj_slope or object_index == obj_platform)
+if (object_index == obj_solid || object_index == obj_secretblock || object_index == obj_secretbigblock || object_index == obj_secretmetalblock || object_index == obj_slope || object_index == obj_platform)
 	visible = global.showcollisions

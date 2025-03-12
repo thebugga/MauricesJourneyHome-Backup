@@ -35,13 +35,13 @@ if (global.coop == true)
 	if (!instance_exists(obj_coopflag))
 		instance_create(x, y, obj_coopflag)
 }
-if (place_meeting(x, y, obj_boxofpizza) or place_meeting(x, (y - 1), obj_boxofpizza))
+if (place_meeting(x, y, obj_boxofpizza) || place_meeting(x, (y - 1), obj_boxofpizza))
 {
 	box = 1
 	hallway = 0
 	state = states.crouch
 }
-if (object_index != obj_player2 or global.coop == true)
+if (object_index != obj_player2 || global.coop == true)
 {
 	if (targetDoor == "A" && instance_exists(obj_doorA))
 	{

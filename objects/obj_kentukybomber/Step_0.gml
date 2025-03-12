@@ -56,7 +56,7 @@ if (player.x > (x - 200) && player.x < (x + 200) && player.y <= (y + 400) && pla
 {
 	if (x != player.x && state != states.pizzagoblinthrow && bombreset == 0)
 	{
-		if (state == states.walk or state == states.idle)
+		if (state == states.walk || state == states.idle)
 		{
 			sprite_index = spr_kentukybomber_attack
 			image_index = 0
@@ -66,7 +66,7 @@ if (player.x > (x - 200) && player.x < (x + 200) && player.y <= (y + 400) && pla
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = (0.15 * room_speed)
-if (state == states.pizzagoblinthrow or state == states.rage)
+if (state == states.pizzagoblinthrow || state == states.rage)
 {
 	hsp = 0
 	vsp = 0

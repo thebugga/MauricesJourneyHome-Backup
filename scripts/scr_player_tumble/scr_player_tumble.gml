@@ -11,24 +11,64 @@ function scr_player_tumble()
 	mask_index = spr_crouchmask
 	if (sprite_index == spr_tumblestart)
 		movespeed = 6
-	if ((!grounded) && (sprite_index == spr_machroll or sprite_index == spr_playerV_divekick or sprite_index == spr_crouchslip or sprite_index == spr_mach2jump or sprite_index == spr_player_backslide or sprite_index == spr_player_backslideland))
+	if !grounded && (sprite_index == spr_crouchslip || sprite_index == spr_machroll || sprite_index == spr_mach2jump || sprite_index == spr_player_backslide || sprite_index == spr_player_backslideland)
 	{
-		vsp = 10
-		sprite_index = spr_dive
-		//scr_soundeffectpitched(sfx_dive, 1.1, 1.2)
+		if global.playerCharacter == Characters.Doise
+		{
+			sprite_index = spr_playerN_divebomb;
+			state = states.machcancel;
+			savedmove = xscale;
+			vsp = 20;
+			movespeed = hsp;
+			input_buffer_slap = 0;
+			input_buffer_jump = 0;
+			image_index = 0;
+			exit;
+		}
+		else
+		{
+			vsp = 10;
+			sprite_index = spr_dive;
+			fmod_studio_event_instance_start(snd_dive);
+		}
 	}
-	if (grounded && sprite_index == spr_dive)
+	if sprite_index == spr_tumble && grounded
 	{
-		sprite_index = spr_machroll
-		image_index = 0
+		if move == xscale
+			movespeed = approach(movespeed, 12, 0.25);
+		else if move == -xscale
+			movespeed = approach(movespeed, 8, 0.25);
+		else
+			movespeed = approach(movespeed, 10, 0.25);
 	}
-	if (sprite_index == spr_dive && key_jump)
+	if grounded && sprite_index == spr_dive
 	{
-		sprite_index = spr_player_poundcancel1
-		image_index = 0
-		state = states.freefall
-		dir = Xscale
-		vsp = -6
+		sprite_index = spr_machroll;
+		image_index = 0;
+	}
+	if sprite_index == spr_dive && key_jump
+	{
+		if global.playerCharacter != Characters.Doise
+		{
+			sprite_index = spr_player_poundcancel1;
+			image_index = 0;
+			state = states.freefall;
+			dir = xscale;
+			vsp = -6;
+		}
+		else
+		{
+			sprite_index = spr_playerN_divebomb;
+			state = states.machcancel;
+			vsp = 20;
+			hsp = 0;
+			savedmove = xscale;
+			movespeed = 0;
+			input_buffer_slap = 0;
+			input_buffer_jump = 0;
+			image_index = 0;
+			exit;
+		}
 	}
 	if (movespeed <= 2 && sprite_index != spr_player_breakdance)
 	{
@@ -73,11 +113,11 @@ function scr_player_tumble()
 		sprite_index = spr_tumble
 		movespeed = 14
 	}
-	if (((place_meeting((x + Xscale), y, obj_solid) or slopeCheck(x + Xscale, y)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && ((!(place_meeting((x + hsp), y, obj_rattumble))) or sprite_index != spr_tumble) && (!(place_meeting((x + hsp), y, obj_destructibles)))) or place_meeting(x, y, obj_timedgate))
+	if (((place_meeting((x + Xscale), y, obj_solid) || slopeCheck(x + Xscale, y)) && (!(place_meeting((x + hsp), y, obj_rollblock))) && ((!(place_meeting((x + hsp), y, obj_rattumble))) || sprite_index != spr_tumble) && (!(place_meeting((x + hsp), y, obj_destructibles)))) || place_meeting(x, y, obj_timedgate))
 	{
 		hsp = 0;
 		movespeed = 0;
-		if (sprite_index == spr_tumble or sprite_index == spr_tumblestart)
+		if (sprite_index == spr_tumble || sprite_index == spr_tumblestart)
 		{
 			state = states.bump
 			landAnim = false
@@ -92,7 +132,7 @@ function scr_player_tumble()
 			state = states.bump
 			image_index = 0
 			sprite_index = spr_player_wallsplat
-			//scr_soundeffectpitched(sfx_splat)
+			event_play_oneshot_3d("event:/sfx/pep/splat", x, y);
 		}
 	}
 if (sprite_index == spr_crouchslip && global.playerCharacter == Characters.Pierre && input_buffer_jump > 0 && global.attackstyle != 2)
@@ -147,7 +187,7 @@ if (sprite_index == spr_crouchslip && global.playerCharacter == Characters.Pierr
 				state = states.mach2
 			image_index = 0
 			sprite_index = spr_rollgetup
-			//scr_soundeffect(sfx_rollgetup)
+			fmod_studio_event_instance_start(rollgetupsnd)
 		}
 	}
     if ((!key_down) && key_attack && grounded && sprite_index != spr_tumble && (!(place_meeting_solid(x, (y - 16)))) && (!(place_meeting_solid(x, (y - 32)))) && sprite_index != spr_player_breakdance) && global.playerCharacter == Characters.Pierre
@@ -170,7 +210,7 @@ if (sprite_index == spr_crouchslip && global.playerCharacter == Characters.Pierr
 				state = states.normal
 		}
 	}
-	if (sprite_index == spr_player_Sjumpcancelslide or sprite_index == spr_breakdancesuper or sprite_index == spr_machroll or sprite_index == spr_tumble or sprite_index == spr_tumblestart or sprite_index == spr_machroll or sprite_index == spr_player_mach2jump)
+	if (sprite_index == spr_player_Sjumpcancelslide || sprite_index == spr_breakdancesuper || sprite_index == spr_machroll || sprite_index == spr_tumble || sprite_index == spr_tumblestart || sprite_index == spr_machroll || sprite_index == spr_player_mach2jump)
 		image_speed = (abs(movespeed) / 15)
 	else if (animation_end() && sprite_index == spr_mach2jump)
 		image_speed = 0

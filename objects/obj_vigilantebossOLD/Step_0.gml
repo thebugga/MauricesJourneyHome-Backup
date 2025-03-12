@@ -4,7 +4,7 @@ if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)
 	if ((!thrown) && (!destroyable))
 		boss_destroy(lastplayerid)
 }
-if ((state == states.mach1 or state == states.machslide or state == states.crouchslide or state == states.uppunch or state == states.punch or state == states.boss_millionpunch or state == states.handstandjump) && alarm[0] <= 0)
+if ((state == states.mach1 || state == states.machslide || state == states.crouchslide || state == states.uppunch || state == states.punch || state == states.boss_millionpunch || state == states.handstandjump) && alarm[0] <= 0)
 	alarm[0] = 6
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--
@@ -16,13 +16,13 @@ if (important && honor && nexthonor && phase > 3 && state != states.boss_superat
 		if (state == states.chainsawbump)
 			ch = 1
 	}
-	if (instance_exists(obj_shotgunbullet) or ch)
+	if (instance_exists(obj_shotgunbullet) || ch)
 	{
 		nexthonor = 0
 		with (obj_tv)
 		{
 			showtext = 1
-			message = "NO HONOR"
+			message = "NO HONor"
 			alarm[0] = 200
 		}
 	}
@@ -159,7 +159,7 @@ switch state
 		break
 }
 
-if (hitstate == states.boss_superattack or state == states.boss_superattack)
+if (hitstate == states.boss_superattack || state == states.boss_superattack)
 {
 	with (lastplayerid)
 	{
@@ -172,4 +172,4 @@ if (hitstate == states.boss_superattack or state == states.boss_superattack)
 		}
 	}
 }
-attacking = (state == states.revolver or state == states.mach1 or state == states.charge or state == states.punch or state == states.boss_groundpunchstart or state == states.boss_millionpunch or state == states.freefall or state == states.uppunch or state == states.handstandjump or state == states.boss_superattack or state == states.boss_superattackstart or state == states.crouchslide)
+attacking = (state == states.revolver || state == states.mach1 || state == states.charge || state == states.punch || state == states.boss_groundpunchstart || state == states.boss_millionpunch || state == states.freefall || state == states.uppunch || state == states.handstandjump || state == states.boss_superattack || state == states.boss_superattackstart || state == states.crouchslide)

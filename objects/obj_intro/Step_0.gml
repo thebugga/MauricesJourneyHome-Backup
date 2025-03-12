@@ -246,7 +246,7 @@ switch scene
             peppino.sprite_index = spr_player_mach
             peppino.image_speed = 0.5
             pizzaface = instance_create(-130, 200, obj_introprop)
-            pizzaface.sprite_index = spr_pizzaface
+            pizzaface.sprite_index = spr_pizzamancer
             pizzaface.image_speed = 0.35
             scene++
             scenebuffer = 170
@@ -301,7 +301,7 @@ switch scene
             peppino.sprite_index = spr_player_mach
             peppino.image_speed = 0.5
             pizzaface = instance_create(400, 200, obj_introprop)
-            pizzaface.sprite_index = spr_pizzaface
+            pizzaface.sprite_index = spr_pizzamancer
             pizzaface.image_speed = 0.35
         }
         break
@@ -400,7 +400,7 @@ switch scene
             peppino.sprite_index = spr_player_mach4
             peppino.image_speed = 0.5
             pizzaface = instance_create(-700, 200, obj_introprop)
-            pizzaface.sprite_index = spr_pizzaface
+            pizzaface.sprite_index = spr_pizzamancer
             pizzaface.image_speed = 0.35
             gustavo = instance_create((room_width / 2), 386, obj_parent_playerprop)
             gustavo.spr_palette = spr_ratmountpalette

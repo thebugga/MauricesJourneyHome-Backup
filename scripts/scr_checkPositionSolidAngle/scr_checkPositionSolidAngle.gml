@@ -5,7 +5,7 @@
 /// @param {real} pdist_b Distance of Point B from the center point.
 /// @param {real} len Magnitude of the point to check.
 /// @param {real} dir Direction of the point to check.
-/// @param {real} [exclude] Using the EXLCUDE flags you can exclude types of objects. Ex: (Exclude.SLOPES|Exclude.PLATFORMS). You can also invert it like so: (~Exclude.MOVING).
+/// @param {real} [exclude] Using the EXLCUDE flags you can exclude types of objects. Ex: (Exclude.SLOPES|Exclude.PLATForMS). You can also invert it like so: (~Exclude.MOVING).
 /// @returns {real} Angle of the surface of the collided collision object.
 function scr_checkPositionSolidAngle(x, y, pdist_a, pdist_b, len, dir, exclude = Exclude.NONE) {
 	// To Do: Research better ways of doing this if possible.

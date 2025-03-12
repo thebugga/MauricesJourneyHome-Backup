@@ -9,7 +9,7 @@ function scr_player_handstandjump()
 	{
 		if movespeed < 10
 		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
+			if ((sprite_index == spr_player_pistolshot or sprite_index == spr_shotgun_shot) && movespeed < 8)
 				movespeed += 0.25;
 			else if sprite_index == spr_player_lunge && movespeed < 12
 				movespeed += 0.8;
@@ -21,7 +21,7 @@ function scr_player_handstandjump()
 	{
 		if movespeed < 10
 		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
+			if ((sprite_index == spr_player_pistolshot or sprite_index == spr_shotgun_shot) && movespeed < 8)
 				movespeed += 0.25;
 			else if movespeed < 10
 				movespeed += 0.5;
@@ -69,7 +69,7 @@ function scr_player_handstandjump()
 		image_index = 0;
 		sprite_index = airattackdashstart;
 	}
-	if (grounded && sprite_index == airattackdash && (!key_attack || global.playerCharacter == Characters.Doise) && global.attackstyle != 2)
+	if (grounded && sprite_index == airattackdash && (!key_attack or global.playerCharacter == Characters.Doise) && global.attackstyle != 2)
 	{
 		if global.playerCharacter != Characters.Maurice
 		{
@@ -109,7 +109,7 @@ function scr_player_handstandjump()
 		fmod_studio_event_instance_start(snd_crouchslide);
 	}
 	mask_index = spr_player_mask;
-	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || place_meeting_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && slopeCheck(x + Xscale, y)))
+	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) or place_meeting_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) or (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) or place_meeting_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && slopeCheck(x + Xscale, y)))
 	{
 		var _climb = true;
 		if global.playerCharacter == Characters.Doise
@@ -121,7 +121,7 @@ function scr_player_handstandjump()
 			state = states.climbwall;
 		}
 	}
-	if (grounded && place_meeting_solid(x + Xscale, y) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting_slope(x + sign(hsp), y)))
+	if (grounded && place_meeting_solid(x + Xscale, y) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) or place_meeting_slope(x + sign(hsp), y)))
 	{
 		var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 		if _bump

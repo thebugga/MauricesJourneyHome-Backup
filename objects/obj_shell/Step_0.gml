@@ -28,17 +28,17 @@ if (!isOpen) {
 		metamovedRight = false;
 	}
 	
-	if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_f5)) {
+	if (keyboard_check_pressed(vk_escape) or keyboard_check_pressed(vk_f5)) {
 		if (isAutocompleteOpen) {
 			self._close_autocomplete();
 		} else {
 			self.close()
 		}
-	} else if (self._key_combo_pressed([metaKey], ord("A")) || keyboard_check_pressed(vk_home)) {
+	} else if (self._key_combo_pressed([metaKey], ord("A")) or keyboard_check_pressed(vk_home)) {
 		// Jump to beginning of line
 		cursorPos = 1;
 		targetScrollPosition = maxScrollPosition;
-	} else if (self._key_combo_pressed([metaKey], ord("E")) || keyboard_check_pressed(vk_end)) {
+	} else if (self._key_combo_pressed([metaKey], ord("E")) or keyboard_check_pressed(vk_end)) {
 		// Jump to end of line
 		cursorPos = string_length(consoleString) + 1;
 		targetScrollPosition = maxScrollPosition;
@@ -62,7 +62,7 @@ if (!isOpen) {
 		consoleString = "";
 		cursorPos = 1;
 		targetScrollPosition = maxScrollPosition;
-	} else if (self._key_combo_pressed([metaKey], vk_backspace) || (metaKey == vk_control && ord(keyboard_string) == 127)) {
+	} else if (self._key_combo_pressed([metaKey], vk_backspace) or (metaKey == vk_control && ord(keyboard_string) == 127)) {
 		// delete characters from the cursor position to the preceding space or start of the line
 		var precedingSpaceIndex = 1;
 		// don't want to check for space at or before the cursor position, so start 2 back
@@ -190,7 +190,7 @@ if (!isOpen) {
 			cursorPos = 1;
 		}
 		commandSubmitted = true;
-	} else if (self._key_combo_pressed(cycleSuggestionsModifiers, cycleSuggestionsKey) || keyboard_check_pressed(vk_down)) {
+	} else if (self._key_combo_pressed(cycleSuggestionsModifiers, cycleSuggestionsKey) or keyboard_check_pressed(vk_down)) {
 		if (array_length(filteredSuggestions) != 0) {
 			// Auto-complete up to the common prefix of our suggestions
 			var uncompleted = consoleString;
@@ -204,7 +204,7 @@ if (!isOpen) {
 				}
 			}
 		}
-	} else if (self._key_combo_pressed(cycleSuggestionsReverseModifiers, cycleSuggestionsReverseKey) || keyboard_check_pressed(vk_up)) {
+	} else if (self._key_combo_pressed(cycleSuggestionsReverseModifiers, cycleSuggestionsReverseKey) or keyboard_check_pressed(vk_up)) {
 		if (array_length(filteredSuggestions) != 0) {
 			suggestionIndex = (suggestionIndex + array_length(filteredSuggestions) - 1) % array_length(filteredSuggestions);
 			if (isAutocompleteOpen) {
@@ -224,8 +224,8 @@ if (!isOpen) {
 	
 	// Handle scrolling
 	if (isAutocompleteOpen) {
-		var x1 = autocompleteOriginX;
-		var y1 = autocompleteOriginY;
+		var x1 = autocompleteoriginX;
+		var y1 = autocompleteoriginY;
 		var x2 = x1 + autocompleteMaxWidth + font_get_size(consoleFont) + (autocompletePadding * 2) - scrollbarWidth;
 		var y2 = y1 + (string_height(prompt) * min(array_length(filteredSuggestions), autocompleteMaxLines)) + autocompletePadding;
 		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), x1, y1, x2, y2)) {
@@ -237,7 +237,7 @@ if (!isOpen) {
 				autocompleteScrollPosition--;
 				autocompleteScrollPosition = max(autocompleteScrollPosition, 0);
 			}
-		} else if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height)) {
+		} else if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), shelloriginX, shelloriginY, shelloriginX + width, shelloriginY + height)) {
 			if (mouse_wheel_down()) {
 				targetScrollPosition = targetScrollPosition + scrollSpeed;
 			}
@@ -246,7 +246,7 @@ if (!isOpen) {
 			}
 		}
 	} else {
-		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height)) {
+		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), shelloriginX, shelloriginY, shelloriginX + width, shelloriginY + height)) {
 			if (mouse_wheel_down()) {
 				targetScrollPosition = targetScrollPosition + scrollSpeed;
 			}
@@ -260,7 +260,7 @@ if (!isOpen) {
 	var lerpValue = (scrollSmoothness == 0) ? 1 : self._remap(scrollSmoothness, 1, 0, 0.08, 0.4);
 	scrollPosition = lerp(scrollPosition, targetScrollPosition, lerpValue);
 	scrollPosition = clamp(scrollPosition, 0, maxScrollPosition)
-	if (scrollPosition == 0 || scrollPosition == maxScrollPosition) {
+	if (scrollPosition == 0 or scrollPosition == maxScrollPosition) {
 		targetScrollPosition = clamp(targetScrollPosition, 0, maxScrollPosition);
 	}
 	

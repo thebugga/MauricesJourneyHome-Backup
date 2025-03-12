@@ -19,7 +19,7 @@ function wrap(value, minb, maxb) {
 	return (((value - _min) % range) + range) % range + _min;
 }
 
-/// @description Returns true or false depending on RNG.
+/// @description Returns true || false depending on RNG.
 /// @param percent 
 function chance(percent) {
 	return percent > random(1);

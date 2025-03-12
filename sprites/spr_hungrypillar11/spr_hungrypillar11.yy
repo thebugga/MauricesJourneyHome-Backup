@@ -13,22 +13,22 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6f3da606-d84a-4237-9a39-3e7fb20c4ca7",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"de08d182-d94d-45c1-8644-35b129eb5644",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3a3d57d8-7ac7-45fd-9a7a-44b76584cef5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"897895d6-5d82-4787-abc0-0dbe36a19eca",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3933b5fe-8958-4c4d-8f65-b6f6a95e0307",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7447cb88-9ade-42df-bbce-dc955fbe0b0f",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 128,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"dbd00739-10c1-4a41-9a3a-bf463d34f398","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"dc3e26c2-954f-4d93-8937-bdd961f5e50e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Spider",
-    "path": "folders/Sprites/Level structure/John/Custom Faces/Spider.yy",
+    "name": "PurpleRed",
+    "path": "folders/Sprites/Level structure/John/Custom Faces/PurpleRed.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -56,9 +56,9 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6f3da606-d84a-4237-9a39-3e7fb20c4ca7","path":"sprites/spr_hungrypillar11/spr_hungrypillar11.yy",},},},"Disabled":false,"id":"74c5e338-523a-48ba-a7c1-5c6253dc7ed5","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"de08d182-d94d-45c1-8644-35b129eb5644","path":"sprites/spr_hungrypillar11/spr_hungrypillar11.yy",},},},"Disabled":false,"id":"d5fd870e-1e13-423a-8a00-6c29f26c68ab","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3a3d57d8-7ac7-45fd-9a7a-44b76584cef5","path":"sprites/spr_hungrypillar11/spr_hungrypillar11.yy",},},},"Disabled":false,"id":"b549a9e4-d613-44e2-80ed-c2d9f544e577","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"897895d6-5d82-4787-abc0-0dbe36a19eca","path":"sprites/spr_hungrypillar11/spr_hungrypillar11.yy",},},},"Disabled":false,"id":"f7c630d2-9b0b-4fc3-b5bb-b9b029d376b2","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3933b5fe-8958-4c4d-8f65-b6f6a95e0307","path":"sprites/spr_hungrypillar11/spr_hungrypillar11.yy",},},},"Disabled":false,"id":"0423fe68-6a35-488f-abe8-71a6ab888ce8","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7447cb88-9ade-42df-bbce-dc955fbe0b0f","path":"sprites/spr_hungrypillar11/spr_hungrypillar11.yy",},},},"Disabled":false,"id":"cad4a1da-b409-4a30-b3ce-8c8f1619c58e","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

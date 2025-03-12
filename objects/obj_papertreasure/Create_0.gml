@@ -1,7 +1,7 @@
 event_inherited()
 got_func = function()
 {
-	if (global.papercutscene == -4 or (!global.papercutscene))
+	if (global.papercutscene == -4 || (!global.papercutscene))
 	{
 		global.papercutscene = 1
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "paper", 1)

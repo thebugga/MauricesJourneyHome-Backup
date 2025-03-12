@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "spr_hungrypillar_dead10",
   "bbox_bottom": 156,
-  "bbox_left": 28,
-  "bbox_right": 182,
+  "bbox_left": 5,
+  "bbox_right": 168,
   "bbox_top": 13,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,20 +13,20 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8e8b6ba9-81eb-4212-a652-3ca534ece5da",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6ee4d4e8-8661-4ada-b962-2f32690b1645",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 168,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4ecb5639-c8ca-4179-a0e8-520401f0ed11","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4aaa9d76-7212-4137-ac22-edcb8224d5ff","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Fromager",
-    "path": "folders/Sprites/Level structure/John/Custom Faces/Fromager.yy",
+    "name": "Spider",
+    "path": "folders/Sprites/Level structure/John/Custom Faces/Spider.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8e8b6ba9-81eb-4212-a652-3ca534ece5da","path":"sprites/spr_hungrypillar_dead10/spr_hungrypillar_dead10.yy",},},},"Disabled":false,"id":"bc5950bd-7915-4d50-bcd4-e9456b8986ac","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6ee4d4e8-8661-4ada-b962-2f32690b1645","path":"sprites/spr_hungrypillar_dead10/spr_hungrypillar_dead10.yy",},},},"Disabled":false,"id":"1e1df23f-54be-482c-a685-f6a75f444858","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

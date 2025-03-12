@@ -7,7 +7,7 @@ function scr_player_jetpackjump()
 		state = states.normal
 	with (obj_iceblock_breakable)
 	{
-		if (place_meeting((x - other.hsp), y, other) or place_meeting((x - other.Xscale), y, other) or place_meeting(x, (y - other.vsp), other))
+		if (place_meeting((x - other.hsp), y, other) || place_meeting((x - other.Xscale), y, other) || place_meeting(x, (y - other.vsp), other))
 		{
 			instance_destroy()
 			if (other.vsp < 0)
@@ -19,7 +19,7 @@ function scr_player_jetpackjump()
 	}
 	with (obj_destructibles)
 	{
-		if (place_meeting((x - other.hsp), y, other) or place_meeting((x - other.Xscale), y, other) or place_meeting(x, (y - other.vsp), other))
+		if (place_meeting((x - other.hsp), y, other) || place_meeting((x - other.Xscale), y, other) || place_meeting(x, (y - other.vsp), other))
 		{
 			instance_destroy()
 			if (other.vsp < 0)
@@ -45,7 +45,7 @@ function scr_player_jetpackjump()
 	}
 	move = (key_left + key_right)
 	dir = Xscale
-	if (sprite_index != spr_rockethitwall or (!jetpackdash))
+	if (sprite_index != spr_rockethitwall || (!jetpackdash))
 	{
 		dir = Xscale
 		if (sprite_index == spr_player_jetpackstart)

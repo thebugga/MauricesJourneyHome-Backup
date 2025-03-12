@@ -52,7 +52,7 @@ switch state
 			railmovespeed = 0
 		with (instance_place((x + hsp), y, obj_destructibles))
 			instance_destroy()
-		if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting(x, y, obj_destructibles))))
+		if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting(x, y, obj_destructibles))))
 		{
 			state = states.stun
 			stunned = 100
@@ -79,7 +79,7 @@ switch state
 			railspeed = 0
 			sprite_index = walkspr
 		}
-		if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting(x, y, obj_destructibles))))
+		if (place_meeting((x + sign(hsp)), y, obj_solid) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting(x, y, obj_destructibles))))
 		{
 			state = states.stun
 			stunned = 100
@@ -119,7 +119,7 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0)
 {
 	if (targetplayer.x > (x - 400) && targetplayer.x < (x + 400) && y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20))
 	{
-		if (state == states.walk or state == states.idle)
+		if (state == states.walk || state == states.idle)
 		{
 			image_index = 0
 			image_xscale = (-(sign((x - targetplayer.x))))
@@ -167,7 +167,7 @@ if (boundbox == 0)
 		other.boundbox = 1
 	}
 }
-if (state == states.mach2 or (state == states.slap && image_index > 11) or (state == states.tackle && image_index > 8))
+if (state == states.mach2 || (state == states.slap && image_index > 11) || (state == states.tackle && image_index > 8))
 {
 	if (!hitboxcreate)
 	{
@@ -176,7 +176,7 @@ if (state == states.mach2 or (state == states.slap && image_index > 11) or (stat
 		{
 			if (other.state == states.slap)
 				sprite_index = spr_swordhitbox
-			else if (other.state == states.mach2 or other.state == states.tackle)
+			else if (other.state == states.mach2 || other.state == states.tackle)
 				sprite_index = spr_bighitbox
 			ID = other.id
 		}

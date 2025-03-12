@@ -1,7 +1,7 @@
 countdown -= 0.5
-if (place_meeting((x + 1), y, obj_ratblock) or place_meeting((x - 1), y, obj_ratblock) or place_meeting(x, (y - 1), obj_ratblock) or place_meeting(x, (y + 1), obj_ratblock))
+if (place_meeting((x + 1), y, obj_ratblock) || place_meeting((x - 1), y, obj_ratblock) || place_meeting(x, (y - 1), obj_ratblock) || place_meeting(x, (y + 1), obj_ratblock))
 	instance_destroy()
-if (place_meeting_solid((x + 1), y) or place_meeting_solid((x - 1), y))
+if (place_meeting_solid((x + 1), y) || place_meeting_solid((x - 1), y))
 	drop = 1
 if place_meeting(x, (y + 1), obj_solid)
 	hsp = 0

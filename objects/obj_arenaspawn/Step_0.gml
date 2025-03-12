@@ -87,7 +87,7 @@ switch state
 			if (!finish)
 				_doorfinish = 0
 		}
-		if ((!instance_exists(obj_parent_enemy)) && (!instance_exists(obj_arena_pizzaportal)) && ((!instance_exists(obj_arenadoor)) or _doorfinish))
+		if ((!instance_exists(obj_parent_enemy)) && (!instance_exists(obj_arena_pizzaportal)) && ((!instance_exists(obj_arenadoor)) || _doorfinish))
 		{
 			wave++
 			if (wave > maxwave)

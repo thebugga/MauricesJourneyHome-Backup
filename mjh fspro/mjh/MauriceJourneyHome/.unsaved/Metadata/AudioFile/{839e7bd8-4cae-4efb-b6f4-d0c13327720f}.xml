@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{839e7bd8-4cae-4efb-b6f4-d0c13327720f}">
-		<property name="assetPath">
-			<value>mauricegutterdraftzwei.mp3</value>
-		</property>
+		<property name="assetPath" />
 		<property name="isStreaming">
 			<value>true</value>
 		</property>

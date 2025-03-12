@@ -1,7 +1,7 @@
 with (other)
 {
 	/*
-	if (global.playerCharacter == Characters.MrOrange)
+	if (global.playerCharacter == Characters.Mrorange)
 		scr_hurtplayer(object_index)
 	else
 	*/

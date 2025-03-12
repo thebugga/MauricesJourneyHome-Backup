@@ -1,6 +1,6 @@
 with (other)
 {
-	if (key_up && ladderbuffer == 0 && (state == states.normal or state == states.pogo or state == states.mach2 or state == states.mach3 or state == states.mach1 or state == states.shotgunjump or state == states.jump or state == states.highjump) && state != states.hurt && state != states.machslide && state != states.freefall && state != states.freefallland)
+	if (key_up && ladderbuffer == 0 && (state == states.normal || state == states.pogo || state == states.mach2 || state == states.mach3 || state == states.mach1 || state == states.shotgunjump || state == states.jump || state == states.highjump) && state != states.hurt && state != states.machslide && state != states.freefall && state != states.freefallland)
 	{
 		state = states.ladder
 		x = (other.x + 16)
@@ -8,7 +8,7 @@ with (other)
 		if ((y % 2) == 1)
 			y -= 1
 	}
-	if (key_up && ladderbuffer == 0 && (state == states.ratmountjump or state == states.ratmount))
+	if (key_up && ladderbuffer == 0 && (state == states.ratmountjump || state == states.ratmount))
 	{
 		state = states.ratmountladder
 		if (brick == 1)

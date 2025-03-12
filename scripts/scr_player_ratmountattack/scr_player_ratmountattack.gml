@@ -28,7 +28,7 @@ function scr_player_ratmountattack()
 		state = states.ratmount
 		movespeed *= Xscale
 	}
-	if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + Xscale), y, obj_destructibles))))
+	if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || place_meeting_slope((x + sign(hsp)), y)) && (!(place_meeting((x + Xscale), y, obj_destructibles))))
 		ledge_bump((vsp >= 0 ? 32 : 22))
 	exit;
 }

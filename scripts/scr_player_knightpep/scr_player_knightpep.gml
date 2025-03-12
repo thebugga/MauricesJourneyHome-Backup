@@ -9,12 +9,12 @@ function scr_player_knightpep()
 		if animation_end()
 			sprite_index = spr_knightpepidle
 	}
-	if (sprite_index == spr_knightpepland or sprite_index == spr_knightpepwalk or sprite_index == spr_knightpepidle)
+	if (sprite_index == spr_knightpepland || sprite_index == spr_knightpepwalk || sprite_index == spr_knightpepidle)
 	{
 		move = (key_left + key_right)
 		hsp = (move * movespeed)
 	}
-	else if (sprite_index == spr_knightpep_attack or sprite_index == spr_knightpepjump or sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_doublejump)
+	else if (sprite_index == spr_knightpep_attack || sprite_index == spr_knightpepjump || sprite_index == spr_knightpepfall || sprite_index == spr_knightpep_doublejump)
 	{
 		hsp = (Xscale * movespeed)
 		move = (key_left + key_right)
@@ -54,7 +54,7 @@ function scr_player_knightpep()
 	}
 	if (grounded && vsp > 0)
 		jumpstop = 0
-	if (input_buffer_jump > 0 && vsp > 0 && grounded && (sprite_index == spr_knightpepidle or sprite_index == spr_knightpepland or sprite_index == spr_knightpepwalk))
+	if (input_buffer_jump > 0 && vsp > 0 && grounded && (sprite_index == spr_knightpepidle || sprite_index == spr_knightpepland || sprite_index == spr_knightpepwalk))
 	{
 		input_buffer_jump = 0
 		image_index = 0
@@ -68,7 +68,7 @@ function scr_player_knightpep()
 	}
 	if (animation_end() && sprite_index == spr_knightpepjumpstart)
 		sprite_index = spr_knightpepjump
-	if ((animation_end() && sprite_index == spr_knightpepjump) or ((!grounded) && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_doublejump && sprite_index != spr_knightpep_attack))
+	if ((animation_end() && sprite_index == spr_knightpepjump) || ((!grounded) && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_doublejump && sprite_index != spr_knightpep_attack))
 		sprite_index = spr_knightpepfall
 	if move != 0 && grounded && vsp > 0
 	{
@@ -81,7 +81,7 @@ function scr_player_knightpep()
 			event_play_oneshot_3d("event:/sfx/maurice/step", x, y);
 		}
 	}
-	if ((sprite_index == spr_knightpepfall or sprite_index == spr_knightpep_doublejump) && grounded && vsp > 0)
+	if ((sprite_index == spr_knightpepfall || sprite_index == spr_knightpep_doublejump) && grounded && vsp > 0)
 	{
 		combo = 0
 		bounce = 0
@@ -155,9 +155,9 @@ function scr_player_knightpep()
 		sprite_index = spr_knightpepidle
 	if (animation_end() && sprite_index == spr_knightpep_doublejump)
 		image_index = (image_number - 1)
-	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (floor(image_index) == 4 or floor(image_index) == 10))
+	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (floor(image_index) == 4 || floor(image_index) == 10))
 		instance_create(x, (y + 43), obj_cloudeffect)
-	if (move != 0 && (floor(image_index) == 3 or floor(image_index) == 8) && steppy == 0)
+	if (move != 0 && (floor(image_index) == 3 || floor(image_index) == 8) && steppy == 0)
 		steppy = 1
 	if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
 		steppy = 0

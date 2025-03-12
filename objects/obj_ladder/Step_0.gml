@@ -2,7 +2,7 @@ if place_meeting(x, (y - 1), obj_player1)
 {
 	with (obj_player1)
 	{
-		if (place_meeting(x, (y + 1), obj_ladder) && (!(place_meeting((other.x + 16), (y + 1), obj_solid))) && key_down && (state == states.crouch or ((global.playerCharacter == Characters.Snick or global.playerCharacter == Characters.Maurice) && (state == states.normal or state == states.mach1))) && place_meeting(x, (y + 1), obj_platform))
+		if (place_meeting(x, (y + 1), obj_ladder) && (!(place_meeting((other.x + 16), (y + 1), obj_solid))) && key_down && (state == states.crouch || ((global.playerCharacter == Characters.Snick || global.playerCharacter == Characters.Maurice) && (state == states.normal || state == states.mach1))) && place_meeting(x, (y + 1), obj_platform))
 		{
 			y += 5
 			state = states.ladder
@@ -39,7 +39,7 @@ if instance_exists(obj_player2)
 	{
 		with (obj_player2)
 		{
-			if (place_meeting(x, (y + 2), obj_ladder) && (!(place_meeting((other.x + 16), (y + 2), obj_solid))) && key_down && (state == states.crouch or (global.playerCharacter == Characters.Snick && (state == states.normal or state == states.mach1))) && place_meeting(x, (y + 1), obj_platform))
+			if (place_meeting(x, (y + 2), obj_ladder) && (!(place_meeting((other.x + 16), (y + 2), obj_solid))) && key_down && (state == states.crouch || (global.playerCharacter == Characters.Snick && (state == states.normal || state == states.mach1))) && place_meeting(x, (y + 1), obj_platform))
 			{
 				y += 5
 				state = states.ladder

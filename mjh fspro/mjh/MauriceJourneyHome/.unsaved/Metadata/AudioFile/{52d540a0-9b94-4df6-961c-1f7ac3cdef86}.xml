@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{52d540a0-9b94-4df6-961c-1f7ac3cdef86}">
-		<property name="assetPath">
-			<value>youtube_fPk6skZsYgw_audio.mp3</value>
-		</property>
+		<property name="assetPath" />
 		<property name="isStreaming">
 			<value>true</value>
 		</property>

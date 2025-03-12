@@ -38,7 +38,7 @@ function scr_vigilante_walk()
 			break
 		case states.mach2:
 			image_speed = 0.6
-			if ((sprite_index == spr_playerV_mach1 or sprite_index == spr_playerV_bootsland) && animation_end())
+			if ((sprite_index == spr_playerV_mach1 || sprite_index == spr_playerV_bootsland) && animation_end())
 				sprite_index = spr_playerV_bootsmove
 			if (move == 0)
 				movespeed = approach(movespeed, 5, 0.5)
@@ -78,7 +78,7 @@ function scr_vigilante_walk()
 		sprite_index = spr_playerV_jump
 		image_index = 0
 	}
-	else if (place_meeting((x + hsp), y, obj_solid) or place_meeting_slope((x + hsp), y))
+	else if (place_meeting((x + hsp), y, obj_solid) || place_meeting_slope((x + hsp), y))
 	{
 		mask_index = spr_crouchmask
 		if ((!(place_meeting((x + hsp), y, obj_solid))) && (!(place_meeting_slope((x + hsp), y))))

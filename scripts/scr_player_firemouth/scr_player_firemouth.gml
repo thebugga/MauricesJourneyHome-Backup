@@ -182,7 +182,7 @@ function scr_player_firemouth()
 	}
 	else
 		image_speed = 0.35
-	if (hsp != 0 && (floor(image_index) == 0 or floor(image_index) == 2) && steppy == 0 && grounded)
+	if (hsp != 0 && (floor(image_index) == 0 || floor(image_index) == 2) && steppy == 0 && grounded)
 		steppy = 1
 	if (floor(image_index) != 0 && floor(image_index) != 2)
 		steppy = 0

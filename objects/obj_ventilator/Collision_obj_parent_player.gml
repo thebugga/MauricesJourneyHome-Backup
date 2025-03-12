@@ -5,7 +5,7 @@ with (other)
 	if (state == states.machslide)
 	{
 		state = states.jump
-		if (sprite_index == spr_mach3boost or sprite_index == spr_machslideboost)
+		if (sprite_index == spr_mach3boost || sprite_index == spr_machslideboost)
 			Xscale *= -1
 		sprite_index = spr_machfreefall
 	}

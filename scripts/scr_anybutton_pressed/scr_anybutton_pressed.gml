@@ -22,7 +22,7 @@ function scr_anybutton_pressed(argument0)
 		var _right = gamepad_axis_value(_index, gp_axislh) > _threshold
 		var _left = gamepad_axis_value(_index, gp_axislh) < (-_threshold)
 		var _down = gamepad_axis_value(_index, gp_axislv) > _threshold
-		if (_up or _right or _left or _down)
+		if (_up || _right || _left || _down)
 			return _index;
 	}
 	return -2;

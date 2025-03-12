@@ -28,7 +28,7 @@ function scr_player_crouchslide()
 			other.dashcloudid = id
 		}
 	}
-	if (grounded && (sprite_index == spr_player_jumpdive1 or sprite_index == spr_player_jumpdive2) && vsp > 0)
+	if (grounded && (sprite_index == spr_player_jumpdive1 || sprite_index == spr_player_jumpdive2) && vsp > 0)
 	{
 		sprite_index = spr_crouchslip
 		jumpstop = 0
@@ -43,11 +43,11 @@ function scr_player_crouchslide()
 		image_index = 0
 		sprite_index = spr_rollgetup
 	}
-	if (((movespeed <= 5 or (place_meeting_solid((x + 1), y) && Xscale == 1) or (place_meeting_solid((x - 1), y) && Xscale == -1)) && (!(place_meeting((x + sign(hsp)), y, obj_slope)))) or movespeed <= 0)
+	if (((movespeed <= 5 || (place_meeting_solid((x + 1), y) && Xscale == 1) || (place_meeting_solid((x - 1), y) && Xscale == -1)) && (!(place_meeting((x + sign(hsp)), y, obj_slope)))) || movespeed <= 0)
 		state = states.crouch
-	if (place_meeting_solid((x + 1), y) && Xscale == 1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
+	if (place_meeting_solid((x + 1), y) && Xscale == 1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || place_meeting_slope((x + sign(hsp)), y)))
 		state = states.crouch
-	if (place_meeting_solid((x - 1), y) && Xscale == -1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
+	if (place_meeting_solid((x - 1), y) && Xscale == -1 && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || place_meeting_slope((x + sign(hsp)), y)))
 		state = states.crouch
 	if ((!instance_exists(obj_slidecloud)) && grounded && movespeed > 5)
 	{

@@ -50,7 +50,7 @@ switch state
 		handy = playerid.y
 		drawhandx = handx
 		drawhandy = handy
-		if (handy < (y - 200) or playerid.state == states.tube)
+		if (handy < (y - 200) || playerid.state == states.tube)
 		{
 			state = states.normal
 			with (playerid)

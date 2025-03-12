@@ -37,7 +37,7 @@ function cutscene_move_player(argument0, argument1, argument2, argument3)
 		cutscene_end_action()
 	with (player)
 	{
-		if (move != 0 && (floor(image_index) == 3 or floor(image_index) == 8) && steppy == 0 && global.playerCharacter != Characters.MrOrange)
+		if (move != 0 && (floor(image_index) == 3 || floor(image_index) == 8) && steppy == 0 && global.playerCharacter != Characters.Mrorange)
 		{
 			instance_create(x, (y + 43), obj_cloudeffect)
 			steppy = 1

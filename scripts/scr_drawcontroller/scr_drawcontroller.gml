@@ -77,7 +77,7 @@ function draw_enemy(_kungfu, usepalette)
 				maxhp = hp
 			draw_healthbar((x - 16), (y - 50), (x + 16), (y - 45), ((hp / maxhp) * 100), c_black, c_red, c_red, 0, 1, 1)
 		}
-		if (object_index == obj_peppinoclone or usepalette)
+		if (object_index == obj_peppinoclone || usepalette)
 			shader_reset()
 	}
 }

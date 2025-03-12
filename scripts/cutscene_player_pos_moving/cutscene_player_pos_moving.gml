@@ -5,7 +5,7 @@ function cutscene_player_pos_lerp(argument0, argument1, argument2)
 	{
 		hsp = 0
 		vsp = 0
-		if (object_index != obj_player2 or global.coop)
+		if (object_index != obj_player2 || global.coop)
 		{
 			x = lerp(x, argument0, argument2)
 			y = lerp(y, argument1, argument2)
@@ -25,7 +25,7 @@ function cutscene_player_pos_approach(argument0, argument1, argument2)
 	{
 		hsp = 0
 		vsp = 0
-		if (object_index != obj_player2 or global.coop)
+		if (object_index != obj_player2 || global.coop)
 		{
 			var dir = point_direction(x, y, argument0, argument1)
 			var lx = lengthdir_x(argument2, dir)

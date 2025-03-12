@@ -30,7 +30,7 @@ function scr_player_slipbanan()
 		if (animation_end() && abs(hsp) <= 2)
 			state = states.normal
 	}
-	if (place_meeting_solid((x + Xscale), y) && (!slopeCheck(x + Xscale, y)) && (place_meeting_slope((x + sign(hsp)), y) or place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
+	if (place_meeting_solid((x + Xscale), y) && (!slopeCheck(x + Xscale, y)) && (place_meeting_slope((x + sign(hsp)), y) || place_meeting((x + sign(hsp)), y, obj_solid)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))))
 	{
 		if (sprite_index == spr_slipbanan1)
 			movespeed = approach(movespeed, 0, 3)

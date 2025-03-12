@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_minijohn_charge",
-    "path": "sprites/spr_minijohn_charge/spr_minijohn_charge.yy",
+    "name": "spr_minijohn_underground",
+    "path": "sprites/spr_minijohn_underground/spr_minijohn_underground.yy",
   },
   "spriteMaskId": {
     "name": "spr_player_mask",

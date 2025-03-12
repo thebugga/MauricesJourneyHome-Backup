@@ -70,7 +70,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id
 }
-if (state == states.jump or (state == states.boss_shield && substate == states.jump))
+if (state == states.jump || (state == states.boss_shield && substate == states.jump))
 {
 	use_collision = 0
 	x += hsp
@@ -80,7 +80,7 @@ if (state == states.jump or (state == states.boss_shield && substate == states.j
 }
 else
 	use_collision = 1
-if ((state == states.pistol && substate == states.shotgun) or (state == states.boss_shield && substate == states.boss_shield) or (state == states.walk && ((!placedtraps) or ((!obj_player1.brick) && (!instance_exists(obj_brickball))))) or state == states.punch or state == states.stun or (!use_collision))
+if ((state == states.pistol && substate == states.shotgun) || (state == states.boss_shield && substate == states.boss_shield) || (state == states.walk && ((!placedtraps) || ((!obj_player1.brick) && (!instance_exists(obj_brickball))))) || state == states.punch || state == states.stun || (!use_collision))
 	invincible = 1
 else
 	invincible = 0

@@ -9,7 +9,7 @@ image_xscale = ID.image_xscale
 image_yscale = ID.image_yscale
 with (ID)
 {
-	if (object_index == obj_coolpineapple or object_index == obj_forknight)
+	if (object_index == obj_coolpineapple || object_index == obj_forknight)
 	{
 		if (state != states.walk && state != states.rage)
 		{
@@ -37,7 +37,7 @@ with (ID)
 			}
 			else if (state == states.slap)
 				other.x = (x + (image_xscale * 32))
-			else if (state == states.mach2 or state == states.tackle)
+			else if (state == states.mach2 || state == states.tackle)
 				other.x = (x + (image_xscale * 20))
 			break
 		
@@ -52,7 +52,7 @@ with (ID)
 			break
 		
 		case obj_snickexe:
-			if (obj_player1.instakillmove or obj_player1.state == states.handstandjump)
+			if (obj_player1.instakillmove || obj_player1.state == states.handstandjump)
 			{
 				instance_destroy(other)
 				hitboxcreate = 0

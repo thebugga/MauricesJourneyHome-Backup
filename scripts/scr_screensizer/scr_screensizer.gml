@@ -201,7 +201,7 @@ function get_options()
 				break;
 		}
 		region = os_get_region();
-		if region == "KR" || region == "KOR"
+		if region == "KR" || region == "Kor"
 			lang = "kr";
 		global.option_lang = lang;
 	}

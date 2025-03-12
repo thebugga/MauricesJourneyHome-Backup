@@ -80,7 +80,7 @@ function scr_player_barrel()
 	}
 	if (sprite_index == spr_player_barrelmove)
 	{
-		if ((!steppy) && (floor(image_index == 4) or floor(image_index) == 13))
+		if ((!steppy) && (floor(image_index == 4) || floor(image_index) == 13))
 		{
 			create_particle(x, (y + 43), particle.cloudeffect, 0)
 			steppy = 1

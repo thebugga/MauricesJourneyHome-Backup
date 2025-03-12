@@ -9,7 +9,7 @@ if (isOpen) {
 	if (!surface_exists(shellSurface)) {
 		shellSurface = surface_create(display_get_gui_width(), display_get_gui_height());
 		self._recalculate_shell_properties();
-	} else if (surface_get_width(shellSurface) != display_get_gui_width() || surface_get_height(shellSurface) != display_get_gui_height()) {
+	} else if (surface_get_width(shellSurface) != display_get_gui_width() or surface_get_height(shellSurface) != display_get_gui_height()) {
 		surface_resize(shellSurface, display_get_gui_width(), display_get_gui_height());
 	}
 	
@@ -21,7 +21,7 @@ if (isOpen) {
 	}
 	if (!surface_exists(scrollSurface)) {
 		scrollSurface = surface_create(display_get_gui_width(), visibleHeight);
-	} else if (surface_get_width(scrollSurface) != display_get_gui_width() || 
+	} else if (surface_get_width(scrollSurface) != display_get_gui_width() or 
 			   surface_get_height(scrollSurface) != visibleHeight) {
 		surface_resize(scrollSurface, display_get_gui_width(), visibleHeight);
 	}
@@ -52,27 +52,27 @@ if (isOpen) {
 			var outputStr = output[i];
 			if (string_char_at(outputStr, 1) == ">") {
 				draw_set_color(fontColorSecondary);
-				draw_text(shellOriginX + consolePaddingH, yOffset, prompt);
-				draw_text_ext(shellOriginX + promptXOffset, yOffset, string_delete(outputStr, 1, 1), -1, visibleWidth - promptXOffset);
+				draw_text(shelloriginX + consolePaddingH, yOffset, prompt);
+				draw_text_ext(shelloriginX + promptXOffset, yOffset, string_delete(outputStr, 1, 1), -1, visibleWidth - promptXOffset);
 			} else {
 				draw_set_color(fontColor);
-				draw_text_ext(shellOriginX + promptXOffset, yOffset, outputStr, -1, visibleWidth - promptXOffset);
+				draw_text_ext(shelloriginX + promptXOffset, yOffset, outputStr, -1, visibleWidth - promptXOffset);
 			}
 			yOffset += string_height_ext(outputStr, -1, visibleWidth - promptXOffset);
 		}
 		
 		// Draw our command prompt
 		draw_set_color(promptColor);
-		draw_text(shellOriginX + consolePaddingH, yOffset, prompt);
+		draw_text(shelloriginX + consolePaddingH, yOffset, prompt);
 	
 		// Draw whatever text has been entered so far
 		draw_set_color(fontColor);
-		draw_text(shellOriginX + promptXOffset, yOffset, consoleString);
+		draw_text(shelloriginX + promptXOffset, yOffset, consoleString);
 		
 		// Draw text cursor
-		var cursorPosX = shellOriginX + promptXOffset + string_width(string_copy(consoleString + " ", 1, cursorPos - 1));
+		var cursorPosX = shelloriginX + promptXOffset + string_width(string_copy(consoleString + " ", 1, cursorPos - 1));
 		if (insertMode) {
-			if (delayFrames > 1 || current_time % 1000 < 600) {
+			if (delayFrames > 1 or current_time % 1000 < 600) {
 				draw_line_width(cursorPosX, yOffset, cursorPosX, yOffset + emHeight, 1);
 			} else if (keyboard_check(vk_anykey)) {
 				draw_line_width(cursorPosX, yOffset, cursorPosX, yOffset + emHeight, 1);
@@ -124,7 +124,7 @@ if (isOpen) {
 			}
 
 			draw_set_color(fontColorSecondary);
-			draw_text(shellOriginX + promptXOffset + string_width(consoleString), yOffset, suggestion);
+			draw_text(shelloriginX + promptXOffset + string_width(consoleString), yOffset, suggestion);
 		}		
 	surface_reset_target();
 	
@@ -132,22 +132,22 @@ if (isOpen) {
 		// Draw shell background
 		draw_clear_alpha(c_black, 0.0);
 		if (consoleBackground != noone) {
-			draw_sprite_stretched(consoleBackground, 0, shellOriginX, shellOriginY, width, height);
+			draw_sprite_stretched(consoleBackground, 0, shelloriginX, shelloriginY, width, height);
 		} else {
 			draw_set_alpha(consoleAlpha);
 			draw_set_color(consoleColor);
-			draw_rectangle(shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height, false);
+			draw_rectangle(shelloriginX, shelloriginY, shelloriginX + width, shelloriginY + height, false);
 		}
 		
 		// Draw the scroll surface
-		draw_surface(scrollSurface, 0, shellOriginY + 1 + consolePaddingV);
+		draw_surface(scrollSurface, 0, shelloriginY + 1 + consolePaddingV);
 		
 		// Draw scrollbar
 		if (outputHeight > visibleHeight - emHeight) {
-			var x1 = shellOriginX + width - consolePaddingH - scrollbarWidth;
-			var y1 = shellOriginY + consolePaddingV + 1;
+			var x1 = shelloriginX + width - consolePaddingH - scrollbarWidth;
+			var y1 = shelloriginY + consolePaddingV + 1;
 			var x2 = x1 + scrollbarWidth;
-			var y2 = shellOriginY + height - consolePaddingV;
+			var y2 = shelloriginY + height - consolePaddingV;
 			
 			draw_set_color(fontColorSecondary);
 			draw_rectangle(x1, y1, x2, y2, false);
@@ -177,19 +177,19 @@ if (isOpen) {
 					suggestXOffset += string_width(stringParts[i]) + emWidth;
 				}
 				
-				var x1 = shellOriginX + promptXOffset + suggestXOffset - autocompletePadding;
-				var y1 = shellOriginY + height - (emHeight) - (suggestionsAmount * emHeight) - (autocompletePadding * 2) - consolePaddingV;
+				var x1 = shelloriginX + promptXOffset + suggestXOffset - autocompletePadding;
+				var y1 = shelloriginY + height - (emHeight) - (suggestionsAmount * emHeight) - (autocompletePadding * 2) - consolePaddingV;
 				var x2 = x1 + autocompleteMaxWidth + (autocompletePadding * 2) + ((suggestionsAmount < array_length(filteredSuggestions)) ? scrollbarWidth : 0);
 				var y2 = y1 + (suggestionsAmount * emHeight) + (autocompletePadding * 2);
 				
 				if (screenAnchorPointV == "top") {
-					y1 = shellOriginY + height - consolePaddingV;
+					y1 = shelloriginY + height - consolePaddingV;
 					y2 = y1 + (suggestionsAmount * emHeight);
 				}
 				
 				// Store x1 & y1 for later use with scrolling mouse detection
-				autocompleteOriginX = x1;
-				autocompleteOriginY = y1;
+				autocompleteoriginX = x1;
+				autocompleteoriginY = y1;
 				
 				// Draw autocomplete background
 				if (suggestionsBackground != noone) {
@@ -222,7 +222,7 @@ if (isOpen) {
 						var y1Col = y1 + (i * emHeight);
 						var y2Col = y1 + (i * emHeight) + emHeight - 1 + autocompletePadding;
 						if (point_in_rectangle(device_mouse_x_to_gui(0) - 1, device_mouse_y_to_gui(0) - 1, x1, y1Col, x2, y2Col)) {
-							if (device_mouse_x_to_gui(0) != mousePreviousX || device_mouse_y_to_gui(0) != mousePreviousY) {
+							if (device_mouse_x_to_gui(0) != mousePreviousX or device_mouse_y_to_gui(0) != mousePreviousY) {
 								suggestionIndex = i + autocompleteScrollPosition;
 								mousePreviousX = device_mouse_x_to_gui(0);
 								mousePreviousY = device_mouse_y_to_gui(0);

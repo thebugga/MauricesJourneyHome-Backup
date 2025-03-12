@@ -23,7 +23,7 @@ switch state
 		image_speed = 0.35
 		sprite_index = walkspr
 		hsp = (image_xscale * 4)
-		if (place_meeting((x + sign(hsp)), y, obj_monstersolid) && ((!(place_meeting((x + sign(hsp)), y, obj_monsterslope))) or place_meeting((x + sign(hsp)), (y - 4), obj_solid)))
+		if (place_meeting((x + sign(hsp)), y, obj_monstersolid) && ((!(place_meeting((x + sign(hsp)), y, obj_monsterslope))) || place_meeting((x + sign(hsp)), (y - 4), obj_solid)))
 			image_xscale *= -1
 		scr_monster_detect_audio()
 		if scr_monster_detect(300, room_height, targetplayer)
@@ -108,7 +108,7 @@ switch state
 	case states.robotseeking:
 		targetplayer = instance_nearest(x, y, obj_parent_player)
 		hsp = (image_xscale * 6)
-		if (place_meeting((x + sign(hsp)), y, obj_monstersolid) && ((!(place_meeting((x + sign(hsp)), y, obj_monsterslope))) or place_meeting((x + sign(hsp)), (y - 4), obj_solid)))
+		if (place_meeting((x + sign(hsp)), y, obj_monstersolid) && ((!(place_meeting((x + sign(hsp)), y, obj_monsterslope))) || place_meeting((x + sign(hsp)), (y - 4), obj_solid)))
 			state = states.robotroaming
 		if scr_monster_detect(300, room_height, targetplayer)
 			state = states.robotchase
@@ -118,9 +118,9 @@ switch state
 		break
 }
 
-if (object_index == obj_robotmonster or object_index == obj_hillbillymonster)
+if (object_index == obj_robotmonster || object_index == obj_hillbillymonster)
 {
-	if (state == states.robotchase or state == states.robotseeking or state == states.robotinvestigate)
+	if (state == states.robotchase || state == states.robotseeking || state == states.robotinvestigate)
 	{
 		instance_destroy(instance_place((x + hsp), y, obj_wirewall))
 		instance_destroy(instance_place((x + hsp), y, obj_destructibles))

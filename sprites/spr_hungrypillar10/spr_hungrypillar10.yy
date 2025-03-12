@@ -13,20 +13,22 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f1c3d7b2-6cc9-4063-b2de-c036f888d47e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6f3da606-d84a-4237-9a39-3e7fb20c4ca7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"de08d182-d94d-45c1-8644-35b129eb5644",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3a3d57d8-7ac7-45fd-9a7a-44b76584cef5",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 128,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0f9070c6-16d7-46ff-ab5a-42d5a6ed7493","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"dbd00739-10c1-4a41-9a3a-bf463d34f398","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Fromager",
-    "path": "folders/Sprites/Level structure/John/Custom Faces/Fromager.yy",
+    "name": "Spider",
+    "path": "folders/Sprites/Level structure/John/Custom Faces/Spider.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -43,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -54,7 +56,9 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f1c3d7b2-6cc9-4063-b2de-c036f888d47e","path":"sprites/spr_hungrypillar10/spr_hungrypillar10.yy",},},},"Disabled":false,"id":"c82c7f63-16c5-41bd-a38e-c51117713b3e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6f3da606-d84a-4237-9a39-3e7fb20c4ca7","path":"sprites/spr_hungrypillar10/spr_hungrypillar10.yy",},},},"Disabled":false,"id":"74c5e338-523a-48ba-a7c1-5c6253dc7ed5","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"de08d182-d94d-45c1-8644-35b129eb5644","path":"sprites/spr_hungrypillar10/spr_hungrypillar10.yy",},},},"Disabled":false,"id":"d5fd870e-1e13-423a-8a00-6c29f26c68ab","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3a3d57d8-7ac7-45fd-9a7a-44b76584cef5","path":"sprites/spr_hungrypillar10/spr_hungrypillar10.yy",},},},"Disabled":false,"id":"b549a9e4-d613-44e2-80ed-c2d9f544e577","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -29,9 +29,9 @@ if (!ds_list_empty(global.debris_list))
 					}
 				}
 				
-				var outofx = (x > (room_width + sprw) or x < (-sprw))
-				var outofy = (y > (room_height + sprh) or y < (-sprh))
-				if (outofx or outofy or (type == debris.fade && alpha <= 0))
+				var outofx = (x > (room_width + sprw) || x < (-sprw))
+				var outofy = (y > (room_height + sprh) || y < (-sprh))
+				if (outofx || outofy || (type == debris.fade && alpha <= 0))
 					_destroy = true
 				
 				if _destroy

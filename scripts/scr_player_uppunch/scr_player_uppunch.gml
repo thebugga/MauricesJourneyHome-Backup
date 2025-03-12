@@ -51,7 +51,7 @@ function scr_player_uppunch()
 			movespeed -= 0.05
 		if (movespeed == 0)
 			momemtum = 0
-		if ((move == 0 && momemtum == 0) or place_meeting_solid((x + hsp), y))
+		if ((move == 0 && momemtum == 0) || place_meeting_solid((x + hsp), y))
 		{
 			movespeed = 0
 			mach2 = 0
@@ -60,7 +60,7 @@ function scr_player_uppunch()
 			movespeed += 0.25
 		if (movespeed > 7)
 			movespeed -= 0.05
-		if ((place_meeting_solid((x + 1), y) && move == 1) or (place_meeting_solid((x - 1), y) && move == -1))
+		if ((place_meeting_solid((x + 1), y) && move == 1) || (place_meeting_solid((x - 1), y) && move == -1))
 			movespeed = 0
 		if (dir != Xscale)
 		{
@@ -95,7 +95,7 @@ function scr_player_uppunch()
 	stopAnim = 1
 	crouchslideAnim = 1
 	crouchAnim = 1
-	if (animation_end() or move == (-Xscale))
+	if (animation_end() || move == (-Xscale))
 		state = states.normal
 	sprite_index = spr_uppunch
 	image_speed = 0.35

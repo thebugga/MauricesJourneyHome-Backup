@@ -126,5 +126,5 @@ switch state
 }
 
 Xscale = image_xscale
-colliding = (!((state == states.superslam or state == states.boss_fistmatch or state == states.boss_superattackstart or state == states.boss_superattackcharge)))
-attacking = (state == states.shoulderbash or state == states.freefall or state == states.freefallprep or state == states.boss_supershoulderbash or state == states.shoulder or state == states.superslam or state == states.boss_fistmatch or state == states.boss_superattackstart or state == states.boss_superattackcharge or state == states.walk)
+colliding = (!((state == states.superslam || state == states.boss_fistmatch || state == states.boss_superattackstart || state == states.boss_superattackcharge)))
+attacking = (state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == states.boss_supershoulderbash || state == states.shoulder || state == states.superslam || state == states.boss_fistmatch || state == states.boss_superattackstart || state == states.boss_superattackcharge || state == states.walk)

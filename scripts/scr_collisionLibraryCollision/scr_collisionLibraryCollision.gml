@@ -4,7 +4,7 @@ enum Exclude {
 	SLOPES = 1,
 	SOLIDS = 2,
 	MOVING = 4,
-	PLATFORMS = 8,
+	PLATForMS = 8,
 	ALL = 15 
 }
 #endregion
@@ -17,7 +17,7 @@ global.MyCollisionList = ds_list_create();
 /// @param {any*} x The x position to check.
 /// @param {any*} y The y position to check.
 /// @param {ID.DsList} list The DS list to use to store the IDs of colliding platforms.
-/// @param {real} [exclude] Using the EXLCUDE flags you can exclude types of objects. Ex: (Exclude.SLOPES|Exclude.PLATFORMS). You can also invert it like so: (~Exclude.MOVING).
+/// @param {real} [exclude] Using the EXLCUDE flags you can exclude types of objects. Ex: (Exclude.SLOPES|Exclude.PLATForMS). You can also invert it like so: (~Exclude.MOVING).
 /// @returns {real} The number of instances found to be in collision.
 function instance_place_list_collision(xx, yy, exclude = Exclude.NONE, list = undefined) {
 	var collided = 0;
@@ -25,7 +25,7 @@ function instance_place_list_collision(xx, yy, exclude = Exclude.NONE, list = un
 	var 
 	check_slopes = Exclude.SLOPES&exclude != Exclude.SLOPES,
 	check_solids = Exclude.SOLIDS&exclude != Exclude.SOLIDS,
-	check_platforms = Exclude.PLATFORMS&exclude != Exclude.PLATFORMS,
+	check_platforms = Exclude.PLATForMS&exclude != Exclude.PLATForMS,
 	check_moving = Exclude.MOVING&exclude != Exclude.MOVING;
 
 	
@@ -56,14 +56,14 @@ function instance_place_list_collision(xx, yy, exclude = Exclude.NONE, list = un
 /// @desc With this function you can check a place for collision objects.
 /// @param {any*} x The x position to check.
 /// @param {any*} y The y position to check.
-/// @param {real} [exclude] Using the EXLCUDE flags you can exclude types of objects. Ex: (Exclude.SLOPES|Exclude.PLATFORMS). You can also invert it like so: (~Exclude.MOVING).
+/// @param {real} [exclude] Using the EXLCUDE flags you can exclude types of objects. Ex: (Exclude.SLOPES|Exclude.PLATForMS). You can also invert it like so: (~Exclude.MOVING).
 /// @returns {bool}
 function place_meeting_collision(xx, yy, exclude = Exclude.NONE) {
 	// Exclude specific types of collisions
 	var 
 	check_slopes = Exclude.SLOPES&exclude != Exclude.SLOPES,
 	check_solids = Exclude.SOLIDS&exclude != Exclude.SOLIDS,
-	check_platforms = Exclude.PLATFORMS&exclude != Exclude.PLATFORMS,
+	check_platforms = Exclude.PLATForMS&exclude != Exclude.PLATForMS,
 	check_moving = Exclude.MOVING&exclude != Exclude.MOVING;
 
 	
@@ -109,7 +109,7 @@ function place_meeting_collision(xx, yy, exclude = Exclude.NONE) {
 /// @desc With this function you can check a position for collision objects.
 /// @param {any*} x The x position to check.
 /// @param {any*} y The y position to check.
-/// @param {real} [exclude] Using the EXLCUDE flags you can exclude types of objects. Ex: (Exclude.SLOPES|Exclude.PLATFORMS). You can also invert it like so: (~Exclude.MOVING).
+/// @param {real} [exclude] Using the EXLCUDE flags you can exclude types of objects. Ex: (Exclude.SLOPES|Exclude.PLATForMS). You can also invert it like so: (~Exclude.MOVING).
 /// @returns {bool}
 function position_meeting_collision(xx, yy, exclude = Exclude.NONE) {
 	var old_mask = mask_index;

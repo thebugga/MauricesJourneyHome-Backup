@@ -30,9 +30,9 @@ function scr_player_boxxedpep()
 		}
 		hsp = (movespeed + (railmovespeed * raildir))
 	}
-	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == 1 && move == 1 && ((!(place_meeting((x + 1), y, obj_slope))) or place_meeting_slope((x + 1), y)))
+	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == 1 && move == 1 && ((!(place_meeting((x + 1), y, obj_slope))) || place_meeting_slope((x + 1), y)))
 		movespeed = 0
-	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == -1 && move == -1 && ((!(place_meeting((x - 1), y, obj_slope))) or place_meeting_slope((x - 1), y)))
+	if (place_meeting_solid((x + sign(hsp)), y) && Xscale == -1 && move == -1 && ((!(place_meeting((x - 1), y, obj_slope))) || place_meeting_slope((x - 1), y)))
 		movespeed = 0
 	if (grounded && input_buffer_jump < 8 && vsp > 0 && (!(place_meeting_solid(x, (y - 16)))) && (!(place_meeting_solid(x, (y - 32)))))
 	{
@@ -51,7 +51,7 @@ function scr_player_boxxedpep()
 		}
 		jumpstop = 0
 	}
-	if (sprite_index == spr_boxxedpepdash or sprite_index == spr_boxxedpepdashstart)
+	if (sprite_index == spr_boxxedpepdash || sprite_index == spr_boxxedpepdashstart)
 	{
 		sprite_index = spr_boxxedpepdashend
 		image_index = 0
@@ -62,7 +62,7 @@ function scr_player_boxxedpep()
 	{
 		if (move != 0)
 		{
-			if (((Xscale > 0 && movespeed < 8) or (Xscale < 0 && movespeed > -8)) && move == Xscale)
+			if (((Xscale > 0 && movespeed < 8) || (Xscale < 0 && movespeed > -8)) && move == Xscale)
 				movespeed += (Xscale * 0.8)
 			if (boxxeddash == 0)
 				Xscale = move
@@ -105,11 +105,11 @@ function scr_player_boxxedpep()
 		vsp = -6
 		instance_create(x, y, obj_stompeffect)
 	}
-	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (floor(image_index) == 4 or floor(image_index) == 10))
+	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (floor(image_index) == 4 || floor(image_index) == 10))
 		instance_create(x, (y + 43), obj_cloudeffect)
-	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (sprite_index == spr_player_downslopes or sprite_index == spr_player_upslopes))
+	if ((!instance_exists(obj_cloudeffect)) && grounded && move != 0 && (sprite_index == spr_player_downslopes || sprite_index == spr_player_upslopes))
 		instance_create(x, (y + 43), obj_cloudeffect)
-	if (move != 0 && (floor(image_index) == 3 or floor(image_index) == 8) && steppy == 0)
+	if (move != 0 && (floor(image_index) == 3 || floor(image_index) == 8) && steppy == 0)
 		steppy = 1
 	if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
 		steppy = 0

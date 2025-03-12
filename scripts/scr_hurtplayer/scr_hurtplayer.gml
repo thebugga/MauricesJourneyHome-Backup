@@ -6,13 +6,13 @@ function scr_hurtplayer(argument0)
 		if global.failcutscene
 		{
 		}
-		else if (state == states.parry or state == states.debugstate or state == states.golf or state == states.slipbanan)
+		else if (state == states.parry || state == states.debugstate || state == states.golf || state == states.slipbanan)
 		{
 		}
 		else if (state == states.handstandjump && flash == 1)
 		{
 		}
-		else if (state == states.backbreaker or state == states.chainsaw)
+		else if (state == states.backbreaker || state == states.chainsaw)
 		{
 		}
 		else if global.kungfu
@@ -83,7 +83,7 @@ function scr_hurtplayer(argument0)
 		else if (state == states.shotgundash)
 		{
 		}
-		else if ((state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes or state == states.knightpepbump) && cutscene == 0)
+		else if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.knightpepbump) && cutscene == 0)
 		{
 		}
 		else if (state == states.ghost)
@@ -144,9 +144,9 @@ function scr_hurtplayer(argument0)
 			alarm[7] = 120
 			hurted = 1
 		}
-		else if (state != states.hurt && state != states.ratmounthurt && state != states.grabbed && (hurted == 0 or state == states.cheesepep or state == states.cheesepepstickside or state == states.cheesepepstickup) && cutscene == 0)
+		else if (state != states.hurt && state != states.ratmounthurt && state != states.grabbed && (hurted == 0 || state == states.cheesepep || state == states.cheesepepstickside || state == states.cheesepepstickup) && cutscene == 0)
 		{
-			if (state == states.mort or state == states.morthook or state == states.mortjump or state == states.mortattack)
+			if (state == states.mort || state == states.morthook || state == states.mortjump || state == states.mortattack)
 			{
 				with (instance_create(x, y, obj_mortflyaway))
 					image_xscale = (-other.Xscale)
@@ -154,7 +154,7 @@ function scr_hurtplayer(argument0)
 			if instance_exists(obj_hardmode)
 				global.heatmeter_count = ((global.heatmeter_threshold - 1) * global.heatmeter_threshold_count)
 			_hurt = 1
-			if (state == states.barrel or state == states.barrelclimbwall or state == states.barreljump or state == states.barrelslide)
+			if (state == states.barrel || state == states.barrelclimbwall || state == states.barreljump || state == states.barrelslide)
 			{
 				repeat (4)
 					create_debris(x, y, spr_barreldebris)
@@ -223,7 +223,7 @@ function scr_hurtplayer(argument0)
 					global.collect = 0
 				if (global.collect != 0)
 				{
-					if (global.playerCharacter == Characters.Maurice or global.playerCharacter == Characters.MrOrange)
+					if (global.playerCharacter == Characters.Maurice || global.playerCharacter == Characters.Mrorange)
 					{
 						repeat (10)
 						{

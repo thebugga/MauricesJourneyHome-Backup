@@ -38,7 +38,7 @@ function scr_player_cheesepep()
 	}
 	if (animation_end())
 	{
-		if (sprite_index == spr_cheesepepland or sprite_index == spr_cheesepepintro)
+		if (sprite_index == spr_cheesepepland || sprite_index == spr_cheesepepintro)
 		{
 			if (move != 0)
 				sprite_index = spr_cheesepepwalk

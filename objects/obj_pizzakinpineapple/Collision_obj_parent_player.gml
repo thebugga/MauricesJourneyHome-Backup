@@ -6,7 +6,7 @@ if (obj_parent_player.state != states.hurt && global.pineapplefollow == 0)
 	global.style += 10
 	ds_list_add(global.saveroom, id)
 	if (global.toppintotal < 5)
-		obj_tv.message = (("YOU NEED " + string((5 - global.toppintotal))) + " MORE TOPPINS!")
+		obj_tv.message = (("YOU NEED " + string((5 - global.toppintotal))) + " MorE TOPPINS!")
 	if (global.toppintotal == 5)
 		obj_tv.message = "YOU HAVE ALL TOPPINS!"
 	obj_tv.showtext = 1

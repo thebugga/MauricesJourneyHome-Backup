@@ -29,6 +29,8 @@ function scr_enemy_chase()
 		var _railinst = instance_place(x, (y + 1), obj_railparent)
 		hsp += (_railinst.movespeed * _railinst.dir)
 	}
+		if totemID != -4
+			state = states.totem;
 	exit;
 }
 

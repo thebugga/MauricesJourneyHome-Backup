@@ -6,5 +6,5 @@ y = playerid.y
 if (playerid.state == states.rocket)
 	x = (playerid.x + (playerid.Xscale * 18))
 visible = (!(room == rank_room))
-if (place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))
+if (place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretportalstart))
 	visible = false

@@ -42,7 +42,7 @@ switch state
 				other.state = states.normal
 				other.cooldown = 200
 			}
-			if (x != other.x or y != other.y)
+			if (x != other.x || y != other.y)
 			{
 				if (x != other.x)
 					other.image_xscale = sign((other.x - x))

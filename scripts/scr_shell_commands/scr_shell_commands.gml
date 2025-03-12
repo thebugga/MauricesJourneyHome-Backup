@@ -237,7 +237,7 @@ function sh_unlock(argument0)
     
     type = argument0[1];
     
-    if (type == "all" || type == "levels")
+    if (type == "all" or type == "levels")
     {
         levels = ["tutorial", "entryway", "steamy", "mineshaft", "molasses"];
         ini_open(global.SaveFileName);
@@ -276,7 +276,7 @@ function sh_unlock(argument0)
         ini_close();
     }
     
-    if (type == "all" || type == "clothes")
+    if (type == "all" or type == "clothes")
     {
         ini_open("optionData.ini");
         clothes_info = scr_get_palettes(false);
@@ -287,7 +287,7 @@ function sh_unlock(argument0)
         ini_close();
     }
     
-    if (type == "all" || type == "achievements")
+    if (type == "all" or type == "achievements")
     {
         levels = ["demoEN", "entryway", "steamy", "mineshaft", "molasses"];
         ini_open(global.SaveFileName);

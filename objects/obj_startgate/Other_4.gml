@@ -48,7 +48,7 @@ switch level
 		msg = "Snick's Classroom"
 		break
 	case "floorroom":
-		msg = "OREGANO DESERT"
+		msg = "orEGANO DESERT"
 		break
 	case "graveyard2":
 		msg = "THE WASTEYARD"
@@ -63,7 +63,7 @@ switch level
 		msg = "STRONGCOLD"
 		break
 	case "forest":
-		msg = "GNOME FOREST"
+		msg = "GNOME ForEST"
 		break
 	case "beach":
 		msg = "PINEAPPLE BEACH"

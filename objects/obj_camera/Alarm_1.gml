@@ -1,4 +1,4 @@
-if (global.panic == true or global.snickchallenge == 1)
+if (global.panic == true || global.snickchallenge == 1)
 {
 	global.seconds -= 1
 	if (global.collect >= 5 && !instance_exists(obj_ghostcollectibles)) && global.fill > 0
@@ -18,7 +18,7 @@ if (global.panic == true or global.snickchallenge == 1)
 		global.minutes -= 1
 	}
 }
-if (global.timedgate == 1 or global.miniboss == true)
+if (global.timedgate == 1 || global.miniboss == true)
 {
 	global.seconds -= 1
 	if (global.seconds < 0)

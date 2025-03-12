@@ -1,6 +1,6 @@
 function scr_player_punch()
 {
-	if (sprite_index == spr_player_breakdanceuppercut or sprite_index == spr_player_breakdanceuppercutend)
+	if (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend)
 	{
 		move = (key_left + key_right)
 		landAnim = 1
@@ -14,7 +14,7 @@ function scr_player_punch()
 		}
 		if (animation_end() && sprite_index == spr_player_breakdanceuppercut)
 			sprite_index = spr_player_breakdanceuppercutend
-		if (grounded && vsp > 0 && (sprite_index == spr_player_breakdanceuppercut or sprite_index == spr_player_breakdanceuppercutend))
+		if (grounded && vsp > 0 && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend))
 		{
 			if (hsp != 0)
 			{
@@ -57,8 +57,8 @@ function scr_player_punch()
 						movespeed += 0.2
 				}
 				hsp = (Xscale * movespeed)
-				var _kungfuground = (sprite_index == spr_player_kungfu1 or sprite_index == spr_player_kungfu2 or sprite_index == spr_player_kungfu3 or sprite_index == spr_shotgunsuplexdash)
-				var _Sjumpcancel = (sprite_index == spr_player_Sjumpcancel or sprite_index == spr_player_Sjumpcancelland or sprite_index == spr_player_Sjumpcancelslide)
+				var _kungfuground = (sprite_index == spr_player_kungfu1 || sprite_index == spr_player_kungfu2 || sprite_index == spr_player_kungfu3 || sprite_index == spr_shotgunsuplexdash)
+				var _Sjumpcancel = (sprite_index == spr_player_Sjumpcancel || sprite_index == spr_player_Sjumpcancelland || sprite_index == spr_player_Sjumpcancelslide)
 				if (_kungfuground && image_index > 7 && (!key_attack) && movespeed > 0)
 					movespeed -= 0.5
 				if (animation_end())
@@ -148,7 +148,7 @@ function scr_player_punch()
 						image_xscale = other.Xscale;
 				}
 			}
-				if (input_buffer_slap > 0 && (!key_up) && sprite_index != spr_suplexbump && shotgunAnim == false && (!global.pistol) && (sprite_index == spr_player_breakdanceuppercut or sprite_index == spr_player_breakdanceuppercutend))
+				if (input_buffer_slap > 0 && (!key_up) && sprite_index != spr_suplexbump && shotgunAnim == false && (!global.pistol) && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend))
 				{
 					flash = 1
 					event_play_oneshot_3d("event:/sfx/maurice/grabcancel", x, y)

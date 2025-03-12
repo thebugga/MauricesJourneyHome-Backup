@@ -6,7 +6,7 @@ function scr_player_mach1()
 	crouchslideAnim = 1
 	dir = Xscale
 	move = (key_left + key_right)
-	if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + Xscale), y, obj_slope))) or place_meeting_slope((x + sign(hsp)), y)))
+	if (place_meeting_solid((x + Xscale), y) && ((!(place_meeting((x + Xscale), y, obj_slope))) || place_meeting_slope((x + sign(hsp)), y)))
 	{
 		mach2 = 0
 		state = states.normal

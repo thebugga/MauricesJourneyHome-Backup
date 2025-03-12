@@ -6,7 +6,7 @@ if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state
 		if (state == states.machslide)
 		{
 			state = states.jump
-			if (sprite_index == spr_mach3boost or sprite_index == spr_machslideboost)
+			if (sprite_index == spr_mach3boost || sprite_index == spr_machslideboost)
 				Xscale *= -1
 		}
 		if (state == states.normal)
@@ -15,7 +15,7 @@ if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state
 			state = states.mach2
 	}
 	sprite_index = spr_bigmushroom_bounce
-	if (other.state == states.jump or other.state == states.normal)
+	if (other.state == states.jump || other.state == states.normal)
 	{
 		other.sprite_index = other.spr_machfreefall
 		other.image_index = 0

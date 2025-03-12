@@ -62,7 +62,7 @@ if (state == states.jump)
 }
 else
 	use_collision = 1
-if (state == states.stun or state == states.shoulderbash or (!use_collision) or elitehit <= 1)
+if (state == states.stun || state == states.shoulderbash || (!use_collision) || elitehit <= 1)
 	invincible = 1
 else
 	invincible = 0

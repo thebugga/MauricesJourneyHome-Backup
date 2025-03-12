@@ -10,7 +10,7 @@ function scr_player_pogo()
 		if (movespeed < 6)
 			movespeed += 0.5
 	}
-	if (move != Xscale or move == 0 or place_meeting((x + Xscale), y, obj_solid))
+	if (move != Xscale || move == 0 || place_meeting((x + Xscale), y, obj_solid))
 	{
 		movespeed = 0
 		pogospeed = 6
@@ -34,7 +34,7 @@ function scr_player_pogo()
 			sprite_index = spr_playerN_pogobounce
 		create_particle(x, y, particle.landcloud, 0)
 	}
-	if (floor(image_index) == 3 && pogospeedprev == 0 && (sprite_index == spr_playerN_pogobounce or sprite_index == spr_playerN_pogobouncemach))
+	if (floor(image_index) == 3 && pogospeedprev == 0 && (sprite_index == spr_playerN_pogobounce || sprite_index == spr_playerN_pogobouncemach))
 	{
 		if key_jump2
 			vsp = -12
@@ -49,7 +49,7 @@ function scr_player_pogo()
 		movespeed = pogospeed
 		pogospeedprev = 1
 	}
-	if (animation_end() && (sprite_index == spr_playerN_pogobounce or sprite_index == spr_playerN_pogofallmach or sprite_index == spr_playerN_pogobouncemach or sprite_index == spr_playerN_pogostart))
+	if (animation_end() && (sprite_index == spr_playerN_pogobounce || sprite_index == spr_playerN_pogofallmach || sprite_index == spr_playerN_pogobouncemach || sprite_index == spr_playerN_pogostart))
 	{
 		if (pogochargeactive == 1)
 			sprite_index = spr_playerN_pogofallmach

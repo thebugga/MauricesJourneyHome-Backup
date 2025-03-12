@@ -2,8 +2,8 @@ var _channels, _coreflags, _studioflags, settings_struct, path, plat, banks, i, 
 
 global.RandomSeed = random_get_seed();
 _channels = 256;
-_coreflags = FMOD_INIT.NORMAL;
-_studioflags = FMOD_STUDIO_INIT.NORMAL;
+_coreflags = FMOD_INIT.NorMAL;
+_studioflags = FMOD_STUDIO_INIT.NorMAL;
 global.FMODSTUDIOSYSTEM = fmod_studio_system_create();
 show_debug_message("fmod_studio_system_create: " + string(fmod_last_result()));
 settings_struct = new FmodSystemAdvancedSettings();
@@ -23,7 +23,7 @@ array_push(banks, "sfx.bank");
 for (i = 0; i < array_length(banks); i++)
 {
     b = working_directory + path + plat + "/" + banks[i];
-    bank = fmod_studio_system_load_bank_file(b, FMOD_STUDIO_LOAD_BANK.NORMAL);
+    bank = fmod_studio_system_load_bank_file(b, FMOD_STUDIO_LOAD_BANK.NorMAL);
     show_debug_message("Bank Loaded: " + string(fmod_last_result()));
     fmod_studio_bank_load_sample_data(bank);
     show_debug_message("Bank Sample Data Load: " + string(fmod_last_result()));

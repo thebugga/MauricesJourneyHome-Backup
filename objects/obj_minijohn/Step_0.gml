@@ -107,14 +107,49 @@ switch state
 		}
 		break
 }
-
+if state == states.totem && totemID != -4
+{
+	image_speed = 0.35;
+	if sprite_index != spr_minijohn_dance
+	{
+		var tx = totemID.x + (64 * totemdir);
+		var on_place = (totemdir > 0) ? (x > tx) : (x < tx);
+		if (place_meeting(x + image_xscale, y, obj_solid))
+			on_place = true;
+		hsp = !on_place ? (image_xscale * 3) : 0;
+		sprite_index = spr_minijohn_charge;
+		if grounded && vsp > 0
+		{
+			sprite_index = spr_minijohn_charge;
+			if on_place
+			{
+				sprite_index = spr_minijohn_dance;
+				image_index = 0;
+				hsp = 0;
+			}
+		}
+	}
+	else
+	{
+		hsp = 0;
+		if floor(image_index) == image_number - 1
+		{
+			totemdir = (x > totemID.x) ? -1 : 1;
+			image_xscale = totemdir;
+			sprite_index = spr_minijohn_dance;
+			hsp = 0;
+		}
+	}
+}
+else if state == states.totem && totemID == noone
+	state = states.chase;
 if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = 1
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id
 }
-if (state == states.chase && ragecooldown <= 0)
+if (state == states.chase && ragecooldown <= 0) && totemID != -4
 {
 	if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
 	{
@@ -154,7 +189,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = (0.15 * room_speed)
 if (state != states.chase)
 	momentum = 0
-if (state == states.walk or state == states.idle)
+if (state == states.walk || state == states.idle)
 {
 	var targetplayer = obj_player1
 	if (obj_player1.spotlight == 0)

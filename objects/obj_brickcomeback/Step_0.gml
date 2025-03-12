@@ -5,7 +5,7 @@ if (global.playerCharacter != Characters.Pierre)
 }
 if (!trapped)
 {
-	if (playerid.sprite_index == spr_lonegustavo_hurt or playerid.state == states.ratmountpunch or playerid.state == states.ratmountgroundpound or playerid.state == states.ratmountgrind or playerid.state == states.ratmountladder or playerid.state == states.ratmountcrouch or playerid.state == states.ratmounttumble)
+	if (playerid.sprite_index == spr_lonegustavo_hurt || playerid.state == states.ratmountpunch || playerid.state == states.ratmountgroundpound || playerid.state == states.ratmountgrind || playerid.state == states.ratmountladder || playerid.state == states.ratmountcrouch || playerid.state == states.ratmounttumble)
 	{
 		wait = 1
 		sprite_index = spr_lonebrick_wait
@@ -34,7 +34,7 @@ if (!trapped)
 else if (baddieID == noone)
 {
 	vsp = -10
-	if ((y + vsp) < 80 or place_meeting_solid(x, (y - 78)))
+	if ((y + vsp) < 80 || place_meeting_solid(x, (y - 78)))
 		vsp = 0
 	y += vsp
 }

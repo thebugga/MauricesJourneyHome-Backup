@@ -87,6 +87,30 @@ function scr_enemy_rage()
 			}
 			break
 			*/
+        case obj_cheeserobot:
+            ragedash--
+            if (ragedash == 0)
+            {
+                ragecooldown = 200
+                ragedash = 50
+                state = states.walk
+                sprite_index = walkspr
+            }
+            if ((!shot) && ragedash < 30)
+            {
+                event_play_oneshot_3d("event:/sfx/enemies/projectile", x, y)
+                shot = 1
+				with (instance_create(x, y, obj_arcprojectile))
+				{
+					sprite_index = spr_junk
+					image_index = irandom(sprite_get_number(spr_junk))
+					image_speed = 0
+                    image_xscale = other.image_xscale
+                    hsp = (image_xscale * 6)
+                    vsp = -11
+				}
+            }
+            break
 		case obj_ancho:
 			hsp = 0
 			if (sprite_index == spr_ancho_rage1)

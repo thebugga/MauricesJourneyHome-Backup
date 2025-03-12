@@ -210,3 +210,29 @@ if (instance_exists(player))
 	offset_x = approach(offset_x, 0, offset_speed);
 	offset_y = approach(offset_y, 0, offset_speed);
 }
+if global.panic
+{
+    var _wave = 0
+    var _maxwave = 0
+    _maxwave = obj_tv.chunkmax
+    _wave = _maxwave - global.fill
+    var wave_ratio = _wave / _maxwave
+    angle_phase += global.inclination_speed
+    if (angle_phase > (2 * pi))
+        angle_phase -= (2 * pi)
+    var max_inclination = 5
+    target_angle = sin(angle_phase) * 3.5 * (clamp(wave_ratio, 0, 1))
+    target_angle = clamp(target_angle, (-max_inclination), max_inclination)
+    if (abs(target_angle) == max_inclination && pause_tilt == 0)
+        pause_timer = room_speed * 3
+    if (pause_tilt > 0)
+    {
+        pause_tilt--
+        camera_angle = lerp(camera_angle, (sign(target_angle) * max_inclination), 0.1)
+    }
+    else
+        camera_angle = lerp(camera_angle, target_angle, 0.05)
+}
+else
+    camera_angle = lerp(camera_angle, 0, 0.05)
+camera_set_view_angle(view_camera[0], camera_angle)

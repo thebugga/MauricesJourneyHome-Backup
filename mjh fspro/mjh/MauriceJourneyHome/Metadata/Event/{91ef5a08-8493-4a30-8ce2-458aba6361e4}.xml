@@ -140,6 +140,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{987beb24-5fd8-456c-8306-9e10219f2a7b}">
+		<property name="start">
+			<value>1</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{2382e9a7-18a0-45cf-aa94-f18b903c8746}</destination>
 		</relationship>
@@ -207,7 +210,7 @@
 	<object class="MixerBusFader" id="{9f805aff-657e-4bee-99ff-2c901c26f9e9}" />
 	<object class="ProxyEffect" id="{543ddccd-45ae-4dcb-b5d1-c0d4d4962e83}">
 		<property name="inputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="preset">
 			<destination>{2356ba09-7d56-41fd-8657-635a46657dae}</destination>

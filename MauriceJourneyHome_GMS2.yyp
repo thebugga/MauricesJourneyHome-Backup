@@ -178,6 +178,7 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Master.strings.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"music.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"sfx.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"bitchesandbastards.mp4","CopyToMask":-1,"filePath":"datafiles/videos",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"balded.mp4","CopyToMask":-1,"filePath":"datafiles/videos",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"boom.mp4","CopyToMask":-1,"filePath":"datafiles/videos",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"dingaling.mp4","CopyToMask":-1,"filePath":"datafiles/videos",},

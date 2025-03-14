@@ -13,7 +13,7 @@ if up
 	pattern_reset()
 	reset_shader_fix()
 	if h_select[1] != 0
-		draw_sprite_ext(spr_gabbie, 0, 480, 230, 4, 4, 0, c_white, 1)
+		draw_sprite_ext(spr_mets, 0, 480, 230, 4, 4, 0, c_white, 1)
 	switch v_select
 	{
 		case 0:

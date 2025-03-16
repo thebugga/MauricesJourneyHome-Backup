@@ -6,7 +6,7 @@ else
     if (currentpos <= string_length(currenttext))
     {
         displaytext = string_insert(string_char_at(currenttext, currentpos), displaytext, (string_length(displaytext) + 1))
-        displaytext = scr_separate_text(displaytext)
+        displaytext = scr_separate_text(displaytext, 960 - (rpadding * 2))
         textbuffer = textspeed
     }
     else if obj_player1.key_jump
@@ -17,7 +17,7 @@ else
 		    {
 		        currentpos++
 		        displaytext = string_insert(string_char_at(currenttext, currentpos), displaytext, (string_length(displaytext) + 1))
-		        displaytext = scr_separate_text(displaytext)
+		        displaytext = scr_separate_text(displaytext, 960 - (rpadding * 2))
 		    }
 		}
 		else

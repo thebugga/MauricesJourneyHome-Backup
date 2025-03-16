@@ -306,11 +306,39 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 	if text_arr == noone
 		exit;
 	
+	var h = draw_get_halign()
+	var v = draw_get_valign()
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	var tex_offsetx = ds_map_create()
+	var old_yy = 0
+	var tex_offsety = 0
+	for (var ii = 0; ii < array_length(text_arr); ii++)
+	{
+		var bb = text_arr[ii];
+		if bb[1] != old_yy
+		{
+			if v != fa_top
+				tex_offsety += string_height(lang_get_value("default_letter"))
+			old_yy = bb[1]
+		}
+		if ds_map_exists(tex_offsetx, bb[1])
+			ds_map_set(tex_offsetx, bb[1], ds_map_find_value(tex_offsetx, bb[1]) + (bb[2] == texttype.normal ? string_width(bb[3]) : 32))
+		else
+			ds_map_set(tex_offsetx, bb[1], bb[2] == texttype.normal ? string_width(bb[3]) : 32)
+	}
+	if v == fa_middle
+		tex_offsety /= 2
 	for (var i = 0; i < array_length(text_arr); i++)
 	{
 		var b = text_arr[i];
-		var cx = x + b[0];
-		var cy = y + b[1];
+		var xoffsettext = ds_map_find_value(tex_offsetx, b[1])
+		if h == fa_left
+			xoffsettext = 0
+		if h == fa_center
+			xoffsettext /= 2
+		var cx = x + b[0] - xoffsettext;
+		var cy = y + b[1] - tex_offsety;
 		var t = b[2];
 		var val = b[3];
 		
@@ -440,8 +468,8 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 						draw_set_halign(fa_center);
 						draw_set_valign(fa_middle);
 						draw_set_font(global.tutorialfont);
-						var ox = sprite_get_xoffset(spr_tutorialfont) / 2;
-						var oy = sprite_get_yoffset(spr_tutorialfont) / 2;
+						var ox = sprite_get_xoffset(spr_truefont) / 2;
+						var oy = sprite_get_yoffset(spr_truefont) / 2;
 						draw_text_color(cx + 16 - ox, cy + 14 - oy, icon.str, c_black, c_black, c_black, c_black, alpha);
 						draw_set_font(f);
 						draw_set_halign(fa_left);
@@ -505,4 +533,6 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 				break;
 		}
 	}
+	draw_set_halign(h);
+	draw_set_valign(v);
 }

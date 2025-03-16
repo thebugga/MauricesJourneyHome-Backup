@@ -11,6 +11,8 @@ if !showlinks
 }
 if key_taunt2 && frame != sprite_get_number(spr_manual)
 	showlinks = !showlinks
+if key_slap2
+	instance_destroy()
 if frame == sprite_get_number(spr_manual)
 {
 	totemy += (key_up - key_down) * 4

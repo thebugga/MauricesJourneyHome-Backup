@@ -103,6 +103,11 @@ if (object_index != obj_player2 || global.coop == true)
 			x = (obj_doorF.x + 16)
 		y = (obj_doorF.y - 14)
 	}
+	if targetDoor == "HUB"
+	{
+		x = backtohubstartx
+	    y = backtohubstarty
+	}
 }
 if verticalhallway
 {

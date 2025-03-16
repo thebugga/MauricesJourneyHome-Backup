@@ -1,6 +1,6 @@
 state = states.normal
-hub_array[0] = [hub_entrance, "B", "RECEPTION"]
-hub_array[1] = [hub_lobby, "A", "PIZZA TOWER 2 LOBBY"]
+hub_array[0] = [hub_entrance, "B", "RECEPTION", "elevator2"]
+hub_array[1] = [hub_lobby, "A", "PIZZA TOWER 2 LOBBY", "elevator2"]
 playerid = -4
 selected = 0
 for (var i = 0; i < array_length(hub_array); i++)
@@ -20,5 +20,4 @@ charvely = 0
 fadealpha = 0
 if (global.elevatorcutscene1 == -4)
 	global.elevatorcutscene1 = quick_ini_read_real(get_savefile_ini(), "Cutscene", "elevator1", 0)
-if (global.elevatorcutscene2 == -4)
-	global.elevatorcutscene2 = quick_ini_read_real(get_savefile_ini(), "Cutscene", "elevator2", 0)
+global.elevatorcutscene2 = quick_ini_read_real(get_savefile_ini(), "Cutscene", "elevator2", 0)

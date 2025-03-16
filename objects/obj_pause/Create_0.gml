@@ -88,6 +88,7 @@ var exit_function = function()
 	start_wiping()
 	instance_destroy(obj_option);
 	instance_destroy(obj_keyconfig);
+	instance_destroy(obj_manual);
 	fmod_studio_event_instance_stop(global.snd_bossbeaten, true);
 	savedmusicmuffle = fmod_event_getParameter("musicmuffle")
 	fmod_studio_system_set_parameter_by_name("musicmuffle", 0, 0)

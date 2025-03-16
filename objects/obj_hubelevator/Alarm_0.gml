@@ -1,4 +1,4 @@
-if !global.elevatorcutscene2
+if !quick_ini_read_real(get_savefile_ini(), "Cutscene", "elevator2", 0)
 {
 	if elavatorsprite == spr_elevator_bgopen
 	{
@@ -19,7 +19,6 @@ if !global.elevatorcutscene2
 		        targetRoom = hub_tutorial1
 			}
 	        fadein = true
-	        global.elevatorcutscene2 = true
 	        quick_ini_write_real(get_savefile_ini(), "Cutscene", "elevator2", true)
 	        instance_create(x, y, obj_fadeout)
 	    }
@@ -45,5 +44,6 @@ else
 		state = states.comingoutdoor
 	}
     fadein = true
+	quick_ini_write_real(get_savefile_ini(), "Cutscene", hub_array[selected][3], true)
     instance_create(x, y, obj_fadeout)
 }

@@ -33,8 +33,6 @@ if !pause && instance_exists(obj_player1) && obj_player1.key_start && room != Ma
 		if global.leveltorestart != noone
 		{
 			array_push(pause_menu, "pause_restart");
-			if global.leveltorestart != tower_tutorial_1 
-				array_push(pause_menu, "pause_credits");
 			array_push(pause_menu, "pause_exit");
 		}
 		else
@@ -233,7 +231,7 @@ if pause && alarm[3] == -1
 		fmod_studio_event_instance_set_paused(panicmusicID, true);
 	}
 }
-if pause && !instance_exists(obj_option)&& alarm[3] == -1
+if pause && !instance_exists(obj_option) && !instance_exists(obj_manual) && alarm[3] == -1
 {
 	scr_menu_getinput();
 	var _dvc = obj_inputAssigner.player_input_device[0];

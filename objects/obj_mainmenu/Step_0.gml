@@ -2,11 +2,21 @@ scr_getinput()
 switch state
 {
 	case states.actor:
-		if (key_start || key_jump2)
+		if !instance_exists(obj_option) && !instance_exists(obj_extras)
 		{
-			state = states.transitioncutscene
-			alarm[0] = 100
+			menuselect = clamp(menuselect + (key_left2 + key_right2), 0, 3)
+			if (key_start || key_jump)
+			{
+				key_jump = 0
+				menu[menuselect][1]()
+			}
 		}
+		break
+	case states.gameover:
+		if (key_jump)
+			game_end()
+		else if (key_slap2)
+			state = states.actor
 		break
 	case states.transitioncutscene:
 	case states.transition:
@@ -19,33 +29,30 @@ switch state
 		}
 		break
 	case states.normal:
-		if !instance_exists(obj_option)
+		saveselect = clamp(saveselect + (key_left2 + key_right2), 1, 3)
+		if key_jump
 		{
-			saveselect = clamp(saveselect + (key_left2 + key_right2), 1, 3)
-			if key_jump
+			//scr_soundeffect(sfx_collectgiantpizza)
+			state = states.transition
+			alarm[0] = 200
+		}
+		if key_shoot2
+		{
+	        if file_exists(concat("saves/saveData", saveselect, ".ini"))
 			{
-				//scr_soundeffect(sfx_collectgiantpizza)
-				state = states.transition
-				alarm[0] = 200
-			}if key_shoot2
-			{
-	            if file_exists(concat("saves/saveData", saveselect, ".ini"))
-				{
-	                file_delete(concat("saves/saveData", saveselect, ".ini"))
-					//scr_soundeffect(sfx_explosion)
-				}
-			}
-			if key_start
-			{
-				//scr_soundeffect(sfx_enemyprojectile)
-				instance_create(x, y, obj_option)
+	            file_delete(concat("saves/saveData", saveselect, ".ini"))
+				//scr_soundeffect(sfx_explosion)
 			}
 		}
+		if key_slap2
+			state = states.actor
 		break
 }
 if (state == states.normal || state == states.transition)
 {
-	var percent = quick_ini_read_real(concat("saveData", saveselect, ".ini"), "Game", "percent", 0)
+	ini_open(concat("saves/saveData", saveselect, ".ini"))
+	var percent = ini_read_real("Game", "percent", 0)
+	ini_close()
 	perstatus_icon = floor(percent / 14.285714285714286)
     var a = (floor((abs(percvisual - percent)) / 10)) + 1
     percvisual = approach(percvisual, percent, a)

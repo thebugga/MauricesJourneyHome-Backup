@@ -33,29 +33,60 @@ function scr_string_width(argument0) //scr_string_width
     return w;
 }
 
-function scr_separate_text(argument0) //scr_separate_text
+function scr_separate_text(argument0, argument1) //gml_Script_scr_separate_text
 {
-    draw_set_font(font2)
-    while (scr_string_width(argument0) > ((960 - (rpadding * 2)) - string_width("a")))
+    var separation = lang_get_value("separation_map")
+    separation = string_split(separation, ",")
+    var _start_pos = 0
+    while (scr_string_width(argument0) > (argument1 - string_width("a")))
     {
-        var _pos = string_length(argument0)
-        var _oldpos = _pos
-        while (string_char_at(argument0, _pos) != " ")
+        var _pos = _start_pos
+        var _sep_pos = _pos
+        var len = string_length(argument0)
+        var found = false
+        while (_pos < len)
         {
-            _pos--
-            if (_pos < 0)
-                _pos = _oldpos
+            if scr_is_separation(string_char_at(argument0, _pos), separation)
+            {
+                var _prev_sep_pos = _sep_pos
+                _sep_pos = _pos
+                if (scr_string_width(string_copy(argument0, _start_pos, (_pos - _start_pos))) > (argument1 - string_width("a")))
+                {
+                    _sep_pos = _prev_sep_pos
+                    _start_pos = _sep_pos
+                    _pos = _start_pos
+                    found = true
+                    break
+                }
+                else
+                    _pos++
+            }
+            else
+                _pos++
         }
-        if (string_char_at(argument0, _pos) == " ")
-            argument0 = string_delete(argument0, _pos, 1)
-        argument0 = string_insert("\n", argument0, _pos)
+        if (string_char_at(argument0, _sep_pos) == " ")
+        {
+            argument0 = string_delete(argument0, _sep_pos, 1)
+            argument0 = string_insert("\n", argument0, _sep_pos)
+        }
+        else
+            argument0 = string_insert("\n", argument0, (_sep_pos + 1))
     }
     return argument0;
 }
 
+function scr_is_separation(argument0, argument1) //gml_Script_scr_is_separation
+{
+    for (var i = 0; i < array_length(argument1); i++)
+    {
+        if (argument0 == argument1[i])
+            return true;
+    }
+    return false;
+}
+
 function scr_calculate_text(argument0) //scr_calculate_text
 {
-    draw_set_font(font2)
     var pos = 0
     var str2 = ""
     while (pos <= string_length(argument0))

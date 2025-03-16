@@ -2,9 +2,8 @@ pause = false;
 var rm = room;
 if !hub
 {
-	obj_player1.targetRoom = ObjectnMacroloadinRoom;
-	obj_player2.targetRoom = ObjectnMacroloadinRoom;
-	room = ObjectnMacroloadinRoom;
+	gamesave_async_save()
+	room = Mainmenu;
 	with obj_player1
 	{
 		character = "P";
@@ -14,10 +13,12 @@ if !hub
 	global.leveltorestart = noone;
 	scr_playerreset();
 	alarm[0] = 2;
-	obj_player1.state = states.titlescreen;
-	obj_player2.state = states.titlescreen;
-	obj_player1.targetDoor = "A";
-	obj_player2.targetDoor = "A";
+	with obj_parent_player
+	{
+		targetRoom = Mainmenu;
+		targetDoor = "A";
+		state = states.titlescreen;
+	}
 	global.cowboyhat = false;
 	global.coop = false;
 }
@@ -28,9 +29,11 @@ else
 	with obj_player1
 		swap_player();
 	global.levelreset = true;
-	obj_player1.targetDoor = "HUB";
-	if instance_exists(obj_player2)
-		obj_player2.targetDoor = "HUB";
+	with obj_parent_player
+	{
+		room = backtohubroom;
+		targetDoor = "HUB";
+	}
 	global.leveltorestart = noone;
 	global.leveltosave = noone;
 }

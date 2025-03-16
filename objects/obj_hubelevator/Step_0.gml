@@ -12,10 +12,26 @@ switch state
 			{
 				if (hub_array[selected][0] != room)
 				{
-			        stop_music()
-					event_play_oneshot("event:/music/levator")
-					fadein = 1
-					state = states.backbreaker
+					if quick_ini_read_real(get_savefile_ini(), "Cutscene", hub_array[selected][3], 0)
+					{
+						with (obj_parent_player)
+						{
+					        lastroom_x = x
+					        lastroom_y = y
+					        lastroom = room
+							targetRoom = other.hub_array[other.selected][0]
+							targetDoor = other.hub_array[other.selected][1]
+							state = states.comingoutdoor
+						}
+					    instance_create(x, y, obj_fadeout)
+					}
+					else
+					{
+				        stop_music()
+						event_play_oneshot("event:/music/levator")
+						fadein = 1
+						state = states.backbreaker
+					}
 				}
 			}
 			if playerid.key_slap2
@@ -38,7 +54,7 @@ switch state
         
 		        showinside = true
 		        fadein = false
-		        alarm[0] = (global.elevatorcutscene2 ? 600 : 400)  
+		        alarm[0] = (global.elevatorcutscene2 ? 600 : 300)  
 		    }
 		}
 		else

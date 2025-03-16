@@ -11,6 +11,16 @@ separation_map = " "
 default_letter = "A"
 
 # ---------------
+# TITLE SCREEN TEXT
+# ---------------
+menu_play = "Play"
+menu_options = "Options"
+menu_extras = "Extras"
+menu_quit = "Quit"
+
+menu_uniquequit1 = "Are you sure about this? This is a DOOM reference, we love DOOM. Press [J] if you're a little pussy bitch, or [G] if you're a real guys guy."
+
+# ---------------
 # OPTIONS TEXT
 # ---------------
 menu_select = "[c] Select"
@@ -20,7 +30,7 @@ pause_resume = "RESUME"
 pause_options = "OPTIONS"
 pause_restart = "RESTART LEVEL"
 pause_exit = "EXIT LEVEL"
-pause_exit_title = "MAIN MENU"
+pause_exit_title = "SAVE & QUIT"
 pause_credits = "CREDITS"
 
 achievements_level = "CURRENT LEVEL"

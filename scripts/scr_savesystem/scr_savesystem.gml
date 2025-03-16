@@ -8,7 +8,7 @@ function get_save_folder()
 }
 function get_percentage()
 {
-	var levels = ["garbage", "wizard"];
+	var levels = ["garbage", "wizard", "chili", "trench"];
 //	var bosses = ["w1stick", "w2stick", "w3stick", "w4stick", "w5stick"];
 //	var bossach = ["pepperman", "vigilante", "noise", "fakepep", "pizzaface"];
 //	var bossranks = ["b_pepperman", "b_vigilante", "b_noise", "b_fakepep"];

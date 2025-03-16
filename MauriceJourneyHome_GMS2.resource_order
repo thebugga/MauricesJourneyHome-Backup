@@ -114,7 +114,7 @@
     {"name":"obj_file2","order":14,"path":"objects/obj_file2/obj_file2.yy",},
     {"name":"obj_file3","order":16,"path":"objects/obj_file3/obj_file3.yy",},
     {"name":"obj_filedoor","order":13,"path":"objects/obj_filedoor/obj_filedoor.yy",},
-    {"name":"obj_gameconfig","order":12,"path":"objects/obj_gameconfig/obj_gameconfig.yy",},
+    {"name":"obj_extras","order":12,"path":"objects/obj_extras/obj_extras.yy",},
     {"name":"obj_globaltimer","order":10,"path":"objects/obj_globaltimer/obj_globaltimer.yy",},
     {"name":"Sprite1713","order":1,"path":"sprites/Sprite1713/Sprite1713.yy",},
     {"name":"shd_pal_swapper","order":1,"path":"shaders/shd_pal_swapper/shd_pal_swapper.yy",},

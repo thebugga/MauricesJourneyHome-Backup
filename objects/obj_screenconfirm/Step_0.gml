@@ -1,6 +1,6 @@
 scr_menu_getinput();
 
-var _dvc = obj_inputAssigner.player_input_device[swap.player1]
+var _dvc = obj_inputAssigner.player_input_device[0]
 if -key_left2
 	select = 0;
 else if key_right2

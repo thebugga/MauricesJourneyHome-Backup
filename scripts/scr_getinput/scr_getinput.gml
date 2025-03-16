@@ -81,7 +81,7 @@ function scr_check_groundpound2()
 
 function scr_switch_get_menu_input()
 {
-	var _dvc = obj_inputAssigner.player_input_device[swap.player1];
+	var _dvc = obj_inputAssigner.player_input_device[0];
 	key_jump = gamepad_button_check_pressed(_dvc, gp_face2);
 	key_jump2 = gamepad_button_check(_dvc, gp_face2);
 	key_jump3 = gamepad_button_check_released(_dvc, gp_face2);
@@ -126,7 +126,7 @@ function scr_menu_getinput()
 	key_quit2 = tdp_input_get("menu_quit").pressed or tdp_input_get("menu_quitC").pressed;
 	key_quit3 = tdp_input_get("menu_quit").released or tdp_input_get("menu_quitC").released;
 	
-	if global.swapmode && obj_inputAssigner.player_input_device[swap.player1] != obj_inputAssigner.player_input_device[swap.player2]
+	if global.swapmode && obj_inputAssigner.player_input_device[0] != obj_inputAssigner.player_input_device[1]
 	{
 		var _dvc = obj_inputAssigner.player_input_device[!obj_inputAssigner.player_index];
 		tdp_input_update(_dvc);

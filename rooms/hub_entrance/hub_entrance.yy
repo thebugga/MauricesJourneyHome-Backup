@@ -16,7 +16,6 @@
     {"name":"inst_2102D64E","path":"rooms/hub_entrance/hub_entrance.yy",},
     {"name":"inst_B5B50BA","path":"rooms/hub_entrance/hub_entrance.yy",},
     {"name":"inst_99B7062","path":"rooms/hub_entrance/hub_entrance.yy",},
-    {"name":"inst_3E75C231","path":"rooms/hub_entrance/hub_entrance.yy",},
     {"name":"inst_67FF6895","path":"rooms/hub_entrance/hub_entrance.yy",},
   ],
   "isDnd": false,
@@ -31,7 +30,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2102D64E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chieftainNPC","path":"objects/obj_chieftainNPC/obj_chieftainNPC.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":545.0,"y":267.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B5B50BA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_hubelevator","path":"objects/obj_hubelevator/obj_hubelevator.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":848.0,"y":368.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_99B7062","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorB","path":"objects/obj_doorB/obj_doorB.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":416.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3E75C231","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":-128.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_67FF6895","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_entrancesign","path":"objects/obj_entrancesign/obj_entrancesign.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":64.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[

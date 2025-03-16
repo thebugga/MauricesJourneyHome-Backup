@@ -14,6 +14,17 @@ function camera_zoom(zoom_target, zoom_speed)
 	}
 }
 
+function embed_value_string(str, array)
+{
+	var str_copy = string_copy(str, 1, string_length(str));
+	for (var i = 0; i < array_length(array); i++)
+	{
+		var b = string(array[i]);
+		str_copy = string_replace(str_copy, "%", b);
+	}
+	return str_copy;
+}
+
 function camera_set_zoom(argument0)
 {
 	with obj_camera

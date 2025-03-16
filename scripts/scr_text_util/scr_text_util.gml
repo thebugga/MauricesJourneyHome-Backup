@@ -381,13 +381,13 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 							break;
 					
 						case textkey.groundpound:
-							if !global.gamepad_groundpound && obj_inputAssigner.player_input_device[swap.player1] >= 0
+							if !global.gamepad_groundpound && obj_inputAssigner.player_input_device[0] >= 0
 								icon = tdp_get_tutorial_icon("player_groundpound");
 							else
 								icon = tdp_get_tutorial_icon("player_down");
 							break;
 						case textkey.superjump:
-							if !global.gamepad_superjump && obj_inputAssigner.player_input_device[swap.player1] >= 0
+							if !global.gamepad_superjump && obj_inputAssigner.player_input_device[0] >= 0
 								icon = tdp_get_tutorial_icon("player_superjump");
 							else
 								icon = tdp_get_tutorial_icon("player_up");

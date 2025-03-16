@@ -286,6 +286,9 @@ enum Characters
 	Gabbie,
 	Snick
 }
+global.DebugMode = debug;
+global.DebugVisuals = false;
+surface_depth_disable(true);
 pal_swap_init_system(shd_pal_swapper)
 global.coop = false
 global.swapmode = false
@@ -299,6 +302,8 @@ global.smallnumber_color2 = make_colour_rgb(248, 0, 0)
 global.autotile = 1
 global.heatmeter = false
 global.showcollisions = false
+if debug
+    global.showcollisions = true;
 global.font_small = font_add_sprite_ext(spr_smallfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!._1234567890:?", true, -2)
 global.smallnumber_fnt = font_add_sprite_ext(spr_smallnumber, "1234567890-", true, 0)
 global.levelcomplete = 0

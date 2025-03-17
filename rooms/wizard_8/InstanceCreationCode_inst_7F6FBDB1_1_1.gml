@@ -1,1 +1,2 @@
-content = obj_pizzakinpineapple
+content = obj_goochling
+extraval = 4

@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_cheeseboat",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,8 +13,8 @@
     "path": "folders/Objects/Cutscenes.yy",
   },
   "parentObjectId": {
-    "name": "obj_platform",
-    "path": "objects/obj_platform/obj_platform.yy",
+    "name": "obj_movingPlatform",
+    "path": "objects/obj_movingPlatform/obj_movingPlatform.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,7 +31,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_cheeseboat",
+    "path": "sprites/spr_cheeseboat/spr_cheeseboat.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

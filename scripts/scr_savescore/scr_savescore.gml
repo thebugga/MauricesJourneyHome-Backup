@@ -25,16 +25,11 @@ function scr_savescore(level)
 		global.secretfound = 3
 	if (ini_read_real("Secret", level, 0) < global.secretfound)
 		ini_write_string("Secret", level, global.secretfound)
-	if (ini_read_real("Toppin", (level + "1"), 0) == 0)
-		ini_write_real("Toppin", (level + "1"), global.shroomfollow)
-	if (ini_read_real("Toppin", (level + "2"), 0) == 0)
-		ini_write_real("Toppin", (level + "2"), global.cheesefollow)
-	if (ini_read_real("Toppin", (level + "3"), 0) == 0)
-		ini_write_real("Toppin", (level + "3"), global.tomatofollow)
-	if (ini_read_real("Toppin", (level + "4"), 0) == 0)
-		ini_write_real("Toppin", (level + "4"), global.sausagefollow)
-	if (ini_read_real("Toppin", (level + "5"), 0) == 0)
-		ini_write_real("Toppin", (level + "5"), global.pineapplefollow)
+	for (var g = 1; g > 5; g++)
+	{
+	if (ini_read_real("Goochling", (level + string(g)), 0) == 0)
+		ini_write_real("Goochling", (level + string(g)), global.goochlinggot[g - 1])
+	}
 	scr_write_rank(level)
 	obj_savesystem.ini_str = ini_close()
 	exit;

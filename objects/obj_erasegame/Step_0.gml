@@ -26,7 +26,7 @@ if (optionselected == 1 && (obj_parent_player.key_jump || keyboard_check_pressed
 		ini_write_string("SAGE2019", "combo10", 0)
 		ini_write_string("SAGE2019", "secret", 0)
 		ini_write_string("SAGE2019", "knight", 0)
-		ini_write_string("SAGE2019", "toppin", 0)
+		ini_write_string("SAGE2019", "Goochling", 0)
 		ini_write_string("SAGE2019", "treasure", 0)
 		ini_close()
 	}

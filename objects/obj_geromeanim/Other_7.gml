@@ -1,11 +1,17 @@
-if (sprite_index == spr_gerome_idle1)
+switch sprite_index
 {
-	with (obj_geromefollow)
-		visible = true
-	instance_destroy()
+	case spr_player_secondjump1:
+	sprite_index = spr_player_secondjump2
+	break
+	case spr_player_finishingblow1:
+	sprite_index = spr_player_jump2
+	grav = 0.25
+	with obj_parent_player
+		state = states.normal
+	break
+	case spr_player_jump2:
+	sprite_index = spr_player_fall2
+	break
 }
-else
-{
-	image_speed = 0
-	image_index = (image_number - 1)
-}
+
+image_index = 0

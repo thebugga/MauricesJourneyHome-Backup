@@ -58,7 +58,7 @@ if (!ds_list_empty(global.collect_list))
 				vsp = lengthdir_y(16, _dir)
 				x += hsp
 				y += vsp
-				image_index += 0.35
+				image_index += image_speed
 				if (image_index > (image_number - 1))
 					image_index = frac(image_index)
 				outofx = x > 820

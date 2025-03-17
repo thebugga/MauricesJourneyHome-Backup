@@ -4,11 +4,12 @@ alarm[1] = 200
 receiptonscreen = false
 receiptx = 960
 text = [
-	[false, concat("Toppins x ", global.toppintotal), global.toppintotal * 0.5],
-	[false, concat("Secrets x ", global.secretfound), global.secretfound * 1.25],
-	[false, "Treasure", global.treasure * 5],
+	[false, concat("Goochling Pieces x ", global.toppintotal), global.toppintotal * 0.25],
+	[false, "Secret Goochling Piece", global.goochlinggot[4]],
+	[false, concat("Secrets x ", global.secretfound), global.secretfound * 0.75],
+	[false, "Treasure", global.treasure * 3],
 	[false, "Tax", 0.65],
-	[false, "Total", (global.toppintotal * 0.5) + (global.secretfound * 1.25) + (global.treasure * 5) + 0.65]
+	[false, "Total", (global.toppintotal * 0.25) + global.goochlinggot[4] + (global.secretfound * 1.25) + (global.treasure * 3) + 0.65]
 ]
 text_pos = 0
 approachscore = global.collect

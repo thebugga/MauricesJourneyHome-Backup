@@ -558,11 +558,7 @@ if (!variable_global_exists("saveroom"))
 	global.timedgateid = -4;
 	global.timedgatetimemax = 0;
 	global.key_inv = false;
-	global.shroomfollow = false;
-	global.cheesefollow = false;
-	global.tomatofollow = false;
-	global.sausagefollow = false;
-	global.pineapplefollow = false;
+	global.goochlinggot = [0, 0, 0, 0, 0]
 	global.pepanimatronic = false;
 	global.keyget = false;
 	global.collect = 0;

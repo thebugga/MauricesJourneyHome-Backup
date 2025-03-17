@@ -564,7 +564,7 @@ function sh_give_all(argument0)
 {
     var toppin_objs, i;
     
-    toppin_objs = [obj_pizzakinshroom, obj_pizzakincheese, obj_pizzakintomato, obj_pizzakinsausage, obj_pizzakinpineapple];
+    toppin_objs = [obj_goochling, obj_pizzakincheese, obj_pizzakintomato, obj_pizzakinsausage, obj_pizzakinpineapple];
     
     for (i = 0; i < array_length(toppin_objs); i++)
         instance_create(x, y, toppin_objs[i]);
@@ -589,7 +589,7 @@ function sh_give_prank(argument0)
 {
     var toppin_objs, i;
     
-    toppin_objs = [obj_pizzakinshroom, obj_pizzakincheese, obj_pizzakintomato, obj_pizzakinsausage, obj_pizzakinpineapple];
+    toppin_objs = [obj_goochling, obj_pizzakincheese, obj_pizzakintomato, obj_pizzakinsausage, obj_pizzakinpineapple];
     
     for (i = 0; i < array_length(toppin_objs); i++)
         instance_create(x, y, toppin_objs[i]);

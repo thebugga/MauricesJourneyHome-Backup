@@ -118,11 +118,7 @@ function scr_playerreset(argument0)
 		global.taminutes = 0
 		global.key_inv = 0
 		global.pepanimatronic = 0
-		global.shroomfollow = 0
-		global.cheesefollow = 0
-		global.tomatofollow = 0
-		global.sausagefollow = 0
-		global.pineapplefollow = 0
+		global.goochlinggot = [0, 0, 0, 0, 0]
 		global.keyget = 0
 		global.collect = 0
 		global.collectN = 0
@@ -368,11 +364,7 @@ function scr_playerreset(argument0)
 		input_buffer_highjump = 8
 		flash = 0
 		global.key_inv = 0
-		global.shroomfollow = 0
-		global.cheesefollow = 0
-		global.tomatofollow = 0
-		global.sausagefollow = 0
-		global.pineapplefollow = 0
+		global.goochlinggot = [0, 0, 0, 0, 0]
 		global.keyget = 0
 		global.collect = 0
 		global.collectN = 0

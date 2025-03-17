@@ -56,7 +56,7 @@ function create_heatpuff(_x, _y)
 	return q;
 }
 
-function create_collect(_x, _y, sprite, _value = 0)
+function create_collect(_x, _y, sprite, _value = 0, index = 0, _speed = 0.35)
 {
 	_x -= camera_get_view_x(view_camera[0])
 	_y -= camera_get_view_y(view_camera[0])
@@ -65,7 +65,8 @@ function create_collect(_x, _y, sprite, _value = 0)
 		x: _x,
 		y: _y,
 		sprite_index: sprite,
-		image_index: 0,
+		image_index: index,
+		image_speed: _speed,
 		image_number: sprite_get_number(sprite),
 		hsp: 0,
 		vsp: 0,

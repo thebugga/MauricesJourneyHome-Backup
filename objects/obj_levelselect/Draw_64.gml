@@ -52,7 +52,7 @@ if _levelinfo[2] != "hub"
 
 	for (var i = 0; i < 5; i++)
 	{
-		if ini_read_real("Toppin", concat(_levelinfo[2], i + 1), 0)
+		if ini_read_real("Goochling", concat(_levelinfo[2], i + 1), 0)
 			draw_sprite_ext(spr_goochling, i, 480, 450, 1, 1, 0, c, 1)
 	}
 

@@ -44,8 +44,8 @@ if (global.miniboss == true && sprite_index != spr_noisebomb_intro)
 	}
 	else if (global.shroomfollow == 1)
 	{
-		ds_queue_enqueue(followQueue, (obj_pizzakinshroom.x + (image_xscale * 4)))
-		ds_queue_enqueue(followQueue, (obj_pizzakinshroom.y - 2))
+		ds_queue_enqueue(followQueue, (obj_goochling.x + (image_xscale * 4)))
+		ds_queue_enqueue(followQueue, (obj_goochling.y - 2))
 	}
 	else
 	{

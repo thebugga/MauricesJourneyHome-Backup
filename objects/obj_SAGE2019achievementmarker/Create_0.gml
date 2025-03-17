@@ -6,7 +6,7 @@ snicksrank = ini_read_string("SAGE2019", "snicksrank", 0)
 combo10 = ini_read_string("SAGE2019", "combo10", 0)
 secret = ini_read_string("SAGE2019", "secret", 0)
 knight = ini_read_string("SAGE2019", "knight", 0)
-toppin = ini_read_string("SAGE2019", "toppin", 0)
+toppin = ini_read_string("SAGE2019", "Goochling", 0)
 treasure = ini_read_string("SAGE2019", "treasure", 0)
 ini_close()
 

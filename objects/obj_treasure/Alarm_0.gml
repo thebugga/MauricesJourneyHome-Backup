@@ -1,6 +1,6 @@
-var p = noone
-if (player == 1)
-	p = obj_player1.id
-else if (player == 2)
-	p = obj_player2.id
-p.state = states.normal
+global.noisejetpack = false;
+global.startgate = false;
+stop_music();
+if global.collect <= 0
+	global.collect = 10;
+scr_do_rank()

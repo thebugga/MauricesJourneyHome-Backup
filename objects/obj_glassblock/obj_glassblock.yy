@@ -4,10 +4,6 @@
   "name": "obj_glassblock",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_bombexplosion","path":"objects/obj_bombexplosion/obj_bombexplosion.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_parent_enemydead","path":"objects/obj_parent_enemydead/obj_parent_enemydead.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_shotgunbullet","path":"objects/obj_shotgunbullet/obj_shotgunbullet.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_swordhitbox","path":"objects/obj_swordhitbox/obj_swordhitbox.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,},
   ],
   "managed": true,
@@ -17,8 +13,8 @@
     "path": "folders/Objects/Game settings/Room structure/Unused.yy",
   },
   "parentObjectId": {
-    "name": "obj_destructibles",
-    "path": "objects/obj_destructibles/obj_destructibles.yy",
+    "name": "obj_solid",
+    "path": "objects/obj_solid/obj_solid.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

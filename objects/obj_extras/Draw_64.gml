@@ -9,6 +9,6 @@ if !instance_exists(obj_manual)
 		draw_set_color(c_gray)
 		if (selected == i)
 			draw_set_color(c_white)
-		draw_text(480, 200 + (48 * i), selectmap[i])
+		draw_text(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 72 + (48 * i), selectmap[i])
 	}
 }

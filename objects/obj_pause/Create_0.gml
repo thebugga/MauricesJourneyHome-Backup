@@ -34,6 +34,9 @@ for (var i = 0; i < SCREEN_WIDTH; i++)
 
 start_wiping = function()
 {
+	
+	if !surface_exists(wipe_surface)
+		wipe_surface = surface_create(SCREEN_WIDTH, SCREEN_HEIGHT)
 	scr_delete_pause_image()
 	scr_create_pause_image()
 	surface_set_target(wipe_surface)

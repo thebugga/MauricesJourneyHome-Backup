@@ -37,7 +37,7 @@ if (global.stylethreshold <= 0)
 		pizzascore_index = 0
 }
 var b = global.stylemultiplier
-var hud_xx = 839
+var hud_xx = SCREEN_WIDTH - 121
 var hud_yy = 90 + hud_posY
 var hud_scorex = hud_xx + irandom_range(-collect_shake, collect_shake)
 var hud_scorey = hud_yy + irandom_range(-collect_shake, collect_shake)

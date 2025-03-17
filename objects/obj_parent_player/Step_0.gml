@@ -930,7 +930,7 @@ else if boxxed
 	grav = 0.3;
 else if state == states.boxxedpepspin
 	grav = 0.6;
-else
+else if state != states.knightpepslopes
 	grav = 0.5;
 if state == states.barrel && key_jump2 && !jumpstop
 	grav = 0.4;

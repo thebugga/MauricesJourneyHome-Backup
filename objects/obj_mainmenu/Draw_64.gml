@@ -8,23 +8,23 @@ switch state
 {
 	case states.actor:
 		for (var m = 0; m < 4; m++)
-			draw_text(120 + (240 * m), 500 + (irandom_range(-1, 1) * (m == menuselect)), lang_get_value(menu[m][0]))
+			draw_text(SCREEN_WIDTH / 8 + ((SCREEN_WIDTH / 4) * m), SCREEN_HEIGHT - 50 + (irandom_range(-1, 1) * (m == menuselect)), lang_get_value(menu[m][0]))
 			break
 	case states.gameover:
 		draw_clear(c_black)
 		global.tdp_text_try_outline = true;
-		scr_draw_text_arr(480, 270, scr_compile_icon_text(scr_separate_text(lang_get_value("menu_uniquequit1"), 960)));
+		scr_draw_text_arr(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, scr_compile_icon_text(scr_separate_text(lang_get_value("menu_uniquequit1"), SCREEN_WIDTH)));
 		global.tdp_text_try_outline = false;
 		tdp_text_commit(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 		break
 	case states.transitioncutscene:
 		if flicker
-			draw_text(120, 500, lang_get_value(menu[0][0]))
+			draw_text(SCREEN_WIDTH / 8, SCREEN_HEIGHT - 50, lang_get_value(menu[0][0]))
 		break
 	case states.normal:
 	case states.transition:
 		if flicker
-			draw_text(480, 200, concat("File ", saveselect))
+			draw_text(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) - 70, concat("File ", saveselect))
 		for (var i = 0; i < array_length(character); i++)
 		{
 			var c = character[i]
@@ -56,13 +56,13 @@ switch state
 				for (var yy = 0; yy < array_length(stages[xx]); yy++)
 				{
 					var _color = (ini_read_real("Highscore", stages[xx][yy], 0) ? c_white : c_black)
-					draw_sprite_ext(spr_pizzacoin, -1, 416 + (32 * yy), 270 + (32 * xx), 1, 1, 0, _color, 1)
+					draw_sprite_ext(spr_pizzacoin, -1, (SCREEN_WIDTH / 2 - 64) + (32 * yy), SCREEN_HEIGHT / 2 + (32 * xx), 1, 1, 0, _color, 1)
 				}
 			}
 		}
 		draw_set_font(global.combofont)
-		draw_sprite(spr_title_collysia, perstatus_icon, 600, 270)
-		draw_shaking_text(360, 270, percvisual, percvisual / 50)
+		draw_sprite(spr_title_collysia, perstatus_icon, (SCREEN_WIDTH / 2 + 120), SCREEN_HEIGHT / 2)
+		draw_shaking_text((SCREEN_WIDTH / 2 - 120), SCREEN_HEIGHT / 2, percvisual, percvisual / 50)
 		break
 }
 ini_close()

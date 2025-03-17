@@ -35,6 +35,14 @@ function scr_ratblock_destroy()
 				case states.knightpep:
 				case states.knightpepbump:
 					break
+				case states.knightpepslopes:
+					if (other.sprite_index != spr_rattumbleblock && other.sprite_index != spr_rattumbleblock_big)
+					{
+						instance_destroy(other)
+						hsp = prevHsp
+						vsp = prevVsp
+					}
+					break
 				case states.tumble:
 					if (other.sprite_index == spr_rattumbleblock || other.sprite_index == spr_rattumbleblock_big)
 						instance_destroy(other)

@@ -124,7 +124,7 @@ add_option_press(video_menu, 0, "option_back", function()
 {
 	menu_goto(menus.options);
 });
-if true//!steam_utils_is_steam_running_on_steam_deck()
+if true //!steam_utils_is_steam_running_on_steam_deck()
 {
 	add_option_press(video_menu, 1, "option_window_mode", function()
 	{
@@ -146,9 +146,17 @@ if true//!steam_utils_is_steam_running_on_steam_deck()
 		global.option_resolution = val;
 		screen_apply_size();
 	}).value = global.option_resolution;
+	
+	add_option_multiple(video_menu, 3, "option_scaling", [create_option_value("option_scaling_fit", 0), create_option_value("option_scaling_pp", 1), create_option_value("option_scaling_expand", 2)], function(val)
+	{
+		ini_open_from_string(obj_savesystem.ini_str_options);
+		ini_write_real("Option", "scale_mode", val);
+		obj_savesystem.ini_str_options = ini_close();
+		global.option_scale_mode = val;
+	}).value = global.option_scale_mode;
 }
 
-add_option_toggle(video_menu, 3, "option_vsync", function(val)
+add_option_toggle(video_menu, 4, "option_vsync", function(val)
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	ini_write_real("Option", "vsync", val);
@@ -157,7 +165,7 @@ add_option_toggle(video_menu, 3, "option_vsync", function(val)
 	screen_apply_vsync();
 }).value = global.option_vsync;
 
-add_option_toggle(video_menu, 4, "option_texfilter", function(val)
+add_option_toggle(video_menu, 5, "option_texfilter", function(val)
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	ini_write_real("Option", "texfilter", val);
@@ -166,7 +174,7 @@ add_option_toggle(video_menu, 4, "option_texfilter", function(val)
 }
 ).value = global.option_texfilter;
 
-add_option_toggle(video_menu, 5, "option_hud", function(val)
+add_option_toggle(video_menu, 6, "option_hud", function(val)
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	ini_write_real("Option", "hud", val);

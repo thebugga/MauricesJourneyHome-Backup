@@ -71,20 +71,20 @@ pattern_reset()
 if (state = states.tv_whitenoise)
 	draw_sprite_ext(spr_tv_whitenoise, floor(noiseindex), (tv_x + 139), ((tv_y + 134) + hud_posY), 1, 1, 0, c_white, alpha)
 reset_shader_fix()
-draw_rectangle_color(0, newsy, 960, newsy + 50, c_red, c_red, c_red, c_red, false)
-draw_rectangle_color(0, newsy + 50, 960, newsy + 70, c_white, c_white, c_white, c_white, false)
+draw_rectangle_color(0, SCREEN_HEIGHT + newsy, SCREEN_WIDTH, SCREEN_HEIGHT + newsy + 50, c_red, c_red, c_red, c_red, false)
+draw_rectangle_color(0, SCREEN_HEIGHT + newsy + 50, SCREEN_WIDTH, SCREEN_HEIGHT + newsy + 70, c_white, c_white, c_white, c_white, false)
 draw_set_font(font1)
 draw_set_halign(fa_left)
 draw_set_valign(fa_middle)
-if (newsy == 470)
+if (newsy == -70)
 {
 	promptx -= promptspd
 	if promptx < -(string_width(prompt))
 		prompt = ""
 }
-draw_text_color(promptx, 60 + newsy, prompt, c_black, c_black, c_black, c_black, 1)
+draw_text_color(promptx, SCREEN_HEIGHT + newsy + 60, prompt, c_black, c_black, c_black, c_black, 1)
 draw_set_font(global.creditsfont)
-draw_text_color(100, 25 + newsy, headline, c_white, c_white, c_white, c_white, 1)
+draw_text_color(100, SCREEN_HEIGHT + newsy + 25, headline, c_white, c_white, c_white, c_white, 1)
 draw_set_font(global.smallnumber_fnt)
 draw_set_halign(fa_center)
 if instance_exists(obj_pizzaball)
@@ -126,7 +126,7 @@ if (!ds_list_empty(messagelist))
 		var b = ds_list_find_value(messagelist, i)
 		{
 			draw_set_alpha(b.alpha)
-			draw_text(490, (((ds_list_size(messagelist) - 1) * 16) - (16 * i)), b.text)
+			draw_text(SCREEN_WIDTH / 2 + 10, (((ds_list_size(messagelist) - 1) * 16) - (16 * i)), b.text)
 			draw_set_alpha(1)
 			if b.timer > 0
 				b.timer--

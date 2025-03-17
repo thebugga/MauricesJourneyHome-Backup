@@ -91,9 +91,11 @@ else if comboend
 	event_perform(2, 3);
 }
 if (prompt != -4 && prompt != "")
-	newsy = approach(newsy, 470, 5)
+	newsy = approach(newsy, -70, 5)
 else
-	newsy = approach(newsy, 540, 5)
+	newsy = approach(newsy, 0, 5)
+if newsy == 0
+	promptx = SCREEN_WIDTH
 switch state
 {
 	case states.normal:
@@ -484,6 +486,7 @@ else
 	pizzaface_sprite = spr_timer_pizzaface1
 	timer_x = -(sprite_get_width(spr_timer_bar) * 2)
 }
+timer_y = SCREEN_HEIGHT - sprite_get_height(spr_timer_bar)
 barfill_x -= 0.2
 if (barfill_x < -173)
 	barfill_x = 0

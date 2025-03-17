@@ -181,23 +181,26 @@ function scr_player_knightpep()
 					image_xscale = other.Xscale
 					if (other.key_up)
 					{
-						starthsp = 8
+						starthsp = 5
 						startvsp = -10
+					}
+					else if (other.key_down)
+					{
+						starthsp = 4
+						startvsp = 10
 					}
 					else
 					{
 						starthsp = 12
-						startvsp = -6
+						startvsp = -2
 					}
-					movespeed = starthsp
+					hsp = starthsp * image_xscale
 					vsp = startvsp
 				}
 			}
 		}
 		else
-		{
-			instance_destroy(obj_wizardball)
-		}
+			state = states.knightpepslopes
 	}
 	exit;
 }

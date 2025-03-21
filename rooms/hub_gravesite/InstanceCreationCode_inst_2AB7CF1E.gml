@@ -1,14 +1,14 @@
 if global.levelcomplete
 {
     global.levelcomplete = false
-    if !global.graveyardcutscene
+    if !global.garbagecutscene
 	{
 		currentroom = room
 	    scene_info = [[function() //gml_Script_anon_gml_RoomCC_hub_golf_3_Create_97_gml_RoomCC_hub_golf_3_Create
 	    {
-	        global.graveyardcutscene = true
+	        global.garbagecutscene = true
 	        global.levelcompletename = -4
-	        quick_ini_write_real(get_savefile_ini(), "Cutscene", "graveyard", true)
+	        quick_ini_write_real(get_savefile_ini(), "Cutscene", "garbage", true)
 	        cutscene_end_action()
 	    }
 	], [cutscene_save_game]]
@@ -18,3 +18,6 @@ if global.levelcomplete
 }
 else
 	scene_info = [[cutscene_wait, 10]]
+
+if !global.garbagecutscene
+	instance_destroy(obj_hubtreasure)

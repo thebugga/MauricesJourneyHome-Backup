@@ -50,7 +50,7 @@ switch state
 		}
 		if file_exists(concat("saves/saveData", saveselect, ".ini"))
 		{
-			var stages = [["graveyard", "wizard", "temple", "school"], ["mountain", "water", "city", "spaghetti"], ["train", "centre", "studio", "cruise"], ["circus", "arcade", "hardware", "space"], ["fallout", "farm", "mansion", "forest"]]
+			var stages = [["garbage", "wizard", "temple", "school"], ["mountain", "water", "city", "spaghetti"], ["train", "centre", "studio", "cruise"], ["circus", "arcade", "hardware", "space"], ["fallout", "farm", "mansion", "forest"]]
 			for (var xx = 0; xx < array_length(stages); xx++)
 			{
 				for (var yy = 0; yy < array_length(stages[xx]); yy++)

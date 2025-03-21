@@ -35,7 +35,7 @@ for (var i = 0; i < secret_count; i++)
 
 switch level
 {
-	case "graveyard":
+	case "garbage":
 		msg = "Garbage Graveyard"
 		break
 	case "wizard":

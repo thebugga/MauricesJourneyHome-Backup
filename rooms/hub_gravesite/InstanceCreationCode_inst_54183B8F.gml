@@ -1,3 +1,3 @@
 targetRoom = garbage_1
-level = "graveyard"
+level = "garbage"
 titlecardi = 1

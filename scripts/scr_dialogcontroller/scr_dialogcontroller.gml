@@ -33,24 +33,24 @@ function scr_string_width(argument0) //scr_string_width
     return w;
 }
 
-function scr_separate_text(argument0, argument1) //gml_Script_scr_separate_text
+function scr_separate_text(texts, widths = 920) //gml_Script_scr_separate_text
 {
     var separation = lang_get_value("separation_map")
     separation = string_split(separation, ",")
     var _start_pos = 0
-    while (scr_string_width(argument0) > (argument1 - string_width("a")))
+    while (scr_string_width(texts) > (widths - string_width("a")))
     {
         var _pos = _start_pos
         var _sep_pos = _pos
-        var len = string_length(argument0)
+        var len = string_length(texts)
         var found = false
         while (_pos < len)
         {
-            if scr_is_separation(string_char_at(argument0, _pos), separation)
+            if scr_is_separation(string_char_at(texts, _pos), separation)
             {
                 var _prev_sep_pos = _sep_pos
                 _sep_pos = _pos
-                if (scr_string_width(string_copy(argument0, _start_pos, (_pos - _start_pos))) > (argument1 - string_width("a")))
+                if (scr_string_width(string_copy(texts, _start_pos, (_pos - _start_pos))) > (widths - string_width("a")))
                 {
                     _sep_pos = _prev_sep_pos
                     _start_pos = _sep_pos
@@ -64,15 +64,15 @@ function scr_separate_text(argument0, argument1) //gml_Script_scr_separate_text
             else
                 _pos++
         }
-        if (string_char_at(argument0, _sep_pos) == " ")
+        if (string_char_at(texts, _sep_pos) == " ")
         {
-            argument0 = string_delete(argument0, _sep_pos, 1)
-            argument0 = string_insert("\n", argument0, _sep_pos)
+            texts = string_delete(texts, _sep_pos, 1)
+            texts = string_insert("\n", texts, _sep_pos)
         }
         else
-            argument0 = string_insert("\n", argument0, (_sep_pos + 1))
+            texts = string_insert("\n", texts, (_sep_pos + 1))
     }
-    return argument0;
+    return texts;
 }
 
 function scr_is_separation(argument0, argument1) //gml_Script_scr_is_separation

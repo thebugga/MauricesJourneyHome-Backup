@@ -101,7 +101,7 @@ function scr_player_rocket()
 		instance_create((x - 10), (y + 10), obj_bumpeffect)
 		instance_create(x, y, obj_playerexplosion)
 	}
-	if ((!instance_exists(dashcloudid)) && grounded && (!(place_meeting(x, (y + 1), obj_water))))
+	if ((!instance_exists(dashcloudid)) && grounded && (!(place_meeting(x, (y + 1), obj_dangerwater))))
 	{
 		with (instance_create(x, y, obj_superdashcloud))
 		{
@@ -111,7 +111,7 @@ function scr_player_rocket()
 			other.dashcloudid = id
 		}
 	}
-	if ((!instance_exists(dashcloudid)) && grounded && place_meeting(x, (y + 1), obj_water))
+	if ((!instance_exists(dashcloudid)) && grounded && place_meeting(x, (y + 1), obj_dangerwater))
 	{
 		with (instance_create(x, y, obj_superdashcloud))
 		{

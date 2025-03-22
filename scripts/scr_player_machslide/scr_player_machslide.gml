@@ -89,7 +89,7 @@ function scr_player_machslide()
 		else if global.pistol
 			scr_pistolshoot(states.normal);
 	}
-	if (!instance_exists(dashcloudid) && grounded && !place_meeting(x, y + 1, obj_water))
+	if (!instance_exists(dashcloudid) && grounded && !place_meeting(x, y + 1, obj_dangerwater))
 	{
 		with (instance_create(x, y, obj_dashcloud2))
 		{
@@ -97,7 +97,7 @@ function scr_player_machslide()
 			other.dashcloudid = id;
 		}
 	}
-	if (!instance_exists(dashcloudid) && grounded && place_meeting(x, y + 1, obj_water))
+	if (!instance_exists(dashcloudid) && grounded && place_meeting(x, y + 1, obj_dangerwater))
 	{
 		with (instance_create(x, y, obj_dashcloud2))
 		{

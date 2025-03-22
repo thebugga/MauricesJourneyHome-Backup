@@ -1,32 +1,8 @@
-if place_meeting(x, (y - 1), obj_parent_player)
+with obj_parent_player
 {
-	with (obj_parent_player)
-	{
-		if (state != states.gotoplayer && state != states.trashjump && state != states.trashjumpprep && state != states.mach3 && state != states.parry && sprite_index != spr_mach3boost)
-		{
-			if place_meeting(x, (y + 1), other)
-			{
-				if (state != states.trashroll)
-				{
-					scr_losepoints()
-					image_index = 0
-					state = states.fireass
-					movespeed = hsp
-					vsp = -14
-					instance_create(x, (y + 20), obj_piranneapplewater)
-					sprite_index = spr_scaredjump1
-					with (instance_create(x, y, obj_superdashcloud))
-						sprite_index = spr_watereffect
-				}
-				else
-				{
-					vsp = -6
-					sprite_index = spr_player_jumpdive1
-					image_index = 0
-				}
-			}
-		}
-	}
+	var _id = object_index = obj_player1 ? other.plat1 : other.plat2
+	if state == states.mach3 || state == states.machslide
+		_id.x = clamp(x - 16, other.bbox_left, other.bbox_right)
+	else
+		_id.x = other.x - 32
 }
-with (instance_place(x, (y - 1), obj_parent_enemy))
-	instance_destroy()

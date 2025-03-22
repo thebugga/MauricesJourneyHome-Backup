@@ -25,9 +25,9 @@ function scr_player_mach3()
 			}
 			if global.playerCharacter == Characters.Doise && grounded && vsp > 0
 			{
-				if (sprite_index == spr_mach4 && place_meeting(x, y + 1, obj_water))
+				if (sprite_index == spr_mach4 && place_meeting(x, y + 1, [obj_dangerwater, obj_water]))
 					sprite_index = spr_playerN_mach3water;
-				else if (sprite_index == spr_playerN_mach3water && !place_meeting(x, y + 1, obj_water))
+				else if (sprite_index == spr_playerN_mach3water && !place_meeting(x, y + 1, obj_dangerwater))
 					sprite_index = spr_mach4;
 			}
 			
@@ -328,7 +328,7 @@ function scr_player_mach3()
 				}
 			}
 	var b = false;
-	if (!instance_exists(dashcloudid) && grounded && !place_meeting(x, y + 1, obj_water) && !b)
+	if (!instance_exists(dashcloudid) && grounded && !place_meeting(x, y + 1, obj_dangerwater) && !b)
 	{
 		with (instance_create(x, y, obj_superdashcloud))
 		{
@@ -338,7 +338,7 @@ function scr_player_mach3()
 			other.dashcloudid = id;
 		}
 	}
-	if (!instance_exists(dashcloudid) && grounded && place_meeting(x, y + 1, obj_water) && !b)
+	if (!instance_exists(dashcloudid) && grounded && place_meeting(x, y + 1, obj_dangerwater) && !b)
 	{
 		with (instance_create(x, y, obj_superdashcloud))
 		{
@@ -452,7 +452,7 @@ function scr_player_fightball() //gml_Script_scr_player_fightball
     }
     if ((!instance_exists(dashcloudid)) && grounded)
     {
-        var water = place_meeting(x, (y + 1), obj_water)
+        var water = place_meeting(x, (y + 1), obj_dangerwater)
         with (instance_create(x, y, obj_superdashcloud))
         {
             instance_create(obj_parent_player.x, obj_parent_player.y, obj_slapstar)

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_player_runonball",
+  "name": "scr_player_swimslow",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

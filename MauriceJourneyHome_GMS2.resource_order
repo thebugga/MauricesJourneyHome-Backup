@@ -268,6 +268,7 @@
     {"name":"spr_presentbox_idle","order":64,"path":"sprites/spr_presentbox_idle/spr_presentbox_idle.yy",},
     {"name":"scr_do_noisejetpack","order":2,"path":"scripts/scr_do_noisejetpack/scr_do_noisejetpack.yy",},
     {"name":"spr_supertaunteffect4","order":7,"path":"sprites/spr_supertaunteffect4/spr_supertaunteffect4.yy",},
+    {"name":"spr_water","order":53,"path":"sprites/spr_water/spr_water.yy",},
     {"name":"NekoPresence","order":1,"path":"extensions/NekoPresence/NekoPresence.yy",},
     {"name":"scr_heatdown","order":3,"path":"scripts/scr_heatdown/scr_heatdown.yy",},
     {"name":"scr_heatup","order":4,"path":"scripts/scr_heatup/scr_heatup.yy",},

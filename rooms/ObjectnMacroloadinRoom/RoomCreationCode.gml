@@ -121,7 +121,7 @@ enum states
 	current,
 	boulder,
 	taxi,
-	runonball,
+	swimslow,
 	mach3,
 	freefallprep,
 	Sjumpland,

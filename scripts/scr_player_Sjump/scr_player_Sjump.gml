@@ -54,7 +54,7 @@ function scr_player_Sjump()
 		hsp = 0
 		vsp = -10
 	}
-	if global.playerCharacter != Characters.Doise || global.playerCharacter == Characters.Gabbie
+	if global.playerCharacter != Characters.Doise && global.playerCharacter != Characters.Gabbie
 		sjumpvsp -= 0.1;
 	if global.playerCharacter == Characters.Mrorange && image_index > 3
 		vsp = -11;
@@ -65,7 +65,7 @@ function scr_player_Sjump()
 		hsp = Xscale * a;
 		vsp = 0;
 	}
-	if global.playerCharacter == Characters.Doise || global.playerCharacter == Characters.Gabbie  && (sprite_index == spr_superjump || sprite_index == spr_playerN_jetpackboost || sprite_index == spr_playerN_jetpackboostdown) 
+	if (global.playerCharacter == Characters.Doise || global.playerCharacter == Characters.Gabbie) && (sprite_index == spr_superjump || sprite_index == spr_playerN_jetpackboost || sprite_index == spr_playerN_jetpackboostdown) 
 	{
 		if sjumpangle == 270
 			sjumpangle += choose(-5, 5)
@@ -79,7 +79,7 @@ function scr_player_Sjump()
 		else
 		{
 			var _diff = sign(angle_difference(sjumpangle, point_direction(0, 0, move_h, move_v)))
-			move = clamp(move + _diff, -5,5)
+			move = clamp(move + _diff, -5, 5)
 			sjumpangle += move
 		}
 		var _dir = point_direction(0, 0, hsp, vsp)

@@ -338,8 +338,8 @@ switch state
 	case states.freefallprep:
 		scr_player_freefallprep();
 		break;
-	case states.runonball:
-		scr_player_runonball();
+	case states.swimslow:
+		scr_player_swimslow();
 		break;
 	case states.boulder:
 		scr_player_boulder();
@@ -924,7 +924,7 @@ if (state == states.antigrav || state == states.rocket || state == states.rocket
 	grav = 0;
 else if state == states.barrel
 	grav = 0.6;
-else if (state == states.ghost || state == states.ghostpossess)
+else if (state == states.ghost || state == states.ghostpossess || state == states.swimslow || state == states.mach1)
 	grav = 0;
 else if boxxed
 	grav = 0.3;

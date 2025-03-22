@@ -751,7 +751,7 @@ if shoot_buffer > 0
 	shoot_buffer--;
 if cheesepep_buffer > 0
 	cheesepep_buffer--;
-if state != states.cheesepepstickside
+if state != states.swimslow && state != states.mach1
 	Yscale = 1;
 if invhurt_buffer > 0
 	invhurt_buffer--;

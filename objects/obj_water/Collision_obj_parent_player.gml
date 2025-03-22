@@ -1,6 +1,6 @@
 with (other)
 {
-	if state != states.swimslow && state != states.mach1
+	if state != states.swimslow && state != states.mach1 && state != states.actor && state != states.debugstate
 	{
 		if (state == states.tumble || state = states.freefall || (state = states.Sjump && sjumptimer == 0))
 			state = states.mach1

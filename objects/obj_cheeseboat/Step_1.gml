@@ -1,7 +1,7 @@
-if place_meeting(x, y - 2, obj_parent_player) && !place_meeting(x, y, obj_parent_player)
+if place_meeting(x, y - 2, obj_parent_player) && !place_meeting(x, y + 1, obj_parent_player)
 {
 	var player = instance_place(x, y - 2, obj_parent_player)
-	if hsp == 0 && player.hsp != 0 && player.grounded && !place_meeting(x + player.hsp, y, par_collision)
+	if hsp == 0 && abs(player.hsp) > 8 && player.grounded && !place_meeting(x + player.hsp, y, par_collision)
 	{
 		hsp = player.hsp
 		with player
@@ -28,6 +28,7 @@ if place_meeting(x, y - 2, obj_parent_player) && !place_meeting(x, y, obj_parent
 			state = tauntstoredstate
 			movespeed = tauntstoredmovespeed
 			vsp = -8
+			jumpstop = true
 			sprite_index = tauntstoredsprite
 			image_index = 0
 		}

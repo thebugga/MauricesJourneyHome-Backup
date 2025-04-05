@@ -210,6 +210,7 @@ if (instance_exists(player))
 	offset_x = approach(offset_x, 0, offset_speed);
 	offset_y = approach(offset_y, 0, offset_speed);
 }
+/*
 if global.panic
 {
     var _wave = 0
@@ -236,3 +237,4 @@ if global.panic
 else
     camera_angle = lerp(camera_angle, 0, 0.05)
 camera_set_view_angle(view_camera[0], camera_angle)
+*/

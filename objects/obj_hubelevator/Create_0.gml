@@ -1,6 +1,7 @@
 state = states.normal
-hub_array[0] = [hub_entrance, "B", "RECEPTION", "elevator2"]
-hub_array[1] = [hub_lobby, "A", "PIZZA TOWER 2 LOBBY", "elevator2"]
+hub_array[0] = [hub_hallway, "B", "RECEPTION", "elevator2"]
+hub_array[1] = [hub_pizzatower2complex, "A", "PIZZA TOWER 2 LOBBY", "elevator2"]
+hub_array[2] = [hub_pizzatower2complex, "A", "PIZZA TOWER 2 LOBBY SKIPPABLE", "elevator1"]
 playerid = -4
 selected = 0
 for (var i = 0; i < array_length(hub_array); i++)

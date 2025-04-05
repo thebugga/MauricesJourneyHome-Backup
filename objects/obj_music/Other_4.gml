@@ -47,16 +47,16 @@ if !global.panic
 		{
 			fmod_studio_event_instance_start(music.event_secret);
 			fmod_studio_event_instance_set_paused(music.event_secret, false);
-			pos = fmod_event_instance_get_timeline_pos(music.event);
+			pos = fmod_studio_event_instance_get_timeline_position(music.event);
 			savedmusicpos = pos;
-			pos = music_get_pos_wrap(pos, fmod_event_get_length(music.event_secret_name));
+			pos = music_get_pos_wrap(pos, fmod_getEventLength(music.event_secret_name));
 			fmod_studio_event_instance_set_timeline_position(music.event_secret, pos);
 			fmod_studio_event_instance_set_paused(music.event, true);
 		}
 		if global.panic
 		{
 			trace("Pausing panic music: room_start");
-			savedpanicpos = fmod_event_instance_get_timeline_pos(panicmusicID);
+			savedpanicpos = fmod_studio_event_instance_get_timeline_position(panicmusicID);
 			fmod_studio_event_instance_set_paused(panicmusicID, true);
 		}
 	}
@@ -76,9 +76,7 @@ if !global.panic
 			trace("Resuming panic music: room_start");
 		}
 	}
-
-/*
-if room == rank_room || room == boss_pizzaface || room == boss_noise || room == boss_vigilante || room == boss_fakepep || room == boss_pepperman
+if room == rank_room 
 {
 	if music != noone
 	{
@@ -86,4 +84,3 @@ if room == rank_room || room == boss_pizzaface || room == boss_noise || room == 
 		fmod_studio_event_instance_stop(music.event_secret, true);
 	}
 }
-*/

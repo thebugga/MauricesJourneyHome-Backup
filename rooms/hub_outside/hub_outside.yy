@@ -45,8 +45,8 @@
       ],"userdefinedDepth":false,"visible":true,},
   ],
   "parent": {
-    "name": "Open World Hub",
-    "path": "folders/Rooms/Open World Hub.yy",
+    "name": "Hub Newer",
+    "path": "folders/Rooms/Hub Newer.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

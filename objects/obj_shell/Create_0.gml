@@ -10,6 +10,8 @@ shelloriginY = 0;
 visibleWidth = 0;
 visibleHeight = 0;
 
+showcollisions = true;
+
 cursorPos = 1;
 consoleString = "";
 savedConsoleString = "";

@@ -1198,53 +1198,17 @@ if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.
 		other.speedlineseffectid = id;
 	}
 }
-scr_collision_destructibles();
-if state != states.ghostpossess && state != states.gotoplayer && state != states.debugstate && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != states.Sjump && state != states.ejected && state != states.comingoutdoor && state != states.boulder && state != states.keyget && state != states.victory && state != states.portal && state != states.timesup && state != states.gottreasure && state != states.gameover
-	scr_collision();
 if (state == states.tube || state == states.gotoplayer || state == states.debugstate)
 {
 	x += hsp;
 	y += vsp;
 }
-if state == states.boulder
-	scr_collision();
-scr_collision_destructibles();
 with obj_ratblock
 	scr_ratblock_destroy();
 if state != states.comingoutdoor
 	image_blend = c_white;
 prevstate = state;
 prevsprite = sprite_index;
-if (distance_to_object(obj_spike) < 500)
-{
-	var dirs = [[0, 1], [0, -1], [1, 0], [-1, 0]];
-	for(var i = 0; i < array_length(dirs); i++)
-	{
-		var b = dirs[i];
-		with (instance_place(x + b[0], y + b[1], obj_spike))
-		{
-			if other.state != states.barrel
-			{
-				var h = other.hurted;
-				scr_hurtplayer(other);
-				if fake
-					instance_destroy();
-				if h != other.hurted && other.hurted
-					event_play_oneshot_3d("event:/sfx/enemies/pizzardelectricity", x, y);
-				break;
-			}
-			with other
-			{
-				state = states.bump;
-				sprite_index = spr_bump;
-				image_index = 0;
-				hsp = -6 * Xscale;
-				vsp = -4;
-				event_play_oneshot_3d("event:/sfx/knight/lose", x, y);
-				repeat 3
-					create_debris(x, y, spr_wooddebris);
-			}
-			break;
-		}
-	}
-}
+scr_collision_destructibles();
+if state != states.ghostpossess && state != states.gotoplayer && state != states.debugstate && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != states.Sjump && state != states.ejected && state != states.comingoutdoor && state != states.boulder && state != states.keyget && state != states.victory && state != states.portal && state != states.timesup && state != states.gottreasure && state != states.gameover
+	scr_collision();

@@ -1,1 +1,1 @@
-targetRoom = hub_central
+targetRoom = hub_pizzatower2complex

@@ -6,7 +6,7 @@ map_array = [
 [hub_wizardtower, 139, 48],
 [hub_dougieroom, 146, 19],
 [hub_schoolyard, 103, 70],
-[hub_bossroom, 63, 15]
+[hub_mrstickarena, 63, 15]
 ]
 
 checklist = ds_list_create()

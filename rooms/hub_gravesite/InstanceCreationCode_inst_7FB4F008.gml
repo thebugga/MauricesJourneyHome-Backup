@@ -1,2 +1,2 @@
-targetRoom = hub_lobby
+targetRoom = hub_pizzatower2complex
 targetDoor = "B"

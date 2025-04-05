@@ -1,2 +1,2 @@
-targetRoom = hub_entrance
+targetRoom = hub_hallway
 level = noone

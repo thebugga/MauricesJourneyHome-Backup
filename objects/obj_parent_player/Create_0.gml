@@ -1,5 +1,6 @@
 
-#macro debug (GM_build_type == "run")
+//#macro debug (GM_build_type == "run")
+#macro debug true
 
 if instance_number(object_index) > 1
 {

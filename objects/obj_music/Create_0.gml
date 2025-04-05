@@ -27,8 +27,10 @@ add_music(Longintro, "event:/music/intro", -4, false, function(argument0, argume
 )
 add_music(tower_entrancehallway, "event:/music/hub", noone, false);
 add_music(hub_tutorial1, "event:/music/tutorial", noone, false);
-add_music(hub_lobby, "event:/music/hub", noone, false);
-add_music(hub_theatre, "event:/music/hub", noone, false);
+add_music(hub_pizzatower2complex, "event:/music/hub", noone, false);
+add_music(hub_central, "event:/music/hub", noone, false);
+add_music(hub_chili, "event:/music/w1/chili", noone, false);
+add_music(hub_trenchlobby, "event:/music/w1/mttrench", noone, false);
 add_music(wizard_1, "event:/music/w1/wizard", "event:/music/w1/wizardsecret", false);
 add_music(wizard_2, "event:/music/w1/wizard", "event:/music/w1/wizardsecret", false);
 add_music(hub_wizardtower, "event:/music/wizard", noone, false);

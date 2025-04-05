@@ -10,7 +10,7 @@ if (!fakedeath)
 		}
 	}
 	gamesave_async_save()
-	room = hub_bossroom
+	room = hub_mrstickarena
 }
 else
 {

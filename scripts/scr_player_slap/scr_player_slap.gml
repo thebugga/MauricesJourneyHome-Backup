@@ -22,9 +22,9 @@ function scr_player_slap()
 				dir = move
 			if grounded
 			{
-				if key_attack
+				if (key_attack && hsp != 0)
 					state = states.mach2
-				if !key_attack
+				else
 					state = states.normal
 			}
 			else

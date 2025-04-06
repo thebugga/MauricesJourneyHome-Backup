@@ -12,3 +12,5 @@ if (global.bombcutscene == -4)
 	global.bombcutscene = quick_ini_read_real(get_savefile_ini(), "Cutscene", "bomb", 0)
 if global.bombcutscene
 	instance_destroy()
+sprite_index = spr_bomb
+image_speed = 0.35

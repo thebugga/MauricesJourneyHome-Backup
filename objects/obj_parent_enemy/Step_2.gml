@@ -44,3 +44,7 @@ if (state != states.hit)
     player_instakillmove = 0
 if (event_instance_isplaying(chargesnd) && state != (128 << 0))
     fmod_studio_event_instance_stop(chargesnd)
+if obj_parent_player.baddiegrabbedID = id
+	persistent = true
+else
+	persistent = false

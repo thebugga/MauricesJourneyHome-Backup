@@ -1,5 +1,6 @@
 if state != states.normal
 {
+	draw_set_font(global.font_small)
 	var w = 0
 	var h = 0
 	var pad = 16

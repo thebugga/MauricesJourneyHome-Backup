@@ -35,44 +35,20 @@ for (var i = 0; i < secret_count; i++)
 
 switch level
 {
+	case "tutorial":
+		msg = "Tutorial"
+		break
 	case "garbage":
 		msg = "Garbage Graveyard"
 		break
 	case "wizard":
 		msg = "Pizzardry"
 		break
-	case "lair":
-		msg = "Dragon's Lair"
+	case "trench":
+		msg = "Margharitta Trench"
 		break
-	case "school":
-		msg = "Snick's Classroom"
-		break
-	case "floorroom":
-		msg = "orEGANO DESERT"
-		break
-	case "graveyard2":
-		msg = "THE WASTEYARD"
-		break
-	case "farm":
-		msg = "FUN FARM"
-		break
-	case "ufo":
-		msg = "SPACE PINBALL"
-		break
-	case "strongcold":
-		msg = "STRONGCOLD"
-		break
-	case "forest":
-		msg = "GNOME ForEST"
-		break
-	case "beach":
-		msg = "PINEAPPLE BEACH"
-		break
-	case "dragonlair":
-		msg = "DRAGON LAIR"
-		break
-	case "snickchallenge":
-		msg = "SNICK CHALLENGE"
+	case "chilli":
+		msg = "Town-o-Chili"
 		break
 }
 

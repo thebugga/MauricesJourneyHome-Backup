@@ -18,6 +18,7 @@ if debug
     obj_solid,
     obj_slope,
     obj_platform,
+    obj_slopePlatform,
     obj_ladder,
    
     obj_grindrail,

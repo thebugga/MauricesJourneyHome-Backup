@@ -25,12 +25,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 			obj_camera.chargecamera = 0;
 			ds_list_add(global.saveroom, id);
 			if object_index == obj_player1
-			{
-				if global.playerCharacter == Characters.Pierre
-					obj_player1.sprite_index = spr_ratmount_enterdoor;
-				else
-					obj_player1.sprite_index = obj_player1.spr_lookdoor;
-			}
+				obj_player1.sprite_index = obj_player1.spr_lookdoor;
 			if object_index == obj_player2
 				obj_player2.sprite_index = obj_player2.spr_lookdoor;
 			obj_player1.targetDoor = other.targetDoor;
@@ -44,7 +39,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 					state = states.door;
 				mach2 = 0;
 			}
-			if (instance_exists(obj_player2) && global.coop == 1)
+			if (instance_exists(obj_player2) && global.coop == true)
 			{
 				if object_index == obj_player2
 				{
@@ -57,15 +52,14 @@ if (!place_meeting(x, y, obj_doorblocked))
 					obj_player2.y = obj_player1.y;
 				}
 			}
-			with obj_player2
-			{
-				if (instance_exists(obj_swapmodefollow))
-					state = states.gotoplayer;
-			}
 			other.visited = true;
 			if (ds_list_find_index(global.saveroom, other.id) == -1)
 				ds_list_add(global.saveroom, other.id);
-			instance_create(x, y, obj_fadeout)
+			with (instance_create(x, y, obj_fadeout))
+			{
+				offload_arr = door.offload_arr;
+				group_arr = door.group_arr;
+			}
 		}
 	}
 }

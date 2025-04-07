@@ -31,11 +31,25 @@ add_music(hub_pizzatower2complex, "event:/music/hub", noone, false);
 add_music(hub_central, "event:/music/hub", noone, false);
 add_music(hub_chili, "event:/music/w1/chili", noone, false);
 add_music(hub_trenchlobby, "event:/music/w1/mttrench", noone, false);
-add_music(wizard_1, "event:/music/w1/wizard", "event:/music/w1/wizardsecret", false);
-add_music(wizard_2, "event:/music/w1/wizard", "event:/music/w1/wizardsecret", false);
+add_music(wizard_1, "event:/music/w1/wizard", "event:/music/w1/wizardsecret", false, function(room, event, event_secret)
+{
+	var s = -1;
+	switch room
+	{
+		case wizard_1:
+		case wizard_2:
+			s = 0;
+			break;
+		case wizard_6:
+			s = 1;
+			break;
+	}
+
+	if s != -1
+		fmod_studio_event_instance_set_parameter_by_name_multiplatform(event, "state", s, true);
+});
 add_music(hub_wizardtower, "event:/music/wizard", noone, false);
 add_music(garbage_1, "event:/music/w1/garbage", "event:/music/garbagesecret", false)
-add_music(garbage_2, "event:/music/w1/garbage", "event:/music/garbagesecret", false)
 add_music(hub_gravesite, "event:/music/w1/garbage", -4, false)
 add_music(characterselect, "event:/music/characterselect",-4, false)
 

@@ -26,6 +26,7 @@
     {"name":"Warps","order":17,"path":"folders/Objects/Warps.yy",},
     {"name":"Paths","order":24,"path":"folders/Paths.yy",},
     {"name":"Rooms","order":25,"path":"folders/Rooms.yy",},
+    {"name":"Hub Newer","order":3,"path":"folders/Rooms/Hub Newer.yy",},
     {"name":"World 1","order":1,"path":"folders/Rooms/Levels/World 1.yy",},
     {"name":"Tower","order":1,"path":"folders/Rooms/Tower.yy",},
     {"name":"Scripts","order":26,"path":"folders/Scripts.yy",},
@@ -77,7 +78,6 @@
     {"name":"Warps","order":12,"path":"folders/Sprites/Warps.yy",},
     {"name":"Tilesets","order":30,"path":"folders/Tilesets.yy",},
     {"name":"Timelines","order":31,"path":"folders/Timelines.yy",},
-    {"name":"Hub Newer","order":3,"path":"folders/Rooms/Hub Newer.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_playerN_machslideboostfall","order":2,"path":"sprites/spr_playerN_machslideboostfall/spr_playerN_machslideboostfall.yy",},

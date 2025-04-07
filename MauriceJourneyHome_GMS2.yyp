@@ -64,6 +64,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rooms","folderPath":"folders/Rooms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bosses","folderPath":"folders/Rooms/Bosses.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Editor","folderPath":"folders/Rooms/Editor.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Hub Newer","folderPath":"folders/Rooms/Hub Newer.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Result","folderPath":"folders/Rooms/Level Result.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Levels","folderPath":"folders/Rooms/Levels.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"World 1","folderPath":"folders/Rooms/Levels/World 1.yy",},
@@ -172,7 +173,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Secret portal","folderPath":"folders/Sprites/Warps/Secret portal.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Tilesets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Hub Newer","folderPath":"folders/Rooms/Hub Newer.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},

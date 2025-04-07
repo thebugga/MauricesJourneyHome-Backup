@@ -464,6 +464,7 @@
     {"name":"spr_peppinoselect","order":8,"path":"sprites/spr_peppinoselect/spr_peppinoselect.yy",},
     {"name":"spr_peppinoselected","order":9,"path":"sprites/spr_peppinoselected/spr_peppinoselected.yy",},
     {"name":"spr_pigtotal","order":32,"path":"sprites/spr_pigtotal/spr_pigtotal.yy",},
+    {"name":"spr_shineeffect","order":189,"path":"sprites/spr_shineeffect/spr_shineeffect.yy",},
     {"name":"spr_pizzahealthbar","order":33,"path":"sprites/spr_pizzahealthbar/spr_pizzahealthbar.yy",},
     {"name":"spr_pizzaHUD","order":34,"path":"sprites/spr_pizzaHUD/spr_pizzaHUD.yy",},
     {"name":"spr_pizzaHUDcomplete","order":35,"path":"sprites/spr_pizzaHUDcomplete/spr_pizzaHUDcomplete.yy",},

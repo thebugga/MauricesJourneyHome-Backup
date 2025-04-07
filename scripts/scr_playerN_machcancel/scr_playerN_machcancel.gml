@@ -33,7 +33,7 @@ function scr_playerN_machcancel() //gml_Script_scr_playerN_machcancel
             movespeed = approach(movespeed, 0, 0.25)
         var xx = movespeed
         if (xx == 0)
-            xx = xscale
+            xx = Xscale
         if (grounded && vsp > 0 && place_meeting((x + xx), y, obj_solid))
         {
             mask_index = spr_crouchmask
@@ -44,7 +44,7 @@ function scr_playerN_machcancel() //gml_Script_scr_playerN_machcancel
                 image_index = 0
                 instance_destroy(instance_place((x + xx), y, obj_destructibles))
                 if (movespeed != 0)
-                    xscale = sign(movespeed)
+                    Xscale = sign(movespeed)
                 movespeed = abs(movespeed)
                 if (movespeed < 6)
                     movespeed = 6
@@ -82,7 +82,7 @@ function scr_playerN_machcancel() //gml_Script_scr_playerN_machcancel
     {
         vsp = -7
         if (move != 0)
-            xscale = move
+            Xscale = move
         with (instance_create(x, (y + 20), obj_noiseeffect))
             sprite_index = spr_noisewalljumpeffect
         sprite_index = spr_playerN_wallbounce
@@ -93,9 +93,9 @@ function scr_playerN_machcancel() //gml_Script_scr_playerN_machcancel
         event_play_oneshot("event:/sfx/playerN/wallbounceland", x, y)
         input_buffer_slap = 0
         if (move != 0)
-            xscale = move
+            Xscale = move
         else if (savedmove != 0)
-            xscale = savedmove
+            Xscale = savedmove
         jumpstop = 1
         state = states.mach3
         movespeed = 12
@@ -103,12 +103,12 @@ function scr_playerN_machcancel() //gml_Script_scr_playerN_machcancel
         with (instance_create(x, y, obj_noiseeffect))
         {
             sprite_index = spr_noisegrounddasheffect
-            image_xscale = other.xscale
+            image_xscale = other.Xscale
         }
         flash = 1
         image_index = 0
         with (instance_create(x, y, obj_crazyrunothereffect))
-            image_xscale = other.xscale
+            image_xscale = other.Xscale
     }
     noisedoublejump = 1
     if (input_buffer_slap > 0 && key_up && ((!global.pistol) || global.playerCharacter == Characters.Doise))
@@ -120,7 +120,7 @@ function scr_playerN_machcancel() //gml_Script_scr_playerN_machcancel
         fmod_studio_event_instance_start(snd_uppercut)
         vsp = -21
         movespeed = hsp
-        particle_set_scale((4 << 0), xscale, 1)
+        particle_set_scale((4 << 0), Xscale, 1)
         create_particle(x, y, (4 << 0), 0)
         repeat (4)
         {
@@ -172,7 +172,7 @@ function scr_playerN_machcancel() //gml_Script_scr_playerN_machcancel
                     sprite_index = spr_noisedrilldebris
             }
         }
-        create_noise_afterimage(x, y, sprite_index, image_index, xscale)
+        create_noise_afterimage(x, y, sprite_index, image_index, Xscale)
     }
     scr_dotaunt()
 }
@@ -189,7 +189,7 @@ function scr_noise_machcancel_grab() //gml_Script_scr_noise_machcancel_grab
         {
             input_buffer_shoot = 0
             if (move != 0)
-                xscale = move
+                Xscale = move
             input_buffer_slap = 0
             key_slap = 0
             key_slap2 = 0
@@ -200,15 +200,15 @@ function scr_noise_machcancel_grab() //gml_Script_scr_noise_machcancel_grab
             movespeed = 12
             sprite_index = spr_playerN_sidewayspin
             with (instance_create(x, y, obj_crazyrunothereffect))
-                image_xscale = other.xscale
+                image_xscale = other.Xscale
             image_index = 0
-            particle_set_scale((5 << 0), xscale, 1)
+            particle_set_scale((5 << 0), Xscale, 1)
             create_particle(x, y, (5 << 0), 0)
         }
         else
         {
             if (savedmove != 0)
-                xscale = savedmove
+                Xscale = savedmove
             scr_shotgunshoot()
         }
         return 1;

@@ -2079,6 +2079,7 @@
     {"id":{"name":"spr_pizzablockdead","path":"sprites/spr_pizzablockdead/spr_pizzablockdead.yy",},},
     {"id":{"name":"spr_pizzaboxopen","path":"sprites/spr_pizzaboxopen/spr_pizzaboxopen.yy",},},
     {"id":{"name":"spr_pizzaboxunopen","path":"sprites/spr_pizzaboxunopen/spr_pizzaboxunopen.yy",},},
+    {"id":{"name":"spr_shineeffect","path":"sprites/spr_shineeffect/spr_shineeffect.yy",},},
     {"id":{"name":"spr_pizzacar_debris","path":"sprites/spr_pizzacar_debris/spr_pizzacar_debris.yy",},},
     {"id":{"name":"spr_pizzacoin","path":"sprites/spr_pizzacoin/spr_pizzacoin.yy",},},
     {"id":{"name":"spr_pizzacollect1","path":"sprites/spr_pizzacollect1/spr_pizzacollect1.yy",},},

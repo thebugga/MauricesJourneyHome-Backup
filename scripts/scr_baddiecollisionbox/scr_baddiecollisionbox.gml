@@ -53,8 +53,8 @@ function baddiecollisionbox_update() //gml_Script_baddiecollisionbox_update
                             elitehit = 0
                             state = states.stun
                             vsp = -7
-                            image_xscale = (-other.xscale)
-                            hsp = (other.xscale * 5)
+                            image_xscale = (-other.Xscale)
+                            hsp = (other.Xscale * 5)
                         }
                     }
                     else
@@ -75,7 +75,7 @@ function baddiecollisionbox_update() //gml_Script_baddiecollisionbox_update
                         hp -= ((state == states.mach2 || state == states.machroll) ? 1 : 2)
                         state = (hp > 0 ? states.staggered : states.stun)
                         stagger_buffer = stagger_max
-                        stagger_dir = other.xscale
+                        stagger_dir = other.Xscale
                     }
                 }
             }
@@ -86,7 +86,7 @@ function baddiecollisionbox_update() //gml_Script_baddiecollisionbox_update
                     other.baddieID.image_xscale = (-(sign((other.baddieID.x - x))))
                 image_index = 0
                 other.baddieID.stagger_buffer = other.baddieID.stagger_max
-                other.baddieID.stagger_dir = xscale
+                other.baddieID.stagger_dir = Xscale
                 if key_jump2
                 {
                     instance_create(x, (y + 50), obj_stompeffect)
@@ -116,7 +116,7 @@ function baddiecollisionbox_update() //gml_Script_baddiecollisionbox_update
                 if (x != other.baddieID.x)
                     other.baddieID.image_xscale = (-(sign((other.baddieID.x - x))))
                 other.baddieID.stagger_buffer = other.baddieID.stagger_max
-                other.baddieID.stagger_dir = xscale
+                other.baddieID.stagger_dir = Xscale
                 other.baddieID.state = (other.baddieID.hp > 0 ? states.staggered : states.stun)
                 other.baddieID.image_index = 0
             }
@@ -145,12 +145,12 @@ function baddiecollisionbox_update() //gml_Script_baddiecollisionbox_update
                 {
                     if (other.baddieID.thrown == 1 && (!key_up))
                     {
-                        other.baddieID.hsp = (xscale * 25)
+                        other.baddieID.hsp = (Xscale * 25)
                         other.baddieID.vsp = 0
                     }
                     else if (!key_up)
                     {
-                        other.baddieID.hsp = (xscale * 6)
+                        other.baddieID.hsp = (Xscale * 6)
                         image_index = 0
                         state = states.tackle
                         baddiegrabbedID = other.baddieID

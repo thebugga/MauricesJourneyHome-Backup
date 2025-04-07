@@ -270,9 +270,9 @@ function scr_text_arr_size(array)
 	}
 	return [w, h];
 }
-function scr_draw_granny_texture(x, y, xscale, yscale, tex_x, tex_y, sprite = spr_pizzagrannytexture, bubble_sprite = spr_tutorialbubble)
+function scr_draw_granny_texture(x, y, Xscale, yscale, tex_x, tex_y, sprite = spr_pizzagrannytexture, bubble_sprite = spr_tutorialbubble)
 {
-	var w = sprite_get_width(bubble_sprite) * xscale;
+	var w = sprite_get_width(bubble_sprite) * Xscale;
 	var h = sprite_get_height(bubble_sprite) * yscale;
 	
 	if (!surface_exists(surfclip))
@@ -285,7 +285,7 @@ function scr_draw_granny_texture(x, y, xscale, yscale, tex_x, tex_y, sprite = sp
 	draw_clear_alpha(0, 0);
 	draw_rectangle_color(0, 0, w, h, c_white, c_white, c_white, c_white, false);
 	gpu_set_blendmode(bm_subtract);
-	draw_sprite_ext(bubble_sprite, 0, 0, 0, xscale, yscale, 0, c_white, 1);
+	draw_sprite_ext(bubble_sprite, 0, 0, 0, Xscale, yscale, 0, c_white, 1);
 	reset_blendmode();
 	surface_reset_target();
 	
@@ -394,13 +394,13 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 							break;
 					
 						case textkey.forwards:
-							if (instance_exists(obj_player1) && obj_player1.xscale < 0)
+							if (instance_exists(obj_player1) && obj_player1.Xscale < 0)
 								icon = tdp_get_tutorial_icon("player_left");
 							else
 								icon = tdp_get_tutorial_icon("player_right");
 							break;
 						case textkey.backwards:
-							if (instance_exists(obj_player1) && obj_player1.xscale > 0)
+							if (instance_exists(obj_player1) && obj_player1.Xscale > 0)
 								icon = tdp_get_tutorial_icon("player_left");
 							else
 								icon = tdp_get_tutorial_icon("player_right");

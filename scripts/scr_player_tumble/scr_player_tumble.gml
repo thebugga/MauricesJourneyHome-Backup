@@ -17,7 +17,7 @@ function scr_player_tumble()
 		{
 			sprite_index = spr_playerN_divebomb;
 			state = states.machcancel;
-			savedmove = xscale;
+			savedmove = Xscale;
 			vsp = 20;
 			movespeed = hsp;
 			input_buffer_slap = 0;
@@ -34,9 +34,9 @@ function scr_player_tumble()
 	}
 	if sprite_index == spr_tumble && grounded
 	{
-		if move == xscale
+		if move == Xscale
 			movespeed = approach(movespeed, 12, 0.25);
-		else if move == -xscale
+		else if move == -Xscale
 			movespeed = approach(movespeed, 8, 0.25);
 		else
 			movespeed = approach(movespeed, 10, 0.25);
@@ -53,7 +53,7 @@ function scr_player_tumble()
 			sprite_index = spr_player_poundcancel1;
 			image_index = 0;
 			state = states.freefall;
-			dir = xscale;
+			dir = Xscale;
 			vsp = -6;
 		}
 		else
@@ -62,7 +62,7 @@ function scr_player_tumble()
 			state = states.machcancel;
 			vsp = 20;
 			hsp = 0;
-			savedmove = xscale;
+			savedmove = Xscale;
 			movespeed = 0;
 			input_buffer_slap = 0;
 			input_buffer_jump = 0;

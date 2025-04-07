@@ -13,7 +13,7 @@
     "path": "folders/Objects/Visuals.yy",
   },
   "parentObjectId": null,
-  "persistent": true,
+  "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
   "physicsFriction": 0.2,
@@ -33,5 +33,5 @@
     "path": "sprites/spr_surfback/spr_surfback.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

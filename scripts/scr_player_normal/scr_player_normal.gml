@@ -1,71 +1,187 @@
 function state_player_normal()
 {
-    move = key_right + key_left
-    var idlespr = spr_idle
-    var movespr = spr_move
-	var breakdance_max = 10;
-    if global.panic
-        idlespr = spr_panic
-    else if (global.fill <= 0)
-        movespr = spr_hurtwalk
-    else if key_taunt
-    {
-        idlespr = spr_breakdance
-        movespr = spr_breakdance
-    }
-    if (key_taunt && sprite_index == spr_breakdance)
-    {
-        if (!instance_exists(obj_beatbox))
-        {
-            with (instance_create(x, y, obj_beatbox))
-                vsp = -11
-        }
-        notecreate--
-        if (notecreate <= 0)
-        {
-            instance_create((x + (random_range(-70, 70))), (y + (random_range(-70, 70))), obj_notes)
-            notecreate = 10
-        }
-    }
+	var maxmovespeed = 8;
+	var maxmovespeed2 = 6;
+	var accel = 0.5;
+	var deccel = 0.1;
+	var jumpspeed = -11;
+	
+	mach2 = 0;
+	move = key_left + key_right;
+	skateboarding = false;
+	momemtum = false;
+	jumpstop = false;
     dir = lerp(dir, move, 0.3)
-    if move == 1
-        movespeed = 6
-    hsp = movespeed * dir
-    if (sign(hsp) != 0)
-        xscale = sign(hsp)
-    if (grounded or groundedSlope)
-    {
-        if move != 0
-            Xscale = move
-        if (move == 0)
-        {
-            if idle < 400 && breakdance_pressed < breakdance_max
+	if dir != Xscale
+	{
+		dir = Xscale;
+		movespeed = 2;
+		facehurt = false;
+	}
+	if key_taunt2
+	{
+		input_finisher_buffer = 60;
+		input_attack_buffer = 0;
+		input_up_buffer = 0;
+		input_down_buffer = 0;
+	}
+	var idlespr = spr_idle;
+	var movespr = spr_move;
+	if global.leveltosave == "freezer" && !global.noisejetpack
+		idlespr = spr_player_freezeridle;
+	if global.pistol && global.playerCharacter != Characters.Doise
+	{
+		idlespr = spr_player_pistolidle;
+		movespr = spr_player_pistolwalk;
+	}
+	var breakdance_max = 10;
+	if (key_taunt && !shotgunAnim && (!global.pistol || global.playerCharacter == Characters.Doise))
+		breakdance_pressed++;
+	else
+		breakdance_pressed = 0;
+	if breakdance_pressed >= breakdance_max && !shotgunAnim
+	{
+		breakdance_speed = Approach(breakdance_speed, 0.6, 0.005);
+		if breakdance_pressed - 1 < breakdance_max
+			notification_push(notifs.breakdance, []);
+	}
+	else
+		breakdance_speed = 0.25;
+	if breakdance_speed >= 0.5
+	{
+		if (!instance_exists(obj_beatbox))
+		{
+			instance_create(x, y, obj_genericpoofeffect);
+			with (instance_create(x, y, obj_beatbox))
+				vsp = -11;
+		}
+		notecreate--;
+	}
+	if notecreate <= 0 && !shotgunAnim
+	{
+		instance_create(x + random_range(-70, 70), y + random_range(-70, 70), obj_notes);
+		notecreate = 10;
+	}
+	if (place_meeting(x, y + 1, obj_railparent))
+	{
+		var _railinst = instance_place(x, y + 1, obj_railparent);
+		railmovespeed = _railinst.movespeed;
+		raildir = _railinst.dir;
+		railmomentum = true;
+	}
+	hsp = (move * movespeed) + (railmovespeed * raildir);
+	if move != 0
+	{
+		Xscale = move;
+		if movespeed < maxmovespeed
+			movespeed += accel;
+		else if (floor(movespeed) == maxmovespeed)
+			movespeed = maxmovespeed2;
+		if (movespeed < (floor(maxmovespeed2) / 2) && move != 0)
+			image_speed = 0.35;
+		else if (movespeed > (floor(maxmovespeed2) / 2) && movespeed < maxmovespeed2)
+			image_speed = 0.45;
+		else
+			image_speed = 0.6;
+		if !machslideAnim && !landAnim && !shotgunAnim
+		{
+			machslideAnim = false;
+			idle = 0;
+			facehurt = false;
+			if shoot
+				sprite_index = spr_pistolwalk;
+			else if mort
+				sprite_index = spr_player_mortwalk;
+			else if breakdance_pressed >= breakdance_max
+				sprite_index = spr_breakdance;
+			else if (global.fill <= 0 && !instance_exists(obj_ghostcollectibles))
+				sprite_index = spr_hurtwalk;
+			else if ((global.combo >= 25 && global.combo < 50)
+			|| (global.noisejetpack && (global.playerCharacter != Characters.Doise || noisepizzapepper)))
+				sprite_index = spr_3hpwalk;
+			else if (global.combo >= 50)
+				sprite_index = spr_ragemove;
+			else
+				sprite_index = movespr;
+		}
+		if (place_meeting_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope) && Xscale == move && !place_meeting(x, y + 1, obj_slope))
+			movespeed = 0;
+		if move != 0 && grounded && vsp > 0
+		{
+			if steppybuffer > 0
+				steppybuffer--;
+			else if sprite_index != spr_breakdance
+			{
+				create_particle(x, y + 43, particle.cloudeffect, 0);
+				steppybuffer = 12;
+				event_play_oneshot_3d("event:/sfx/pep/step", x, y);
+			}
+		}
+	}
+	else
+	{
+		steppybuffer = 12;
+		if sprite_index == spr_breakdance
+			image_speed = breakdance_speed;
+		else
+			image_speed = 0.35;
+		movespeed = 0;
+		if !machslideAnim && !landAnim && !shotgunAnim
+		{
+			if idle < 400 && breakdance_pressed < breakdance_max
 				idle++;
 			if idle >= 150 && breakdance_pressed < breakdance_max
 			{
-				if (sprite_index != idlespr && animation_end())
+				if (sprite_index != idlespr && floor(image_index) == image_number - 1)
 				{
 					facehurt = false;
 					idle = 0;
 				}
-				if ((!global.pistol or global.playerCharacter == Characters.Doise) && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6)
+				if ((!global.pistol || global.playerCharacter == Characters.Doise) && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6)
 				{
-					idleanim = random_range(0, 5);
-					var idles = 
-					[
-						spr_idle1,
-						spr_idle2,
-						spr_idle3,
-						spr_idle4,
-						spr_idle5,
-						spr_idle6
-					]
-					if (irandom(4) <= 25)
-						event_play_oneshot_3d("event:/sfx/maurice/ok", x, y);
+					idleanim = random_range(0, 100);
+					if (irandom(100) <= 25)
+						event_play_oneshot_3d("event:/sfx/voice/myea", x, y);
 					image_index = 0;
-					sprite_index = idles[idleanim]
+					if idleanim <= 16
+						sprite_index = spr_idle1;
+					else if idleanim > 16 && idleanim <= 32
+						sprite_index = spr_idle2;
+					else if idleanim > 32 && idleanim <= 48
+						sprite_index = spr_idle3;
+					else if idleanim > 48 && idleanim <= 64
+						sprite_index = spr_idle4;
+					else if idleanim > 64 && idleanim <= 80
+						sprite_index = spr_idle5;
+					else
+						sprite_index = spr_idle6;
 				}
-				if (windingAnim > 100)
+			}
+			else if !facehurt
+			{
+				if (windingAnim < 1800 || angry || global.playerhealth == 1 || shoot)
+				{
+					start_running = true;
+					movespeed = 0;
+					if shoot
+						sprite_index = spr_player_pistolidle;
+					else if mort
+						sprite_index = spr_player_mortidle;
+					else if breakdance_pressed >= breakdance_max
+						sprite_index = spr_breakdance;
+					else if (global.fill <= 0 && !instance_exists(obj_ghostcollectibles))
+						sprite_index = spr_hurtidle;
+					else if (global.panic && !instance_exists(obj_ghostcollectibles))
+						sprite_index = spr_panic;
+					else if ((global.combo >= 25 && global.combo < 50)
+					|| (global.noisejetpack && (global.playerCharacter != Characters.Doise || noisepizzapepper)))
+						sprite_index = spr_3hpidle;
+					else if (global.combo >= 50)
+						sprite_index = spr_rageidle;
+					else
+						sprite_index = idlespr;
+				}
+				else
 				{
 					idle = 0;
 					windingAnim--;
@@ -74,32 +190,173 @@ function state_player_normal()
 						sprite_index = spr_breakdance;
 				}
 			}
-            else if (!facehurt)
-            {
-                sprite_index = idlespr
-                idle = 0
-            }
-        }
-        else
-            sprite_index = movespr
-        coyote_time = 0
-    }
-    if key_jump
-    {
-        vsp = -10
-        state = states.jump
-        sprite_index = spr_jump
-    }
-    if (!grounded)
-    {
-        state = states.jump
-        sprite_index = spr_fall
-    }
-    if key_down
-    {
-        state = states.crouch
-        sprite_index = spr_couchstart
-    }
+			else
+			{
+				windingAnim = 0;
+				sprite_index = spr_facehurt;
+				if breakdance_pressed >= breakdance_max
+					sprite_index = spr_breakdance;
+			}
+		}
+	}
+	if movespeed > maxmovespeed
+		movespeed -= deccel;
+	if landAnim
+	{
+		if sprite_index == spr_player_mortland
+		{
+			if floor(image_index) == image_number - 1
+			{
+				landAnim = false;
+				sprite_index = spr_player_mortidle;
+				image_index = 0;
+			}
+		}
+		else if !shotgunAnim
+		{
+			if move == 0
+			{
+				movespeed = 0;
+				sprite_index = spr_land;
+				if floor(image_index) == image_number - 1
+					landAnim = false;
+			}
+			else
+			{
+				sprite_index = spr_land2;
+				if floor(image_index) == image_number - 1
+				{
+					landAnim = false;
+					sprite_index = movespr;
+					image_index = 0;
+				}
+			}
+		}
+		else
+		{
+			sprite_index = spr_shotgunland;
+			if floor(image_index) == image_number - 1
+			{
+				landAnim = false;
+				sprite_index = spr_shotgunidle;
+				if move != 0
+					sprite_index = spr_shotgunwalk;
+				image_index = 0;
+			}
+		}
+	}
+	else if shotgunAnim && sprite_index != spr_shotgunshoot && !machslideAnim
+		sprite_index = (move == 0) ? spr_shotgunidle : spr_shotgunwalk;
+	if machslideAnim
+		sprite_index = spr_machslideend;
+	if floor(image_index) == image_number - 1
+	{
+		switch sprite_index
+		{
+			case spr_machslideend:
+				machslideAnim = false;
+				sprite_index = idlespr;
+				if shotgunAnim
+					sprite_index = spr_shotgunidle;
+				break;
+			case spr_playerV_revolverend:
+				sprite_index = idlespr;
+				break;
+			case spr_shotgunshoot:
+				sprite_index = spr_shotgunidle;
+				break;
+			case spr_pistolshot:
+				sprite_index = idlespr;
+				break;
+		}
+	}
+	if grounded
+	{
+		if ((key_jump || (input_buffer_jump > 0 && !key_attack && vsp > 0)) && !key_down)
+		{
+			input_buffer_jump = 0;
+			scr_fmod_soundeffect(jumpsnd, x, y);
+			if sprite_index != spr_shotgunshoot
+			{
+				sprite_index = spr_jump;
+				if shotgunAnim
+					sprite_index = spr_shotgunjump;
+				else if global.pistol && global.playerCharacter != Characters.Doise
+					sprite_index = spr_player_pistoljump1;
+				image_index = 0;
+			}
+			particle_set_scale(particle.highjumpcloud2, Xscale, 1);
+			create_particle(x, y, particle.highjumpcloud2, 0);
+			vsp = jumpspeed;
+			state = states.jump;
+			jumpAnim = true;
+			jumpstop = false;
+			if (place_meeting(x, y + 1, obj_railparent))
+				railmomentum = true;
+			freefallstart = 0;
+		}
+		if (key_down || (grounded && vsp > 0 && place_meeting_solid(x, y - 3) && place_meeting_solid(x, y)) || place_meeting(x, y, obj_solid))
+		{
+			state = states.crouch;
+			landAnim = false;
+			crouchAnim = true;
+			image_index = 0;
+			idle = 0;
+		}
+	}
+	else if !key_jump
+	{
+		if sprite_index != spr_shotgunshoot
+		{
+			if !shotgunAnim
+				sprite_index = spr_fall;
+			else
+				sprite_index = spr_shotgunfall;
+			image_index = 0;
+			jumpAnim = false;
+		}
+		else
+			jumpAnim = true;
+		state = states.jump;
+	}
+	if input_buffer_shoot > 0
+	{
+		if shotgunAnim
+			scr_shotgunshoot();
+	}
+	if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && (!global.pistol || global.playerCharacter == Characters.Doise))
+	{
+		state = states.punch;
+		input_buffer_slap = 0;
+		image_index = 0;
+		sprite_index = spr_breakdanceuppercut;
+		fmod_studio_event_instance_start(snd_uppercut);
+		
+		if global.playerCharacter != Characters.Doise
+			vsp = -14;
+		else
+			vsp = -20;
+		
+		movespeed = hsp;
+		if key_attack // high jump going left
+			movespeed = abs(hsp);
+		
+		particle_set_scale(particle.highjumpcloud2, Xscale, 1);
+		create_particle(x, y, particle.highjumpcloud2, 0);
+		
+		if global.playerCharacter == Characters.Doise
+		{
+			repeat 4
+			{
+				with (instance_create(x + irandom_range(-40, 40), y + irandom_range(-40, 40), obj_explosioneffect))
+				{
+					sprite_index = spr_shineeffect;
+					image_speed = 0.35;
+				}
+			}
+		}
+	}
+
 	if global.playerCharacter != Characters.Gabbie
 	{
             if key_attack
@@ -143,7 +400,7 @@ function state_player_normal()
                 image_speed = 0.35
             }
 	}
-	if key_slap2 && global.playerCharacter == Characters.Mrorange
+	if key_slap2 && !key_up && global.playerCharacter == Characters.Mrorange
 	{
 		vsp = -5;
 		state = states.revolver

@@ -1,1 +1,1 @@
-targetRoom = hub_trenchlobby;
+targetRoom = hub_chili;

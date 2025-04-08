@@ -8,7 +8,7 @@ if up
 	draw_text(480, 64, v_selectnames[v_select])
 	shader_set(global.Pal_Shader)
 	pal_swap_set(playerid.spr_palette, h_select[0] + 1, false)
-	//pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
+	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 	draw_sprite_ext(walk_sprite, walk_index, 480, 270, 4, 4, 0, c_white, 1)
 	pattern_reset()
 	reset_shader_fix()

@@ -4,9 +4,18 @@ else
 {
 	visible = false
 	y = 0
-	up = false
+	timer = 0
 }
-if obj_player1.key_up2
-	up = !up
+with obj_player1
+{
+	if hsp == 0 && state == states.normal
+	{
+		if other.timer < 100
+			other.timer++
+	}
+	else
+		other.timer = 0
+}
+up = (timer == 100)
 
 y = approach(y, (up ? sprite_height : 0), 15)

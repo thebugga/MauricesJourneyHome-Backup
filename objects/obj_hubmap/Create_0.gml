@@ -11,3 +11,4 @@ map_array = [
 
 checklist = ds_list_create()
 up = false
+timer = 0

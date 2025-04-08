@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "__background_get_element",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "GMS1 Compatibility Scripts",
-    "path": "folders/Scripts/GMS1 Compatibility Scripts.yy",
+  "$GMScript":"v1",
+  "%Name":"__background_get_element",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__background_get_element",
+  "parent":{
+    "name":"GMS1 Compatibility Scripts",
+    "path":"folders/Scripts/GMS1 Compatibility Scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

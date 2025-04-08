@@ -15,5 +15,5 @@ outro_max = 1
 round_count = 0
 round_max = 60
 baddielist = ds_list_create()
-wave = 0
+_wave = 0
 maxwave = 0

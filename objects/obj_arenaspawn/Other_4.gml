@@ -11,7 +11,7 @@ else
 		{
 			ds_list_add(other.baddielist, [wave, id])
 			if (wave > other.maxwave)
-				other.maxwave = wave
+				other.maxwave = _wave
 			maxhp = hp
 			instance_deactivate_object(id)
 		}

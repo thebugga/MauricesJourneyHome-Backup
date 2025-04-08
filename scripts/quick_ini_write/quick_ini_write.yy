@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "quick_ini_write",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Saving",
-    "path": "folders/Scripts/Utilities/Saving.yy",
+  "$GMScript":"v1",
+  "%Name":"quick_ini_write",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"quick_ini_write",
+  "parent":{
+    "name":"Saving",
+    "path":"folders/Scripts/Utilities/Saving.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -5,12 +5,16 @@ if state != states.normal
 	var h = 0
 	var pad = 16
 	var yy = 0
+	var number = 0
 	for (var i = 0; i < array_length(hub_array); i++)
 	{
 		var txt = hub_array[i][2]
-		if (string_width(txt) > w)
-			w = string_width(txt)
-		h += string_height(txt)
+		if (array_length(hub_array[i]) > 4 && hub_array[i][4]) || array_length(hub_array[i]) == 4
+		{
+			if (string_width(txt) > w)
+				w = string_width(txt)
+			h += string_height(txt)
+		}
 	}
 	w += pad
 	h += pad
@@ -23,8 +27,11 @@ if state != states.normal
 	{
 		var c = (selected == i ? c_white : c_gray)
 		txt = hub_array[i][2]
-		draw_text_color(480, yy, txt, c, c, c, c, 1)
-		yy -= string_height(txt)
+		if (array_length(hub_array[i]) == 5 && hub_array[i][4]) || array_length(hub_array[i]) == 4
+		{
+			draw_text_color(480, yy, txt, c, c, c, c, 1)
+			yy -= string_height(txt)
+		}
 	}
 	if showinside
 	{
@@ -34,7 +41,7 @@ if state != states.normal
 		draw_sprite(elavatorsprite, 0, irandom_range(-shake, shake), irandom_range(-shake, shake))
 		shader_set(global.Pal_Shader)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false)
-		//pattern_set(global.Base_pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
+		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 		draw_sprite(charsprite, charindex, irandom_range(-shake, shake) , chary + irandom_range(-shake, shake))
 		pattern_reset()
 		reset_shader_fix()

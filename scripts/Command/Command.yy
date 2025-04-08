@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "Command",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Editor",
-    "path": "folders/Scripts/Editor.yy",
+  "$GMScript":"v1",
+  "%Name":"Command",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Command",
+  "parent":{
+    "name":"Editor",
+    "path":"folders/Scripts/Editor.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

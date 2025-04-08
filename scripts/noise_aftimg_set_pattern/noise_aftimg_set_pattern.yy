@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "noise_aftimg_set_pattern",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Utilities",
-    "path": "folders/Scripts/Utilities.yy",
+  "$GMScript":"v1",
+  "%Name":"noise_aftimg_set_pattern",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"noise_aftimg_set_pattern",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

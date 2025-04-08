@@ -47,7 +47,7 @@ switch state
 			for (var i = 0; i < ds_list_size(baddielist); i++)
 			{
 				var b = ds_list_find_value(baddielist, i)
-				if (b[0] == wave)
+				if (b[0] == _wave)
 				{
 					instance_activate_object(b[1])
 					if instance_exists(b[1])
@@ -70,10 +70,10 @@ switch state
 		state = states.arena
 		with (obj_arenadoor)
 		{
-			wave = other.wave
+			_wave = other._wave
 			alarm[0] = 10
 			finish = 0
-			if (objectlist[wave] == -4)
+			if (objectlist[_wave] == -4)
 			{
 				alarm[0] = -1
 				finish = 1
@@ -89,8 +89,8 @@ switch state
 		}
 		if ((!instance_exists(obj_parent_enemy)) && (!instance_exists(obj_arena_pizzaportal)) && ((!instance_exists(obj_arenadoor)) || _doorfinish))
 		{
-			wave++
-			if (wave > maxwave)
+			_wave++
+			if (_wave > maxwave)
 			{
 				instance_destroy()
 				instance_destroy(block_inst)

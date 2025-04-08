@@ -1,1 +1,1 @@
-targetRoom = hub_chili;
+targetRoom = hub_mrstickarena;

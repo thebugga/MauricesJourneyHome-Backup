@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_savesystem",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Saving",
-    "path": "folders/Scripts/Utilities/Saving.yy",
+  "$GMScript":"v1",
+  "%Name":"scr_savesystem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_savesystem",
+  "parent":{
+    "name":"Saving",
+    "path":"folders/Scripts/Utilities/Saving.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

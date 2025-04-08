@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_pause",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "MauriceJourneyHome_GMS2",
-    "path": "MauriceJourneyHome_GMS2.yyp",
+  "$GMScript":"v1",
+  "%Name":"scr_pause",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_pause",
+  "parent":{
+    "name":"MauriceJourneyHome_GMS2",
+    "path":"MauriceJourneyHome_GMS2.yyp",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

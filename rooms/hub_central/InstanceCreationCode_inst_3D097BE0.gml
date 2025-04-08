@@ -1,1 +1,1 @@
-targetRoom = hub_mrstickarena;
+targetRoom = hub_trenchlobby;

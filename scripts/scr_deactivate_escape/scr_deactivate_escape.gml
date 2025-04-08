@@ -28,7 +28,7 @@ function scr_deactivate_escape()
 				for (i = 0; i < ds_list_size(baddielist); i++)
 				{
 					var b = ds_list_find_value(baddielist, i)
-					if (b[0] != wave && instance_exists(b[1]))
+					if (b[0] != _wave && instance_exists(b[1]))
 					{
 						b[1].boundbox = 0
 						instance_deactivate_object(b[1])

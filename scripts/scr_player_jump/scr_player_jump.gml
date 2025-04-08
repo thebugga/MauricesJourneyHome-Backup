@@ -238,7 +238,6 @@ function scr_player_jump()
 		}
 		else
 		{
-			notification_push(notifs.shotgunblast_start, [room]);
 			state = states.shotgunshoot;
 			minigunshot = 3;
 			minigunbuffer = 0;

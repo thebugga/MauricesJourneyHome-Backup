@@ -41,9 +41,7 @@ function state_player_normal()
 		breakdance_pressed = 0;
 	if breakdance_pressed >= breakdance_max && !shotgunAnim
 	{
-		breakdance_speed = Approach(breakdance_speed, 0.6, 0.005);
-		if breakdance_pressed - 1 < breakdance_max
-			notification_push(notifs.breakdance, []);
+		breakdance_speed = approach(breakdance_speed, 0.6, 0.005);
 	}
 	else
 		breakdance_speed = 0.25;
@@ -159,7 +157,7 @@ function state_player_normal()
 			}
 			else if !facehurt
 			{
-				if (windingAnim < 1800 || angry || global.playerhealth == 1 || shoot)
+				if (windingAnim < 1800 || angry || shoot)
 				{
 					start_running = true;
 					movespeed = 0;

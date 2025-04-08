@@ -35,7 +35,7 @@ function scr_checkPositionSolidAngle(x, y, pdist_a, pdist_b, len, dir, exclude =
 	point_b.targetX = point_b.x + lengthdir_x(len, dir);
 	point_b.targetY = point_b.y + lengthdir_y(len, dir);
 	
-	// Approach Target Position.
+	// approach Target Position.
 	while (point_distance(point_a.x, point_a.y, point_a.targetX, point_a.targetY) > 0) {
 		if (position_meeting_collision(point_a.x, point_a.y, exclude)) {
 			break;

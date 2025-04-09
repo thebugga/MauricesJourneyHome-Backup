@@ -1,24 +1,11 @@
 prevpillar_on_camera = pillar_on_camera;
-if fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_pause) && !obj_pause.pause && !instance_exists(obj_monster)
+if (instance_exists(obj_pillar))
 {
-	trace("Stopping kidsparty music");
-	fmod_event_instance_stop(kidspartychaseID, false);
-	instance_destroy(obj_kidspartybg);
-	if music != -4
-	{
-		fmod_event_instance_set_paused(music.event, savedmusicpause);
-		fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
-	}
-	fmod_event_instance_set_paused(pillarmusicID, savedpillarpause);
-	fmod_event_instance_set_paused(panicmusicID, savedpanicpause);
-}
-if instance_exists(obj_pillar)
-{
-	fmod_event_instance_set_paused(pillarmusicID, false);
+	fmod_studio_event_instance_set_paused(pillarmusicID, false);
 	var p = false;
 	with obj_pillar
 	{
-		if bbox_in_camera(view_camera[0], 0)
+		if (bbox_in_camera(view_camera[0], 0))
 			p = true;
 	}
 	if p != pillar_on_camera
@@ -29,50 +16,47 @@ else
 if prevpillar_on_camera != pillar_on_camera
 {
 	if pillar_on_camera
-		fmod_set_parameter("pillarfade", 1, false);
+		fmod_studio_system_set_parameter_by_name("pillarfade", 1, false);
 	else
-		fmod_set_parameter("pillarfade", 0, false);
+		fmod_studio_system_set_parameter_by_name("pillarfade", 0, false);
 }
-if global.panic
+if global.panic.active
 {
 	if !panicstart
 	{
 		trace("Starting panic music: step");
 		panicstart = true;
-		if music != noone
+		fmod_studio_event_instance_start(panicmusicID);
+		fmod_studio_event_instance_set_paused(panicmusicID, false);
+		fmod_studio_event_instance_set_parameter_by_name_multiplatform(panicmusicID, "state", 0, true);
+		if music != -4
 		{
-			fmod_event_instance_stop(music.event, true);
-			fmod_event_instance_stop(music.event_secret, true);
+			fmod_studio_event_instance_stop(music.event, true);
+			fmod_studio_event_instance_stop(music.event_secret, true);
 		}
-		fmod_event_instance_stop(pillarmusicID, true);
-		fmod_set_parameter("pillarfade", 0, true);
-		fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
+		fmod_studio_event_instance_stop(pillarmusicID, true);
+		fmod_studio_system_set_parameter_by_name("pillarfade", 0, true);
+		fmod_studio_event_instance_set_parameter_by_name_multiplatform(panicmusicID, "state", 0, true);
 	}
-	else if fmod_event_instance_is_playing(panicmusicID)
+	else if (event_instance_isplaying(panicmusicID))
 	{
-		if !global.lap
+		if global.lap.active == false
 		{
 			var secs = 56;
-			if fmod_get_parameter("isnoise") >= 1
+			if (fmod_event_getParameter("character") >= 1)
 				secs = 65;
-			if global.fill <= secs * 12
-				fmod_event_instance_set_parameter(panicmusicID, "state", 1, true);
+			if global.panic.timer <= secs * 12
+				fmod_studio_event_instance_set_parameter_by_name_multiplatform(panicmusicID, "state", 1, true);
 		}
 		else
-			fmod_event_instance_set_parameter(panicmusicID, "state", 2, true);
+			fmod_studio_event_instance_set_parameter_by_name_multiplatform(panicmusicID, "state", 2, true);
 	}
 }
 else
 {
 	panicstart = false;
-	fmod_event_instance_stop(panicmusicID, true);
+	fmod_studio_event_instance_stop(panicmusicID, true);
 }
 var _found = false;
-if _found
-	fmod_set_parameter("totem", 1, false);
-else
-{
-	fmod_set_parameter("totem", 0, false);
-}
-if (exitmusic && fmod_event_instance_is_playing(panicmusicID))
-	fmod_event_instance_stop(panicmusicID, true);
+if (exitmusic && event_instance_isplaying(panicmusicID))
+	fmod_studio_event_instance_stop(panicmusicID, true);

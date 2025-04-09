@@ -16,12 +16,12 @@ function add_music(_room, _event, _eventsecret, _continuous, _on_room_start = no
 		if _event != noone
 		{
 			event_name = _event;
-			event = fmod_event_create_instance(_event);
+			event = fmod_createEventInstance(_event);
 		}
 		if _eventsecret != noone
 		{
 			event_secret_name = _eventsecret;
-			event_secret = fmod_event_create_instance(_eventsecret);
+			event_secret = fmod_createEventInstance(_eventsecret);
 		}
 	}
 	ds_map_set(music_map, _room, b);
@@ -33,25 +33,17 @@ function stop_music()
 	{
 		if music != noone
 		{
-			if obj_pause.pause
-			{
-				fmod_event_instance_stop(music.event, true);
-				fmod_event_instance_stop(music.event_secret, true);
-			}
-			else
-			{
-				fmod_event_instance_stop(music.event, false);
-				fmod_event_instance_stop(music.event_secret, false);
-			}
+			fmod_studio_event_instance_stop(music.event, false);
+			fmod_studio_event_instance_stop(music.event_secret, false);
 		}
-		fmod_event_instance_stop(pillarmusicID, true);
-		fmod_event_instance_stop(panicmusicID, true);
+		fmod_studio_event_instance_stop(pillarmusicID, true);
+		fmod_studio_event_instance_stop(panicmusicID, true);
 	}
 }
 function hub_state(_room, _sound, _secretsound)
 {
 	var s = 0;
-	fmod_event_instance_set_parameter(_sound, "hub", s, false);
+	fmod_studio_event_instance_set_parameter_by_name_multiplatform(_sound, "hub", s, false);
 }
 function music_get_pos_wrap(_pos, _length)
 {

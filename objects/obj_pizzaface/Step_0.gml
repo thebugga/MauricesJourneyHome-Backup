@@ -49,8 +49,6 @@ if (_move && place_meeting(x, y, playerid) && playerid.state != states.actor && 
 		state = states.actor
 		sprite_index = spr_player_timesup
 		image_index = 0
-		if obj_music.mu != noone
-			audio_stop_sound(obj_music.mu)
 		scr_sound(sfx_explosion)
 		scr_sound(sfx_groundpound)
 		scr_sound(sfx_timesup)

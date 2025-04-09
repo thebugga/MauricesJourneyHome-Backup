@@ -25,9 +25,6 @@ if (place_meeting(x, y, obj_player) && obj_player.state != states.actor && key_u
 			room: room
 		}
 	}
-	
-	if obj_music.mu != noone
-		audio_sound_gain(obj_music.mu, 0, 2000)
 }
 
 var flick = false

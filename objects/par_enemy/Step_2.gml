@@ -34,7 +34,7 @@ if follow_player
 				other.x = x
 				other.y = y - 64
 				other.xscale = -xscale
-				if sprite_index == spr_player_holdrise
+				if sprite_index == spr_holdrise
 					other.y += floor(image_number - image_index) * 10
 				break;
 			case states.piledriver:
@@ -67,14 +67,14 @@ if follow_player
 			}
 			if (!grounded && (state == states.hold || state == states.swingding))
 			{
-				sprite_index = spr_player_piledriver
+				sprite_index = spr_piledriver
 				movespeed = abs(hsp)
 				state = states.piledriver
 				vsp = -8
 				other.yscale = -1
 			}
 		}
-		if (image_index >= image_number - 1 && sprite_index == spr_player_piledriverland)
+		if (image_index >= image_number - 1 && sprite_index == spr_piledriverland)
 		{
 			other.alarm[0] = 1
 			with (other)
@@ -82,11 +82,11 @@ if follow_player
 			vsp = -12
 			jumpstop = false
 			state = states.jump
-			reset_anim(spr_player_piledriverjump)
+			reset_anim(obj_player.spr_piledriverjump)
 		}
 		
 		var ixcheck = 5
-		if sprite_index == spr_player_swingdingend
+		if sprite_index == spr_swingdingend
 			ixcheck = 1
 			
 		if (state = states.punchenemy && floor(image_index) == ixcheck)
@@ -101,7 +101,7 @@ if follow_player
 				state = e_states.hit
 				hsp = other.xscale * 20
 				vsp = 0
-				if other.sprite_index == spr_player_finishingblowup
+				if other.sprite_index == spr_finishingblowup
 				{
 					hsp = 0
 					vsp = -20

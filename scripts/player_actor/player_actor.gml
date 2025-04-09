@@ -2,7 +2,7 @@ function player_actor()
 {
 	switch (sprite_index)
 	{
-		case spr_player_exitdoor:
+		case spr_exitdoor:
 			if anim_ended()
 				state = states.normal
 			if particle_timer > 0
@@ -13,7 +13,7 @@ function player_actor()
 				scr_sound_3d_pitched(sfx_step, x, y)
 			}
 			break;
-		case spr_player_timesup:
+		case spr_Timesup:
 			if anim_ended()
 			{
 				if room != rm_timesup
@@ -22,7 +22,7 @@ function player_actor()
 					image_speed = 0
 			}
 			break;
-		case spr_player_upbox:
+		case spr_upbox:
 			vsp = 0
 			break;
 	}

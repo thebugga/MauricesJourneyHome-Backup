@@ -133,7 +133,7 @@ function do_enemy_generics()
 			with (obj_player)
 			{
 				if (state == states.mach3)
-					reset_anim(spr_player_mach3kill)
+					reset_anim(obj_player.spr_mach3kill)
 				if ((key_jump.down && state != states.groundpound) || state == states.swingding)
 				{
 					vsp = -10
@@ -169,26 +169,26 @@ function do_enemy_generics()
 			{
 				other.follow_player = true
 				other.sprite_index = other.sprs.stun
-				reset_anim(spr_player_holdrise)
+				reset_anim(obj_player.spr_holdrise)
 				state = states.hold
 				if (abs(hsp) > 10)
 				{
 					state = states.swingding
-					sprite_index = spr_player_swingding
+					sprite_index = spr_swingding
 					if !grounded
 						vsp = -5
 				}
 				if (key_up.down)
 				{
 					state = states.piledriver
-					sprite_index = spr_player_piledriver
+					sprite_index = spr_piledriver
 					vsp = -18
 				}
 			}
 			if (collision_line(bbox_left - 16, y + 20, bbox_right + 16, y + 20, other, false, true) && vsp > 2 && (state == states.jump || state == states.hold))
 			{
 				if (state == states.jump)
-					reset_anim(spr_player_stomp)
+					reset_anim(obj_player.spr_stomp)
 				vsp = key_jump.down ? -15 : -10
 				jumpstop = true
 				

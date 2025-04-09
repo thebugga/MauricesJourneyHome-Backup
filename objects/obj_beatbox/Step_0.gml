@@ -1,4 +1,4 @@
 collide()
 
-if (obj_player.sprite_index != spr_player_breakdance)
+if (obj_player.sprite_index != spr_breakdance)
 	instance_destroy()

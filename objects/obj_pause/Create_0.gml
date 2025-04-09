@@ -33,13 +33,13 @@ options = [
 	{o_name: "SFX VOLUME: ", val: global.option_sfx_volume * 100, o_type: optiontypes.slider, func: function(_val) {
 		_val /= 100
 		global.option_sfx_volume = _val
-		fmod_studio_system_set_parameter_by_name("musicVolume", _val, true);
+		fmod_studio_system_set_parameter_by_name("sfxVolume", _val, true);
 		quick_ini_write_real("globalsave.ini", "options", "option_sfx_volume", _val)
 		}},
 	{o_name: "MUSIC VOLUME: ", val: global.option_music_volume * 100, o_type: optiontypes.slider, func: function(_val) {
 		_val /= 100
 		global.option_music_volume = _val
-		fmod_studio_system_set_parameter_by_name("sfxVolume", _val, true);
+		fmod_studio_system_set_parameter_by_name("musicVolume", _val, true);
 		quick_ini_write_real("globalsave.ini", "options", "option_music_volume", _val)
 		}}
 ]

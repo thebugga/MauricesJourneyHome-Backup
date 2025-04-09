@@ -2,7 +2,7 @@ with obj_player
 {
 	state = states.parry
 	var ix = irandom_range(1, 3)
-	reset_anim(asset_get_index($"spr_player_parry{ix}"))
+	reset_anim(asset_get_index($"spr_parry{ix}"))
 	movespeed = -5
 }
 

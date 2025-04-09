@@ -3,13 +3,13 @@ function player_superjump()
 	hsp = xscale * movespeed
 	image_speed = 0.35
 	
-	if (sprite_index == spr_player_superjumpprep || sprite_index == spr_player_superjumpflash)
+	if (sprite_index == spr_superjumpprep || sprite_index == spr_superjumpflash)
 		movespeed = approach(movespeed, 0, 1)
 		
-	if (sprite_index == spr_player_superjumpprep)
-		reset_anim_on_end(spr_player_superjumpflash)
+	if (sprite_index == spr_superjumpprep)
+		reset_anim_on_end(spr_superjumpflash)
 		
-	if (sprite_index == spr_player_Sjumpcancelstart)
+	if (sprite_index == spr_Sjumpcancelstart)
 	{
 		image_speed = 0.5
 		vsp = 0
@@ -17,7 +17,7 @@ function player_superjump()
 		  xscale = p_move
 	}
 	
-	if ((key_up.down || !grounded) && (sprite_index == spr_player_superjumpflash || sprite_index == spr_player_superjumpmove))
+	if ((key_up.down || !grounded) && (sprite_index == spr_superjumpflash || sprite_index == spr_superjumpmove))
 	{
 		var absMove = abs(p_move);
 		movespeed = (!scr_solid(x + xscale, y) || place_meeting(x + xscale, y, obj_slope)) ? absMove * 2 : 0;
@@ -25,16 +25,16 @@ function player_superjump()
 		if absMove
 		{
 			xscale = p_move
-			sprite_index = spr_player_superjumpmove
+			sprite_index = spr_superjumpmove
 		}
 		else
-			sprite_index = spr_player_superjumpflash
+			sprite_index = spr_superjumpflash
 	}
 	
-	if (anim_ended() && sprite_index == spr_player_Sjumpcancelstart)
+	if (anim_ended() && sprite_index == spr_Sjumpcancelstart)
 	{
 		state = states.mach3
-		sprite_index = spr_player_Sjumpcancel
+		sprite_index = spr_Sjumpcancel
 		jumpstop = true
 		vsp = -4
 		flash = 8
@@ -44,15 +44,15 @@ function player_superjump()
 			depth = -150
 	}
 	
-	if (sprite_index != spr_player_superjump && sprite_index != spr_player_Sjumpcancel && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_player_superjumpprep && !key_up.down && grounded)
+	if (sprite_index != spr_superjump && sprite_index != spr_Sjumpcancel && sprite_index != spr_Sjumpcancelstart && sprite_index != spr_superjumpprep && !key_up.down && grounded)
 	{
 		vsp = -12
-		sprite_index = spr_player_superjump
+		sprite_index = spr_superjump
 		scr_sound_3d(sfx_superjumprelease, x, y)
 		create_effect(x, y, spr_superjumpexplosion)
 	}
 	
-	if (sprite_index == spr_player_superjump)
+	if (sprite_index == spr_superjump)
 	{
 		instakill = true
 		image_speed = abs(vsp) / 25
@@ -72,18 +72,18 @@ function player_superjump()
 		
 		if (place_meeting(x, y - 1, obj_solid))
 		{
-			reset_anim(spr_player_ceilinghit)
+			reset_anim(obj_player.spr_ceilinghit)
 			state = states.bump
 			scr_sound_3d(sfx_groundpound, x, y)
 		}
 		
-		if (sprite_index != spr_player_Sjumpcancelstart)
+		if (sprite_index != spr_Sjumpcancelstart)
 			vsp -= 0.6
 		
 		if (input_buffers.grab > 0 || key_dash.pressed) && state != states.bump
 		{
 			input_buffers.grab = 0
-			reset_anim(spr_player_Sjumpcancelstart)
+			reset_anim(obj_player.spr_Sjumpcancelstart)
 			scr_sound_3d(sfx_superjumpcancel, x, y)
 			audio_stop_sound(sfx_superjumprelease)
 		}

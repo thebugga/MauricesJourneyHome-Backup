@@ -3,14 +3,14 @@ function player_mach3()
 	hsp = xscale * movespeed
 	mach4mode = movespeed > 16
 	
-	var dashpad = sprite_index == spr_player_dashpad
+	var dashpad = sprite_index == spr_dashpad
 	
 	if (mach4mode)
 	{
-		if (sprite_index != spr_player_mach4)
+		if (sprite_index != spr_mach4)
 		{
 			flash = 8
-			sprite_index = spr_player_mach4
+			sprite_index = spr_mach4
 		}
 		
 		if !particle_contains_sprite(spr_crazyruneffect)
@@ -30,10 +30,10 @@ function player_mach3()
 			create_effect(x, y, spr_flamecloud)
 		}
 	}
-	else if (sprite_index == spr_player_mach4)
+	else if (sprite_index == spr_mach4)
 	{
 		flash = 8
-		sprite_index = spr_player_mach3
+		sprite_index = spr_mach3
 	}
 	
 	if (!particle_contains_sprite(spr_superdashcloud) && grounded)
@@ -44,24 +44,24 @@ function player_mach3()
 		input_buffers.jump = 0
 		vsp = -11
 		jumpstop = false
-		reset_anim(spr_player_mach3jump)
+		reset_anim(obj_player.spr_mach3jump)
 		scr_sound_3d(sfx_jump, x, y)
 		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	
 	if (grounded)
 	{
-		if (sprite_index == spr_player_Sjumpcancel)
-			sprite_index = spr_player_mach3
+		if (sprite_index == spr_Sjumpcancel)
+			sprite_index = spr_mach3
 		if (!key_dash.down && !dashpad)
 		{
-			reset_anim(spr_player_machslidestart)
+			reset_anim(obj_player.spr_machslidestart)
 			state = states.slide
 			scr_sound_3d(sfx_break, x, y)
 		}
 		if (p_move != 0 && p_move != xscale && !dashpad)
 		{
-			reset_anim(spr_player_machslideboost3)
+			reset_anim(obj_player.spr_machslideboost3)
 			state = states.slide
 			scr_sound_3d(sfx_machslideboost, x, y)
 		}
@@ -72,7 +72,7 @@ function player_mach3()
 		if (key_up.down && !dashpad)
 		{
 			state = states.superjump
-			reset_anim(spr_player_superjumpprep)
+			reset_anim(obj_player.spr_superjumpprep)
 		}
 	}
 	else
@@ -90,10 +90,10 @@ function player_mach3()
 	{
 		state = states.tumble
 		if (grounded)
-			reset_anim(spr_player_machroll)
+			reset_anim(obj_player.spr_machroll)
 		else
 		{
-			sprite_index = spr_player_dive
+			sprite_index = spr_dive
 			vsp = 10
 			scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
 		}
@@ -116,7 +116,7 @@ function player_mach3()
 	else if (grounded && place_meeting(x + xscale, y, obj_solid))
 	{
 		state = states.bump
-		reset_anim(spr_player_mach3hitwall)
+		reset_anim(obj_player.spr_mach3hitwall)
 		vsp = -6
 		hsp = xscale * -6
 		shake_camera(20, 0.8)
@@ -126,14 +126,14 @@ function player_mach3()
 	image_speed = 0.4
 	switch (sprite_index)
 	{
-		case spr_player_mach4:
+		case spr_mach4:
 			image_speed = 0.75
 			break;
-		case spr_player_mach3jump:
-		case spr_player_rollgetup:
-		case spr_player_mach3kill:
-		case spr_player_dashpad:
-			reset_anim_on_end(spr_player_mach3)
+		case spr_mach3jump:
+		case spr_rollgetup:
+		case spr_mach3kill:
+		case spr_dashpad:
+			reset_anim_on_end(spr_mach3)
 			break;
 	}
 	do_taunt()

@@ -47,7 +47,7 @@ if (_move && place_meeting(x, y, playerid) && playerid.state != states.actor && 
 		movespeed = 0
 		spawn = "a"
 		state = states.actor
-		sprite_index = spr_player_timesup
+		sprite_index = spr_timesup
 		image_index = 0
 		scr_sound(sfx_explosion)
 		scr_sound(sfx_groundpound)

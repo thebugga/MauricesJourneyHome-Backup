@@ -150,7 +150,7 @@ if ((y > room_height + 200 || y < -200) && state != states.actor)
 	state = states.actor
 	hsp = 0
 	vsp = 0
-	sprite_index = spr_player_idle
+	sprite_index = spr_idle
 }
 
 if (state != states.noclip && state != states.backtohub)

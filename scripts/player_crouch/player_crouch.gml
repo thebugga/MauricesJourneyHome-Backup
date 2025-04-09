@@ -7,22 +7,22 @@ function player_crouch()
 	
 	if (!(grounded && vsp >= 0))
 	{
-		if sprite_index != spr_player_crouchfall
-			reset_anim(spr_player_crouchfall)
+		if sprite_index != spr_crouchfall
+			reset_anim(obj_player.spr_crouchfall)
 		
 		if anim_ended()
 			image_index = 5
 	}
 	else
 	{
-		if sprite_index == spr_player_crouchfall
-			reset_anim(spr_player_crouchdown)
+		if sprite_index == spr_crouchfall
+			reset_anim(obj_player.spr_crouchdown)
 			
-		if sprite_index == spr_player_crouchdown
-			reset_anim_on_end(spr_player_crouch)
+		if sprite_index == spr_crouchdown
+			reset_anim_on_end(spr_crouch)
 		
-		if (sprite_index != spr_player_crouchdown)
-			sprite_index = p_move != 0 ? spr_player_crawl : spr_player_crouch
+		if (sprite_index != spr_crouchdown)
+			sprite_index = p_move != 0 ? spr_crawl : spr_crouch
 	
 		if (coyote_time && input_buffers.jump > 0 && !scr_solid(x, y - 16))
 		{

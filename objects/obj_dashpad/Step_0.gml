@@ -5,7 +5,7 @@ if (place_meeting(x, y, obj_player) && available)
 	with obj_player
 	{
 		state = states.mach3
-		reset_anim(spr_player_dashpad)
+		reset_anim(obj_player.spr_dashpad)
 		var h = bbox_bottom - y
 		x = other.x + 32
 		y = other.y - h

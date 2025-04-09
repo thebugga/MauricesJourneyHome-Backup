@@ -9,7 +9,7 @@ function do_groundpound()
 	{
 		dir = p_move
 		state = states.groundpound
-		sprite_index = spr_player_bodyslamstart
+		sprite_index = spr_bodyslamstart
 		image_index = 0
 		vsp = -6
 	}
@@ -26,7 +26,7 @@ function do_grab()
 			if state == states.normal
 				movespeed = 8
 			state = states.grab
-			reset_anim(spr_player_suplexgrab)
+			reset_anim(obj_player.spr_suplexgrab)
 			scr_sound_3d(sfx_suplexdash, x, y)
 			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 		}
@@ -35,7 +35,7 @@ function do_grab()
 			vsp = grounded ? -14 : -10
 			hsp = abs(hsp) * xscale
 			state = states.punch
-			reset_anim(spr_player_uppercut)
+			reset_anim(obj_player.spr_uppercut)
 			image_speed = 0.35
 			create_effect(x, y, spr_highjumpcloud2)
 			scr_sound_3d_pitched(sfx_uppercut, x, y)
@@ -54,7 +54,7 @@ function do_taunt()
 			sprite_index: self.sprite_index
 		}
 		
-		sprite_index = spr_player_taunt
+		sprite_index = spr_taunt
 		image_index = random_range(0, image_number)
 		taunttimer = 20
 		state = states.taunt
@@ -166,10 +166,10 @@ function do_hurt(obj = noone)
 			goto_xscale = sign(x - xh)
 		var facing = xscale == -goto_xscale
 		hsp = 8 * goto_xscale
-		sprite_index = facing ? spr_player_hurt : spr_player_jumphurt
+		sprite_index = facing ? spr_hurt : spr_jumphurt
 	}
 	else
-		sprite_index = spr_player_hurt
+		sprite_index = spr_hurt
 	
 	flash = 8
 	state = states.hurt

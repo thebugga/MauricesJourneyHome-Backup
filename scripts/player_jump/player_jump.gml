@@ -23,7 +23,7 @@ function player_jump()
 	{
 		fallingtimer = min(fallingtimer + 1, 100)
 		if fallingtimer >= 50
-			sprite_index = fallingtimer < 100 ? spr_player_fallface : spr_player_fallfar
+			sprite_index = fallingtimer < 100 ? spr_fallface : spr_fallfar
 	}
 	
 	if (grounded && vsp >= 0)
@@ -31,18 +31,18 @@ function player_jump()
 		if fallingtimer < 50
 		{
 			state = states.normal
-			reset_anim(movespeed < 1 ? spr_player_land : spr_player_landmove)
+			reset_anim(movespeed < 1 ? spr_land : spr_landmove)
 			scr_sound_3d_pitched(sfx_step, x, y)
 			if key_dash.down
 			{
 				state = states.mach2
 				movespeed = max(movespeed, 6);
-				reset_anim(spr_player_mach1)
+				reset_anim(obj_player.spr_mach1)
 			}
 		}
 		else
 		{
-			reset_anim(sprite_index == spr_player_fallface ? spr_player_bodyslamland : spr_player_fallfarland)
+			reset_anim(sprite_index == spr_fallface ? spr_bodyslamland : spr_fallfarland)
 			image_index = 0
 			state = states.bump
 			shake_camera()
@@ -51,7 +51,7 @@ function player_jump()
 		}
 	}
 	
-	if sprite_index != spr_player_grabbump
+	if sprite_index != spr_grabbump
 		do_grab()
 	do_groundpound()
 	
@@ -59,16 +59,16 @@ function player_jump()
 	image_speed = 0.35
 	switch (sprite_index)
 	{
-		case spr_player_jump:
-		case spr_player_grabcancel:
-		case spr_player_piledriverjump:
-			reset_anim_on_end(spr_player_fall)
+		case spr_jump:
+		case spr_grabcancel:
+		case spr_piledriverjump:
+			reset_anim_on_end(spr_fall)
 			break;
-		case spr_player_stomp:
+		case spr_stomp:
 			if anim_ended()
 				image_index = image_number - 3
 			break;
-		case spr_player_weakjump:
+		case spr_weakjump:
 			if anim_ended()
 				image_index = image_number - 3
 			break;

@@ -19,8 +19,8 @@ function player_groundpound()
 		}
 		vsp += 0.5
 	}
-	if (anim_ended() && sprite_index == spr_player_bodyslamstart)
-		sprite_index = spr_player_bodyslamfall
+	if (anim_ended() && sprite_index == spr_bodyslamstart)
+		sprite_index = spr_bodyslamfall
 	/*
 	if (floor(image_index) == image_number - 1 && sprite_index == spr_shotgunjump1)
 		sprite_index = spr_shotgunjump3*/
@@ -52,7 +52,7 @@ function player_groundpound()
 			hsp = 0
 			movespeed = 0
 		}
-		if (p_move != 0 && sprite_index != spr_player_poundcancel1)
+		if (p_move != 0 && sprite_index != spr_poundcancel1)
 			xscale = p_move
 	}
 	if (vsp > 0)
@@ -83,7 +83,7 @@ function player_groundpound()
 			{
 				other.xscale = -sign(image_xscale)
 				other.state = states.tumble
-				other.sprite_index = spr_player_crouchslip
+				other.sprite_index = other.spr_crouchslip
 				if other.freefallsmash > 20
 					other.movespeed = 12
 				else
@@ -93,7 +93,7 @@ function player_groundpound()
 		}
 		else
 		{
-			reset_anim(sprite_index == spr_player_poundcancel1 ? spr_player_poundcancel2 : spr_player_bodyslamland)
+			reset_anim(sprite_index == spr_poundcancel1 ? spr_poundcancel2 : spr_bodyslamland)
 			/*else if shotgunAnim == 0
 				sprite_index = spr_bodyslamland
 			else

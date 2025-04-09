@@ -29,6 +29,20 @@ enum states
 	noclip
 }
 
+enum p_characters
+{
+    maurice,
+    pierre,
+    undoised,
+    clownmato,
+    orange,
+    swag,
+    gabbie,
+    peppino6
+}
+
+Character = p_characters.maurice
+scr_character_spr()
 spawn = "a"
 door_type = fade_types.none
 wasclimbingwall = false
@@ -37,7 +51,7 @@ movespeed = 0
 state = states.normal
 //exitdoor properties
 state = states.actor
-sprite_index = spr_player_exitdoor
+sprite_index = spr_exitdoor
 image_speed = 0.35
 //the end
 prevstate = states.normal
@@ -76,29 +90,29 @@ breakdance_secret = {
 
 loop_sounds = {
 	mach1: {state: states.mach2, sound: sfx_mach1, sndid: noone, is_3d: true, func: function() {
-		if obj_player.sprite_index != spr_player_mach1
+		if obj_player.sprite_index != obj_player.spr_mach1
 			return true;}
 	},
 	mach2: {state: states.mach2, sound: sfx_mach2, sndid: noone, is_3d: false, func: function() {
-		if obj_player.sprite_index != spr_player_mach2
+		if obj_player.sprite_index != obj_player.spr_mach2
 			return true;}
 	},
 	mach3: {state: states.mach3, sound: sfx_mach3, sndid: noone, is_3d: true, func: function() {
-		if ((obj_player.sprite_index == spr_player_mach3kill && obj_player.image_index < 2) || obj_player.sprite_index == spr_player_mach4)
+		if ((obj_player.sprite_index == obj_player.spr_mach3kill && obj_player.image_index < 2) || obj_player.sprite_index == obj_player.spr_mach4)
 			return true;}
 	},
 	mach4: {state: states.mach3, sound: sfx_mach4, sndid: noone, is_3d: true, func: function() {
-		if obj_player.sprite_index != spr_player_mach4
+		if obj_player.sprite_index != obj_player.spr_mach4
 			return true;}
 	},
 	climbwall: {state: states.climbwall, sound: sfx_mach2, is_3d: true, sndid: noone},
 	groundpound: {state: states.groundpound, sound: sfx_groundpoundloop, is_3d: true, sndid: noone},
 	piledriver: {state: states.piledriver, sound: sfx_groundpoundloop, sndid: noone, is_3d: true, func: function() {
-		if (obj_player.sprite_index == spr_player_piledriverland)
+		if (obj_player.sprite_index == obj_player.spr_piledriverland)
 			return true;}
 	},
 	superjumphold: {state: states.superjump, sound: sfx_superjumphold, sndid: noone, is_3d: true, func: function() {
-		if (obj_player.sprite_index == spr_player_superjump || obj_player.sprite_index == spr_player_Sjumpcancelstart)
+		if (obj_player.sprite_index == obj_player.spr_superjump || obj_player.sprite_index == obj_player.spr_Sjumpcancelstart)
 			return true;}, looppoints: [0.64, 1.84]
 	}
 }

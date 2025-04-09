@@ -1,15 +1,15 @@
 function player_normal()
 {
-	var default_idle = spr_player_idle
-	var default_move = spr_player_move
+	var default_idle = spr_idle
+	var default_move = spr_move
 	if global.panic.active
 	{
-		default_idle = spr_player_panic
+		default_idle = spr_panic
 		
 		if global.panic.timer <= 0
 		{
-			default_idle = spr_player_weak
-			default_move = spr_player_weakmove
+			default_idle = spr_weak
+			default_move = spr_weakmove
 		}
 	}
 	
@@ -35,12 +35,12 @@ function player_normal()
 	
 	var idlegestures = 
 	[
-		spr_player_idlefrown, 
-		spr_player_idledance, 
-		spr_player_idlehand, 
-		spr_player_idlecareless, 
-		spr_player_idlewhat,
-		spr_player_idlebite
+		spr_idlefrown, 
+		spr_idledance, 
+		spr_idlehand, 
+		spr_idlecareless, 
+		spr_idlewhat,
+		spr_idlebite
 	]
 	
 	if p_move != 0
@@ -50,7 +50,7 @@ function player_normal()
 	{
 		if p_move != 0
 		{
-			if (sprite_index != spr_player_landmove)
+			if (sprite_index != spr_landmove)
 				sprite_index = default_move
 		}
 		else
@@ -67,7 +67,7 @@ function player_normal()
 				idletimer = 180
 			}
 			
-			if (sprite_index != spr_player_machslideend && sprite_index != spr_player_land && sprite_index != spr_player_bodyslamland && sprite_index != spr_player_facehurt && idletimer > 0)
+			if (sprite_index != spr_machslideend && sprite_index != spr_land && sprite_index != spr_bodyslamland && sprite_index != spr_facehurt && idletimer > 0)
 				sprite_index = default_idle
 		}
 	}
@@ -80,7 +80,7 @@ function player_normal()
 			breakdance_secret.buffer++
 		else
 		{
-			sprite_index = spr_player_breakdance
+			sprite_index = spr_breakdance
 			breakdance_secret.spd = approach(breakdance_secret.spd, 0.6, 0.005)
 			image_speed = breakdance_secret.spd
 		}
@@ -100,14 +100,14 @@ function player_normal()
 	
 	if (key_down.down || scr_solid(x, y - 1))
 	{
-		reset_anim(spr_player_crouchdown)
+		reset_anim(obj_player.spr_crouchdown)
 		state = states.crouch
 	}
 	
 	if !grounded
 	{
 		state = states.jump
-		reset_anim(global.panic.active && global.panic.timer <= 0 ? spr_player_weakjump : spr_player_fall)
+		reset_anim(global.panic.active && global.panic.timer <= 0 ? spr_weakjump : spr_fall)
 	}
 	
 	if (coyote_time && input_buffers.jump > 0)
@@ -115,7 +115,7 @@ function player_normal()
 		input_buffers.jump = 0
 		vsp = -11
 		state = states.jump
-		reset_anim(global.panic.active && global.panic.timer <= 0 ? spr_player_weakjump : spr_player_jump)
+		reset_anim(global.panic.active && global.panic.timer <= 0 ? spr_weakjump : spr_jump)
 		jumpstop = false
 		create_effect(x, y - 5, spr_highjumpcloud2)
 		scr_sound_3d(sfx_jump, x, y)
@@ -128,25 +128,25 @@ function player_normal()
 		state = states.mach2
 		if (movespeed < 6)
 			movespeed = 6
-		reset_anim(spr_player_mach1)
+		reset_anim(obj_player.spr_mach1)
 	}
 	
 	switch (sprite_index)
 	{
-		case spr_player_move:
-		case spr_player_weakmove:
+		case spr_move:
+		case spr_weakmove:
 			image_speed = clamp(movespeed / 15, 0.35, 0.6);
 			break;
-		case spr_player_machslideend:
-		case spr_player_land:
-			reset_anim_on_end(spr_player_idle)
+		case spr_machslideend:
+		case spr_land:
+			reset_anim_on_end(spr_idle)
 			break;
-		case spr_player_landmove:
+		case spr_landmove:
 			image_speed = clamp(movespeed / 15, 0.35, 0.6);
-			reset_anim_on_end(spr_player_move);
+			reset_anim_on_end(spr_move);
 			break;
-		case spr_player_facehurt:
-			reset_anim_on_end(spr_player_idle)
+		case spr_facehurt:
+			reset_anim_on_end(spr_idle)
 			break;
 	}
 	

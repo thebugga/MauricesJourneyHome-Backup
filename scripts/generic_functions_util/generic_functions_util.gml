@@ -118,7 +118,7 @@ function do_hold_player(_exit)
 		secret_exit = _exit
 		if _exit
 			secret_cutscene = true
-		sprite_index = _exit ? spr_player_hurt : spr_player_bodyslamfall
+		sprite_index = _exit ? spr_hurt : spr_bodyslamfall
 		image_speed = 0.35
 	}
 }

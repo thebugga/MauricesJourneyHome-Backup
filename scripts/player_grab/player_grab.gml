@@ -63,6 +63,7 @@ function player_grab()
 	switch (sprite_index)
 	{
 		case spr_player_suplexgrab:
+		case spr_player_grabcancel:
 			if anim_ended()
 				state = states.normal
 			break;

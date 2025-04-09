@@ -12,6 +12,7 @@ enum states
 	bump,
 	groundpound,
 	grab,
+	nicklebag,
 	superjump,
 	taunt,
 	crouch,
@@ -29,6 +30,20 @@ enum states
 	noclip
 }
 
+enum p_characters
+{
+	maurice,
+	pierre,
+	undoised,
+	clownmato,
+	orange,
+	swag,
+	gabbie,
+	peppino
+}
+
+character = p_characters.maurice
+
 spawn = "a"
 door_type = fade_types.none
 wasclimbingwall = false
@@ -44,6 +59,9 @@ prevstate = states.normal
 xscale = 1
 jumpstop = false
 mach4mode = false
+slaphand = 0
+sjumptimer = 0
+sjumpangle = 270
 wallspeed = 0
 flash = 0
 

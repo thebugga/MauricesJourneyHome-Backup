@@ -167,23 +167,49 @@ function do_enemy_generics()
 		{
 			if (state == states.grab && other.sprite_index != other.sprs.dead)
 			{
-				other.follow_player = true
-				other.sprite_index = other.sprs.stun
-				reset_anim(spr_player_holdrise)
-				state = states.hold
-				if (abs(hsp) > 10)
+				if character == p_characters.maurice || character == p_characters.undoised
 				{
-					state = states.swingding
-					sprite_index = spr_player_swingding
-					if !grounded
-						vsp = -5
+					
+					state = states.punchenemy
+					var str = string_concat("spr_player_finishingblow_", string(irandom_range(1, 5)))
+					sprite_index = asset_get_index(str)
+					hsp = -xscale * 4
+					vsp = -6
+					do_enemygibs()
+					other.follow_player = false
+					other.state = e_states.hit
+					other.hsp = other.xscale * 20
+					other.vsp = 0
+					if key_up.down
+					{
+						other.hsp = 0
+						other.vsp = -20
+						sprite_index = spr_player_finishingblowup
+					}
+					global.combo.timer = 60
+					image_index = 4
 				}
-				if (key_up.down)
+				else
 				{
-					state = states.piledriver
-					sprite_index = spr_player_piledriver
-					vsp = -18
+					other.follow_player = true
+					other.sprite_index = other.sprs.stun
+					reset_anim(spr_player_holdrise)
+					state = states.hold
+					if (abs(hsp) > 10)
+					{
+						state = states.swingding
+						sprite_index = spr_player_swingding
+						if !grounded
+							vsp = -5
+					}
+					if (key_up.down)
+					{
+						state = states.piledriver
+						sprite_index = spr_player_piledriver
+						vsp = -18
+					}
 				}
+				
 			}
 			if (collision_line(bbox_left - 16, y + 20, bbox_right + 16, y + 20, other, false, true) && vsp > 2 && (state == states.jump || state == states.hold))
 			{

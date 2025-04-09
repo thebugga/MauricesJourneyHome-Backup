@@ -66,6 +66,9 @@ switch (state)
 	case states.grab:
 		player_grab()
 		break;
+	case states.nicklebag:
+		player_nicklebag()
+		break;
 	case states.superjump:
 		player_superjump()
 		break;

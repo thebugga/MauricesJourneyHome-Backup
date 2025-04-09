@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":1.201633,
+  "duration":1.2016326,
   "name":"sfx_box",
   "parent":{
     "name":"Sounds",

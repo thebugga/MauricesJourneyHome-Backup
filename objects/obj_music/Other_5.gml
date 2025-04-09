@@ -1,5 +1,2 @@
-if pillar_mu != noone
-{
-	audio_stop_sound(pillar_mu)
-	pillar_mu = noone
-}
+fmod_set_parameter("totem", false, false);
+fmod_set_parameter("pillarfade", false, true);

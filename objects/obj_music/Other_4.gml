@@ -1,86 +1,80 @@
-var isPanic = global.panic.active;
-	
-if (global.secret && secret_mu_to_play != noone)
-{	
-	secret_mu = scr_sound(secret_mu_to_play, true)
-	
-	if !isPanic && mu != noone
-	{
-		var t_pos = wrap(audio_sound_length(secret_mu_to_play), audio_sound_get_track_position(mu))
-		audio_sound_set_track_position(secret_mu, t_pos)
-	}
-	
-	pauseIDS(true);
-}
-else
+if !global.panic.active
 {
-	if secret_mu != noone
+	var mu = ds_map_find_value(music_map, room);
+	if !is_undefined(mu)
 	{
-		audio_stop_sound(secret_mu);
-		secret_mu = noone;
-		
-		pauseIDS(false);
-	}
-	
-	if !isPanic
-	{
-		for (var i = 0; i < array_length(levelsongs); i++) 
+		var prevmusic = music;
+		if (prevmusic == noone || mu.event_name != prevmusic.event_name)
 		{
-			var currentArr = levelsongs[i]; 
-			var requiredRoom = currentArr[0]; 
-			var requestedTrack = currentArr[1];
-			
-			var isContinuous = false
-			if array_length(currentArr) >= 3
-				isContinuous = currentArr[2]
-			
-			var requestedSecret = noone
-			if array_length(currentArr) >= 4
-				requestedSecret = currentArr[3]
-			
-			var soundId = noone
-			if mu != noone
-				soundId = audio_sound_get_asset(mu);
-				
-			if requestedSecret != noone
-				secret_mu_to_play = requestedSecret
-	
-			if (soundId != requestedTrack && room == requiredRoom)
+			fmod_event_instance_play(mu.event);
+			fmod_event_instance_set_paused(mu.event, false);
+			if mu.continuous && prevmusic != -4
 			{
-				var prevLength = 0;
-				var prevPos = noone;
-				if mu != noone
-				{
-					if isContinuous
-					{
-						prevPos = audio_sound_get_track_position(mu);
-						prevLength = audio_sound_length(soundId);
-				
-						// emulate fading the old song out and fading the new song in
-						prevmu = scr_sound(soundId, true);
-						audio_sound_set_track_position(prevmu, prevPos);
-						audio_sound_gain(prevmu, 0, 2000);
-					}
-					audio_stop_sound(mu);
-				}
-		
-				mu = scr_sound(requestedTrack, true);
-				audio_sound_gain(mu, prevLength ? 0 : 1, 0); // make it quiet so it can fade in
-				if prevLength
-				{
-					audio_sound_set_track_position(mu, wrap(prevLength, prevPos));
-					// emulate fading the old song out and fading the new song in
-					audio_sound_gain(mu, 1, 2000);
-				}
-				
-				break;
+				var pos = fmod_event_instance_get_timeline_pos(prevmusic.event);
+				pos = music_get_pos_wrap(pos, fmod_event_get_length(mu.event_name));
+				fmod_event_instance_set_timeline_pos(mu.event, pos);
 			}
+			if prevmusic != noone
+			{
+				fmod_event_instance_stop(prevmusic.event, true);
+				if prevmusic.event_secret != noone
+					fmod_event_instance_stop(prevmusic.event_secret, true);
+			}
+			music = mu;
+			savedmusicpos = 0;
+			fmod_event_instance_stop(music.event, true);
 		}
-
-		if instance_exists(obj_pillar)
+	}
+	if instance_exists(obj_pillar)
+	{
+		fmod_event_instance_play(pillarmusicID);
+		fmod_set_parameter("pillarfade", 0, true);
+	}
+	else
+		fmod_event_instance_stop(pillarmusicID, true);
+	if music != noone && music.on_room_start != noone
+		music.on_room_start(room, music.event, music.event_secret);
+}
+	if secret
+	{
+		if music != noone && music.event_secret != noone
 		{
-			pillar_mu = scr_sound(mu_pillar, true)
-			audio_sound_gain(pillar_mu, 0, 0)
+			fmod_event_instance_play(music.event_secret);
+			fmod_event_instance_set_paused(music.event_secret, false);
+			pos = fmod_event_instance_get_timeline_pos(music.event);
+			savedmusicpos = pos;
+			pos = music_get_pos_wrap(pos, fmod_event_get_length(music.event_secret_name));
+			fmod_event_instance_set_timeline_pos(music.event_secret, pos);
+			fmod_event_instance_set_paused(music.event, true);
 		}
+		if global.panic
+		{
+			trace("Pausing panic music: room_start");
+			savedpanicpos = fmod_event_instance_get_timeline_pos(panicmusicID);
+			fmod_event_instance_set_paused(panicmusicID, true);
+		}
+	}
+	else if secretend
+	{
+		secretend = false;
+		if music != -4
+		{
+			fmod_event_instance_stop(music.event_secret, true);
+			fmod_event_instance_set_paused(music.event, false);
+			fmod_event_instance_set_timeline_pos(music.event, savedmusicpos);
+		}
+		if global.panic
+		{
+			fmod_event_instance_set_timeline_pos(panicmusicID, savedpanicpos);
+			fmod_event_instance_set_paused(panicmusicID, false);
+			trace("Resuming panic music: room_start");
+		}
+	}
+if room == rank_room
+{
+	if music != noone
+	{
+		fmod_event_instance_stop(music.event, true);
+		fmod_event_instance_stop(music.event_secret, true);
 	}
 }

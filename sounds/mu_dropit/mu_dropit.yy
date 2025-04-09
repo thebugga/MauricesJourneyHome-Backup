@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":189.96245,
+  "duration":0.0,
   "name":"mu_dropit",
   "parent":{
     "name":"Sounds",

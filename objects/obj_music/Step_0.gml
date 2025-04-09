@@ -1,121 +1,78 @@
-var isPanic = global.panic.active;
-
-if isPanic && mu != noone && audio_sound_get_gain(mu) <= 0
+prevpillar_on_camera = pillar_on_camera;
+if fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_pause) && !obj_pause.pause && !instance_exists(obj_monster)
 {
-	audio_stop_sound(mu);
-	mu = noone;
-}
-
-if prevmu != noone && audio_sound_get_gain(prevmu) <= 0
-{
-	audio_stop_sound(prevmu);
-	prevmu = noone;
-}
-
-var pillar_visible = false
-
-with obj_pillar
-	pillar_visible = bbox_in_camera();
-
-if !isPanic
-{
-	if instance_exists(obj_pillar)
+	trace("Stopping kidsparty music");
+	fmod_event_instance_stop(kidspartychaseID, false);
+	instance_destroy(obj_kidspartybg);
+	if music != -4
 	{
-		if pillar_visible
+		fmod_event_instance_set_paused(music.event, savedmusicpause);
+		fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
+	}
+	fmod_event_instance_set_paused(pillarmusicID, savedpillarpause);
+	fmod_event_instance_set_paused(panicmusicID, savedpanicpause);
+}
+if instance_exists(obj_pillar)
+{
+	fmod_event_instance_set_paused(pillarmusicID, false);
+	var p = false;
+	with obj_pillar
+	{
+		if bbox_in_camera(view_camera[0], 0)
+			p = true;
+	}
+	if p != pillar_on_camera
+		pillar_on_camera = p;
+}
+else
+	pillar_on_camera = false;
+if prevpillar_on_camera != pillar_on_camera
+{
+	if pillar_on_camera
+		fmod_set_parameter("pillarfade", 1, false);
+	else
+		fmod_set_parameter("pillarfade", 0, false);
+}
+if global.panic
+{
+	if !panicstart
+	{
+		trace("Starting panic music: step");
+		panicstart = true;
+		if music != noone
 		{
-			if mu != noone
-				audio_sound_gain(mu, 0, 2000);
-			if pillar_mu != noone
-				audio_sound_gain(pillar_mu, 1, 1000);
+			fmod_event_instance_stop(music.event, true);
+			fmod_event_instance_stop(music.event_secret, true);
+		}
+		fmod_event_instance_stop(pillarmusicID, true);
+		fmod_set_parameter("pillarfade", 0, true);
+		fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
+	}
+	else if fmod_event_instance_is_playing(panicmusicID)
+	{
+		if !global.lap
+		{
+			var secs = 56;
+			if fmod_get_parameter("isnoise") >= 1
+				secs = 65;
+			if global.fill <= secs * 12
+				fmod_event_instance_set_parameter(panicmusicID, "state", 1, true);
 		}
 		else
-		{
-			if mu != noone
-				audio_sound_gain(mu, 1, 2000);
-			if pillar_mu != noone
-				audio_sound_gain(pillar_mu, 0, 1000);
-		}
+			fmod_event_instance_set_parameter(panicmusicID, "state", 2, true);
 	}
-	
-	if panic_mu != noone
-	{
-		audio_stop_sound(panic_mu);
-		panic_mu = noone;
-	}
-	
-	if panic_pinch_mu != noone
-	{
-		audio_stop_sound(panic_pinch_mu);
-		panic_pinch_mu = noone;
-	}
-	
-	panic_music_initiated = false
-	pinch_init = false
-	lap2 = false
-	lap2_init = false
 }
-
-var pinch_point = 662;
-
-if isPanic
+else
 {
-	if (!panic_music_initiated && !pinch_init && !lap2)
-	{
-		panic_music_initiated = true
-		audio_stop_sound(mu)
-		audio_stop_sound(pillar_mu)
-		mu = noone
-		panic_mu = scr_sound(mu_anchovi, true)
-		audio_sound_loop_start(panic_mu, 47.96)
-		audio_sound_loop_end(panic_mu, 159.94)
-	}
-	
-	if (global.panic.timer < pinch_point && !pinch_init && !lap2)
-	{
-		pinch_init = true
-		
-		var prevpos = audio_sound_get_track_position(panic_mu)
-		prevmu = scr_sound(audio_sound_get_asset(panic_mu), true)
-		audio_sound_set_track_position(prevmu, prevpos)
-		audio_sound_gain(prevmu, 0, 2000)
-		
-		audio_stop_sound(panic_mu)
-		panic_mu = noone
-		
-		panic_pinch_mu = scr_sound(mu_anchovi)
-		audio_sound_set_track_position(panic_pinch_mu, 170.63)
-		audio_sound_gain(panic_pinch_mu, 0, 0)
-		audio_sound_gain(panic_pinch_mu, 1, 2000)
-	}
-	
-	if (lap2 && !lap2_init)
-	{
-		var prevpos = 0
-		
-		if panic_mu != noone
-		{
-			prevpos = audio_sound_get_track_position(panic_mu)
-			prevmu = scr_sound(audio_sound_get_asset(panic_mu), true)
-			audio_sound_set_track_position(prevmu, prevpos)
-			audio_sound_gain(prevmu, 0, 2000)
-			
-			audio_stop_sound(panic_mu)
-			panic_mu = noone
-		}
-		
-		if panic_pinch_mu != noone
-		{
-			prevpos = audio_sound_get_track_position(panic_pinch_mu)
-			prevmu = scr_sound(audio_sound_get_asset(panic_pinch_mu), true)
-			audio_sound_set_track_position(prevmu, prevpos)
-			audio_sound_gain(prevmu, 0, 2000)
-			
-			audio_stop_sound(panic_pinch_mu)
-			panic_pinch_mu = noone
-		}
-		
-		alarm[0] = 45
-		
-		lap2_init = true
-	}
+	panicstart = false;
+	fmod_event_instance_stop(panicmusicID, true);
 }
+var _found = false;
+if _found
+	fmod_set_parameter("totem", 1, false);
+else
+{
+	fmod_set_parameter("totem", 0, false);
+}
+if (exitmusic && fmod_event_instance_is_playing(panicmusicID))
+	fmod_event_instance_stop(panicmusicID, true);

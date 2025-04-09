@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":0.199917,
+  "duration":0.19993198,
   "name":"sfx_bumpwall",
   "parent":{
     "name":"Sounds",

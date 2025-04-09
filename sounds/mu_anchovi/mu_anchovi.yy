@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":205.556,
+  "duration":250.56653,
   "name":"mu_anchovi",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mu_anchovi.wav",
+  "soundFile":"mu_anchovi.mp3",
   "type":1,
   "volume":1.0,
 }

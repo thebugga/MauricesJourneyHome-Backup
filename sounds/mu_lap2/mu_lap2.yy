@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":176.92133,
+  "duration":17.166803,
   "name":"mu_lap2",
   "parent":{
     "name":"Sounds",

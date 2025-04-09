@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":0.689333,
+  "duration":2.2465305,
   "name":"sfx_taunt",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_taunt.ogg",
+  "soundFile":"sfx_taunt.mp3",
   "type":1,
-  "volume":0.8,
+  "volume":1.0,
 }

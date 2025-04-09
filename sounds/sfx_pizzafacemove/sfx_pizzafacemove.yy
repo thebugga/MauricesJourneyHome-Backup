@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":7.296,
+  "duration":7.295986,
   "name":"sfx_pizzafacemove",
   "parent":{
     "name":"Sounds",

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":5.089333,
+  "duration":5.0893197,
   "name":"sfx_teleportexit",
   "parent":{
     "name":"Sounds",

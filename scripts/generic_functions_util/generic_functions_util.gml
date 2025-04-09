@@ -23,6 +23,22 @@ function draw_set_align(halign, valign, color = c_white)
 	draw_set_color(color)
 }
 
+function trace()
+{
+	var _string = "";
+	for (var i = 0; i < argument_count; i++)
+		_string += string(argument[i]);
+	show_debug_message(_string);
+}
+
+function concat()
+{
+	var _string = "";
+	for (var i = 0; i < argument_count; i++)
+		_string += string(argument[i]);
+	return _string;
+}
+
 function quick_shader_set_uniform_f(shader, uniform_name, val)
 {
 	var f = shader_get_uniform(shader, uniform_name)

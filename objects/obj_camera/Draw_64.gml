@@ -13,7 +13,7 @@ draw_reset_color()
 draw_text(0, screen_h, $"fps : {fps}")
 draw_text(0, screen_h - 20, $"fps_real: {fps_real}")
 
-var ver_str = $"Complete Cook {version}" 
+var ver_str = $"Complete Cook {version}, Maurice Journey Home {versionMJH}" 
 
 draw_set_halign(fa_right)
 draw_set_alpha(0.5)

@@ -1,7 +1,7 @@
 if (sprite_index == spr_pizzaportalend || sprite_index == spr_pizzaportal_outline || !global.panic.active)
 	exit;
 
-reset_anim(obj_player.spr_pizzaportalend)
+reset_anim(spr_pizzaportalend)
 
 other.visible = false
 other.state = states.actor

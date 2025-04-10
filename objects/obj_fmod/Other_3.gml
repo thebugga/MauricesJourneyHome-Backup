@@ -1,1 +1,1 @@
-fmod_system_release(global.FMODSTUDIOSYSTEM);
+fmod_destroy();

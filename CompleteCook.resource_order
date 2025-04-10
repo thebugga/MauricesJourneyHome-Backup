@@ -2,8 +2,6 @@
   "FolderOrderSettings":[
     {"name":"Animation Curves","order":9,"path":"folders/Animation Curves.yy",},
     {"name":"Extensions","order":11,"path":"folders/Extensions.yy",},
-    {"name":"Fmod","order":20,"path":"folders/Fmod.yy",},
-    {"name":"Extensions","order":1,"path":"folders/Fmod/Extensions.yy",},
     {"name":"Fonts","order":4,"path":"folders/Fonts.yy",},
     {"name":"Notes","order":10,"path":"folders/Notes.yy",},
     {"name":"Objects","order":6,"path":"folders/Objects.yy",},
@@ -61,7 +59,6 @@
     {"name":"Timelines","order":5,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
-    {"name":"FMOD","order":1,"path":"extensions/FMOD/FMOD.yy",},
     {"name":"DO NOT RECOMMEND USING 1.6","order":2,"path":"notes/DO NOT RECOMMEND USING 1.6/DO NOT RECOMMEND USING 1.6.yy",},
     {"name":"Main Menu Guide","order":1,"path":"notes/Main Menu Guide/Main Menu Guide.yy",},
     {"name":"obj_3d_sound","order":11,"path":"objects/obj_3d_sound/obj_3d_sound.yy",},
@@ -169,10 +166,6 @@
     {"name":"afterimage_util","order":5,"path":"scripts/afterimage_util/afterimage_util.yy",},
     {"name":"destroyable_util","order":12,"path":"scripts/destroyable_util/destroyable_util.yy",},
     {"name":"enemy_scripts","order":8,"path":"scripts/enemy_scripts/enemy_scripts.yy",},
-    {"name":"Fmod_Compatablity","order":5,"path":"scripts/Fmod_Compatablity/Fmod_Compatablity.yy",},
-    {"name":"Fmod_Definitions","order":2,"path":"scripts/Fmod_Definitions/Fmod_Definitions.yy",},
-    {"name":"Fmod_Functions","order":3,"path":"scripts/Fmod_Functions/Fmod_Functions.yy",},
-    {"name":"Fmod_Utils","order":4,"path":"scripts/Fmod_Utils/Fmod_Utils.yy",},
     {"name":"generic_functions_util","order":2,"path":"scripts/generic_functions_util/generic_functions_util.yy",},
     {"name":"input_util","order":1,"path":"scripts/input_util/input_util.yy",},
     {"name":"particle_util","order":7,"path":"scripts/particle_util/particle_util.yy",},

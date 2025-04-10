@@ -39,7 +39,7 @@ enum p_characters
     orange,
     swag,
     gabbie,
-    peppino6
+    peppino
 }
 
 character = p_characters.maurice

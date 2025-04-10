@@ -171,7 +171,7 @@ function do_enemy_generics()
 				{
 					
 					state = states.punchenemy
-					var str = string_concat("spr_finishingblow_", string(irandom_range(1, 5)))
+					var str = choose(spr_finishingblow_1, spr_finishingblow_2, spr_finishingblow_3, spr_finishingblow_4, spr_finishingblow_5)
 					sprite_index = asset_get_index(str)
 					hsp = -xscale * 4
 					vsp = -6

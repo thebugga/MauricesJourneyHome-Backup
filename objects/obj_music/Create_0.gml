@@ -53,4 +53,4 @@ add_music(garbage_1, "event:/music/w1/garbage", "event:/music/garbagesecret", fa
 add_music(hub_gravesite, "event:/music/w1/garbage", -4, false)
 add_music(characterselect, "event:/music/characterselect",-4, false)
 */
-add_music(level_1, "event:/music/w1/garbage", -4, false)
+// FUCK YOUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUglobal.secretglobal.secretglobal.secretglobal.secretglobal.secretglobal.secretglobal.secretglobal.secretglobal.secretglobal.secret

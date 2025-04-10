@@ -3,22 +3,22 @@ function player_nicklebag()
 	hsp = (xscale * movespeed)
 	movespeed = approach(movespeed, 0, 0.1)
 	
-	sprite_index = slaphand == 1 ? spr_player_finishingblow_1 : spr_player_finishingblow_3
+	sprite_index = slaphand == 1 ? spr_player_slap1 : spr_player_slap2
 	
-	if input_buffers.grab > 0 && image_index > 7
+	if input_buffers.grab > 0 && image_index > 5
 	{
 		input_buffers.grab = 0
 		if slaphand >= 2
 		{
 		    state = states.grab
-			reset_anim(spr_player_grabcancel)
+			reset_anim(spr_player_faceplant)
 			movespeed += 2
 		}
 		else
 		{
 			movespeed += 2
 			slaphand++
-			image_index = 4
+			image_index = 0
 		}
 	}
 	if anim_ended()

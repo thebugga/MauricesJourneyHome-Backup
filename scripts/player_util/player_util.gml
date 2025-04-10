@@ -26,7 +26,7 @@ function do_grab()
 			{
 				slaphand = 1
 				state = states.nicklebag
-				image_index = 4
+				image_index = 0
 			}
 			else
 			{

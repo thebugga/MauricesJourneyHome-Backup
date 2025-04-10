@@ -1,6 +1,6 @@
 function scr_character_spr()
 {
-	if (Character == p_characters.maurice)
+	if (character == p_characters.maurice)
 	{
 		spr_idle = spr_player_idle
 		spr_move = spr_player_move
@@ -9,6 +9,7 @@ function scr_character_spr()
 		spr_crawl = spr_player_crawl
 		spr_hurt = spr_player_hurt
 		spr_jump = spr_player_jump
+		spr_jumphurt = spr_player_jumphurt
 		spr_piledriverjump = spr_player_piledriverjump
 		spr_weakjump = spr_player_weakjump
 		spr_fall = spr_player_fall
@@ -125,7 +126,7 @@ function scr_character_spr()
 		spr_palette = pal_peppino
 		paletteselect = 1
 	}
-	else if (Character == p_characters.undoised)
+	else if (character == p_characters.undoised)
 	{
 		spr_idle = spr_playerD_idle
 		spr_move = spr_player_move

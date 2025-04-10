@@ -21,3 +21,5 @@ if flash > 0
 	draw_sprite_ext(sprite_index, image_index, x, y, xscale * visual_size, image_yscale * visual_size, image_angle, image_blend, image_alpha)
 	shader_reset()
 }
+
+draw_text(x, y - 25, character)

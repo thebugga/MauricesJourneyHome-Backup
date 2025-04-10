@@ -12,6 +12,7 @@ enum states
 	bump,
 	groundpound,
 	grab,
+	nicklebag,
 	superjump,
 	taunt,
 	crouch,
@@ -41,7 +42,7 @@ enum p_characters
     peppino6
 }
 
-Character = p_characters.maurice
+character = p_characters.maurice
 scr_character_spr()
 spawn = "a"
 door_type = fade_types.none
@@ -58,6 +59,9 @@ prevstate = states.normal
 xscale = 1
 jumpstop = false
 mach4mode = false
+slaphand = 0
+sjumptimer = 0
+sjumpangle = 270
 wallspeed = 0
 flash = 0
 

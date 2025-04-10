@@ -25,7 +25,7 @@ function player_groundpound()
 	if (floor(image_index) == image_number - 1 && sprite_index == spr_shotgunjump1)
 		sprite_index = spr_shotgunjump3*/
 	
-	if (!grounded)
+	if (!grounded) && !(sprite_index == spr_player_poundcancel1 && character == p_characters.maurice)
 	{
 		//if (sprite_index != 'rockethitwall')
 			hsp = p_move * movespeed
@@ -93,13 +93,22 @@ function player_groundpound()
 		}
 		else
 		{
-			reset_anim(sprite_index == spr_poundcancel1 ? spr_poundcancel2 : spr_bodyslamland)
-			/*else if shotgunAnim == 0
-				sprite_index = spr_bodyslamland
+			if sprite_index == spr_poundcancel1
+			{
+				state = states.tumble
+				sprite_index = spr_crouchslip
+				movespeed = freefallsmash
+			}
 			else
-				sprite_index = spr_shotgunjump2*/
-			image_index = 0
-			state = states.bump
+			{
+				reset_anim(spr_bodyslamland)
+				/*else if shotgunAnim == 0
+					sprite_index = spr_bodyslamland
+				else
+					sprite_index = spr_shotgunjump2*/
+				image_index = 0
+				state = states.bump
+			}
 			shake_camera()
 			scr_sound_3d(sfx_groundpound, x, y)
 			create_effect(x, y + 2, spr_groundpoundeffect)

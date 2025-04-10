@@ -266,6 +266,7 @@
     {"id":{"name":"player_ladder","path":"scripts/player_ladder/player_ladder.yy",},},
     {"id":{"name":"player_mach2","path":"scripts/player_mach2/player_mach2.yy",},},
     {"id":{"name":"player_mach3","path":"scripts/player_mach3/player_mach3.yy",},},
+    {"id":{"name":"player_nicklebag","path":"scripts/player_nicklebag/player_nicklebag.yy",},},
     {"id":{"name":"player_noclip","path":"scripts/player_noclip/player_noclip.yy",},},
     {"id":{"name":"player_normal","path":"scripts/player_normal/player_normal.yy",},},
     {"id":{"name":"player_parry","path":"scripts/player_parry/player_parry.yy",},},

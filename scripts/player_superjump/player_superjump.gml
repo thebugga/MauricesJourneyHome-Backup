@@ -6,8 +6,8 @@ function player_superjump()
 	if (sprite_index == spr_superjumpprep || sprite_index == spr_superjumpflash)
 		movespeed = approach(movespeed, 0, 1)
 		
-	if (sprite_index == spr_superjumpprep)
-		reset_anim_on_end(spr_superjumpflash)
+	if (sprite_index == spr_player_superjumpprep)
+		reset_anim_on_end(spr_player_superjumpflash)
 		
 	if (sprite_index == spr_Sjumpcancelstart)
 	{
@@ -47,7 +47,7 @@ function player_superjump()
 	if (sprite_index != spr_superjump && sprite_index != spr_Sjumpcancel && sprite_index != spr_Sjumpcancelstart && sprite_index != spr_superjumpprep && !key_up.down && grounded)
 	{
 		vsp = -12
-		sprite_index = spr_superjump
+		sprite_index = spr_player_superjump
 		scr_sound_3d(sfx_superjumprelease, x, y)
 		create_effect(x, y, spr_superjumpexplosion)
 	}
@@ -77,18 +77,35 @@ function player_superjump()
 			scr_sound_3d(sfx_groundpound, x, y)
 		}
 		
-		if (sprite_index != spr_Sjumpcancelstart)
+		if (sprite_index != spr_player_Sjumpcancelstart)
 			vsp -= 0.6
 		
 		if (input_buffers.grab > 0 || key_dash.pressed) && state != states.bump
 		{
 			input_buffers.grab = 0
-			reset_anim(obj_player.spr_Sjumpcancelstart)
+			reset_anim(spr_player_Sjumpcancelstart)
 			scr_sound_3d(sfx_superjumpcancel, x, y)
 			audio_stop_sound(sfx_superjumprelease)
 		}
 		
 		aftimg_timers.blur.do_it = true
 		aftimg_timers.mach.do_it = true
+	}
+	
+
+	
+	if (input_buffers.grab > 0 || key_dash.pressed) && (sprite_index == spr_player_superjump || sprite_index == spr_player_mach2jump)
+	{
+		if (p_move != 0)
+		  xscale = p_move
+		state = states.mach2
+		sprite_index = spr_player_secondjump
+		jumpstop = true
+		vsp = -4
+		flash = 8
+		movespeed = 8
+		image_speed = 0.35
+		with particle_create(x, y, particles.genericpoof, xscale, 1, spr_crazyruneffect)
+			depth = -150
 	}
 }

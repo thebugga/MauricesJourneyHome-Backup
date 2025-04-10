@@ -4,9 +4,12 @@ function player_tumble()
 	
 	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == spr_machroll || sprite_index == spr_mach2jump || sprite_index == spr_backslide))
 	{
-		vsp = 10
-		sprite_index = spr_dive
-		scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+		sprite_index = spr_player_dive
+		if character != p_characters.maurice
+		{
+			vsp = 10
+			scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+		}
 	}
 	
 	if (sprite_index == spr_ball && grounded)
@@ -28,6 +31,12 @@ function player_tumble()
 		sprite_index = spr_poundcancel1
 		state = states.groundpound
 		vsp = -6
+		if character == p_characters.maurice
+		{
+			freefallsmash = movespeed
+			hsp = 0
+			vsp = movespeed
+		}
 		dir = xscale
 		scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
 	}

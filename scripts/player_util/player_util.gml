@@ -22,13 +22,22 @@ function do_grab()
 		input_buffers.grab = 0
 		if (!key_up.down)
 		{
-			movespeed = max(movespeed, 5)
-			if state == states.normal
-				movespeed = 8
-			state = states.grab
-			reset_anim(obj_player.spr_suplexgrab)
-			scr_sound_3d(sfx_suplexdash, x, y)
-			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
+			if character == p_characters.maurice
+			{
+				slaphand = 1
+				state = states.nicklebag
+				image_index = 4
+			}
+			else
+			{
+				movespeed = max(movespeed, 5)
+				if state == states.normal
+					movespeed = 8
+				state = states.grab
+				reset_anim(spr_player_suplexgrab)
+				scr_sound_3d(sfx_suplexdash, x, y)
+				particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
+			}
 		}
 		else
 		{

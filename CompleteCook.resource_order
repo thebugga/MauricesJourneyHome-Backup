@@ -190,6 +190,7 @@
     {"name":"player_ladder","order":14,"path":"scripts/player_ladder/player_ladder.yy",},
     {"name":"player_mach2","order":2,"path":"scripts/player_mach2/player_mach2.yy",},
     {"name":"player_mach3","order":3,"path":"scripts/player_mach3/player_mach3.yy",},
+    {"name":"player_nicklebag","order":25,"path":"scripts/player_nicklebag/player_nicklebag.yy",},
     {"name":"player_noclip","order":23,"path":"scripts/player_noclip/player_noclip.yy",},
     {"name":"player_parry","order":22,"path":"scripts/player_parry/player_parry.yy",},
     {"name":"player_piledriver","order":19,"path":"scripts/player_piledriver/player_piledriver.yy",},

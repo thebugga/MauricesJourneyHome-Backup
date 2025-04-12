@@ -3,7 +3,9 @@ if instance_exists(obj_shell)
 	if obj_shell.isOpen
 		exit;
 }
-
+if instance_exists(obj_options) || instance_exists(obj_characterselect)
+	exit;
+	
 if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter))
 {
 	if !pause
@@ -20,11 +22,5 @@ if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter))
 		pause = false
 		instance_activate_all()
 		audio_resume_all()
-		
-		with obj_music
-		{
-			if (global.secret && secret_mu_to_play != noone)
-				pauseIDS(true);
-		}
 	}
 }

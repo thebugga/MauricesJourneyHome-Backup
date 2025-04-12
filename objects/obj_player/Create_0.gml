@@ -42,6 +42,7 @@ enum p_characters
     peppino
 }
 
+player = 0
 character = p_characters.maurice
 scr_character_spr()
 spawn = "a"

@@ -33,6 +33,10 @@
     {"name":"inst_3B145277","path":"rooms/tower_1/tower_1.yy",},
     {"name":"inst_42F79F38","path":"rooms/tower_1/tower_1.yy",},
     {"name":"inst_654AE16C","path":"rooms/tower_1/tower_1.yy",},
+    {"name":"inst_46EB7468","path":"rooms/tower_1/tower_1.yy",},
+    {"name":"inst_5319E4D3","path":"rooms/tower_1/tower_1.yy",},
+    {"name":"inst_2BF8507A","path":"rooms/tower_1/tower_1.yy",},
+    {"name":"inst_492135DF","path":"rooms/tower_1/tower_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -72,6 +76,10 @@
         {"$GMRInstance":"v2","%Name":"inst_654AE16C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_654AE16C","objectId":{"name":"obj_treasurepodium","path":"objects/obj_treasurepodium/obj_treasurepodium.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_treasurepodium","path":"objects/obj_treasurepodium/obj_treasurepodium.yy",},"propertyId":{"name":"level_name","path":"objects/obj_treasurepodium/obj_treasurepodium.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Entrance\"",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1440.0,"y":960.0,},
+        {"$GMRInstance":"v2","%Name":"inst_46EB7468","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_46EB7468","objectId":{"name":"obj_destroyable_rework","path":"objects/obj_destroyable_rework/obj_destroyable_rework.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1056.0,"y":992.0,},
+        {"$GMRInstance":"v2","%Name":"inst_5319E4D3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5319E4D3","objectId":{"name":"obj_destroyable_rework","path":"objects/obj_destroyable_rework/obj_destroyable_rework.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1056.0,"y":928.0,},
+        {"$GMRInstance":"v2","%Name":"inst_2BF8507A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2BF8507A","objectId":{"name":"obj_destroyable_rework","path":"objects/obj_destroyable_rework/obj_destroyable_rework.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1056.0,"y":864.0,},
+        {"$GMRInstance":"v2","%Name":"inst_492135DF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_492135DF","objectId":{"name":"obj_destroyable_rework","path":"objects/obj_destroyable_rework/obj_destroyable_rework.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1056.0,"y":800.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Backgrounds_1","animationFPS":20.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Backgrounds_1","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"bg_towerhall","path":"sprites/bg_towerhall/bg_towerhall.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],

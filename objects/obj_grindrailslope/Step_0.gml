@@ -27,3 +27,4 @@ with (obj_player)
 		y = other.slope_y - h
 	}
 }
+visible = global.showcollisions

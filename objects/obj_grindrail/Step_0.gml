@@ -9,3 +9,4 @@ with (obj_player)
 		y = other.bbox_top - h
 	}
 }
+visible = global.showcollisions

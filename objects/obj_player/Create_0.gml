@@ -1,4 +1,5 @@
 init_collide()
+debugstats = false;
 
 enum states 
 {

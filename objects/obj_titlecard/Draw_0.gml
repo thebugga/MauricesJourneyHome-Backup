@@ -47,17 +47,14 @@ var cardshakey = irandom_range(-wipshake, wipshake)
 var titlecardx = x + titlecredit[image_index][1] + cardx
 var titlecardy = y + titlecredit[image_index][2]
 draw_sprite(spr_titlecards, image_index, titlecardx + cardshakex, titlecardy + cardshakey)
-/*
-shader_set(global.Pal_Shader)
-pal_swap_set(spr_peppalette, obj_player.player_paletteselect[0], false)
-pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, obj_player1.player_patterntexture[0])
+
+shader_set(shd_pal_swapper)
+pal_swap_set(pal_peppino, 1, false)
 draw_sprite(spr_titlecards_maurice, image_index, titlecardx + cardshakex, titlecardy + cardshakey)
-pal_swap_set(spr_noisepalette, obj_player1.player_paletteselect[1], false)
-pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, obj_player1.player_patterntexture[1])
+pal_swap_set(pal_undoised, 1, false)
 draw_sprite(spr_titlecards_doise, image_index, titlecardx + cardshakex, titlecardy + cardshakey)
-pattern_reset()
-reset_shader_fix()
-*/
+shader_reset()
+
 draw_sprite(spr_titlecard_titles, image_index, titlecardx + cardshakex + irandom_range(-1, 1), titlecardy + cardshakey + irandom_range(-1, 1))
 
 if wipshow
@@ -69,11 +66,11 @@ var creditx = x + titlecredit[image_index][3]
 var credity = y + titlecredit[image_index][4]
 for (var c = 0; c < 3; c++)
 {
-	draw_set_font(-4)
+	draw_set_font(global.smallerfont)
 	var carray = ["Storyboarded by", "Backgrounds by", "Composed by"]
 	draw_text_color(creditx, credity, carray[c], c_white, c_white, c_white, c_white, creditalpha)
 	credity += string_height(carray[c])
-	draw_set_font(global.generic_font)
+	draw_set_font(global.creditsfont)
 	draw_text_color(creditx, credity, titlecredit[image_index][6 + c], c_white, c_white, c_white, c_white, creditalpha)
 	credity += string_height(titlecredit[image_index][6 + c])
 }

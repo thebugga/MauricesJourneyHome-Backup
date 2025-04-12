@@ -40,9 +40,7 @@
         "GMSprite",
       ],"listItems":[],"multiselect":false,"name":"door_bg","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_defaultgate_bg","path":"sprites/spr_defaultgate_bg/spr_defaultgate_bg.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_defaultgate_bg","varType":5,},
     {"$GMObjectProperty":"v1","%Name":"speed_array","filters":[],"listItems":[],"multiselect":false,"name":"speed_array","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[0.65, 0.75, 0.85]","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"title_data","filters":[
-        "GMSound",
-      ],"listItems":[],"multiselect":false,"name":"title_data","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[mu_title_john, 0, 0]","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"card_index","filters":[],"listItems":[],"multiselect":false,"name":"card_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

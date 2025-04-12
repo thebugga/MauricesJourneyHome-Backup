@@ -29,7 +29,7 @@ function player_ladder()
 		}
 	}
 	
-	if input_buffers.jump > 0
+	if input_buffers.jump > 07
 	{
 		input_buffers.jump = 0
 		vsp = -12
@@ -38,4 +38,7 @@ function player_ladder()
 		jumpstop = false
 		ladderbuffer = 20
 	}
+	
+	if state == states.tumble
+		state = states.normal
 }

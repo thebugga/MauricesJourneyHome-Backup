@@ -1,0 +1,26 @@
+if obj_player.debugstats
+{
+    var rm = string_upper(room_get_name(room))
+    var statename = string_upper(obj_player.state)
+    var spr = string_upper(sprite_get_name(obj_player.sprite_index))
+    draw_set_valign(fa_middle)
+    draw_set_color(c_white)
+	var side = object_index = obj_player ? fa_left : fa_right
+    draw_set_halign(side)
+    draw_set_font(global.smallerfont)
+    draw_text(side == fa_left ? 32 : screen_w - 32, 258, ("CHARACTER: " + string(character)))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 240, ("IMAGE_INDEX: " + string(obj_player.image_index)))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 216, ("IMAGE_SPEED: " + string(obj_player.image_speed)))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 192, ("X: " + string(x)))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 168, ("Y: " + string(y)))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 144, ("REAL HSP: " + string(obj_player.movespeed)))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 120, ("HSP: " + string(obj_player.hsp)))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 96, ("VSP: " + string(obj_player.vsp)))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 72, ("STATE: " + statename))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 48, ("SPRITE_INDEX: " + spr))
+    draw_text(side == fa_left ? 32 : screen_w - 32, 24, ("ROOM: " + rm))
+    shader_set(shd_pal_swapper)
+    pal_swap_set(obj_player.spr_palette, obj_player.pal_select)
+    draw_sprite_ext(obj_player.sprite_index, obj_player.image_index, side == fa_left ? 82 : screen_w - 82, 430, 2, 2, image_angle, c_white, 1)
+    shader_reset()
+}

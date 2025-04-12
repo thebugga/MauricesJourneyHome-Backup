@@ -4,6 +4,7 @@ depth = 20
 
 bg_parallax = []
 
+
 for (var i = 0; i < array_length(speed_array); i++) 
 {
 	var s = {

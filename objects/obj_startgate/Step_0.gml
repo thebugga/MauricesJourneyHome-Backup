@@ -41,9 +41,6 @@ if flick
 {
 	do_fade(t_room, t_door, fade_types.door)
 	
-	var d = { //readable title data
-		card_index: title_data[1]
-	}
 	with instance_create(0, 0, obj_titlecard)
-		image_index = d.card_index
+		obj_titlecard.image_index = other.card_index
 }

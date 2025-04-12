@@ -1,2 +1,4 @@
-state = 2
-do_fade(t_room, t_door, fade_types.door)
+showing = true
+if image_index != 0
+	event_play_oneshot(titlecredit[image_index][0])
+alarm[1] = 40

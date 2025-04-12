@@ -18,7 +18,6 @@ start_wiping = function()
 	
 	if !surface_exists(wipe_surface)
 		wipe_surface = surface_create(screen_w, screen_h)
-	pause_image = make_pause_image()
 	surface_set_target(wipe_surface)
 	draw_sprite(pause_image, 0, 0, 0)
 	surface_reset_target()

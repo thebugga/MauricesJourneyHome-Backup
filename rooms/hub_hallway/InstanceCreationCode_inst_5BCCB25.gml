@@ -1,1 +1,1 @@
-target_room = hub_complex
+t_room = hub_complex

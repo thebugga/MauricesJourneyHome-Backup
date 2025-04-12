@@ -1,0 +1,53 @@
+{
+  "$GMObject":"",
+  "%Name":"obj_startgateoutside",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"obj_startgateoutside",
+  "overriddenProperties":[],
+  "parent":{
+    "name":"Hub",
+    "path":"folders/Objects/Hub.yy",
+  },
+  "parentObjectId":null,
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"t_room","filters":[],"listItems":[],"multiselect":false,"name":"t_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"level_1","path":"rooms/level_1/level_1.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"level_1","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"t_door","filters":[],"listItems":[],"multiselect":false,"name":"t_door","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"a\"","varType":2,},
+    {"$GMObjectProperty":"v1","%Name":"level_name","filters":[],"listItems":[],"multiselect":false,"name":"level_name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"Entrance\"","varType":2,},
+    {"$GMObjectProperty":"v1","%Name":"door_gate","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"door_gate","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_defaultgate","path":"sprites/spr_defaultgate/spr_defaultgate.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_defaultgate","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"door_bg","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"door_bg","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_defaultgate_bg","path":"sprites/spr_defaultgate_bg/spr_defaultgate_bg.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_defaultgate_bg","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"speed_array","filters":[],"listItems":[],"multiselect":false,"name":"speed_array","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[0.65, 0.75, 0.85]","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"title_data","filters":[
+        "GMSound",
+      ],"listItems":[],"multiselect":false,"name":"title_data","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[mu_title_john, 0, 0]","varType":4,},
+  ],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"spr_exitgate",
+    "path":"sprites/spr_exitgate/spr_exitgate.yy",
+  },
+  "spriteMaskId":null,
+  "visible":true,
+}

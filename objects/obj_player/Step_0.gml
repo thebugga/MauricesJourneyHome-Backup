@@ -1,5 +1,5 @@
 if !obj_shell.isOpen
-	get_input()
+	get_input(player)
 
 struct_foreach(aftimg_timers, function(_name, _data)
 {

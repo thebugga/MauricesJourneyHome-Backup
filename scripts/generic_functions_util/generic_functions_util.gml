@@ -137,6 +137,18 @@ function sleep(ms)
 
 function set_globals()
 {
+	ini_open("globalsave.ini")
+	global.fullscreen = ini_read_real("options", "fullscreen", false)
+	global.option_master_volume = ini_read_real("options", "option_master_volume", false)
+	global.option_sfx_volume = ini_read_real("options", "option_sfx_volume", 1)
+	global.option_music_volume = ini_read_real("options", "option_music_volume", 1) //these being global are kinda unneccesary...
+	ini_close()
+	
+	window_set_fullscreen(global.fullscreen)
+	audio_master_gain(global.option_master_volume)
+	audio_group_set_gain(ag_sfx, global.option_sfx_volume, 0)
+	audio_group_set_gain(ag_music, global.option_music_volume, 0)
+	
 	global.combo = {
 		count: 0,
 		timer: 0,
@@ -150,6 +162,8 @@ function set_globals()
 	global.ds_escapesaveroom = ds_list_create()
 	global.ds_saveroom = ds_list_create()
 	global.doorshut = false
+	global.swapmode = false
+	global.coop = false
 	global.scorefont = font_add_sprite_ext(spr_font_collect, "0123456789", true, 0)
 	global.generic_font = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!?.1234567890:", true, 0)
 	global.hud_negativefont = font_add_sprite_ext(spr_negativenumber_font, "0123456789$-", true, 0)

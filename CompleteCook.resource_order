@@ -67,6 +67,7 @@
     {"name":"obj_bigcollect","order":4,"path":"objects/obj_bigcollect/obj_bigcollect.yy",},
     {"name":"obj_bigescapecollect","order":7,"path":"objects/obj_bigescapecollect/obj_bigescapecollect.yy",},
     {"name":"obj_camera","order":2,"path":"objects/obj_camera/obj_camera.yy",},
+    {"name":"obj_characterselect","order":10,"path":"objects/obj_characterselect/obj_characterselect.yy",},
     {"name":"obj_checkpoint","order":7,"path":"objects/obj_checkpoint/obj_checkpoint.yy",},
     {"name":"obj_cheeseslime","order":2,"path":"objects/obj_cheeseslime/obj_cheeseslime.yy",},
     {"name":"obj_collect_got_visual","order":2,"path":"objects/obj_collect_got_visual/obj_collect_got_visual.yy",},

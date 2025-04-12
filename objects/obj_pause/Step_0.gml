@@ -1,23 +1,14 @@
-if !pause
+if !pause || instance_exists(obj_options) || instance_exists(obj_characterselect)
 	exit;
 
 get_input()
 
 var movev = -uikey_up.pressed + uikey_down.pressed
 
-optionselected = clamp(optionselected + movev, 0, array_length(options) - 1)
+selected = clamp(selected + movev, 0, array_length(pausearray) - 1)
 
-var cur_option = options[optionselected]
-
-if ((uikey_left.pressed || uikey_right.pressed || uikey_accept.pressed) && cur_option.o_type == optiontypes.onoff)
+if uikey_accept.pressed
 {
-	cur_option.val = !cur_option.val
-	cur_option.func(cur_option.val)
+	if pausearray[selected][1] != -4
+		pausearray[selected][1]()
 }
-else if (cur_option.o_type == optiontypes.slider)
-{
-	var move = -uikey_left.down + uikey_right.down
-	cur_option.val = clamp(cur_option.val + move, 0, 100)
-	if move != 0
-		cur_option.func(cur_option.val)
-}	

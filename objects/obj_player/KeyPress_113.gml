@@ -1,0 +1,1 @@
+global.showcollisions = !global.showcollisions

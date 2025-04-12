@@ -1,1 +1,1 @@
-debugstats = !debugstats
+state = states.noclip

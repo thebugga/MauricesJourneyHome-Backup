@@ -1,7 +1,5 @@
 talking = state != 0
 
-sprite_index = talking ? spr_pizzagranny_talk : spr_pizzagranny_sleep
-
 switch (state)
 {
 	case 0:

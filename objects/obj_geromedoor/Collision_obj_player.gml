@@ -4,7 +4,7 @@ var canenter = ds_list_find_index(global.ds_saveroom, id) != -1 || other.hasgero
 
 if (other.bbox_bottom <= bbox_bottom + 1 && other.bbox_bottom >= bbox_bottom - 1 && key_up.down && other.state != states.actor && canenter)
 {
-	var enterspr = spr_enterkeydoor
+	var enterspr = other.spr_enterkeydoor
 	
 	if other.hasgerome
 	{

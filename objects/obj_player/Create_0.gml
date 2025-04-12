@@ -97,7 +97,7 @@ loop_sounds = {
 		if obj_player.sprite_index != obj_player.spr_mach1
 			return true;}
 	},
-	mach2: {state: states.mach2, sound: sfx_mach2, sndid: noone, is_3d: false, func: function() {
+	mach2: {state: states.mach2, sound: sfx_mach2, sndid: noone, is_3d: true, func: function() {
 		if obj_player.sprite_index != obj_player.spr_mach2
 			return true;}
 	},
@@ -156,3 +156,4 @@ return_location = {
 
 doorxscale = 1
 warping = false
+hitstun = 0

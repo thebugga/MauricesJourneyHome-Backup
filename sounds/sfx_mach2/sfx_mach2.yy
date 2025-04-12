@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":1.1559864,
+  "duration":0.8330839,
   "name":"sfx_mach2",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_mach2.ogg",
+  "soundFile":"sfx_mach2.wav",
   "type":1,
   "volume":1.0,
 }

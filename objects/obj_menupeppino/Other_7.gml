@@ -6,7 +6,7 @@ switch (sprite_index)
 {
 	//start
 	case spr_titlepep_forward:
-		reset_anim(obj_player.spr_titlepep_forwardtoleft)
+		reset_anim(spr_titlepep_forwardtoleft)
 		break;
 	//transitions
 	case spr_titlepep_forwardtoleft:
@@ -26,7 +26,7 @@ switch (sprite_index)
 	//still frames
 	case spr_titlepep_left:
 		if do_switch
-			reset_anim(obj_player.spr_titlepep_lefttomiddle)
+			reset_anim(spr_titlepep_lefttomiddle)
 		break;
 	case spr_titlepep_middle:
 		if do_switch
@@ -34,6 +34,6 @@ switch (sprite_index)
 		break;
 	case spr_titlepep_right:
 		if do_switch
-			reset_anim(obj_player.spr_titlepep_righttomiddle)
+			reset_anim(spr_titlepep_righttomiddle)
 		break;
 }

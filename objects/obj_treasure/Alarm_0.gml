@@ -3,5 +3,6 @@ global.score += 3000
 with instance_create(x, y, obj_collect_number)
 	num = 3000
 global.level_data.treasure = true
-	
+		
+global.combo.timer = 60
 instance_destroy()

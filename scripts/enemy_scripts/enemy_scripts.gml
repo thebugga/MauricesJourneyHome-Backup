@@ -269,8 +269,11 @@ function do_enemy_generics()
 
 function create_hurtbox()
 {
-	with instance_create(x, y, obj_hurtbox)
+	with instance_create(x, y, obj_plug)
 	{
+		visible = false
+		sprite_index = mask_forkhitbox
+		mask_index = mask_forkhitbox
 		other.hurtbox_id = id
 		follow_obj = other.id
 	}

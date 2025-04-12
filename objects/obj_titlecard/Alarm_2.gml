@@ -1,0 +1,2 @@
+showing = false
+creditshow = false

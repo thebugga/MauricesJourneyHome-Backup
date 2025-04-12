@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":3.5493197,
+  "duration":0.8330839,
   "name":"sfx_mach4",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_mach4.ogg",
+  "soundFile":"sfx_mach4.wav",
   "type":1,
   "volume":1.0,
 }

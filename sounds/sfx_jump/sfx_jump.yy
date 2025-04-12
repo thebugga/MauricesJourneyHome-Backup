@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":0.846667,
+  "duration":0.35680273,
   "name":"sfx_jump",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_jump.ogg",
+  "soundFile":"sfx_jump.wav",
   "type":1,
   "volume":1.0,
 }

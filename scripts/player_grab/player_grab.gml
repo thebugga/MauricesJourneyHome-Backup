@@ -64,7 +64,7 @@ function player_grab()
 	{
 		case spr_suplexgrab:
 		case spr_player_faceplant:
-			if anim_ended()
+			if anim_ended() && !key_grab
 				state = states.normal
 			break;
 		case spr_suplexgrabjump:

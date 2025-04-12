@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Essentials",
-    "path":"folders/Objects/Essentials.yy",
+    "path":"folders/Essentials.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

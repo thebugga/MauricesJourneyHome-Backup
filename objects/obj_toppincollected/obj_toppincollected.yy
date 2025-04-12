@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Essentials",
-    "path":"folders/Objects/Essentials.yy",
+    "path":"folders/Essentials.yy",
   },
   "parentObjectId":null,
   "persistent":false,

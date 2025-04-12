@@ -15,6 +15,7 @@ function break_destroyables()
 		states.mach2,
 		states.mach3,
 		states.grab,
+		states.nicklebag,
 		states.tumble,
 		states.punch,
 		e_states.hit

@@ -39,18 +39,11 @@ with obj_player
 
 if flick
 {
-	var d = { //readable title data
-		music: title_data[0],
-		card_index: title_data[1],
-		title_index: title_data[2]
-	}
+	do_fade(t_room, t_door, fade_types.door)
 	
-	with instance_create(0, 0, obj_titlecard)
-	{
-		music = d.music
-		card_index = d.card_index
-		title_index = d.title_index
-		t_room = other.t_room
-		t_door = other.t_door
+	var d = { //readable title data
+		card_index: title_data[1]
 	}
+	with instance_create(0, 0, obj_titlecard)
+		image_index = d.card_index
 }

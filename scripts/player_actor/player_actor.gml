@@ -16,7 +16,7 @@ function player_actor()
 		case spr_Timesup:
 			if anim_ended()
 			{
-				if room != rm_timesup
+				if room != rm_timesup && !instance_exists(obj_titlecard)
 					state = states.normal
 				else
 					image_speed = 0

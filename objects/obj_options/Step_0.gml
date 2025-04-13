@@ -15,9 +15,12 @@ else if (cur_option.o_type == optiontypes.slider)
 {
 	var move = -uikey_left.down + uikey_right.down
 	cur_option.val = clamp(cur_option.val + move, 0, 100)
-	if move != 0
+	if move != 0 
 		cur_option.func(cur_option.val)
 }
+
+if movev != 0
+    scr_sound(sfx_jump)
 
 if uikey_deny.pressed
 	instance_destroy()

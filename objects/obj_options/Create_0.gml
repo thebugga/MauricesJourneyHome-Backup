@@ -1,4 +1,5 @@
 optionselected = 0
+tempwinvar = [960, 540]
 
 enum optiontypes {
 	slider,
@@ -9,9 +10,14 @@ options = [
 	{o_name: "FULLSCREEN: ", val: global.fullscreen, o_type: optiontypes.onoff, func: function(_val) {
 		global.fullscreen = _val
 		quick_ini_write_real("globalsave.ini", "options", "fullscreen", _val)
-		window_set_fullscreen(_val)
-		if (!_val)
-			window_center()
+		window_set_fullscreen(_val);
+		if (!_val) {
+            window_set_size(tempwinvar[0], tempwinvar[1]);
+			window_center();
+        } else
+            tempwinvar[0] = window_get_width();
+            tempwinvar[1] = window_get_height();
+            window_center()
 		}},
 	{o_name: "MASTER VOLUME: ", val: global.option_master_volume * 100, o_type: optiontypes.slider, func: function(_val) {
 		_val /= 100

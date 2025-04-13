@@ -49,10 +49,10 @@ if instance_exists(obj_options) || instance_exists(obj_characterselect)
 
 draw_text(sw, 64, "PAUSE")
 
-sh -= array_length(pausearray) * 16
+sh -= array_length(pausearray) * 24
 
 for (var i = 0; i < array_length(pausearray); i++) 
-	draw_text(sw, sh + (i * 32), pausearray[i][0])
+	draw_text(sw, sh + (i * 50), string_upper(pausearray[i][0]))
 
 var str = pausearray[selected][0]
 

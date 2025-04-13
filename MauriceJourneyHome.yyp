@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"CompleteCook",
+  "%Name":"MauriceJourneyHome",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
     {"$GMAudioGroup":"","%Name":"ag_music","name":"ag_music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -114,7 +114,7 @@
   "MetaData":{
     "IDEVersion":"2024.13.0.190",
   },
-  "name":"CompleteCook",
+  "name":"MauriceJourneyHome",
   "resources":[
     {"id":{"name":"fmod_gms","path":"extensions/fmod_gms/fmod_gms.yy",},},
     {"id":{"name":"font_console","path":"fonts/font_console/font_console.yy",},},
@@ -782,6 +782,7 @@
     {"id":{"name":"Sprite73_1","path":"sprites/Sprite73_1/Sprite73_1.yy",},},
     {"id":{"name":"Sprite73","path":"sprites/Sprite73/Sprite73.yy",},},
     {"id":{"name":"Sprite92","path":"sprites/Sprite92/Sprite92.yy",},},
+    {"id":{"name":"spritepears","path":"sprites/spritepears/spritepears.yy",},},
     {"id":{"name":"tilespr_medieval","path":"sprites/tilespr_medieval/tilespr_medieval.yy",},},
     {"id":{"name":"tilespr_secret","path":"sprites/tilespr_secret/tilespr_secret.yy",},},
     {"id":{"name":"ts_medieval","path":"tilesets/ts_medieval/ts_medieval.yy",},},

@@ -1,5 +1,4 @@
 optionselected = 0
-tempwinvar = [960, 540]
 
 enum optiontypes {
 	slider,
@@ -11,6 +10,7 @@ options = [
 		global.fullscreen = _val
 		quick_ini_write_real("globalsave.ini", "options", "fullscreen", _val)
 		window_set_fullscreen(_val);
+		var tempwinvar = [960, 540]
 		if (!_val) {
             window_set_size(tempwinvar[0], tempwinvar[1]);
 			window_center();

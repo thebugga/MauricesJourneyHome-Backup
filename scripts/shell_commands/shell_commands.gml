@@ -1,3 +1,21 @@
+
+function getroom_name_repeat() {
+    var roomarr = [];
+    
+    for (var i = 0; room_exists(i); i++) {
+        array_push(roomarr , room_get_name(i))
+    }
+    return roomarr;
+}
+
+
+
+
+
+
+
+
+
 function sh_panic (args) {
 	var panic = false
 	
@@ -48,9 +66,8 @@ function meta_room_goto() {
 		description: "Goes to any room",
 		arguments: ["room", "door"],
 		suggestions: [
-			function() {
-				return ["level_1"];
-			},
+				getroom_name_repeat()
+			,
 			["a", "b", "c", "d", "e", "f", "g"]
 		],
 		hidden: false,

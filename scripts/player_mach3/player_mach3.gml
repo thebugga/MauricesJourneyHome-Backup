@@ -66,7 +66,7 @@ function player_mach3()
 			scr_sound_3d(sfx_machslideboost, x, y)
 		}
 		
-		if (p_move == xscale)
+		if (p_move == xscale && movespeed <= 16)
 			movespeed += mach4mode ? 0.1 : 0.025
 			
 		if (key_up.down && !dashpad)

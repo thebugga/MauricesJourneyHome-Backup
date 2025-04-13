@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":0.356979,
+  "duration":0.35698414,
   "name":"sfx_splat",
   "parent":{
     "name":"Sounds",

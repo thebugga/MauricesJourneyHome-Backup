@@ -12,3 +12,6 @@ if uikey_accept.pressed
 	if pausearray[selected][1] != -4
 		pausearray[selected][1]()
 }
+
+if movev != 0
+    scr_sound(sfx_step)

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":250.56653,
+  "duration":0.0,
   "name":"mu_anchovi",
   "parent":{
     "name":"Sounds",

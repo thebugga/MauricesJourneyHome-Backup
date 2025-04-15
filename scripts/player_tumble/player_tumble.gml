@@ -98,7 +98,7 @@ function player_tumble()
 		else
 			state = states.mach2
 		reset_anim(obj_player.spr_rollgetup)
-		scr_sound_3d(sfx_rollgetup, x, y)
+		scr_sound_3d_on(myemitter, sfx_rollgetup)
 	}
 	
 	//if (!keyDown('down.pressed && !keyDown('shift.pressed && grounded && vsp > 0 && state != 'bump' && (sprite_index != spr_ball && sprite_index != 'tumbleend.pressed && sprite_index != 'breakdance' && !canuncrouch.isTouching(solids))

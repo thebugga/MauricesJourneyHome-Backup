@@ -32,9 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_plug",
-    "path":"sprites/spr_plug/spr_plug.yy",
+    "name":"mask_forkhitbox",
+    "path":"sprites/mask_forkhitbox/mask_forkhitbox.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

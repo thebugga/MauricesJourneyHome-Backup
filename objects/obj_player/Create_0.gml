@@ -6,11 +6,14 @@ enum p_characters
     maurice,
     pierre,
     undoised,
+	mandrek,
+	/*
     clownmato,
     orange,
     swag,
     gabbie,
     peppino
+	*/
 }
 
 player = 0

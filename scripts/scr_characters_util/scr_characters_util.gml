@@ -52,6 +52,7 @@ function scr_character_spr()
 		spr_bump = spr_player_bump
 		spr_hurt = spr_player_hurt
 		spr_climbwall = spr_player_climbwall
+		spr_clingwall = spr_player_clingwall
 		spr_walljump = spr_player_walljump
 		spr_walljumpfall = spr_player_walljumpfall
 		spr_mach2jump = spr_player_mach2jump

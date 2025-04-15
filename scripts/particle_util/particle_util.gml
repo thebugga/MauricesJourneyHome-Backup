@@ -8,7 +8,8 @@ enum particles {
 	taunt,
 	machcharge,
 	bang,
-	yellowstar
+	yellowstar,
+	sparks
 }
 
 function particle_create(_x, _y, p_type, _xscale = 1, _yscale = 1, _sprite = noone)
@@ -58,12 +59,9 @@ function particle_create(_x, _y, p_type, _xscale = 1, _yscale = 1, _sprite = noo
 				image_angle = random_range(0, 360)
 				depth = -1
 				break;
-			case particles.yellowstar:
-				sprite_index = spr_gibstars
-				image_speed = 0
-				hsp = random_range(6, -6)
-				vsp = random_range(12, -12)
-				image_angle = random_range(0, 360)
+			case particles.sparks:
+				sprite_index = spr_supertauntcharge
+				image_speed = 1
 				break;
 			case particles.parry:
 				sprite_index = spr_parryflash
@@ -114,4 +112,10 @@ function create_debris(_x, _y, sprite)
 function create_effect(_x, _y, sprite)
 {
 	return particle_create(_x, _y, particles.genericpoof, 1, 1, sprite);
+}
+
+function create_followingeffect(sprite, state, _xscale = 1)
+{
+	with particle_create(x, y, particles.machcharge, _xscale, 1, sprite)
+		statetofollow = state
 }

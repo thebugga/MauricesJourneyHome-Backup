@@ -1,11 +1,3 @@
-enum e_states {
-	normal,
-	scared,
-	grabbed,
-	stun,
-	hit
-}
-
 function enemy_normal()
 {
 	var hurtbox_needed = false
@@ -84,9 +76,9 @@ function do_scared()
 {
 	if scared_timer > 0
 		scared_timer--
-	else if (obj_player.state == states.mach3 && distance_to_object(obj_player) < 200 && state != e_states.hit && grounded)
+	else if (obj_player.state == states.mach3 && distance_to_object(obj_player) < 200 && state != states.hit && grounded)
 	{
-		state = e_states.scared
+		state = states.scared
 		hsp = 0
 		vsp = -5
 		movespeed = 0
@@ -123,17 +115,17 @@ function do_enemy_generics()
 	do_scared()
 
 	grav = 0.5
-	if (state == e_states.hit)
+	if (state == states.hit)
 		grav = 0
 
 	if (place_meeting(x, y, obj_player))
 	{
-		if (obj_player.instakill && alarm[0] == -1 && !follow_player)
+		if (obj_player.instakill && obj_player.hitstun <= 0 && alarm[0] == -1 && !follow_player)
 		{
 			with (obj_player)
 			{
 				if (state == states.mach3)
-					reset_anim(obj_player.spr_mach3kill)
+					reset_anim(spr_player_mach3kill)
 				if ((key_jump.down && state != states.groundpound) || state == states.swingding)
 				{
 					vsp = -10
@@ -141,14 +133,15 @@ function do_enemy_generics()
 				}
 			}
 		
-			sprite_index = sprs.dead
+			sprite_index = sprs.stun
 		
 			do_enemygibs()
 			particle_create(x, y, particles.genericpoof)
 			shake_camera()
 			scr_sound_3d(sfx_punch, x, y)
 		
-			alarm[0] = 1
+			obj_player.hitstun = 5
+			alarm[0] = 5
 		}
 		if ((obj_player.state == states.mach2 || obj_player.state == states.tumble) && stun_timer < 160)
 		{
@@ -156,7 +149,7 @@ function do_enemy_generics()
 			hsp = obj_player.xscale * 18
 			xscale = -obj_player.xscale
 			warp = 0.4
-			state = e_states.stun
+			state = states.stun
 			stun_timer = 180
 			vsp = -5
 			repeat (4)
@@ -167,54 +160,28 @@ function do_enemy_generics()
 		{
 			if (state == states.grab && other.sprite_index != other.sprs.dead)
 			{
-				if character == p_characters.maurice || character == p_characters.undoised
+				other.follow_player = true
+				other.sprite_index = other.sprs.stun
+				reset_anim(spr_player_holdrise)
+				state = states.hold
+				if (abs(hsp) > 10)
 				{
-					
-					state = states.punchenemy
-					var str = choose(spr_finishingblow_1, spr_finishingblow_2, spr_finishingblow_3, spr_finishingblow_4, spr_finishingblow_5)
-					sprite_index = asset_get_index(str)
-					hsp = -xscale * 4
-					vsp = -6
-					do_enemygibs()
-					other.follow_player = false
-					other.state = e_states.hit
-					other.hsp = other.xscale * 20
-					other.vsp = 0
-					if key_up.down
-					{
-						other.hsp = 0
-						other.vsp = -20
-						sprite_index = spr_finishingblowup
-					}
-					global.combo.timer = 60
-					image_index = 4
+					state = states.swingding
+					sprite_index = spr_player_swingding
+					if !grounded
+						vsp = -5
 				}
-				else
+				if (key_up.down)
 				{
-					other.follow_player = true
-					other.sprite_index = other.sprs.stun
-					reset_anim(spr_holdrise)
-					state = states.hold
-					if (abs(hsp) > 10)
-					{
-						state = states.swingding
-						sprite_index = spr_swingding
-						if !grounded
-							vsp = -5
-					}
-					if (key_up.down)
-					{
-						state = states.piledriver
-						sprite_index = spr_piledriver
-						vsp = -18
-					}
+					state = states.piledriver
+					sprite_index = spr_player_piledriver
+					vsp = -18
 				}
-				
 			}
 			if (collision_line(bbox_left - 16, y + 20, bbox_right + 16, y + 20, other, false, true) && vsp > 2 && (state == states.jump || state == states.hold))
 			{
 				if (state == states.jump)
-					reset_anim(obj_player.spr_stomp)
+					reset_anim(spr_player_stomp)
 				vsp = key_jump.down ? -15 : -10
 				jumpstop = true
 				
@@ -224,7 +191,7 @@ function do_enemy_generics()
 					xscale = -obj_player.xscale
 					hsp = obj_player.xscale * 5
 					vsp = -5
-					state = e_states.stun
+					state = states.stun
 					stun_timer = 180
 					warp = -0.4
 				}
@@ -234,7 +201,7 @@ function do_enemy_generics()
 
 	if blur_timer > 0
 		blur_timer--
-	else if state == e_states.hit
+	else if state == states.hit
 	{
 		afterimage_create(after_images.blur)
 		blur_timer = 2
@@ -258,7 +225,7 @@ function do_enemy_generics()
 	    var _id = ds_list_find_value(en_list, i)
 		if place_meeting(x, y, _id)
 		{
-			if _id.state == e_states.hit
+			if _id.state == states.hit
 				instance_destroy()
 		}
 	}
@@ -271,9 +238,6 @@ function create_hurtbox()
 {
 	with instance_create(x, y, obj_plug)
 	{
-		visible = false
-		sprite_index = mask_forkhitbox
-		mask_index = mask_forkhitbox
 		other.hurtbox_id = id
 		follow_obj = other.id
 	}

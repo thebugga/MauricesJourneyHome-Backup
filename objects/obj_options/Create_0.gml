@@ -1,38 +1,40 @@
 optionselected = 0
-
+inputbuffer = 0
+pause_image = spr_null
 enum optiontypes {
 	slider,
-	onoff
+	onoff,
+	input
+
 }
 
 options = [
 	{o_name: "FULLSCREEN: ", val: global.fullscreen, o_type: optiontypes.onoff, func: function(_val) {
 		global.fullscreen = _val
 		quick_ini_write_real("globalsave.ini", "options", "fullscreen", _val)
-		window_set_fullscreen(_val);
-		var tempwinvar = [960, 540]
-		if (!_val) {
-            window_set_size(tempwinvar[0], tempwinvar[1]);
-			window_center();
-        } else
-            tempwinvar[0] = window_get_width();
-            tempwinvar[1] = window_get_height();
-            window_center()
-		}},
-	{o_name: "MASTER VOLUME: ", val: global.option_master_volume * 100, o_type: optiontypes.slider, func: function(_val) {
+		window_set_fullscreen(_val)
+		if (!_val)
+			window_center()
+	}},
+	{o_name: "MASTER VOLUME: ", val: global.master_volume * 100, o_type: optiontypes.slider, func: function(_val) {
 		_val /= 100
-		global.option_master_volume = _val
-		quick_ini_write_real("globalsave.ini", "options", "option_master_volume", _val)
+		global.master_volume = _val
+		quick_ini_write_real("globalsave.ini", "options", "master_volume", _val)
 		audio_master_gain(_val)
-		}},
-	{o_name: "SFX VOLUME: ", val: global.option_sfx_volume * 100, o_type: optiontypes.slider, func: function(_val) {
+	}},
+	{o_name: "SFX VOLUME: ", val: global.sfx_volume * 100, o_type: optiontypes.slider, func: function(_val) {
 		_val /= 100
-		global.option_sfx_volume = _val
-		quick_ini_write_real("globalsave.ini", "options", "option_sfx_volume", _val)
-		}},
-	{o_name: "MUSIC VOLUME: ", val: global.option_music_volume * 100, o_type: optiontypes.slider, func: function(_val) {
+		global.sfx_volume = _val
+		audio_group_set_gain(ag_sfx, _val, 0)
+		quick_ini_write_real("globalsave.ini", "options", "sfx_volume", _val)
+	}},
+	{o_name: "MUSIC VOLUME: ", val: global.music_volume * 100, o_type: optiontypes.slider, func: function(_val) {
 		_val /= 100
-		global.option_music_volume = _val
-		quick_ini_write_real("globalsave.ini", "options", "option_music_volume", _val)
-		}}
+		global.music_volume = _val
+		audio_group_set_gain(ag_music, _val, 0)
+		quick_ini_write_real("globalsave.ini", "options", "music_volume", _val)
+	}},
+	{o_name: "CHANGE KEYBINDS", val: 0, o_type: optiontypes.input, func: function(_val) {
+		instance_create(0, 0, obj_keyconfig)
+	}}
 ]

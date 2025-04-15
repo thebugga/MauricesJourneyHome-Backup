@@ -1,36 +1,6 @@
 init_collide()
 debugstats = false;
 
-enum states 
-{
-	normal,
-	jump,
-	mach2,
-	mach3,
-	tumble,
-	climbwall,
-	slide,
-	bump,
-	groundpound,
-	grab,
-	nicklebag,
-	superjump,
-	taunt,
-	crouch,
-	actor,
-	ladder,
-	punch,
-	hold,
-	piledriver,
-	punchenemy,
-	swingding,
-	grind,
-	hurt,
-	parry,
-	backtohub,
-	noclip
-}
-
 enum p_characters
 {
     maurice,
@@ -159,3 +129,7 @@ return_location = {
 doorxscale = 1
 warping = false
 hitstun = 0
+supertauntcount = 0
+supertauntshow = false
+supertauntbuffer = 0
+myemitter = noone

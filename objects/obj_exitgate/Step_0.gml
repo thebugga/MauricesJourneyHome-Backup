@@ -14,7 +14,7 @@ with instance_place(x, y, obj_player)
 			obj_titlecard.alarm[0] = 20
 		}
 	}
-	else if (global.panic.active && key_up.down && grounded)
+	else if (global.panic.active && key_up.down && grounded && state != states.taunt)
 	{
 		global.panic.active = false
 		state = states.actor

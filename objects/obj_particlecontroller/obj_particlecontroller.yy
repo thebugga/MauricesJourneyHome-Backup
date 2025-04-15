@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Controllers",
-    "path":"folders/Essentials/Controllers.yy",
+    "path":"folders/Objects/Essentials/Controllers.yy",
   },
   "parentObjectId":null,
   "persistent":true,

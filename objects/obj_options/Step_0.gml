@@ -1,3 +1,6 @@
+if instance_exists(obj_keyconfig)
+	exit;
+
 get_input()
 
 var movev = -uikey_up.pressed + uikey_down.pressed
@@ -15,14 +18,15 @@ else if (cur_option.o_type == optiontypes.slider)
 {
 	var move = -uikey_left.down + uikey_right.down
 	cur_option.val = clamp(cur_option.val + move, 0, 100)
-	if move != 0 {
-        scr_sound(sfx_step)
+	if move != 0
 		cur_option.func(cur_option.val)
-    }
-}
+}	
+else if (cur_option.o_type == optiontypes.input)
+{
+	if uikey_accept.pressed && inputbuffer <= 0
+		cur_option.func()
+}	
 
-if movev != 0
-    scr_sound(sfx_step)
+inputbuffer = max(inputbuffer - 1, 0)
 
-if uikey_deny.pressed
-	instance_destroy()
+//MAKE SWITCH STATEMENT

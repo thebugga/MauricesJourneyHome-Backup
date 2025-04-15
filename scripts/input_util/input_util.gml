@@ -1,5 +1,6 @@
 function get_input()
 {
+	/*
 	var keybinds = {
 		left: vk_left,
 		right: vk_right,
@@ -16,22 +17,22 @@ function get_input()
 		ui_accept: [vk_enter, vk_space, ord("Z")],
 		ui_deny: [vk_backspace, vk_escape, ord("X")]
 	}
-	
-	key_left = setkey(keybinds.left)
-	key_right = setkey(keybinds.right)	
-	key_up = setkey(keybinds.up)
-	key_down = setkey(keybinds.down)	
-	key_jump = setkey(keybinds.jump)
-	key_grab = setkey(keybinds.grab)
-	key_dash = setkey(keybinds.dash)
-	key_taunt = setkey(keybinds.taunt)
-	
-	uikey_left = setkey(keybinds.ui_left)
-	uikey_right = setkey(keybinds.ui_right)
-	uikey_up = setkey(keybinds.ui_up)
-	uikey_down = setkey(keybinds.ui_down)
-	uikey_accept = setkey(keybinds.ui_accept)
-	uikey_deny = setkey(keybinds.ui_deny)
+	*/
+	key_left = setkey(global.keybinds.left)
+	key_right = setkey(global.keybinds.right)	
+	key_up = setkey(global.keybinds.up)
+	key_down = setkey(global.keybinds.down)	
+	key_jump = setkey(global.keybinds.jump)
+	key_grab = setkey(global.keybinds.grab)
+	key_dash = setkey(global.keybinds.dash)
+	key_taunt = setkey(global.keybinds.taunt)
+
+	uikey_left = setkey(global.keybinds.ui_left)
+	uikey_right = setkey(global.keybinds.ui_right)
+	uikey_up = setkey(global.keybinds.ui_up)
+	uikey_down = setkey(global.keybinds.ui_down)
+	uikey_accept = setkey(global.keybinds.ui_accept)
+	uikey_deny = setkey(global.keybinds.ui_deny)
 }
 
 function setkey(keybind)

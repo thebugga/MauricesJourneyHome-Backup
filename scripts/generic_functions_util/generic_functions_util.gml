@@ -9,34 +9,19 @@ function approach(value, target, increment = 0.5)
 }
 
 
-function wave(from, to, duration, offset)
+function wave(from, to, duration, offset, timer = current_time)
 {
 	var _wave = (to - from) * 0.5;
 
-	return from + _wave + sin((((current_time * 0.001) + duration * offset) / duration) * (pi * 2)) * _wave;
+	return from + _wave + sin((((timer * 0.001) + duration * offset) / duration) * (pi * 2)) * _wave;
 }
 
-function draw_set_align(halign, valign, color = c_white) 
+function draw_set_align(halign, valign, color = noone) 
 {
 	draw_set_halign(halign) 
 	draw_set_valign(valign)
-	draw_set_color(color)
-}
-
-function trace()
-{
-	var _string = "";
-	for (var i = 0; i < argument_count; i++)
-		_string += string(argument[i]);
-	show_debug_message(_string);
-}
-
-function concat()
-{
-	var _string = "";
-	for (var i = 0; i < argument_count; i++)
-		_string += string(argument[i]);
-	return _string;
+	if color != noone
+		draw_set_color(color)
 }
 
 function quick_shader_set_uniform_f(shader, uniform_name, val)
@@ -118,7 +103,7 @@ function do_hold_player(_exit)
 		secret_exit = _exit
 		if _exit
 			secret_cutscene = true
-		sprite_index = _exit ? spr_hurt : spr_bodyslamfall
+		sprite_index = _exit ? spr_player_hurt : spr_player_bodyslamfall
 		image_speed = 0.35
 	}
 }
@@ -134,6 +119,7 @@ function sleep(ms)
 	while current_time < t
 		do {};
 }
+
 
 function set_globals()
 {
@@ -168,6 +154,7 @@ function set_globals()
 	global.generic_font = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!?.1234567890:", true, 0)
 	global.creditsfont = font_add_sprite_ext(spr_creditsfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz.:!¡0123456789?'\"ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜáäãàâéèêëíìîïóöõôòúùûüÇç_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнльœ«»+ß", true, 2);
 	global.smallfont = font_add_sprite_ext(spr_smallfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡.:?¿1234567890ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇ+", 1, 0)
+    global.tutorialfont = font_add_sprite_ext(spr_tutorialfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz!¡,.:0123456789'?¿-áäãàâæéèêëíìîïóöõôòúùûüÿŸÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇçœß;«»+", 1, 2)
 	global.smallerfont = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!._1234567890:?", 1, -2)
 	global.hud_negativefont = font_add_sprite_ext(spr_negativenumber_font, "0123456789$-", true, 0)
 	global.smallnumberfont = font_add_sprite_ext(spr_smallnumber_font, "1234567890-+", true, 0)
@@ -186,6 +173,38 @@ function set_globals()
 			pineapple: false
 		}
 	}
+	
+	
+	global.keybinds = {}
+	
+	var bind_arr = [
+		["left",		vk_left],
+		["right",		vk_right],
+		["up",			vk_up],
+		["down",		vk_down],
+		["jump",		ord("Z")],
+		["grab",		ord("X")],
+		["dash",		vk_shift],
+		["taunt",		ord("C")],
+		["ui_left",		vk_left],
+		["ui_right",	vk_right],
+		["ui_up",		vk_up],
+		["ui_down",		vk_down],
+		["ui_accept",	ord("A")],
+		["ui_deny",		vk_escape]
+	]
+	
+	ini_open("globalsave.ini")
+	
+	for (var i = 0; i < array_length(bind_arr); i++) 
+	{
+		var bindname = bind_arr[i][0]
+		var defaultbind = bind_arr[i][1]
+		var key = ini_read_real("keybinds", bindname, defaultbind)
+	    struct_set(global.keybinds, bindname, key)
+	}
+	
+	ini_close()
 	
 	global.showcollisions = true
 	global.master_volume = 1
@@ -236,7 +255,7 @@ function tile_layer_delete_at(_x, _y)
 	}
 }
 
-function create_follower(_x, _y, spr_idle = noone, spr_move = noone, spr_panic = noone, spr_taunt = noone)
+function create_follower(_x, _y, spr_idle = noone, spr_move = noone, spr_panic = noone, spr_taunt = noone, spr_intro = noone)
 {
 	var f = {
 		sprite_index: noone,
@@ -247,8 +266,9 @@ function create_follower(_x, _y, spr_idle = noone, spr_move = noone, spr_panic =
 			idle: spr_idle,
 			move: spr_move,
 			panic: spr_panic,
-			taunt: spr_taunt
-			},
+			taunt: spr_taunt,
+			intro: spr_intro
+		},
 		x_offset: 0,
 		lerp_spd: 0
 	}
@@ -276,7 +296,8 @@ function reset_level()
 			tomato: false,
 			sausage: false,
 			pineapple: false
-		}
+		},
+		tauntcount: 0
 	}
 }
 
@@ -291,4 +312,20 @@ function gpu_set_blendmode_cc(bm)
 {
 	gpu_set_blendmode(bm)
 	gpu_set_blendequation_sepalpha(bm_eq_add, bm_eq_max)
+}
+
+function trace()
+{
+	var _string = "";
+	for (var i = 0; i < argument_count; i++)
+		_string += string(argument[i]);
+	show_debug_message(_string);
+}
+
+function concat()
+{
+	var _string = "";
+	for (var i = 0; i < argument_count; i++)
+		_string += string(argument[i]);
+	return _string;
 }

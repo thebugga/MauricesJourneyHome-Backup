@@ -9,7 +9,7 @@ function do_groundpound()
 	{
 		dir = p_move
 		state = states.groundpound
-		sprite_index = spr_bodyslamstart
+		sprite_index = spr_player_bodyslamstart
 		image_index = 0
 		vsp = -6
 	}
@@ -22,29 +22,20 @@ function do_grab()
 		input_buffers.grab = 0
 		if (!key_up.down)
 		{
-			if character == p_characters.maurice
-			{
-				slaphand = 1
-				state = states.nicklebag
-				image_index = 0
-			}
-			else
-			{
-				movespeed = max(movespeed, 5)
-				if state == states.normal
-					movespeed = 8
-				state = states.grab
-				reset_anim(spr_player_suplexgrab)
-				scr_sound_3d(sfx_suplexdash, x, y)
-				particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
-			}
+			movespeed = max(movespeed, 5)
+			if state == states.normal
+				movespeed = 8
+			state = states.grab
+			reset_anim(spr_player_suplexgrab)
+			scr_sound_3d_on(myemitter, sfx_suplexdash)
+			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 		}
 		else
 		{
 			vsp = grounded ? -14 : -10
 			hsp = abs(hsp) * xscale
 			state = states.punch
-			reset_anim(obj_player.spr_uppercut)
+			reset_anim(spr_player_uppercut)
 			image_speed = 0.35
 			create_effect(x, y, spr_highjumpcloud2)
 			scr_sound_3d_pitched(sfx_uppercut, x, y)
@@ -54,7 +45,7 @@ function do_grab()
 
 function do_taunt()
 {
-	if (key_taunt.pressed)
+	if key_taunt.pressed
 	{
 		prev = {
 			state: self.state,
@@ -63,18 +54,62 @@ function do_taunt()
 			sprite_index: self.sprite_index
 		}
 		
-		sprite_index = spr_taunt
-		image_index = random_range(0, image_number)
-		taunttimer = 20
-		state = states.taunt
 		particle_create(x, y, particles.taunt)
-		scr_sound_3d_pitched(sfx_taunt, x, y)
-		instance_create(x, y, obj_parrybox)
+		state = states.taunt
+		
+		if !(key_up.down && supertauntshow)
+		{
+			sprite_index = spr_player_taunt
+			image_index = random_range(0, image_number)
+			taunttimer = 20
+			scr_sound_3d_pitched(sfx_taunt, x, y)
+			instance_create(x, y, obj_parrybox)
+			
+			if (place_meeting(x, y, obj_exitgate) && global.panic.active && global.combo.timer > 0 && global.level_data.tauntcount <= 10)
+			{
+				var t_val = 15
+				global.score += t_val
+				
+				var c = {
+					sprite_index: spr_taunteffect,
+					image_index: 3,
+					x: self.x - obj_camera.campos.x,
+					y: self.y - obj_camera.campos.y,
+					val: t_val
+				}
+				
+				global.level_data.tauntcount++
+				
+				array_push(obj_collect_got_visual.collects, c)
+				scr_sound_multiple(sfx_collect)
+				
+				with instance_create(x, y, obj_collect_number)
+					num = t_val
+			}
+		}
+		else
+		{
+			taunttimer = 20
+			scr_sound_3d(sfx_supertaunt, x, y)
+			reset_anim(asset_get_index($"spr_player_supertaunt{irandom_range(1, 4)}"))
+			var spds = [[0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]]
+			var i = 0
+			var spd = 20
+			repeat 8
+			{
+				with particle_create(x, y, particles.sparks)
+				{
+					hsp = spds[i][0] * spd
+					vsp = spds[i][1] * spd
+				}
+				i++
+			}
+		}
 	}
 }
 
 function player_sounds()
-{
+{	
 	struct_foreach(loop_sounds, function(_name, _data)
 	{
 		var _id = obj_player
@@ -100,27 +135,19 @@ function player_sounds()
 		
 		if confirmed_3d
 		{
-			if (_data.sndid == noone && !dont_play)
+			if (_data.sndid == noone && !dont_play && _id.myemitter != noone)
 			{
-				_data.sndid = 1 //tjhis is a shitty hack :(
-				_data.emitter = emitter_create_quick(_id.x, _id.y, _id)
-				var s = scr_sound_3d_on(_data.emitter, _data.sound, true)
+				_data.sndid = scr_sound_3d_on(_id.myemitter, _data.sound, true)
 				
 				if struct_exists(_data, "looppoints")
 				{
-					audio_sound_loop_start(s, _data.looppoints[0])
-					audio_sound_loop_end(s, _data.looppoints[1])
+					audio_sound_loop_start(_data.sndid, _data.looppoints[0])
+					audio_sound_loop_end(_data.sndid, _data.looppoints[1])
 				}
 			}
-			
-			if (_data.sndid != noone && dont_play)
+			else if (_data.sndid != noone && dont_play)
 			{
-				if _data.emitter != noone
-				{
-					audio_emitter_free(_data.emitter)
-					_data.emitter = noone
-				}
-				
+				audio_stop_sound(_data.sndid)
 				_data.sndid = noone
 			}
 		}
@@ -175,10 +202,10 @@ function do_hurt(obj = noone)
 			goto_xscale = sign(x - xh)
 		var facing = xscale == -goto_xscale
 		hsp = 8 * goto_xscale
-		sprite_index = facing ? spr_hurt : spr_jumphurt
+		sprite_index = facing ? spr_player_hurt : spr_player_jumphurt
 	}
 	else
-		sprite_index = spr_hurt
+		sprite_index = spr_player_hurt
 	
 	flash = 8
 	state = states.hurt

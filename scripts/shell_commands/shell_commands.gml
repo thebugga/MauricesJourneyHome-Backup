@@ -1,20 +1,9 @@
-
-function getroom_name_repeat() {
-    var roomarr = [];
-    
-    for (var i = 0; room_exists(i); i++) {
-        array_push(roomarr , room_get_name(i))
-    }
-    return roomarr;
+var i = 0
+while room_exists(i)
+{
+	global.roomlist[i] = room_get_name(i)
+	i++
 }
-
-
-
-
-
-
-
-
 
 function sh_panic (args) {
 	var panic = false
@@ -66,8 +55,7 @@ function meta_room_goto() {
 		description: "Goes to any room",
 		arguments: ["room", "door"],
 		suggestions: [
-				getroom_name_repeat()
-			,
+			global.roomlist,
 			["a", "b", "c", "d", "e", "f", "g"]
 		],
 		hidden: false,
@@ -109,6 +97,27 @@ function meta_togglecollisions() {
 		arguments: ["visible"],
 		suggestions: [
 			["true", "false"],
+		],
+		hidden: false,
+		deferred: false
+	}
+}
+
+function sh_set_combo (args) {
+	global.combo.count = real(args[1])
+	global.combo.timer = real(args[2])
+	
+	if args[1] == 0 || args[1] >= 10
+		obj_player.supertauntcount = 10
+}
+
+function meta_set_combo() {
+	return {
+		description: "Set the combo and fill ammount",
+		arguments: ["count", "fill"],
+		suggestions: [
+			["10", "0"],
+			["60"]
 		],
 		hidden: false,
 		deferred: false

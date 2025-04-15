@@ -73,6 +73,7 @@ function player_mach3()
 		{
 			state = states.superjump
 			reset_anim(spr_player_superjumpprep)
+			sjumper = false
 		}
 	}
 	else
@@ -88,16 +89,36 @@ function player_mach3()
 	
 	if (key_down.down)
 	{
-		state = states.tumble
 		if (grounded)
+		{
+			state = states.tumble
 			reset_anim(spr_player_machroll)
+			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
+		}
 		else
 		{
-			sprite_index = spr_player_dive
-			vsp = 10
-			scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+			if character != p_characters.maurice
+			{
+				state = states.tumble
+				sprite_index = spr_player_dive
+				vsp = 10
+				scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+			}
+			else
+			{
+				if (input_buffers.jump > 0)
+				{
+					input_buffers.jump = 0
+					sprite_index = spr_poundcancel1
+					state = states.groundpound
+					freefallsmash = movespeed
+					hsp = 0
+					vsp = movespeed
+					dir = xscale
+					scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+				}
+			}
 		}
-		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	
 	do_grab()

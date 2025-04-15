@@ -56,7 +56,8 @@ function player_mach2()
 			sprite_index != spr_player_walljump && 
 			sprite_index != spr_player_walljumpfall && 
 			sprite_index != spr_player_longjump &&
-			sprite_index != spr_player_mach2jump)
+			sprite_index != spr_player_mach2jump &&
+			sprite_index != spr_player_Sjumpcancel)
 			reset_anim(spr_player_secondjump)
 		if (!jumpstop && !key_jump.down && vsp < 0)
 		{
@@ -75,16 +76,36 @@ function player_mach2()
 	do_slope_momentum()
 	if (key_down.down)
 	{
-		state = states.tumble
 		if (grounded)
+		{
+			state = states.tumble
 			reset_anim(spr_player_machroll)
+			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
+		}
 		else
 		{
-			sprite_index = spr_player_dive
-			vsp = 10
-			scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+			if character != p_characters.maurice
+			{
+				state = states.tumble
+				sprite_index = spr_player_dive
+				vsp = 10
+				scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+			}
+			else
+			{
+				if (input_buffers.jump > 0)
+				{
+					input_buffers.jump = 0
+					sprite_index = spr_poundcancel1
+					state = states.groundpound
+					freefallsmash = movespeed
+					hsp = 0
+					vsp = movespeed
+					dir = xscale
+					scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+				}
+			}
 		}
-		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	if ((!grounded || scr_slope(x, y + 1)) && place_meeting(x + xscale, y, obj_solid))
 	{

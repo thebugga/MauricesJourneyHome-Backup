@@ -35,6 +35,7 @@ xscale = 1
 jumpstop = false
 mach4mode = false
 slaphand = 0
+sjumper = false
 sjumptimer = 0
 sjumpangle = 270
 wallspeed = 0

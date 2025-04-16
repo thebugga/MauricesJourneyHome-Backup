@@ -99,7 +99,6 @@ function player_groundpound()
 			{
 				state = states.tumble
 				sprite_index = spr_crouchslip
-				movespeed = 13
 			}
 			else
 			{

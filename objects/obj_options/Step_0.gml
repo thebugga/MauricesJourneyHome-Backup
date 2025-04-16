@@ -30,3 +30,8 @@ else if (cur_option.o_type == optiontypes.input)
 inputbuffer = max(inputbuffer - 1, 0)
 
 //MAKE SWITCH STATEMENT
+
+if uikey_deny.pressed
+{
+	instance_destroy()
+}

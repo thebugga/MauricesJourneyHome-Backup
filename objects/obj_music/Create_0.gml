@@ -19,3 +19,4 @@ kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
 panicstart = false;
 
 add_music(garbage_1, "event:/music/w1/garbage", noone, false);
+add_music(entrance_1, "event:/music/w1/garbage", noone, false);

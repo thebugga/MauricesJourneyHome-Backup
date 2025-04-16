@@ -21,6 +21,10 @@ function player_tumble()
 	
 	if (grounded && sprite_index == spr_dive)
 		reset_anim(obj_player.spr_machroll)
+	if (grounded && sprite_index == spr_poundcancel1)
+		reset_anim(obj_player.spr_poundcancel2)
+	if (grounded && sprite_index == spr_poundcancel2)
+		state = states.normal
 		
 	if (!grounded && input_buffers.jump > 0)
 	{

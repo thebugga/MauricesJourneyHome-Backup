@@ -106,17 +106,13 @@ function player_mach3()
 			}
 			else
 			{
-				if (input_buffers.jump > 0)
-				{
-					input_buffers.jump = 0
 					sprite_index = spr_poundcancel1
-					state = states.groundpound
+					state = states.tumble
 					freefallsmash = movespeed
 					hsp = 0
 					vsp = movespeed
 					dir = xscale
 					scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
-				}
 			}
 		}
 	}

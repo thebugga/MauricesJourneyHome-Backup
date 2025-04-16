@@ -9,6 +9,9 @@ enum optiontypes {
 }
 
 options = [
+	{o_name: "BACK", val: "", o_type: optiontypes.input, func: function(_val) {
+		alarm[0] = 2
+	}},
 	{o_name: "FULLSCREEN: ", val: global.fullscreen, o_type: optiontypes.onoff, func: function(_val) {
 		global.fullscreen = _val
 		quick_ini_write_real("globalsave.ini", "options", "fullscreen", _val)
@@ -34,7 +37,7 @@ options = [
 		audio_group_set_gain(ag_music, _val, 0)
 		quick_ini_write_real("globalsave.ini", "options", "music_volume", _val)
 	}},
-	{o_name: "CHANGE KEYBINDS", val: 0, o_type: optiontypes.input, func: function(_val) {
+	{o_name: "CHANGE KEYBINDS", val: "", o_type: optiontypes.input, func: function(_val) {
 		instance_create(0, 0, obj_keyconfig)
 	}}
 ]

@@ -58,4 +58,4 @@ var str = pausearray[selected][0]
 
 sw -= (string_width(str) / 2)
 
-draw_sprite(spr_cursor, 0, sw, sh + (selected * 32))
+draw_sprite(spr_cursor, 0, sw, sh + (selected * 50))

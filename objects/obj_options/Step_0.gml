@@ -33,5 +33,5 @@ inputbuffer = max(inputbuffer - 1, 0)
 
 if uikey_deny.pressed
 {
-	instance_destroy()
+	alarm[0] = 1
 }

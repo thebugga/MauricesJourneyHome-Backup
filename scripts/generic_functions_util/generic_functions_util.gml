@@ -125,15 +125,15 @@ function set_globals()
 {
 	ini_open("globalsave.ini")
 	global.fullscreen = ini_read_real("options", "fullscreen", false)
-	global.option_master_volume = ini_read_real("options", "option_master_volume", false)
-	global.option_sfx_volume = ini_read_real("options", "option_sfx_volume", 1)
-	global.option_music_volume = ini_read_real("options", "option_music_volume", 1) //these being global are kinda unneccesary...
+	global.master_volume = ini_read_real("options", "option_master_volume", false)
+	global.sfx_volume = ini_read_real("options", "option_sfx_volume", 1)
+	global.music_volume = ini_read_real("options", "option_music_volume", 1) //these being global are kinda unneccesary...
 	ini_close()
 	
 	window_set_fullscreen(global.fullscreen)
-	audio_master_gain(global.option_master_volume)
-	audio_group_set_gain(ag_sfx, global.option_sfx_volume, 0)
-	audio_group_set_gain(ag_music, global.option_music_volume, 0)
+	audio_master_gain(global.master_volume)
+	audio_group_set_gain(ag_sfx, global.sfx_volume, 0)
+	audio_group_set_gain(ag_music, global.music_volume, 0)
 	
 	global.combo = {
 		count: 0,
@@ -207,9 +207,6 @@ function set_globals()
 	ini_close()
 	
 	global.showcollisions = true
-	global.master_volume = 1
-	global.sfx_volume = 1
-	global.music_volume = 1
 	global.savefile = "1"
 }
 

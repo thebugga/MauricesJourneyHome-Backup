@@ -39,8 +39,14 @@ with obj_player
 
 if flick
 {
-	do_fade(t_room, t_door, fade_types.door)
+	var dshit = {
+		roomer: t_room,
+		doory: t_door,
+		tittycard: card_index
+	}
+	
+	do_fade(dshit.roomer, dshit.doory, fade_types.door)
 	
 	with instance_create(0, 0, obj_titlecard)
-		obj_titlecard.image_index = other.card_index
+		image_index = dshit.tittycard
 }

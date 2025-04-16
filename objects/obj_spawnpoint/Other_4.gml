@@ -6,3 +6,5 @@ with (instance_place(x, y, obj_door))
 	
 with (instance_place(x, y, obj_pizzabox))
 	t_door = other.spawn
+
+image_alpha = 0.5

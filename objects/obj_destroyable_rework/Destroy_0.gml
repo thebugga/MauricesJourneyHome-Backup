@@ -5,8 +5,6 @@ if (ds_list_find_index(global.ds_saveroom, id) == -1)
 		sprite_index = spr_onewaydead
 		image_xscale = other.image_xscale
 	}
-    repeat 3
-        create_effect(x + random_range(0, sprite_width), y + random_range(0, sprite_height), spr_destroyable_smoke)
 	sleep(5)
 	scr_sound_3d(sfx_killingblow, x, y)
 	ds_list_add(global.ds_saveroom, id)

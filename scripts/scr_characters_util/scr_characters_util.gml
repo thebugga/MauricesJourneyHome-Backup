@@ -233,6 +233,7 @@ function scr_character_spr()
 		spr_holdjump = spr_player_holdjump
 		spr_holdidle = spr_player_holdidle
 		spr_holdrise = spr_player_holdrise
+		spr_holdmove = spr_player_holdmove
 		spr_holdfall = spr_player_holdfall
 		spr_holdland = spr_player_holdland
 		spr_panic = spr_player_panic

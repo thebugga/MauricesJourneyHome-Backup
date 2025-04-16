@@ -12,13 +12,15 @@ if pal_select == 12
 	pattern_draw(sprite_index, image_index, x, y, pattern_spr, xscale * visual_size, image_yscale * visual_size, image_angle, image_blend, image_alpha)
 
 pal_swap_set(pal_peppino, pal_select, false)
-draw_sprite_ext(sprite_index, image_index, x, y, xscale * visual_size, image_yscale * visual_size, image_angle, image_blend, image_alpha)
+if sprite_index != noone && sprite_index != -1
+	draw_sprite_ext(sprite_index, image_index, x, y, xscale * visual_size, image_yscale * visual_size, image_angle, image_blend, image_alpha)
 pal_swap_reset()
 
 if flash > 0
 {
 	shader_set(shd_flash)
-	draw_sprite_ext(sprite_index, image_index, x, y, xscale * visual_size, image_yscale * visual_size, image_angle, image_blend, image_alpha)
+	if sprite_index != noone && sprite_index != -1
+		draw_sprite_ext(sprite_index, image_index, x, y, xscale * visual_size, image_yscale * visual_size, image_angle, image_blend, image_alpha)
 	shader_reset()
 }
 

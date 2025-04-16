@@ -501,6 +501,7 @@
     {"name":"spr_player_grabbump","order":41,"path":"sprites/spr_player_grabbump/spr_player_grabbump.yy",},
     {"name":"spr_player_grabcancel","order":39,"path":"sprites/spr_player_grabcancel/spr_player_grabcancel.yy",},
     {"name":"spr_player_grind","order":84,"path":"sprites/spr_player_grind/spr_player_grind.yy",},
+    {"name":"spr_player_groundpoundjump","order":126,"path":"sprites/spr_player_groundpoundjump/spr_player_groundpoundjump.yy",},
     {"name":"spr_player_holdfall","order":68,"path":"sprites/spr_player_holdfall/spr_player_holdfall.yy",},
     {"name":"spr_player_holdidle","order":71,"path":"sprites/spr_player_holdidle/spr_player_holdidle.yy",},
     {"name":"spr_player_holdjump","order":69,"path":"sprites/spr_player_holdjump/spr_player_holdjump.yy",},

@@ -603,6 +603,7 @@
     {"id":{"name":"spr_player_grabbump","path":"sprites/spr_player_grabbump/spr_player_grabbump.yy",},},
     {"id":{"name":"spr_player_grabcancel","path":"sprites/spr_player_grabcancel/spr_player_grabcancel.yy",},},
     {"id":{"name":"spr_player_grind","path":"sprites/spr_player_grind/spr_player_grind.yy",},},
+    {"id":{"name":"spr_player_groundpoundjump","path":"sprites/spr_player_groundpoundjump/spr_player_groundpoundjump.yy",},},
     {"id":{"name":"spr_player_holdfall","path":"sprites/spr_player_holdfall/spr_player_holdfall.yy",},},
     {"id":{"name":"spr_player_holdidle","path":"sprites/spr_player_holdidle/spr_player_holdidle.yy",},},
     {"id":{"name":"spr_player_holdjump","path":"sprites/spr_player_holdjump/spr_player_holdjump.yy",},},

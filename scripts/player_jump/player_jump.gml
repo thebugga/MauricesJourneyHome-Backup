@@ -62,6 +62,7 @@ function player_jump()
 		case spr_jump:
 		case spr_grabcancel:
 		case spr_piledriverjump:
+		case spr_player_groundpoundjump:
 			reset_anim_on_end(spr_fall)
 			break;
 		case spr_stomp:

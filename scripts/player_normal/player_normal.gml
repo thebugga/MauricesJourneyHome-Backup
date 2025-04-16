@@ -149,8 +149,5 @@ function player_normal()
 			reset_anim_on_end(spr_idle)
 			break;
 	}
-	
-	
-	
 	do_taunt()
 }

@@ -13,7 +13,9 @@ function player_bump()
 	{
 		state = states.normal
 		if (sprite_index == spr_bodyslamland || sprite_index == spr_fallfarland)
+		{
 			reset_anim(obj_player.spr_facehurt)
+		}
 		else if (sprite_index == spr_ceilinghit)
 		{
 			reset_anim(obj_player.spr_superjumpfall)
@@ -21,5 +23,14 @@ function player_bump()
 		}
 		else
 			sprite_index = spr_idle
+	}
+	if (sprite_index == spr_bodyslamland) && character == p_characters.maurice
+	{
+		if key_jump.pressed
+		{
+			vsp = -16
+			state = states.jump
+			sprite_index = spr_player_groundpoundjump
+		}
 	}
 }

@@ -626,6 +626,7 @@
     {"name":"spr_speedlines","order":13,"path":"sprites/spr_speedlines/spr_speedlines.yy",},
     {"name":"spr_superdashcloud","order":9,"path":"sprites/spr_superdashcloud/spr_superdashcloud.yy",},
     {"name":"spr_superjumpexplosion","order":17,"path":"sprites/spr_superjumpexplosion/spr_superjumpexplosion.yy",},
+    {"name":"spr_supertauntcharge","order":12,"path":"sprites/spr_supertauntcharge/spr_supertauntcharge.yy",},
     {"name":"spr_taunteffect","order":7,"path":"sprites/spr_taunteffect/spr_taunteffect.yy",},
     {"name":"spr_techdiff_bg","order":2,"path":"sprites/spr_techdiff_bg/spr_techdiff_bg.yy",},
     {"name":"spr_techdiff_static","order":3,"path":"sprites/spr_techdiff_static/spr_techdiff_static.yy",},

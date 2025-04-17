@@ -1,3 +1,4 @@
+if visible {
 var inactive = false
 
 if (follow_obj != -4)
@@ -7,4 +8,5 @@ with other
 {
 	if (i_frames <= 0 && state != states.parry && state != states.taunt && !inactive)
 		do_hurt(other)
+}
 }

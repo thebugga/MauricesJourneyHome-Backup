@@ -749,6 +749,7 @@
     {"id":{"name":"spr_speedlines","path":"sprites/spr_speedlines/spr_speedlines.yy",},},
     {"id":{"name":"spr_superdashcloud","path":"sprites/spr_superdashcloud/spr_superdashcloud.yy",},},
     {"id":{"name":"spr_superjumpexplosion","path":"sprites/spr_superjumpexplosion/spr_superjumpexplosion.yy",},},
+    {"id":{"name":"spr_supertauntcharge","path":"sprites/spr_supertauntcharge/spr_supertauntcharge.yy",},},
     {"id":{"name":"spr_taunteffect","path":"sprites/spr_taunteffect/spr_taunteffect.yy",},},
     {"id":{"name":"spr_techdiff_bg","path":"sprites/spr_techdiff_bg/spr_techdiff_bg.yy",},},
     {"id":{"name":"spr_techdiff_static","path":"sprites/spr_techdiff_static/spr_techdiff_static.yy",},},

@@ -7,7 +7,7 @@ if (ds_list_find_index(global.ds_saveroom, id) != -1)
 with obj_player
 {
 	var kill = false
-	if (state == states.mach3 && place_meeting(x + hsp + xscale, y, other))
+	if ((state == states.mach3 || (character == p_characters.mandrek && abs(hsp) >= 4.625)) && place_meeting(x + hsp + xscale, y, other))
 		kill = true
 	else if (state == states.groundpound && freefallsmash >= 10 && place_meeting(x, y + 1, other))
 	{

@@ -36,7 +36,6 @@
     {"name":"inst_5319E4D3","path":"rooms/tower_1/tower_1.yy",},
     {"name":"inst_2BF8507A","path":"rooms/tower_1/tower_1.yy",},
     {"name":"inst_492135DF","path":"rooms/tower_1/tower_1.yy",},
-    {"name":"inst_7AFFE480","path":"rooms/tower_1/tower_1.yy",},
     {"name":"inst_4EFFAA23","path":"rooms/tower_1/tower_1.yy",},
   ],
   "isDnd":false,
@@ -49,9 +48,6 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"propertyId":{"name":"card_index","path":"objects/obj_startgate/obj_startgate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"propertyId":{"name":"t_room","path":"objects/obj_startgate/obj_startgate.yy",},"resource":{"name":"garbage_1","path":"rooms/garbage_1/garbage_1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"garbage_1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1248.0,"y":1056.0,},
-        {"$GMRInstance":"v2","%Name":"inst_7AFFE480","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7AFFE480","objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"properties":[
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"propertyId":{"name":"door_gate","path":"objects/obj_startgate/obj_startgate.yy",},"resource":{"name":"spr_mandrek_idle","path":"sprites/spr_mandrek_idle/spr_mandrek_idle.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_mandrek_idle",},
-          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2144.0,"y":800.0,},
         {"$GMRInstance":"v2","%Name":"inst_4FC29320","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4FC29320","objectId":{"name":"obj_spawnpoint","path":"objects/obj_spawnpoint/obj_spawnpoint.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":864.0,"y":1024.0,},
         {"$GMRInstance":"v2","%Name":"inst_42ACBDCD","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_42ACBDCD","objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"propertyId":{"name":"t_room","path":"objects/obj_door/obj_door.yy",},"resource":{"name":"hub_outside","path":"rooms/hub_outside/hub_outside.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"hub_outside",},

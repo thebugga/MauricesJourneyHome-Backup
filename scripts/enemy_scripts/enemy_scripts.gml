@@ -196,6 +196,13 @@ function do_enemy_generics()
 					warp = -0.4
 				}
 			}
+			if vsp > 2 && character == p_characters.mandrek
+			{
+				vsp = -8
+				scr_sound_3d(sfx_stompenemy, x, y)
+				with (other)
+					instance_destroy()
+			}
 		}
 	}
 

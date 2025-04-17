@@ -144,14 +144,17 @@ if (idletimer > 0 && state == states.normal)
 if (i_frames > 0 && state != states.hurt)
 	i_frames--
 
-if (state == states.tumble || state == states.crouch)
+if (state == states.tumble || state == states.crouch || (character == p_characters.mandrek && sprite_index == spr_mandrek_duck))
 	mask_index = mask_player_small
 else
 	mask_index = mask_player
 
-grav = 0.5
-if (state == states.ladder)
-	grav = 0
+if character != p_characters.mandrek
+{
+	grav = 0.5
+	if (state == states.ladder)
+		grav = 0
+}
 	
 if ((y > room_height + 200 || y < -200) && state != states.actor && state != states.backtohub)
 {

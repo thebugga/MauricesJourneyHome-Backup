@@ -78,7 +78,6 @@
     {"name":"inst_348C53DF","path":"rooms/entrance_9/entrance_9.yy",},
     {"name":"inst_B930C147","path":"rooms/entrance_9/entrance_9.yy",},
     {"name":"inst_3DE33FCF","path":"rooms/entrance_9/entrance_9.yy",},
-    {"name":"inst_57E0AB94","path":"rooms/entrance_9/entrance_9.yy",},
   ],
   "isDnd":false,
   "layers":[

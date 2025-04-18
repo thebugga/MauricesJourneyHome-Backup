@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"MauriceJourneyHomeNew",
+  "%Name":"MauriceJourneyHome_GM2",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
     {"$GMAudioGroup":"","%Name":"ag_music","name":"ag_music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},

@@ -1,7 +1,10 @@
-var fmod_character = ds_map_create()
-ds_map_set(fmod_character, p_characters.maurice, 0)
-ds_map_set(fmod_character, p_characters.undoised, 1)
-ds_map_set(fmod_character, p_characters.mandrek, 2)
-
-if instance_exists(obj_player)
-    fmod_event_instance_set_parameter("character", ds_map_find_value(fmod_character, obj_player.character), true)
+if (instance_exists(obj_player))
+{
+	if obj_player.character == p_characters.maurice
+		fmod_set_parameter("character", 0, true);
+	else if obj_player.character == p_characters.undoised
+		fmod_set_parameter("character", 1, true);
+	else if obj_player.character == p_characters.mandrek
+		fmod_set_parameter("character", 2, true);
+}
+fmod_set_parameter("swapmode", global.swapmode ? 1 : 0, true);

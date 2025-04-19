@@ -701,6 +701,7 @@
     {"name":"Sprite5","order":3,"path":"sprites/Sprite5/Sprite5.yy",},
     {"name":"Sprite73_1","order":5,"path":"sprites/Sprite73_1/Sprite73_1.yy",},
     {"name":"Sprite73","order":4,"path":"sprites/Sprite73/Sprite73.yy",},
+    {"name":"Sprite92_1","order":17,"path":"sprites/Sprite92_1/Sprite92_1.yy",},
     {"name":"Sprite92","order":4,"path":"sprites/Sprite92/Sprite92.yy",},
     {"name":"spritepears","order":16,"path":"sprites/spritepears/spritepears.yy",},
     {"name":"tilespr_garbagealt","order":1,"path":"sprites/tilespr_garbagealt/tilespr_garbagealt.yy",},

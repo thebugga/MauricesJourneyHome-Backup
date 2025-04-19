@@ -190,7 +190,7 @@ function set_globals()
 		["ui_right",	vk_right],
 		["ui_up",		vk_up],
 		["ui_down",		vk_down],
-		["ui_accept",	ord("A")],
+		["ui_accept",	ord("Z")],
 		["ui_deny",		vk_escape]
 	]
 	

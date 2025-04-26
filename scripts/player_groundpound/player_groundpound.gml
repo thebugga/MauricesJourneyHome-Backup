@@ -22,7 +22,9 @@ function player_groundpound()
 		vsp += 0.5
 	}
 	if (anim_ended() && sprite_index == spr_bodyslamstart)
+	{
 		sprite_index = spr_bodyslamfall
+	}
 	/*
 	if (floor(image_index) == image_number - 1 && sprite_index == spr_shotgunjump1)
 		sprite_index = spr_shotgunjump3*/
@@ -99,7 +101,6 @@ function player_groundpound()
 			{
 				state = states.tumble
 				sprite_index = spr_crouchslip
-				movespeed = 13
 			}
 			else
 			{

@@ -7,10 +7,6 @@ if selected == -1
 {
 	if uikey_accept.pressed
 		instance_destroy()
-
-	if uikey_deny.pressed
-		instance_destroy()
-	exit;
 }
 
 if binding 
@@ -20,9 +16,7 @@ if binding
 		var bindname = binds[selected].globalname
 		global.keybinds[$ bindname] = keyboard_key
 		
-		ini_open("globalsave.ini")
-		ini_write_real("keybinds", bindname, keyboard_key)
-		ini_close()
+		quick_ini_write_real("globalsave.ini", "keybinds", bindname, keyboard_key)
 		
 		binds[selected].input = keyboard_key
 		binding = false
@@ -30,7 +24,7 @@ if binding
 }
 else
 {
-	if uikey_accept.pressed
+	if uikey_accept.pressed && !selected == -1
 		binding = true
 	if uikey_deny.pressed
 		instance_destroy()

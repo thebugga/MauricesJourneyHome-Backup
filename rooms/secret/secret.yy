@@ -164,7 +164,7 @@
   "name":"secret",
   "parent":{
     "name":"Example Level",
-    "path":"folders/Rooms/Example Level.yy",
+    "path":"folders/Rooms/Levels/Example Level.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

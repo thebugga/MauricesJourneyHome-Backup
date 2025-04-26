@@ -1,4 +1,4 @@
-function player_normal()
+function P_shared_normal()
 {
 	var default_idle = spr_idle
 	var default_move = spr_move
@@ -149,8 +149,111 @@ function player_normal()
 			reset_anim_on_end(spr_idle)
 			break;
 	}
-	
-	
-	
 	do_taunt()
+}
+
+function P_mandrek_normal()
+{
+	var stats = {
+		walkmin: 0.1625,
+		walkaccel: 0.1225,
+		runaccel: 0.18,
+		decel: 0.1625,
+		skiddecel: 0.25,
+		walkmax: 3.125,
+		waterwalkmax: 2.125,
+		runmax: 5.125,
+		skidflip: 1.125,
+		airdecel: 0.18,
+		airrundecel: 0.1625,
+		airwalkdecel: 0.1225,
+		idlejump: -8,
+		walkjump: -8,
+		runjump: -10,
+		idlejumpgrav: 0.25,
+		walkjumpgrav: 0.3,
+		runjumpgrav: 0.35,
+		idlegrav: 0.875,
+		walkgrav: 0.75,
+		rungrav: 1.125
+	}
+	
+	if grounded
+	{
+		if key_down.down
+		{
+			sprite_index = spr_mandrek_duck
+			hsp = approach(hsp, 0, stats.decel)
+			sjumptimer += 0.1
+		}
+		else
+		{
+			sjumptimer = 0
+			if p_move == -xscale
+			{
+				sprite_index = spr_mandrek_skid
+				if abs(hsp) > stats.skidflip
+					hsp = approach(hsp, 0, stats.skiddecel)
+				else
+				{
+					xscale = p_move
+					hsp = stats.walkmin * xscale
+				}
+			}
+			else if p_move == xscale
+			{
+				if hsp == 0
+					hsp = stats.walkmin * xscale
+				else
+					hsp = approach(hsp, (key_grab.down ? stats.runmax : stats.walkmax) * xscale, key_grab.down ? stats.runaccel : stats.walkaccel)
+				sprite_index = spr_mandrek_walk
+				image_speed = abs(hsp) / 16
+			}
+			else
+			{
+				hsp = approach(hsp, 0, stats.decel)
+				if abs(hsp) <= stats.walkmin
+				{
+					hsp = 0
+					sprite_index = spr_mandrek_idle
+				}
+				else
+				{
+					sprite_index = spr_mandrek_walk
+					image_speed = abs(hsp) / 16
+				}
+			}
+		}
+		if key_jump.pressed
+		{
+			mandrek_jumpstartspeed = abs(hsp)
+			mandrek_floored = false
+			if sjumptimer > 10
+				vsp = -sjumptimer
+			else
+				vsp = abs(hsp) >= 4.625 ? stats.runjump : stats.walkjump
+			sjumptimer = 0
+			if sprite_index != spr_mandrek_duck && sjumptimer <= 10
+				sprite_index = spr_mandrek_jump
+		}
+		mandrek_floored = true
+	}
+	else
+	{
+		image_speed = 0
+		if p_move == -xscale
+				hsp = approach(hsp, (key_grab.down ? stats.runmax : stats.walkmax) * -xscale, abs(hsp) >= 3.125 ? stats.airdecel : (mandrek_jumpstartspeed >= 3.625 ? stats.airrundecel : stats.airwalkdecel))
+		else if p_move == xscale
+			hsp = approach(hsp, (key_grab.down ? stats.runmax : stats.walkmax) * xscale, key_grab.down ? stats.runaccel : stats.walkaccel)
+		grav = (vsp < 0 && key_jump.down) ? (mandrek_jumpstartspeed >= 4.625 ? stats.runjumpgrav : (mandrek_jumpstartspeed >= 2 ? stats.walkjumpgrav : stats.idlejumpgrav)) : (mandrek_jumpstartspeed >= 4.625 ? stats.rungrav : (mandrek_jumpstartspeed >= 2 ? stats.walkgrav : stats.idlegrav))
+	}
+	do_taunt()
+}
+
+function player_normal()
+{
+	if character == p_characters.mandrek
+		P_mandrek_normal()
+	else
+		P_shared_normal()
 }

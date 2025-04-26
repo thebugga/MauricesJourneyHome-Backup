@@ -6,11 +6,14 @@ enum p_characters
     maurice,
     pierre,
     undoised,
+	mandrek,
+	/*
     clownmato,
     orange,
     swag,
     gabbie,
     peppino
+	*/
 }
 
 player = 0
@@ -32,10 +35,14 @@ xscale = 1
 jumpstop = false
 mach4mode = false
 slaphand = 0
+sjumper = false
 sjumptimer = 0
 sjumpangle = 270
 wallspeed = 0
 flash = 0
+
+mandrek_jumpstartspeed = 0
+mandrek_floored = true
 
 aftimg_timers = {
 	mach: {timer: 0, effect: after_images.mach, resetpoint: 5, do_it: false},

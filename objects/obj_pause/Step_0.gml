@@ -9,6 +9,7 @@ selected = clamp(selected + movev, 0, array_length(pausearray) - 1)
 
 if uikey_accept.pressed or keyboard_key_press(ord("L"))
 {
+	uikey_accept.pressed = false
 	if pausearray[selected][1] != -4
 		pausearray[selected][1]()
 }

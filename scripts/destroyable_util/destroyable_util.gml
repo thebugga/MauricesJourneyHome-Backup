@@ -20,13 +20,18 @@ function break_destroyables()
 		states.punch,
 		states.hit
 	]
-	
 	var vertical_states = [
 		states.groundpound,
 		states.punch,
 		states.superjump,
 		states.hit
 	]
+	
+	if object_index == obj_player && character == p_characters.mandrek
+	{
+		array_push(horizontal_states, states.normal)
+		array_push(vertical_states, states.normal)
+	}
 	
 	var is_h_state = false
 	var is_v_state = false

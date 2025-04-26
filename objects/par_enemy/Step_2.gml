@@ -104,7 +104,7 @@ if follow_player
 				state = states.hit
 				hsp = other.xscale * 20
 				vsp = 0
-				if other.sprite_index == spr_finishingblowup
+				if other.sprite_index == other.spr_finishingblowup
 				{
 					hsp = 0
 					vsp = -20

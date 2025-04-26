@@ -4,8 +4,8 @@ function player_mach2()
 	
 	if (grounded && vsp >= 0)
 	{
-		if (sprite_index != spr_mach1 && sprite_index != spr_rollgetup)
-			sprite_index = spr_mach2
+		if (sprite_index != spr_player_mach1 && sprite_index != spr_player_rollgetup)
+			sprite_index = spr_player_mach2
 		if (!key_dash.down)
 		{
 			if (movespeed < 8)
@@ -15,7 +15,7 @@ function player_mach2()
 			}
 			else
 			{
-				reset_anim(obj_player.spr_machslidestart)
+				reset_anim(spr_player_machslidestart)
 				state = states.slide
 				scr_sound_3d(sfx_break, x, y)
 			}
@@ -29,17 +29,17 @@ function player_mach2()
 			}
 			else
 			{
-				reset_anim(obj_player.spr_machslideboost)
+				reset_anim(spr_player_machslideboost)
 				state = states.slide
-				scr_sound_3d(sfx_machslideboost, x, y)
+				scr_sound_3d_on(myemitter, sfx_machslideboost)
 			}
 		}
 		if (movespeed < 12)
 			movespeed += 0.1
 		else
 		{
-			if (sprite_index != spr_rollgetup)
-				sprite_index = spr_mach3
+			if (sprite_index != spr_player_rollgetup)
+				sprite_index = spr_player_mach3
 			state = states.mach3
 			flash = 8
 		}
@@ -51,13 +51,14 @@ function player_mach2()
 	}
 	else
 	{
-		if (sprite_index != spr_secondjump && 
-			sprite_index != spr_secondjumploop && 
-			sprite_index != spr_walljump && 
-			sprite_index != spr_walljumpfall && 
-			sprite_index != spr_longjump &&
-			sprite_index != spr_mach2jump)
-			reset_anim(obj_player.spr_secondjump)
+		if (sprite_index != spr_player_secondjump && 
+			sprite_index != spr_player_secondjumploop && 
+			sprite_index != spr_player_walljump && 
+			sprite_index != spr_player_walljumpfall && 
+			sprite_index != spr_player_longjump &&
+			sprite_index != spr_player_mach2jump &&
+			sprite_index != spr_player_Sjumpcancel)
+			reset_anim(spr_player_secondjump)
 		if (!jumpstop && !key_jump.down && vsp < 0)
 		{
 			jumpstop = true
@@ -75,16 +76,32 @@ function player_mach2()
 	do_slope_momentum()
 	if (key_down.down)
 	{
-		state = states.tumble
 		if (grounded)
-			reset_anim(obj_player.spr_machroll)
+		{
+			state = states.tumble
+			reset_anim(spr_player_machroll)
+			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
+		}
 		else
 		{
-			sprite_index = spr_dive
-			vsp = 10
-			scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+			if character != p_characters.maurice
+			{
+				state = states.tumble
+				sprite_index = spr_player_dive
+				vsp = 10
+				scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+			}
+			else
+			{
+					sprite_index = spr_poundcancel1
+					state = states.tumble
+					freefallsmash = movespeed
+					hsp = 0
+					vsp = movespeed
+					dir = xscale
+					scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+				}
 		}
-		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	if ((!grounded || scr_slope(x, y + 1)) && place_meeting(x + xscale, y, obj_solid))
 	{
@@ -98,7 +115,7 @@ function player_mach2()
 	else if (grounded && place_meeting(x + xscale, y, obj_solid))
 	{
 		state = states.bump
-		reset_anim(obj_player.spr_wallsplat)
+		reset_anim(spr_player_wallsplat)
 		scr_sound_3d(sfx_splat, x, y)
 	}
 	
@@ -107,20 +124,20 @@ function player_mach2()
 	image_speed = abs(movespeed) / 15
 	switch (sprite_index)
 	{
-		case spr_mach1:
-			reset_anim_on_end(spr_mach2)
+		case spr_player_mach1:
+			reset_anim_on_end(spr_player_mach2)
 			break;
-		case spr_secondjump:
-			reset_anim_on_end(spr_secondjumploop)
+		case spr_player_secondjump:
+			reset_anim_on_end(spr_player_secondjumploop)
 			break;
-		case spr_walljump:
-			reset_anim_on_end(spr_walljumpfall)
+		case spr_player_walljump:
+			reset_anim_on_end(spr_player_walljumpfall)
 			break;
-		case spr_rollgetup:
+		case spr_player_rollgetup:
 			image_speed = 0.4
-			reset_anim_on_end(spr_mach2)
+			reset_anim_on_end(spr_player_mach2)
 			break;
-		case spr_longjump:
+		case spr_player_longjump:
 			image_speed = 0.4
 			if (anim_ended())
 				image_index = 10

@@ -2,14 +2,11 @@ function player_tumble()
 {
 	hsp = xscale * movespeed
 	
-	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == spr_machroll || sprite_index == spr_mach2jump || sprite_index == spr_backslide))
+	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == spr_machroll || sprite_index == spr_mach2jump || sprite_index == spr_backslide) && character != p_characters.maurice)
 	{
 		sprite_index = spr_player_dive
-		if character != p_characters.maurice
-		{
-			vsp = 10
-			scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
-		}
+		vsp = 10
+		scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
 	}
 	
 	if (sprite_index == spr_ball && grounded)
@@ -24,8 +21,12 @@ function player_tumble()
 	
 	if (grounded && sprite_index == spr_dive)
 		reset_anim(obj_player.spr_machroll)
+	if (grounded && sprite_index == spr_poundcancel1)
+		reset_anim(obj_player.spr_poundcancel2)
+	if (grounded && sprite_index == spr_poundcancel2)
+		state = states.normal
 		
-	if (sprite_index == spr_dive && input_buffers.jump > 0)
+	if (!grounded && input_buffers.jump > 0)
 	{
 		input_buffers.jump = 0
 		sprite_index = spr_poundcancel1
@@ -98,7 +99,7 @@ function player_tumble()
 		else
 			state = states.mach2
 		reset_anim(obj_player.spr_rollgetup)
-		scr_sound_3d(sfx_rollgetup, x, y)
+		scr_sound_3d_on(myemitter, sfx_rollgetup)
 	}
 	
 	//if (!keyDown('down.pressed && !keyDown('shift.pressed && grounded && vsp > 0 && state != 'bump' && (sprite_index != spr_ball && sprite_index != 'tumbleend.pressed && sprite_index != 'breakdance' && !canuncrouch.isTouching(solids))

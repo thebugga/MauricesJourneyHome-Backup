@@ -27,3 +27,8 @@ if save_exists
 	for (var i = 0; i < save_data.secret_count; i++)
 	    draw_sprite(spr_secretportal_enter, 10, x - 150, bbox_top + (i * 50))
 }
+
+draw_set_font(global.creditsfont)
+draw_set_halign(fa_center)
+draw_text(x, bbox_bottom, level_name)
+draw_text(x, bbox_bottom + 32, room_get_name(t_room))

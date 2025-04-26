@@ -3,14 +3,14 @@ function player_mach3()
 	hsp = xscale * movespeed
 	mach4mode = movespeed > 16
 	
-	var dashpad = sprite_index == spr_dashpad
+	var dashpad = sprite_index == spr_player_dashpad
 	
 	if (mach4mode)
 	{
-		if (sprite_index != spr_mach4)
+		if (sprite_index != spr_player_mach4)
 		{
 			flash = 8
-			sprite_index = spr_mach4
+			sprite_index = spr_player_mach4
 		}
 		
 		if !particle_contains_sprite(spr_crazyruneffect)
@@ -30,10 +30,10 @@ function player_mach3()
 			create_effect(x, y, spr_flamecloud)
 		}
 	}
-	else if (sprite_index == spr_mach4)
+	else if (sprite_index == spr_player_mach4)
 	{
 		flash = 8
-		sprite_index = spr_mach3
+		sprite_index = spr_player_mach3
 	}
 	
 	if (!particle_contains_sprite(spr_superdashcloud) && grounded)
@@ -44,35 +44,36 @@ function player_mach3()
 		input_buffers.jump = 0
 		vsp = -11
 		jumpstop = false
-		reset_anim(obj_player.spr_mach3jump)
+		reset_anim(spr_player_mach3jump)
 		scr_sound_3d(sfx_jump, x, y)
 		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	
 	if (grounded)
 	{
-		if (sprite_index == spr_Sjumpcancel)
-			sprite_index = spr_mach3
+		if (sprite_index == spr_player_Sjumpcancel)
+			sprite_index = spr_player_mach3
 		if (!key_dash.down && !dashpad)
 		{
-			reset_anim(obj_player.spr_machslidestart)
+			reset_anim(spr_player_machslidestart)
 			state = states.slide
 			scr_sound_3d(sfx_break, x, y)
 		}
 		if (p_move != 0 && p_move != xscale && !dashpad)
 		{
-			reset_anim(obj_player.spr_machslideboost3)
+			reset_anim(spr_player_machslideboost3)
 			state = states.slide
-			scr_sound_3d(sfx_machslideboost, x, y)
+			scr_sound_3d_on(myemitter, sfx_machslideboost)
 		}
 		
-		if (p_move == xscale && movespeed <= 16)
+		if (movespeed < 20 && p_move == xscale)
 			movespeed += mach4mode ? 0.1 : 0.025
 			
 		if (key_up.down && !dashpad)
 		{
 			state = states.superjump
-			reset_anim(obj_player.spr_superjumpprep)
+			reset_anim(spr_player_superjumpprep)
+			sjumper = false
 		}
 	}
 	else
@@ -88,16 +89,32 @@ function player_mach3()
 	
 	if (key_down.down)
 	{
-		state = states.tumble
 		if (grounded)
-			reset_anim(obj_player.spr_machroll)
+		{
+			state = states.tumble
+			reset_anim(spr_player_machroll)
+			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
+		}
 		else
 		{
-			sprite_index = spr_dive
-			vsp = 10
-			scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+			if character != p_characters.maurice
+			{
+				state = states.tumble
+				sprite_index = spr_player_dive
+				vsp = 10
+				scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+			}
+			else
+			{
+					sprite_index = spr_poundcancel1
+					state = states.tumble
+					freefallsmash = movespeed
+					hsp = 0
+					vsp = movespeed
+					dir = xscale
+					scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+			}
 		}
-		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	
 	do_grab()
@@ -116,7 +133,7 @@ function player_mach3()
 	else if (grounded && place_meeting(x + xscale, y, obj_solid))
 	{
 		state = states.bump
-		reset_anim(obj_player.spr_mach3hitwall)
+		reset_anim(spr_player_mach3hitwall)
 		vsp = -6
 		hsp = xscale * -6
 		shake_camera(20, 0.8)
@@ -126,14 +143,14 @@ function player_mach3()
 	image_speed = 0.4
 	switch (sprite_index)
 	{
-		case spr_mach4:
+		case spr_player_mach4:
 			image_speed = 0.75
 			break;
-		case spr_mach3jump:
-		case spr_rollgetup:
-		case spr_mach3kill:
-		case spr_dashpad:
-			reset_anim_on_end(spr_mach3)
+		case spr_player_mach3jump:
+		case spr_player_rollgetup:
+		case spr_player_mach3kill:
+		case spr_player_dashpad:
+			reset_anim_on_end(spr_player_mach3)
 			break;
 	}
 	do_taunt()
@@ -141,9 +158,9 @@ function player_mach3()
 	aftimg_timers.mach.do_it = true
 	instakill = true
 	
-	if !obj_particlecontroller.active_particles.machcharge
+	if !particle_contains_sprite(spr_mach3charge)
 	{
-		particle_create(x, y, particles.machcharge, xscale)
-		particle_create(x, y, particles.machcharge, xscale, 1, spr_speedlines)
+		create_followingeffect(spr_mach3charge, states.mach3, xscale)
+		create_followingeffect(spr_speedlines, states.mach3, xscale)
 	}
 }

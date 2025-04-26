@@ -8,7 +8,7 @@ campos = {
 	y: 0
 }
 
-version = "Alpha v2.2.0";
+version = "Alpha v2.3.0";
 versionMJH = "cc test";
 
 depth = -150

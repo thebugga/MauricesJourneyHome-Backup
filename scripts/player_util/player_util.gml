@@ -22,26 +22,36 @@ function do_grab()
 		input_buffers.grab = 0
 		if (!key_up.down)
 		{
-			movespeed = max(movespeed, 5)
-			if state == states.normal
-				movespeed = 8
-			state = states.grab
-			reset_anim(spr_player_suplexgrab)
-			scr_sound_3d_on(myemitter, sfx_suplexdash)
-			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
+			if character == p_characters.maurice
+			{
+				slaphand = 1
+				state = states.nicklebag
+				image_index = 0
+			}
+			else
+			{
+				movespeed = max(movespeed, 5)
+				if state == states.normal
+					movespeed = 8
+				state = states.grab
+				reset_anim(spr_player_suplexgrab)
+				scr_sound_3d(sfx_suplexdash, x, y)
+				particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
+			}
 		}
 		else
 		{
 			vsp = grounded ? -14 : -10
 			hsp = abs(hsp) * xscale
 			state = states.punch
-			reset_anim(spr_player_uppercut)
+			reset_anim(obj_player.spr_uppercut)
 			image_speed = 0.35
 			create_effect(x, y, spr_highjumpcloud2)
 			scr_sound_3d_pitched(sfx_uppercut, x, y)
 		}
 	}
 }
+
 
 function do_taunt()
 {
@@ -90,7 +100,6 @@ function do_taunt()
 		else
 		{
 			taunttimer = 20
-			scr_sound_3d(sfx_supertaunt, x, y)
 			reset_anim(asset_get_index($"spr_player_supertaunt{irandom_range(1, 4)}"))
 			var spds = [[0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]]
 			var i = 0

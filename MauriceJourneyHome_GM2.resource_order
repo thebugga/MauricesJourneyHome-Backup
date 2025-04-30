@@ -594,6 +594,7 @@
     {"name":"spr_player_weak","order":99,"path":"sprites/spr_player_weak/spr_player_weak.yy",},
     {"name":"spr_player_weakjump","order":106,"path":"sprites/spr_player_weakjump/spr_player_weakjump.yy",},
     {"name":"spr_player_weakmove","order":97,"path":"sprites/spr_player_weakmove/spr_player_weakmove.yy",},
+    {"name":"spr_playerD_mach3","order":2,"path":"sprites/spr_playerD_mach3/spr_playerD_mach3.yy",},
     {"name":"spr_plug","order":11,"path":"sprites/spr_plug/spr_plug.yy",},
     {"name":"spr_rail","order":3,"path":"sprites/spr_rail/spr_rail.yy",},
     {"name":"spr_railslope","order":4,"path":"sprites/spr_railslope/spr_railslope.yy",},

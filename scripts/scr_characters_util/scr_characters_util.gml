@@ -289,7 +289,7 @@ function scr_character_spr()
 		spr_longjump = spr_player_longjump
 		spr_mach1 = spr_player_mach1
 		spr_mach2 = spr_player_mach2
-		spr_mach3 = spr_player_mach3
+		spr_mach3 = spr_playerD_mach3
 		spr_mach4 = spr_player_mach4
 		spr_secondjump = spr_player_secondjump
 		spr_secondjumploop = spr_player_secondjumploop

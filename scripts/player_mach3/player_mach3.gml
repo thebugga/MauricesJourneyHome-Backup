@@ -7,10 +7,10 @@ function player_mach3()
 	
 	if (mach4mode)
 	{
-		if (sprite_index != spr_player_mach4)
+		if (sprite_index != spr_mach4)
 		{
 			flash = 8
-			sprite_index = spr_player_mach4
+			sprite_index = spr_mach4
 		}
 		
 		if !particle_contains_sprite(spr_crazyruneffect)
@@ -30,10 +30,10 @@ function player_mach3()
 			create_effect(x, y, spr_flamecloud)
 		}
 	}
-	else if (sprite_index == spr_player_mach4)
+	else if (sprite_index == spr_mach4)
 	{
 		flash = 8
-		sprite_index = spr_player_mach3
+		sprite_index = spr_mach3
 	}
 	
 	if (!particle_contains_sprite(spr_superdashcloud) && grounded)
@@ -52,7 +52,7 @@ function player_mach3()
 	if (grounded)
 	{
 		if (sprite_index == spr_player_Sjumpcancel)
-			sprite_index = spr_player_mach3
+			sprite_index = spr_mach3
 		if (!key_dash.down && !dashpad)
 		{
 			reset_anim(spr_player_machslidestart)
@@ -143,14 +143,14 @@ function player_mach3()
 	image_speed = 0.4
 	switch (sprite_index)
 	{
-		case spr_player_mach4:
+		case spr_mach4:
 			image_speed = 0.75
 			break;
 		case spr_player_mach3jump:
 		case spr_player_rollgetup:
 		case spr_player_mach3kill:
 		case spr_player_dashpad:
-			reset_anim_on_end(spr_player_mach3)
+			reset_anim_on_end(spr_mach3)
 			break;
 	}
 	do_taunt()

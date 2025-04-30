@@ -119,7 +119,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.0.190",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"MauriceJourneyHome_GM2",
   "resources":[
@@ -714,6 +714,7 @@
     {"id":{"name":"spr_player_weakjump","path":"sprites/spr_player_weakjump/spr_player_weakjump.yy",},},
     {"id":{"name":"spr_player_weakmove","path":"sprites/spr_player_weakmove/spr_player_weakmove.yy",},},
     {"id":{"name":"spr_playerD_idle","path":"sprites/spr_playerD_idle/spr_playerD_idle.yy",},},
+    {"id":{"name":"spr_playerD_mach3","path":"sprites/spr_playerD_mach3/spr_playerD_mach3.yy",},},
     {"id":{"name":"spr_plug","path":"sprites/spr_plug/spr_plug.yy",},},
     {"id":{"name":"spr_rail","path":"sprites/spr_rail/spr_rail.yy",},},
     {"id":{"name":"spr_railslope","path":"sprites/spr_railslope/spr_railslope.yy",},},

@@ -604,7 +604,10 @@
 			<value>963.60060195152096</value>
 		</property>
 		<property name="length">
-			<value>156.39939804847899</value>
+			<value>216.39939804847899</value>
+		</property>
+		<property name="pitch">
+			<value>-6</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{265dd006-944b-4f22-ab0a-7d230b08186d}</destination>
@@ -857,7 +860,7 @@
 	</object>
 	<object class="SustainPoint" id="{a42e8afd-c611-4cda-b475-378814e29fb4}">
 		<property name="position">
-			<value>599.09877551020406</value>
+			<value>575.84979591836736</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{b6a22285-624e-4ca7-b54a-e1fc1e253114}</destination>
@@ -899,7 +902,7 @@
 	</object>
 	<object class="TransitionRegion" id="{dea5ab73-ca35-4e51-8236-03a97524c052}">
 		<property name="position">
-			<value>816.46759637188211</value>
+			<value>780</value>
 		</property>
 		<property name="length">
 			<value>38.887487772247823</value>
@@ -959,7 +962,7 @@
 			<value>963.60060195152096</value>
 		</property>
 		<property name="length">
-			<value>156.3993980484791</value>
+			<value>216.3993980484791</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{b6a22285-624e-4ca7-b54a-e1fc1e253114}</destination>
@@ -976,7 +979,7 @@
 			<value>963.60060195152096</value>
 		</property>
 		<property name="length">
-			<value>156.3993980484791</value>
+			<value>216.3993980484791</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{b6a22285-624e-4ca7-b54a-e1fc1e253114}</destination>
@@ -1000,7 +1003,7 @@
 			<value>963.60060195152096</value>
 		</property>
 		<property name="length">
-			<value>156.3993980484791</value>
+			<value>216.3993980484791</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{b6a22285-624e-4ca7-b54a-e1fc1e253114}</destination>
@@ -1020,7 +1023,7 @@
 	</object>
 	<object class="NamedMarker" id="{ac5bd65f-4308-4f61-9f42-00f0fde8dfca}">
 		<property name="position">
-			<value>1120</value>
+			<value>1140</value>
 		</property>
 		<property name="name">
 			<value>PT Time B</value>
@@ -1034,7 +1037,7 @@
 	</object>
 	<object class="SustainPoint" id="{9bf53122-653d-46b8-97fe-0e214a509b5f}">
 		<property name="position">
-			<value>1120</value>
+			<value>1180</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{b6a22285-624e-4ca7-b54a-e1fc1e253114}</destination>

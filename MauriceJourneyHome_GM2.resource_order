@@ -490,6 +490,8 @@
     {"name":"spr_player_bodyslamstart","order":38,"path":"sprites/spr_player_bodyslamstart/spr_player_bodyslamstart.yy",},
     {"name":"spr_player_breakdance","order":65,"path":"sprites/spr_player_breakdance/spr_player_breakdance.yy",},
     {"name":"spr_player_bump","order":30,"path":"sprites/spr_player_bump/spr_player_bump.yy",},
+    {"name":"spr_player_caughtontime","order":13,"path":"sprites/spr_player_caughtontime/spr_player_caughtontime.yy",},
+    {"name":"spr_player_caughtontimeplant","order":14,"path":"sprites/spr_player_caughtontimeplant/spr_player_caughtontimeplant.yy",},
     {"name":"spr_player_ceilinghit","order":25,"path":"sprites/spr_player_ceilinghit/spr_player_ceilinghit.yy",},
     {"name":"spr_player_climbwall","order":7,"path":"sprites/spr_player_climbwall/spr_player_climbwall.yy",},
     {"name":"spr_player_clingwall","order":85,"path":"sprites/spr_player_clingwall/spr_player_clingwall.yy",},

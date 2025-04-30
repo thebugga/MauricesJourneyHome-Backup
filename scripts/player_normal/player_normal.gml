@@ -8,7 +8,7 @@ function P_shared_normal()
 		
 		if global.panic.timer <= 0
 		{
-			default_idle = spr_weak
+			default_idle = spr_weakidle
 			default_move = spr_weakmove
 		}
 	}

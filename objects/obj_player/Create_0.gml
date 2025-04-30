@@ -32,6 +32,7 @@ image_speed = 0.35
 //the end
 prevstate = states.normal
 xscale = 1
+rotation = 0
 jumpstop = false
 mach4mode = false
 slaphand = 0
@@ -43,6 +44,10 @@ flash = 0
 
 mandrek_jumpstartspeed = 0
 mandrek_floored = true
+
+timeup_anglediff = 0
+timeup_angle = 0
+timeup_dist = 0
 
 aftimg_timers = {
 	mach: {timer: 0, effect: after_images.mach, resetpoint: 5, do_it: false},

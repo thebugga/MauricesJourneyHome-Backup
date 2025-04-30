@@ -1,1 +1,1 @@
-grav = 0.5
+zooming = true

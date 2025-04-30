@@ -39,4 +39,19 @@ else
 		pause = false
 		instance_activate_all()
 		audio_resume_all()
+		reset_level()
+
+		with obj_player
+		{
+			spawn = noone
+			state = states.backtohub
+			vsp = 0
+			rotation = 0
+			sprite_index = spr_slipbanana1
+			x = return_location.x
+			y = return_location.y
+			room_goto(return_location.room)
+		}
+
+		instance_create(0, 0, obj_fadevisual)
 	}]]

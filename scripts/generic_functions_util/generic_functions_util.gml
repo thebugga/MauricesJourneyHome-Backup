@@ -190,7 +190,7 @@ function set_globals()
 		["ui_right",	vk_right],
 		["ui_up",		vk_up],
 		["ui_down",		vk_down],
-		["ui_accept",	ord("A")],
+		["ui_accept",	ord("Z")],
 		["ui_deny",		vk_escape]
 	]
 	
@@ -303,6 +303,14 @@ function quick_ini_write_real(inistr, section, key, value)
 	ini_open(inistr)
 	ini_write_real(section, key, value)
 	ini_close()
+}
+
+function quick_ini_read_real(inistr, section, key, value)
+{
+	ini_open(inistr)
+	var b = ini_read_real(section, key, value)
+	ini_close()
+	return b
 }
 
 function gpu_set_blendmode_cc(bm)

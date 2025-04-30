@@ -1,11 +1,10 @@
-if !grounded
-    image_speed = 0
-else if floor(image_index) != 8
-    image_speed = 0.35
-else
-    image_speed = 0
-
-collide()
-
-if vsp > 10
-	vsp = 10
+if zooming && image_xscale < 10
+{
+	yspd -= 0.05
+	y += yspd
+	zspd = (image_xscale / 20) + 0.0025
+	image_xscale += zspd
+	image_yscale += zspd
+	image_angle += 0.5
+}
+image_alpha = clamp(image_xscale, 0, 1)

@@ -148,12 +148,24 @@ if (state == states.tumble || state == states.crouch || (character == p_characte
 	mask_index = mask_player_small
 else
 	mask_index = mask_player
-
-if character != p_characters.mandrek
+		
+if room != rm_timesup
 {
-	grav = 0.5
-	if (state == states.ladder)
-		grav = 0
+	if character != p_characters.mandrek
+	{
+		grav = 0.5
+		if (state == states.ladder)
+			grav = 0
+	}
+	
+	if (state != states.noclip && state != states.backtohub)
+		collide()
+	
+	var spd = 0.05
+	if secret_cutscene
+		visual_size = max(visual_size - spd, 0)
+	else
+		visual_size = min(visual_size + spd, 1)
 }
 	
 if ((y > room_height + 200 || y < -200) && state != states.actor && state != states.backtohub)
@@ -166,8 +178,6 @@ if ((y > room_height + 200 || y < -200) && state != states.actor && state != sta
 	sprite_index = spr_idle
 }
 
-if (state != states.noclip && state != states.backtohub)
-	collide()
 
 struct_foreach(aftimg_timers, function(_name, _data)
 {
@@ -182,13 +192,6 @@ struct_foreach(aftimg_timers, function(_name, _data)
 
 if ladderbuffer > 0
 	ladderbuffer--
-
-var spd = 0.05
-
-if secret_cutscene
-	visual_size = max(visual_size - spd, 0)
-else
-	visual_size = min(visual_size + spd, 1)
 
 if supertauntcount >= 10
 {

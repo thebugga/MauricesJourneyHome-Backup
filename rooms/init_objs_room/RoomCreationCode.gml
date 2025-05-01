@@ -22,6 +22,7 @@ enum states
 	swingding,
 	grind,
 	nicklebag,
+	slipnslide,
 	hurt,
 	parry,
 	backtohub,

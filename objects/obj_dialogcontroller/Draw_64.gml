@@ -69,7 +69,7 @@ draw_sprite_ext(spr_dialogue_bubble, 0, x1, y1 - 8, (bw / sprite_get_width(spr_d
 surface_reset_target()
 gpu_set_blendmode(bm_normal) 
 surface_set_target(surf)
-draw_sprite_tiled(spr_titlecards, 0, 0, 0)
+draw_sprite_tiled(bg_secret, 0, 0, 0)
 gpu_set_blendmode(bm_subtract)
 draw_surface(clip, 0, 0)
 gpu_set_blendmode(bm_normal)

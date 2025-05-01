@@ -15,7 +15,6 @@ for (var i = 0; i < screen_w; i++)
 
 start_wiping = function()
 {
-	
 	if !surface_exists(wipe_surface)
 		wipe_surface = surface_create(screen_w, screen_h)
 	surface_set_target(wipe_surface)

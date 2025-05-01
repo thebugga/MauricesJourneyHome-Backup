@@ -218,7 +218,7 @@ function bbox_in_camera()
 
 function check_p_rank()
 {
-	return global.level_data.treasure && !global.combo.wasted;
+	return global.level_data.treasure && global.level_data.secret_count >= 3 && global.lap.active && !global.combo.wasted;
 }
 
 function set_rank_milestones(_s, _a, _b, _c)
@@ -296,6 +296,7 @@ function reset_level()
 		},
 		tauntcount: 0
 	}
+	global.doorshut = false
 }
 
 function quick_ini_write_real(inistr, section, key, value)

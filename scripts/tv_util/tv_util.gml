@@ -19,3 +19,26 @@ function tv_expression(spr)
 	state = tv_states.transition
 	t_index = 0
 }
+
+function tv_cardboard(ind)
+{
+	cardboardindex = ind
+	cardboardtimer = 120
+}
+
+function scr_tvtopmessage(_message = "")
+{
+	var q = -4
+	with (obj_tv)
+	{
+		q = 
+		{
+			text: _message,
+			timer: 500,
+			alpha: 1
+		}
+		trace(q)
+		ds_list_add(messagelist, q)
+	}
+	return q;
+}

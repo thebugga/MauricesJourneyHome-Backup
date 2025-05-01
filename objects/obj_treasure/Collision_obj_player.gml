@@ -13,3 +13,4 @@ if !collected
 	
 	collected = true
 }
+scr_tvtopmessage("SECRET TREASURE ATTAINED!!!")

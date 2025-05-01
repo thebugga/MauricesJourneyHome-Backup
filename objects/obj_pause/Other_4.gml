@@ -24,34 +24,54 @@ else
 		audio_resume_all()
 	}], ["RESTART", function() 
 	{
-		audio_stop_sound(mu_pause)
+		start_wiping()
+		audio_stop_all()
+		with obj_music
+		{
+			fmod_event_instance_stop(music.event, true);
+			fmod_event_instance_stop(music.event_secret, true);
+		}
 		pause = false
 		instance_activate_all()
-		audio_resume_all()
-		start_wiping()
+		reset_level()
+		with obj_player
+		{
+			hsp = 0
+			vsp = 0
+			movespeed = 0
+			spawn = restart_location.door
+			door_type = fade_types.none
+			room_goto(restart_location.room)
+			state = states.actor
+			reset_anim(obj_player.spr_exitdoor)
+		}
 	}], ["OPTIONS", function() 
 	{
 			instance_create_depth(x, y, obj_pause.depth - 1, obj_options)
 	}], ["EXIT LEVEL", function() 
 	{
 		start_wiping()
-		audio_stop_sound(mu_pause)
+		audio_stop_all()
+		with obj_music
+		{
+			fmod_event_instance_stop(music.event, true);
+			fmod_event_instance_stop(music.event_secret, true);
+		}
 		pause = false
 		instance_activate_all()
-		audio_resume_all()
+		
 		reset_level()
-
 		with obj_player
 		{
-			spawn = noone
-			state = states.backtohub
+			hsp = 0
 			vsp = 0
-			rotation = 0
-			sprite_index = spr_slipbanana1
+			movespeed = 0
+			spawn = noone
 			x = return_location.x
 			y = return_location.y
+			door_type = fade_types.none
 			room_goto(return_location.room)
+			state = states.actor
+			reset_anim(obj_player.spr_exitdoor)
 		}
-
-		instance_create(0, 0, obj_fadevisual)
 	}]]

@@ -235,6 +235,7 @@ function P_mandrek_normal()
 			sjumptimer = 0
 			if sprite_index != spr_mandrek_duck && sjumptimer <= 10
 				sprite_index = spr_mandrek_jump
+			grav = 0
 		}
 		mandrek_floored = true
 	}

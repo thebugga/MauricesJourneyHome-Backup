@@ -254,6 +254,7 @@ function do_hurt(obj = noone)
 		}
 	}
 	
+	scr_tvtopmessage(choose("OW!","DON'T TOUCH THAT!", "YOUCH!", "YOU SUCK!"))
 	with obj_tv
-		tv_expression(spr_tv_hurt)
+		tv_cardboard(3)
 }

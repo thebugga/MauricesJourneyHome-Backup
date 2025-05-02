@@ -30,13 +30,15 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"panic","filters":[],"listItems":[],"multiselect":false,"name":"panic","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pillarblock",
-    "path":"sprites/spr_pillarblock/spr_pillarblock.yy",
+    "name":"spr_pillarblock_awake",
+    "path":"sprites/spr_pillarblock_awake/spr_pillarblock_awake.yy",
   },
   "spriteMaskId":null,
   "visible":true,

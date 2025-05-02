@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_destroyable_big_secret",
+  "%Name":"obj_destroyable_hardsecret",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_destroyable_big_secret",
+  "name":"obj_destroyable_hardsecret",
   "overriddenProperties":[],
   "parent":{
     "name":"Destroyables",
     "path":"folders/Objects/Level Structure/Destroyables.yy",
   },
   "parentObjectId":{
-    "name":"obj_destroyable",
-    "path":"objects/obj_destroyable/obj_destroyable.yy",
+    "name":"obj_metalblock",
+    "path":"objects/obj_metalblock/obj_metalblock.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

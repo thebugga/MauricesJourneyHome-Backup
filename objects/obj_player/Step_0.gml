@@ -118,6 +118,9 @@ switch (state)
 	case states.noclip:
 		player_noclip()
 		break;
+	case states.slipnslide:
+		player_slipnslide()
+		break;
 }
 
 if (state != states.normal)

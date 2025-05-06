@@ -8,7 +8,7 @@ enum tv_states {
 pattern_init()
 
 image_speed = 0.35
-x = screen_w - 115
+x = 115
 y = 80
 depth = -200
 xstart = x
@@ -19,14 +19,10 @@ state_togo = tv_states.expr
 state = tv_states.off
 idletimer = 240
 
-combo = {
-	state: 0,
-	ghost: {
-		image_index: 0,
-		x: 0,
-		y: 0
-	},
-	x: 0,
-	y: -500,
-	vsp: 0
-}
+tvsurface = surface_create(278, 268)
+cardboardtimer = 0
+cardboardindex = -4
+cardboardvisual = -4
+cardboardy = 402
+
+messagelist = ds_list_create()

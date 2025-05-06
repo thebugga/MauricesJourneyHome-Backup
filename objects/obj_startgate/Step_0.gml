@@ -24,6 +24,10 @@ if (place_meeting(x, y, obj_player) && obj_player.state != states.actor && key_u
 			y: y,
 			room: room
 		}
+		restart_location = {
+			room: other.t_room,
+			door: other.t_door
+		}
 	}
 }
 
@@ -39,14 +43,7 @@ with obj_player
 
 if flick
 {
-	var dshit = {
-		roomer: t_room,
-		doory: t_door,
-		tittycard: card_index
-	}
-	
-	do_fade(dshit.roomer, dshit.doory, fade_types.door)
-	
+	do_fade(t_room, t_door, fade_types.door)
 	with instance_create(0, 0, obj_titlecard)
-		image_index = dshit.tittycard
+		image_index = other.card_index
 }

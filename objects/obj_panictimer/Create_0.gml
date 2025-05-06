@@ -9,7 +9,8 @@ global.lap = {
 	inflap: false,
 }
 
-john = {
+filler_sprites = [spr_timer_collysia, spr_timer_platfelix]
+filler = {
 	image_index: 0,
 	image_speed: 0.35
 }
@@ -20,13 +21,10 @@ pizzaface = {
 	image_speed: 0.35
 }
 
-barfill_x = 0
-bar_surface = noone
 showtime_buffer = 0
 
-xstart = screen_w / 2
-ystart = screen_h - 76
-x = xstart
-y = ystart + 212
+xstart = 0
+x = xstart - 400
+y = screen_h - 134
 
 depth = -200

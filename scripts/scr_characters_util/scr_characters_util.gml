@@ -93,6 +93,7 @@ function scr_character_spr()
 		spr_bodyslamland = spr_player_bodyslamland
 		spr_ball = spr_player_ball
 		spr_backslide = spr_player_backslide
+		spr_slipnslide = spr_player_slipnslide
 		spr_slipbanana1 = spr_player_slipbanana1
 		spr_slipbanana2 = spr_player_slipbanana2
 		spr_mach3boost = spr_player_machslideboost3
@@ -219,6 +220,7 @@ function scr_character_spr()
 		spr_bodyslamland = spr_player_bodyslamland
 		spr_ball = spr_player_ball
 		spr_backslide = spr_player_backslide
+		spr_slipnslide = spr_player_slipnslide
 		spr_slipbanana1 = spr_player_slipbanana1
 		spr_slipbanana2 = spr_player_slipbanana2
 		spr_mach3boost = spr_player_machslideboost3
@@ -345,6 +347,7 @@ function scr_character_spr()
 		spr_bodyslamland = spr_player_bodyslamland
 		spr_ball = spr_player_ball
 		spr_backslide = spr_player_backslide
+		spr_slipnslide = spr_player_slipnslide
 		spr_slipbanana1 = spr_player_slipbanana1
 		spr_slipbanana2 = spr_player_slipbanana2
 		spr_mach3boost = spr_player_machslideboost3
@@ -470,6 +473,7 @@ function scr_character_spr()
 		spr_bodyslamland = spr_player_bodyslamland
 		spr_ball = spr_player_ball
 		spr_backslide = spr_player_backslide
+		spr_slipnslide = spr_player_slipnslide
 		spr_slipbanana1 = spr_player_slipbanana1
 		spr_slipbanana2 = spr_player_slipbanana2
 		spr_mach3boost = spr_player_machslideboost3

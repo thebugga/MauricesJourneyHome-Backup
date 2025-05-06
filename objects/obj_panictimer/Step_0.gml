@@ -1,5 +1,6 @@
-xstart = screen_w / 2
-ystart = screen_h - 76
+xstart = 0
+y = screen_h - 134
+image_index = obj_player.character
 
 if (global.panic.active && !global.secret)
 {
@@ -22,20 +23,20 @@ if (global.panic.active && !global.secret)
 
 if (global.panic.active && global.panic.timer > 0)
 {
-	if !global.secret
-		y = approach(y, ystart, 1)
+	if global.secret || (obj_player.x < 400 && obj_player.y > room_height - 150)
+		x = approach(x, xstart - 400, 4)
 	else
-		y = approach(y, ystart + 212, 4)
+		x = approach(x, xstart, 2)
 }
 else if global.panic.active
 {
 	if (showtime_buffer > 0 && pizzaface.sprite_index == spr_timer_pizzaface_wake)
 		showtime_buffer--
 	else
-		y = approach(y, ystart + 212, 1)
+		x = approach(x, xstart - 400, 1)
 }
 else
 {
 	pizzaface.sprite_index = spr_timer_pizzaface_sleep
-	y = ystart + 212
+	x = xstart - 400
 }

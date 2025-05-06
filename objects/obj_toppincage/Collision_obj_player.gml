@@ -39,4 +39,4 @@ with instance_create(x, y, obj_collect_number)
 	num = 1000
 
 with obj_tv
-	tv_expression(spr_tv_collect)
+	tv_cardboard(2)

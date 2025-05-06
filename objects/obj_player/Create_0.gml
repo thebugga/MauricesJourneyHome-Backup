@@ -137,6 +137,10 @@ return_location = {
 	x: 0,
 	y: 0
 }
+restart_location = {
+	room: 0,
+	door: 0
+}
 
 doorxscale = 1
 warping = false

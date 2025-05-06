@@ -1,8 +1,12 @@
 var p = obj_player
 
 visible = true
-
-if (string_starts_with(room_get_name(room), "tower") || room == rank_room || room == rm_timesup)
+if cardboardtimer > 0
+	cardboardtimer--
+else
+	cardboardindex = -4
+		
+if (string_starts_with(room_get_name(room), "tower") || room == rank_room || room == rm_timesup || instance_exists(obj_titlecard))
 	visible = false
 
 if !visible
@@ -18,15 +22,14 @@ switch (state)
 			state = tv_states.normal
 		break;
 	case tv_states.normal:
-		if (sprite_index != spr_tv_idleangry && sprite_index != spr_tv_idlelook)
-			sprite_index = spr_tv_idle
-		
-		if global.panic.active
+		if cardboardindex == 3
+			sprite_index = spr_tv_hurt
+		else if global.panic.active
 			sprite_index = spr_tv_panic
 		else if global.combo.count >= 50
-			sprite_index = spr_tv_highcombo
-		else if global.combo.count >= 3
 			sprite_index = spr_tv_combo
+		else if (sprite_index != spr_tv_idleangry && sprite_index != spr_tv_idlelook)
+			sprite_index = spr_tv_idle
 		
 		if idletimer > 0
 			idletimer--
@@ -35,16 +38,16 @@ switch (state)
 			idletimer = 240
 			reset_anim(choose(spr_tv_idleangry, spr_tv_idlelook))
 		}
-			
+		
 		if (anim_ended() && (sprite_index == spr_tv_idleangry || sprite_index == spr_tv_idlelook))
 			sprite_index = spr_tv_idle
 		
-		if p.state == states.mach3
+		if cardboardtimer == 0
 		{
-			if (abs(obj_player.hsp) >= 16)
-				tv_expression(spr_tv_mach4)
-			else
-				tv_expression(spr_tv_mach3)
+			if (p.state == states.mach3 || p.state == states.climbwall || p.sprite_index == p.spr_machslideboost3)
+					cardboardindex = 0
+			if p.state == states.mach3 && abs(obj_player.hsp) >= 16
+					cardboardindex = 1
 		}
 		break;
 	case tv_states.transition:
@@ -59,18 +62,6 @@ switch (state)
 	case tv_states.expr:
 		switch (sprite_index)
 		{
-			case spr_tv_mach3:
-				if (p.state != states.mach3 && p.state != states.climbwall && p.sprite_index != p.spr_machslideboost3)
-					tv_expression(spr_tv_idle)
-				if (abs(obj_player.hsp) >= 16 && p.state == states.mach3)
-					tv_expression(spr_tv_mach4)
-				break;
-			case spr_tv_mach4:
-				if (obj_player.state != states.mach3 && p.state != states.climbwall)
-					tv_expression(spr_tv_idle)
-				if (abs(obj_player.hsp) < 16)
-					tv_expression(spr_tv_mach3)
-				break;
 			case spr_tv_hurt:
 				if p.state == states.hurt
 					alarm[0] = 120
@@ -79,58 +70,18 @@ switch (state)
 		break;
 }
 
-switch (combo.state)
+
+if cardboardvisual != cardboardindex
 {
-	case -1:
-		combo.vsp = 0
-		combo.y = approach(combo.y, -500, 4)
-		if global.combo.count > 0
-			combo.state++
-		break;
-	case 0:
-		combo.vsp += 0.5
-		combo.y += combo.vsp
-		if (combo.y >= 20)
-			combo.state++
-		break;
-	case 1:
-		combo.y = lerp(combo.y, 0, 0.05)
-		if (combo.y < 1)
-		{
-			combo.y = 0
-			combo.vsp = 0
-			combo.state++
-		}
-		break;
-	case 2:
-		var resetpoint = 0
-		if (global.combo.timer >= 30)
-			resetpoint = 0
-		else if (global.combo.timer >= 15)
-			resetpoint = 3
-		else
-			resetpoint = 7
-		combo.vsp += 0.25
-		combo.y += combo.vsp
-		if (combo.y > 0)
-		{
-			combo.y = -resetpoint
-			combo.vsp = 0
-		}
-		break;
+	cardboardy = approach(cardboardy, 268, 6)
+	if cardboardy >= 268
+		cardboardvisual = cardboardindex
 }
-
-combo.x = wave(-10, 10, 2, 20)
-combo.ghost.x = lerp(combo.ghost.x, combo.x - 75 + ((global.combo.timer / 60) * 150), 0.5)
-combo.ghost.y = combo.y
-combo.ghost.image_index += 0.35
-combo.ghost.image_index = wrap(sprite_get_number(spr_tv_c_ghost), combo.ghost.image_index)
-
-if global.combo.timer <= 0
-	combo.state = -1
+else if cardboardvisual != -4
+	cardboardy = approach(cardboardy, 134, 6)
 
 var y_goto = ystart
-if (obj_player.x > room_width - 250 && obj_player.y < 175)
+if (obj_player.x < 250 && obj_player.y < 175) || !visible
 	y_goto = -500
 	
 y = approach(y, y_goto, 25)

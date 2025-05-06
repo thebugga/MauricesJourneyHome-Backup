@@ -1,4 +1,4 @@
-if global.panic.active
+if global.panic.active == panic
 {
 	x = xstart
 	y = ystart
@@ -10,5 +10,3 @@ else
 	y = -1000
 	sprite_index = spr_pillarblock
 }
-
-//this feels prettier than using a ternary, DONT DO IT.

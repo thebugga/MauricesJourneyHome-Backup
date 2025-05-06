@@ -16,6 +16,42 @@ function wave(from, to, duration, offset, timer = current_time)
 	return from + _wave + sin((((timer * 0.001) + duration * offset) / duration) * (pi * 2)) * _wave;
 }
 
+function scr_get_timer_string(minutes, seconds, include_hours = false)
+{
+	if seconds < 10
+	{
+		seconds = string_format(seconds, 1, 3);
+		seconds = "0" + seconds;
+	}
+	else
+		seconds = string_format(seconds, 2, 3);
+	
+	if include_hours
+	{
+		for (var h = 0; minutes > 59; h++)
+			minutes -= 60;
+		if h < 10
+			h = concat("0", h);
+		else
+			h = string(h);
+	}
+	
+	if minutes < 10
+		minutes = concat("0", minutes);
+	else
+		minutes = concat(minutes);
+	
+	if include_hours
+		return concat(h, ":", minutes, ":", seconds);
+	return concat(minutes, ":", seconds);
+}
+
+
+function get_milliseconds()
+{
+	return get_timer() / 1000;
+}
+
 function draw_set_align(halign, valign, color = noone) 
 {
 	draw_set_halign(halign) 
@@ -125,7 +161,7 @@ function set_globals()
 {
 	ini_open("globalsave.ini")
 	global.fullscreen = ini_read_real("options", "fullscreen", false)
-	global.master_volume = ini_read_real("options", "option_master_volume", false)
+	global.master_volume = ini_read_real("options", "option_master_volume", 1)
 	global.sfx_volume = ini_read_real("options", "option_sfx_volume", 1)
 	global.music_volume = ini_read_real("options", "option_music_volume", 1) //these being global are kinda unneccesary...
 	ini_close()
@@ -144,7 +180,7 @@ function set_globals()
 	}
 	
 	pal_swap_init_system(shd_pal_swapper, shd_pal_swapper, shd_pal_swapper) //cool
-	global.ds_dead_enemies = ds_list_create()
+	global.ds_save_room = ds_list_create()
 	global.ds_escapesaveroom = ds_list_create()
 	global.ds_saveroom = ds_list_create()
 	global.doorshut = false
@@ -278,7 +314,7 @@ function reset_level()
 	global.combo.count = 0
 	global.combo.timer = 0
 	global.score = 0
-	ds_list_clear(global.ds_dead_enemies)
+	ds_list_clear(global.ds_save_room)
 	ds_list_clear(global.ds_escapesaveroom)
 	ds_list_clear(global.ds_saveroom)
 	obj_followerhandler.followers = []

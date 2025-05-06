@@ -12,5 +12,5 @@ if do_particles
 	scr_sound_3d(sfx_killenemy, x, y)
 	shake_camera()
 	
-	ds_list_add(!escape ? global.ds_dead_enemies : global.ds_escapesaveroom, id)
+	ds_list_add(!escape ? global.ds_save_room : global.ds_escapesaveroom, id)
 }

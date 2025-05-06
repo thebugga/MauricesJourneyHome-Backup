@@ -34,7 +34,6 @@ options = [
 	{o_name: "MUSIC VOLUME: ", val: global.music_volume * 100, o_type: optiontypes.slider, func: function(_val) {
 		_val /= 100
 		global.music_volume = _val
-		audio_group_set_gain(ag_music, _val, 0)
 		quick_ini_write_real("globalsave.ini", "options", "music_volume", _val)
 	}},
 	{o_name: "CHANGE KEYBINDS", val: "", o_type: optiontypes.input, func: function(_val) {

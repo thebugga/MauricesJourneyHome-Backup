@@ -10,3 +10,4 @@ with (instance_place(x, y - 1, obj_player))
 		x = other.x + 16
 	}
 }
+visible = global.showcollisions

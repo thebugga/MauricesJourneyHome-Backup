@@ -42,6 +42,7 @@ for (var i = 0; i < array_length(l); i++)
             layer_x(bg_id, camera_pos.x * 0.11)
             layer_y(bg_id, camera_pos.y)
             break;
+        case "Backgrounds_sky":
         case "Backgrounds_sky1":
             layer_x(bg_id, camera_pos.x)
             layer_y(bg_id, camera_pos.y)
@@ -57,6 +58,10 @@ for (var i = 0; i < array_length(l); i++)
 		case "Backgrounds_scroll3":
 			layer_x(bg_id, (camera_pos.x * 0.2) + (bg_scroll.x * layer_get_hspeed(bg_id)))
 			layer_y(bg_id, (camera_pos.y * 0.2) + (bg_scroll.y * layer_get_vspeed(bg_id)))
+			break;
+		case "Backgrounds_scrollstill":
+			layer_x(bg_id, (camera_pos.x) + (bg_scroll.x * layer_get_hspeed(bg_id)))
+			layer_y(bg_id, (camera_pos.y) + (bg_scroll.y * layer_get_vspeed(bg_id)))
 			break;
 		case "Foregrounds_1":
 			layer_x(bg_id, camera_pos.x * -0.15)

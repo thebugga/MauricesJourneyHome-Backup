@@ -20,3 +20,4 @@ panicstart = false;
 
 add_music(garbage_1, "event:/music/w1/garbage", noone, false);
 add_music(entrance_1, "event:/music/w1/garbage", noone, false);
+add_music(wizard_1, "event:/music/w1/wizard", noone, false);

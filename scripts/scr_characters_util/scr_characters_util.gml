@@ -126,6 +126,24 @@ function scr_character_spr()
 		spr_grabcancel = spr_player_grabcancel
 		spr_grabbump = spr_player_grabbump
 		spr_grind = spr_player_grind
+		
+		spr_wizardstart = spr_player_holdrise
+		spr_wizardthunder = spr_player_holdrise
+		spr_wizardidle = spr_player_idle
+		spr_wizardwalk = spr_player_move
+		spr_wizardjumpstart = spr_player_superjumpprep
+		spr_wizardjump = spr_player_jump
+		spr_wizarddoublejump = spr_player_groundpoundjump
+		spr_wizardfall = spr_player_fall
+		spr_wizardland = spr_player_land
+		spr_wizardwindup = spr_player_fallface
+		spr_wizardattack = spr_player_slap1
+		spr_wizarddash = spr_player_mach2
+		spr_wizardzoom = spr_player_mach2jump
+		spr_wizardbump = spr_player_bump
+		spr_wizardclingwall = spr_player_clingwall
+		spr_wizardclingceil = spr_player_ceilinghit
+		
 		spr_palette = pal_peppino
 		paletteselect = 1
 	}

@@ -16,6 +16,9 @@ enum p_characters
 	*/
 }
 
+transformation_list = ds_list_create()
+ds_list_add(transformation_list, states.wizard, states.wizardgrapple, states.wizarddash, states.wizardcling)
+
 player = 0
 character = p_characters.maurice
 scr_character_spr()
@@ -34,6 +37,7 @@ prevstate = states.normal
 xscale = 1
 rotation = 0
 jumpstop = false
+doublejump = false
 mach4mode = false
 slaphand = 0
 sjumper = false
@@ -149,3 +153,6 @@ supertauntcount = 0
 supertauntshow = false
 supertauntbuffer = 0
 myemitter = noone
+
+wizardclingtimer = 300
+wizardthrowangle = 90

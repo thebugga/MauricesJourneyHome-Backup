@@ -25,6 +25,10 @@ enum states
 	slipnslide,
 	hurt,
 	parry,
+	wizard,
+	wizardgrapple,
+	wizarddash,
+	wizardcling,
 	backtohub,
 	noclip,
 	

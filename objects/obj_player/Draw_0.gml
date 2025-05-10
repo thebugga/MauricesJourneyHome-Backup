@@ -37,3 +37,13 @@ if flash > 0
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale * visual_size, image_yscale * visual_size, rotation, image_blend, image_alpha)
 	shader_reset()
 }
+
+if ds_list_find_index(transformation_list, state) != -1
+{
+	draw_text(x, y, "Transformed")
+}
+
+if state == states.wizardgrapple && sprite_index == spr_wizardwindup
+{
+	draw_sprite(spr_oldpizzabox, 0, x + (lengthdir_x(40, wizardthrowangle - 90) * xscale), y + lengthdir_y(40, wizardthrowangle - 90))
+}

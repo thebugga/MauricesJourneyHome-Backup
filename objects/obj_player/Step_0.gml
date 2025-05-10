@@ -121,6 +121,18 @@ switch (state)
 	case states.slipnslide:
 		player_slipnslide()
 		break;
+	case states.wizard:
+		player_wizard()
+		break;
+	case states.wizardgrapple:
+		player_wizardgrapple()
+		break;
+	case states.wizarddash:
+		player_wizarddash()
+		break;
+	case states.wizardcling:
+		player_wizardcling()
+		break;
 }
 
 if (state != states.normal)
@@ -157,8 +169,10 @@ if room != rm_timesup
 	if character != p_characters.mandrek
 	{
 		grav = 0.5
-		if (state == states.ladder)
+		if (state == states.ladder || state == states.wizardcling)
 			grav = 0
+		if (state == states.wizardgrapple)
+			grav = 0.05
 	}
 	
 	if (state != states.noclip && state != states.backtohub)

@@ -112,6 +112,32 @@ function do_fade(t_room, t_door, type)
 	}
 }
 
+function calculate_rank(scorer = global.score)
+{
+	var rank_ix = 0
+	var ranks = [
+		global.rank_milestones.c,
+		global.rank_milestones.b,
+		global.rank_milestones.a,
+		global.rank_milestones.s
+	]
+			
+	if (scorer >= global.rank_milestones.s && check_p_rank())
+		rank_ix = 5
+	else
+	{
+		for (var i = 4; i >= 1; i--) 
+		{
+			if scorer >= ranks[i - 1]
+			{
+				rank_ix = i
+				break;
+			}
+		}
+	}
+	return rank_ix
+}
+
 function do_secret_fade()
 {
 	with obj_fade
@@ -142,6 +168,54 @@ function do_hold_player(_exit)
 		sprite_index = _exit ? spr_player_hurt : spr_player_bodyslamfall
 		image_speed = 0.35
 	}
+}
+
+function do_the_rank()
+{
+		state = states.actor
+		reset_anim(obj_player.spr_enterdoor)
+		hsp = 0
+		movespeed = 0
+		
+		var s = round(global.score + obj_generichandler.combo_score)
+		
+		with instance_create(0, 0, obj_rank)
+		{
+			rank_scorefinal = s
+			results[3][1] = global.combo.record
+		}
+		
+		var rank_ix = calculate_rank()
+		
+		ini_open($"saves/saveData{global.savefile}.ini")
+		
+		var lvl_name = global.level_data.level_name
+		var lvl_toppins = global.level_data.toppins
+		
+		if s > ini_read_real(lvl_name, "score", 0)
+			ini_write_real(lvl_name, "score", s)
+		
+		if !ini_read_real(lvl_name, "treasure", 0)
+			ini_write_real(lvl_name, "treasure", global.level_data.treasure)
+		
+		if global.level_data.secret_count > ini_read_real(lvl_name, "secret_count", 0)
+			ini_write_real(lvl_name, "secret_count", global.level_data.secret_count)
+		
+		if rank_ix > ini_read_real(lvl_name, "rank", 0)
+			ini_write_real(lvl_name, "rank", rank_ix)
+		
+		if !ini_read_real(lvl_name, "shroom", 0)
+			ini_write_real(lvl_name, "shroom", lvl_toppins.shroom)
+		if !ini_read_real(lvl_name, "cheese", 0)
+			ini_write_real(lvl_name, "cheese", lvl_toppins.cheese)
+		if !ini_read_real(lvl_name, "tomato", 0)
+			ini_write_real(lvl_name, "tomato", lvl_toppins.tomato)
+		if !ini_read_real(lvl_name, "sausage", 0)
+			ini_write_real(lvl_name, "sausage", lvl_toppins.sausage)
+		if !ini_read_real(lvl_name, "pineapple", 0)
+			ini_write_real(lvl_name, "pineapple", lvl_toppins.pineapple)
+		
+		ini_close()
 }
 
 function instance_create(_x, _y, obj)

@@ -169,6 +169,8 @@ if room != rm_timesup
 	if character != p_characters.mandrek
 	{
 		grav = 0.5
+		if (state == states.mach2 || state == states.mach3 || state == states.tumble) && key_down.down && !grounded && character == p_characters.maurice
+			grav = 2
 		if (state == states.ladder || state == states.wizardcling)
 			grav = 0
 		if (state == states.wizardgrapple)
@@ -225,5 +227,27 @@ if supertauntcount >= 10
 	{
 		supertauntbuffer = 4;
 		create_effect(x + irandom_range(-25, 25), y + irandom_range(-10, 35), asset_get_index($"spr_supertauntspark{irandom_range(1, 5)}"))
+	}
+}
+
+if room == treasure_room && x >= 320 && hasgerome
+{
+	hasgerome = false
+	state = states.actor
+	hsp = 0
+	sprite_index = spr_idle
+	image_speed = 0.35
+	with obj_followerhandler
+	{
+		for (var i = 0; i < array_length(followers); i++) 
+		{
+			var follower = followers[i]
+			if follower.sprs.idle == spr_gerome_keyidle
+			{
+				instance_create(follower.x, follower.y, obj_geromeanim)
+				array_delete(followers, i, 1)
+				i--
+			}
+		}
 	}
 }

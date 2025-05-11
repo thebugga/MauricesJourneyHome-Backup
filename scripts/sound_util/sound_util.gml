@@ -4,7 +4,7 @@
 /// @returns {id} Plays audio
 function scr_sound(snd, loop = false)
 {
-	var g = 1 //global.sfx_volume
+	var g = global.sfx_volume
 	var played_snd = audio_play_sound(snd, 1, loop, g);
 	
 	return played_snd;

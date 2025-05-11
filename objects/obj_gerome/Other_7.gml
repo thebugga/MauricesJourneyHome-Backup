@@ -7,5 +7,7 @@ ds_list_add(global.ds_saveroom, id)
 
 obj_player.hasgerome = true
 
+instance_create(0, 0, obj_lapflag)
+
 with obj_followerhandler
 	array_push(followers, create_follower(other.x, other.y, spr_gerome_keyidle, spr_gerome_keymove, spr_gerome_keyidle, spr_gerome_taunt, spr_gerome_collected))

@@ -69,6 +69,7 @@ grabclimbbuffer = 0
 ladderbuffer = 0
 
 prev = {
+	room: room,
 	state: self.state,
 	hsp: self.hsp,
 	vsp: self.vsp,

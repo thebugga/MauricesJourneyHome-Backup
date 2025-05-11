@@ -45,7 +45,7 @@ if flick
 {
 	global.level_minutes = 0
 	global.level_seconds = 0
-	do_fade(t_room, t_door, fade_types.door)
+	do_fade(obj_player.restart_location.room, obj_player.restart_location.door, fade_types.door)
 	with instance_create(0, 0, obj_titlecard)
 		image_index = other.card_index
 }

@@ -99,8 +99,19 @@ function player_groundpound()
 		{
 			if sprite_index == spr_poundcancel1
 			{
-				state = states.tumble
-				sprite_index = spr_crouchslip
+				if character == p_characters.maurice
+				{
+					if p_move != 0
+						xscale = p_move
+					state = states.mach3
+					sprite_index = spr_mach3
+				}
+				else
+				{
+					reset_anim(spr_poundcancel2)
+					image_index = 0
+					state = states.bump
+				}
 			}
 			else
 			{

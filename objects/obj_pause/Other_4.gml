@@ -44,6 +44,7 @@ else
 			room_goto(restart_location.room)
 			state = states.actor
 			reset_anim(obj_player.spr_exitdoor)
+			image_speed = 0.35
 		}
 	}], ["OPTIONS", function() 
 	{
@@ -73,5 +74,6 @@ else
 			room_goto(return_location.room)
 			state = states.actor
 			reset_anim(obj_player.spr_exitdoor)
+			image_speed = 0.35
 		}
 	}]]

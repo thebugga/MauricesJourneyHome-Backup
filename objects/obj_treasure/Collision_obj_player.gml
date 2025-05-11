@@ -12,5 +12,5 @@ if !collected
 	alarm[0] = 150
 	
 	collected = true
+	scr_tvtopmessage("SECRET TREASURE ATTAINED!!!")
 }
-scr_tvtopmessage("SECRET TREASURE ATTAINED!!!")

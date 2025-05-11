@@ -93,14 +93,18 @@ function player_mach2()
 			}
 			else
 			{
+				if input_buffers.jump > 0
+				{
+					input_buffers.jump = 0
 					sprite_index = spr_poundcancel1
-					state = states.tumble
+					state = states.groundpound
 					freefallsmash = movespeed
 					hsp = 0
 					vsp = movespeed
 					dir = xscale
 					scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
 				}
+			}
 		}
 	}
 	if ((!grounded || scr_slope(x, y + 1)) && place_meeting(x + xscale, y, obj_solid))

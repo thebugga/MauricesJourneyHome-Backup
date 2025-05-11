@@ -1,18 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"obj_geromeopendoor",
+  "%Name":"obj_glassblock",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_geromeopendoor",
+  "name":"obj_glassblock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collectables",
-    "path":"folders/Objects/Level Structure/Collectables.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_solid",
+    "path":"objects/obj_solid/obj_solid.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,12 +35,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gerome_opendoor",
-    "path":"sprites/spr_gerome_opendoor/spr_gerome_opendoor.yy",
+    "name":"spr_glassblock",
+    "path":"sprites/spr_glassblock/spr_glassblock.yy",
   },
-  "spriteMaskId":{
-    "name":"mask_player_small",
-    "path":"sprites/mask_player_small/mask_player_small.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

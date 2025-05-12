@@ -9,4 +9,6 @@ if sprite_index != spr_gerome_collected && global.panic.active
 	global.combo.timer = 60
 	with instance_create(other.x, other.y, obj_collect_number)
 		num = 3000
+		
+	ds_list_clear(global.ds_escapesaveroom)
 }

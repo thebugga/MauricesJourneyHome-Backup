@@ -14,3 +14,4 @@ else
 	draw_self()
 	draw_sprite(spr_lap2warning, 0, x, y + wave(-5, 5, 0.5, 5))
 }
+draw_text(x, y, current_time)

@@ -1,2 +1,2 @@
 image_xscale *= -1
-alarm[0] = 100
+alarm[0] = 50

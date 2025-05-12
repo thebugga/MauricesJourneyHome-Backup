@@ -1,2 +1,2 @@
 pattern_init()
-alarm[0] = 100
+alarm[0] = 50

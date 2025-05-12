@@ -1,4 +1,37 @@
-if wiping
+if pause
+{
+	draw_set_color(c_black)
+	draw_rectangle(0, 0, screen_w, screen_h, false)
+	draw_sprite(pause_image, 0, 0, 0)
+
+	draw_set_color(c_red)
+	draw_set_alpha(0.5)
+	draw_rectangle(0, 0, screen_w, screen_h, false)
+	draw_reset_color()
+
+	draw_set_align(fa_center, fa_center)
+	draw_set_font(global.generic_font)
+
+	var sw = screen_w / 2
+	var sh = screen_h / 2
+
+	if instance_exists(obj_options) || instance_exists(obj_characterselect)
+		exit;
+
+	draw_text(sw, 64, "PAUSE")
+
+	sh -= array_length(pausearray) * 24
+
+	for (var i = 0; i < array_length(pausearray); i++) 
+		draw_text(sw, sh + (i * 50), string_upper(pausearray[i][0]))
+
+	var str = pausearray[selected][0]
+
+	sw -= (string_width(str) / 2)
+
+	draw_sprite(spr_cursor, 0, sw, sh + (selected * 50))
+}
+else if wiping
 {
 	if !surface_exists(wipe_surface)
 	{
@@ -25,37 +58,3 @@ if wiping
 			wiping = false
 	}
 }
-
-if !pause
-	exit;
-
-draw_set_color(c_black)
-draw_rectangle(0, 0, screen_w, screen_h, false)
-draw_sprite(pause_image, 0, 0, 0)
-
-draw_set_alpha(0.5)
-draw_set_color(c_red)
-draw_rectangle(0, 0, screen_w, screen_h, false)
-draw_reset_color()
-
-draw_set_align(fa_center, fa_center)
-draw_set_font(global.generic_font)
-
-var sw = screen_w / 2
-var sh = screen_h / 2
-
-if instance_exists(obj_options) || instance_exists(obj_characterselect)
-	exit;
-
-draw_text(sw, 64, "PAUSE")
-
-sh -= array_length(pausearray) * 24
-
-for (var i = 0; i < array_length(pausearray); i++) 
-	draw_text(sw, sh + (i * 50), string_upper(pausearray[i][0]))
-
-var str = pausearray[selected][0]
-
-sw -= (string_width(str) / 2)
-
-draw_sprite(spr_cursor, 0, sw, sh + (selected * 50))

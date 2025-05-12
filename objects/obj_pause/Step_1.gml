@@ -12,15 +12,15 @@ if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter))
 	{
 		pause = true
 		pause_image = make_pause_image()
+		video_pause()
 		instance_deactivate_all(true)
 		audio_pause_all()
-		scr_sound(mu_pause, true)
 	}
 	else
 	{
-		audio_stop_sound(mu_pause)
 		pause = false
 		instance_activate_all()
+		video_resume()
 		audio_resume_all()
 	}
 }

@@ -341,11 +341,10 @@ function set_rank_milestones(_s, _a, _b, _c)
 	}
 }
 
-function draw_reset_color(alpha = true)
+function draw_reset_color()
 {
 	draw_set_color(c_white)
-	if alpha
-		draw_set_alpha(1)
+	draw_set_alpha(1)
 }
 
 function tile_layer_delete_at(_x, _y)

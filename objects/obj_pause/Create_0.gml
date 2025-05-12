@@ -1,3 +1,5 @@
+depth = -201
+
 create_image = false
 pause = false
 pause_image = spr_null
@@ -18,7 +20,7 @@ start_wiping = function()
 	if !surface_exists(wipe_surface)
 		wipe_surface = surface_create(screen_w, screen_h)
 	surface_set_target(wipe_surface)
-	draw_sprite(pause_image, 0, 0, 0)
+	event_perform(ev_draw, ev_gui)
 	surface_reset_target()
 	var mixer = 3
 	for (var i = 0; i < screen_w; i++)

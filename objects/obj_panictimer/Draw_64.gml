@@ -39,8 +39,7 @@ draw_sprite(filler_sprites[image_index], filler.image_index, (x + 41) + barpos, 
 draw_sprite(pizzaface.sprite_index, pizzaface.image_index, x + 224, y + 62)
 
 draw_set_font(global.generic_font)
-draw_set_color(c_white)
-draw_set_alpha(1)
+draw_reset_color()
 draw_set_align(fa_center, fa_middle)
 
 var minutes = 0

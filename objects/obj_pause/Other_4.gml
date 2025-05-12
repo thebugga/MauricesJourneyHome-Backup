@@ -1,9 +1,9 @@
 if string_copy(room_get_name(room), 1, 5) == "tower"
 	pausearray = [["RESUME", function() 
 		{
-			audio_stop_sound(mu_pause)
 			pause = false
 			instance_activate_all()
+			video_resume()
 			audio_resume_all()
 		}], ["OPTIONS", function() 
 		{
@@ -18,21 +18,23 @@ if string_copy(room_get_name(room), 1, 5) == "tower"
 else
 	pausearray = [["RESUME", function() 
 	{
-		audio_stop_sound(mu_pause)
 		pause = false
 		instance_activate_all()
+		video_resume()
 		audio_resume_all()
 	}], ["RESTART", function() 
 	{
-		start_wiping()
 		audio_stop_all()
 		with obj_music
 		{
 			fmod_event_instance_stop(music.event, true);
 			fmod_event_instance_stop(music.event_secret, true);
 		}
-		pause = false
 		instance_activate_all()
+		video_resume()
+		start_wiping()
+		pause = false
+		
 		reset_level()
 		with obj_player
 		{
@@ -51,15 +53,16 @@ else
 			instance_create_depth(x, y, obj_pause.depth - 1, obj_options)
 	}], ["EXIT LEVEL", function() 
 	{
-		start_wiping()
 		audio_stop_all()
 		with obj_music
 		{
 			fmod_event_instance_stop(music.event, true);
 			fmod_event_instance_stop(music.event_secret, true);
 		}
-		pause = false
 		instance_activate_all()
+		video_resume()
+		start_wiping()
+		pause = false
 		
 		reset_level()
 		with obj_player

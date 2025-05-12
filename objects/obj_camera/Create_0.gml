@@ -9,6 +9,6 @@ campos = {
 }
 
 version = "Alpha v2.3.0";
-versionMJH = "cc test";
+versionMJH = "CC Test";
 
 depth = -150

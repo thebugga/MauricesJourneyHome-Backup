@@ -3,7 +3,7 @@ depth = -200
 
 
 draw_set_font(global.scorefont)
-draw_reset_color(1)
+draw_reset_color()
 draw_set_align(fa_left, fa_top)
 
 var text_offsets = [0, 1, 1, 1, 0, -1, -2, -3, -5, -2, -1, 0]

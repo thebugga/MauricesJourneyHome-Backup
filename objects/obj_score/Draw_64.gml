@@ -153,17 +153,11 @@ if rank_ix == 5 //if the rank is above an s set the percentage to 100%
 	perc = 1
 else if rank_ix == 4
 {
-	var toppincount = 0
-	var t = global.level_data.toppins
-	var toppin_list = [t.shroom, t.cheese, t.tomato, t.sausage, t.pineapple]
+	var nowgooch = 0
+	for (var i = 0; i < 5; i++)
+		nowgooch += global.level_data.goochlings[i]
 	
-	for (var ii = 0; ii < 5; ii++)
-	{
-		if toppin_list[ii] == true
-			toppincount++
-	}
-	
-	perc = (global.level_data.treasure + toppincount + global.level_data.secret_count + global.lap.active + !global.combo.wasted) / 11
+	perc = (global.level_data.treasure + nowgooch + global.level_data.secret_count + global.lap.active + !global.combo.wasted) / 11
 }
 else if rank_ix == 0 //or if the rank is above a d set the percentage to the score divided by the next rank milestone, c
 	perc = global.score / global.rank_milestones.c

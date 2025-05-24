@@ -27,13 +27,18 @@ receiptonscreen = false
 receiptx = 960
 
 text_pos = 0
+
+var nowgooch = 0
+for (var i = 0; i < 4; i++)
+	nowgooch += global.level_data.goochlings[i]
+			
 texters = [
-	//[false, concat("Goochling Pieces x ", global.toppintotal), global.toppintotal * 0.25],
-	//[false, "Secret Goochling Piece", global.goochlinggot[4]],
+	[false, concat("Goochling Pieces x ", nowgooch), nowgooch * 0.25],
+	[false, "Secret Goochling Piece", global.level_data.goochlings[4]],
 	[false, concat("Secrets x ", global.level_data.secret_count), global.level_data.secret_count * 0.75],
 	[false, "Treasure", global.level_data.treasure * 3],
 	[false, "Tax", 0.65],
-	[false, "Total", /*(global.toppintotal * 0.25) + global.goochlinggot[4] +*/ (global.level_data.secret_count * 0.75) + (global.level_data.treasure * 3) + 0.65]
+	[false, "Total", (nowgooch * 0.25) + global.level_data.goochlings[4] + (global.level_data.secret_count * 0.75) + (global.level_data.treasure * 3) + 0.65]
 ]
 
 var x_start = screen_w - 437

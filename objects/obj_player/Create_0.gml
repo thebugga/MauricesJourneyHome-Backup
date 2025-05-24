@@ -144,7 +144,9 @@ return_location = {
 }
 restart_location = {
 	room: 0,
-	door: 0
+	door: 0,
+	title: 0,
+	name: ""
 }
 
 doorxscale = 1

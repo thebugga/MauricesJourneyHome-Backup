@@ -183,6 +183,7 @@ function do_the_rank()
 		{
 			rank_scorefinal = s
 			results[3][1] = global.combo.record
+			results[1][1] = scr_get_timer_string(global.level_minutes, global.level_seconds, true)
 		}
 		
 		var rank_ix = calculate_rank()
@@ -190,7 +191,7 @@ function do_the_rank()
 		ini_open($"saves/saveData{global.savefile}.ini")
 		
 		var lvl_name = global.level_data.level_name
-		var lvl_toppins = global.level_data.toppins
+		var lvl_toppins = global.level_data.goochlings
 		
 		if s > ini_read_real(lvl_name, "score", 0)
 			ini_write_real(lvl_name, "score", s)
@@ -204,16 +205,11 @@ function do_the_rank()
 		if rank_ix > ini_read_real(lvl_name, "rank", 0)
 			ini_write_real(lvl_name, "rank", rank_ix)
 		
-		if !ini_read_real(lvl_name, "shroom", 0)
-			ini_write_real(lvl_name, "shroom", lvl_toppins.shroom)
-		if !ini_read_real(lvl_name, "cheese", 0)
-			ini_write_real(lvl_name, "cheese", lvl_toppins.cheese)
-		if !ini_read_real(lvl_name, "tomato", 0)
-			ini_write_real(lvl_name, "tomato", lvl_toppins.tomato)
-		if !ini_read_real(lvl_name, "sausage", 0)
-			ini_write_real(lvl_name, "sausage", lvl_toppins.sausage)
-		if !ini_read_real(lvl_name, "pineapple", 0)
-			ini_write_real(lvl_name, "pineapple", lvl_toppins.pineapple)
+		for (var i = 0; i < 5; i++) 
+		{
+			if !ini_read_real(lvl_name, "gooch" + string(i + 1), 0)
+				ini_write_real(lvl_name, "gooch" + string(i + 1), lvl_toppins[i])
+		}
 		
 		ini_close()
 }
@@ -275,13 +271,8 @@ function set_globals()
 		treasure: false,
 		level_name: "Entrance",
 		secret_count: 0,
-		toppins: {
-			shroom: false,
-			cheese: false,
-			tomato: false,
-			sausage: false,
-			pineapple: false
-		}
+		goochlings: [0, 0, 0, 0, 0],
+		tauntcount: 0
 	}
 	
 	
@@ -317,7 +308,7 @@ function set_globals()
 	ini_close()
 	
 	global.showcollisions = true
-	global.savefile = "1"
+	global.savefile = 1
 }
 
 function bbox_in_camera()
@@ -328,7 +319,10 @@ function bbox_in_camera()
 
 function check_p_rank()
 {
-	return global.level_data.treasure && global.level_data.secret_count >= 3 && global.lap.active && !global.combo.wasted;
+	var nowgooch = 0
+	for (var i = 0; i < 5; i++)
+		nowgooch += global.level_data.goochlings[i]
+	return nowgooch >= 4 && global.level_data.treasure && global.level_data.secret_count >= 3 && global.lap.active && !global.combo.wasted;
 }
 
 function set_rank_milestones(_s, _a, _b, _c)
@@ -392,19 +386,10 @@ function reset_level()
 	ds_list_clear(global.ds_saveroom)
 	obj_followerhandler.followers = []
 	global.combo.wasted = false
-	global.level_data = {
-		treasure: false,
-		level_name: "Entrance",
-		secret_count: 0,
-		toppins: {
-			shroom: false,
-			cheese: false,
-			tomato: false,
-			sausage: false,
-			pineapple: false
-		},
-		tauntcount: 0
-	}
+	global.level_data.treasure = false
+	global.level_data.secret_count = 0
+	global.level_data.goochlings = [0, 0, 0, 0, 0]
+	global.level_data.tauntcount = 0
 	global.doorshut = false
 }
 
@@ -460,4 +445,20 @@ function find_videos(folder)
 		trace(_array)
 		return _array
 	}
+}
+
+function draw_shaking_text(_x, _y, _text, _shake)
+{
+	var saved_h = draw_get_halign()
+	var xx = _x
+	if draw_get_halign() == fa_center
+		xx -= (string_width(_text) / 2)
+	if draw_get_halign() == fa_right
+		xx -= string_width(_text)
+	draw_set_halign(fa_left)
+	for (var i = 0; i < string_length(_text); i++)
+	{
+		draw_text(xx + string_width(string_copy(_text, 0, i)) + irandom_range(_shake, -_shake), _y + irandom_range(_shake, -_shake), string_copy(_text, i + 1, 1))
+	}
+	draw_set_halign(saved_h)
 }

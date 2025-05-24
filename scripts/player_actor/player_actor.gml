@@ -14,6 +14,8 @@ function player_actor()
 			}
 			break;
 		case spr_Timesup:
+			global.level_minutes = 0
+			global.level_seconds = 0
 			if anim_ended()
 			{
 				if room != rm_timesup && !instance_exists(obj_titlecard)

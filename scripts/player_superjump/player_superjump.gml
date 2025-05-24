@@ -28,13 +28,6 @@ function player_superjump()
 		
 		movespeed = 0
 		
-		if (place_meeting(x, y - 1, obj_solid))
-		{
-			reset_anim(spr_player_ceilinghit)
-			state = states.bump
-			scr_sound_3d(sfx_groundpound, x, y)
-		}
-		
 		if (sprite_index != spr_player_Sjumpcancelstart && sjumptimer > 0)
 		{
 			instakill = true
@@ -59,6 +52,13 @@ function player_superjump()
 		else
 		{
 			sprite_index = spr_player_rockethitwall
+		}
+		
+		if (place_meeting(x, y - 1, obj_solid))
+		{
+			reset_anim(spr_player_ceilinghit)
+			state = states.bump
+			scr_sound_3d(sfx_groundpound, x, y)
 		}
 		
 		if (input_buffers.grab > 0 || key_dash.pressed) && state != states.bump

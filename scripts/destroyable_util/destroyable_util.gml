@@ -24,6 +24,7 @@ function break_destroyables()
 		states.groundpound,
 		states.punch,
 		states.superjump,
+		states.climbwall,
 		states.hit
 	]
 	
@@ -42,6 +43,9 @@ function break_destroyables()
 			is_h_state = true
 	}
 	
+	if state == states.superjump && sprite_index != spr_player_superjump //SHITTY HACK BUT IDC IM ANGRY
+		exit;
+	
 	for (i = 0; i < array_length(vertical_states); i++) 
 	{
 	    if (state == vertical_states[i])
@@ -57,6 +61,12 @@ function break_destroyables()
 			
 		if (place_meeting(x, d_pos.y, d_id) && is_v_state)
 			instance_destroy(d_id)
+			
+		if place_meeting(x, y - abs(vsp), d_id)
+		{
+			instance_destroy(d_id)
+			vsp = 0
+		}
 	}
 	
 	ds_list_destroy(d_list)

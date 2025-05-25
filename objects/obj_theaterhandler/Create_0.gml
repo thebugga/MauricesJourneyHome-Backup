@@ -1,3 +1,3 @@
 video_array = find_videos("videos/")
-video_open("videos/bitchesandbastards.mp4")
+alarm[0] = 1
 video_set_volume(0)

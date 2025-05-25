@@ -22,7 +22,7 @@ image_alpha = 1
 if (i_frames > 0 && state != states.hurt)
 	image_alpha = round(wave(0, 1, 0.01, 0))
 	
-if pal_select == 12
+if pal_select == 8
 	pattern_draw(sprite_index, image_index, x, y, pattern_spr, xscale * visual_size, image_yscale * visual_size, rotation, image_blend, image_alpha)
 
 pal_swap_set(pal_peppino, pal_select, false)

@@ -72,12 +72,12 @@ function do_taunt()
 			sprite_index = spr_player_taunt
 			image_index = random_range(0, image_number)
 			taunttimer = 20
-			scr_sound_3d_pitched(sfx_taunt, x, y)
+			scr_sound_3d_pitched(sfx_taunt, x, y, 0.94, 1.06)
 			instance_create(x, y, obj_parrybox)
 			
 			if (place_meeting(x, y, obj_exitgate) && global.panic.active && global.combo.timer > 0 && global.level_data.tauntcount <= 10)
 			{
-				var t_val = 15
+				var t_val = 25
 				global.score += t_val
 				
 				var c = {
@@ -203,6 +203,9 @@ function decrease_score(val)
 
 function do_hurt(obj = noone)
 {
+	if state == states.actor
+		return;
+		
 	if obj != noone
 	{
 		var xh = lerp(obj.bbox_left, obj.bbox_right, 0.5)

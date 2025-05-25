@@ -4,7 +4,7 @@ with instance_place(x, y, obj_player)
 	{
 		shake_camera()
 		reset_anim(obj_player.spr_Timesup)
-		other.image_index++
+		other.image_index = 1
 		scr_sound_3d(sfx_groundpound, x, y)
 		global.doorshut = true
 		if instance_exists(obj_titlecard)

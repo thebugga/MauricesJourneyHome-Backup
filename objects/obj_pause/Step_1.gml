@@ -5,7 +5,9 @@ if instance_exists(obj_shell)
 }
 if instance_exists(obj_options) || instance_exists(obj_characterselect)
 	exit;
-	
+if room == mainmenu
+	exit;
+
 if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter))
 {
 	if !pause
@@ -14,6 +16,7 @@ if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter))
 		pause_image = make_pause_image()
 		video_pause()
 		instance_deactivate_all(true)
+		instance_activate_object(obj_screensizer)
 		audio_pause_all()
 	}
 	else

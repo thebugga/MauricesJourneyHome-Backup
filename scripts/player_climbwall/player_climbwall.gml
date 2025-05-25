@@ -70,4 +70,12 @@ function player_climbwall()
 		jumpstop = false
 		scr_sound_3d(sfx_jump, x, y)
 	}
+	
+	if (particle_timer > 0)
+		particle_timer--
+	else
+	{
+		particle_timer = 8
+		create_effect(x + 12 * xscale, y, spr_cloudeffect)
+	}
 }

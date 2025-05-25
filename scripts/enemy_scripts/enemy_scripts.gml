@@ -243,7 +243,7 @@ function do_enemy_generics()
 
 function create_hurtbox()
 {
-	with instance_create(x, y, obj_plug)
+	with instance_create(x, y, obj_hurtbox)
 	{
 		other.hurtbox_id = id
 		follow_obj = other.id
@@ -254,4 +254,10 @@ function destroy_hurtbox()
 {
 	instance_destroy(hurtbox_id)
 	hurtbox_id = -4
+}
+
+function enemy_can_die(_id = self)
+{
+	with _id
+		return !escape_frozen; //i feel like thisll be bigger later so its a func
 }

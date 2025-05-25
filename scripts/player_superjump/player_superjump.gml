@@ -46,7 +46,7 @@ function player_superjump()
 					image_yscale = -1
 					depth = -150
 				}
-				create_effect(x, y, spr_flamecloud)
+				create_effect(x, y, spr_cloudeffect)
 			}
 		}
 		else

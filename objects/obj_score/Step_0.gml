@@ -3,9 +3,9 @@ shake_mag = max(shake_mag - 0.5, 0)
 
 visible = true
 
-if (string_starts_with(room_get_name(room), "tower") || room == rank_room || room == rm_timesup || instance_exists(obj_titlecard))
+if (string_starts_with(room_get_name(room), "tower") || room == rank_room || room == rm_timesup || instance_exists(obj_titlecard) || room == mainmenu || global.boss_room)
 	visible = false
-
+	
 switch (combo.state)
 {
 	case -1:

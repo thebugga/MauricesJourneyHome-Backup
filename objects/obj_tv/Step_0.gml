@@ -6,7 +6,7 @@ if cardboardtimer > 0
 else
 	cardboardindex = -4
 		
-if (string_starts_with(room_get_name(room), "tower") || room == rank_room || room == rm_timesup || instance_exists(obj_titlecard))
+if (string_starts_with(room_get_name(room), "tower") || room == rank_room || room == rm_timesup || instance_exists(obj_titlecard) || room == mainmenu || global.boss_room)
 	visible = false
 
 if !visible

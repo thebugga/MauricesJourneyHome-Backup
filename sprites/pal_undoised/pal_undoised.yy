@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"UN-Doised",
-    "path":"folders/Sprites/UN-Doised.yy",
+    "path":"folders/Sprites/Player/UN-Doised.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

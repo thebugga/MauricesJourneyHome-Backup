@@ -265,6 +265,7 @@ function set_globals()
 	global.hud_negativefont = font_add_sprite_ext(spr_negativenumber_font, "0123456789$-", true, 0)
 	global.smallnumberfont = font_add_sprite_ext(spr_smallnumber_font, "1234567890-+", true, 0)
 	global.secret = false
+	global.boss_room = false
 	set_rank_milestones(1000, 500, 250, 125)
 	
 	global.level_data = {
@@ -386,11 +387,11 @@ function reset_level()
 	ds_list_clear(global.ds_saveroom)
 	obj_followerhandler.followers = []
 	global.combo.wasted = false
+	global.doorshut = false
 	global.level_data.treasure = false
 	global.level_data.secret_count = 0
 	global.level_data.goochlings = [0, 0, 0, 0, 0]
 	global.level_data.tauntcount = 0
-	global.doorshut = false
 }
 
 function quick_ini_write_real(inistr, section, key, value)

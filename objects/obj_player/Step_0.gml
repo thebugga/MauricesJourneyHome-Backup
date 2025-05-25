@@ -139,6 +139,7 @@ if (state != states.normal)
 {
 	breakdance_secret.buffer = 0
 	breakdance_secret.spd = 0.25
+	idletimer = 300
 }
 
 if coyote_time > 0
@@ -146,9 +147,6 @@ if coyote_time > 0
 	
 if flash > 0
 	flash--
-	
-if state != states.normal
-	idletimer = 180
 	
 if state != states.jump
 	fallingtimer = 0

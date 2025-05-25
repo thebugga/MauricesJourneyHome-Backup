@@ -25,6 +25,8 @@ function player_jump()
 		if fallingtimer >= 50
 			sprite_index = fallingtimer < 100 ? spr_fallface : spr_fallfar
 	}
+	else
+		fallingtimer = 0
 	
 	if (grounded && vsp >= 0)
 	{

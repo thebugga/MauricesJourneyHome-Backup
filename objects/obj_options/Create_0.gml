@@ -1,3 +1,5 @@
+depth = 100
+
 optionselected = 0
 inputbuffer = 0
 pause_image = spr_null

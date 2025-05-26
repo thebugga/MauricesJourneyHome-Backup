@@ -34,6 +34,7 @@ break_destroyables()
 if hitstun > 0
 {
 	hitstun--
+	image_index = prev.image_index
 	exit;
 }
 
@@ -157,7 +158,7 @@ if (idletimer > 0 && state == states.normal)
 if (i_frames > 0 && state != states.hurt)
 	i_frames--
 
-if (state == states.tumble || state == states.crouch || (character == p_characters.mandrek && sprite_index == spr_mandrek_duck))
+if (state == states.tumble || state == states.crouch || (character == p_characters.mandrek && sprite_index == spr_mandrek_duck) || (state == states.superjump && !sjumper))
 	mask_index = mask_player_small
 else
 	mask_index = mask_player

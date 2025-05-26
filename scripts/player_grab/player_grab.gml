@@ -42,13 +42,13 @@ function player_grab()
 		sprite_index = spr_mach2
 	}
 	
-	if (place_meeting(x + xscale, y, obj_solid) && !grounded)
+	if (scr_hitwall(x + xscale, y) && !grounded)
 	{
 		wallspeed = 6
 		grabclimbbuffer = 10
 		state = states.climbwall
 	}
-	else if (place_meeting(x + xscale, y, obj_solid) && grounded)
+	else if (scr_hitwall(x + xscale, y) && grounded)
 	{
 		sprite_index = spr_grabbump
 		scr_sound_3d(sfx_splat, x, y)

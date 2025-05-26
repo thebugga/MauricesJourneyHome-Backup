@@ -123,7 +123,7 @@ function player_mach3()
 	
 	do_grab()
 	
-	if ((!grounded || scr_slope(x, y + 1)) && place_meeting(x + xscale, y, obj_solid))
+	if ((!grounded || scr_slope(x, y + 1)) && scr_hitwall(x + xscale, y, obj_solid))
 	{
 		{
 			wallspeed = movespeed
@@ -134,7 +134,7 @@ function player_mach3()
 			state = states.climbwall
 		}
 	}
-	else if (grounded && place_meeting(x + xscale, y, obj_solid))
+	else if (grounded && scr_hitwall(x + xscale, y, obj_solid))
 	{
 		state = states.bump
 		reset_anim(spr_player_mach3hitwall)

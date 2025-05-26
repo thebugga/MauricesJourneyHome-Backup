@@ -261,3 +261,9 @@ function do_hurt(obj = noone)
 	with obj_tv
 		tv_cardboard(3)
 }
+
+
+function scr_hitwall(_x, _y)
+{
+	return place_meeting(_x, _y, obj_solid) || behind_slope(_x, _y)
+}

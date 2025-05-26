@@ -74,6 +74,7 @@ prev = {
 	hsp: self.hsp,
 	vsp: self.vsp,
 	sprite_index: self.sprite_index,
+	image_index: self.image_index,
 }
 
 breakdance_secret = {

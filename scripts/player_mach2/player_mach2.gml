@@ -107,7 +107,7 @@ function player_mach2()
 			}
 		}
 	}
-	if ((!grounded || scr_slope(x, y + 1)) && place_meeting(x + xscale, y, obj_solid))
+	if ((!grounded || scr_slope(x, y + 1)) && scr_hitwall(x + xscale, y, obj_solid))
 	{
 		wallspeed = movespeed
 		if (movespeed < 1)
@@ -116,7 +116,7 @@ function player_mach2()
 			movespeed = wallspeed
 		state = states.climbwall
 	}
-	else if (grounded && place_meeting(x + xscale, y, obj_solid))
+	else if (grounded && scr_hitwall(x + xscale, y, obj_solid))
 	{
 		state = states.bump
 		reset_anim(spr_player_wallsplat)

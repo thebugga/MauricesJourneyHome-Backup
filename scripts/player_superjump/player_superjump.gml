@@ -52,6 +52,13 @@ function player_superjump()
 		else
 		{
 			sprite_index = spr_player_rockethitwall
+			if grounded
+			{
+				reset_anim(spr_fallfarland)
+				state = states.bump
+				scr_sound_3d(sfx_step, x, y)
+				create_effect(x, y + 2, spr_landeffect)
+			}
 		}
 		
 		if scr_solid(x, y - 1)

@@ -231,9 +231,9 @@ function set_globals()
 {
 	ini_open("globalsave.ini")
 	global.fullscreen = ini_read_real("options", "fullscreen", false)
-	global.master_volume = ini_read_real("options", "option_master_volume", 1)
-	global.sfx_volume = ini_read_real("options", "option_sfx_volume", 1)
-	global.music_volume = ini_read_real("options", "option_music_volume", 1) //these being global are kinda unneccesary...
+	global.master_volume = ini_read_real("options", "master_volume", 1)
+	global.sfx_volume = ini_read_real("options", "sfx_volume", 1)
+	global.music_volume = ini_read_real("options", "music_volume", 1) //these being global are kinda unneccesary...
 	ini_close()
 	
 	window_set_fullscreen(global.fullscreen)

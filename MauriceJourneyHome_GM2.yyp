@@ -612,6 +612,7 @@
     {"id":{"name":"spr_keydoor","path":"sprites/spr_keydoor/spr_keydoor.yy",},},
     {"id":{"name":"spr_keysparkle","path":"sprites/spr_keysparkle/spr_keysparkle.yy",},},
     {"id":{"name":"spr_Ladder","path":"sprites/spr_Ladder/spr_Ladder.yy",},},
+    {"id":{"name":"spr_landeffect","path":"sprites/spr_landeffect/spr_landeffect.yy",},},
     {"id":{"name":"spr_lap2","path":"sprites/spr_lap2/spr_lap2.yy",},},
     {"id":{"name":"spr_lap2warning","path":"sprites/spr_lap2warning/spr_lap2warning.yy",},},
     {"id":{"name":"spr_lapflag","path":"sprites/spr_lapflag/spr_lapflag.yy",},},

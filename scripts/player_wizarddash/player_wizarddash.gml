@@ -52,7 +52,7 @@ function player_wizarddash(){
 		state = states.wizardgrapple
 	}
 	
-	if place_meeting((x + sign(hsp)), y, obj_solid)
+	if scr_hitwall((x + sign(hsp)), y)
 	{
 		state = states.wizard
 		reset_anim(spr_wizardbump)

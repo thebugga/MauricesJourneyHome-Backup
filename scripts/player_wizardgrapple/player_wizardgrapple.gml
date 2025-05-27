@@ -52,7 +52,7 @@ function player_wizardgrapple(){
 			image_speed = movespeed / 10
 		}
 		
-		if (grounded || place_meeting(x + xscale, y - 1, obj_solid)) && character == p_characters.undoised
+		if (grounded || scr_hitwall(x + xscale, y - 1)) && character == p_characters.undoised
 		{
 			state = states.wizard
 			reset_anim(spr_wizardbump)
@@ -68,7 +68,7 @@ function player_wizardgrapple(){
 				vsp = -5
 				reset_anim(spr_wizarddash)
 			}
-			else if place_meeting(x + xscale, y - 1, obj_solid)
+			else if scr_hitwall(x + xscale, y - 1)
 			{
 				hsp = 0
 				vsp = 0

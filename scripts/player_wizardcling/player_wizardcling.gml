@@ -1,5 +1,5 @@
 function player_wizardcling(){
-	sprite_index = place_meeting(x + xscale, y, obj_solid) ? spr_wizardclingwall : spr_wizardclingceil
+	sprite_index = scr_hitwall(x + xscale, y) ? spr_wizardclingwall : spr_wizardclingceil
 	image_speed = 0.35
 	if wizardclingtimer > 0
 		wizardclingtimer--
@@ -20,7 +20,7 @@ function player_wizardcling(){
 		state = states.wizard
 		reset_anim(spr_wizarddoublejump)
 		vsp = -10
-		movespeed = place_meeting(x + xscale, y, obj_solid) ? 6 : 0
+		movespeed = scr_hitwall(x + xscale, y) ? 6 : 0
 		xscale *= -1
 	}
 }

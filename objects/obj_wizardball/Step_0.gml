@@ -4,7 +4,7 @@ if movespeed = 0
 	hsp = lengthdir_x(movespeed, angle)
 	vsp = lengthdir_y(movespeed, angle)
 }
-if (grounded || place_meeting(x + image_xscale, y - 1, obj_solid)) && grav != 0
+if (grounded || scr_hitwall(x + image_xscale, y - 1)) && grav != 0
 {
 	hsp = 0
 	vsp = 0

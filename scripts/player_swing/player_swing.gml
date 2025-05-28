@@ -24,7 +24,7 @@ function player_swingding()
 	else if floor(image_index) >= image_number - 1
 	{
 		particle_timer = 2
-		scr_sound_3d(sfx_spin, x, y)
+		event_play_oneshot_3d("event:/sfx/player/spin", x, y)
 		image_index = 0
 	}
 	

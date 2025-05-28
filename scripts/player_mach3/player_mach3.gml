@@ -45,7 +45,7 @@ function player_mach3()
 		vsp = -11
 		jumpstop = false
 		reset_anim(spr_player_mach3jump)
-		scr_sound_3d(sfx_jump, x, y)
+		event_play_oneshot_3d("event:/sfx/player/jump", x, y)
 		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	
@@ -57,13 +57,13 @@ function player_mach3()
 		{
 			reset_anim(spr_player_machslidestart)
 			state = states.slide
-			scr_sound_3d(sfx_break, x, y)
+			event_play_oneshot_3d("event:/sfx/player/break", x, y)
 		}
 		if (p_move != 0 && p_move != xscale && !dashpad)
 		{
 			reset_anim(spr_player_machslideboost3)
 			state = states.slide
-			scr_sound_3d_on(myemitter, sfx_machslideboost)
+			event_play_oneshot_3d("event:/sfx/player/machslideboost", x, y)
 		}
 		
 		if (movespeed < 20 && p_move == xscale)
@@ -102,7 +102,7 @@ function player_mach3()
 				state = states.tumble
 				sprite_index = spr_player_dive
 				vsp = 10
-				scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+				event_play_oneshot_3d("event:/sfx/player/dive", x, y)
 			}
 			else
 			{
@@ -115,7 +115,7 @@ function player_mach3()
 					hsp = 0
 					vsp = movespeed
 					dir = xscale
-					scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+					event_play_oneshot_3d("event:/sfx/player/dive", x, y)
 				}
 			}
 		}
@@ -141,8 +141,8 @@ function player_mach3()
 		vsp = -6
 		hsp = xscale * -6
 		shake_camera(20, 0.8)
-		scr_sound_3d(sfx_groundpound, x, y)
-		scr_sound_3d(sfx_bumpwall, x, y)
+		event_play_oneshot_3d("event:/sfx/player/groundpound", x, y)
+		event_play_oneshot_3d("event:/sfx/player/bumpwall", x, y)
 	}
 	image_speed = 0.4
 	switch (sprite_index)

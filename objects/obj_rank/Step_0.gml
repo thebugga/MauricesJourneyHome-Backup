@@ -15,7 +15,8 @@ switch (state)
 			
 			rank_ix = calculate_rank(rank_scorefinal)
 			
-			scr_sound(rank_data[rank_ix].song)
+			fmod_studio_event_instance_start(global.snd_rank);
+			fmod_studio_event_instance_set_parameter_by_name_multiplatform(global.snd_rank, "rank", rank_ix, true);
 		}
 		break;
 	case 1:

@@ -11,4 +11,4 @@ x = 832
 y = 197
 ystart = y
 depth = -300
-scr_sound(sfx_comboend)
+event_play_oneshot("event:/sfx/misc/kashingcombo")

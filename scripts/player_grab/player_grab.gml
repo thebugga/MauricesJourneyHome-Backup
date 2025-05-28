@@ -20,7 +20,7 @@ function player_grab()
 		vsp = -11
 		state = states.mach2
 		reset_anim(obj_player.spr_longjump)
-		scr_sound_3d(sfx_rollgetup, x, y)
+		event_play_oneshot_3d("event:/sfx/player/rollgetup", x, y)
 		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	
@@ -30,7 +30,7 @@ function player_grab()
 		crouchslipbuffer = 25
 		state = states.tumble
 		sprite_index = spr_crouchslip
-		scr_sound_3d(sfx_dive, x, y)
+		event_play_oneshot_3d("event:/sfx/player/dive", x, y)
 		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	
@@ -51,7 +51,7 @@ function player_grab()
 	else if (scr_hitwall(x + xscale, y) && grounded)
 	{
 		sprite_index = spr_grabbump
-		scr_sound_3d(sfx_splat, x, y)
+		event_play_oneshot_3d("event:/sfx/player/splat", x, y)
 		state = states.jump
 		jumpstop = true
 		hsp = 0

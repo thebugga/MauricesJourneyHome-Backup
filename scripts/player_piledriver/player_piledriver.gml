@@ -16,7 +16,7 @@ function player_piledriver()
 	{
 		reset_anim(obj_player.spr_piledriverland)
 		shake_camera()
-		scr_sound_3d(sfx_groundpound, x, y)
+		event_play_oneshot_3d("event:/sfx/player/groundpound", x, y)
 	}
 	
 	if vsp >= 10

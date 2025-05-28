@@ -9,7 +9,7 @@ function collide()
 	old_y2 = y
 		
 	var bh = bbox_bottom - y
-	with (instance_place(x, y + 1 + other.vsp, obj_movingplatform))
+	with (instance_place(x, y + 1 + vsp, obj_movingplatform))
 	{
 		if (other.bbox_bottom - other.vsp <= bbox_top)
 		{
@@ -140,6 +140,7 @@ function scr_solid(_x, _y)
 					collided = true
 					continue;
 				case obj_platform:
+				case obj_movingplatform:
 					if (master.bbox_bottom <= bbox_top + 1 && (master.y - master.old_y2) >= 0 && !climbingladder)
 						collided = true
 					continue;
@@ -158,6 +159,10 @@ function scr_solid(_x, _y)
 			{
 				switch (object_get_parent(object_index))
 				{
+					case obj_movingplatform:
+						if (master.bbox_bottom <= bbox_top + 1 && (master.y - master.old_y2) >= 0 && !climbingladder)
+							collided = true
+						continue;
 					case obj_solid:
 						collided = true
 						continue;

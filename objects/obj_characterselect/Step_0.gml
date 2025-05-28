@@ -12,7 +12,7 @@ if !stopper
 		if (key_jump.pressed)
 		{
 			ready = true
-			//scr_soundeffect(sfx_collecttoppin)
+			event_play_oneshot("event:/sfx/misc/collecttoppin")
 			p1_sprite = character[selected][3]
 			p1_index = 0
 		}
@@ -20,7 +20,7 @@ if !stopper
 	if (key_grab.pressed && ready)
 	{
 		ready = false
-		//scr_soundeffect(sfx_hurt1)
+		event_play_oneshot("event:/sfx/player/hurt")
 	}
 	
 	/*
@@ -68,16 +68,18 @@ if !stopper
 	*/
 	if ready && ready2 == p2_connect
 	{
+			instance_activate_object(obj_player)
 			with (obj_player)
 			{
 				character = other.character[other.selected][1]
 				scr_character_spr()
 			}
+			instance_deactivate_object(obj_player)
 			
 			global.coop = p2_connect && !multimode
 			global.swapmode = p2_connect && multimode
 			
-			//scr_soundeffect(sfx_collecttoppin)
+			event_play_oneshot("event:/sfx/misc/collecttoppin")
 			alarm[0] = 100
 			stopper = true
 	}

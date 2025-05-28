@@ -78,6 +78,7 @@ prev = {
 }
 
 breakdance_secret = {
+	index: 0,
 	buffer: 0,
 	spd: 0.1
 }
@@ -157,3 +158,29 @@ myemitter = noone
 
 wizardclingtimer = 300
 wizardthrowangle = 90
+
+machsnd = fmod_createEventInstance("event:/sfx/player/mach");
+fmod_studio_event_instance_set_parameter_by_name_multiplatform(machsnd, "state", 0, true);
+machrollsnd = fmod_createEventInstance("event:/sfx/player/machroll");
+knightslidesnd = fmod_createEventInstance("event:/sfx/knight/slide");
+ratmountballsnd = fmod_createEventInstance("event:/sfx/ratmount/ball");
+ratmountgroundpoundsnd = fmod_createEventInstance("event:/sfx/ratmount/groundpound");
+ratmountpunchsnd = fmod_createEventInstance("event:/sfx/ratmount/punch");
+freefallsnd = fmod_createEventInstance("event:/sfx/player/freefall");
+snd_voiceok = fmod_createEventInstance("event:/sfx/voice/ok");
+snd_voicetransfo = fmod_createEventInstance("event:/sfx/voice/transfo");
+snd_voiceouttransfo = fmod_createEventInstance("event:/sfx/voice/outtransfo");
+snd_voicehurt = fmod_createEventInstance("event:/sfx/voice/hurt");
+global.snd_escaperumble = fmod_createEventInstance("event:/sfx/misc/escaperumble");
+global.snd_rankup = fmod_createEventInstance("event:/sfx/ui/rankup");
+global.snd_pizzafacemoving = fmod_createEventInstance("event:/sfx/pizzaface/moving");
+global.snd_rankdown = fmod_createEventInstance("event:/sfx/ui/rankdown");
+global.snd_rank = fmod_createEventInstance("event:/music/rank");
+global.snd_slidersfx = fmod_createEventInstance("event:/sfx/ui/slidersfx");
+global.snd_slidermusic = fmod_createEventInstance("event:/sfx/ui/slidermusic");
+global.snd_slidermaster = fmod_createEventInstance("event:/sfx/ui/slidersfxmaster");
+global.snd_bossbeaten = fmod_createEventInstance("event:/sfx/misc/bossbeaten");
+superjumpholdsnd = -1;
+superjumpprepsnd = -1;
+superjumpsnd = fmod_createEventInstance("event:/sfx/player/superjump");
+suplexdashsnd = fmod_createEventInstance("event:/sfx/player/suplexdash");

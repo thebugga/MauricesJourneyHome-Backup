@@ -11,7 +11,7 @@ if (global.panic.active && !global.secret)
 		if !instance_exists(obj_pizzaface)
 		{
 			instance_create(obj_player.x, obj_player.y, obj_pizzaface)
-			scr_sound(sfx_pizzaface)
+			event_play_oneshot("event:/sfx/pizzaface/laugh")
 		}
 	}
 

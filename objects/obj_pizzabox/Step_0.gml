@@ -21,12 +21,12 @@ with instance_place(x, y - image_yscale, obj_player)
 			movespeed = 0
 			reset_anim(obj_player.spr_downbox)
 			image_speed = 0.35
-			scr_sound(sfx_box)
+			event_play_oneshot("event:/sfx/player/box")
 		}
 		else if ((up || state == states.superjump || state == states.climbwall) && place_meeting(x, y - 1, other) && other.image_yscale == -1)
 		{
 			if state == states.climbwall
-				scr_sound_3d(sfx_groundpound, x, y)
+				event_play_oneshot_3d("event:/sfx/player/groundpound", x, y)
 			dooryscale = -1
 			state = states.actor
 			hsp = 0
@@ -34,7 +34,7 @@ with instance_place(x, y - image_yscale, obj_player)
 			movespeed = 0
 			reset_anim(obj_player.spr_upbox)
 			image_speed = 0.35
-			scr_sound(sfx_box)
+			event_play_oneshot("event:/sfx/player/box")
 		}
 	}
 	

@@ -1,33 +1,37 @@
-if other.key_up.pressed
+if other.key_up.pressed && other.state == states.normal
 {
-	clothes_selected++
-	if clothes_selected == array_length(clothes_arr)
-		clothes_selected = 0
-		
-	var palette = clothes_arr[clothes_selected].pal_ix
-	var pattern = clothes_arr[clothes_selected].pattern
-	
-	with obj_player
+	up = true
+	playerid = other.id
+	walk_sprite = other.spr_idle
+	obj_player.state = states.actor
+	obj_player.hsp = 0
+	switch other.pal_select
 	{
-		//scr_sound_3d_pitched(sfx_clothesswitch, x, y, 0.9, 1.1)
-		
-		with instance_create(x, y, obj_enemycorpse)
+		case 0:
+		case 1:
+				h_select[0] = 0  break;
+		case 2: h_select[0] = 1 break;
+		case 3: h_select[0] = 2 break;
+		case 4: h_select[0] = 3 break;
+		case 5: h_select[0] = 4 break;
+		case 6: h_select[0] = 5 break;
+		case 7: h_select[0] = 6 break;
+		case 8: 
+			switch other.pattern_spr
+			{
+				case pat_pizza: h_select[0] = 7 break;
+			}
+			break;
+	}
+	h_select[1] = 0
+	with obj_playerhat
+	{
+		if playerid == other.playerid
 		{
-			pal_select = other.pal_select
-			pattern_spr = other.pattern_spr
-			dopalette = true
-            hsp = irandom_range(-5, 5)
-            vsp = irandom_range(-6, -11)
-			sprite_index = spr_palettedresserdebris
-			depth = -400
+			switch sprite_index
+			{
+				case spr_hat_mets: other.h_select[1] = 1 break;
+			}
 		}
-		
-		pal_select = palette
-		pattern_spr = pattern
-		
-		ini_open($"saves/saveData{global.savefile}.ini")
-		ini_write_real("Clothes", "palette_index", pal_select)
-		ini_write_real("Clothes", "pattern_sprite", pattern_spr)
-		ini_close()
 	}
 }

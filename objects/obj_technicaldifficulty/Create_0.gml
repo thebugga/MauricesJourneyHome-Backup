@@ -1,6 +1,6 @@
 pattern_init()
-scr_sound(sfx_tvswitch)
-scr_sound_3d(sfx_groundpound, obj_player.x, obj_player.y)
+event_play_oneshot("event:/sfx/ui/tvswitch")
+event_play_oneshot_3d("event:/sfx/player/groundpound", obj_player.x, obj_player.y)
 image_speed = 0.35
 sprite_index = spr_techdiff_static
 depth = -999

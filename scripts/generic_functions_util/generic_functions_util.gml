@@ -326,7 +326,7 @@ function check_p_rank()
 	return nowgooch >= 4 && global.level_data.treasure && global.level_data.secret_count >= 3 && global.lap.active && !global.combo.wasted;
 }
 
-function set_rank_milestones(_s, _a, _b, _c)
+function set_rank_milestones(_s, _a = _s / 2, _b = _s / 4, _c = _s / 8)
 {	
 	global.rank_milestones = {
 		c: _c,
@@ -379,6 +379,7 @@ function create_follower(_x, _y, spr_idle = noone, spr_move = noone, spr_panic =
 function reset_level()
 {
 	global.panic.active = false
+	global.lap.active = false
 	global.combo.count = 0
 	global.combo.timer = 0
 	global.score = 0

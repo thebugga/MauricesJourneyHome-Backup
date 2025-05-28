@@ -1,6 +1,6 @@
 if !other.warping
 {
-	scr_sound_3d(sfx_teleportenter, x, y)
+	event_play_oneshot_3d("event:/sfx/misc/teleporterstart", x, y)
 	other.visible = false
 	other.warping = true
 	prev_state = other.state

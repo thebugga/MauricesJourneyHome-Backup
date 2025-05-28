@@ -18,5 +18,5 @@ with other
 }
 			
 sleep(50)
-scr_sound_pitched(sfx_parry)
+event_play_oneshot("event:/sfx/player/parry")
 instance_destroy()

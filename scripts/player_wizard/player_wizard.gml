@@ -56,7 +56,7 @@ function player_wizard(){
 		}
 		if ((sprite_index == spr_wizardfall || sprite_index == spr_wizarddoublejump) && grounded && vsp > 0)
 		{
-			scr_sound_3d_pitched(sfx_step, x, y)
+			event_play_oneshot_3d("event:/sfx/player/step", x, y)
 			reset_anim(spr_wizardland)
 		}
 		if (p_move != 0 && grounded)
@@ -105,7 +105,7 @@ function player_wizard(){
 		if particle_timer == 1 && grounded && p_move != 0 && (floor(image_index) == 4 || floor(image_index) == 10)
 		{
 			particle_timer = 0
-			scr_sound_3d_pitched(sfx_step, x, y)
+			event_play_oneshot_3d("event:/sfx/player/step", x, y)
 			create_effect(x, y + 43, spr_cloudeffect)
 		}
 		else
@@ -128,7 +128,7 @@ function player_wizard(){
 			{
 				reset_anim(spr_wizardthunder)
 				//GamepadSetVibration((object_index == obj_player1 ? 0 : 1), 1, 1, 0.9)
-				//scr_soundeffect(sfx_becomeknight)
+				event_play_oneshot("event:/sfx/knight/thunder")
 			}
 			if sprite_index == spr_wizardthunder
 				reset_anim(spr_wizardidle)

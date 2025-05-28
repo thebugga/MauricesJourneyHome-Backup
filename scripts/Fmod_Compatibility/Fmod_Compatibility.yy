@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Fmod_Compatibility",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Fmod_Compatibility",
+  "parent":{
+    "name":"FMod",
+    "path":"folders/Extensions/FMod.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -56,7 +56,7 @@ function player_superjump()
 			{
 				reset_anim(spr_fallfarland)
 				state = states.bump
-				scr_sound_3d(sfx_step, x, y)
+				event_play_oneshot_3d("event:/sfx/player/step", x, y)
 				create_effect(x, y + 2, spr_landeffect)
 			}
 		}
@@ -65,7 +65,7 @@ function player_superjump()
 		{
 			reset_anim(spr_player_ceilinghit)
 			state = states.bump
-			scr_sound_3d(sfx_groundpound, x, y)
+			event_play_oneshot_3d("event:/sfx/player/groundpound", x, y)
 		}
 		
 		if (input_buffers.grab > 0 || key_dash.pressed) && state != states.bump
@@ -86,7 +86,7 @@ function player_superjump()
 			{
 				input_buffers.grab = 0
 				reset_anim(spr_player_Sjumpcancelstart)
-				scr_sound_3d(sfx_superjumpcancel, x, y)
+				event_play_oneshot_3d("event:/sfx/player/superjumpcancel", x, y)
 				audio_stop_sound(sfx_superjumprelease)
 			}
 		}
@@ -122,7 +122,7 @@ function player_superjump()
 			vsp = -12
 			sjumptimer = 45
 			sjumper = true
-			scr_sound_3d_on(myemitter, sfx_superjumprelease)
+			fmod_studio_event_instance_set_parameter_by_name_multiplatform(superjumpsnd, "state", 1, 1)
 			create_effect(x, y, spr_superjumpexplosion)
 		}
 	}

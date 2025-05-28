@@ -11,7 +11,7 @@ if (ds_list_find_index(global.ds_saveroom, id) == -1)
     }
 	
 	sleep(5)
-    scr_sound_3d(sfx_bumpwall, x, y)
+    event_play_oneshot_3d("event:/sfx/misc/beerbreak", x, y)
 	ds_list_add(global.ds_saveroom, id)
 }
 

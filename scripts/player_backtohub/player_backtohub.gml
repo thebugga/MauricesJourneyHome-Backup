@@ -9,7 +9,7 @@ function player_backtohub()
             y += 20
             if y >= ystart
             {
-                scr_sound(sfx_groundpound)
+                event_play_oneshot("event:/sfx/player/groundpound")
                 //create_particle(x, y, (12 << 0)) land effect
                 y = ystart
                 sprite_index = spr_rockethitwall

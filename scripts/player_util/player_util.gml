@@ -35,7 +35,7 @@ function do_grab()
 					movespeed = 8
 				state = states.grab
 				reset_anim(spr_player_suplexgrab)
-				scr_sound_3d(sfx_suplexdash, x, y)
+				event_play_oneshot_3d("event:/sfx/player/step", x, y)
 				particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 			}
 		}
@@ -47,7 +47,7 @@ function do_grab()
 			reset_anim(obj_player.spr_uppercut)
 			image_speed = 0.35
 			create_effect(x, y, spr_highjumpcloud2)
-			scr_sound_3d_pitched(sfx_uppercut, x, y)
+			event_play_oneshot_3d("event:/sfx/player/uppercut", x, y)
 		}
 	}
 }
@@ -72,7 +72,7 @@ function do_taunt()
 			sprite_index = spr_player_taunt
 			image_index = random_range(0, image_number)
 			taunttimer = 20
-			scr_sound_3d_pitched(sfx_taunt, x, y, 0.94, 1.06)
+			event_play_oneshot_3d("event:/sfx/player/taunt", x, y)
 			instance_create(x, y, obj_parrybox)
 			
 			if (place_meeting(x, y, obj_exitgate) && global.panic.active && global.combo.timer > 0 && global.level_data.tauntcount <= 10)
@@ -91,7 +91,7 @@ function do_taunt()
 				global.level_data.tauntcount++
 				
 				array_push(obj_collect_got_visual.collects, c)
-				scr_sound_multiple(sfx_collect)
+				event_play_oneshot("event:/sfx/misc/collect")
 				
 				with instance_create(x, y, obj_collect_number)
 					num = t_val
@@ -118,70 +118,114 @@ function do_taunt()
 }
 
 function player_sounds()
-{	
-	struct_foreach(loop_sounds, function(_name, _data)
-	{
-		var _id = obj_player
-		
-		var dont_play = false
-		
-		if _id.state != _data.state
-			dont_play = true
-			
-		if warping
-			dont_play = true
-		
-		if variable_struct_exists(_data, "func")
-		{
-			if _data.func()
-				dont_play = true
-		}
-		
-		var confirmed_3d = false
-		
-		if (variable_struct_exists(_data, "is_3d"))
-			confirmed_3d = _data.is_3d
-		
-		if confirmed_3d
-		{
-			if (_data.sndid == noone && !dont_play && _id.myemitter != noone)
-			{
-				_data.sndid = scr_sound_3d_on(_id.myemitter, _data.sound, true)
-				
-				if struct_exists(_data, "looppoints")
-				{
-					audio_sound_loop_start(_data.sndid, _data.looppoints[0])
-					audio_sound_loop_end(_data.sndid, _data.looppoints[1])
-				}
-			}
-			else if (_data.sndid != noone && dont_play)
-			{
-				audio_stop_sound(_data.sndid)
-				_data.sndid = noone
-			}
+{
+    with (obj_player)
+    {
+        if instance_exists(obj_pizzaface)
+        {
+            if (!event_instance_isplaying(global.snd_pizzafacemoving))
+                fmod_studio_event_instance_start(global.snd_pizzafacemoving)
+            with (obj_pizzaface)
+                fmod_event_set3DPosition(global.snd_pizzafacemoving, x, y)
 		}
 		else
+			fmod_studio_event_instance_stop(global.snd_pizzafacemoving, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
+		fmod_event_set3DPosition(snd_voiceouttransfo, x, y);
+		fmod_event_set3DPosition(snd_voicetransfo, x, y);
+		fmod_event_set3DPosition(snd_voiceok, x, y);
+		fmod_event_set3DPosition(snd_voicehurt, x, y);
+		if state == states.groundpound
 		{
-			if (_id.state == _data.state && !dont_play && _data.sndid == noone)
-			{
-				_data.sndid = scr_sound(_data.sound, true)
-				if struct_exists(_data, "looppoints")
-				{
-					audio_sound_loop_start(_data.sndid, _data.looppoints[0])
-					audio_sound_loop_end(_data.sndid, _data.looppoints[1])
-				}
-			}
-			else if (_data.sndid != noone && dont_play)
-			{
-				audio_stop_sound(_data.sndid)
-				_data.sndid = noone
-			}
+			if (!event_instance_isplaying(freefallsnd))
+				fmod_studio_event_instance_start(freefallsnd);
+			fmod_studio_event_instance_set_paused(freefallsnd, false);
+			fmod_event_set3DPosition(freefallsnd, x, y);
 		}
-	})
-	
-	if (state != states.grab)
-		audio_stop_sound(sfx_suplexdash)
+		else
+			fmod_studio_event_instance_set_paused(freefallsnd, true);
+		if ((state == states.mach2 || state == states.mach3 || state == states.climbwall))
+		{
+			if (!event_instance_isplaying(machsnd))
+				fmod_studio_event_instance_start(machsnd);
+			fmod_studio_event_instance_set_paused(machsnd, false);
+			var s = 0;
+			if state == states.mach2 && sprite_index == spr_mach1 && grounded
+				s = 1;
+			else if ((state == states.mach2 && sprite_index == spr_mach2) || state == states.climbwall)
+				s = 2;
+			else if state == states.mach3 && sprite_index != spr_mach4
+				s = 3;
+			else if sprite_index == spr_mach4
+				s = 4;
+			fmod_event_set3DPosition(machsnd, x, y);
+			fmod_studio_event_instance_set_parameter_by_name_multiplatform(machsnd, "state", s, true);
+		}
+		else
+			fmod_studio_event_instance_set_paused(machsnd, true);
+		if state == states.grind
+		{
+			if (!event_instance_isplaying(knightslidesnd))
+				fmod_studio_event_instance_start(knightslidesnd);
+			fmod_event_set3DPosition(knightslidesnd, x, y);
+		}
+		else if (event_instance_isplaying(knightslidesnd))
+			fmod_studio_event_instance_stop(knightslidesnd, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
 		
+		if state == states.superjump
+		{
+			if !sjumper && !event_instance_isplaying(superjumpsnd)
+			{
+				fmod_studio_event_instance_set_parameter_by_name_multiplatform(superjumpsnd, "state", 0, true);
+				fmod_studio_event_instance_start(superjumpsnd);
+			}
+			else if sjumper
+				fmod_studio_event_instance_set_parameter_by_name_multiplatform(superjumpsnd, "state", 1, true);
+		}
+		else
+			fmod_studio_event_instance_stop(superjumpsnd, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
+		if (event_instance_isplaying(superjumpsnd))
+			fmod_event_set3DPosition(superjumpsnd, x, y);
+		
+		if (sprite_index == spr_machroll)
+		{
+			if (!event_instance_isplaying(machrollsnd))
+				fmod_studio_event_instance_start(machrollsnd);
+			fmod_event_set3DPosition(machrollsnd, x, y);
+		}
+		else
+			fmod_studio_event_instance_stop(machrollsnd, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
+		if (event_instance_isplaying(suplexdashsnd))
+		{
+			if state != states.grab
+				fmod_studio_event_instance_stop(suplexdashsnd, FMOD_STUDIO_STOP_MODE.IMMEDIATE);
+			fmod_event_set3DPosition(suplexdashsnd, x, y);
+		}
+		/*if p_characters.pierre
+		{
+			if state == states.grab
+			{
+				if (!event_instance_isplaying(ratmountpunchsnd))
+					fmod_studio_event_instance_start(ratmountpunchsnd);
+				fmod_event_set3DPosition(ratmountpunchsnd, x + hsp, y + vsp);
+			}
+			else
+				fmod_studio_event_instance_stop(ratmountpunchsnd, true);
+			if state == states.superjump
+			{
+				if (!event_instance_isplaying(ratmountgroundpoundsnd))
+					fmod_studio_event_instance_start(ratmountgroundpoundsnd);
+				s = 0;
+				if (instance_exists(superslameffectid))
+					s = 1;
+				fmod_studio_event_instance_set_parameter_by_name_multiplatform(ratmountgroundpoundsnd, "state", s, true);
+				fmod_event_set3DPosition(ratmountgroundpoundsnd, x + hsp, y + vsp);
+			}
+			else
+				fmod_studio_event_instance_stop(ratmountgroundpoundsnd, true);
+		}
+		else
+			fmod_studio_event_instance_stop(ratmountmachsnd, true);*/
+	}
 }
 
 function decrease_score(val)
@@ -226,7 +270,7 @@ function do_hurt(obj = noone)
 	sleep(100)
 	decrease_score(50)
 	i_frames = 100
-	scr_sound_pitched(sfx_hurt, 0.9, 1.1)
+	event_play_oneshot("event:/sfx/player/hurt")
 	
 	particle_create(x, y, particles.parry)
 	particle_create(x, y, particles.bang)

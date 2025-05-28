@@ -1,1 +1,1 @@
-audio_emitter_free(emitter)
+destroy_sounds([snd])

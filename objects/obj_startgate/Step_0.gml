@@ -24,6 +24,7 @@ if obj_player.visible && save_exists
 
 if (place_meeting(x, y, obj_player) && obj_player.state != states.actor && key_up.down && obj_player.grounded)
 {
+	stop_music()
 	with obj_player
 	{
 		reset_anim(obj_player.spr_startgate)

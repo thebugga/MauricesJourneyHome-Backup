@@ -11,13 +11,16 @@ savedsecretpause = false;
 savedpanicpos = 0;
 savedmusicpos = 0;
 exitmusic = false;
-pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
-panicmusicP = fmod_event_create_instance("event:/music/pizzatime");
-panicmusicN = fmod_event_create_instance("event:/music/pizzatimenoise");
-panicmusicID = panicmusicP;
-kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
+pillarmusicID = fmod_createEventInstance("event:/music/pillarmusic");
+panicmusicID = fmod_createEventInstance("event:/music/pizzatime");
 panicstart = false;
 
-add_music(garbage_1, "event:/music/w1/garbage", noone, false);
-add_music(entrance_1, "event:/music/w1/garbage", noone, false);
-add_music(wizard_1, "event:/music/w1/wizard", noone, false);
+add_music(mainmenu, "event:/music/title", -4, false, function(argument0, argument1)
+{
+    fmod_studio_event_instance_set_parameter_by_name_multiplatform(argument1, "state", 1, false);
+}
+)
+add_music(tower_1, "event:/music/hub", "event:/music/pillarmusic", false, hub_state)
+add_music(tower_2, "event:/music/hub", "event:/music/pillarmusic", false, hub_state)
+add_music(garbage_1, "event:/music/w1/garbage", "event:/music/garbagesecret", false)
+

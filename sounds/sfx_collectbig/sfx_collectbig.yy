@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":3.926667,
+  "duration":3.9260318,
   "name":"sfx_collectbig",
   "parent":{
     "name":"Sounds",

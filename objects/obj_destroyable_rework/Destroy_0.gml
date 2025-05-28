@@ -6,6 +6,6 @@ if (ds_list_find_index(global.ds_saveroom, id) == -1)
 		image_xscale = other.image_xscale
 	}
 	sleep(5)
-	scr_sound_3d(sfx_killingblow, x, y)
+	event_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y)
 	ds_list_add(global.ds_saveroom, id)
 }

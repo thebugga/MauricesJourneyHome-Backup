@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Destroyables",
-    "path":"folders/Objects/Level Structure/Destroyables.yy",
+    "path":"folders/Sprites/Level Structure/Destroyables.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

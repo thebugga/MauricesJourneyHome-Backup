@@ -1,1 +1,1 @@
-set_rank_milestones(16000, 8000, 4000, 2000)
+set_rank_milestones(14000)

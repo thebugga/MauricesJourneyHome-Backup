@@ -34,7 +34,7 @@ function player_jump()
 		{
 			state = states.normal
 			reset_anim(movespeed < 1 ? spr_land : spr_landmove)
-			scr_sound_3d_pitched(sfx_step, x, y)
+			event_play_oneshot_3d("event:/sfx/player/step", x, y)
 			create_effect(x, y, spr_landeffect)
 			if key_dash.down
 			{
@@ -49,7 +49,7 @@ function player_jump()
 			image_index = 0
 			state = states.bump
 			shake_camera()
-			scr_sound_3d(sfx_groundpound, x, y)
+			event_play_oneshot_3d("event:/sfx/player/groundpound", x, y)
 			create_effect(x, y + 2, spr_groundpoundeffect)
 		}
 	}

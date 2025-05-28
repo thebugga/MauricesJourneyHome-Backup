@@ -7,7 +7,7 @@ for (var inst = 0; inst < array_length(aftimg_list); inst++)
 		switch (effect)
 		{
 			case after_images.blur:
-				if obj_player.pal_select == 12
+				if obj_player.pal_select == 8
 					pattern_draw(sprite_index, image_index, x, y, obj_player.pattern_spr, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 				pal_swap_set(pal_peppino, obj_player.pal_select, false)
 				break;

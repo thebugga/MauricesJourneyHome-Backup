@@ -6,8 +6,11 @@ if (text_pos >= array_length(texters))
 		rank_score = rank_scorefinal
 		reset_anim(rank_data[rank_ix].sprite)
 		image_speed = 0.5
-		if (rank_score >= global.rank_milestones.s && check_p_rank())
+		if (rank_ix == 5)
+		{
 			receiptonscreen = false
+			x = screen_w / 2
+		}
 		alarm[3] = 300
 	}
 	else

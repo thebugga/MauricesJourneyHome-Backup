@@ -39,8 +39,8 @@ function player_slide()
 				image_speed = 0;
 			if (scr_hitwall(x + xscale, y, obj_solid))
 			{
-				reset_anim(obj_player.spr_wallsplat)
-				scr_sound_3d(sfx_splat, x, y)
+				reset_anim(spr_wallsplat)
+				event_play_oneshot_3d("event:/sfx/player/splat", x, y)
 				state = states.bump
 			}
 			if !movespeed

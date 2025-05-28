@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ExtBufferIO",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ExtBufferIO",
+  "parent":{
+    "name":"FMod",
+    "path":"folders/Extensions/FMod.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -5,7 +5,7 @@ if !collected
 		state = states.actor
 		hsp = 0
 		vsp = 0
-		scr_sound(sfx_treasurefind)
+		event_play_oneshot("event:/sfx/misc/treasure")
 		other.x = x
 		other.y = y
 	}

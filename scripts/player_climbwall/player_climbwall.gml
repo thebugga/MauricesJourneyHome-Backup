@@ -49,7 +49,7 @@ function player_climbwall()
 	{
 		state = states.bump
 		reset_anim(obj_player.spr_ceilinghit)
-		scr_sound_3d(sfx_groundpound, x, y)
+		event_play_oneshot_3d("event:/sfx/player/groundpound", x, y)
 	}
 	grabclimbbuffer = approach(grabclimbbuffer, 0, 1)
 	if (!key_dash.down && grabclimbbuffer <= 0)
@@ -68,7 +68,7 @@ function player_climbwall()
 		vsp = -11
 		xscale *= -1
 		jumpstop = false
-		scr_sound_3d(sfx_jump, x, y)
+		event_play_oneshot_3d("event:/sfx/player/jump", x, y)
 	}
 	
 	if (particle_timer > 0)

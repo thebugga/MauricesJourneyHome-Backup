@@ -14,7 +14,7 @@ with (other)
 }
 if _transfo
 {
-	//scr_soundeffect(sfx_pray)
+	event_play_oneshot("event:/sfx/player/pray")
 	var p = other.id
 	with (instance_create((other.x - 540), (camera_get_view_y(view_camera[0]) - 100), obj_pizzaangel))
 	{

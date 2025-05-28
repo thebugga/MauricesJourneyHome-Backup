@@ -49,10 +49,9 @@ if (_move && place_meeting(x, y, playerid) && playerid.state != states.actor && 
 		state = states.actor
 		sprite_index = spr_Timesup
 		image_index = 0
-		scr_sound(sfx_explosion)
-		scr_sound(sfx_groundpound)
-		scr_sound(sfx_timesup)
-		scr_sound(mu_timesup)
+		event_play_oneshot("event:/sfx/misc/explosion")
+		event_play_oneshot("event:/sfx/player/groundpound")
+		event_play_oneshot("event:/music/timesup")
 	}
 	room_goto(rm_timesup)
 	instance_destroy()

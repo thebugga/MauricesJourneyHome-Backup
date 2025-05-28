@@ -22,9 +22,7 @@ global.panic.timer = 5000
 global.panic.timer_max = 5000
 global.doorshut = false
 
-scr_sound(sfx_killenemy)
-scr_sound(sfx_pillarimpact)
-scr_sound(sfx_escaperumble)
+event_play_oneshot("event:/sfx/enemies/johndead")
 do_enemygibs()
 
 global.combo.count++

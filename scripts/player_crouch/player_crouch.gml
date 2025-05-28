@@ -28,7 +28,7 @@ function player_crouch()
 		{
 			input_buffers.jump = 0
 			vsp = -12
-			scr_sound_3d(sfx_jump, x, y)
+			event_play_oneshot_3d("event:/sfx/player/jump", x, y)
 		}
 	}
 	

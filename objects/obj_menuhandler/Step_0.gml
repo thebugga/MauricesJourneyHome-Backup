@@ -38,7 +38,7 @@ for (var i = 0; i < array_length(tvs); i++)
 			if other.uikey_accept.pressed && other.state == 0
 			{
 				reset_anim(sprs.confirm)
-				scr_sound(sfx_collectbig)
+				event_play_oneshot("event:/sfx/ui/fileselect")
 				global.savefile = filename
 				state = 2
 				

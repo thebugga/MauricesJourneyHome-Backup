@@ -6,7 +6,7 @@ function player_tumble()
 	{
 		sprite_index = spr_player_dive
 		vsp = 10
-		scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+		event_play_oneshot_3d("event:/sfx/player/dive", x, y)
 	}
 	
 	if (sprite_index == spr_ball && grounded)
@@ -39,7 +39,7 @@ function player_tumble()
 			vsp = movespeed
 		}
 		dir = xscale
-		scr_sound_3d_pitched(sfx_dive, x, y, 1.3, 1.315)
+		event_play_oneshot_3d("event:/sfx/player/dive", x, y)
 	}
 	
 	if movespeed <= 2
@@ -75,7 +75,7 @@ function player_tumble()
 		{*/
 			state = states.bump
 			reset_anim(obj_player.spr_wallsplat)
-			scr_sound_3d(sfx_splat, x, y)
+			event_play_oneshot_3d("event:/sfx/player/splat", x, y)
 		//}
 	}
 	
@@ -107,7 +107,7 @@ function player_tumble()
 		else
 			state = states.mach2
 		reset_anim(obj_player.spr_rollgetup)
-		scr_sound_3d_on(myemitter, sfx_rollgetup)
+		event_play_oneshot_3d("event:/sfx/player/rollgetup", x, y)
 	}
 	
 	//if (!keyDown('down.pressed && !keyDown('shift.pressed && grounded && vsp > 0 && state != 'bump' && (sprite_index != spr_ball && sprite_index != 'tumbleend.pressed && sprite_index != 'breakdance' && !canuncrouch.isTouching(solids))

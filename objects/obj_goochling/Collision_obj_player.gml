@@ -5,7 +5,7 @@ if playerr == -4
 	persistent = true
 	alarm[0] = 120
 	playerr = other.object_index
-	scr_sound(sfx_collecttoppin)
+	event_play_oneshot("event:/sfx/misc/collecttoppin")
 
 	global.level_data.goochlings[image_index] = true
 	global.combo.timer = 60

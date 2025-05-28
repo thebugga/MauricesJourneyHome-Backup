@@ -10,14 +10,15 @@ if (other.bbox_bottom <= bbox_bottom + 1 && other.bbox_bottom >= bbox_bottom - 1
 	{
 		image_index++
 		other.haskey = false
-		scr_sound(sfx_unlock)
+		event_play_oneshot("event:/sfx/misc/keyunlock")
+		event_play_oneshot("event:/sfx/misc/winrace")
 		ds_list_add(global.ds_saveroom, id)
 		instance_create(x, y, obj_lockdebris)
 	}
 	else
 	{
 		enterspr = spr_enterdoor
-		scr_sound(sfx_door)
+		event_play_oneshot("event:/sfx/misc/door")
 		do_fade(t_room, t_door, fade_types.door)
 	}
 	

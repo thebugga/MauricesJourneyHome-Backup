@@ -138,7 +138,7 @@ function do_enemy_generics()
 			do_enemygibs()
 			particle_create(x, y, particles.genericpoof)
 			shake_camera()
-			scr_sound_3d(sfx_punch, x, y)
+			event_play_oneshot_3d("event:/sfx/player/punch", x, y)
 		
 			obj_player.hitstun = 5
 			obj_player.prev.image_index = obj_player.image_index
@@ -186,7 +186,7 @@ function do_enemy_generics()
 				vsp = key_jump.down ? -15 : -10
 				jumpstop = true
 				
-				scr_sound_3d(sfx_stompenemy, x, y)
+				event_play_oneshot_3d("event:/sfx/enemies/stomp", x, y)
 				with (other)
 				{
 					xscale = -obj_player.xscale
@@ -200,7 +200,7 @@ function do_enemy_generics()
 			if vsp > 2 && character == p_characters.mandrek
 			{
 				vsp = -8
-				scr_sound_3d(sfx_stompenemy, x, y)
+				event_play_oneshot_3d("event:/sfx/enemies/stomp", x, y)
 				with (other)
 					instance_destroy()
 			}

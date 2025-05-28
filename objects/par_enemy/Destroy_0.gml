@@ -9,7 +9,7 @@ if do_particles
 	obj_player.supertauntcount++
 	
 	particle_create(x, y, particles.bang)
-	scr_sound_3d(sfx_killenemy, x, y)
+	event_play_oneshot_3d("event:/sfx/enemies/kill", x, y)
 	shake_camera()
 	
 	ds_list_add(!escape ? global.ds_save_room : global.ds_escapesaveroom, id)

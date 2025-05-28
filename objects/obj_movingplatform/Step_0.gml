@@ -3,3 +3,8 @@ vsp = lerp(vsp, realvsp, 0.1)
 birdix += 0.15
 birdix = wrap(3, birdix)
 visible = global.showcollisions
+
+t += 0.05
+
+x += round(hsp)
+y += round(vsp)

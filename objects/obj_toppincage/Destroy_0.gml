@@ -10,7 +10,7 @@ if (ds_list_find_index(global.ds_saveroom, id) == -1)
 	    image_index = 3
 	with create_debris(x + 10, y, spr_toppincage_debris)
 	    image_index = 4
-	//scr_sound(sfx_breakblock)
+	event_play_oneshot("event:/sfx/misc/breakblock")
 	
     ds_list_add(global.ds_saveroom, id)
 }

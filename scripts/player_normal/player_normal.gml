@@ -24,7 +24,7 @@ function P_shared_normal()
 		else
 		{
 			particle_timer = 12
-			scr_sound_3d_pitched(sfx_step, x, y)
+			event_play_oneshot_3d("event:/sfx/player/step", x, y)
 			create_effect(x, y + 43, spr_cloudeffect)
 		}
 	}
@@ -77,10 +77,13 @@ function P_shared_normal()
 	if key_taunt.down
 	{
 		if breakdance_secret.buffer < 10
+		{
 			breakdance_secret.buffer++
+			breakdance_secret.index = irandom(array_length(spr_breakdance) - 1)
+		}
 		else
 		{
-			sprite_index = spr_breakdance
+			sprite_index = spr_breakdance[breakdance_secret.index]
 			breakdance_secret.spd = approach(breakdance_secret.spd, 0.6, 0.005)
 			image_speed = breakdance_secret.spd
 		}
@@ -118,7 +121,7 @@ function P_shared_normal()
 		reset_anim(global.panic.active && global.panic.timer <= 0 ? spr_weakjump : spr_jump)
 		jumpstop = false
 		create_effect(x, y - 5, spr_highjumpcloud2)
-		scr_sound_3d(sfx_jump, x, y)
+		event_play_oneshot_3d("event:/sfx/player/jump", x, y)
 	}
 	
 	do_grab() //intentional game design

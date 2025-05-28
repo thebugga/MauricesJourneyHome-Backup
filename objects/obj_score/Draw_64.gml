@@ -139,10 +139,18 @@ else
 if (previousrank != rank_ix && rank_state == 0)
 {
     if (rank_ix > previousrank)
-		var snd = $"sfx_rankup{rank_ix}"
+	{
+		var snd = global.snd_rankup
+		var stater = previousrank
+	}
 	else
-		snd = $"sfx_rankdown{5 - rank_ix}"
-	scr_sound(asset_get_index(snd))
+	{
+		snd = global.snd_rankdown
+		stater = rank_ix
+	}
+	
+	fmod_studio_event_instance_start(snd);
+	fmod_studio_event_instance_set_parameter_by_name_multiplatform(snd, "state", stater, true);
     rank_state = sign(rank_ix - previousrank)
     rank_newx = 50 + rank_state * 100
     previousrank = rank_ix

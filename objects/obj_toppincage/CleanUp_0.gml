@@ -1,2 +1,2 @@
-audio_stop_sound(snd)
+destroy_sounds([snd])
 	

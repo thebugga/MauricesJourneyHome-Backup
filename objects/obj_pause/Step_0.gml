@@ -15,4 +15,4 @@ if uikey_accept.pressed or keyboard_key_press(ord("L"))
 }
 
 if movev != 0
-    scr_sound(sfx_step)
+    event_play_oneshot("event:/sfx/ui/step")

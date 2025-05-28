@@ -216,7 +216,7 @@ if supertauntcount >= 10
 	supertauntcount = 10
 	if !supertauntshow
 	{
-		scr_sound(sfx_rankup1)
+		event_play_oneshot("event:/sfx/misc/gotsupertaunt")
 		supertauntshow = true
 	}
 	

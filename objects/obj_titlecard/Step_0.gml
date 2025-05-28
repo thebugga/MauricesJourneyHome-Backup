@@ -18,7 +18,7 @@ if showing
 			if wipscale == 1
 			{
 				wipshake = 20
-				fmod_event_one_shot("event:/sfx/misc/breakmetal")
+				event_play_oneshot("event:/sfx/misc/breakmetal")
 			}
 		}
 		else

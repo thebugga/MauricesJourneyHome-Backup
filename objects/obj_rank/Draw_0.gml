@@ -66,7 +66,7 @@ if showrank
 {
 	var rank_index = calculate_rank(rank_score)
 	
-	if rank_index == 5
+	if rank_index >= 4 && rank_ix == 5
 	{
 		showrank = false
 		with instance_create_depth(receiptx + 170, 110, depth - 2, obj_enemycorpse)
@@ -76,6 +76,8 @@ if showrank
 				image_speed = 0
 				image_xscale = 1.5
 				image_yscale = 1.5
+	            hsp = irandom_range(-3, 3)
+	            vsp = irandom_range(-6, -11)
 			}
 	}
 

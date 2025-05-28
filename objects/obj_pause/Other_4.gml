@@ -25,11 +25,7 @@ else
 	}], ["RESTART", function() 
 	{
 		audio_stop_all()
-		with obj_music
-		{
-			fmod_event_instance_stop(music.event, true);
-			fmod_event_instance_stop(music.event_secret, true);
-		}
+		stop_music()
 		instance_activate_all()
 		video_resume()
 		start_wiping()
@@ -54,11 +50,7 @@ else
 	}], ["EXIT LEVEL", function() 
 	{
 		audio_stop_all()
-		with obj_music
-		{
-			fmod_event_instance_stop(music.event, true);
-			fmod_event_instance_stop(music.event_secret, true);
-		}
+		stop_music()
 		instance_activate_all()
 		video_resume()
 		start_wiping()

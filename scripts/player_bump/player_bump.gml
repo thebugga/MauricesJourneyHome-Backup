@@ -18,7 +18,7 @@ function player_bump()
 		}
 		else if (sprite_index == spr_ceilinghit)
 		{
-			reset_anim(obj_player.spr_superjumpfall)
+			reset_anim(spr_superjumpfall)
 			state = states.jump
 		}
 		else

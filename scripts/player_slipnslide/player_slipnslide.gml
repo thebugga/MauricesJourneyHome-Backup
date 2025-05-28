@@ -24,7 +24,7 @@ function player_slipnslide()
 				vsp = -11
 				jumpstop = false
 				create_effect(x, y - 5, spr_highjumpcloud2)
-				scr_sound_3d(sfx_jump, x, y)
+				event_play_oneshot_3d("event:/sfx/player/jump", x, y)
 			}
 		}
 		if (!jumpstop && !key_jump.down && vsp < 0)

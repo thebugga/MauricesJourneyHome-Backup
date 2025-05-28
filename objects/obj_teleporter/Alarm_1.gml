@@ -15,7 +15,7 @@ if instance_exists(obj_teleporterexit)
 				create_effect(x + random_range(50, -50), y + random_range(50, -50), spr_teleportdebris)
 			create_effect(p.x, p.y, spr_teleporteffect)
 			
-			scr_sound_3d(sfx_teleportexit, x, y)
+			event_play_oneshot_3d("event:/sfx/misc/teleporterend", x, y)
 		}
 	}
 }

@@ -124,7 +124,7 @@ function player_groundpound()
 				state = states.bump
 			}
 			shake_camera()
-			scr_sound_3d(sfx_groundpound, x, y)
+			event_play_oneshot_3d("event:/sfx/player/groundpound", x, y)
 			create_effect(x, y + 2, spr_groundpoundeffect)
 			if freefallsmash >= 10
 			{

@@ -79,3 +79,13 @@ function scr_sound_multiple(snd)
 	
 	return s;
 }
+
+function destroy_sounds(argument0) //gml_Script_destroy_sounds
+{
+    for (var i = 0; i < array_length(argument0); i++)
+    {
+        var b = argument0[i]
+        fmod_studio_event_instance_stop(b, true)
+        fmod_studio_event_instance_release(b)
+    }
+}

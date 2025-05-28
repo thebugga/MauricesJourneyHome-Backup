@@ -1,7 +1,7 @@
 if sprite_index != spr_gerome_collected && global.panic.active
 {
 	reset_anim(spr_gerome_collected)
-	scr_sound(sfx_geromecollect)
+	event_play_oneshot("event:/sfx/voice/geromegot")
 	global.combo.timer = 60
 	global.lap.active = true
 

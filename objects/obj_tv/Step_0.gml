@@ -24,8 +24,6 @@ switch (state)
 	case tv_states.normal:
 		if cardboardindex == 3
 			sprite_index = spr_tv_hurt
-		else if global.panic.active
-			sprite_index = spr_tv_panic
 		else if global.combo.count >= 50
 			sprite_index = spr_tv_combo
 		else if (sprite_index != spr_tv_idleangry && sprite_index != spr_tv_idlelook)
@@ -44,10 +42,12 @@ switch (state)
 		
 		if cardboardtimer == 0
 		{
+			if global.panic.active
+				cardboardindex = 4
 			if (p.state == states.mach3 || p.state == states.climbwall || p.sprite_index == p.spr_machslideboost3)
-					cardboardindex = 0
+				cardboardindex = 0
 			if p.state == states.mach3 && abs(obj_player.hsp) >= 16
-					cardboardindex = 1
+				cardboardindex = 1
 		}
 		break;
 	case tv_states.transition:

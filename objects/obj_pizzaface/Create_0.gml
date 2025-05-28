@@ -16,5 +16,4 @@ alarm[1] = 10
 image_alpha = 0
 xscale = 1
 
-emitter = emitter_create_quick(x, y, self)
-scr_sound_3d_on(emitter, sfx_pizzafacemove, true)
+snd = fmod_createEventInstance("event:/sfx/pizzaface/moving")

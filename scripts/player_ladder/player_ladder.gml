@@ -24,7 +24,7 @@ function player_ladder()
 		else
 		{
 			particle_timer = 12;
-			scr_sound_3d_pitched(sfx_step, x, y)
+			event_play_oneshot_3d("event:/sfx/player/step", x, y)
 			create_effect(x, y, spr_cloudeffect)
 		}
 	}

@@ -6,7 +6,7 @@ if ratio != screen_w / screen_h
 	draw_sprite_tiled(lb_sprs[lb_pos], 0, 0, 0)
 
 gpu_set_blendequation_sepalpha(bm_eq_add, bm_eq_max)
-//draw_surface(application_surface, 0, 0) here for no reason now, but maybe someone wants to use shaders
+draw_surface(application_surface, 0, 0) //here for no reason now, but maybe someone wants to use shaders
 draw_surface(gui_surf, 0, 0)
 if letterbox && !window_get_fullscreen()
 {

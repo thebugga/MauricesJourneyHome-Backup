@@ -9,53 +9,47 @@ if up
 	{
 		var palette = clothes_arr[h_select[0]].pal_ix
 		var pattern = clothes_arr[h_select[0]].pattern
+		var hat = hats_arr[h_select[1]][1]
 	
 		with obj_player
 		{
 			event_play_oneshot_3d("event:/sfx/misc/clotheswitch", x, y)
 		
-			with instance_create(x, y, obj_enemycorpse)
-			{
-				pal_select = other.pal_select
-				pattern_spr = other.pattern_spr
-				dopalette = true
-	            hsp = irandom_range(-5, 5)
-	            vsp = irandom_range(-6, -11)
-				sprite_index = spr_palettedresserdebris
-				depth = -400
-			}
-		
-			pal_select = palette
-			pattern_spr = pattern
-		
-			ini_open($"saves/saveData{global.savefile}.ini")
-			ini_write_real("Clothes", "palette_index", pal_select)
-			ini_write_real("Clothes", "pattern_sprite", pattern_spr)
-			ini_close()
-		}
-		with obj_playerhat
-		{
-			if playerid == other.playerid
+			if palette != pal_select || pattern != pattern_spr
 			{
 				with instance_create(x, y, obj_enemycorpse)
 				{
+					pal_select = other.pal_select
+					pattern_spr = other.pattern_spr
+					dopalette = true
 		            hsp = irandom_range(-5, 5)
 		            vsp = irandom_range(-6, -11)
-					sprite_index = other.sprite_index
+					sprite_index = spr_palettedresserdebris
+					depth = -400
+				}
+		
+				pal_select = palette
+				pattern_spr = pattern
+			}
+		
+			if hat != hat_spr
+			{
+				with instance_create(x, y, obj_enemycorpse)
+				{
+				    hsp = irandom_range(-5, 5)
+				    vsp = irandom_range(-6, -11)
+					sprite_index = other.hat_spr
 					depth = -400
 				}
 				
-				instance_destroy()
+				hat_spr = hat
 			}
-		}
-		if h_select[1] != 0
-		{
-			with instance_create(x, y, obj_playerhat)
-			{
-				playerid = other.playerid
-				sprite_index = other.hats_arr[other.h_select[1]][1]
-			}
-			quick_ini_write_real($"saves/saveData{global.savefile}.ini", "Clothes", "hat", hats_arr[h_select[1]][1])
+			
+			ini_open($"saves/saveData{global.savefile}.ini")
+			ini_write_real("Clothes", "palette_index", pal_select)
+			ini_write_real("Clothes", "pattern_sprite", pattern_spr)
+			ini_write_real("Clothes", "hat", hat_spr)
+			ini_close()
 		}
 		
 		

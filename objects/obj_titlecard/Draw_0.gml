@@ -1,3 +1,5 @@
+draw_set_color(c_white)
+
 var holesurface = surface_create(screen_w, screen_h)
 var colorizesurface = surface_create(screen_w, screen_h)
 surface_set_target(holesurface)
@@ -9,12 +11,13 @@ gpu_set_blendmode(bm_normal)
 surface_reset_target()
 
 surface_set_target(colorizesurface)
-shader_set(shd_colorizebutashader);
 
-var s_intensity = shader_get_uniform(shd_colorizebutashader, "g_Intensity");
-var s_color = shader_get_uniform(shd_colorizebutashader, "g_TintCol");
-shader_set_uniform_f(s_intensity, 1.0);
-shader_set_uniform_f(s_color, titlecredit[image_index][5][0], titlecredit[image_index][5][1], titlecredit[image_index][5][2], titlecredit[image_index][5][3]);
+draw_clear(make_color_rgb(titlecredit[image_index][5][0]*255, titlecredit[image_index][5][1]*255, titlecredit[image_index][5][2]*255))
+
+var fx = fx_create("_filter_colourise")
+fx_set_parameter(fx, "g_Intensity", 1)
+fx_set_parameter(fx, "g_TintCol", titlecredit[image_index][5])
+shader_set(_filter_colourise_shader)
 draw_surface(application_surface, 0, 0)
 shader_reset();
 

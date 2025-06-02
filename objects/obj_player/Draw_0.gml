@@ -30,11 +30,16 @@ if sprite_index != noone && sprite_index != -1
 	draw_sprite_ext(sprite_index, image_index, x, y, xscale * visual_size, image_yscale * visual_size, rotation, image_blend, image_alpha)
 pal_swap_reset()
 
+if hat_spr != -4
+	draw_sprite_ext(hat_spr, 0, x, bbox_top, xscale * visual_size, image_yscale * visual_size, rotation, image_blend, image_alpha)
+
 if flash > 0
 {
 	shader_set(shd_flash)
 	if sprite_index != noone && sprite_index != -1
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale * visual_size, image_yscale * visual_size, rotation, image_blend, image_alpha)
+	if hat_spr != -4
+		draw_sprite_ext(hat_spr, 0, x, bbox_top, xscale * visual_size, image_yscale * visual_size, rotation, image_blend, image_alpha)
 	shader_reset()
 }
 

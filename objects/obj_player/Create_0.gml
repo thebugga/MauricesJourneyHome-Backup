@@ -128,6 +128,7 @@ depth = -100
 
 pal_select = 1
 pattern_spr = pat_pizza
+hat_spr = -4
 
 pattern_init()
 

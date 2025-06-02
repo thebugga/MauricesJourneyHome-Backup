@@ -19,4 +19,5 @@ wipangle = irandom(360)
 wipshake = 0
 playeroff = 0
 use_dark = false
+
 global.doorshut = false

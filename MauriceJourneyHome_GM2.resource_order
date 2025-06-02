@@ -273,6 +273,7 @@
     {"name":"tv_util","order":9,"path":"scripts/tv_util/tv_util.yy",},
     {"name":"util_pause","order":3,"path":"scripts/util_pause/util_pause.yy",},
     {"name":"shd_blur","order":1,"path":"shaders/shd_blur/shd_blur.yy",},
+    {"name":"shd_colourise","order":7,"path":"shaders/shd_colourise/shd_colourise.yy",},
     {"name":"shd_gui_bg_remove","order":2,"path":"shaders/shd_gui_bg_remove/shd_gui_bg_remove.yy",},
     {"name":"shd_gui_brighten","order":3,"path":"shaders/shd_gui_brighten/shd_gui_brighten.yy",},
     {"name":"shd_hotbloom","order":6,"path":"shaders/shd_hotbloom/shd_hotbloom.yy",},

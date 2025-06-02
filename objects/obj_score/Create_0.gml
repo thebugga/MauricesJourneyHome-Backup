@@ -3,7 +3,6 @@ shake_mag = 0
 depth = -200
 image_speed = 0
 x = screen_w - 121
-y = 90
 
 rank_state = 0
 rank_visual = 0
@@ -22,15 +21,3 @@ ds_map_set(rankbg_color, 3, #800000)
 ds_map_set(rankbg_color, 4, #D07800)
 ds_map_set(rankbg_color, 5, #882858)
 ds_map_set(rankbg_color, 6, #882858)
-
-combo = {
-	state: 0,
-	ghost: {
-		image_index: 0,
-		x: 0,
-		y: 0
-	},
-	x: 0,
-	y: -500,
-	vsp: 0
-}

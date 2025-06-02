@@ -3,29 +3,6 @@ if !visible
 
 depth = -200
 
-pal_swap_set(pal_combo, global.combo.wasted ? 1 : 2, false)
-draw_sprite(spr_tv_c_ghost, combo.ghost.image_index, x + combo.ghost.x, y + combo.ghost.y + 97)
-pal_swap_reset()
-
-draw_sprite(spr_tv_c_bubble, 0, x + combo.x, y + combo.y + 97)
-
-var _tx = x + combo.x - 64
-var _ty = y + combo.y + 85
-draw_set_align(fa_left, fa_top)
-draw_reset_color()
-draw_set_font(global.combo.font)
-
-var _str = string(global.combo.count)
-var num = string_length(_str)
-
-for (var i = num; i > 0; i--)
-{
-	var char = string_char_at(_str, i)
-	draw_text(_tx, _ty, char)
-	_tx -= 22
-	_ty -= 8
-}
-
 var num = global.score
 
 var rank_ix = 0
@@ -57,16 +34,18 @@ draw_set_align(fa_left, fa_bottom)
 var irandoms_x = irandom_range(shake_mag, -shake_mag)
 var irandoms_y = irandom_range(shake_mag, -shake_mag)
 
-draw_sprite(spr_pizzascore, image_index, x + irandoms_x, y + irandoms_y)
+draw_sprite(spr_pizzascore, 0, x + irandoms_x, y + irandoms_y)
 
 var num = global.score
 
-var text_offsets = [0, 1, 1, 1, 0, -1, -2, -3, -5, -2, -1, 0]
+var igred_offsets = [18, 28, 6, 6, 6, 0]
+var igred_offset = 0
 
-var text_offset = text_offsets[image_index]
-
-for (var i = 0; i < min(rank_ix, 4); i++)
-	draw_sprite(spr_pizzascore_toppings, i, x + irandoms_x, y + text_offset + irandoms_y)
+for (var i = max(4 - rank_ix, 0); i < 4; i++)
+{
+	draw_sprite(spr_pizzascore, i + 1, x + irandoms_x, y + irandoms_y - igred_offset - igred_offsets[0])
+	igred_offset += igred_offsets[i + 1]
+}
 
 draw_set_font(global.scorefont)
 draw_reset_color()
@@ -102,38 +81,15 @@ for (var i = 0; i < num; i++)
 	var yy = (((i + 1) % 2) == 0) ? -5 : 0
 	//var c = color_array[i]
 	//pal_swap_set(spr_font_palette, c, false)
-	draw_text(floor(xx) + irandoms_x, floor((y) + text_y + yy) + irandoms_y, string_char_at(str, i + 1))
+	draw_text(floor(xx) + irandoms_x, floor(y + yy) + irandoms_y - igred_offset, string_char_at(str, i + 1))
 	xx += (w / num)
 }
 
-var rank_ix = 0
+draw_sprite(spr_pizzascore, 5, x + irandoms_x, y + irandoms_y - igred_offset - string_height("0"))
 
 var r_pos = {
 	x: x - 202,
-	y: y - 52
-}
-
-var ranks = [
-	global.rank_milestones.c,
-	global.rank_milestones.b,
-	global.rank_milestones.a,
-	global.rank_milestones.s
-]
-
-var s = global.score + obj_generichandler.combo_score
-
-if (s >= global.rank_milestones.s && check_p_rank())
-	rank_ix = 5
-else
-{
-	for (var i = 4; i >= 1; i--) 
-	{
-		if s >= ranks[i - 1]
-		{
-			rank_ix = i
-			break;
-		}
-	}
+	y: y - 102
 }
 
 if (previousrank != rank_ix && rank_state == 0)

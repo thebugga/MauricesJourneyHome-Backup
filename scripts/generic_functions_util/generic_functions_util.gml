@@ -245,7 +245,7 @@ function set_globals()
 		count: 0,
 		timer: 0,
 		record: 0,
-		font: font_add_sprite_ext(spr_tv_c_font, "0123456789", true, 2),
+		font: font_add_sprite_ext(spr_combo_font, "0123456789", true, 2),
 		wasted: false
 	}
 	

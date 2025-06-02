@@ -85,3 +85,24 @@ if (obj_player.x < 250 && obj_player.y < 175) || !visible
 	y_goto = -500
 	
 y = approach(y, y_goto, 25)
+
+switch (combo.sprite)
+{
+	case spr_combo_arms_trans:
+		combo.angle = 360
+		combo.speedd = 0.35
+		combo.index = approach(combo.index, (global.combo.count > 0) * (sprite_get_number(combo.sprite) - 1), combo.speedd)
+		if global.combo.count > 0 && combo.index == sprite_get_number(combo.sprite) - 1
+			combo.sprite = spr_combo_arms_idle
+		break;
+	case spr_combo_arms_idle:
+		combo.angle = lerp(combo.angle, (global.combo.timer / 60) * 360, 0.1)
+		combo.speedd = 0.5 - ((global.combo.timer / 60) * 0.3)
+		//combo.index = wrap(sprite_get_number(combo.sprite) - 1, combo.index + combo.speedd)
+		if global.combo.timer <= 0
+		{
+			combo.sprite = spr_combo_arms_trans
+			combo.index = sprite_get_number(combo.sprite) - 1
+		}
+		break;
+}

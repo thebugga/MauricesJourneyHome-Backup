@@ -25,4 +25,12 @@ cardboardindex = -4
 cardboardvisual = -4
 cardboardy = 402
 
+
+combo = {
+	sprite: spr_combo_arms_trans,
+	index: 0,
+	speedd: 0.35,
+	angle: 0,
+}
+
 messagelist = ds_list_create()

@@ -1,5 +1,33 @@
 depth = -200
 
+
+pal_swap_set(pal_combo, global.combo.wasted ? 1 : 2, false)
+
+draw_sprite(combo.sprite, combo.index, x + 90, y + 25)
+
+if combo.sprite == spr_combo_arms_idle
+{
+	draw_sprite_ext(spr_combo_clockhand, 0, x + 90 + 120, y + 25 + 30, 1, 1, combo.angle, c_white, 1)
+
+	draw_set_align(fa_left, fa_top)
+	draw_reset_color()
+	draw_set_font(global.combo.font)
+	var _tx = x + 90 + 41
+	var _ty = y + 25 - 105
+	var _str = string(global.combo.count)
+	var num = string_length(_str)
+
+	for (var i = num; i > 0; i--)
+	{
+		var char = string_char_at(_str, i)
+		draw_text(_tx, _ty, char)
+		_tx -= 16
+		_ty += 3
+	}
+}
+
+pal_swap_reset()
+
 if (!surface_exists(tvsurface))
 	tvsurface = surface_create(278, 268)
 gpu_set_blendmode(bm_normal)

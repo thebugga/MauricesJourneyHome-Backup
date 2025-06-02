@@ -395,6 +395,7 @@
     {"id":{"name":"tv_util","path":"scripts/tv_util/tv_util.yy",},},
     {"id":{"name":"util_pause","path":"scripts/util_pause/util_pause.yy",},},
     {"id":{"name":"shd_blur","path":"shaders/shd_blur/shd_blur.yy",},},
+    {"id":{"name":"shd_colourise","path":"shaders/shd_colourise/shd_colourise.yy",},},
     {"id":{"name":"shd_flash","path":"shaders/shd_flash/shd_flash.yy",},},
     {"id":{"name":"shd_gui_bg_remove","path":"shaders/shd_gui_bg_remove/shd_gui_bg_remove.yy",},},
     {"id":{"name":"shd_gui_brighten","path":"shaders/shd_gui_brighten/shd_gui_brighten.yy",},},

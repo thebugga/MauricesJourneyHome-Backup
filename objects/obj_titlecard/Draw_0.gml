@@ -12,13 +12,17 @@ surface_reset_target()
 
 surface_set_target(colorizesurface)
 
-draw_clear(make_color_rgb(titlecredit[image_index][5][0]*255, titlecredit[image_index][5][1]*255, titlecredit[image_index][5][2]*255))
+draw_clear(make_color_rgb(titlecredit[image_index][5][0], titlecredit[image_index][5][1], titlecredit[image_index][5][2]))
 
-var fx = fx_create("_filter_colourise")
-fx_set_parameter(fx, "g_Intensity", 1)
-fx_set_parameter(fx, "g_TintCol", titlecredit[image_index][5])
-shader_set(_filter_colourise_shader)
+shader_set(shd_colourise)
+
+var s_intensity = shader_get_uniform(shd_colourise, "g_Intensity");
+var s_color = shader_get_uniform(shd_colourise, "g_TintCol");
+shader_set_uniform_f(s_intensity, 1.0);
+shader_set_uniform_f(s_color, titlecredit[image_index][5][0] / 255, titlecredit[image_index][5][1] / 255, titlecredit[image_index][5][2] / 255, 1);
+
 draw_surface(application_surface, 0, 0)
+
 shader_reset();
 
 gpu_set_blendmode(bm_subtract)

@@ -176,6 +176,8 @@ function do_the_rank()
 		reset_anim(obj_player.spr_enterdoor)
 		hsp = 0
 		movespeed = 0
+		if instance_exists(obj_lightning)
+			instance_destroy(obj_lightning)
 		
 		var s = round(global.score + obj_generichandler.combo_score)
 		

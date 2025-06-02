@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":1.014667,
+  "duration":1.0146712,
   "name":"sfx_escapecollect",
   "parent":{
     "name":"Sounds",

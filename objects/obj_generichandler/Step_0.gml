@@ -1,4 +1,4 @@
-if obj_player.state != states.actor
+if obj_player.state != states.actor && obj_fade.fade = false
 	global.combo.timer = clamp(approach(global.combo.timer, 0, 0.1), 0, 60)
 
 global.combo.timer = max(global.combo.timer, 0)

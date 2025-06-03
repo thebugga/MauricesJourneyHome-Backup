@@ -9,7 +9,7 @@ pattern_init()
 
 image_speed = 0.35
 x = 115
-y = 80
+y = 98
 depth = -200
 xstart = x
 ystart = y

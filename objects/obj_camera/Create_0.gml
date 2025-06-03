@@ -1,7 +1,7 @@
 mag = 0
 mag_decel = 0.5
 cam_charge = 0
-info_visible = true
+info_visible = false
 
 campos = {
 	x: 0,

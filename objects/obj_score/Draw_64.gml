@@ -89,7 +89,7 @@ draw_sprite(spr_pizzascore, 5, x + irandoms_x, y + irandoms_y - igred_offset - s
 
 var r_pos = {
 	x: x - 202,
-	y: y - 102
+	y: y - 122
 }
 
 if (previousrank != rank_ix && rank_state == 0)

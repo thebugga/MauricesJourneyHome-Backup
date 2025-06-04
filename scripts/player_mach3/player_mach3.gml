@@ -51,7 +51,7 @@ function player_mach3()
 	
 	if (grounded)
 	{
-		if (sprite_index == spr_player_Sjumpcancel)
+		if (sprite_index == spr_player_Sjumpcancel || sprite_index == spr_rockethitwall)
 			sprite_index = spr_mach3
 		if (!key_dash.down && !dashpad)
 		{
@@ -97,7 +97,7 @@ function player_mach3()
 		}
 		else
 		{
-			if character != p_characters.maurice
+			if character != p_characters.maurice && sprite_index != spr_rockethitwall
 			{
 				state = states.tumble
 				sprite_index = spr_player_dive

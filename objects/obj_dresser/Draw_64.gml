@@ -24,6 +24,8 @@ if up
 	{
 		case 0:
 			draw_text(480, 440, clothes_arr[h_select[0]].name)
+			draw_set_font(global.smallerfont)
+			draw_text(480, 480, clothes_arr[h_select[0]].description)
 			break
 		case 1:
 			draw_text(480, 440, hats_arr[h_select[1]][0])

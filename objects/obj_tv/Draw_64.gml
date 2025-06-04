@@ -42,8 +42,7 @@ surface_reset_target()
 
 draw_sprite(spr_tv_bg, 0, x, y)
 
-if obj_player.pal_select == 8
-	pattern_draw(sprite_index, image_index, x, y, obj_player.pattern_spr, image_xscale, image_yscale)
+pattern_draw(sprite_index, image_index, x, y, obj_player.pattern_spr, image_xscale, image_yscale)
 
 pal_swap_set(obj_player.spr_palette, obj_player.pal_select, false)
 draw_self()

@@ -12,8 +12,7 @@ for (var i = 0; i < 3; i++)
 	{
 		if dial < array_length(dialogpalette)
 		{
-			if dialogpalette[dial][1] == 12
-				pattern_draw(talk_sprites[dial][0][0], 0, (rpadding + (75 * i)), y1,pat_pizza,1,1,0,c_gray,1)
+			pattern_draw(talk_sprites[dial][0][0], 0, (rpadding + (75 * i)), y1,pat_pizza,1,1,0,c_gray,1)
 			pal_swap_set(dialogpalette[dial][0], dialogpalette[dial][1], false)
 			draw_sprite_ext(talk_sprites[dial][0][0], 0, (rpadding + (75 * i)), y1,1,1,0,c_gray,1)
 			pal_swap_reset()
@@ -26,8 +25,7 @@ for (var i = 0; i < 3; i++)
 	{
 		if diar < array_length(dialogpalette)
 		{
-			if dialogpalette[dial][1] == 12
-				pattern_draw(talk_sprites[diar][0][0], 0, ((960 - rpadding) - (75 * i)), y1,pat_pizza,-1,1,0,c_gray,1)
+			pattern_draw(talk_sprites[diar][0][0], 0, ((960 - rpadding) - (75 * i)), y1,pat_pizza,-1,1,0,c_gray,1)
 			pal_swap_set(dialogpalette[dial][0], dialogpalette[dial][1], false)
 			draw_sprite_ext(talk_sprites[diar][0][0], 0, ((960 - rpadding) - (75 * i)), y1,-1,1,0,c_gray,1)
 			pal_swap_reset()
@@ -43,8 +41,7 @@ if (dialogsprite != -4)
 {
     if dialogcharacter < array_length(dialogpalette)
 	{
-		if dialogpalette[dialogcharacter][1] == 12
-			pattern_draw(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),pat_pizza,sidescale,1,0,c_white,1)
+		pattern_draw(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),pat_pizza,sidescale,1,0,c_white,1)
 		pal_swap_set(dialogpalette[dialogcharacter][0], dialogpalette[dialogcharacter][1], false)
 		draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),sidescale,1,0,c_white,1)
 		pal_swap_reset()

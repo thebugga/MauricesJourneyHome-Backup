@@ -1,8 +1,11 @@
 if up
 {
-	walk_index += 0.35
-	if floor(walk_index) == sprite_get_number(walk_sprite) - 1
-		walk_index = 0
+	if walk_sprite == obj_player.spr_idle
+	{
+		walk_index += 0.35
+		if floor(walk_index) == sprite_get_number(walk_sprite) - 1
+			walk_index = 0
+	}
 	taunt_index += 0.25
 	v_select = clamp(v_select + (playerid.key_down.pressed - playerid.key_up.pressed), 0, 2)
 	h_select[v_select] = clamp(h_select[v_select] + (playerid.key_right.pressed - playerid.key_left.pressed), 0, array_length(v_select == 0 ? clothes_arr : hats_arr) - 1)
@@ -62,6 +65,7 @@ if up
 	{
 		event_play_oneshot_3d("event:/sfx/player/taunt", x, y)
 		walk_sprite = obj_player.spr_taunt
+		walk_index = irandom(sprite_get_number(walk_sprite))
 		taunt_index = 0
 	}
 	if taunt_index >= 3

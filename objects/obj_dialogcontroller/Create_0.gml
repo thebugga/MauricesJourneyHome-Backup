@@ -25,4 +25,4 @@ dialogcharx = rpadding
 dialogindex = 0
 effect_shake = 0
 npcID = -4
-
+pattern_init()

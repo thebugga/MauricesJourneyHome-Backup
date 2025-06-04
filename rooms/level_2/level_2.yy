@@ -167,8 +167,8 @@
   ],
   "name":"level_2",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Example Level",
+    "path":"folders/Rooms/Levels/Example Level.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

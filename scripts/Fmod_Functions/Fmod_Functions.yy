@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Fmod_Functions",
   "parent":{
-    "name":"Extensions",
-    "path":"folders/Extensions/Fmod/Extensions.yy",
+    "name":"Fmod",
+    "path":"folders/Extensions/Fmod.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

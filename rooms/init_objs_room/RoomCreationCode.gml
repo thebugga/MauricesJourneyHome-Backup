@@ -39,3 +39,4 @@ enum states
 	scared,
 	shoot
 }
+#macro debug (GM_build_type == "run")

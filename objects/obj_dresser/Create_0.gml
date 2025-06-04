@@ -9,7 +9,7 @@ clothes_arr = [
 	new make_clothes_inst("Basic Bitch",				"The one and only.",									1),
 	new make_clothes_inst("Mau-Red",					"Mean Ass Maurice! A Maurice with Red on?",				2),	
 	new make_clothes_inst("Somewhat Blue",				"Not really Nostalgia bait.",							3),	
-	new make_clothes_inst("Poo-Rice",					"Shitty!",												4),	
+	new make_clothes_inst("Retro-rice",					"Fab!",												4),	
 	new make_clothes_inst("I am Mr. Stick",				"This is my Mr. Stick Song",							5),	
 	new make_clothes_inst("Shadowy Figure",				"Did you bring a light?",								6),
 	new make_clothes_inst("Chef's Fit",					"I hate him.",											7),

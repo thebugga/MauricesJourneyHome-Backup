@@ -1,6 +1,3 @@
-if ds_list_find_index(global.ds_saveroom, id) != -1
-	exit;
-
 var p_id = -4
 for (var i = 0; i < image_yscale; i++)
 {

@@ -20,10 +20,12 @@ if other.key_up.pressed && other.state == states.normal
 		case 9: h_select[0] = 8 break;
 		case 10: h_select[0] = 9 break;
 		case 11: h_select[0] = 10 break;
-		case 12: 
+		case 12: h_select[0] = 11 break;
+		case 13: 
 			switch other.pattern_spr
 			{
-				case pat_gomer: h_select[0] = 11 break;
+				case pat_rainbow: h_select[0] = 12 break;
+				case pat_gomer: h_select[0] = 13 break;
 			}
 			break;
 	}

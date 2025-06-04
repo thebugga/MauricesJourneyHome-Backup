@@ -23,6 +23,7 @@ if (i_frames > 0 && state != states.hurt)
 	image_alpha = round(wave(0, 1, 0.01, 0))
 
 pattern_draw(sprite_index, image_index, x, y, pattern_spr, xscale * visual_size, image_yscale * visual_size, rotation, image_blend, image_alpha)
+
 pal_swap_set(obj_player.spr_palette, pal_select, false)
 if sprite_index != noone && sprite_index != -1
 	draw_sprite_ext(sprite_index, image_index, x, y, xscale * visual_size, image_yscale * visual_size, rotation, image_blend, image_alpha)

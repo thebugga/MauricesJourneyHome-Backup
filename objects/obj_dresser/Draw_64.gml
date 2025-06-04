@@ -6,20 +6,15 @@ if up
 	draw_set_font(global.creditsfont)
 	draw_text(480, 64, v_selectnames[v_select])
 	
-	if clothes_arr[h_select[0]].pal_ix == 8
-		pattern_draw(walk_sprite, walk_index, 480, 270, clothes_arr[h_select[0]].pattern, 4, 4)
+	pattern_draw(walk_sprite, walk_index, 480, 270, clothes_arr[h_select[0]].pattern, 4, 4)
 
 	pal_swap_set(obj_player.spr_palette, clothes_arr[h_select[0]].pal_ix, false)
 	if walk_sprite == obj_player.spr_taunt
-	{
 		draw_sprite_ext(spr_taunteffect, taunt_index, 480, 270, 3, 3, 0, c_white, 1)
-		draw_sprite_ext(walk_sprite, random_range(0, image_number), 480, 270, 4, 4, 0, c_white, 1)
-	}
-	else
 		draw_sprite_ext(walk_sprite, walk_index, 480, 270, 4, 4, 0, c_white, 1)
 	pal_swap_reset()
 	if h_select[1] != 0
-		draw_sprite_ext(spr_hat_mets, 0, 480, 230, 4, 4, 0, c_white, 1)
+		draw_sprite_ext(hats_arr[h_select[1]][1], 0, 480, 230, 4, 4, 0, c_white, 1)
 	switch v_select
 	{
 		case 0:

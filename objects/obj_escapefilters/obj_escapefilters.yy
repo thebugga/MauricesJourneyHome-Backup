@@ -12,8 +12,8 @@
   "name":"obj_escapefilters",
   "overriddenProperties":[],
   "parent":{
-    "name":"Misc",
-    "path":"folders/Objects/Level Structure/Misc.yy",
+    "name":"Visual",
+    "path":"folders/Objects/Visual.yy",
   },
   "parentObjectId":null,
   "persistent":true,

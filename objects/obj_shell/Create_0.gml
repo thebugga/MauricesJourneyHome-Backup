@@ -22,6 +22,7 @@ targetScrollPosition = 0;
 commandSubmitted = false; // Need to update scroll position one frame after a command is submitted
 insertMode = true;
 
+saveHistory = true;
 historyPos = 0;
 history = [];
 output = [];

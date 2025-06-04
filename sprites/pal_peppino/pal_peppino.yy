@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"pal_peppino",
   "bboxMode":0,
-  "bbox_bottom":8,
+  "bbox_bottom":7,
   "bbox_left":0,
   "bbox_right":8,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":9,
+  "height":8,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"bcfdeab9-4ee2-43c7-8e88-88388453945f","blendMode":0,"displayName":"default","isLocked":false,"name":"bcfdeab9-4ee2-43c7-8e88-88388453945f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

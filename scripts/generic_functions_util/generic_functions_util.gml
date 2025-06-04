@@ -464,3 +464,16 @@ function draw_shaking_text(_x, _y, _text, _shake)
 	}
 	draw_set_halign(saved_h)
 }
+
+function sprite_islocated(left, top, right, bottom, _x, _y, sprite)
+{
+	var wide = sprite_get_width( sprite );
+	var high = sprite_get_height( sprite );
+	var xoff = sprite_get_xoffset( sprite );
+	var yoff = sprite_get_yoffset( sprite );
+	var minx = _x - xoff;
+	var miny = _y - yoff;
+	var maxx = minx + wide;
+	var maxy = miny + high;
+	return maxx >= left && maxy >= top && minx <= right && miny <= bottom;
+}

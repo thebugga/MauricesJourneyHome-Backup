@@ -117,7 +117,7 @@ function scr_character_spr()
 		spr_fallfar = spr_player_fallfar
 		spr_fallfarland = spr_player_fallfarland
 		spr_taunt = spr_player_taunt
-	    spr_breakdance = [spr_player_breakdance, spr_player_STdance]
+	    spr_breakdance = [spr_player_breakdance, spr_player_STdance, spr_player_gangam]
 		spr_dashpadmach = spr_player_dashpad
 		spr_rockethitwall = spr_player_rockethitwall
 		spr_parry1 = spr_player_parry1
@@ -397,7 +397,7 @@ function scr_character_spr()
 		spr_grabcancel = spr_player_grabcancel
 		spr_grabbump = spr_player_grabbump
 		spr_grind = spr_player_grind
-		spr_palette = pal_peppino
+		spr_palette = pal_undoised
 		paletteselect = 1
 	}
 	else if (character == p_characters.mandrek)

@@ -24,7 +24,7 @@
   "name":"spr_metalblock",
   "nineSlice":{
     "$GMNineSliceData":"",
-    "bottom":20,
+    "bottom":18,
     "enabled":true,
     "guideColour":[4294902015,4294902015,4294902015,4294902015,],
     "highlightColour":1728023040,

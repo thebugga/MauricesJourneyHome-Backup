@@ -58,7 +58,6 @@
     {"name":"inst_7D34355B","path":"rooms/garbage_4/garbage_4.yy",},
     {"name":"inst_3EDB780","path":"rooms/garbage_4/garbage_4.yy",},
     {"name":"inst_14E7BBB5","path":"rooms/garbage_4/garbage_4.yy",},
-    {"name":"inst_4C5327A","path":"rooms/garbage_4/garbage_4.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -211,7 +210,6 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_enemy","path":"objects/par_enemy/par_enemy.yy",},"propertyId":{"name":"escape","path":"objects/par_enemy/par_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1635.0,"y":1104.0,},
         {"$GMRInstance":"v2","%Name":"inst_14E7BBB5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_14E7BBB5","objectId":{"name":"obj_forknight","path":"objects/obj_forknight/obj_forknight.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1155.0,"y":784.0,},
-        {"$GMRInstance":"v2","%Name":"inst_4C5327A","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4C5327A","objectId":{"name":"obj_escapefilters","path":"objects/obj_escapefilters/obj_escapefilters.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_2","depth":200,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_2","properties":[
         {"name":"g_TintCol","type":1,"value":"#FFB28BB2",},

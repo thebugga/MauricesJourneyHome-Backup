@@ -20,6 +20,7 @@ if other.key_up.pressed && other.state == states.normal
 			switch other.pattern_spr
 			{
 				case pat_pizza: h_select[0] = 7 break;
+				case pat_rainbow: h_select[0] = 8 break;
 			}
 			break;
 	}
@@ -31,6 +32,7 @@ if other.key_up.pressed && other.state == states.normal
 			switch sprite_index
 			{
 				case spr_hat_mets: other.h_select[1] = 1 break;
+				case spr_hat_ss: other.h_select[1] = 2 break;
 			}
 		}
 	}

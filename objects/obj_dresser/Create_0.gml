@@ -14,8 +14,9 @@ clothes_arr = [
 	new make_clothes_inst("Somewhat Blue",		"Not really Nostalgia bait.",						6),	
 	new make_clothes_inst("Green Guy",		"Does he even go outside?",								7),
 	new make_clothes_inst("Pizza Man",		"BECOME THE PIZZA!",									8, pat_pizza),
+	new make_clothes_inst("Rainbow",		"SCENE KIDS!",									        9, pat_rainbow),
 ]
-hats_arr = [["Nothing", -4], ["the Yankees", spr_hat_mets]]
+hats_arr = [["Nothing", -4], ["the Yankees", spr_hat_mets], ["Crunchy Construction", spr_hat_ss]]
 walk_sprite = -4
 walk_index = 0
 bg_place = 0

@@ -9,7 +9,7 @@ if up
 	if clothes_arr[h_select[0]].pal_ix == 8
 		pattern_draw(walk_sprite, walk_index, 480, 270, clothes_arr[h_select[0]].pattern, 4, 4)
 
-	pal_swap_set(pal_peppino, clothes_arr[h_select[0]].pal_ix, false)
+	pal_swap_set(obj_player.spr_palette, clothes_arr[h_select[0]].pal_ix, false)
 	draw_sprite_ext(walk_sprite, walk_index, 480, 270, 4, 4, 0, c_white, 1)
 	pal_swap_reset()
 	if h_select[1] != 0

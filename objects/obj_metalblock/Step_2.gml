@@ -9,17 +9,22 @@ with obj_player
 	var kill = false
 	if ((state == states.mach3 || (character == p_characters.mandrek && abs(hsp) >= 4.625)) && place_meeting(x + hsp + xscale, y, other))
 		kill = true
-	else if (state == states.groundpound && freefallsmash >= 10 && place_meeting(x, y + 1, other))
+	else if ((state == states.groundpound && freefallsmash >= 10 || character == p_characters.mandrek) && place_meeting(x, y + 1, other))
 	{
 		kill = true
 		grounded = true
 		vsp = 0
 	}
-	else if (state == states.piledriver && vsp >= 10 && place_meeting(x, y + 1 + vsp, other))
+	else if ((state == states.piledriver && vsp >= 10 || character == p_characters.mandrek) && place_meeting(x, y + 1 + vsp, other))
 	{
 		kill = true
 		grounded = true
 		vsp = 0
+	}
+	else if ((state == states.superjump && vsp <= -10 || character == p_characters.mandrek) && place_meeting(x, y - 1 + vsp, other))
+	{
+		kill = true
+		vsp += -3
 	}
 		
 	if kill

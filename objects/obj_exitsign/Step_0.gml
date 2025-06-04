@@ -1,6 +1,13 @@
-var spr_idle = isstick ? spr_playerD_escapepoint : spr_pierre_escapepoint
-var spr_fall = isstick ? spr_playerD_idle : spr_pierre_idle
-
+if !obj_player.character == p_characters.undoised
+{	
+	var spr_idle = isstick ? spr_playerD_escapepoint : spr_pierre_escapepoint
+	var spr_fall = isstick ? spr_playerD_idle : spr_pierre_idle
+}
+else
+{
+	var spr_idle = isstick ? spr_playerN_idle : spr_pierre_escapepoint
+	var spr_fall = isstick ? spr_playerN_idle : spr_pierre_idle
+}
 switch state
 {
 	case states.actor:

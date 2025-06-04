@@ -49,7 +49,6 @@
     {"name":"inst_6875ED41","path":"rooms/garbage_3/garbage_3.yy",},
     {"name":"inst_13026FB8","path":"rooms/garbage_3/garbage_3.yy",},
     {"name":"inst_50941C45","path":"rooms/garbage_3/garbage_3.yy",},
-    {"name":"inst_25F8DCD2","path":"rooms/garbage_3/garbage_3.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -176,7 +175,6 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_toppincage","path":"objects/obj_toppincage/obj_toppincage.yy",},"propertyId":{"name":"gooch","path":"objects/obj_toppincage/obj_toppincage.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1248.0,"y":416.0,},
         {"$GMRInstance":"v2","%Name":"inst_50941C45","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_50941C45","objectId":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":1.0,"x":1344.0,"y":448.0,},
-        {"$GMRInstance":"v2","%Name":"inst_25F8DCD2","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_25F8DCD2","objectId":{"name":"obj_escapefilters","path":"objects/obj_escapefilters/obj_escapefilters.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_5","depth":200,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_5","properties":[
         {"name":"g_TintCol","type":1,"value":"#FFB28BB2",},

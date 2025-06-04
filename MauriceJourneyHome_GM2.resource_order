@@ -59,7 +59,7 @@
     {"name":"Warps","order":1,"path":"folders/Sprites/Level Structure/Warps.yy",},
     {"name":"Main Menu","order":7,"path":"folders/Sprites/Main Menu.yy",},
     {"name":"TVs","order":10,"path":"folders/Sprites/Main Menu/TVs.yy",},
-    {"name":"Mandrek","order":10,"path":"folders/Sprites/Mandrek.yy",},
+    {"name":"Mandrek","order":8,"path":"folders/Sprites/Player/Mandrek.yy",},
     {"name":"Masks","order":9,"path":"folders/Sprites/Masks.yy",},
     {"name":"Player","order":1,"path":"folders/Sprites/Masks/Player.yy",},
     {"name":"Miscellaneous","order":5,"path":"folders/Sprites/Miscellaneous.yy",},

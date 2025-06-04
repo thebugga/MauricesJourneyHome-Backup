@@ -80,7 +80,7 @@
     {"$GMFolder":"","%Name":"Warps","folderPath":"folders/Sprites/Level Structure/Warps.yy","name":"Warps","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Main Menu","folderPath":"folders/Sprites/Main Menu.yy","name":"Main Menu","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"TVs","folderPath":"folders/Sprites/Main Menu/TVs.yy","name":"TVs","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Mandrek","folderPath":"folders/Sprites/Mandrek.yy","name":"Mandrek","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Mandrek","folderPath":"folders/Sprites/Player/Mandrek.yy","name":"Mandrek","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Masks","folderPath":"folders/Sprites/Masks.yy","name":"Masks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Hurt Boxes","folderPath":"folders/Sprites/Masks/Hurt Boxes.yy","name":"Hurt Boxes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Sprites/Masks/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},

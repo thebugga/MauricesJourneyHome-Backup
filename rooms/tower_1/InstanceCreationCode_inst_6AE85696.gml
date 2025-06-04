@@ -1,1 +1,0 @@
-t_room = terry_hintz

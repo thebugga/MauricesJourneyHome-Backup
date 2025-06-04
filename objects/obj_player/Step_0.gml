@@ -170,7 +170,7 @@ if room != rm_timesup
 		grav = 0.5
 		if (state == states.mach2 || state == states.mach3 || state == states.tumble) && key_down.down && !grounded && character == p_characters.maurice
 			grav = 2
-		if (state == states.ladder || state == states.wizardcling)
+		if (state == states.ladder || state == states.wizardcling || (state == states.superjump && sjumper && sjumptimer > 0))
 			grav = 0
 		if (state == states.wizardgrapple)
 			grav = 0.05

@@ -25,15 +25,9 @@ if other.key_up.pressed && other.state == states.normal
 			break;
 	}
 	h_select[1] = 0
-	with obj_playerhat
+	switch other.hat_spr
 	{
-		if playerid == other.playerid
-		{
-			switch sprite_index
-			{
-				case spr_hat_mets: other.h_select[1] = 1 break;
-				case spr_hat_ss: other.h_select[1] = 2 break;
-			}
-		}
+		case spr_hat_mets: other.h_select[1] = 1 break;
+		case spr_hat_ss: other.h_select[1] = 2 break;
 	}
 }

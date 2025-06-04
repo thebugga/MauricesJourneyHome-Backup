@@ -45,7 +45,7 @@
   "origin":9,
   "parent":{
     "name":"Mandrek",
-    "path":"folders/Sprites/Mandrek.yy",
+    "path":"folders/Sprites/Player/Mandrek.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

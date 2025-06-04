@@ -123,3 +123,23 @@ function meta_set_combo() {
 		deferred: false
 	}
 }
+
+function sh_game_speed(argument0)
+{
+    var arg0, new_game_speed;
+    
+    arg0 = argument0[1];
+    new_game_speed = max(round(real(string_digits(arg0))), 1);
+    game_set_speed(new_game_speed, gamespeed_fps);
+}
+
+function meta_game_speed()
+{
+    return 
+    {
+        description: "Changes the game speed.",
+        arguments: ["<fps>"],
+        suggestions: [[]],
+        argumentDescriptions: ["Game speed, in frames per second."]
+    };
+}

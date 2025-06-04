@@ -1,5 +1,7 @@
 talking = state != 0
 
+sprite_index = talking ? spr_conekitty : spr_conekitty
+
 switch (state)
 {
 	case 0:

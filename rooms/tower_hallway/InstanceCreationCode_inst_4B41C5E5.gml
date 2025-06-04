@@ -1,0 +1,7 @@
+dialog[0] = ["Hello Welcome To The Tower!", 2, 0]
+dialog[1] = ["TWO!", 2, 0]
+dialog[2] = ["IDC... MOVE OUT OF THE WAY FATASS!", 0, 0]
+dialog[3] = ["...", 2, 0]
+dialog[4] = ["GOAW.", 1, 0]
+dialogsidel = [0,  1, -4, -4]
+dialogsider = [2, -4, -4, -4]

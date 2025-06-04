@@ -1,3 +1,4 @@
+
 if bubble.y <= -bubble.h
 	exit;
 
@@ -12,18 +13,17 @@ else
 	
 	draw_clear(c_black)
 	
-	draw_sprite_tiled(spr_tutorialbubble_bg, 0, bg_pos.x, bg_pos.y)
+	draw_sprite_tiled(spr_bgkitty, 0, bg_pos.x, bg_pos.y)
 	
 	gpu_set_blendmode(bm_subtract)
-	draw_sprite_stretched(spr_dialogue_bubble, 1, 0, 0, bubble.w, bubble.h)
+	draw_sprite_stretched(spr_dialogue_bubble, 2, 0, 0, bubble.w, bubble.h)
 	gpu_set_blendmode_cc(bm_normal)
-	
 	surface_reset_target()
 	
 	draw_surface(bubble_surf, bubble.x, bubble.y)
 }
 
-draw_sprite_stretched(spr_dialogue_bubble, 0, bubble.x, bubble.y, bubble.w, bubble.h)
+draw_sprite_stretched(spr_dialogue_bubble, 1, bubble.x, bubble.y, bubble.w, bubble.h)
 
 draw_set_font(global.tutorialfont)
 draw_set_align(fa_left, fa_top, c_black)

@@ -20,7 +20,7 @@ add_music(mainmenu, "event:/music/title", -4, false, function(argument0, argumen
     fmod_studio_event_instance_set_parameter_by_name_multiplatform(argument1, "state", 1, false);
 }
 )
-add_music(tower_1, "event:/music/hub", "event:/music/pillarmusic", false, hub_state)
+add_music(tower_hallway, "event:/music/hub", "event:/music/pillarmusic", false, hub_state)
 add_music(tower_2, "event:/music/hub", "event:/music/pillarmusic", false, hub_state)
 add_music(garbage_1, "event:/music/w1/garbage", "event:/music/garbagesecret", false)
 

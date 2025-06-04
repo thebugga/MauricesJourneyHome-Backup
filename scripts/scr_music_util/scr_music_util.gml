@@ -45,7 +45,7 @@ function hub_state(_room, _sound, _secretsound)
 	var s = 0;
 	switch _room
 	{
-		case tower_1:
+		case tower_hallway:
 			s = 0;
 			break;
 		

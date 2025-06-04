@@ -18,7 +18,7 @@ clothes_arr = [
 	new make_clothes_inst("Green Guy",		"Does he even go outside?",								10),
 	new make_clothes_inst("Green Guy",		"Does he even go outside?",								11),
 ]
-hats_arr = [["Nothing", -4], ["the Yankees", spr_hat_mets], ["Crunchy Construction", spr_hat_ss]]
+hats_arr = [["Nothing", -4], ["the Yankees", spr_hat_mets], ["Doom", spr_hat_doom]]
 walk_sprite = -4
 walk_index = 0
 taunt_index = 0

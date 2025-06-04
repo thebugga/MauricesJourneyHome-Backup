@@ -29,4 +29,4 @@ with obj_player
 }
 
 if flick
-	do_fade(hub_hallway, "a", fade_types.door)
+	do_fade(tower_hallway, "a", fade_types.door)

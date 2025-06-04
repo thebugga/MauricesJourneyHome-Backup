@@ -407,6 +407,7 @@
     {"name":"pal_peppatterncolors","order":1,"path":"sprites/pal_peppatterncolors/pal_peppatterncolors.yy",},
     {"name":"pal_peppinomask","order":1,"path":"sprites/pal_peppinomask/pal_peppinomask.yy",},
     {"name":"pal_undoised","order":1,"path":"sprites/pal_undoised/pal_undoised.yy",},
+    {"name":"pat_gomer","order":8,"path":"sprites/pat_gomer/pat_gomer.yy",},
     {"name":"pat_pizza","order":2,"path":"sprites/pat_pizza/pat_pizza.yy",},
     {"name":"pat_rainbow","order":7,"path":"sprites/pat_rainbow/pat_rainbow.yy",},
     {"name":"spr_bangeffect","order":1,"path":"sprites/spr_bangeffect/spr_bangeffect.yy",},

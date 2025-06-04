@@ -16,11 +16,14 @@ if other.key_up.pressed && other.state == states.normal
 		case 5: h_select[0] = 4 break;
 		case 6: h_select[0] = 5 break;
 		case 7: h_select[0] = 6 break;
-		case 8: 
+		case 8: h_select[0] = 7 break;
+		case 9: h_select[0] = 8 break;
+		case 10: h_select[0] = 9 break;
+		case 11: h_select[0] = 10 break;
+		case 12: 
 			switch other.pattern_spr
 			{
-				case pat_pizza: h_select[0] = 7 break;
-				case pat_rainbow: h_select[0] = 8 break;
+				case pat_gomer: h_select[0] = 11 break;
 			}
 			break;
 	}
@@ -32,7 +35,7 @@ if other.key_up.pressed && other.state == states.normal
 			switch sprite_index
 			{
 				case spr_hat_mets: other.h_select[1] = 1 break;
-				case spr_hat_ss: other.h_select[1] = 2 break;
+				case spr_hat_ss: other.h_select[2] = 2 break;
 			}
 		}
 	}

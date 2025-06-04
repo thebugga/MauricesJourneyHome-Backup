@@ -536,6 +536,7 @@
     {"id":{"name":"pal_peppinomask","path":"sprites/pal_peppinomask/pal_peppinomask.yy",},},
     {"id":{"name":"pal_undoised","path":"sprites/pal_undoised/pal_undoised.yy",},},
     {"id":{"name":"particle_1","path":"sprites/particle_1/particle_1.yy",},},
+    {"id":{"name":"pat_gomer","path":"sprites/pat_gomer/pat_gomer.yy",},},
     {"id":{"name":"pat_pizza","path":"sprites/pat_pizza/pat_pizza.yy",},},
     {"id":{"name":"pat_rainbow","path":"sprites/pat_rainbow/pat_rainbow.yy",},},
     {"id":{"name":"spr_bangeffect","path":"sprites/spr_bangeffect/spr_bangeffect.yy",},},

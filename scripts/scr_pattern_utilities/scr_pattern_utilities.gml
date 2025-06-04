@@ -14,7 +14,7 @@ function pattern_set_colors(palette_sprite)
 	shader_set_uniform_f(texel_h, texture_get_texel_height(pal_tex))
 }
 
-function pattern_draw(spr, ix, _x, _y, pattern_spr, xscale = 1, yscale = 1, rot = 0, col = c_white, alpha = 1)
+function pattern_draw(spr, ix, _x, _y, pattern_spr, xscale = 1, yscale = 1, rot = 0, col = c_white, alpha = 1, spr2 = pal_peppatterncolors)
 {
 	
 	if pattern_spr == noone
@@ -34,7 +34,7 @@ function pattern_draw(spr, ix, _x, _y, pattern_spr, xscale = 1, yscale = 1, rot 
 		surface_set_target(pattern_mask_surf)
 		draw_clear(c_white)
 		gpu_set_blendmode(bm_subtract)
-		pattern_set_colors(pal_peppatterncolors)
+		pattern_set_colors(spr2)
 		draw_sprite(spr, ix, sprite_get_xoffset(spr), sprite_get_yoffset(spr))
 		shader_reset()
 		gpu_set_blendmode_cc(bm_normal)

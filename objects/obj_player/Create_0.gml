@@ -127,7 +127,7 @@ fallingtimer = 0
 depth = -100
 
 pal_select = 1
-pattern_spr = pat_pizza
+pattern_spr = pat_gomer
 hat_spr = -4
 
 pattern_init()

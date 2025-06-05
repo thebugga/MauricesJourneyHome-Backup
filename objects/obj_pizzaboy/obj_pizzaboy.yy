@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_kevin",
+  "%Name":"obj_pizzaboy",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -8,7 +8,7 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_kevin",
+  "name":"obj_pizzaboy",
   "overriddenProperties":[],
   "parent":{
     "name":"Misc",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_kevin",
-    "path":"sprites/spr_kevin/spr_kevin.yy",
+    "name":"spr_pizzaboy",
+    "path":"sprites/spr_pizzaboy/spr_pizzaboy.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -13,6 +13,7 @@ dialogsprite = mask_player
 talk_sprites[0][0] = [spr_dialogue_mauricenormal, spr_dialogue_mauricenormaltalk, spr_dialogue_mauricenormalblink, spr_dialogue_mauricenormaltalkblink]
 talk_sprites[1][0] = [spr_dialogue_undoisednormal, spr_dialogue_undoisednormaltalk, -4, -4]
 talk_sprites[2][0] = [spr_dialogue_colyisia, -4, -4, -4]
+talk_sprites[3][0] = [spr_dialogue_mauricedayoff, -4, -4, -4]
 dialogsidel = [-4, -4, -4, -4]
 dialogsider = [-4, -4, -4, -4]
 dialogpalette = [[pal_peppino, obj_player.pal_select], [pal_peppino, obj_player.pal_select]]

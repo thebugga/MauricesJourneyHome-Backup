@@ -32,7 +32,7 @@ if other.key_up.pressed && other.state == states.normal
 	h_select[1] = 0
 	switch other.hat_spr
 	{
-		case spr_hat_mets: other.h_select[1] = 1 break;
-		case spr_hat_doom: other.h_select[1] = 2 break;
+		case spr_hat_mets: h_select[1] = 1 break;
+		case spr_hat_doom: h_select[1] = 2 break;
 	}
 }

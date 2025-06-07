@@ -1,5 +1,5 @@
-for (var i = 0; i < array_length(tvs); i++) 
+for (var i = 0; i < array_length(character); i++) 
 {
-	with tvs[i]
+	with character[i]
 		pattern_cleanup()
 }

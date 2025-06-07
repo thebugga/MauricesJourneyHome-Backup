@@ -9,7 +9,7 @@ global.lap = {
 	inflap: false,
 }
 
-filler_sprites = [spr_timer_collysia, spr_timer_collysia, spr_timer_platfelix, spr_timer_goomba]
+filler_sprites = [spr_timer_collysia, spr_timer_peetzy, spr_timer_platfelix, spr_timer_goomba]
 filler = {
 	image_index: 0,
 	image_speed: 0.35

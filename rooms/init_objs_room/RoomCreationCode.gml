@@ -25,6 +25,7 @@ enum states
 	slipnslide,
 	hurt,
 	parry,
+	swim,
 	wizard,
 	wizardgrapple,
 	wizarddash,

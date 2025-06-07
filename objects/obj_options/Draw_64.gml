@@ -1,13 +1,14 @@
-draw_set_align(fa_center, fa_center)
+draw_set_align(fa_center, fa_middle, c_white)
 draw_set_font(global.generic_font)
 
 var s = string_height("M")
 var sw = screen_w / 2
 var sh = (screen_h / 2) - ((s * array_length(options)) / 2)
 
-draw_text(sw, 64, "OPTIONS")
-
-sh += s
+if room == mainmenu
+	sh = (screen_h / 2) + 32
+else
+	draw_text(sw, 64, "OPTIONS")
 
 for (var i = 0; i < array_length(options); i++) 
 {

@@ -113,14 +113,17 @@ switch (state)
 	case states.parry:
 		player_parry()
 		break;
+	case states.slipnslide:
+		player_slipnslide()
+		break;
+	case states.swim:
+		player_swim()
+		break;
 	case states.backtohub:
 		player_backtohub()
 		break;
 	case states.noclip:
 		player_noclip()
-		break;
-	case states.slipnslide:
-		player_slipnslide()
 		break;
 	case states.wizard:
 		player_wizard()

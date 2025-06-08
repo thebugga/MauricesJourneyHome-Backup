@@ -19,6 +19,6 @@ elavatorindex = 0
 chary = -14
 charvely = 0
 fadealpha = 0
-if (global.elevatorcutscene1 == -4)
-	global.elevatorcutscene1 = quick_ini_read_real($"saves/saveData{global.savefile}.ini", "Cutscene", "elevator1", 0)
-global.elevatorcutscene2 = quick_ini_read_real($"saves/saveData{global.savefile}.ini", "Cutscene", "elevator2", 0)
+if global.cutscene.elevator1 == -4
+	global.cutscene.elevator1 = quick_ini_read_real($"saves/saveData{global.savefile}.ini", "Cutscene", "elevator1", 0)
+global.cutscene.elevator2 = quick_ini_read_real($"saves/saveData{global.savefile}.ini", "Cutscene", "elevator2", 0)

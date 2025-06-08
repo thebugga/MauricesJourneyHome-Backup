@@ -13,7 +13,22 @@ if string_copy(room_get_name(room), 1, 5) == "tower"
 				instance_create_depth(x, y, obj_pause.depth - 1, obj_characterselect)
 		}], ["SAVE & QUIT", function() 
 		{
-			game_end()
+			audio_stop_all()
+			stop_music()
+			instance_activate_all()
+			video_resume()
+			start_wiping()
+			pause = false
+		
+			save_game()
+			reset_level()
+			with obj_player
+			{
+				spawn = "a"
+				door_type = fade_types.none
+				room_goto(mainmenu)
+				state = states.actor
+			}
 		}]]
 else
 	pausearray = [["RESUME", function() 

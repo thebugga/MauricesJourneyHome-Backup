@@ -3,15 +3,6 @@ depth = -50
 var _x = x
 var _y = y
 
-surfacedropshadow = surface_create(room_width, room_height);
-surface_set_target(surfacedropshadow)
-draw_clear_alpha(c_white,0)
-draw_sprite_ext(sprite_index, image_index, _x + 4, _y, xscale - (warp * xscale), yscale + warp, image_angle, image_blend, image_alpha)
-surface_reset_target()
-draw_surface_ext(surfacedropshadow,8,4,xscale,yscale,0,c_black,0.5)
-surface_free(surfacedropshadow)
-
-
 if (obj_player.state = states.piledriver && follow_player)
 {
 	_y += 48

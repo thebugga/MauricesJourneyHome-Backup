@@ -43,7 +43,7 @@ switch state
         
 		        showinside = true
 		        fadein = false
-		        alarm[0] = (global.elevatorcutscene2 ? 600 : 300)  
+		        alarm[0] = (global.cutscene.elevator2 ? 600 : 300)  
 		    }
 		}
 		else

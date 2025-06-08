@@ -243,18 +243,18 @@ function set_globals()
 	audio_group_set_gain(ag_music, global.music_volume, 0)
 	
 	pal_swap_init_system(shd_pal_swapper)
-	global.pigreduction = 0
-	global.pigtotal = 0
-	global.garbagecutscene = -4
-	global.wizardcutscene = -4
-	global.elevatorcutscene1 = -4
-	global.elevatorcutscene2 = -4
-	global.bombcutscene = -4
-	global.doisecutscene1 = -4
-	global.dougiecutscene1 = -4
-	global.templecutscene = -4
-	global.dougiecutscene2 = -4
-
+	
+	global.goochcash = 0
+	
+	global.cutscene = {
+		garbage: -4,
+		wizard: -4,
+		elevator1: -4,
+		elevator2: -4,
+		bomb: -4,
+		doise1: -4,
+		dougie1: -4,
+	}
 	
 	global.combo = {
 		count: 0,
@@ -500,21 +500,6 @@ function reset_level()
 	global.level_data.secret_count = 0
 	global.level_data.goochlings = [0, 0, 0, 0, 0]
 	global.level_data.tauntcount = 0
-}
-
-function quick_ini_write_real(inistr, section, key, value)
-{
-	ini_open(inistr)
-	ini_write_real(section, key, value)
-	ini_close()
-}
-
-function quick_ini_read_real(inistr, section, key, value)
-{
-	ini_open(inistr)
-	var b = ini_read_real(section, key, value)
-	ini_close()
-	return b
 }
 
 function gpu_set_blendmode_cc(bm)

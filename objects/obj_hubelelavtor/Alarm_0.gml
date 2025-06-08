@@ -10,9 +10,7 @@ if !quick_ini_read_real($"saves/saveData{global.savefile}.ini", "Cutscene", "ele
 		else
 		{
 			with (obj_player)
-			{
-				do_fade(tower_tutorial1, "b",fade_types.v_hallway)
-			}
+				do_fade(tower_tutorial1, "b", fade_types.none)
 	        fadein = true
 	        quick_ini_write_real($"saves/saveData{global.savefile}.ini", "Cutscene", "elevator2", true)
 	    }

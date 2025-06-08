@@ -12,8 +12,8 @@
   "name":"obj_hubelelavtor",
   "overriddenProperties":[],
   "parent":{
-    "name":"Warps",
-    "path":"folders/Objects/Level Structure/Warps.yy",
+    "name":"Hub",
+    "path":"folders/Objects/Hub.yy",
   },
   "parentObjectId":null,
   "persistent":false,

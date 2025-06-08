@@ -63,6 +63,7 @@ if flick
 	global.level_seconds = 0
 	with obj_player
 	{
+		reset_level()
 		global.level_data.level_name = restart_location.name
 		do_fade(restart_location.room, restart_location.door, fade_types.door)
 		with instance_create(0, 0, obj_titlecard)

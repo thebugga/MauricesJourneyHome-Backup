@@ -72,7 +72,7 @@ switch state
 if (state == 2)
 {
 	ini_open(concat("saves/saveData", saveselect, ".ini"))
-	var percent = ini_read_real("Game", "percent", 0)
+	var percent = get_percentage()
 	ini_close()
 	perstatus_icon = floor(percent / 14.285714285714286)
     var a = (floor((abs(percvisual - percent)) / 10)) + 1

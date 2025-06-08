@@ -67,5 +67,10 @@ function player_actor()
 		case spr_upbox:
 			vsp = 0
 			break;
+		case spr_enterdoor:
+			if anim_ended()
+				image_speed = 0
+			break;
+			
 	}
 }

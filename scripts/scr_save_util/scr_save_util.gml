@@ -22,7 +22,7 @@ function save_game()
 
 function get_percentage()
 {
-	var levels = ["graveyard", "wizard", "chili", "trench"];
+	var levels = ["graveyard", "wizard", "town", "trench"];
 //	var bosses = ["w1stick", "w2stick", "w3stick", "w4stick", "w5stick"];
 //	var bossach = ["pepperman", "vigilante", "noise", "fakepep", "pizzaface"];
 //	var bossranks = ["b_pepperman", "b_vigilante", "b_noise", "b_fakepep"];

@@ -269,6 +269,7 @@ function set_globals()
 	global.ds_escapesaveroom = ds_list_create()
 	global.ds_saveroom = ds_list_create()
 	global.doorshut = false
+	global.levelattempts = 0;
 	global.swapmode = false
 	global.coop = false
 	global.scorefont = font_add_sprite_ext(spr_font_collect, "0123456789", true, 0)
@@ -500,6 +501,8 @@ function reset_level()
 	global.level_data.secret_count = 0
 	global.level_data.goochlings = [0, 0, 0, 0, 0]
 	global.level_data.tauntcount = 0
+	global.levelattempts++;
+	obj_music.music = noone;
 }
 
 function gpu_set_blendmode_cc(bm)

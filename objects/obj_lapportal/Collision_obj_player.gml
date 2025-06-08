@@ -6,8 +6,8 @@ reset_anim(spr_pizzaportalend)
 other.visible = false
 other.state = states.actor
 
-scr_sound_3d(sfx_secretenter, x, y, false)
-scr_sound_3d(sfx_lapportal, x, y, false)
+//scr_sound_3d(sfx_secretenter, x, y, false)
+//scr_sound_3d(sfx_lapportal, x, y, false)
 
 global.lap.active = true
 

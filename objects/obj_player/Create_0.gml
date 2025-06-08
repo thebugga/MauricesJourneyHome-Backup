@@ -83,35 +83,6 @@ breakdance_secret = {
 	spd: 0.1
 }
 
-loop_sounds = {
-	mach1: {state: states.mach2, sound: sfx_mach1, sndid: noone, is_3d: true, func: function() {
-		if obj_player.sprite_index != obj_player.spr_mach1
-			return true;}
-	},
-	mach2: {state: states.mach2, sound: sfx_mach2, sndid: noone, is_3d: true, func: function() {
-		if obj_player.sprite_index != obj_player.spr_mach2
-			return true;}
-	},
-	mach3: {state: states.mach3, sound: sfx_mach3, sndid: noone, is_3d: true, func: function() {
-		if ((obj_player.sprite_index == obj_player.spr_mach3kill && obj_player.image_index < 2) || obj_player.sprite_index == obj_player.spr_mach4)
-			return true;}
-	},
-	mach4: {state: states.mach3, sound: sfx_mach4, sndid: noone, is_3d: true, func: function() {
-		if obj_player.sprite_index != obj_player.spr_mach4
-			return true;}
-	},
-	climbwall: {state: states.climbwall, sound: sfx_mach2, is_3d: true, sndid: noone},
-	groundpound: {state: states.groundpound, sound: sfx_groundpoundloop, is_3d: true, sndid: noone},
-	piledriver: {state: states.piledriver, sound: sfx_groundpoundloop, sndid: noone, is_3d: true, func: function() {
-		if (obj_player.sprite_index == obj_player.spr_piledriverland)
-			return true;}
-	},
-	superjumphold: {state: states.superjump, sound: sfx_superjumphold, sndid: noone, is_3d: true, func: function() {
-		if (obj_player.sprite_index == obj_player.spr_superjump || obj_player.sprite_index == obj_player.spr_Sjumpcancelstart)
-			return true;}, looppoints: [0.64, 1.84]
-	}
-}
-
 visual_size = 1
 secret_exit = false
 secret_cutscene = false

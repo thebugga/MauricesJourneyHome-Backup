@@ -1,13 +1,4 @@
 image_blend = c_white
-
-surfacedropshadow = surface_create(room_width, room_height);
-surface_set_target(surfacedropshadow)
-draw_clear_alpha(c_white,0)
-draw_sprite_ext(sprite_index, image_index, x + 4, y, xscale * visual_size, image_yscale * visual_size, rotation, image_blend, image_alpha)
-surface_reset_target()
-draw_surface_ext(surfacedropshadow,8,4,xscale,image_yscale,0,c_black,0.5)
-surface_free(surfacedropshadow)
-
 if character == p_characters.mandrek && sjumptimer > 0
 {
 	get_input()

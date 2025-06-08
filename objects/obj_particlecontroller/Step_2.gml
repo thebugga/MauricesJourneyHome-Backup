@@ -52,8 +52,11 @@ for (var p = 0; p < array_length(particle_list); p++)
 					array_delete(other.particle_list, p, 1)
 				break;
 			default:
-				if anim_ended()
-					array_delete(other.particle_list, p, 1)
+				if sprite_index != noone && sprite_index != -1
+				{
+					 anim_ended()
+						array_delete(other.particle_list, p, 1)
+				}
 				break;
 		}
 	}

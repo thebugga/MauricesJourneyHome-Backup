@@ -728,6 +728,8 @@
     {"name":"spr_player_secondjump","order":93,"path":"sprites/spr_player_secondjump/spr_player_secondjump.yy",},
     {"name":"spr_player_secondjumploop","order":94,"path":"sprites/spr_player_secondjumploop/spr_player_secondjumploop.yy",},
     {"name":"spr_player_Sjumpcancel","order":95,"path":"sprites/spr_player_Sjumpcancel/spr_player_Sjumpcancel.yy",},
+    {"name":"spr_player_Sjumpcancelland","order":130,"path":"sprites/spr_player_Sjumpcancelland/spr_player_Sjumpcancelland.yy",},
+    {"name":"spr_player_Sjumpcancelslide","order":131,"path":"sprites/spr_player_Sjumpcancelslide/spr_player_Sjumpcancelslide.yy",},
     {"name":"spr_player_Sjumpcancelstart","order":96,"path":"sprites/spr_player_Sjumpcancelstart/spr_player_Sjumpcancelstart.yy",},
     {"name":"spr_player_slap1","order":97,"path":"sprites/spr_player_slap1/spr_player_slap1.yy",},
     {"name":"spr_player_slap2","order":98,"path":"sprites/spr_player_slap2/spr_player_slap2.yy",},

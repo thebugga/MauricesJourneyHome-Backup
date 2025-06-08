@@ -10,18 +10,6 @@ function player_superjump()
 			vsp = 0
 			if (p_move != 0)
 			  xscale = p_move
-			if anim_ended()
-			{
-				state = states.mach3
-				sprite_index = spr_player_Sjumpcancel
-				jumpstop = true
-				vsp = -4
-				flash = 8
-				movespeed = 12
-				image_speed = 0.35
-				with particle_create(x, y, particles.genericpoof, xscale, 1, spr_crazyruneffect)
-					depth = -150
-			}
 		}
 		
 		if sprite_index != spr_player_Sjumpcancelstart
@@ -116,24 +104,9 @@ function player_superjump()
 		
 		if (input_buffers.grab > 0 || key_dash.pressed) && state != states.bump
 		{
-			if character == p_characters.maurice
-			{
-				if (p_move != 0)
-				  xscale = p_move
-				state = states.mach2
-				sprite_index = spr_player_Sjumpcancel
-				jumpstop = true
-				vsp = -4
-				flash = 8
-				movespeed = 10
-				image_speed = 0.35
-			}
-			else if character != p_characters.undoised
-			{
-				input_buffers.grab = 0
-				reset_anim(spr_player_Sjumpcancelstart)
-				event_play_oneshot_3d("event:/sfx/player/superjumpcancel", x, y)
-			}
+			input_buffers.grab = 0
+			reset_anim(spr_player_Sjumpcancelstart)
+			event_play_oneshot_3d("event:/sfx/player/superjumpcancel", x, y)
 		}
 		
 		aftimg_timers.blur.do_it = true
@@ -174,5 +147,17 @@ function player_superjump()
 			fmod_studio_event_instance_set_parameter_by_name_multiplatform(superjumpsnd, "state", 1, 1)
 			create_effect(x, y, spr_superjumpexplosion)
 		}
+	}
+	if anim_ended() && sprite_index == spr_player_Sjumpcancelstart
+	{
+		state = states.tumble
+		sprite_index = spr_player_Sjumpcancel
+		jumpstop = true
+		vsp = -4
+		flash = 8
+		movespeed = 12
+		image_speed = 0.35
+		with particle_create(x, y, particles.genericpoof, xscale, 1, spr_crazyruneffect)
+			depth = -150
 	}
 }

@@ -877,6 +877,8 @@
     {"id":{"name":"spr_player_secondjump","path":"sprites/spr_player_secondjump/spr_player_secondjump.yy",},},
     {"id":{"name":"spr_player_secondjumploop","path":"sprites/spr_player_secondjumploop/spr_player_secondjumploop.yy",},},
     {"id":{"name":"spr_player_Sjumpcancel","path":"sprites/spr_player_Sjumpcancel/spr_player_Sjumpcancel.yy",},},
+    {"id":{"name":"spr_player_Sjumpcancelland","path":"sprites/spr_player_Sjumpcancelland/spr_player_Sjumpcancelland.yy",},},
+    {"id":{"name":"spr_player_Sjumpcancelslide","path":"sprites/spr_player_Sjumpcancelslide/spr_player_Sjumpcancelslide.yy",},},
     {"id":{"name":"spr_player_Sjumpcancelstart","path":"sprites/spr_player_Sjumpcancelstart/spr_player_Sjumpcancelstart.yy",},},
     {"id":{"name":"spr_player_slap1","path":"sprites/spr_player_slap1/spr_player_slap1.yy",},},
     {"id":{"name":"spr_player_slap2","path":"sprites/spr_player_slap2/spr_player_slap2.yy",},},

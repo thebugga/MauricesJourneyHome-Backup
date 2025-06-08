@@ -25,7 +25,12 @@ function player_tumble()
 		reset_anim(obj_player.spr_poundcancel2)
 	if (grounded && sprite_index == spr_poundcancel2)
 		state = states.normal
-		
+	if (sprite_index == spr_player_Sjumpcancel && grounded)
+		sprite_index = spr_player_Sjumpcancelland
+	if (anim_ended() && sprite_index == spr_player_Sjumpcancelland)
+		sprite_index = spr_player_Sjumpcancelslide
+	if (sprite_index == spr_player_Sjumpcancelland && anim_ended())
+		sprite_index = spr_player_Sjumpcancelslide
 	if (!grounded && input_buffers.jump > 0)
 	{
 		input_buffers.jump = 0
@@ -100,7 +105,7 @@ function player_tumble()
 		crouchslipbuffer--
 		
 	//if (!key_down.down && key_dash.down && grounded && state != 1000 && (sprite_index != spr_ball && sprite_index != 'tumbleend) && !canuncrouch.isTouching(solids))
-	if (!key_down.down && key_dash.down && grounded && !scr_solid(x, y - 16) && crouchslipbuffer <= 0)
+	if (!key_down.down && key_dash.down && grounded && !scr_solid(x, y - 16) && crouchslipbuffer <= 0) && sprite_index != spr_player_Sjumpcancel
 	{
 		if (movespeed >= 12)
 			state = states.mach3
@@ -111,7 +116,7 @@ function player_tumble()
 	}
 	
 	//if (!keyDown('down.pressed && !keyDown('shift.pressed && grounded && vsp > 0 && state != 'bump' && (sprite_index != spr_ball && sprite_index != 'tumbleend.pressed && sprite_index != 'breakdance' && !canuncrouch.isTouching(solids))
-	if (!key_down.down && !key_dash.down && grounded && vsp > 0 && state != states.bump && !scr_solid(x, y - 16) && crouchslipbuffer <= 0)
+	if (!key_down.down && !key_dash.down && grounded && vsp > 0 && state != states.bump && !scr_solid(x, y - 16) && crouchslipbuffer <= 0) && sprite_index != spr_player_Sjumpcancel
 	{
 		if (movespeed > 6)
 		{

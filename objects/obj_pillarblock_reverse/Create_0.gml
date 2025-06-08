@@ -1,2 +1,2 @@
-depth = 50
+depth = 30
 facesprite = spr_pillarblock_face_woke

@@ -34,6 +34,13 @@ function enemy_normal()
 	}
 }
 
+function enemy_idle()
+{
+	hsp = 0
+	image_speed = 0.35;
+}
+
+
 function enemy_scared()
 {
 	if (scared_timer <= 0 && grounded)

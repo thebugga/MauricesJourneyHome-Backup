@@ -16,7 +16,7 @@ else
 	draw_sprite_tiled(spr_bgkitty, 0, bg_pos.x, bg_pos.y)
 	
 	gpu_set_blendmode(bm_subtract)
-	draw_sprite_stretched(spr_dialogue_bubble, 2, 0, 0, bubble.w, bubble.h)
+	draw_sprite_stretched(bg_letterbox3, 2, 0, 0, bubble.w, bubble.h)
 	gpu_set_blendmode_cc(bm_normal)
 	surface_reset_target()
 	

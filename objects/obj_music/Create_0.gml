@@ -21,6 +21,9 @@ add_music(mainmenu, "event:/music/title", -4, false, function(argument0, argumen
 }
 )
 add_music(tower_hallway, "event:/music/hub", "event:/music/pillarmusic", false, hub_state)
+add_music(tower_towercomplex, "event:/music/hub", "event:/music/pillarmusic", false, hub_state)
 add_music(tower_2, "event:/music/hub", "event:/music/pillarmusic", false, hub_state)
 add_music(garbage_1, "event:/music/w1/garbage", "event:/music/w1/garbagesecret", false)
+add_music(tower_tutorial1, "event:/music/tutorial", "event:/music/pillarmusic", false)
+
 

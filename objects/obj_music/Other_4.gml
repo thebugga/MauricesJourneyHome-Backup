@@ -11,7 +11,7 @@ if !global.panic.active
 			if mu.continuous && prevmusic != -4
 			{
 				var pos = fmod_studio_event_instance_get_timeline_position(prevmusic.event);
-				pos = music_get_pos_wrap(pos, fmod_studio_event_get_length(mu.event_name));
+				pos = music_get_pos_wrap(pos, fmod_event_get_length(mu.event_name));
 				fmod_studio_event_instance_set_timeline_position(mu.event, pos);
 			}
 			if prevmusic != noone
@@ -41,7 +41,7 @@ if !global.panic.active
 	if music != noone && music.on_room_start != noone
 		music.on_room_start(room, music.event, music.event_secret);
 }
-if _secret
+if secretsound
 {
 	if music != noone && music.event_secret != noone
 	{
@@ -53,7 +53,7 @@ if _secret
 		fmod_studio_event_instance_set_timeline_position(music.event_secret, pos);
 		fmod_studio_event_instance_set_paused(music.event, true);
 	}
-	if global.panic.active
+	if global.panic
 	{
 		trace("Pausing panic music: room_start");
 		savedpanicpos = fmod_studio_event_instance_get_timeline_position(panicmusicID);
@@ -69,7 +69,7 @@ else if secretend
 		fmod_studio_event_instance_set_paused(music.event, false);
 		fmod_studio_event_instance_set_timeline_position(music.event, savedmusicpos);
 	}
-	if global.panic.active
+	if global.panic
 	{
 		fmod_studio_event_instance_set_timeline_position(panicmusicID, savedpanicpos);
 		fmod_studio_event_instance_set_paused(panicmusicID, false);

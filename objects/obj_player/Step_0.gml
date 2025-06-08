@@ -137,6 +137,9 @@ switch (state)
 	case states.wizardcling:
 		player_wizardcling()
 		break;
+	case states.bounce:
+		player_bounce()
+		break;
 }
 
 if (state != states.normal)

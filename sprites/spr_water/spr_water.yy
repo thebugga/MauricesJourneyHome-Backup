@@ -55,8 +55,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"MauriceJourneyHome_GM2",
-    "path":"MauriceJourneyHome_GM2.yyp",
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -3,11 +3,14 @@ if (ds_list_find_index(global.ds_saveroom, id) == -1)
 	particle_create(x, y, particles.bang)
 	sleep(5)
 	event_play_oneshot_3d("event:/sfx/misc/breakmetal", x, y)
-	for (var xx = 0; xx < image_xscale; xx++)
-	{
-		for (var yy = 0; yy < image_yscale; yy++)
-			tile_layer_delete_at(x + (32 * yy), y + (32 * yy))
-	}
 	
+	scr_cutoff();
+	if (is_string(targettiles))
+		scr_destroy_tiles(32, targettiles);
+	else
+		scr_destroy_tile_arr(32, targettiles);
+	scr_destroy_nearby_tiles();
+	ds_list_add(global.ds_saveroom, id)
+	scr_destroy_nearby_tiles();
 	ds_list_add(global.ds_saveroom, id)
 }

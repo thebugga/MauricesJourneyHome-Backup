@@ -153,6 +153,7 @@ function do_secret_fade()
 
 function do_hold_player(_exit)
 {
+	
 	with obj_player
 	{
 		x = other.x
@@ -257,7 +258,7 @@ function set_globals()
 	global.swapmode = false
 	global.coop = false
 	global.scorefont = font_add_sprite_ext(spr_font_collect, "0123456789", true, 0)
-	global.generic_font = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!?.1234567890:", true, 0)
+	global.generic_font = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡¿?.1234567890:ÁÄÃÀÂÉÈÊËÍÎÏÓÖÕÔÚÙÛÜÇ", true, 0)
 	global.creditsfont = font_add_sprite_ext(spr_creditsfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz.:!¡0123456789?'\"ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜáäãàâéèêëíìîïóöõôòúùûüÇç_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнльœ«»+ß", true, 2);
 	global.smallfont = font_add_sprite_ext(spr_smallfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡.:?¿1234567890ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇ+", 1, 0)
     global.tutorialfont = font_add_sprite_ext(spr_tutorialfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz!¡,.:0123456789'?¿-áäãàâæéèêëíìîïóöõôòúùûüÿŸÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇçœß;«»+", 1, 2)
@@ -342,19 +343,111 @@ function draw_reset_color()
 	draw_set_alpha(1)
 }
 
-function tile_layer_delete_at(_x, _y)
+function tile_layer_find(depth, x, y)
 {
-	var layers = layer_get_all()
-	for (var i = 0; i < array_length(layers); i++) 
+	var __depth = depth;
+	var __x = x;
+	var __y = y;
+
+	var __layers = layer_get_all();
+	var __numlayers = array_length_1d(__layers);
+
+	var __i;
+	for(__i = 0; __i < __numlayers; __i++)
 	{
-		var cur_layer = layers[i]
-	    if (string_starts_with(layer_get_name(cur_layer), "Tiles"))
+		if (layer_get_depth(__layers[__i]) != __depth)
+			continue;
+	
+		var __els = layer_get_all_elements(__layers[__i]);
+		var __numels = array_length_1d(__els);
+	
+		var __j;
+		for(__j = 0; __j < __numels; __j++)
 		{
-			var map_id = layer_tilemap_get_id(cur_layer)
-			tilemap_set_at_pixel(map_id, 0, _x, _y)
-		}
+			var __eltype = layer_get_element_type(__els[__j]);
+			if __eltype == layerelementtype_tile
+			{
+				var __tileXscale = layer_tile_get_xscale(__els[__j]);
+				var __tileYscale = layer_tile_get_yscale(__els[__j]);
+			
+				if ((__tileXscale >= 0) && (__tileYscale >= 0))
+				{			
+					var __tileX = layer_tile_get_x(__els[__j]);						
+					if __x < __tileX
+						continue;
+					
+					var __tileY = layer_tile_get_y(__els[__j]);
+					if __y < __tileY
+						continue;
+							
+					var __tileReg = layer_tile_get_region(__els[__j]);			
+					var __tileRight = __tileX + (__tileXscale * __tileReg[2]);
+					if __x >= __tileRight
+						continue;
+					
+				
+					var __tileBottom = __tileY + (__tileYscale * __tileReg[3]);
+					if __y >= __tileBottom
+						continue;
+				
+					return __els[__j];
+				}
+				else
+				{
+					var __tileReg = layer_tile_get_region(__els[__j]);
+					var __minx = layer_tile_get_x(__els[__j]);
+					var __maxx = __minx + (__tileXscale * __tileReg[2]);
+					if __minx > __maxx
+					{
+						var __temp = __minx;
+						__minx = __maxx;
+						__maxx = __temp;
+					}
+				
+					if __x < __minx
+						continue;
+					
+					if __x >= __maxx
+						continue;
+					
+					var __miny = layer_tile_get_y(__els[__j]);
+					var __maxy = __miny + (__tileYscale * __tileReg[3]);
+					if __miny > __maxy
+					{
+						var __temp = __miny;
+						__miny = __maxy;
+						__maxy = __temp;
+					}
+				
+					if __y < __miny
+						continue;
+					
+					if __y >= __maxy
+						continue;
+					
+					return __els[__j];
+				
+				}
+			}
+		}	
+	}
+
+	return -1;
+}
+
+function tile_layer_delete_at(depth, x, y)
+{
+	var __depth = depth;
+	var __x = x;
+	var __y = y;
+
+	var __tile_el = tile_layer_find(__depth, __x, __y);
+	if __tile_el != -1
+	{
+		layer_tile_destroy(__tile_el);			
 	}
 }
+
 
 function create_follower(_x, _y, spr_idle = noone, spr_move = noone, spr_panic = noone, spr_taunt = noone, spr_intro = noone)
 {

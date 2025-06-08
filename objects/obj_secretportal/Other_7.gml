@@ -1,3 +1,4 @@
+
 if ((sprite_index == spr_secretportal_enter || sprite_index == spr_secretportal_spawnclose) && image_speed != 0)
 {
 	if ds_list_find_index(global.ds_saveroom, id) == -1
@@ -16,7 +17,6 @@ if sprite_index == spr_secretportal_spawn
 {
 	alarm[0] = 120
 	reset_anim(spr_secretportal_spawnidle)
-	event_play_oneshot_3d("event:/sfx/misc/secretexit", x, y)
 	with obj_player
 	{
 		secret_exit = false

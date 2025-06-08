@@ -32,6 +32,7 @@ enum states
 	wizardcling,
 	backtohub,
 	noclip,
+	bounce,
 	
 	//enemy states
 	hit,

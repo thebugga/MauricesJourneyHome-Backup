@@ -424,6 +424,7 @@
     {"id":{"name":"scr_retro_pal_swapper","path":"scripts/scr_retro_pal_swapper/scr_retro_pal_swapper.yy",},},
     {"id":{"name":"scr_save_util","path":"scripts/scr_save_util/scr_save_util.yy",},},
     {"id":{"name":"scr_shadows","path":"scripts/scr_shadows/scr_shadows.yy",},},
+    {"id":{"name":"set_globals","path":"scripts/set_globals/set_globals.yy",},},
     {"id":{"name":"shell_commands","path":"scripts/shell_commands/shell_commands.yy",},},
     {"id":{"name":"sound_util","path":"scripts/sound_util/sound_util.yy",},},
     {"id":{"name":"tv_util","path":"scripts/tv_util/tv_util.yy",},},

@@ -76,8 +76,8 @@ if !stopper
 			}
 			instance_deactivate_object(obj_player)
 			
-			global.coop = p2_connect && !multimode
-			global.swapmode = p2_connect && multimode
+			global.CoopGame = p2_connect && !multimode
+			global.SwapMode = p2_connect && multimode
 			
 			event_play_oneshot("event:/sfx/misc/collecttoppin")
 			alarm[0] = 100

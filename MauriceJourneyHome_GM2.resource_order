@@ -299,6 +299,7 @@
     {"name":"scr_retro_pal_swapper_utilities","order":1,"path":"scripts/scr_retro_pal_swapper_utilities/scr_retro_pal_swapper_utilities.yy",},
     {"name":"scr_save_util","order":21,"path":"scripts/scr_save_util/scr_save_util.yy",},
     {"name":"scr_shadows","order":20,"path":"scripts/scr_shadows/scr_shadows.yy",},
+    {"name":"set_globals","order":22,"path":"scripts/set_globals/set_globals.yy",},
     {"name":"shell_commands","order":11,"path":"scripts/shell_commands/shell_commands.yy",},
     {"name":"sound_util","order":10,"path":"scripts/sound_util/sound_util.yy",},
     {"name":"tv_util","order":9,"path":"scripts/tv_util/tv_util.yy",},

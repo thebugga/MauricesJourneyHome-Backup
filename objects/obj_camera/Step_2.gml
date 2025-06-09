@@ -1,14 +1,14 @@
-if (obj_player.secret_exit)
+if (target.secret_exit)
 	exit;
 
 campos = {
-	x: obj_player.x - (screen_w / 2),
-	y: obj_player.y - (screen_h / 2) - 20,
+	x: target.x - (screen_w / 2),
+	y: target.y - (screen_h / 2) - 20,
 }
 
-if obj_player.state == states.backtohub
+if target.state == states.backtohub
 {
-	campos.y = obj_player.ystart - (screen_h / 2) - 20
+	campos.y = target.ystart - (screen_h / 2) - 20
 }
 
 campos.x += cam_charge

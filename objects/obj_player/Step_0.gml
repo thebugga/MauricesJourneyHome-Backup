@@ -1,3 +1,11 @@
+if player > 0 && global.multiplayer == multiplayer_mode.none
+{
+	state = states.actor
+	x = -100
+	y = -100
+	exit
+}
+
 if !obj_shell.isOpen
 	get_input(player)
 
@@ -177,7 +185,7 @@ if room != rm_timesup
 	if character != p_characters.mandrek
 	{
 		grav = 0.5
-		if ((state == states.mach2 || state == states.mach3 || state == states.tumble) && character == p_characters.maurice) || (state == states.wallspin && character == p_characters.undoised) && key_down.down && !grounded
+		if (((state == states.mach2 || state == states.mach3 || state == states.tumble) && character == p_characters.maurice) || (state == states.wallspin && character == p_characters.undoised)) && key_down.down && !grounded
 			grav = 2
 		if (state == states.ladder || state == states.wizardcling || (state == states.superjump && sjumper && sjumptimer > 0))
 			grav = 0

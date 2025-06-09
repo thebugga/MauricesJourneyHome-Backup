@@ -1,8 +1,6 @@
 image_speed = 0.35
-selected = 0
-ready = false
-selected2 = 0
-ready2 = false
+selected = [0, 0]
+ready = [0, 0]
 stopper = false
 character[0] = ["MAURICE", p_characters.maurice, spr_player_exitdoor, spr_player_timesup]
 character[1] = ["PIERRE", p_characters.pierre, spr_pierre_idle, spr_pierre_escapepoint]
@@ -13,8 +11,8 @@ p1_index = 0
 p2_sprite = spr_playerD_idle
 p2_index = 0
 p1_boxheight = 440
-p2_connect = global.CoopGame || global.SwapMode
-multimode = global.SwapMode
+p2_connect = global.multiplayer != multiplayer_mode.none
+multimode = global.multiplayer == multiplayer_mode.swapmode
 multialpha = 0
 finger1_index = 0
 finger2_index = 0

@@ -1,10 +1,10 @@
-get_input()
+get_input(other.player)
 
 if (other.bbox_bottom <= bbox_bottom + 1 && other.bbox_bottom >= bbox_bottom - 1 && key_up.down && other.state != states.actor)
 {
 	with (other)
 	{
-		reset_anim(obj_player.spr_enterdoor)
+		reset_anim(spr_enterdoor)
 		state = states.actor
 		hsp = 0
 		movespeed = 0

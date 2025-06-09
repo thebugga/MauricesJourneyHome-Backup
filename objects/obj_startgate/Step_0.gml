@@ -22,11 +22,13 @@ if obj_player.visible && save_exists
 	}
 }
 
-if (place_meeting(x, y, obj_player) && obj_player.state != states.actor && key_up.down && obj_player.grounded)
+var flick = false
+
+with instance_place(x, y, obj_player)
 {
-	stop_music()
-	with obj_player
+	if state != states.actor && key_up.down && grounded
 	{
+		stop_music()
 		reset_anim(obj_player.spr_startgate)
 		state = states.actor
 		hsp = 0
@@ -45,11 +47,6 @@ if (place_meeting(x, y, obj_player) && obj_player.state != states.actor && key_u
 			name: other.level_name
 		}
 	}
-}
-
-var flick = false
-with instance_place(x, y, obj_player)
-{
 	if (sprite_index == spr_startgate && !obj_fade.fade && image_speed > 0 && anim_ended())
 	{
 		flick = true

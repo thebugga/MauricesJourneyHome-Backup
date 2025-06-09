@@ -1,6 +1,10 @@
 mag -= mag_decel
 
-var target = obj_player
+with obj_player
+{
+	if player == other.spotlight
+		other.target = id
+}
 
 if instance_exists(obj_player)
 {

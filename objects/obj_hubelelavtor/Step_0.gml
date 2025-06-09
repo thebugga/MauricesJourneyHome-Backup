@@ -1,11 +1,7 @@
 switch state
 {
 	case states.actor:
-			if playerid.key_up.pressed
-				selected++
-			if playerid.key_down.pressed
-				selected--
-			selected = clamp(selected, 0, (array_length(hub_array) - 1))
+			selected = clamp(selected + (playerid.key_down.pressed - playerid.key_up.pressed), 0, (array_length(hub_array) - 1))
 			if playerid.key_jump.pressed
 			{
 				if (hub_array[selected][0] != room)

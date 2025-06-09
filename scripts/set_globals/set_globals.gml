@@ -16,8 +16,14 @@ function set_globals()
 	
 	pal_swap_init_system(shd_pal_swapper)
 	
-	global.CoopGame = false;
-	global.SwapMode = false;
+	enum multiplayer_mode
+	{
+		none,
+		coop,
+		swapmode
+	}
+	
+	global.multiplayer = multiplayer_mode.none
 	
 	global.fartcounter = 0;
 	global.doorindex = 0;
@@ -69,33 +75,36 @@ function set_globals()
 	}
 	
 	
-	global.keybinds = {}
+	global.keybinds = [{}, {}]
 	
 	var bind_arr = [
-		["left",		vk_left],
-		["right",		vk_right],
-		["up",			vk_up],
-		["down",		vk_down],
-		["jump",		ord("Z")],
-		["grab",		ord("X")],
-		["dash",		vk_shift],
-		["taunt",		ord("C")],
-		["ui_left",		vk_left],
-		["ui_right",	vk_right],
-		["ui_up",		vk_up],
-		["ui_down",		vk_down],
-		["ui_accept",	ord("Z")],
-		["ui_deny",		vk_escape]
+		["left",		[vk_left, ord("A")]],
+		["right",		[vk_right, ord("D")]],
+		["up",			[vk_up, ord("W")]],
+		["down",		[vk_down, ord("S")]],
+		["jump",		[ord("Z"), ord("L")]],
+		["grab",		[ord("X"), ord("K")]],
+		["dash",		[vk_shift, ord("J")]],
+		["taunt",		[ord("C"), ord("O")]],
+		["ui_left",		[vk_left, ord("A")]],
+		["ui_right",	[vk_right, ord("D")]],
+		["ui_up",		[vk_up, ord("W")]],
+		["ui_down",		[vk_down, ord("S")]],
+		["ui_accept",	[ord("Z"), ord("L")]],
+		["ui_deny",		[ord("X"), ord("K")]]
 	]
 	
 	ini_open("globalsave.ini")
 	
-	for (var i = 0; i < array_length(bind_arr); i++) 
+	for (var i = 0; i < array_length(global.keybinds); i++) 
 	{
-		var bindname = bind_arr[i][0]
-		var defaultbind = bind_arr[i][1]
-		var key = ini_read_real("keybinds", bindname, defaultbind)
-	    struct_set(global.keybinds, bindname, key)
+		for (var k = 0; k < array_length(bind_arr); k++) 
+		{
+			var bindname = bind_arr[k][0]
+			var defaultbind = bind_arr[k][1][i]
+			var key = ini_read_real("keybinds", bindname, defaultbind)
+		    struct_set(global.keybinds[i], bindname, key)
+		}
 	}
 	
 	ini_close()

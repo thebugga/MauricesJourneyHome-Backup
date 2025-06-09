@@ -8,8 +8,8 @@ if up
 	
 	pattern_draw(walk_sprite, walk_index, 480, 270, clothes_arr[h_select[0]].pattern, 4, 4)
 
-	pal_swap_set(obj_player.spr_palette, clothes_arr[h_select[0]].pal_ix, false)
-	if walk_sprite == obj_player.spr_taunt
+	pal_swap_set(playerid.spr_palette, clothes_arr[h_select[0]].pal_ix, false)
+	if walk_sprite == playerid.spr_taunt
 		draw_sprite_ext(spr_taunteffect, taunt_index, 480, 270, 3, 3, 0, c_white, 1)
 		draw_sprite_ext(walk_sprite, walk_index, 480, 270, 4, 4, 0, c_white, 1)
 	pal_swap_reset()

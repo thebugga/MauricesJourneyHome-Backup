@@ -1,15 +1,16 @@
-with (obj_player)
+with (other)
 {
-	if (state == states.normal && obj_player.grounded && obj_player.key_up.pressed)
+	if (bbox_bottom <= other.bbox_bottom + 1 && bbox_bottom >= other.bbox_bottom - 1 && key_up.down && state != states.actor)
 	{
-		reset_anim(obj_player.spr_enterdoor)
+		reset_anim(spr_enterdoor)
 		state = states.actor
 		hsp = 0
 		movespeed = 0
 		image_speed = 0.35
+		prev.room = room
 		other.state = states.actor
-		other.playerid = obj_player.id
+		other.playerid = id
 	}
 }
-if (obj_player.sprite_index = obj_player.spr_enterdoor)
-	obj_player.x = approach(obj_player.x, x + sprite_width / 2, 2)
+if (other.sprite_index = other.spr_enterdoor)
+	other.x = approach(other.x, x + sprite_width / 2, 2)

@@ -127,6 +127,7 @@ supertauntcount = 0
 supertauntshow = false
 supertauntbuffer = 0
 myemitter = noone
+multiholder = -4
 
 wizardclingtimer = 300
 wizardthrowangle = 90

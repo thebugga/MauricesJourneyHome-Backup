@@ -290,6 +290,7 @@
     {"name":"player_wizardcling","order":29,"path":"scripts/player_wizardcling/player_wizardcling.yy",},
     {"name":"player_wizarddash","order":30,"path":"scripts/player_wizarddash/player_wizarddash.yy",},
     {"name":"player_wizardgrapple","order":28,"path":"scripts/player_wizardgrapple/player_wizardgrapple.yy",},
+    {"name":"playerN_wallspin","order":33,"path":"scripts/playerN_wallspin/playerN_wallspin.yy",},
     {"name":"scr_block_utils","order":19,"path":"scripts/scr_block_utils/scr_block_utils.yy",},
     {"name":"scr_characters_util","order":15,"path":"scripts/scr_characters_util/scr_characters_util.yy",},
     {"name":"scr_cutscene_util","order":17,"path":"scripts/scr_cutscene_util/scr_cutscene_util.yy",},

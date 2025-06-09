@@ -150,7 +150,7 @@ function player_superjump()
 	}
 	if anim_ended() && sprite_index == spr_player_Sjumpcancelstart
 	{
-		state = states.tumble
+		state = states.mach3
 		sprite_index = spr_player_Sjumpcancel
 		jumpstop = true
 		vsp = -4

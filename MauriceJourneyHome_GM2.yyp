@@ -414,6 +414,7 @@
     {"id":{"name":"player_wizardcling","path":"scripts/player_wizardcling/player_wizardcling.yy",},},
     {"id":{"name":"player_wizarddash","path":"scripts/player_wizarddash/player_wizarddash.yy",},},
     {"id":{"name":"player_wizardgrapple","path":"scripts/player_wizardgrapple/player_wizardgrapple.yy",},},
+    {"id":{"name":"playerN_wallspin","path":"scripts/playerN_wallspin/playerN_wallspin.yy",},},
     {"id":{"name":"scr_block_utils","path":"scripts/scr_block_utils/scr_block_utils.yy",},},
     {"id":{"name":"scr_characters_util","path":"scripts/scr_characters_util/scr_characters_util.yy",},},
     {"id":{"name":"scr_cutscene_util","path":"scripts/scr_cutscene_util/scr_cutscene_util.yy",},},

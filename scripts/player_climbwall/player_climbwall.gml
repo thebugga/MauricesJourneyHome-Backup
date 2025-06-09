@@ -17,20 +17,28 @@ function player_climbwall()
 	image_speed = 0.5
 	if !scr_hitwall(x + xscale, y)
 	{
-		vsp = 0
-		if (wallspeed < 6)
-			wallspeed = 6
-		if (wallspeed >= 6 && wallspeed < 12)
+		if character == p_characters.undoised
 		{
-			state = states.mach2
-			movespeed = wallspeed
+			state = states.wallspin
+			sprite_index = spr_player_walljumpfall
 		}
-		else if (wallspeed >= 12)
+		else
 		{
-			flash = 8
-			state = states.mach3
-			sprite_index = spr_mach3
-			movespeed = wallspeed
+			vsp = 0
+			if (wallspeed < 6)
+				wallspeed = 6
+			if (wallspeed >= 6 && wallspeed < 12)
+			{
+				state = states.mach2
+				movespeed = wallspeed
+			}
+			else if (wallspeed >= 12)
+			{
+				flash = 8
+				state = states.mach3
+				sprite_index = spr_mach3
+				movespeed = wallspeed
+			}
 		}
 		
 		x += xscale

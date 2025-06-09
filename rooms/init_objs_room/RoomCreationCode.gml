@@ -6,6 +6,7 @@ enum states
 	mach3,
 	tumble,
 	climbwall,
+	wallspin,
 	slide,
 	bump,
 	groundpound,

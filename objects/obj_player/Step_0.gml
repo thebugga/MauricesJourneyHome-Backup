@@ -65,6 +65,9 @@ switch (state)
 	case states.climbwall:
 		player_climbwall()
 		break;
+	case states.wallspin:
+		playerN_wallspin()
+		break;
 	case states.bump:
 		player_bump()
 		break;
@@ -174,7 +177,7 @@ if room != rm_timesup
 	if character != p_characters.mandrek
 	{
 		grav = 0.5
-		if (state == states.mach2 || state == states.mach3 || state == states.tumble) && key_down.down && !grounded && character == p_characters.maurice
+		if ((state == states.mach2 || state == states.mach3 || state == states.tumble) && character == p_characters.maurice) || (state == states.wallspin && character == p_characters.undoised) && key_down.down && !grounded
 			grav = 2
 		if (state == states.ladder || state == states.wizardcling || (state == states.superjump && sjumper && sjumptimer > 0))
 			grav = 0

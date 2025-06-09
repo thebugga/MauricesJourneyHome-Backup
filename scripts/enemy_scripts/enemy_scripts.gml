@@ -168,22 +168,42 @@ function do_enemy_generics()
 		{
 			if (state == states.grab && other.sprite_index != other.sprs.dead)
 			{
-				other.follow_player = true
-				other.sprite_index = other.sprs.stun
-				reset_anim(spr_player_holdrise)
-				state = states.hold
-				if (abs(hsp) > 10)
+				if character == p_characters.undoised
 				{
-					state = states.swingding
-					sprite_index = spr_player_swingding
-					if !grounded
-						vsp = -5
+					var str = variable_instance_get(self, string_concat("spr_finishingblow_", string(irandom_range(1, 5))))
+					reset_anim(asset_get_index(str))
+					if (key_up.down)
+						reset_anim(spr_finishingblowup)
+					image_index = 3
+					state = states.punchenemy
+					other.state = states.hit
+					other.hsp = xscale * 20
+					other.vsp = 0
+					if sprite_index == spr_finishingblowup
+					{
+						other.hsp = 0
+						other.vsp = -20
+					}
 				}
-				if (key_up.down)
+				else
 				{
-					state = states.piledriver
-					sprite_index = spr_player_piledriver
-					vsp = -18
+					other.follow_player = true
+					other.sprite_index = other.sprs.stun
+					reset_anim(spr_player_holdrise)
+					state = states.hold
+					if (abs(hsp) > 10)
+					{
+						state = states.swingding
+						sprite_index = spr_player_swingding
+						if !grounded
+							vsp = -5
+					}
+					if (key_up.down)
+					{
+						state = states.piledriver
+						sprite_index = spr_player_piledriver
+						vsp = -18
+					}
 				}
 			}
 			if (collision_line(bbox_left - 16, y + 20, bbox_right + 16, y + 20, other, false, true) && vsp > 2 && (state == states.jump || state == states.hold))

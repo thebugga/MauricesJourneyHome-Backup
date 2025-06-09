@@ -68,7 +68,7 @@ function do_taunt()
 		
 		if !(key_up.down && supertauntshow)
 		{
-			sprite_index = spr_player_taunt
+			sprite_index = spr_taunt
 			image_index = random_range(0, image_number)
 			taunttimer = 20
 			event_play_oneshot_3d("event:/sfx/player/taunt", x, y)

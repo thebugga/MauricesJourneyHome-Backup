@@ -387,7 +387,7 @@ function scr_character_spr()
 		spr_fallface = spr_player_fallface
 		spr_fallfar = spr_player_fallfar
 		spr_fallfarland = spr_player_fallfarland
-		spr_taunt = spr_player_taunt
+		spr_taunt = spr_playerD_taunt
 	    spr_breakdance = [spr_player_breakdance]
 		spr_dashpadmach = spr_player_dashpad
 		spr_rockethitwall = spr_player_rockethitwall

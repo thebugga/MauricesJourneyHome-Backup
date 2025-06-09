@@ -364,6 +364,7 @@
     {"id":{"name":"tower_tutorial2","path":"rooms/tower_tutorial2/tower_tutorial2.yy",},},
     {"id":{"name":"tower_tutorial3","path":"rooms/tower_tutorial3/tower_tutorial3.yy",},},
     {"id":{"name":"treasure_room","path":"rooms/treasure_room/treasure_room.yy",},},
+    {"id":{"name":"vaporwave_1","path":"rooms/vaporwave_1/vaporwave_1.yy",},},
     {"id":{"name":"wizard_1","path":"rooms/wizard_1/wizard_1.yy",},},
     {"id":{"name":"wizard_2","path":"rooms/wizard_2/wizard_2.yy",},},
     {"id":{"name":"afterimage_util","path":"scripts/afterimage_util/afterimage_util.yy",},},
@@ -928,6 +929,7 @@
     {"id":{"name":"spr_playerD_escapepoint","path":"sprites/spr_playerD_escapepoint/spr_playerD_escapepoint.yy",},},
     {"id":{"name":"spr_playerD_idle","path":"sprites/spr_playerD_idle/spr_playerD_idle.yy",},},
     {"id":{"name":"spr_playerD_mach3","path":"sprites/spr_playerD_mach3/spr_playerD_mach3.yy",},},
+    {"id":{"name":"spr_playerD_taunt","path":"sprites/spr_playerD_taunt/spr_playerD_taunt.yy",},},
     {"id":{"name":"spr_playerN_idle","path":"sprites/spr_playerN_idle/spr_playerN_idle.yy",},},
     {"id":{"name":"spr_plug","path":"sprites/spr_plug/spr_plug.yy",},},
     {"id":{"name":"spr_priest_dead","path":"sprites/spr_priest_dead/spr_priest_dead.yy",},},
@@ -1154,6 +1156,7 @@
     {"roomId":{"name":"garbage_secret3","path":"rooms/garbage_secret3/garbage_secret3.yy",},},
     {"roomId":{"name":"tower_tutorial1","path":"rooms/tower_tutorial1/tower_tutorial1.yy",},},
     {"roomId":{"name":"tower_tutorial3","path":"rooms/tower_tutorial3/tower_tutorial3.yy",},},
+    {"roomId":{"name":"vaporwave_1","path":"rooms/vaporwave_1/vaporwave_1.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

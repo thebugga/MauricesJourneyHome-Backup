@@ -16,14 +16,7 @@ function set_globals()
 	
 	pal_swap_init_system(shd_pal_swapper)
 	
-	enum multiplayer_mode
-	{
-		none,
-		coop,
-		swapmode
-	}
-	
-	global.multiplayer = multiplayer_mode.none
+	global.swapmode = false
 	
 	global.fartcounter = 0;
 	global.doorindex = 0;
@@ -74,37 +67,44 @@ function set_globals()
 		tauntcount: 0
 	}
 	
+	global.controlings = [-3, -4, -4, -4, -4, -4, -4, -4]
+	global.P1s_anytrol = -1
 	
 	global.keybinds = [{}, {}]
+	global.padbinds = {}
 	
 	var bind_arr = [
-		["left",		[vk_left, ord("A")]],
-		["right",		[vk_right, ord("D")]],
-		["up",			[vk_up, ord("W")]],
-		["down",		[vk_down, ord("S")]],
-		["jump",		[ord("Z"), ord("L")]],
-		["grab",		[ord("X"), ord("K")]],
-		["dash",		[vk_shift, ord("J")]],
-		["taunt",		[ord("C"), ord("O")]],
-		["ui_left",		[vk_left, ord("A")]],
-		["ui_right",	[vk_right, ord("D")]],
-		["ui_up",		[vk_up, ord("W")]],
-		["ui_down",		[vk_down, ord("S")]],
-		["ui_accept",	[ord("Z"), ord("L")]],
-		["ui_deny",		[ord("X"), ord("K")]]
+		["left",		[vk_left, ord("A")], gp_padl],
+		["right",		[vk_right, ord("D")], gp_padr],
+		["up",			[vk_up, ord("W")], gp_padu],
+		["down",		[vk_down, ord("S")], gp_padd],
+		["jump",		[ord("Z"), ord("L")], gp_face1],
+		["grab",		[ord("X"), ord("K")], gp_face2],
+		["dash",		[vk_shift, ord("J")], gp_shoulderrb],
+		["taunt",		[ord("C"), ord("O")], gp_face3],
+		["ui_left",		[vk_left, ord("A")], gp_padl],
+		["ui_right",	[vk_right, ord("D")], gp_padr],
+		["ui_up",		[vk_up, ord("W")], gp_padu],
+		["ui_down",		[vk_down, ord("S")], gp_padd],
+		["ui_accept",	[ord("Z"), ord("L")], gp_face1],
+		["ui_deny",		[ord("X"), ord("K")], gp_face2]
 	]
 	
 	ini_open("globalsave.ini")
 	
-	for (var i = 0; i < array_length(global.keybinds); i++) 
+	for (var k = 0; k < array_length(bind_arr); k++) 
 	{
-		for (var k = 0; k < array_length(bind_arr); k++) 
+		for (var i = 0; i < array_length(global.keybinds); i++) 
 		{
 			var bindname = bind_arr[k][0]
 			var defaultbind = bind_arr[k][1][i]
-			var key = ini_read_real("keybinds", bindname, defaultbind)
+			var key = ini_read_real($"keybinds{i + 1}", bindname, defaultbind)
 		    struct_set(global.keybinds[i], bindname, key)
 		}
+		var bindname = bind_arr[k][0]
+		var defaultbind = bind_arr[k][2]
+		var key = ini_read_real("padbinds", bindname, defaultbind)
+		struct_set(global.padbinds, bindname, key)
 	}
 	
 	ini_close()

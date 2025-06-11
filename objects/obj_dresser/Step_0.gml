@@ -61,9 +61,9 @@ if up
 			}
 			
 			ini_open($"saves/saveData{global.savefile}.ini")
-			ini_write_real("Clothes", "palette_index", pal_select)
-			ini_write_real("Clothes", "pattern_sprite", pattern_spr)
-			ini_write_real("Clothes", "hat", hat_spr)
+			ini_write_real($"Clothes{character}", "palette_index", pal_select)
+			ini_write_real($"Clothes{character}", "pattern_sprite", pattern_spr)
+			ini_write_real($"Clothes{character}", "hat", hat_spr)
 			ini_close()
 		}
 		

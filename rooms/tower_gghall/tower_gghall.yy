@@ -14,6 +14,7 @@
     {"name":"inst_6921557C_1_2","path":"rooms/tower_gghall/tower_gghall.yy",},
     {"name":"inst_641D7F0_1_2","path":"rooms/tower_gghall/tower_gghall.yy",},
     {"name":"inst_7894715C","path":"rooms/tower_gghall/tower_gghall.yy",},
+    {"name":"inst_4D1F57B7","path":"rooms/tower_gghall/tower_gghall.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -38,6 +39,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"propertyId":{"name":"t_room","path":"objects/obj_startgate/obj_startgate.yy",},"resource":{"name":"garbage_1","path":"rooms/garbage_1/garbage_1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"garbage_1",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"propertyId":{"name":"level_name_ext","path":"objects/obj_startgate/obj_startgate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Garbage Graveyard\"",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1280.0,"y":864.0,},
+        {"$GMRInstance":"v2","%Name":"inst_4D1F57B7","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4D1F57B7","objectId":{"name":"obj_hubtreasure","path":"objects/obj_hubtreasure/obj_hubtreasure.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":736.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_7E8839EA_1_2","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_7E8839EA_1_2","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_pumpkin","path":"sprites/spr_pumpkin/spr_pumpkin.yy",},"x":1088.0,"y":800.0,},

@@ -1,5 +1,7 @@
-if (target.secret_exit)
-	exit;
+if !instance_exists(target)
+	exit
+if target.secret_exit
+	exit
 
 campos = {
 	x: target.x - (screen_w / 2),

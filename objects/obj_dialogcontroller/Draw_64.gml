@@ -1,62 +1,62 @@
 draw_clear_alpha(c_black, 0.5)
-var ds_h = 0
 draw_set_font(global.tutorialfont)
+textheight = lerp(textheight, string_height(scr_separate_text(dialog[currentdialog][0], screen_w - (rpadding * 2))), 0.1)
 var x1 = rpadding
-var y1 = 540 - (((dialogheight + rpadding) + (padding * 2)) + ds_h)
+var y1 = screen_h - (((textheight + rpadding) + (padding * 2)))
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
-for (var i = 0; i < 3; i++)
+for (var xx = 0; xx < 2; xx++)
 {
-	var dial = dialogsidel[i]
-	if (dial != -4 && dial != dialogcharacter)
+	for (var yy = 3; yy > -1; yy--)
 	{
-		if dial < array_length(dialogpalette)
+		var dia = dialogchars[xx][yy]
+		if is_struct(dia)
 		{
-			pattern_draw(talk_sprites[dial][0][0], 0, (rpadding + (75 * i)), y1,pat_pizza,1,1,0,c_gray,1)
-			pal_swap_set(dialogpalette[dial][0], dialogpalette[dial][1], false)
-			draw_sprite_ext(talk_sprites[dial][0][0], 0, (rpadding + (75 * i)), y1,1,1,0,c_gray,1)
-			pal_swap_reset()
+			var thetalker = dialog[currentdialog][1] == dia.character
+			var isspeaking = false
+			var babbler = talk_sprites[dia.character][dia.expression]
+			
+			if thetalker && displaytext != dialog[currentdialog][0] && babbler.talk != -4
+			{
+				isspeaking = true
+				dia.expression = dialog[currentdialog][2]
+			}
+			
+			if dia.blinktime > 0
+				dia.blinktime--
+			else
+			{
+				if displaytext != dialog[currentdialog][0] && babbler.talkblink != -4
+					dia.sprite = babbler.talkblink
+				else if babbler.idleblink != -4
+					dia.sprite = babbler.idleblink
+				dia.index = 0
+				dia.blinktime = irandom_range(20, 1000)
+			}
+			
+			if dia.sprite != babbler.idleblink && dia.sprite != babbler.talkblink
+				dia.sprite = isspeaking ? babbler.talk : babbler.idle
+			
+			dia.index += 0.35
+			if floor(dia.index) > (sprite_get_number(dia.sprite) - 1)
+			{
+				if dia.sprite == babbler.idleblink || dia.sprite == babbler.talkblink
+					dia.sprite = babbler.idle
+				dia.index = 0
+			}
+			
+			draw_sprite_ext(dia.sprite, dia.index, xx ? (screen_w - rpadding - (75 * yy)) : (rpadding + (75 * yy)) + (irandom_range(-effect_shake, effect_shake) * thetalker), y1 + (irandom_range(-effect_shake, effect_shake) * thetalker), xx ? -1 : 1, 1, 0, thetalker ? c_white : c_gray, 1)
 		}
-		else
-		draw_sprite_ext(talk_sprites[dial][0][0],0, (rpadding + (75 * i)), y1,1,1,0,c_gray,1)
-	}
-	var diar = dialogsider[i]
-	if (diar != -4 && diar != dialogcharacter)
-	{
-		if diar < array_length(dialogpalette)
-		{
-			pattern_draw(talk_sprites[diar][0][0], 0, ((960 - rpadding) - (75 * i)), y1,pat_pizza,-1,1,0,c_gray,1)
-			pal_swap_set(dialogpalette[dial][0], dialogpalette[dial][1], false)
-			draw_sprite_ext(talk_sprites[diar][0][0], 0, ((960 - rpadding) - (75 * i)), y1,-1,1,0,c_gray,1)
-			pal_swap_reset()
-		}
-		else
-		draw_sprite_ext(talk_sprites[diar][0][0],0, ((960 - rpadding) - (75 * i)), y1,-1,1,0,c_gray,1)
 	}
 }
-var sidescale = 1
-if dialogcharx > 480
-sidescale = -1
-if (dialogsprite != -4)
-{
-    if dialogcharacter < array_length(dialogpalette)
-	{
-		pattern_draw(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),pat_pizza,sidescale,1,0,c_white,1)
-		pal_swap_set(dialogpalette[dialogcharacter][0], dialogpalette[dialogcharacter][1], false)
-		draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),sidescale,1,0,c_white,1)
-		pal_swap_reset()
-	}
-	else
-		draw_sprite_ext(dialogsprite, dialogindex, (dialogcharx + irandom_range(-effect_shake, effect_shake)), (y1 + irandom_range(-effect_shake, effect_shake)),sidescale,1,0,c_white,1)
-}
-var bw = ((960 - rpadding) - x1)
-var bh = ((540 - rpadding) - y1)
-draw_sprite(spr_dialogue_rope, 0, (rpadding * 2), 540 - 6)
-draw_sprite(spr_dialogue_rope, 0, (960 - (rpadding * 2)), 540 - 6)
+var bw = ((screen_w - rpadding) - x1)
+var bh = ((screen_h - rpadding) - y1)
+draw_sprite(spr_dialogue_rope, 0, (rpadding * 2), screen_h - 6)
+draw_sprite(spr_dialogue_rope, 0, (screen_w - (rpadding * 2)), screen_h - 6)
 if (!surface_exists(surf))
-    surf = surface_create(960, 540)
+    surf = surface_create(screen_w, screen_h)
 if (!surface_exists(clip))
-    clip = surface_create(960, 540)
+    clip = surface_create(screen_w, screen_h)
 gpu_set_blendmode(bm_normal) 
 surface_set_target(clip)
 draw_set_alpha(1)
@@ -74,5 +74,5 @@ surface_reset_target()
 draw_set_alpha(1)
 draw_surface(surf, 0, 0)
 draw_sprite_ext(spr_dialogue_bubble, 1, x1, y1- 8, (bw / sprite_get_width(spr_dialogue_bubble)), (bh / sprite_get_height(spr_dialogue_bubble)), 0, c_white, 1)
-draw_text_color((x1 + padding), (y1 + ds_h), displaytext, c_black, c_black, c_black, c_black, 1)
-//display_set_gui_size(960, 540) 
+draw_set_color(c_black)
+draw_special_text((x1 + padding), y1, scr_separate_text(displaytext, screen_w - (rpadding * 2)))

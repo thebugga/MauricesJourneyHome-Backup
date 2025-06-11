@@ -1,12 +1,16 @@
 if other.state != states.hurt
 {
-	if state == states.slap
+	if state == states.nicklebag
 	{
+		other.sprite_index = other.spr_hurt
 		other.state = states.hurt
 		other.hsp = xscale * 8
 		other.vsp = -12
-		with obj_camera
-			spotlight = other.player
+		if obj_camera.spotlight == other.player
+		{
+			with obj_camera
+				spotlight = other.player
+		}
 	}
 	if state == states.grab
 	{
@@ -18,6 +22,7 @@ if other.state != states.hurt
 				reset_anim(spr_finishingblowup)
 			image_index = 3
 			state = states.punchenemy
+			other.sprite_index = other.spr_hurt
 			other.state = states.hurt
 			other.hsp = xscale * 20
 			other.vsp = -8
@@ -26,8 +31,11 @@ if other.state != states.hurt
 				other.hsp = xscale * 2
 				other.vsp = -20
 			}
-			with obj_camera
-				spotlight = other.player
+			if obj_camera.spotlight == other.player
+			{
+				with obj_camera
+					spotlight = other.player
+			}
 		}
 		else
 		{

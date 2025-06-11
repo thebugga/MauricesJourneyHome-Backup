@@ -1,11 +1,3 @@
-if player > 0 && global.multiplayer == multiplayer_mode.none
-{
-	state = states.actor
-	x = -100
-	y = -100
-	exit
-}
-
 if !obj_shell.isOpen
 	get_input(player)
 

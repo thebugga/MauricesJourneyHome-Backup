@@ -91,7 +91,7 @@ switch state
 		}
 		draw_set_font(global.combo.font)
 		draw_sprite(spr_title_percent, perstatus_icon, (screen_w / 2 + 120), screen_h / 2)
-		draw_shaking_text((screen_w / 2 - 120), screen_h / 2, percvisual, percvisual / 50)
+		draw_text((screen_w / 2 - 120), screen_h / 2, percvisual)
 		break
 	case 3:
 		draw_clear(c_black)

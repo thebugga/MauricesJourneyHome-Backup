@@ -33,7 +33,7 @@ else if displaytext != currenttext
 	}
 	else if nextletter == "|"
 	{
-		var chopoff = 1
+		var chopoff = 0
 		do 
 			chopoff++
 		until string_char_at(currenttext, string_length(displaytext) + 1 + chopoff) == "|"

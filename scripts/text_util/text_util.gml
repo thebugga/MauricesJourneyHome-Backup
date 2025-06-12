@@ -3,10 +3,13 @@ function draw_special_text(_x, _y, _text)
 	var saved_h = draw_get_halign()
 	var saved_v = draw_get_valign()
 	var saved_font = draw_get_font()
+	var saved_col = draw_get_color()
 	var text_arr = string_split(_text, "\n")
 	var cur_modify = 0
+	var cur_color = [saved_col]
 	for (var t = 0; t < array_length(text_arr); t++)
 	{
+		var tempcol = 0
 		var xx = _x
 		if saved_h == fa_center
 			xx -= (string_width(text_arr[t]) / 2)
@@ -23,6 +26,7 @@ function draw_special_text(_x, _y, _text)
 		{
 			draw_set_align(fa_left, fa_top)
 			draw_set_font(saved_font)
+			draw_set_color(cur_color[tempcol % array_length(cur_color)])
 			
 			var modifX = 0
 			var modifY = 0
@@ -57,13 +61,49 @@ function draw_special_text(_x, _y, _text)
 			}
 			else if letter == "|"
 			{
-				var chopoff = 1
+				var chopoff = 0
 				do 
 					chopoff++
 				until string_char_at(text_arr[t], i + chopoff) == "|"
 				
 				var colors = string_split(string_copy(text_arr[t], i + 1, chopoff - 1), ",")
-				draw_set_color(make_color_rgb(colors[0], colors[1], colors[2]))
+				
+				for (var c = 0; c < array_length(colors); c++)
+				{
+					if string_pos("-", colors[c]) > 0
+					{
+						var hex = string_split(colors[c], "-")
+						colors[c] = make_color_rgb(hex[0], hex[1], hex[2])
+					}
+					else
+					{
+						switch colors[c]
+						{
+							default:
+								colors[c] = saved_col
+								break
+							case "red":
+								colors[c] = c_red
+								break
+							case "orange":
+								colors[c] = c_orange
+								break
+							case "yellow":
+								colors[c] = c_yellow
+								break
+							case "green":
+								colors[c] = c_green
+								break
+							case "blue":
+								colors[c] = c_blue
+								break
+							case "purple":
+								colors[c] = c_purple
+								break
+						}
+					}
+				}
+				cur_color = colors
 				
 				i += chopoff
 			}
@@ -110,11 +150,14 @@ function draw_special_text(_x, _y, _text)
 			{
 				draw_text(xx + modifX, yy + modifY, letter)
 				xx += string_width(letter)
+				if letter != " "
+					tempcol++
 			}
 		}
 		draw_set_halign(saved_h)
 		draw_set_valign(saved_v)
 	}
+	draw_set_color(saved_col)
 }
 
 function scr_separate_text(text, width)
@@ -138,7 +181,7 @@ function scr_separate_text(text, width)
 		}
 		else if letter == "|"
 		{
-			var chopoff = 1
+			var chopoff = 0
 			do 
 				chopoff++
 			until string_char_at(text, t + chopoff) == "|"
@@ -166,24 +209,27 @@ function scr_separate_text(text, width)
 		}
 		else
 		{
-			_sizer += letter
 			if letter == " "
 			{
-				if widths + fullon_widths > width
+				if fullon_widths + widths > width
 				{
-					finaltext += "\n" + _sizer
-					fullon_widths = 0
+					widths -= string_width(letter)
+					finaltext += string_replace(_sizer, " ", "\n")
+					fullon_widths = widths
 				}
 				else
 				{
 					finaltext += _sizer
-					fullon_widths += widths + string_width(letter)
+					fullon_widths += widths
 				}
-				_sizer = ""
-				widths = 0
+				_sizer = letter
+				widths = string_width(letter)
 			}
 			else
+			{
+				_sizer += letter
 				widths += string_width(letter)
+			}
 		}
 	}
 	return finaltext

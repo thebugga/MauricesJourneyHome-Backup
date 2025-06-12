@@ -95,7 +95,8 @@ switch state
 		break
 	case 3:
 		draw_clear(c_black)
-		draw_text(screen_w / 2, screen_h / 2, scr_separate_text("Are you sure about this? This is a DOOM reference, we love DOOM. Press [J] if you're a little pussy bitch, or [G] if you're a real guys guy.", screen_w))
+		draw_set_font(global.creditsfont)
+		draw_special_text(screen_w / 2, screen_h / 2, scr_separate_text("Are you sure about this? This is a DOOM reference, we love DOOM. Press [A] if you're a little pussy bitch, or [R] if you're a real guys guy.", screen_w))
 		break
 }
 ini_close()

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_dilogue_tennadeltarune",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,12 +12,12 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0b54beef-0aa3-4b53-b2ab-1e00cd41bc53","name":"0b54beef-0aa3-4b53-b2ab-1e00cd41bc53","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"2f85e720-fd0c-4e51-b918-942dfa1c3393","name":"2f85e720-fd0c-4e51-b918-942dfa1c3393","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"02bebaa2-4ece-4b66-88fc-9e06c638dba1","name":"02bebaa2-4ece-4b66-88fc-9e06c638dba1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"770bc6a2-40e0-4a1e-84b0-aec3954bfd53","name":"770bc6a2-40e0-4a1e-84b0-aec3954bfd53","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"40738211-0f5f-4431-9dbd-af9c413cc2dd","name":"40738211-0f5f-4431-9dbd-af9c413cc2dd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"fa506e25-f48b-4630-8413-01539e43ddbe","name":"fa506e25-f48b-4630-8413-01539e43ddbe","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0b54beef-0aa3-4b53-b2ab-1e00cd41bc53","name":"0b54beef-0aa3-4b53-b2ab-1e00cd41bc53","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2f85e720-fd0c-4e51-b918-942dfa1c3393","name":"2f85e720-fd0c-4e51-b918-942dfa1c3393","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"02bebaa2-4ece-4b66-88fc-9e06c638dba1","name":"02bebaa2-4ece-4b66-88fc-9e06c638dba1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"770bc6a2-40e0-4a1e-84b0-aec3954bfd53","name":"770bc6a2-40e0-4a1e-84b0-aec3954bfd53","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"40738211-0f5f-4431-9dbd-af9c413cc2dd","name":"40738211-0f5f-4431-9dbd-af9c413cc2dd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"fa506e25-f48b-4630-8413-01539e43ddbe","name":"fa506e25-f48b-4630-8413-01539e43ddbe","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -75,24 +75,12 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0b54beef-0aa3-4b53-b2ab-1e00cd41bc53","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0bb1d48d-edb8-49f2-84f5-2fc7df7710f2","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2f85e720-fd0c-4e51-b918-942dfa1c3393","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"785e1190-2aa0-4b0a-93be-340c4b8376bf","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"02bebaa2-4ece-4b66-88fc-9e06c638dba1","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"97e4f0bd-13ca-4fa2-9fb2-3540af657f5a","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"770bc6a2-40e0-4a1e-84b0-aec3954bfd53","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"5c74fabe-bda1-4165-9185-b31d5617a00d","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"40738211-0f5f-4431-9dbd-af9c413cc2dd","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"179014cf-8f53-4808-a03f-22fff416add7","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fa506e25-f48b-4630-8413-01539e43ddbe","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0a3000e1-a15a-4faa-8fd3-135a587d20b9","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"0b54beef-0aa3-4b53-b2ab-1e00cd41bc53","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"0bb1d48d-edb8-49f2-84f5-2fc7df7710f2","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"2f85e720-fd0c-4e51-b918-942dfa1c3393","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"785e1190-2aa0-4b0a-93be-340c4b8376bf","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"02bebaa2-4ece-4b66-88fc-9e06c638dba1","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"97e4f0bd-13ca-4fa2-9fb2-3540af657f5a","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"770bc6a2-40e0-4a1e-84b0-aec3954bfd53","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"5c74fabe-bda1-4165-9185-b31d5617a00d","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"40738211-0f5f-4431-9dbd-af9c413cc2dd","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"179014cf-8f53-4808-a03f-22fff416add7","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"fa506e25-f48b-4630-8413-01539e43ddbe","path":"sprites/spr_dilogue_tennadeltarune/spr_dilogue_tennadeltarune.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"0a3000e1-a15a-4faa-8fd3-135a587d20b9","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

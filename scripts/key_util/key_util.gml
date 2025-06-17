@@ -118,7 +118,6 @@ function cc_draw_key(_x, _y, key)
 	var key_str = scr_keytostring(key)
 	
 	var specialkeys = [
-		"UNDEFINED",
 		"Shift",
 		"Control",
 		"Space",
@@ -145,9 +144,9 @@ function cc_draw_key(_x, _y, key)
 		draw_set_font(global.tutorialfont)
 		draw_set_align(fa_center, fa_middle, c_black)
 		draw_sprite(spr_fontkey, 0, _x, _y)
-		draw_text(_x, _y + 3, key_str)
+		draw_text(_x + 16, _y + 13, key_str)
 	}
-	else if key_str == " "
+	else if key_str == " " || key_str == "UNDEFINED"
 		draw_sprite(spr_fontkey, 0, _x, _y)
 	else
 		draw_sprite(spr_fontkey_special, ix, _x, _y)

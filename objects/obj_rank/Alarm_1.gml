@@ -10,4 +10,3 @@ with obj_player
 	reset_anim(obj_player.spr_exitdoor)
 }
 
-instance_destroy()

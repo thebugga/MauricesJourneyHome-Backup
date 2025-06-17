@@ -1,5 +1,8 @@
-with (obj_player)
-    state = other.savedstate
+if !instance_exists(obj_cutscenehandler)
+{
+	with (obj_player)
+	    state = other.savedstate
+}
 var func = dialog[currentdialog][2]
 if (func != -4)
 {

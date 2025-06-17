@@ -127,9 +127,10 @@ function do_enemy_generics()
 
 	if (place_meeting(x, y, obj_player))
 	{
-		if (obj_player.instakill && obj_player.hitstun <= 0 && alarm[0] == -1 && !follow_player)
+		var _player = instance_place(x, y, obj_player)
+		if (_player.instakill && _player.hitstun <= 0 && alarm[0] == -1 && !follow_player)
 		{
-			with (obj_player)
+			with (_player)
 			{
 				if (state == states.mach3)
 					reset_anim(spr_player_mach3kill)
@@ -147,15 +148,15 @@ function do_enemy_generics()
 			shake_camera()
 			event_play_oneshot_3d("event:/sfx/player/punch", x, y)
 		
-			obj_player.hitstun = 5
-			obj_player.prev.image_index = obj_player.image_index
+			_player.hitstun = 5
+			_player.prev.image_index = _player.image_index
 			alarm[0] = 5
 		}
-		if ((obj_player.state == states.mach2 || obj_player.state == states.tumble) && stun_timer < 160)
+		if ((_player.state == states.mach2 || _player.state == states.tumble) && stun_timer < 160)
 		{
 			sleep(50)
-			hsp = obj_player.xscale * 18
-			xscale = -obj_player.xscale
+			hsp = _player.xscale * 18
+			xscale = -_player.xscale
 			warp = 0.4
 			state = states.stun
 			stun_timer = 180
@@ -164,7 +165,7 @@ function do_enemy_generics()
 				particle_create(x, y, particles.stars)
 			flash = 8
 		}
-		with (obj_player)
+		with (_player)
 		{
 			if (state == states.grab && other.sprite_index != other.sprs.dead)
 			{

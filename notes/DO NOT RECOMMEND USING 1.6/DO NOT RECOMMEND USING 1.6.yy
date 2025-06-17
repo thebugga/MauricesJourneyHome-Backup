@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"DO NOT RECOMMEND USING 1.6",
   "name":"DO NOT RECOMMEND USING 1.6",
   "parent":{

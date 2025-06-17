@@ -23,3 +23,4 @@ draw_rectangle(screen_w - string_width(ver_str), screen_h - string_height(ver_st
 draw_reset_color()
 
 draw_text(screen_w, screen_h, ver_str)
+

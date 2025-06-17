@@ -1,18 +1,54 @@
 image_speed = 0.35
-selected = [0, 0]
-ready = [0, 0]
+vals = []
+repeat 4
+{
+	array_push(vals, {
+		connected: false,
+		selected: 0,
+		ready: false,
+		sprite: spr_player_exitdoor,
+		index: 0
+	})
+}
+
+vals[0].connected = true
+
 stopper = false
-character[0] = ["MAURICE", p_characters.maurice, spr_player_exitdoor, spr_player_timesup]
-character[1] = ["PIERRE", p_characters.pierre, spr_pierre_idle, spr_pierre_escapepoint]
-character[2] = ["THE UNDOISED", p_characters.undoised, spr_playerD_idle, spr_playerD_idle]
-character[3] = ["MANDREK", p_characters.mandrek, spr_mandrek_walk, spr_mandrek_skid]
-p1_sprite = spr_player_exitdoor
-p1_index = 0
-p2_sprite = spr_playerD_idle
-p2_index = 0
+character = [{
+	name: "MAURICE",
+	char_enum: p_characters.maurice,
+	sprite_set: {
+		walkforth: spr_player_exitdoor,
+		choseshock: spr_player_timesup,
+		palette: pal_peppino
+	}
+}, {
+	name: "PIERRE",
+	char_enum: p_characters.pierre,
+	sprite_set: {
+		walkforth: spr_pierre_idle,
+		choseshock: spr_pierre_escapepoint,
+		palette: pal_peppino
+	}
+}, {
+	name: "THE UNDOISED",
+	char_enum: p_characters.undoised,
+	sprite_set: {
+		walkforth: spr_playerD_idle,
+		choseshock: spr_playerD_escapepoint,
+		palette: pal_undoised
+	}
+}, {
+	name: "MANDREK",
+	char_enum: p_characters.mandrek,
+	sprite_set: {
+		walkforth: spr_mandrek_walk,
+		choseshock: spr_mandrek_skid,
+		palette: pal_peppino
+	}
+}]
+
 p1_boxheight = 440
-p2_connect = global.multiplayer != multiplayer_mode.none
-multimode = global.multiplayer == multiplayer_mode.swapmode
 multialpha = 0
 finger1_index = 0
 finger2_index = 0
@@ -22,3 +58,5 @@ control_scale[0] = 2
 control_scale[1] = 2
 mode_scale = 1
 switch_index = 0
+
+pattern_init()

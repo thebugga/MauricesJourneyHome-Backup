@@ -1,5 +1,3 @@
-get_input()
-
 if surface_exists(bg_surf)
 {
 	for (var i = 0; i < array_length(bg_parallax); i++) 
@@ -22,48 +20,24 @@ if obj_player.visible && save_exists
 	}
 }
 
-var flick = false
-
-with instance_place(x, y, obj_player)
+var flick = 0
+with obj_player
 {
-	if state != states.actor && key_up.down && grounded
-	{
-		stop_music()
-		reset_anim(obj_player.spr_startgate)
-		state = states.actor
-		hsp = 0
-		movespeed = 0
-		image_speed = 0.35
-		spawn = noone
-		return_location = {
-			x: x,
-			y: y,
-			room: room
-		}
-		restart_location = {
-			room: other.t_room,
-			door: other.t_door,
-			title: other.card_index,
-			name: other.level_name
-		}
-	}
 	if (sprite_index == spr_startgate && !obj_fade.fade && image_speed > 0 && anim_ended())
 	{
-		flick = true
+		flick++
 		image_speed = 0
 	}
+	
 }
 
-if flick
+if flick == instance_number(obj_player)
 {
-	global.level_minutes = 0
-	global.level_seconds = 0
-	with obj_player
-	{
-		reset_level()
-		global.level_data.level_name = restart_location.name
-		do_fade(restart_location.room, restart_location.door, fade_types.door)
-		with instance_create(0, 0, obj_titlecard)
-			image_index = other.restart_location.title
-	}
+	reset_level()
+	global.level_data.level_name = level_name
+	do_fade(t_room, t_door, fade_types.door)
+	with instance_create(0, 0, obj_titlecard)
+		image_index = other.card_index
 }
+
+

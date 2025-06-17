@@ -26,6 +26,9 @@ switch (state)
 		break;
 }
 
+if bubble.h == 0
+	bubble.h = string_height(scr_separate_text(text, screen_w - (padding * 2))) + padding
+
 bg_pos.x++
 bg_pos.y++
 

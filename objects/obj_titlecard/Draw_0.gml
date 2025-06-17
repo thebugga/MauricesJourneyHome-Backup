@@ -55,15 +55,6 @@ var titlecardx = x + titlecredit[image_index][1] + cardx
 var titlecardy = y + titlecredit[image_index][2]
 draw_sprite(spr_titlecards, image_index, titlecardx + cardshakex, titlecardy + cardshakey)
 
-shader_set(shd_pal_swapper)
-pal_swap_set(pal_peppino, 1, false)
-draw_sprite(spr_titlecards_maurice, image_index, titlecardx + cardshakex, titlecardy + cardshakey)
-pal_swap_set(pal_undoised, 1, false)
-draw_sprite(spr_titlecards_doise, image_index, titlecardx + cardshakex, titlecardy + cardshakey)
-shader_reset()
-
-draw_sprite(spr_titlecard_titles, image_index, titlecardx + cardshakex + irandom_range(-1, 1), titlecardy + cardshakey + irandom_range(-1, 1))
-
 if wipshow
 	draw_sprite_ext(spr_titlecards_wip, wipindex, titlecardx + irandom_range(-wipshake, wipshake), titlecardy + irandom_range(-wipshake, wipshake), wipscale, wipscale, wipangle, c_white, 1)
 

@@ -16,7 +16,7 @@ else
 	draw_sprite_tiled(spr_bgkitty, 0, bg_pos.x, bg_pos.y)
 	
 	gpu_set_blendmode(bm_subtract)
-	draw_sprite_stretched(bg_letterbox3, 2, 0, 0, bubble.w, bubble.h)
+	draw_sprite_stretched(spr_dialogue_bubble, 2, 0, 0, bubble.w, bubble.h)
 	gpu_set_blendmode_cc(bm_normal)
 	surface_reset_target()
 	
@@ -28,17 +28,5 @@ draw_sprite_stretched(spr_dialogue_bubble, 1, bubble.x, bubble.y, bubble.w, bubb
 draw_set_font(global.tutorialfont)
 draw_set_align(fa_left, fa_top, c_black)
 
-for (var i = 0; i < array_length(str_arr); i++) 
-{
-	var xx = bubble.x + text_padding
-	for (var j = 1; j <= string_length(str_arr[i]); j++) 
-	{
-		var d = (j % 2) == 0 ? -1 : 1;
-		var y_o = wave(-1, 1, 0.1, 0) * d
-		var cur_char = string_char_at(str_arr[i], j)
-		
-		draw_text(xx, bubble.y + text_padding + (text_height * i) + y_o, cur_char)
-		xx += string_width(cur_char)
-	}
-	//draw_text(bubble.x + text_padding, bubble.y + text_padding + (text_height * i), str_arr[i])
-}
+
+draw_special_text(bubble.x + text_padding, bubble.y + (text_padding / 2), scr_separate_text(text, bubble.w - (padding * 2)))

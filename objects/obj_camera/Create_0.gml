@@ -1,7 +1,7 @@
 mag = 0
 mag_decel = 0.5
 cam_charge = 0
-info_visible = false
+info_visible = true
 
 target = -4
 spotlight = 0

@@ -28,7 +28,6 @@
     {"name":"inst_1343EB96","path":"rooms/init_objs_room/init_objs_room.yy",},
     {"name":"inst_46EBF91D","path":"rooms/init_objs_room/init_objs_room.yy",},
     {"name":"inst_93D0056","path":"rooms/init_objs_room/init_objs_room.yy",},
-    {"name":"inst_7C1EDA31","path":"rooms/init_objs_room/init_objs_room.yy",},
   ],
   "isDnd":false,
   "layers":[

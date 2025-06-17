@@ -63,7 +63,7 @@ function do_taunt()
 			sprite_index: self.sprite_index
 		}
 		
-		particle_create(x, y, particles.taunt)
+		instance_create(x, y, obj_taunteffect)
 		state = states.taunt
 		
 		if !(key_up.down && supertauntshow)

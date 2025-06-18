@@ -1,16 +1,33 @@
 if !instance_exists(target)
 	exit
-if target.secret_exit
-	exit
 
-campos = {
-	x: target.x - (screen_w / 2),
-	y: target.y - (screen_h / 2) - 20,
+var xx = 0
+var yy = 0
+
+if heirarchy == obj_player
+{
+	if target.secret_exit
+		exit
+	
+	xx = target.x
+	yy = target.y
+	if target.state == states.backtohub
+		yy = target.ystart
+}
+else if heirarchy == obj_bosscontroller
+{
+	var playcount = 0
+	with obj_bossplayer
+	{
+		xx += x
+		yy += y
+		playcount++
+	}
 }
 
-if target.state == states.backtohub
-{
-	campos.y = target.ystart - (screen_h / 2) - 20
+campos = {
+	x: xx - (screen_w / 2),
+	y: yy - (screen_h / 2) - 20,
 }
 
 campos.x += cam_charge
@@ -23,5 +40,6 @@ if mag > 0
 	campos.x += random_range(mag, -mag)
 	campos.y += random_range(mag, -mag)
 }
+
 
 camera_set_view_pos(view_camera[0], campos.x, campos.y)

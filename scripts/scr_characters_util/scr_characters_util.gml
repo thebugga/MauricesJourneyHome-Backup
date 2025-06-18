@@ -528,3 +528,27 @@ function scr_character_spr()
 	}
 	exit;
 }
+
+function scr_bosscharacterspr()
+{
+	spr_idle = spr_bossmaurice_idle
+	spr_move = spr_bossmaurice_move
+	spr_jumpprep = spr_player_superjumpprep
+	spr_jump = spr_player_groundpoundjump
+	spr_fall = spr_player_fall
+	spr_land = spr_player_land
+	spr_duck = spr_player_crouch
+	spr_punch = spr_bossmaurice_punch
+	spr_taunt = spr_player_taunt
+	spr_hurt = spr_boss_september_hit
+	spr_flung = spr_boss_september_flung
+	if character == p_characters.maurice
+	{
+		spr_palette = pal_peppino
+	}
+	if character == p_characters.undoised
+	{
+		spr_palette = pal_undoised
+	}
+	exit;
+}

@@ -402,6 +402,7 @@ function reset_level()
 	global.level_data.tauntcount = 0
 	global.levelattempts++;
 	obj_music.music = noone;
+	obj_camera.heirarchy = obj_player
 }
 
 function gpu_set_blendmode_cc(bm)

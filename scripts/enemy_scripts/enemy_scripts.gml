@@ -106,7 +106,7 @@ function do_enemygibs()
 	}
 }
 
-function do_enemy_generics()
+function do_enemy_generics(_easilyscared = true)
 {
 	struct_foreach(state_struct, function(_name, _data)
 	{
@@ -119,7 +119,8 @@ function do_enemy_generics()
 		}
 	})
 
-	do_scared()
+	if _easilyscared
+		do_scared()
 
 	grav = 0.5
 	if (state == states.hit)

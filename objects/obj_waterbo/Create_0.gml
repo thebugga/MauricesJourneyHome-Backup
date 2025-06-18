@@ -18,6 +18,11 @@ throwfunc = function()
 	if throwreset <= 0 && floor(image_index) == 15
 	{
 		throwreset = 200
+		with obj_slipnslide
+		{
+			if baddieID == other.id
+				instance_destroy()
+		}
 		with (instance_create(x, y, obj_slipnslide))
 		{
 			baddieID = other.id

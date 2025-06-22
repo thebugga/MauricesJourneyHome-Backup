@@ -1,5 +1,13 @@
 function player_jump()
 {
+	var default_land = spr_land
+	var default_landmove = spr_landmove
+	if has_pistol
+	{
+		default_land = spr_pistolland
+		default_landmove = spr_pistolland
+	}
+	
 	if (p_move != 0)
 	{
 		movespeed = approach(movespeed, 6, 0.5)
@@ -33,7 +41,7 @@ function player_jump()
 		if fallingtimer < 50
 		{
 			state = states.normal
-			reset_anim(movespeed < 1 ? spr_land : spr_landmove)
+			reset_anim(movespeed < 1 ? default_land : default_landmove)
 			event_play_oneshot_3d("event:/sfx/player/step", x, y)
 			create_effect(x, y, spr_landeffect)
 			if key_dash.down
@@ -56,8 +64,8 @@ function player_jump()
 	
 	if sprite_index != spr_grabbump
 		do_grab()
-	do_groundpound()
 	
+	do_groundpound()
 	
 	image_speed = 0.35
 	switch (sprite_index)
@@ -69,10 +77,8 @@ function player_jump()
 			reset_anim_on_end(spr_fall)
 			break;
 		case spr_stomp:
-			if anim_ended()
-				image_index = image_number - 3
-			break;
 		case spr_weakjump:
+		case spr_pistoljump:
 			if anim_ended()
 				image_index = image_number - 3
 			break;

@@ -1,4 +1,4 @@
-init_collide()
+collide_init()
 state = states.normal
 funnyangle = 0
 

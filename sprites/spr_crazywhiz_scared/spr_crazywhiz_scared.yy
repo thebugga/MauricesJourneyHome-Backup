@@ -30,7 +30,7 @@
   "origin":4,
   "parent":{
     "name":"Crazy Whiz",
-    "path":"folders/Sprites/Baddie/Crazy Whiz.yy",
+    "path":"folders/Sprites/Enemies/Crazy Whiz.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

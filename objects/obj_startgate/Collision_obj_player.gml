@@ -1,4 +1,4 @@
-if other.state != states.actor && other.key_up.pressed && other.grounded
+if scr_can_enter_door(other.state) && other.key_up.pressed && other.grounded
 {
 	stop_music()
 	with obj_player

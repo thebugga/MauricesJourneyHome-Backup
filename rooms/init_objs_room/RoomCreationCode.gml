@@ -35,6 +35,9 @@ enum states
 	noclip,
 	slap,
 	bounce,
+	fireass,
+	shotgunshoot,
+	ball,
 	
 	//enemy states
 	hit,

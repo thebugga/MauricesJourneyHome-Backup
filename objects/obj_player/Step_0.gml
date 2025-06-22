@@ -143,6 +143,15 @@ switch (state)
 	case states.bounce:
 		player_bounce()
 		break;
+	case states.fireass:
+		player_fireass()
+		break;
+	case states.shotgunshoot:
+		player_shotgunshoot()
+		break;
+	case states.ball:
+		player_ball()
+		break;
 }
 
 if (state != states.normal)
@@ -150,6 +159,59 @@ if (state != states.normal)
 	breakdance_secret.buffer = 0
 	breakdance_secret.spd = 0.25
 	idletimer = 300
+}
+
+if has_pistol && (state == states.normal || state == states.jump || state == states.shotgunshoot)
+{
+	if pistolcooldown > 0
+		pistolcooldown--
+	
+	if (key_grab.down && overwriteanim != spr_pistolshot) || pistolchargeshooting
+        pistolcharge += 0.5
+    else
+        pistolcharge = 0
+	
+    if (pistolcharge > 0)
+    {
+        var ixa = [1, 9, 17, 25, 33]
+        for (var i = 0; i < array_length(ixa); i++)
+        {
+            if (pistolcharge == ixa[i])
+				event_play_oneshot_3d("event:/sfx/pep/revolvercharge", x, y)
+        }
+    }
+    if (floor(pistolcharge) >= (sprite_get_number(spr_revolvercharge) - 12) && !pistolchargeshooting)
+    {
+        if (state != states.taunt && hitstun == 0)
+        {
+			pistolchargeshooting = true
+			//scr_sound_3d(sfx_killenemy, x, y)
+			//scr_sound_3d(sfx_shotgunshot, x, y)
+			with create_effect(x, y, spr_guneffect)
+			    image_xscale = other.xscale
+			state = states.shotgunshoot
+			if grounded
+			    movespeed = 0
+			reset_anim(spr_pistolshot)
+			with instance_create(x + xscale * 46, (y + 6), obj_shotgunblast)
+			{
+				image_xscale = other.xscale
+				depth = other.depth - 10
+			}
+        }
+    }
+    if (floor(pistolcharge) >= (sprite_get_number(spr_revolvercharge) - 1))
+    {
+        pistolchargeshooting = false
+        pistolcharge = 0
+    }
+}
+else
+{
+	pistolcooldown = 0
+    pistolchargeshooting = false
+    pistolcharge = 0
+	
 }
 
 if coyote_time > 0
@@ -167,7 +229,7 @@ if (idletimer > 0 && state == states.normal)
 if (i_frames > 0 && state != states.hurt)
 	i_frames--
 
-if (state == states.tumble || state == states.crouch || (character == p_characters.mandrek && sprite_index == spr_mandrek_duck) || (state == states.superjump && !sjumper))
+if (state == states.tumble || state == states.ball || state == states.crouch || (character == p_characters.mandrek && sprite_index == spr_mandrek_duck) || (state == states.superjump && !sjumper))
 	mask_index = mask_player_small
 else
 	mask_index = mask_player
@@ -184,6 +246,9 @@ if room != rm_timesup
 		if (state == states.wizardgrapple)
 			grav = 0.05
 	}
+	
+	if state == states.fireass || state == states.ball
+		instance_destroy(instance_place(x + hsp, y + vsp, obj_ratblock))
 	
 	if (state != states.noclip && state != states.backtohub)
 		collide()

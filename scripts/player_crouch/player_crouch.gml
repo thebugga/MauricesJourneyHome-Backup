@@ -24,7 +24,7 @@ function player_crouch()
 		if (sprite_index != spr_crouchdown)
 			sprite_index = p_move != 0 ? spr_crawl : spr_crouch
 	
-		if (coyote_time && input_buffers.jump > 0 && !scr_solid(x, y - 16))
+		if (coyote_time && input_buffers.jump > 0 && scr_can_uncrouch())
 		{
 			input_buffers.jump = 0
 			vsp = -12

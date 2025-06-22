@@ -71,6 +71,10 @@ function player_actor()
 			if anim_ended()
 				image_speed = 0
 			break;
+		case spr_pistolintro: //generic animation end
+			if anim_ended()
+				state = states.normal
+			break;
 			
 	}
 }

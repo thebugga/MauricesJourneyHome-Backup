@@ -19,7 +19,24 @@ function do_grab()
 	if input_buffers.grab > 0
 	{
 		input_buffers.grab = 0
-		if (!key_up.down)
+		if has_pistol
+		{
+		    if (pistolcooldown <= 0 && state != states.bump)
+		    {
+		        overwriteanim = spr_pistolshot
+		        overwriteindex = 0
+		        pistolcooldown = 10
+		        with create_effect(x, y, spr_guneffect)
+					image_xscale = other.xscale
+		        with (instance_create((x + xscale * 20), y, obj_pistolbullet))
+		        {
+					event_play_oneshot_3d("event:/sfx/pep/pistolshot", x, y)
+		            image_xscale = other.xscale
+		            //GamepadSetVibration(0, 0.3, 0.3, 0.6)
+		        }
+		    }
+		}
+		else if (!key_up.down)
 		{
 			if character == p_characters.maurice
 			{
@@ -309,4 +326,19 @@ function do_hurt(obj = noone)
 function scr_hitwall(_x, _y)
 {
 	return place_meeting(_x, _y, obj_solid) || behind_slope(_x, _y)
+}
+
+function scr_can_enter_door(_state)
+{
+	return _state != states.taunt && 
+		   _state != states.tumble && 
+		   _state != states.ball && 
+		   _state != states.fireass && 
+		   _state != states.actor && 
+		   _state != states.bump;
+}
+
+function scr_can_uncrouch()
+{
+	return !scr_solid(x, y - 16);
 }

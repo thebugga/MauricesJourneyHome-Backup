@@ -91,7 +91,6 @@ function scr_character_spr()
 		spr_bodyslamfall = spr_player_bodyslamfall
 		spr_bodyslamstart = spr_player_bodyslamstart
 		spr_bodyslamland = spr_player_bodyslamland
-		spr_ball = spr_player_ball
 		spr_backslide = spr_player_backslide
 		spr_slipnslide = spr_player_slipnslide
 		spr_slipbanana1 = spr_player_slipbanana1
@@ -126,6 +125,20 @@ function scr_character_spr()
 		spr_grabcancel = spr_player_grabcancel
 		spr_grabbump = spr_player_grabbump
 		spr_grind = spr_player_grind
+		
+		spr_ball = spr_player_ball
+		spr_ballend = spr_player_ballend
+		
+		spr_fireass = spr_player_fireass
+		spr_fireassground = spr_player_fireassground
+		
+		spr_pistolintro = spr_player_pistolintro
+		spr_pistolidle = spr_player_pistolidle
+		spr_pistolmove = spr_player_pistolwalk
+		spr_pistoljump = spr_player_pistoljump
+		spr_pistolland = spr_player_pistolland
+		spr_pistolshot = spr_player_pistolshot
+		spr_pistolshotend = spr_player_pistolshotend
 		
 		spr_wizardstart = spr_player_holdrise
 		spr_wizardthunder = spr_player_holdrise
@@ -271,6 +284,15 @@ function scr_character_spr()
 		spr_grabcancel = spr_player_grabcancel
 		spr_grabbump = spr_player_grabbump
 		spr_grind = spr_player_grind
+		
+		spr_pistolintro = spr_player_pistolintro
+		spr_pistolidle = spr_player_pistolidle
+		spr_pistolmove = spr_player_pistolwalk
+		spr_pistoljump = spr_player_pistoljump
+		spr_pistolland = spr_player_pistolland
+		spr_pistolshot = spr_player_pistolshot
+		spr_pistolshotend = spr_player_pistolshotend
+		
 		spr_palette = pal_peppino
 		paletteselect = 1
 	}	
@@ -397,6 +419,15 @@ function scr_character_spr()
 		spr_grabcancel = spr_player_grabcancel
 		spr_grabbump = spr_player_grabbump
 		spr_grind = spr_player_grind
+		
+		spr_pistolintro = spr_player_pistolintro
+		spr_pistolidle = spr_player_pistolidle
+		spr_pistolmove = spr_player_pistolwalk
+		spr_pistoljump = spr_player_pistoljump
+		spr_pistolland = spr_player_pistolland
+		spr_pistolshot = spr_player_pistolshot
+		spr_pistolshotend = spr_player_pistolshotend
+		
 		spr_palette = pal_undoised
 		paletteselect = 1
 	}
@@ -523,6 +554,15 @@ function scr_character_spr()
 		spr_grabcancel = spr_player_grabcancel
 		spr_grabbump = spr_player_grabbump
 		spr_grind = spr_player_grind
+		
+		spr_pistolintro = spr_player_pistolintro
+		spr_pistolidle = spr_player_pistolidle
+		spr_pistolmove = spr_player_pistolwalk
+		spr_pistoljump = spr_player_pistoljump
+		spr_pistolland = spr_player_pistolland
+		spr_pistolshot = spr_player_pistolshot
+		spr_pistolshotend = spr_player_pistolshotend
+		
 		spr_palette = pal_peppino
 		paletteselect = 1
 	}

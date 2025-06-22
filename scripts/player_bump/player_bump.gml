@@ -1,7 +1,7 @@
 function player_bump() 
 {
 	image_speed = 0.35
-	if (sprite_index == spr_wallsplat || sprite_index == spr_ceilinghit)
+	if (sprite_index == spr_wallsplat || sprite_index == spr_ceilinghit || didgroundpound)
 	{
 		hsp = 0
 		vsp = 0
@@ -12,6 +12,7 @@ function player_bump()
 	if anim_ended()
 	{
 		state = states.normal
+		didgroundpound = false
 		if (sprite_index == spr_bodyslamland || sprite_index == spr_fallfarland)
 		{
 			reset_anim(obj_player.spr_facehurt)

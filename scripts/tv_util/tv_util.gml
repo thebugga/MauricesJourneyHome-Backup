@@ -42,3 +42,27 @@ function scr_tvtopmessage(_message = "")
 	}
 	return q;
 }
+
+function tv_do_transfos(_state)
+{
+	var _tv_spr = spr_tv_idle
+	switch _state
+	{
+		default:
+			return;
+			break;
+		case states.fireass:
+			_tv_spr = spr_tv_fireass
+			break;
+		case states.ball:
+			_tv_spr = spr_tv_ball
+			break;
+		case states.wizard:
+		case states.wizardgrapple:
+		case states.wizarddash:
+		case states.wizardcling:
+			_tv_spr = spr_tv_ball
+			break;
+	}
+	sprite_index = _tv_spr
+}

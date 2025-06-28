@@ -22,8 +22,11 @@ if key_jump.pressed
 		reset_level()
 		global.level_data.level_name = _levelinfo[2]
 		do_fade(_levelinfo[1], "a", fade_types.door)
-		with instance_create(0, 0, obj_titlecard)
-			image_index = _levelinfo[0]
+		if _levelinfo[2] != "testboss"
+		{
+			with instance_create(0, 0, obj_titlecard)
+				image_index = _levelinfo[0]
+		}
 	}
 }
 

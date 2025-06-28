@@ -2,6 +2,15 @@ function P_shared_normal()
 {
 	var default_idle = spr_idle
 	var default_move = spr_move
+	var default_jump = spr_jump
+	if has_pistol
+	{
+		default_idle = spr_pistolidle
+		default_move = spr_pistolmove
+		default_jump = spr_pistoljump
+		if pistolcharge > 0
+			default_idle = spr_pistolshotend
+	}
 	if global.panic.active
 	{
 		default_idle = spr_panic
@@ -10,18 +19,24 @@ function P_shared_normal()
 		{
 			default_idle = spr_weakidle
 			default_move = spr_weakmove
+			default_jump = spr_weakjump
 		}
 	}
 	
-	if (p_move != 0 && !place_meeting(x + p_move, y, obj_solid))
+	if p_move != 0
 	{
-		movespeed = approach(movespeed, 8, movespeed > 8 ? 0.1 : 0.5)
-		if (floor(movespeed) == 8)
-			movespeed = 6
 		xscale = p_move
+		if !place_meeting(x + p_move, y, obj_solid)
+		{
+			movespeed = approach(movespeed, 8, movespeed > 8 ? 0.1 : 0.5)
+			if (floor(movespeed) == 8)
+				movespeed = 6
+		}
+		else
+			movespeed = 0
 		if particle_timer > 0
 			particle_timer--
-		else
+		else if sprite_index != spr_breakdance[breakdance_secret.index]
 		{
 			particle_timer = 12
 			event_play_oneshot_3d("event:/sfx/player/step", x, y)
@@ -55,19 +70,22 @@ function P_shared_normal()
 		}
 		else
 		{
-			if (idletimer <= 0 && idletimer != -4)
+			if !has_pistol
 			{
-				reset_anim(idlegestures[irandom(5)])
-				idletimer = -4
+				if (idletimer <= 0 && idletimer != -4)
+				{
+					reset_anim(idlegestures[irandom(5)])
+					idletimer = -4
+				}
+			
+				if (anim_ended() && idletimer == -4)
+				{
+					reset_anim(default_idle)
+					idletimer = 180
+				}
 			}
 			
-			if (anim_ended() && idletimer == -4)
-			{
-				reset_anim(default_idle)
-				idletimer = 180
-			}
-			
-			if (sprite_index != spr_machslideend && sprite_index != spr_land && sprite_index != spr_bodyslamland && sprite_index != spr_facehurt && idletimer > 0)
+			if (sprite_index != spr_machslideend && sprite_index != spr_pistolland && sprite_index != spr_land && sprite_index != spr_bodyslamland && sprite_index != spr_facehurt && idletimer > 0)
 				sprite_index = default_idle
 		}
 	}
@@ -110,7 +128,7 @@ function P_shared_normal()
 	if !grounded
 	{
 		state = states.jump
-		reset_anim(global.panic.active && global.panic.timer <= 0 ? spr_weakjump : spr_fall)
+		reset_anim(default_jump)
 	}
 	
 	if (coyote_time && input_buffers.jump > 0)
@@ -118,7 +136,7 @@ function P_shared_normal()
 		input_buffers.jump = 0
 		vsp = -11
 		state = states.jump
-		reset_anim(global.panic.active && global.panic.timer <= 0 ? spr_weakjump : spr_jump)
+		reset_anim(default_jump)
 		jumpstop = false
 		create_effect(x, y - 5, spr_highjumpcloud2)
 		event_play_oneshot_3d("event:/sfx/player/jump", x, y)
@@ -142,6 +160,7 @@ function P_shared_normal()
 			break;
 		case spr_machslideend:
 		case spr_land:
+		case spr_pistolland:
 			reset_anim_on_end(spr_idle)
 			break;
 		case spr_landmove:

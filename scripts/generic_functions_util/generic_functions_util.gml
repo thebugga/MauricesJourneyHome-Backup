@@ -66,7 +66,7 @@ function quick_shader_set_uniform_f(shader, uniform_name, val)
 	shader_set_uniform_f(f, val)
 }
 
-function shake_camera(_mag = 5, _mag_decel = 0.25)
+function shake_camera(_mag = 5, _mag_decel = 0.15)
 {
 	obj_camera.mag = _mag
 	obj_camera.mag_decel = _mag_decel
@@ -402,6 +402,12 @@ function reset_level()
 	global.level_data.tauntcount = 0
 	global.levelattempts++;
 	obj_music.music = noone;
+	obj_camera.heirarchy = obj_player
+	with obj_player
+	{
+		has_pistol = false
+		hasgerome = false
+	}
 }
 
 function gpu_set_blendmode_cc(bm)

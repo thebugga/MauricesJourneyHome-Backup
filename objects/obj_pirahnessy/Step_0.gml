@@ -1,7 +1,7 @@
 var player = instance_place(x, y - 2, obj_player)
-if player && hsp == 0 && player.movespeed > 8 && player.bbox_bottom <= bbox_top + 1 && player.grounded && !place_meeting(x + player.hsp, y, par_collision)
+if player && hsp == 0 && player.hsp != 0 && player.movespeed > 8 && player.bbox_bottom - player.vsp <= bbox_top && player.grounded && !place_meeting(x + player.hsp, y, par_collision)
 {
-	hsp = player.hsp
+	hsp = player.movespeed * image_xscale
 	with player
 	{
 		prev.state = state

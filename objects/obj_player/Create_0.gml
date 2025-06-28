@@ -1,4 +1,4 @@
-init_collide()
+collide_init()
 debugstats = false;
 
 enum p_characters
@@ -18,6 +18,7 @@ enum p_characters
 
 transformation_list = ds_list_create()
 ds_list_add(transformation_list, states.wizard, states.wizardgrapple, states.wizarddash, states.wizardcling)
+ds_list_add(transformation_list, states.ball, states.fireass)
 
 player = 0
 character = p_characters.maurice
@@ -68,6 +69,14 @@ crouchslipbuffer = 0
 grabclimbbuffer = 0
 ladderbuffer = 0
 
+overwriteanim = -4
+overwriteindex = 0
+
+has_pistol = false
+pistolcooldown = 0
+pistolcharge = 0
+pistolchargeshooting = false
+
 prev = {
 	room: room,
 	state: self.state,
@@ -95,6 +104,7 @@ flamecloud_buffer = 0
 haskey = false
 hasgerome = false
 fallingtimer = 0
+didgroundpound = false
 depth = -100
 
 pal_select = 1

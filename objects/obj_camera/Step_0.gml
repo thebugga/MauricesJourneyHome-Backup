@@ -1,13 +1,16 @@
 mag -= mag_decel
 
-with obj_player
-{
-	if player == other.spotlight
-		other.target = id
-}
+if !instance_exists(heirarchy)
+	exit
 
-if instance_exists(obj_player)
+if heirarchy == obj_player
 {
+	with obj_player
+	{
+		if player == other.spotlight
+			other.target = id
+	}
+
 	var target_spd = 0
 	var appr_spd = 10
 

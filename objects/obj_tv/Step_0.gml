@@ -1,4 +1,7 @@
 var p = obj_player
+if obj_camera.heirarchy == obj_player
+	p = obj_camera.target
+
 
 visible = true
 if cardboardtimer > 0
@@ -28,6 +31,8 @@ switch (state)
 			sprite_index = spr_tv_combo
 		else if (sprite_index != spr_tv_idleangry && sprite_index != spr_tv_idlelook)
 			sprite_index = spr_tv_idle
+		
+		tv_do_transfos(p.state)
 		
 		if idletimer > 0
 			idletimer--

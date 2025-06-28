@@ -83,16 +83,15 @@ function player_groundpound()
 			with (instance_place(x, y + 1, obj_slopeplatform))
 				slopeinst = id
 			
-			with slopeinst 
-			{
-				other.xscale = -sign(image_xscale)
-				other.state = states.tumble
-				other.sprite_index = other.spr_crouchslip
-				if other.freefallsmash > 20
-					other.movespeed = 12
-				else
-					other.movespeed = 8
-			}
+			
+			xscale = -sign(slopeinst.image_xscale)
+			
+			state = states.tumble
+			sprite_index = spr_player_crouchslip
+			if freefallsmash > 20
+				movespeed = 12
+			else
+				movespeed = 8
 			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 		}
 		else
@@ -122,6 +121,9 @@ function player_groundpound()
 					sprite_index = spr_shotgunjump2*/
 				image_index = 0
 				state = states.bump
+				hsp = 0
+				movespeed = 0
+				didgroundpound = true
 			}
 			shake_camera()
 			event_play_oneshot_3d("event:/sfx/player/groundpound", x, y)

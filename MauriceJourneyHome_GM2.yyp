@@ -165,7 +165,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.0.831",
+    "IDEVersion":"2024.1400.0.841",
   },
   "name":"MauriceJourneyHome_GM2",
   "resources":[
@@ -264,6 +264,7 @@
     {"id":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},},
     {"id":{"name":"obj_onewayblock","path":"objects/obj_onewayblock/obj_onewayblock.yy",},},
     {"id":{"name":"obj_options","path":"objects/obj_options/obj_options.yy",},},
+    {"id":{"name":"obj_outlet","path":"objects/obj_outlet/obj_outlet.yy",},},
     {"id":{"name":"obj_panictimer","path":"objects/obj_panictimer/obj_panictimer.yy",},},
     {"id":{"name":"obj_parallax","path":"objects/obj_parallax/obj_parallax.yy",},},
     {"id":{"name":"obj_parrybox","path":"objects/obj_parrybox/obj_parrybox.yy",},},

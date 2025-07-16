@@ -11,7 +11,7 @@ function player_nicklebag()
 		if slaphand >= 2
 		{
 		    state = states.grab
-			reset_anim(spr_player_faceplant)
+			reset_anim(spr_grabcancel)
 			movespeed += 2
 		}
 		else

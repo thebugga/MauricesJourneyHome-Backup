@@ -134,9 +134,17 @@ function P_shared_normal()
 	if (coyote_time && input_buffers.jump > 0)
 	{
 		input_buffers.jump = 0
-		vsp = -11
+		if !movespeed && key_up.down
+		{
+			vsp = -14
+			reset_anim(spr_player_groundpoundjump)
+		}
+		else
+		{
+			vsp = -11
+			reset_anim(default_jump)
+		}
 		state = states.jump
-		reset_anim(default_jump)
 		jumpstop = false
 		create_effect(x, y - 5, spr_highjumpcloud2)
 		event_play_oneshot_3d("event:/sfx/player/jump", x, y)

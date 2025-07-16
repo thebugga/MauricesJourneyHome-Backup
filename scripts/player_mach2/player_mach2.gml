@@ -15,12 +15,12 @@ function player_mach2()
 			}
 			else
 			{
-				reset_anim(spr_player_machslidestart)
+				reset_anim(spr_machslidestart)
 				state = states.slide
 				event_play_oneshot_3d("event:/sfx/player/break", x, y)
 			}
 		}
-		if (p_move != 0 && p_move != xscale && grounded)
+		if (p_move == -xscale && grounded)
 		{
 			if (movespeed < 8)
 			{
@@ -29,13 +29,13 @@ function player_mach2()
 			}
 			else
 			{
-				reset_anim(spr_player_machslideboost)
+				reset_anim(spr_machslideboost)
 				state = states.slide
 				event_play_oneshot_3d("event:/sfx/player/machslideboost", x, y)
 			}
 		}
 		if (movespeed < 12)
-			movespeed += 0.1
+			movespeed += 0.05
 		else
 		{
 			if (sprite_index != spr_player_rollgetup)

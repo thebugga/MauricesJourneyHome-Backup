@@ -38,7 +38,7 @@ function player_superjump()
 				{
 					sprite_index = spr_player_superjump
 					image_speed = abs(vsp) / 25
-					vsp -= 0.6
+					vsp -= 0.5
 				}
 				sjumptimer--
 			

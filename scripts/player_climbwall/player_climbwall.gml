@@ -1,20 +1,15 @@
 function player_climbwall() 
 {
-	vsp = -wallspeed
 	hsp = 0
+	vsp = -movespeed
 	
-	wallspeed = min(wallspeed + 0.15, 20)
-	
-	if (wallspeed < 0)
-	{
-		if (mach4mode == 0)
-			movespeed += 0.2
-		else
-			movespeed += 0.4
-	}
-	
-	sprite_index = wallspeed > 4 ? spr_climbwall : spr_clingwall
+	sprite_index = movespeed > 4 ? spr_climbwall : spr_clingwall
 	image_speed = 0.5
+	
+	movespeed -= 0.2
+	if movespeed <= 0
+		state = states.jump
+	
 	if !scr_hitwall(x + xscale, y)
 	{
 		if character == p_characters.undoised
@@ -25,25 +20,21 @@ function player_climbwall()
 		else
 		{
 			vsp = 0
-			if (wallspeed < 6)
-				wallspeed = 6
-			if (wallspeed >= 6 && wallspeed < 12)
-			{
+			if (movespeed < 6)
+				movespeed = 6
+			if movespeed < 12
 				state = states.mach2
-				movespeed = wallspeed
-			}
-			else if (wallspeed >= 12)
+			else
 			{
 				flash = 8
 				state = states.mach3
 				sprite_index = spr_mach3
-				movespeed = wallspeed
 			}
 		}
 		
 		x += xscale
 		
-		var h = wallspeed
+		var h = movespeed
 		
 		if scr_solid(x, y + h)
 		{
@@ -72,7 +63,7 @@ function player_climbwall()
 		input_buffers.jump = 0
 		reset_anim(obj_player.spr_mach2jump)
 		movespeed = 10
-		state = states.bounce
+		state = states.mach2
 		vsp = -11
 		xscale *= -1
 		jumpstop = false

@@ -8,6 +8,7 @@ titlecredit[0] = [-4, 0, -150, 0, 50, [69, 69, 69], "IDK", "Beats Me", "what mor
 titlecredit[1] = ["event:/music/w1/garbagetitle", 0, -150, 200, -100, [96, 136, 176], "Charlotte", "Pizzy and\nAubrey", "TripleB"]
 titlecredit[2] = ["event:/music/w1/wizardtitle", 0, -150, 0, 50, [216, 160, 48], "ButterMan2001\nand Pizzy", "???", "thenoiseupdate2guy"]
 titlecredit[3] = ["event:/music/w1/garbagetitle", 0, -150, 100, -50, [120, 104, 152], "McPig", "McPig", "Mr. Sauceman"]
+titlecredit[4] = ["event:/music/w1/garbagetitle", 250, -200, 200, -100, [120, 104, 152], "McPig", "McPig", "Mr. Sauceman"]
 cardx = -1075
 pinholescale = 0
 pinholealpha = 1

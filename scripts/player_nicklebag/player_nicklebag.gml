@@ -28,16 +28,6 @@ function player_nicklebag()
 		state = states.normal
 	}
 	
-	if (key_down.down && !key_jump.down && grounded)
-	{
-		movespeed = 12
-		crouchslipbuffer = 25
-		state = states.tumble
-		sprite_index = spr_player_crouchslip
-		event_play_oneshot_3d("event:/sfx/player/dive", x, y)
-		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
-	}
-	
 	image_speed = 0.35
 	instakill = true
 }

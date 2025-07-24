@@ -26,7 +26,7 @@ function player_grab()
 	
 	if (key_down.down && !key_jump.down && grounded)
 	{
-		movespeed = 12
+		movespeed = 10
 		crouchslipbuffer = 25
 		state = states.tumble
 		sprite_index = spr_crouchslip

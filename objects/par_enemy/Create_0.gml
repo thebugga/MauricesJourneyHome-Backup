@@ -4,7 +4,12 @@ xscale = 1
 yscale = 1
 flash = false
 warp = 0
-
+HP = 1
+waiting = false
+ouched = {
+	hsp: 0,
+	vsp: 0,
+}
 state = states.normal
 movespeed = 0
 scared_timer = 0

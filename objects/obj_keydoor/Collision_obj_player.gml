@@ -17,7 +17,7 @@ if (other.bbox_bottom <= bbox_bottom + 1 && other.bbox_bottom >= bbox_bottom - 1
 	}
 	else
 	{
-		enterspr = spr_enterdoor
+		enterspr = other.spr_enterdoor
 		event_play_oneshot("event:/sfx/misc/door")
 		do_fade(t_room, t_door, fade_types.door)
 	}

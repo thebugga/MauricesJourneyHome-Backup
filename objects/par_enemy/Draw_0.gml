@@ -32,3 +32,4 @@ if (flash)
 	draw_sprite_ext(sprite_index, image_index, _x, _y, xscale - (warp * xscale), yscale + warp, image_angle, image_blend, image_alpha)
 	shader_reset()
 }
+draw_text(x, y, HP)

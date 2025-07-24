@@ -60,7 +60,11 @@ function enemy_grabbed()
 function enemy_stun()
 {
 	if grounded
+	{
 		hsp = approach(hsp, 0, 0.25)
+		if vsp > 0
+			waiting = false
+	}
 	sprite_index = sprs.stun
 	image_speed = 0.35
 	if (stun_timer <= 0 && grounded)
@@ -76,7 +80,11 @@ function enemy_hit()
 {
 	sprite_index = sprs.dead
 	if (place_meeting(x + hsp, y + vsp, obj_solid) && !place_meeting(x + hsp, y + vsp, obj_destroyable))
-		instance_destroy()
+	{
+		hsp *= -0.75
+		vsp = -6
+		alarm[0] = 1
+	}
 }
 
 function do_scared()
@@ -126,7 +134,7 @@ function do_enemy_generics(_easilyscared = true)
 	if (state == states.hit)
 		grav = 0
 
-	if (place_meeting(x, y, obj_player))
+	if (place_meeting(x, y, obj_player) && !waiting)
 	{
 		var _player = instance_place(x, y, obj_player)
 		if (_player.instakill && _player.hitstun <= 0 && alarm[0] == -1 && !follow_player)
@@ -151,6 +159,11 @@ function do_enemy_generics(_easilyscared = true)
 		
 			_player.hitstun = 5
 			_player.prev.image_index = _player.image_index
+			hsp = 0
+			ouched = {
+				hsp: _player.hsp + (_player.xscale * 2),
+				vsp: -6,
+			}
 			alarm[0] = 5
 		}
 		if ((_player.state == states.mach2 || _player.state == states.tumble) && stun_timer < 160)
@@ -231,7 +244,10 @@ function do_enemy_generics(_easilyscared = true)
 				vsp = -8
 				event_play_oneshot_3d("event:/sfx/enemies/stomp", x, y)
 				with (other)
-					instance_destroy()
+				{
+					warp = 0.4
+					alarm[0] = 1
+				}
 			}
 		}
 	}

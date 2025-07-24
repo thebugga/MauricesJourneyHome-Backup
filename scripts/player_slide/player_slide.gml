@@ -23,9 +23,9 @@ function player_slide()
 	else
 	{
 		if grounded
-			hsp = approach(hsp, (movespeed + 0.1) * -xscale, 0.5)
+			hsp = approach(hsp, (movespeed + 1) * -xscale, 0.5)
 		
-		var ismach2 = movespeed < 12
+		var ismach2 = movespeed < 10
 
 		if anim_ended()
 			image_index = image_number - 3
@@ -35,10 +35,11 @@ function player_slide()
 			event_play_oneshot_3d("event:/sfx/player/splat", x, y)
 			state = states.bump
 		}
-		if abs(hsp) > movespeed
+		if (hsp * -xscale) >= min(movespeed, 10)
 		{
 			sprite_index = ismach2 ? spr_mach2 : spr_mach3
 			state = ismach2 ? states.mach2 : states.mach3
+			movespeed = min(movespeed, 10)
 			xscale *= -1
 		}
 	}

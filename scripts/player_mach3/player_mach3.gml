@@ -66,8 +66,8 @@ function player_mach3()
 			event_play_oneshot_3d("event:/sfx/player/machslideboost", x, y)
 		}
 		
-		if (movespeed < 20 && p_move == xscale)
-			movespeed += mach4mode ? 0.1 : 0.025
+		//if (movespeed < 20 && p_move == xscale)
+		//	movespeed += mach4mode ? 0.1 : 0.025
 			
 		if (key_up.down && !dashpad)
 		{

@@ -34,7 +34,7 @@ function player_mach2()
 				event_play_oneshot_3d("event:/sfx/player/machslideboost", x, y)
 			}
 		}
-		if (movespeed < 12)
+		if (movespeed < 10)
 			movespeed += 0.05
 		else
 		{

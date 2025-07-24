@@ -403,9 +403,11 @@ function reset_level()
 	global.levelattempts++;
 	obj_music.music = noone;
 	obj_camera.heirarchy = obj_player
+	instance_destroy(obj_goochling)
 	with obj_player
 	{
 		has_pistol = false
+		haskey = false
 		hasgerome = false
 	}
 }

@@ -1,4 +1,5 @@
 event_inherited()
+HP = 2
 
 sprs.move = spr_trashman_walk
 sprs.stun = spr_trashman_stun

@@ -1,4 +1,5 @@
 event_inherited()
+HP = 2
 
 sprs.move = spr_forknight_move
 sprs.stun = spr_forknight_stun

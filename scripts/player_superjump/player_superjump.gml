@@ -105,8 +105,23 @@ function player_superjump()
 		if (input_buffers.grab > 0 || key_dash.pressed) && state != states.bump
 		{
 			input_buffers.grab = 0
-			reset_anim(spr_player_Sjumpcancelstart)
-			event_play_oneshot_3d("event:/sfx/player/superjumpcancel", x, y)
+			if character = p_characters.maurice
+			{
+				if (p_move != 0)
+				  xscale = p_move
+				event_play_oneshot_3d("event:/sfx/player/superjumpcancel", x, y)
+				state = states.mach2
+				sprite_index = spr_player_Sjumpcancel
+				jumpstop = true
+				vsp = -4
+				movespeed = 8
+				image_speed = 0.35
+			}
+			else
+			{
+				reset_anim(spr_player_Sjumpcancelstart)
+				event_play_oneshot_3d("event:/sfx/player/superjumpcancel", x, y)
+			}
 		}
 		
 		aftimg_timers.blur.do_it = true
@@ -141,7 +156,7 @@ function player_superjump()
 		{
 			hsp = 0
 			vsp = -12
-			sjumptimer = character == p_characters.undoised ? 200 : 45
+			sjumptimer = character == p_characters.undoised ? 200 : 30
 			sjumpangle = 90
 			sjumper = true
 			fmod_studio_event_instance_set_parameter_by_name_multiplatform(superjumpsnd, "state", 1, 1)

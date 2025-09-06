@@ -79,7 +79,7 @@ function enemy_stun()
 function enemy_hit()
 {
 	sprite_index = sprs.dead
-	if (place_meeting(x + hsp, y + vsp, obj_solid) && !place_meeting(x + hsp, y + vsp, obj_destroyable))
+	if place_meeting(x + hsp, y + vsp, obj_solid)
 	{
 		hsp *= -0.75
 		vsp = -6
@@ -130,7 +130,8 @@ function do_enemy_generics(_easilyscared = true)
 	if _easilyscared
 		do_scared()
 
-	grav = 0.5
+	if object_index != obj_astronolive
+		grav = 0.5
 	if (state == states.hit)
 		grav = 0
 
@@ -169,11 +170,19 @@ function do_enemy_generics(_easilyscared = true)
 		if ((_player.state == states.mach2 || _player.state == states.tumble) && stun_timer < 160)
 		{
 			sleep(50)
-			hsp = _player.xscale * 18
-			xscale = -_player.xscale
-			warp = 0.4
+			if object_index == obj_goofball
+			{
+				movespeed = abs(_player.hsp) + 3
+				xscale = _player.xscale
+			}
+			else
+			{
+				hsp = _player.xscale * 18
+				xscale = -_player.xscale
+			}
 			state = states.stun
 			stun_timer = 180
+			warp = 0.4
 			vsp = -5
 			repeat (4)
 				particle_create(x, y, particles.stars)
@@ -183,41 +192,62 @@ function do_enemy_generics(_easilyscared = true)
 		{
 			if (state == states.grab && other.sprite_index != other.sprs.dead)
 			{
-				if character == p_characters.undoised
+				if other.object_index == obj_goofball
 				{
 					var str = variable_instance_get(self, string_concat("spr_finishingblow_", string(irandom_range(1, 5))))
 					reset_anim(asset_get_index(str))
-					if (key_up.down)
-						reset_anim(spr_finishingblowup)
-					image_index = 3
 					state = states.punchenemy
-					other.state = states.hit
-					other.hsp = xscale * 20
-					other.vsp = 0
-					if sprite_index == spr_finishingblowup
+					other.xscale = xscale
+					other.movespeed = 10
+					other.vsp = -5
+					if (key_up.down)
 					{
-						other.hsp = 0
-						other.vsp = -20
+						reset_anim(spr_finishingblowup)
+						other.movespeed = 4
+						other.vsp = -15
 					}
+					image_index = 3
+					other.warp = -0.4
 				}
 				else
 				{
-					other.follow_player = true
-					other.sprite_index = other.sprs.stun
-					reset_anim(spr_player_holdrise)
-					state = states.hold
-					if (abs(hsp) > 10)
+					if character == p_characters.undoised
 					{
-						state = states.swingding
-						sprite_index = spr_player_swingding
-						if !grounded
-							vsp = -5
+						var str = variable_instance_get(self, string_concat("spr_finishingblow_", string(irandom_range(1, 5))))
+						reset_anim(asset_get_index(str))
+						state = states.punchenemy
+						other.x = x + xscale * 48
+						other.y = y - 20
+						other.state = states.hit
+						other.hsp = xscale * 20
+						other.vsp = 0
+						if (key_up.down)
+						{
+							reset_anim(spr_finishingblowup)
+							other.hsp = 0
+							other.vsp = -20
+						}
+						image_index = 3
 					}
-					if (key_up.down)
+					else
 					{
-						state = states.piledriver
-						sprite_index = spr_player_piledriver
-						vsp = -18
+						other.follow_player = true
+						other.sprite_index = other.sprs.stun
+						reset_anim(spr_player_holdrise)
+						state = states.hold
+						if (abs(hsp) > 10)
+						{
+							state = states.swingding
+							sprite_index = spr_player_swingding
+							if !grounded
+								vsp = -5
+						}
+						if (key_up.down)
+						{
+							state = states.piledriver
+							sprite_index = spr_player_piledriver
+							vsp = -18
+						}
 					}
 				}
 			}
@@ -231,12 +261,22 @@ function do_enemy_generics(_easilyscared = true)
 				event_play_oneshot_3d("event:/sfx/enemies/stomp", x, y)
 				with (other)
 				{
-					xscale = -obj_player.xscale
-					hsp = obj_player.xscale * 5
-					vsp = -5
-					state = states.stun
-					stun_timer = 180
-					warp = -0.4
+					if object_index == obj_goofball
+					{
+						xscale = obj_player.xscale
+						movespeed = 5
+						vsp = 5
+						warp = -0.4
+					}
+					else
+					{
+						xscale = -obj_player.xscale
+						hsp = obj_player.xscale * 5
+						vsp = -5
+						state = states.stun
+						stun_timer = 180
+						warp = -0.4
+					}
 				}
 			}
 			if vsp > 2 && character == p_characters.mandrek

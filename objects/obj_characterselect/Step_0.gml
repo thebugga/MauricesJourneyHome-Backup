@@ -40,7 +40,7 @@ if readyasever
 				player = p
 				character = other.character[other.vals[p].selected].char_enum
 				scr_character_spr()
-						
+				
 				state = players[p] != 0 ? players[p].state : states.normal
 						
 				pal_select = quick_ini_read_real($"saves/saveData{global.savefile}.ini", $"Clothes{character}", "palette_index", 1)

@@ -1,5 +1,7 @@
 if instance_exists(baddieID)
 {
+	if baddieID.state != states.shoot
+		instance_destroy()
 	if baddieID.image_index < 3 && followID != -4
 	{
 		x = followID.x

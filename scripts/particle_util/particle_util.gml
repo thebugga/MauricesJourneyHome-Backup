@@ -9,7 +9,8 @@ enum particles {
 	machcharge,
 	bang,
 	yellowstar,
-	sparks
+	sparks,
+	blood
 }
 
 function particle_create(_x, _y, p_type, _xscale = 1, _yscale = 1, _sprite = noone)
@@ -46,6 +47,16 @@ function particle_create(_x, _y, p_type, _xscale = 1, _yscale = 1, _sprite = noo
 				hsp = irandom_range(6, -6)
 				vsp = irandom_range(12, -12)
 				image_angle = random_range(0, 360)
+				break;
+			case particles.blood:
+				sprite_index = spr_gibs
+				image_index = choose(9, 10, 12)
+				image_speed = 0
+				image_angle = random_range(0, 360)
+				hsp = lengthdir_x(8, image_angle)
+				vsp = lengthdir_y(8, image_angle)
+				image_xscale = 0.5
+				image_yscale = 0.5
 				break;
 			case particles.hurtstar:
 				hsp = random_range(5, 10)

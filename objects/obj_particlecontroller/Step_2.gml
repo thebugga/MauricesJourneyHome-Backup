@@ -8,6 +8,21 @@ for (var p = 0; p < array_length(particle_list); p++)
 		image_index += image_speed
 		switch (type)
 		{
+			case particles.blood:
+				if collision_point(x, y, par_collision, true, false)
+				{
+					var randomsprite = spr_paintSplatterTest_big
+					array_push(obj_generichandler.doise_bloods, {
+						myroom: room,
+						sprite: randomsprite,
+						index: irandom(sprite_get_number(randomsprite) - 1),
+						x: x,
+						y: y,
+						scale: random_range(0.1,0.5),
+						rotate: irandom(360)
+					})
+					array_delete(other.particle_list, p, 1)
+				}
 			case particles.gib:
 			case particles.stars:
 			case particles.yellowstar:

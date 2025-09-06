@@ -129,6 +129,14 @@ function do_taunt()
 				}
 				i++
 			}
+			if character == p_characters.maurice
+			{
+				with instance_create(obj_camera.campos.x, obj_camera.campos.y, obj_ts_pmo_icl)
+				{
+					y += screen_h
+					playerid = other.id
+				}
+			}
 		}
 	}
 }

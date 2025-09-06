@@ -35,15 +35,35 @@ function player_taunt()
 		supertauntcount = 0
 		supertauntshow = false
 		shake_camera(10, room_speed / 60)
-		image_speed = 0.4
+		image_speed = 0.2
 		
 		if anim_ended()
 		{
 			endtaunt = true
-			with par_enemy
+			if character == p_characters.undoised
 			{
-				if (bbox_in_camera() && enemy_can_die())
-					instance_destroy()
+				with par_enemy
+				{
+					if (bbox_in_camera() && enemy_can_die())
+					{
+						array_push(obj_backbloodhandler.doise_bloods, {
+							myroom: room,
+							index: 0,
+							x: x,
+							y: y,
+							scale: random_range(1,2),
+							rotate: irandom(360)
+						})
+						repeat 20
+							particle_create(x, y, particles.blood)
+						repeat 10
+							instance_create(x, y, obj_doisegib)
+						repeat 100
+							instance_create(x, y, obj_lagblood)
+						ds_list_add(!escape ? global.ds_save_room : global.ds_escapesaveroom, id)
+						instance_destroy(self, false)
+					}
+				}
 			}
 		}
 	}
